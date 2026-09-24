@@ -1,4 +1,4 @@
-CIS 5810 Final Project - Beta Translator
+# CIS 5810 Final Project - Beta Translator
 
 Authors:
 
