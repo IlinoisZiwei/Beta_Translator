@@ -1,10 +1,10 @@
 Using pip 26.2.1 from /usr/local/python/3.14.2/lib/python3.14/site-packages/pip (python 3.14)
 Collecting git+https://github.com/facebookresearch/detectron2.git
-  Cloning https://github.com/facebookresearch/detectron2.git to /tmp/pip-req-build-rsj0qm6e
+  Cloning https://github.com/facebookresearch/detectron2.git to /tmp/pip-req-build-mi6dnzrh
   Running command git version
   git version 2.55.0
-  Running command git clone --filter=blob:none https://github.com/facebookresearch/detectron2.git /tmp/pip-req-build-rsj0qm6e
-  Cloning into '/tmp/pip-req-build-rsj0qm6e'...
+  Running command git clone --filter=blob:none https://github.com/facebookresearch/detectron2.git /tmp/pip-req-build-mi6dnzrh
+  Cloning into '/tmp/pip-req-build-mi6dnzrh'...
   Running command git rev-parse HEAD
   1e3e13bbf607b54f62205c4c33922521822fb298
   Resolved https://github.com/facebookresearch/detectron2.git to commit 1e3e13bbf607b54f62205c4c33922521822fb298
@@ -13,16 +13,16 @@ Collecting git+https://github.com/facebookresearch/detectron2.git
   Preparing metadata (pyproject.toml): started
   Running command Preparing metadata (pyproject.toml)
   running dist_info
-  creating /tmp/pip-modern-metadata-lntmrkgy/detectron2.egg-info
-  writing /tmp/pip-modern-metadata-lntmrkgy/detectron2.egg-info/PKG-INFO
-  writing dependency_links to /tmp/pip-modern-metadata-lntmrkgy/detectron2.egg-info/dependency_links.txt
-  writing requirements to /tmp/pip-modern-metadata-lntmrkgy/detectron2.egg-info/requires.txt
-  writing top-level names to /tmp/pip-modern-metadata-lntmrkgy/detectron2.egg-info/top_level.txt
-  writing manifest file '/tmp/pip-modern-metadata-lntmrkgy/detectron2.egg-info/SOURCES.txt'
-  reading manifest file '/tmp/pip-modern-metadata-lntmrkgy/detectron2.egg-info/SOURCES.txt'
+  creating /tmp/pip-modern-metadata-feffb9i7/detectron2.egg-info
+  writing /tmp/pip-modern-metadata-feffb9i7/detectron2.egg-info/PKG-INFO
+  writing dependency_links to /tmp/pip-modern-metadata-feffb9i7/detectron2.egg-info/dependency_links.txt
+  writing requirements to /tmp/pip-modern-metadata-feffb9i7/detectron2.egg-info/requires.txt
+  writing top-level names to /tmp/pip-modern-metadata-feffb9i7/detectron2.egg-info/top_level.txt
+  writing manifest file '/tmp/pip-modern-metadata-feffb9i7/detectron2.egg-info/SOURCES.txt'
+  reading manifest file '/tmp/pip-modern-metadata-feffb9i7/detectron2.egg-info/SOURCES.txt'
   adding license file 'LICENSE'
-  writing manifest file '/tmp/pip-modern-metadata-lntmrkgy/detectron2.egg-info/SOURCES.txt'
-  creating '/tmp/pip-modern-metadata-lntmrkgy/detectron2-0.6.dist-info'
+  writing manifest file '/tmp/pip-modern-metadata-feffb9i7/detectron2.egg-info/SOURCES.txt'
+  creating '/tmp/pip-modern-metadata-feffb9i7/detectron2-0.6.dist-info'
   Preparing metadata (pyproject.toml): finished with status 'done'
 Requirement already satisfied: Pillow>=7.1 in /usr/local/python/3.14.2/lib/python3.14/site-packages (from detectron2==0.6) (12.3.0)
 Requirement already satisfied: matplotlib in /usr/local/python/3.14.2/lib/python3.14/site-packages (from detectron2==0.6) (3.11.2)
