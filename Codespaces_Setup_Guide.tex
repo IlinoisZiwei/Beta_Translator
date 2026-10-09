@@ -1,0 +1,153 @@
+\documentclass[10pt]{article}
+\usepackage[margin=0.7in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,urlcolor=blue}
+\lstset{basicstyle=\ttfamily\footnotesize,breaklines=true,columns=fullflexible,
+keepspaces=true,showstringspaces=false,frame=single,
+rulecolor=\color{gray!35},backgroundcolor=\color{gray!5}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\title{GitHub Codespaces Setup\\Climbing Hold Notebook}
+\author{}
+\date{October 9, 2026}
+\begin{document}
+\maketitle
+\vspace{-1.7em}
+This guide covers the environment dependencies discussed during setup. The notebook code is assumed to be already updated. Run the shell commands in the \textbf{GitHub Codespaces terminal}, not the terminal on your own computer. Execute each block in order and stop if a command fails.
+
+\section*{1. Install Linux system libraries}
+Open the repository in Codespaces. Select \textbf{Terminal > New Terminal}.
+\begin{lstlisting}
+sudo apt-get update
+sudo apt-get install -y build-essential git libgl1 libegl1 libgles2
+\end{lstlisting}
+The compiler tools are needed to build Detectron2. The three graphics packages address the previously reported missing libraries \texttt{libGL.so.1}, \texttt{libEGL.so.1}, and \texttt{libGLESv2.so.2}.
+
+\section*{2. Create one Python environment}
+Run this from the repository root. The environment inherits the Python version reported by the first command.
+\begin{lstlisting}
+python --version
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip setuptools wheel
+python -c "import sys; print(sys.executable)"
+\end{lstlisting}
+The printed interpreter path should end in \texttt{.venv/bin/python}.
+If \texttt{python} is unavailable, use \texttt{python3} for the first two commands. If environment creation reports missing \texttt{ensurepip} or \texttt{venv}, install the venv package matching that interpreter before continuing.
+
+\section*{3. Install the Python packages}
+\begin{lstlisting}
+python -m pip install torch torchvision numpy pandas ninja
+python -m pip install opencv-python matplotlib scipy pillow pyyaml ipywidgets ipykernel
+\end{lstlisting}
+The correct package name is \texttt{torchvision}. OpenCV is installed as \texttt{opencv-python} and imported as \texttt{cv2}. PyYAML is imported as \texttt{yaml}. The package \texttt{ipywidgets} provides the notebook controls.
+
+These commands cover the reported missing packages and the basic imports shown in the workflow. They are not a complete dependency audit of the notebook. They do not pin a tested combination of Python, PyTorch, and Detectron2 versions. If the repository supplies a validated environment specification, use its versions instead.
+
+\newpage
+\section*{4. Build Detectron2}
+Install PyTorch first, then run:
+\begin{lstlisting}
+MAX_JOBS=1 CFLAGS="-O0 -g0" CXXFLAGS="-O0 -g0" \
+python -m pip install --no-build-isolation -v \
+"git+https://github.com/facebookresearch/detectron2.git" \
+> detectron2_install.log 2>&1
+echo "Detectron2 installation exit code: $?"
+\end{lstlisting}
+Wait for the terminal prompt to return. Exit code \texttt{0} indicates that installation succeeded. Output is saved in \texttt{detectron2\_install.log}, so a quiet terminal does not indicate that installation has stopped.
+
+The compiler settings request one build worker and disable optimization and debug information to reduce build resource demand. They may slow later computation. They do not guarantee a successful build. The earlier compiler termination did not establish a Python compatibility problem or prove insufficient memory.
+
+If installation fails, inspect:
+\begin{lstlisting}
+tail -n 40 detectron2_install.log
+free -h
+cat /sys/fs/cgroup/memory.max
+cat /sys/fs/cgroup/memory.events
+\end{lstlisting}
+The last two paths apply when the container uses cgroup v2. Memory event counters can include earlier events, so they need context. If a resource limit is confirmed, consider a larger Codespace before retrying. For a compatibility error, retain the exact error and package versions rather than repeatedly running the same installation.
+
+\section*{5. Register and select the notebook kernel}
+With the same virtual environment still active, run:
+\begin{lstlisting}
+python -m ipykernel install --user \
+--name climbing-env --display-name "Python (climbing-env)"
+\end{lstlisting}
+In Codespaces, ensure the Microsoft \textbf{Python} and \textbf{Jupyter} extensions are installed and enabled. Open the notebook and use \textbf{Select Kernel} in the upper right corner. Choose \textbf{Python (climbing-env)}, or select the repository's \texttt{.venv/bin/python} environment. Restart the kernel after installation.
+
+If only \texttt{ipywidgets} is missing in an existing working environment, activate that environment and run:
+\begin{lstlisting}
+python -m pip install ipywidgets
+\end{lstlisting}
+Then restart its notebook kernel. There is no need to reinstall working packages.
+
+\newpage
+\section*{6. Verify the environment}
+Run this in the Codespaces terminal with \texttt{.venv} active:
+\begin{lstlisting}
+python - <<'PY'
+import sys
+import torch
+import torchvision
+import numpy
+import pandas
+import cv2
+import matplotlib
+import scipy
+import PIL
+import yaml
+import ipywidgets
+import ipykernel
+import detectron2
+from detectron2 import _C
+
+print("Python:", sys.executable)
+print("Python version:", sys.version)
+print("PyTorch:", torch.__version__)
+print("Torchvision:", torchvision.__version__)
+print("CUDA available:", torch.cuda.is_available())
+print("All listed packages and Detectron2 extension imported.")
+PY
+python -m pip check
+\end{lstlisting}
+Successful imports verify availability of these packages and the compiled extension. They do not validate model inference or the entire notebook.
+
+A \texttt{False} CUDA result is not an installation failure. It means PyTorch cannot currently use CUDA. CPU execution requires the notebook's model configuration to select the CPU. Installing CUDA packages alone does not provide a GPU.
+
+For a temporary notebook check, run:
+\begin{lstlisting}
+import sys
+import ipywidgets as widgets
+from IPython.display import display
+
+print(sys.executable)
+display(widgets.IntSlider(description="Test"))
+\end{lstlisting}
+The interpreter should match the virtual environment and a slider should appear. If imports work in the terminal but fail in the notebook, reselect the kernel. If the widget does not render, confirm that the Jupyter extension is enabled, restart the kernel, and reload the Codespaces window.
+
+If the output reports \texttt{jupyter-ipywidget-renderer} and an undefined \texttt{ipywidgetsKernel}, first treat it as a renderer initialization problem rather than an annotation logic error. Confirm that the Microsoft Jupyter extension and its Jupyter Notebook Renderers companion are enabled and updated. Clear the failed cell output, run \textbf{Developer: Reload Window} from the Command Palette, reselect the kernel, and rerun the slider test. A browser refresh may also be needed. If the slider still fails, retain the Jupyter output log and extension versions for diagnosis. Reloading or restarting may require rerunning prerequisite cells before annotation.
+
+\section*{7. Resume work later}
+In a new terminal, reactivate the environment before installing anything:
+\begin{lstlisting}
+source .venv/bin/activate
+\end{lstlisting}
+After a kernel restart, rerun notebook cells in order because previous variables are cleared. A new Codespace or rebuilt container may require setup again. Once the notebook runs successfully, optionally record the installed Python packages:
+\begin{lstlisting}
+python -m pip freeze > requirements-working.txt
+\end{lstlisting}
+This snapshot does not capture Linux packages or the Python interpreter version.
+
+\section*{Official references}
+\small
+\begin{enumerate}
+\item \href{https://github.com/facebookresearch/detectron2/blob/main/INSTALL.md}{Detectron2 installation instructions}.
+\item \href{https://github.com/jupyter-widgets/ipywidgets}{Jupyter Widgets installation and project documentation}.
+\item \href{https://code.visualstudio.com/docs/datascience/jupyter-kernel-management}{VS Code notebook kernel management}.
+\end{enumerate}
+\end{document}
+
