@@ -1,0 +1,15 @@
+torch
+torchvision
+numpy
+pandas
+ninja
+opencv-python
+matplotlib
+scipy
+pillow
+pyyaml
+mediapipe
+ipywidgets
+ipykernel
+setuptools
+wheel

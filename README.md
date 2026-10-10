@@ -39,6 +39,15 @@ The annotation interface supports hold IDs and the states `unknown`, `free`, and
 
 The updated hold detection cell reads the first frame directly from the current video. The saved `wall_reference.jpg` may therefore differ from the reference used by that cell.
 
+## Local Setup (MacOS)
+
+- Clone this repository.
+- Install [brew](https://brew.sh/) if you don't already have it.
+  - Check that brew is installed by running `brew --version`
+- Run the setup file `source ./setup.sh` (or `bash ./setup.sh` if you don't want to enter the venv)
+- If `Beta_Translator.ipynb` did not automatically choose the newly created venv as its kernel, do so manually.
+- Click 'Run All' in `Beta_Translator.ipynb`.
+
 ## GitHub Codespaces Setup
 
 Open this repository in GitHub Codespaces and select **Terminal > New Terminal**. Run the following commands inside Codespaces.
