@@ -2,7 +2,7 @@
 set -e
 
 # Install necessary global libraries
-brew install python@3.12 wget ffmpeg
+brew install python@3.12 wget ffmpeg git-lfs
 
 # Create the Python 3.12 virtual environment and enter it
 python3.12 -m venv .venv
