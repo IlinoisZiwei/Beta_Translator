@@ -169,6 +169,52 @@ Hold IDs belong to a particular prediction run. Changing the reference frame, mo
 
 Restarting the kernel clears variables, including the prediction and review identifiers. Rerun the prerequisite cells after a restart.
 
+## Export pose coordinates in the first-frame reference
+
+After running pose extraction, hold detection, and homography estimation for
+the same video, run **Section 12** at the end of `Beta_Translator.ipynb`.
+It adds an export and a sampled visual check without changing the original
+pose table or the hold/contact annotation workflow.
+
+The homographies map frame 0 to each video frame. The export uses their
+**inverses** to map pose landmarks back to frame 0, where the original hold
+masks are defined. Lookups use frame IDs, so frames without a detected pose
+do not shift the association between poses and transforms.
+
+Generated files are saved under `outputs/frame0_alignment/`:
+
+- `pose_coordinates_frame0.csv`: original columns plus
+  `<landmark>_x_frame0_px`, `<landmark>_y_frame0_px`, and
+  `<landmark>_frame0_usable`, with alignment status and inlier count.
+- `homographies.csv`: per-frame statuses, inlier counts, and matrices in both
+  directions, including video frames without detected poses.
+- `coordinate_system.json`: reference, axis directions, thresholds, and units.
+- `pose_frame0_preview.png`: sampled frames warped into the reference view,
+  with transformed skeletons and the reviewed reference hold masks.
+
+Coordinates remain pixels, with x right and y down. Normalized coordinates
+and MediaPipe z values remain the original measurements. This is wall-plane
+registration, not centimeters or recovered 3D body positions.
+
+Reused, missing, invalid, or insufficient-inlier transforms are flagged, and
+their aligned pose coordinates are blank. Landmarks below the configured
+visibility threshold (initially 0.5) are also blank. Use the per-landmark
+usability flags before downstream contact matching. A status of `ok` means
+the notebook's matching gate passed; check overlays before trusting accuracy.
+Rerunning Section 12 replaces only its generated exports and preview. Rerun
+the earlier extraction/alignment cells whenever changing the input video.
+
+The sampled preview does not require a full stabilized-video export. It needs
+only OpenCV and Matplotlib, already in `requirements.txt`. In Colab, open this
+branch's notebook and run from its repository checkout so the helper module
+is importable. The same cells work locally and in Codespaces.
+
+Run the coordinate-alignment tests from the repository root:
+
+```bash
+python -m unittest discover -s tests -v
+```
+
 ## Recent Updates
 
 1. Adapted file loading for files already present in Codespaces.
@@ -180,11 +226,11 @@ Restarting the kernel clears variables, including the prediction and review iden
 
 ## Current Limitations
 
-The hold rendering function applies fixed reference masks to video frames. It does not currently compensate for camera movement.
-
-Using the first video frame as the reference addresses an inconsistent starting reference, but later frames can still become misaligned. Equal image dimensions do not guarantee equal hold coordinates.
-
-Inspect overlays at several points in the video. If the camera moves, frame registration or video stabilization is needed before relying on spatial contact comparisons.
+The hold viewer compensates for camera movement by warping reference masks
+into each video frame using SIFT/RANSAC homographies. Section 12 exports pose
+coordinates in the shared first-frame reference. Homography estimation can
+still select the wrong plane or fail under occlusion; inspect overlays at
+several points in the video before relying on spatial contact comparisons.
 
 Hold predictions can contain missed detections or incorrect boundaries. Manual review remains necessary. The prototype does not yet establish whether an adapted movement is physically feasible for another climber.
 
