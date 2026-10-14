@@ -209,12 +209,6 @@ only OpenCV and Matplotlib, already in `requirements.txt`. In Colab, open this
 branch's notebook and run from its repository checkout so the helper module
 is importable. The same cells work locally and in Codespaces.
 
-Run the coordinate-alignment tests from the repository root:
-
-```bash
-python -m unittest discover -s tests -v
-```
-
 ## Recent Updates
 
 1. Adapted file loading for files already present in Codespaces.
