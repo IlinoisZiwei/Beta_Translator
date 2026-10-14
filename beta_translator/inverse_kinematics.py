@@ -121,7 +121,9 @@ def forward_kinematics(pose_vector, body_lengths):
 # while staying close to the reference pose.
 # contact_targets: {limb name: (x, y) in cm, or None for a free limb}
 # Returns (pose_vector, contact_errors_cm), where contact_errors_cm maps each
-# contacted limb to the distance between its end point and its target.
+# contacted limb to the distance between its end point and its target. The units
+# are in cm or radians, and the origin is the origin of coordinates in contact_targets.
+# Using `pose_adapter.py`, the origin would be the bottom-left corner of the first frame (frame 0).
 def solve_inverse_kinematics(
 	body_lengths,
 	contact_targets,
