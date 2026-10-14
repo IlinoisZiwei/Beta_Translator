@@ -204,10 +204,11 @@ the notebook's matching gate passed; check overlays before trusting accuracy.
 Rerunning Section 12 replaces only its generated exports and preview. Rerun
 the earlier extraction/alignment cells whenever changing the input video.
 
-The sampled preview does not require a full stabilized-video export. It needs
-only OpenCV and Matplotlib, already in `requirements.txt`. In Colab, open this
-branch's notebook and run from its repository checkout so the helper module
-is importable. The same cells work locally and in Codespaces.
+The export and preview functions are defined directly inside Section 12.
+Run its three helper-definition cells before the export and preview cells.
+The sampled preview uses OpenCV and Matplotlib, already in `requirements.txt`,
+and does not require a full stabilized-video export. The same cells work in
+Colab, locally, and in Codespaces with the input files configured as above.
 
 ## Recent Updates
 
