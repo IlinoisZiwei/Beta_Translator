@@ -1,0 +1,40 @@
+{
+  "settings": {
+    "hand_margin_px": 20,
+    "foot_margin_px": 10,
+    "min_visibility": 0.5,
+    "min_contact_sec": 0.5,
+    "ambiguity_gap_px": 3,
+    "min_inliers": 25
+  },
+  "video": "videos/trial1.mp4",
+  "fps": 30.0,
+  "selected_holds": [
+    "H65",
+    "H64",
+    "H63",
+    "H60",
+    "H57",
+    "H51",
+    "H53",
+    "H45",
+    "H40",
+    "H48",
+    "H44",
+    "H38",
+    "H34",
+    "H33",
+    "H28",
+    "H26",
+    "H23",
+    "H17",
+    "H16",
+    "H13",
+    "H62"
+  ],
+  "candidate_run_id": "reviewed65_00e1a17b05674bba8bc9bc04fdb56bc1",
+  "coordinates": "original current-frame pixels",
+  "margins": "pixels at 720px image width",
+  "interval": "start_frame/end_frame inclusive; end_sec exclusive",
+  "match_score": "geometric proximity only, not a probability"
+}

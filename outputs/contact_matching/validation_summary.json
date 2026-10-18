@@ -1,0 +1,81 @@
+{
+  "pose_rows": 417,
+  "limb_rows": 1668,
+  "hold_candidates": 65,
+  "selected_holds": [
+    "H65",
+    "H64",
+    "H63",
+    "H60",
+    "H57",
+    "H51",
+    "H53",
+    "H45",
+    "H40",
+    "H48",
+    "H44",
+    "H38",
+    "H34",
+    "H33",
+    "H28",
+    "H26",
+    "H23",
+    "H17",
+    "H16",
+    "H13",
+    "H62"
+  ],
+  "draft_intervals": 10,
+  "sample_frames": [
+    0,
+    104,
+    208,
+    312,
+    416
+  ],
+  "alignment_frames": 417,
+  "alignment_fallbacks": 0,
+  "status_counts": {
+    "ambiguous": {
+      "left_foot": 33,
+      "left_hand": 1,
+      "right_foot": 8,
+      "right_hand": 1
+    },
+    "likely_contact": {
+      "left_foot": 18,
+      "left_hand": 25,
+      "right_foot": 238,
+      "right_hand": 59
+    },
+    "low_visibility": {
+      "left_foot": 242,
+      "left_hand": 373,
+      "right_foot": 103,
+      "right_hand": 319
+    },
+    "no_candidate": {
+      "left_foot": 66,
+      "left_hand": 6,
+      "right_foot": 26,
+      "right_hand": 2
+    },
+    "tentative": {
+      "left_foot": 58,
+      "left_hand": 12,
+      "right_foot": 42,
+      "right_hand": 36
+    }
+  },
+  "candidate_run_id": "reviewed65_00e1a17b05674bba8bc9bc04fdb56bc1",
+  "video_sha256": "db656ed38a93a619f6df7dbd65804718860aa9191e650a1a92952ab6063a007a",
+  "versions": {
+    "python": "3.12.4",
+    "torch": "2.14.1",
+    "torchvision": "0.29.1",
+    "opencv": "5.0.0",
+    "mediapipe": "1.1.0"
+  },
+  "inputs": "Saved 65-hold detector output, existing main pose CSV, and previously verified alignment.",
+  "interpretation": "Geometric contact drafts for visual review; not proof of a grip or load-bearing contact."
+}
