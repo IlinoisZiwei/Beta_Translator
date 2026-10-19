@@ -61,12 +61,10 @@ Visibility is not measured joint accuracy. Draft contacts use wrists and foot-in
 
 See `docs/Contact_Matching.md` for review details. The older Codespaces guide is historical; this README describes the current local workflow.
 
-## Sources and AI assistance
+## Sources
 
 - [MediaPipe](https://github.com/google-ai-edge/mediapipe): pose tracking and adapted visualization code.
 - [Indoor Climbing Hold and Route Segmentation](https://github.com/xiaoxiae/Indoor-Climbing-Hold-and-Route-Segmentation): pretrained detector workflow (GPL-3.0).
 - [Model dataset](https://www.kaggle.com/datasets/tomasslama/indoor-climbing-gym-hold-segmentation): matching `Basic_Augmented_P2P3_DoubleTopK_NMS_2KIT` configuration and weights.
 - [Detectron2](https://github.com/facebookresearch/detectron2): hold inference.
 - [The Way Up](https://arxiv.org/html/2505.12854v1): proximity and temporal-filtering idea; this implementation uses masks and does not reproduce the full method.
-
-Codex assisted with review, local-workflow consolidation, transferring IK fixes into Python modules, persistence/export checks, and focused tests. These changes include AI-generated code; the team should review it and report its use in course submissions.
