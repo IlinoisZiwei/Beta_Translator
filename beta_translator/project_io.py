@@ -79,9 +79,13 @@ def restore_reviewed_map(bundle, destination, video_file):
     if not Path(bundle).is_file():
         raise FileNotFoundError('No reviewed map found. Set USE_SAVED_HOLD_MAP = False to detect new holds.')
     with zipfile.ZipFile(bundle) as archive:
-        data = archive.read('reviewed_hold_map.npz')
+        name = ('state/reviewed_hold_map.npz' if 'state/reviewed_hold_map.npz' in archive.namelist()
+                else 'reviewed_hold_map.npz')
+        data = archive.read(name)
     load_reviewed_holds(io.BytesIO(data), video_file)
-    Path(destination).write_bytes(data)
+    destination = Path(destination)
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    destination.write_bytes(data)
 
 
 def save_reviewed_holds(path, video_file, reference, records, masks, run_id, selected):

@@ -104,6 +104,18 @@ class SavedInputTests(unittest.TestCase):
             restore_reviewed_map(bundle, self.root / 'wrong.npz', self.video)
         self.assertFalse((self.root / 'wrong.npz').exists())
 
+    def test_hold_restore_from_organized_bundle(self):
+        hold_map = self.root / 'map.npz'
+        save_reviewed_holds(hold_map, self.video, np.zeros((8, 8, 3), np.uint8),
+                            [{'hold_id': 'H44'}], {'H44': np.ones((8, 8), bool)}, 'map1', ['H44'])
+        bundle = self.root / 'organized.zip'
+        with zipfile.ZipFile(bundle, 'w') as archive:
+            archive.write(hold_map, 'state/reviewed_hold_map.npz')
+        restored = self.root / 'outputs/state/reviewed_hold_map.npz'
+        restore_reviewed_map(bundle, restored, self.video)
+        self.assertEqual(restored.read_bytes(), hold_map.read_bytes())
+        self.assertEqual(load_reviewed_holds(restored, self.video)[3], ['H44'])
+
     def test_manual_annotations_roundtrip_and_stale_route(self):
         data = dict(video_sha256=file_sha256(self.video), candidate_run_id='map1', selected_hold_ids=['H44'],
                     frames=dict(before=1, after=9),

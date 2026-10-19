@@ -42,16 +42,36 @@ All wall geometry uses frame 0. The supplied clip's scale is approximately 1.798
 
 ## Saved outputs
 
-- `pose_coordinates.csv` and `pose_output.mp4`: one tracking pass and one set of thresholds.
-- `pose_manifest.json`: video/model/settings and output hashes for reuse checks.
-- `wall_reference.jpg` and `reviewed_hold_map.npz`: frame-0 image, masks, stable IDs, and reviewed route.
-- `alignment_cache.npz`: current transforms, status, settings, and matching input hashes.
-- `endpoint_annotations.json`: explicitly saved endpoint frames, contact labels, moving limb, notes, body ratios, height, and wall scale.
-- `contact_matching/`: draft contacts, intervals, sample images, settings, and summary.
-- `wall_motion_h264.mp4`: original tracked motion on the fixed hold map.
-- `reviewed_contact_data.zip`: current analysis inputs/results and saved endpoints when available.
+Generated files are grouped by type under the configured output folder:
 
-Old or mismatched alignment caches are recomputed. Export checks that contact results and alignment match the current saved poses. Video and model weights remain separate inputs.
+```text
+outputs/
+├── videos/   # pose_output.mp4, pose_output_h264.mp4, wall_motion_h264.mp4
+├── tables/   # pose_coordinates.csv, limb_contacts.csv, contact_events.csv
+├── images/   # wall_reference.jpg and contact review images
+├── state/    # hold map, alignment cache, manifests, settings, saved annotations
+└── exports/  # reviewed_contact_data.zip
+```
+
+`state/pose_manifest.json` validates pose reuse. `state/alignment_cache.npz` stores
+the transforms and matching input hashes. `state/reviewed_hold_map.npz` preserves
+reviewed hold IDs. `state/endpoint_annotations.json` contains manually saved frames,
+contacts, moving limb, notes, body ratios, height, and wall scale.
+Contact settings and the run summary are `state/contact_settings.json` and
+`state/validation_summary.json`.
+
+The notebook creates these folders automatically. Existing results were moved
+without changing their contents. An older `images/contact_detail_samples.png` is
+retained as a previous review result; current runs create `images/contact_samples.png`.
+Old or mismatched caches are recomputed using the existing validation rules.
+
+New ZIP exports preserve the `tables/`, `images/`, and `state/` layout inside the
+bundle. Reviewed-map restoration accepts both this layout and the original flat
+bundle in `data/`. Previously saved ZIPs remain unchanged.
+
+The original video remains in `videos/`, model assets in `models/`, and the supplied
+reference bundle in `data/`. The unused Colab example datasets in `sample_data/`
+have been removed.
 
 ## Checks and limitations
 
