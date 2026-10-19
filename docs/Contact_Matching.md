@@ -1,27 +1,23 @@
-# Automatic contact predictions
+# Contact matching and review
 
-Sections 17–18 of `Beta_Translator.ipynb` predict limb-to-hold contacts and show them over the video for review. They use existing pose landmarks, selected hold masks, and per-frame homographies. They do not overwrite the manual contact labels or IK inputs.
+Run the notebook locally using the repository's `.venv` kernel. Section 6 generates drafts; Section 7 is the shared prediction viewer and manual endpoint editor.
 
-## Run in Colab
+## Rules
 
-Open this branch's notebook in Colab. Run the Colab-only setup cell immediately below the title before Section 1. It installs dependencies and requests the real `experiment_config.yml`, `model_final.pth`, and `trial1.mp4` resources if missing. Opening a GitHub notebook does not fetch those files. The original macOS setup is preserved; the Colab cell skips its setup outside Colab.
+`contact_matching.py` warps selected hold masks into each frame, checks landmark visibility and distance, and requires a unique candidate for at least 0.5 consecutive seconds. Default margins are 20 pixels for wrists and 10 for foot-index landmarks, scaled from 720px video width. `group_contact_intervals()` handles persistence separately from frame matching.
 
-Download `data/reviewed_contact_data.zip` from this branch and upload it when the hold-map helper requests it. Keep the filename unchanged. The bundle contains the reviewed map, existing pose coordinates, verified alignment, contact tables, settings, and sample images. Colab runtime files are temporary, so retain the original resources and bundle outside the runtime.
+Ambiguity, low visibility, missing poses, and unreliable alignment break intervals. `no_candidate` does not imply `free`: a smear, missed detection, or unselected hold may explain it. Match scores describe proximity, not contact probabilities or grip.
 
-In a local checkout, the helper reads `data/reviewed_contact_data.zip` directly. The export cell saves a new bundle under `outputs/`; in Colab it also offers a download.
+## Review and persistence
 
-## Stable hold IDs
+The Section 7 slider shows the raw frame, projected holds, and predictions. Set BEFORE and AFTER and explicitly select four contacts for each. Predictions never automatically populate labels. Changing a frame resets that endpoint's labels. Draft matching uses foot-index points; IK uses ankles, so review these approximations carefully.
 
-The earlier saved detector output contained 66 holds. The validation run retained 65. IDs are assigned by position within each prediction run, so reusing the old selection could refer to different physical holds.
+**Save annotations** writes frames, labels, moving limb, notes, and body/wall settings to `endpoint_annotations.json`. **Load annotations** restores only matching video/map/route annotations. `unknown`, `free`, and `wall_contact` remain distinct; only hold IDs and `free` currently work in IK.
 
-The bundle preserves all 65 masks and the 21 reviewed route IDs together. Section 9 loads this map by default, verifies the video's SHA-256, and avoids rerunning detection and assigning new IDs. Section 10 restores its selected route. To review a new detector result, disable `USE_SAVED_HOLD_MAP` in Section 9 and enter a newly reviewed selection in Section 10 before saving it; the old selection is not automatically transferred.
+## Stable inputs and export
 
-The older Section 16 calibration note calls its endpoints H45/H41; these physical holds are H44/H40 in this saved map. The numerical calibration points and scale are unchanged.
+The example map has 65 candidates and 21 selected route holds. Its H44/H40 calibration endpoints were H45/H41 in the earlier 66-hold map. Saved maps retain IDs and verify the video's hash. Fresh detection requires a new route review.
 
-## Prediction rules and validation
+Pose CSV and skeleton video now share one inference pass. Alignment is saved after computation and reused only when video, pose CSV, and settings match. Restoring the example hold map does not replace freshly computed poses.
 
-The matcher warps hold masks into the current frame, checks landmark visibility and distance to the mask, and requires a unique candidate for at least 0.5 consecutive seconds. Initial margins are 20 pixels for wrists and 10 for foot-index landmarks at 720px video width. Ambiguous, low-visibility, and unreliable-alignment observations remain unresolved. These are image-based predictions, not proof of gripping or supporting weight.
-
-The Colab validation used the existing 417-row pose CSV and previously verified 417-frame alignment with zero fallbacks. It produced 1,668 limb observations and 10 draft intervals. Visibility and ambiguity split intervals, so this is not a count of moves. Five full-frame samples and six close-ups were inspected; this was a visual sanity check, not a labeled accuracy benchmark. The complete pose/IK pipeline was not rerun for this validation.
-
-Sections 17–18 save tables and images under `outputs/contact_matching/`. The additional close-up and export cells follow Section 18. Pose extraction, homography estimation, macOS setup, and IK logic remain unchanged.
+Section 10 samples valid frames for the clip length and exports current poses, alignment, holds, draft outputs, and saved annotations. Outdated inputs or unsaved endpoint edits stop export with an explanation. For evaluation, compare independent manual labels against predicted hold IDs and release/arrival times, retaining unknown cases. Draft intervals are not counts of moves, and visual review is not an accuracy benchmark.

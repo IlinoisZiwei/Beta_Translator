@@ -1,247 +1,72 @@
-# CIS 5810 Final Project - Beta Translator
+# CIS 5810 Final Project — Beta Translator
 
-Authors:
+Ziwei Wang · Justin Zou · Pengfan Zhang
 
-- Ziwei Wang
-- Justin Zou
-- Pengfan Zhang
+Beta Translator analyzes a climbing video and fits a target body to reviewed contact positions. The current outputs are a static 2D IK fit and a replay of the original tracked movement. Personalized movement recommendations remain a project goal.
 
-## Overview
+## Run locally on macOS
 
-Beta Translator explores how computer vision can help analyze climbing movements and eventually adapt a demonstrated climbing sequence to another climber’s body proportions.
+1. Retrieve the actual Git LFS video/model assets with `git lfs install` and `git lfs pull`. Install Git LFS with `brew install git-lfs` if needed.
+2. For first-time setup, run `bash setup.sh` from the repository. An already working `.venv` can be reused.
+3. Open `Beta_Translator.ipynb` in VS Code/Jupyter with the repository as the working directory. Select `.venv/bin/python` as its kernel.
+4. Run the notebook in order. Section 1 checks dependencies without installing packages or transferring files.
+5. In Section 7, review drafts, choose BEFORE/AFTER frames, and manually confirm four contacts per endpoint. Click **Save annotations**.
+6. Run Section 8 for the target-body fit, Section 9 for the original-motion replay, and Section 10 for the export.
 
-The current notebook focuses on pose estimation, climbing hold segmentation, manual route selection, and contact annotation. Personalized movement recommendations remain a project goal, rather than a validated capability of this prototype.
+Use **Load annotations** after restarting. Changing an endpoint resets its contact labels. Automatic drafts never replace manual choices. After editing a helper `.py` file, restart the kernel to import the changes.
 
-## Current Workflow
+## Files
 
-1. Load a climbing video.
-2. Estimate body landmarks using MediaPipe and generate pose outputs.
-3. Extract the current video’s first frame as the reference for hold detection.
-4. Detect candidate climbing holds using a pretrained Detectron2 model.
-5. Manually select the holds relevant to the route.
-6. Use an interactive frame viewer to select BEFORE and AFTER frames for a movement.
-7. Annotate each hand and foot’s contact state at both endpoints.
+| File | Responsibility |
+| --- | --- |
+| `Beta_Translator.ipynb` | Settings, pipeline, review controls, and visual results |
+| `beta_translator/inverse_kinematics.py` | `RATIOS`, body construction, forward kinematics, and IK |
+| `beta_translator/pose_adapter.py` | Coordinate conversion and pose-vector construction |
+| `beta_translator/contact_matching.py` | Hold-mask proximity and persistent contact intervals |
+| `beta_translator/project_io.py` | Video I/O, reviewed maps, caches, and endpoint persistence |
+| `data/reviewed_contact_data.zip` | Original reviewed example data; only its hold map is restored automatically |
 
-The annotation interface supports hold IDs and the states `unknown`, `free`, and `wall_contact`. Contact assignments are currently manual.
+The notebook imports shared functions instead of keeping second copies. The IK solver clips the initial guess, preserves bend bounds, uses Jacobian variable scaling, and reports nonconvergence.
 
-## Main Files
+## Settings and new videos
 
-- `Beta_Translator.ipynb`: Main analysis notebook.
-- `Codespaces_Setup_Guide.tex`: LaTeX guide for environment setup and troubleshooting.
-- `experiment_config.yml`: Configuration for the pretrained hold segmentation model.
-- `model_final.pth`: Matching model weights.
-- `pose_landmarker.task`: MediaPipe pose model asset.
-- `trial1.mp4`: Current input video.
-- `pose_coordinates.csv`: Generated pose coordinate output.
-- `pose_output.mp4`: Generated pose visualization.
-- `wall_reference.jpg`: Saved reference image from the earlier workflow.
-- `detectron2_install.log`: Detectron2 installation output.
-
-The updated hold detection cell reads the first frame directly from the current video. The saved `wall_reference.jpg` may therefore differ from the reference used by that cell.
-
-## Local Setup (MacOS)
-
-- Clone this repository.
-- Install [brew](https://brew.sh/) if you don't already have it.
-  - Check that brew is installed by running `brew --version`
-- Run the setup file `source ./setup.sh` (or `bash ./setup.sh` if you don't want to enter the venv)
-- If `Beta_Translator.ipynb` did not automatically choose the newly created venv as its kernel, do so manually.
-- Click 'Run All' in `Beta_Translator.ipynb`.
-
-## GitHub Codespaces Setup
-
-Open this repository in GitHub Codespaces and select **Terminal > New Terminal**. Run the following commands inside Codespaces.
-
-### 1. Retrieve Git LFS assets
-
-Model weights and videos are managed with Git Large File Storage.
-
-```bash
-sudo apt-get update
-sudo apt-get install -y git-lfs build-essential libgl1 libegl1 libgles2 ffmpeg
-
-git lfs install
-git lfs pull
-```
-
-Run `git lfs pull` before opening model weights or videos. A small Git LFS pointer file is not the actual asset.
-
-### 2. Create a Python environment
-
-Run these commands from the repository root:
-
-```bash
-python --version
-python -m venv .venv
-source .venv/bin/activate
-
-python -m pip install --upgrade pip setuptools wheel
-```
-
-For an existing working environment, activate that environment instead of creating another one.
-
-### 3. Install Python dependencies
-
-```bash
-python -m pip install torch torchvision numpy pandas ninja
-python -m pip install opencv-python matplotlib scipy pillow pyyaml
-python -m pip install mediapipe ipywidgets ipykernel
-```
-
-These commands do not specify a tested set of package versions. Compatibility must be checked in the selected Python environment.
-
-### 4. Install Detectron2
-
-Install PyTorch before running this command:
-
-```bash
-MAX_JOBS=1 CFLAGS="-O0 -g0" CXXFLAGS="-O0 -g0" \
-python -m pip install --no-build-isolation -v \
-"git+https://github.com/facebookresearch/detectron2.git" \
-> detectron2_install.log 2>&1
-
-echo "Detectron2 installation exit code: $?"
-```
-
-Wait for installation to finish. An exit code of `0` indicates success.
-
-The compiler settings reduce optimization, debug information, and parallel build activity to limit resource demand. They do not guarantee that compilation will succeed.
-
-If installation fails, inspect the log:
-
-```bash
-tail -n 40 detectron2_install.log
-```
-
-### 5. Select the notebook kernel
-
-Register the environment:
-
-```bash
-python -m ipykernel install --user \
---name climbing-env \
---display-name "Python (climbing-env)"
-```
-
-Ensure Microsoft’s Python and Jupyter extensions are enabled in Codespaces.
-
-Open `Beta_Translator.ipynb`, click **Select Kernel**, and choose `Python (climbing-env)` or the repository’s `.venv/bin/python`.
-
-Restart the kernel after installing packages.
-
-### 6. Verify installation
-
-Run this in a notebook cell:
+Section 1 contains the video path, output folder, pose thresholds, target height, and wall scale. `RATIOS` is defined once in the IK file. Override individual entries with measured segment length divided by height:
 
 ```python
-import sys
-import torch
-import torchvision
-import numpy as np
-import pandas as pd
-import cv2
-import mediapipe as mp
-import ipywidgets as widgets
-from detectron2 import _C
-
-print("Python:", sys.executable)
-print("PyTorch:", torch.__version__)
-print("Torchvision:", torchvision.__version__)
-print("CUDA available:", torch.cuda.is_available())
-print("Required imports succeeded.")
+RATIOS = {**RATIOS, 'forearm': measured_forearm_cm / TARGET_HEIGHT_CM}
 ```
 
-The current hold segmentation configuration uses the CPU. A `False` CUDA result does not prevent that step from running.
+For a new video, choose a separate output folder and set `USE_SAVED_HOLD_MAP = False`. Review the new detector output and fill in `NEW_ROUTE_HOLD_IDS` in Section 4. Fresh detection needs `models/experiment_config.yml` and `models/model_final.pth`. IDs belong to one map; never reuse an old selection without review.
 
-Successful imports do not establish that the complete notebook or model inference will succeed.
+All wall geometry uses frame 0. The supplied clip's scale is approximately 1.798 pixels/cm, based on a measured 46 cm edge-to-edge gap. The physical endpoints are H44/H40 in the reviewed 65-hold map, formerly H45/H41. The default scale is enabled only for the original video's hash. A new video requires its own measured scale, independent of body height.
 
-## Running the Notebook
+## Saved outputs
 
-1. Confirm that the video path refers to the intended input video.
-2. Confirm that `MODEL_DIR` contains `experiment_config.yml` and `model_final.pth`.
-3. Run the notebook cells in order.
-4. Review the predicted hold image.
-5. Enter the desired IDs in `SELECTED_HOLD_IDS`, without duplicates.
-6. Run the hold review cell before opening the contact annotation interface.
-7. Check the overlay alignment before assigning contacts.
+- `pose_coordinates.csv` and `pose_output.mp4`: one tracking pass and one set of thresholds.
+- `pose_manifest.json`: video/model/settings and output hashes for reuse checks.
+- `wall_reference.jpg` and `reviewed_hold_map.npz`: frame-0 image, masks, stable IDs, and reviewed route.
+- `alignment_cache.npz`: current transforms, status, settings, and matching input hashes.
+- `endpoint_annotations.json`: explicitly saved endpoint frames, contact labels, moving limb, notes, body ratios, height, and wall scale.
+- `contact_matching/`: draft contacts, intervals, sample images, settings, and summary.
+- `wall_motion_h264.mp4`: original tracked motion on the fixed hold map.
+- `reviewed_contact_data.zip`: current analysis inputs/results and saved endpoints when available.
 
-Hold IDs belong to a particular prediction run. Changing the reference frame, model, or threshold may change their numbering. Review the new prediction rather than reusing an old ID list automatically.
+Old or mismatched alignment caches are recomputed. Export checks that contact results and alignment match the current saved poses. Video and model weights remain separate inputs.
 
-Restarting the kernel clears variables, including the prediction and review identifiers. Rerun the prerequisite cells after a restart.
+## Checks and limitations
 
-## Recent Updates
+Run `.venv/bin/python -m unittest discover -s tests -v` for focused helper checks.
 
-1. Adapted file loading for files already present in Codespaces.
-2. Added environment setup documentation.
-3. Added the matching hold model configuration and weights.
-4. Changed the hold detection reference to the current video’s first frame.
-5. Updated the manually selected route hold IDs.
-6. Added generated pose outputs and supporting files.
+Visibility is not measured joint accuracy. Draft contacts use wrists and foot-index points; IK approximates contact using wrists/ankles and hold centers. Unknown contacts and smears need further annotation before fitting. Uniform scale does not rectify perspective or recover body depth. Small geometric error does not establish grip, balance, strength, or physical feasibility.
 
-## Current Limitations
+See `docs/Contact_Matching.md` for review details. The older Codespaces guide is historical; this README describes the current local workflow.
 
-The hold rendering function applies fixed reference masks to video frames. It does not currently compensate for camera movement.
+## Sources and AI assistance
 
-Using the first video frame as the reference addresses an inconsistent starting reference, but later frames can still become misaligned. Equal image dimensions do not guarantee equal hold coordinates.
+- [MediaPipe](https://github.com/google-ai-edge/mediapipe): pose tracking and adapted visualization code.
+- [Indoor Climbing Hold and Route Segmentation](https://github.com/xiaoxiae/Indoor-Climbing-Hold-and-Route-Segmentation): pretrained detector workflow (GPL-3.0).
+- [Model dataset](https://www.kaggle.com/datasets/tomasslama/indoor-climbing-gym-hold-segmentation): matching `Basic_Augmented_P2P3_DoubleTopK_NMS_2KIT` configuration and weights.
+- [Detectron2](https://github.com/facebookresearch/detectron2): hold inference.
+- [The Way Up](https://arxiv.org/html/2505.12854v1): proximity and temporal-filtering idea; this implementation uses masks and does not reproduce the full method.
 
-Inspect overlays at several points in the video. If the camera moves, frame registration or video stabilization is needed before relying on spatial contact comparisons.
-
-Hold predictions can contain missed detections or incorrect boundaries. Manual review remains necessary. The prototype does not yet establish whether an adapted movement is physically feasible for another climber.
-
-## Troubleshooting
-
-### Package imports fail in the notebook
-
-Check `sys.executable` and confirm that the notebook uses the environment where the packages were installed.
-
-### Widgets do not display
-
-Test a basic widget:
-
-```python
-import ipywidgets as widgets
-from IPython.display import display
-
-display(widgets.IntSlider(description="Test"))
-```
-
-If it fails, confirm that Microsoft’s Jupyter and Jupyter Notebook Renderers extensions are enabled. Save the notebook, run **Developer: Reload Window** from the Command Palette, reselect the kernel, and rerun the test.
-
-Old widget outputs may need to be cleared and recreated.
-
-### Video cannot be read
-
-Check the input path and file size. Confirm that Git LFS downloaded the actual video using `git lfs pull`.
-
-A valid path alone does not guarantee that OpenCV can decode the video.
-
-### Hold review variables are undefined
-
-Run hold detection, then the hold selection and review cell, before running contact annotation.
-
-### Detectron2 compilation terminates
-
-Inspect `detectron2_install.log`. A terminated compiler does not by itself prove a memory shortage or Python compatibility problem.
-
-To inspect container memory information:
-
-```bash
-free -h
-cat /sys/fs/cgroup/memory.max
-cat /sys/fs/cgroup/memory.events
-```
-
-The cgroup paths depend on the container configuration.
-
-## Model Source
-
-The hold segmentation experiment uses the authors’ `Basic_Augmented_P2P3_DoubleTopK_NMS_2KIT` model.
-
-Dataset and model source:
-https://www.kaggle.com/datasets/tomasslama/indoor-climbing-gym-hold-segmentation
-
-Detectron2:
-https://github.com/facebookresearch/detectron2
-
-MediaPipe:
-https://github.com/google-ai-edge/mediapipe
+Codex assisted with review, local-workflow consolidation, transferring IK fixes into Python modules, persistence/export checks, and focused tests. These changes include AI-generated code; the team should review it and report its use in course submissions.
