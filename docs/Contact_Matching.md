@@ -28,3 +28,17 @@ Contact CSV files are saved in `outputs/tables/`, review images in `outputs/imag
 and settings, validation summaries, annotations, and caches in `outputs/state/`.
 Section 10 writes `outputs/exports/reviewed_contact_data.zip`, keeping those subfolders
 inside the archive. Reviewed-map restoration also accepts older flat archives.
+
+
+## Motion timing
+
+Section 7 optionally saves a `motion` object with `release_frame`, `arrival_frame`,
+and `support_contacts_maintained`. Release is the first frame without the old contact;
+arrival is the first frame with the destination contact. BEFORE < RELEASE < ARRIVAL <= AFTER.
+The other three holds must match at both endpoints and be manually confirmed as maintained.
+Editing a contact, endpoint, or moving limb invalidates the timing review in the interface.
+Loading restores all saved timing and body settings. Partial or inconsistent motion annotations
+are rejected on save; endpoint-only files without a motion object remain supported.
+
+Section 8B uses this schedule directly. Predicted contacts never override the manual schedule.
+Its free-limb guide is inferred, and the generated sequence is a 2D geometric candidate only.

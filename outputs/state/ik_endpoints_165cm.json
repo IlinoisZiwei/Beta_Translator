@@ -1,0 +1,95 @@
+{
+  "height_cm": 165,
+  "ratios": {
+    "upper_arm": 0.186,
+    "forearm": 0.146,
+    "thigh": 0.245,
+    "shank": 0.246,
+    "shoulder_w": 0.259,
+    "hip_w": 0.191,
+    "torso": 0.288
+  },
+  "body_lengths_cm": {
+    "upper_arm": 30.69,
+    "forearm": 24.09,
+    "thigh": 40.425,
+    "shank": 40.589999999999996,
+    "shoulder_w": 42.735,
+    "hip_w": 31.515,
+    "torso": 47.519999999999996
+  },
+  "frames": {
+    "before": 107,
+    "after": 129
+  },
+  "contacts": {
+    "before": {
+      "left_hand": "H44",
+      "right_hand": "H33",
+      "left_foot": "H62",
+      "right_foot": "H65"
+    },
+    "after": {
+      "left_hand": "H28",
+      "right_hand": "H33",
+      "left_foot": "H62",
+      "right_foot": "H65"
+    }
+  },
+  "px_per_cm": 1.7980508245001927,
+  "fps": 30.0,
+  "source_frame_for_background": 0,
+  "endpoints": {
+    "before": {
+      "frame": 107,
+      "seconds": 3.566666666666667,
+      "pose_vector": [
+        239.74656080357218,
+        359.22145348523645,
+        0.10260845517379248,
+        -0.4096638929463634,
+        2.2326612011527467,
+        2.074141630467427,
+        2.1950720025491015,
+        -0.9265906074625097,
+        1.81152797004299,
+        -0.12014185732094075,
+        -0.001492985193069063
+      ],
+      "contact_errors_cm": {
+        "left_hand": 1.0151847283665759e-06,
+        "right_hand": 5.861438948186827e-06,
+        "left_foot": 1.7569182199589988e-06,
+        "right_foot": 1.821843296998862e-05
+      },
+      "max_contact_error_cm": 1.821843296998862e-05,
+      "alignment_status": "ok"
+    },
+    "after": {
+      "frame": 129,
+      "seconds": 4.3,
+      "pose_vector": [
+        226.11848895266857,
+        364.3836797258838,
+        -0.19540710700899783,
+        2.458429063544367,
+        0.020744979578668905,
+        2.112074168586687,
+        2.1190704257537356,
+        0.9239138176448184,
+        -1.4323033194773547,
+        0.048482940489904515,
+        0.0036684801428955543
+      ],
+      "contact_errors_cm": {
+        "left_hand": 1.149062553167997e-05,
+        "right_hand": 2.305761010847332e-05,
+        "left_foot": 9.92507332169799e-07,
+        "right_foot": 5.233001730929936e-05
+      },
+      "max_contact_error_cm": 5.233001730929936e-05,
+      "alignment_status": "ok"
+    }
+  },
+  "interpretation": "Static 2D geometric fits; contact residuals are numerical model errors, not measurement accuracy or a physical success prediction."
+}

@@ -1,4 +1,5 @@
 {
+  "video_sha256": "db656ed38a93a619f6df7dbd65804718860aa9191e650a1a92952ab6063a007a",
   "pose_rows": 417,
   "limb_rows": 1668,
   "hold_candidates": 65,
@@ -25,7 +26,7 @@
     "H13",
     "H62"
   ],
-  "draft_intervals": 10,
+  "draft_intervals": 11,
   "sample_frames": [
     0,
     104,
@@ -35,47 +36,58 @@
   ],
   "alignment_frames": 417,
   "alignment_fallbacks": 0,
+  "candidate_run_id": "reviewed65_00e1a17b05674bba8bc9bc04fdb56bc1",
   "status_counts": {
     "ambiguous": {
-      "left_foot": 33,
+      "left_foot": 28,
       "left_hand": 1,
-      "right_foot": 8,
+      "right_foot": 13,
       "right_hand": 1
     },
     "likely_contact": {
-      "left_foot": 18,
-      "left_hand": 25,
-      "right_foot": 238,
-      "right_hand": 59
+      "left_foot": 15,
+      "left_hand": 24,
+      "right_foot": 249,
+      "right_hand": 60
     },
     "low_visibility": {
-      "left_foot": 242,
+      "left_foot": 233,
       "left_hand": 373,
-      "right_foot": 103,
-      "right_hand": 319
+      "right_foot": 101,
+      "right_hand": 317
     },
     "no_candidate": {
-      "left_foot": 66,
-      "left_hand": 6,
+      "left_foot": 70,
+      "left_hand": 4,
       "right_foot": 26,
       "right_hand": 2
     },
     "tentative": {
-      "left_foot": 58,
-      "left_hand": 12,
-      "right_foot": 42,
-      "right_hand": 36
+      "left_foot": 71,
+      "left_hand": 15,
+      "right_foot": 28,
+      "right_hand": 37
     }
   },
-  "candidate_run_id": "reviewed65_00e1a17b05674bba8bc9bc04fdb56bc1",
-  "video_sha256": "db656ed38a93a619f6df7dbd65804718860aa9191e650a1a92952ab6063a007a",
-  "versions": {
-    "python": "3.12.4",
-    "torch": "2.14.1",
-    "torchvision": "0.29.1",
-    "opencv": "5.0.0",
-    "mediapipe": "1.1.0"
+  "body": {
+    "height_cm": 165,
+    "ratios": {
+      "upper_arm": 0.186,
+      "forearm": 0.146,
+      "thigh": 0.245,
+      "shank": 0.246,
+      "shoulder_w": 0.259,
+      "hip_w": 0.191,
+      "torso": 0.288
+    },
+    "px_per_cm": 1.7980508245001927
   },
-  "inputs": "Saved 65-hold detector output, existing main pose CSV, and previously verified alignment.",
-  "interpretation": "Geometric contact drafts for visual review; not proof of a grip or load-bearing contact."
+  "versions": {
+    "python": "3.12.15",
+    "opencv": "5.0.0",
+    "mediapipe": "1.1.1"
+  },
+  "manual_endpoints_included": true,
+  "interpretation": "Geometric drafts and reviewed annotations; no proof of grip or physical feasibility.",
+  "motion_results_included": true
 }

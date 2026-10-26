@@ -146,6 +146,9 @@ def validate_annotations(data, video_file, run_id, hold_ids, frame_count):
     scale = body['px_per_cm']
     if scale is not None and (not np.isfinite(scale) or scale <= 0):
         raise ValueError('Wall scale must be positive, or None when unmeasured.')
+    if data.get('motion') is not None:
+        from .motion_ik import validate_motion_annotation
+        validate_motion_annotation(data)
     return data
 
 

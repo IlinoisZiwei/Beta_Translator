@@ -2,7 +2,7 @@
 
 Ziwei Wang · Justin Zou · Pengfan Zhang
 
-Beta Translator analyzes a climbing video and fits a target body to reviewed contact positions. The current outputs are a static 2D IK fit and a replay of the original tracked movement. Personalized movement recommendations remain a project goal.
+Beta Translator analyzes a climbing video and fits a target body to reviewed contact positions. The outputs include static 2D IK fits, a contact-aware continuous 2D candidate for a reviewed single-limb move, and a separate replay of the original tracked movement. Personalized movement recommendations remain a project goal.
 
 ## Run locally on macOS
 
@@ -11,7 +11,7 @@ Beta Translator analyzes a climbing video and fits a target body to reviewed con
 3. Open `Beta_Translator.ipynb` in VS Code/Jupyter with the repository as the working directory. Select `.venv/bin/python` as its kernel.
 4. Run the notebook in order. Section 1 checks dependencies without installing packages or transferring files.
 5. In Section 7, review drafts, choose BEFORE/AFTER frames, and manually confirm four contacts per endpoint. Click **Save annotations**.
-6. Run Section 8 for the target-body fit, Section 9 for the original-motion replay, and Section 10 for the export.
+6. Run Section 8 for a static target-body fit. To fit a sequence, enter release/arrival frames in Section 7, confirm the other three contacts remain fixed, save, and run Section 8B. Section 9 replays the original motion; Section 10 exports current results.
 
 Use **Load annotations** after restarting. Changing an endpoint resets its contact labels. Automatic drafts never replace manual choices. After editing a helper `.py` file, restart the kernel to import the changes.
 
@@ -24,6 +24,8 @@ Use **Load annotations** after restarting. Changing an endpoint resets its conta
 | `beta_translator/pose_adapter.py` | Coordinate conversion and pose-vector construction |
 | `beta_translator/contact_matching.py` | Hold-mask proximity and persistent contact intervals |
 | `beta_translator/project_io.py` | Video I/O, reviewed maps, caches, and endpoint persistence |
+| `beta_translator/motion_ik.py` | Contact schedule, whole-interval IK optimization, and residual checks |
+| `beta_translator/motion_pipeline.py` | Saved-input validation, source/fit videos, tables, and export provenance |
 | `data/reviewed_contact_data.zip` | Original reviewed example data; only its hold map is restored automatically |
 
 The notebook imports shared functions instead of keeping second copies. The IK solver clips the initial guess, preserves bend bounds, uses Jacobian variable scaling, and reports nonconvergence.
@@ -88,3 +90,29 @@ See `docs/Contact_Matching.md` for review details. The older Codespaces guide is
 - [Model dataset](https://www.kaggle.com/datasets/tomasslama/indoor-climbing-gym-hold-segmentation): matching `Basic_Augmented_P2P3_DoubleTopK_NMS_2KIT` configuration and weights.
 - [Detectron2](https://github.com/facebookresearch/detectron2): hold inference.
 - [The Way Up](https://arxiv.org/html/2505.12854v1): proximity and temporal-filtering idea; this implementation uses masks and does not reproduce the full method.
+
+
+## Continuous candidate in Section 8B
+
+The current reviewed example uses frames 107–129, release 117 (first free frame),
+arrival 128 (first contact on H28), and 165 cm with default body ratios.
+Left hand: H44 on 107–116, free on 117–127, H28 on 128–129.
+The user confirmed right hand H33, left foot H62, and right foot H65 remain in contact.
+
+The optimizer fits all frames together, using the existing fixed-length body geometry,
+visibility-weighted reference angles, contact penalties, and velocity/acceleration penalties.
+It checks final contact errors separately; the tolerance is numerical, not a statement about
+video accuracy. The free hand has a soft minimum-jerk straight-line guide between targets.
+This guide is inferred, especially when hand tracking is occluded. Endpoints are jointly
+refitted, so they can differ from the independently fitted static endpoints.
+
+Outputs: `videos/motion_ik_h264.mp4`, `videos/motion_ik_slow_h264.mp4` (one-third speed),
+`images/ik_motion_storyboard.png`, `tables/motion_ik_poses.csv`,
+`state/motion_ik_trajectory.npz`, and `state/motion_ik_summary.json`.
+The summary records input/code/output hashes and timing, residual, and continuity diagnostics.
+Section 10 rejects stale motion artifacts. Rerun 8B after changing body, contact, timing,
+pose, alignment, hold-map, or motion-code inputs.
+
+This first model requires one moving limb, known endpoint holds, and three maintained supports.
+Missing poses or unreliable alignment stop the fit. No forces, friction, balance, collision,
+depth, or human success probability are modeled. Numerical convergence is not physical validation.
