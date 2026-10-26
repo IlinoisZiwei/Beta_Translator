@@ -8,6 +8,9 @@
     "min_inliers": 25
   },
   "video": "videos/trial1.mp4",
+  "video_sha256": "db656ed38a93a619f6df7dbd65804718860aa9191e650a1a92952ab6063a007a",
+  "pose_sha256": "81306c6a7a5eab8181a7bbc1baa1fa3be55d4187681c30a08fe89c98cd7a5d4a",
+  "alignment_sha256": "4c9ccc23550e58cbf416b323a04d69f76b2659b00591e7f5ceeb9f1840dfc66d",
   "fps": 30.0,
   "selected_holds": [
     "H65",

@@ -1,0 +1,13 @@
+{
+  "inputs": {
+    "video_sha256": "db656ed38a93a619f6df7dbd65804718860aa9191e650a1a92952ab6063a007a",
+    "model_sha256": "64437af838a65d18e5ba7a0d39b465540069bc8aae8308de3e318aad31fcbc7b",
+    "settings": {
+      "min_pose_detection_confidence": 0.5,
+      "min_pose_presence_confidence": 0.5,
+      "min_tracking_confidence": 0.5
+    }
+  },
+  "pose_sha256": "81306c6a7a5eab8181a7bbc1baa1fa3be55d4187681c30a08fe89c98cd7a5d4a",
+  "overlay_sha256": "599c2f8a2859e11531410befbe5964488e085804c74f8f7be125715b3e3d9670"
+}
