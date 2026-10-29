@@ -1,0 +1,33 @@
+test_conflicts_and_unknown_holds_are_not_free (test_learned_contacts.LearnedContactTests.test_conflicts_and_unknown_holds_are_not_free) ... ok
+test_detector_miss_does_not_switch_to_distant_bystander (test_learned_contacts.LearnedContactTests.test_detector_miss_does_not_switch_to_distant_bystander) ... Saved /var/folders/0b/qpchpw4x2m1_1pq3fvk6_xx00000gn/T/tmprg5_lcug/pose.npz (0.0s)
+ok
+test_hold_permutation_and_chunk_invariance (test_learned_contacts.LearnedContactTests.test_hold_permutation_and_chunk_invariance) ... ok
+test_ik_adapter_rejects_uncertain_and_mismatched_inputs (test_learned_contacts.LearnedContactTests.test_ik_adapter_rejects_uncertain_and_mismatched_inputs) ... ok
+test_people_never_overlap_splits (test_learned_contacts.LearnedContactTests.test_people_never_overlap_splits) ... ok
+test_release_and_arrival_and_unknown_support_gate (test_learned_contacts.LearnedContactTests.test_release_and_arrival_and_unknown_support_gate) ... ok
+test_review_draft_does_not_confirm_motion (test_learned_contacts.LearnedContactTests.test_review_draft_does_not_confirm_motion) ... ok
+test_temporal_baseline_votes_on_nominal_hold_ids (test_learned_contacts.LearnedContactTests.test_temporal_baseline_votes_on_nominal_hold_ids) ... ok
+test_visibility_gaps_short_runs_and_ambiguity (test_local_pipeline.ContactTests.test_visibility_gaps_short_runs_and_ambiguity) ... ok
+test_adapter_import_and_coordinate_roundtrip (test_local_pipeline.IKTests.test_adapter_import_and_coordinate_roundtrip) ... ok
+test_custom_ratios_and_invalid_lengths (test_local_pipeline.IKTests.test_custom_ratios_and_invalid_lengths) ... ok
+test_matching_body_preserves_known_contacts (test_local_pipeline.IKTests.test_matching_body_preserves_known_contacts) ... ok
+test_nonconvergence_is_reported (test_local_pipeline.IKTests.test_nonconvergence_is_reported) ... ok
+test_out_of_bounds_initial_bend_is_clipped (test_local_pipeline.IKTests.test_out_of_bounds_initial_bend_is_clipped) ... ok
+test_cache_roundtrip_and_changed_inputs (test_local_pipeline.SavedInputTests.test_cache_roundtrip_and_changed_inputs) ... ok
+test_hold_restore_from_organized_bundle (test_local_pipeline.SavedInputTests.test_hold_restore_from_organized_bundle) ... ok
+test_hold_restore_preserves_ids_without_replacing_poses (test_local_pipeline.SavedInputTests.test_hold_restore_preserves_ids_without_replacing_poses) ... ok
+test_legacy_cache_requires_recomputation (test_local_pipeline.SavedInputTests.test_legacy_cache_requires_recomputation) ... ok
+test_manual_annotations_roundtrip_and_stale_route (test_local_pipeline.SavedInputTests.test_manual_annotations_roundtrip_and_stale_route) ... ok
+test_batch_matches_existing_body_geometry (test_motion_ik.MotionTests.test_batch_matches_existing_body_geometry) ... ok
+test_changed_annotations_invalidate_motion_export (test_motion_ik.MotionTests.test_changed_annotations_invalidate_motion_export) ... ok
+test_known_reachable_move_preserves_supports_and_avoids_angle_wrap_jump (test_motion_ik.MotionTests.test_known_reachable_move_preserves_supports_and_avoids_angle_wrap_jump) ... ok
+test_missing_frames_and_nonfinite_weights_rejected (test_motion_ik.MotionTests.test_missing_frames_and_nonfinite_weights_rejected) ... ok
+test_motion_annotation_persistence_and_validation (test_motion_ik.MotionTests.test_motion_annotation_persistence_and_validation) ... ok
+test_optimizer_failure_is_not_exportable_as_success (test_motion_ik.MotionTests.test_optimizer_failure_is_not_exportable_as_success) ... ok
+test_reject_unconfirmed_or_inconsistent_motion (test_motion_ik.MotionTests.test_reject_unconfirmed_or_inconsistent_motion) ... ok
+test_release_and_arrival_boundary_semantics (test_motion_ik.MotionTests.test_release_and_arrival_boundary_semantics) ... ok
+
+----------------------------------------------------------------------
+Ran 27 tests in 1.336s
+
+OK

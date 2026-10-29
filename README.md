@@ -116,3 +116,9 @@ pose, alignment, hold-map, or motion-code inputs.
 This first model requires one moving limb, known endpoint holds, and three maintained supports.
 Missing poses or unreliable alignment stop the fit. No forces, friction, balance, collision,
 depth, or human success probability are modeled. Numerical convergence is not physical validation.
+## Trained automatic contacts
+
+The optional [automatic contact pipeline](docs/automatic_contacts.md) adds frozen
+whole-body pose tracking and a trained temporal model for hold association and
+release/arrival proposals. Open `Automatic_Contacts.ipynb` for inference and review.
+The existing reviewed annotations and IK notebook remain available.

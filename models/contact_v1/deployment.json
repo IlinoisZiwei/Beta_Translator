@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "feature_version": 1,
+  "training_fps": 25.0,
+  "pose_backbone": {
+    "model": "rtmw-dw-x-l_simcc-cocktail14_270e-384x288_20231122",
+    "pose_sha256": "bd033156e5104c4f5d2edfe0453e02661e30a2f3da453ec93c8764d561b83054",
+    "detector_sha256": "3dea6513388889f0fff4b77bf7a26013600321b9eb9ceb0e9a400a82572f5f23",
+    "tracking_version": 2,
+    "keypoint_format": "COCO-WholeBody-133"
+  },
+  "temperature": 1.0,
+  "switch_penalty": 6.0,
+  "accept_threshold": 0.8,
+  "max_timing_width_sec": -1.0,
+  "movement_accept_threshold": 1.01,
+  "automatic_ik_enabled": false,
+  "move_validation_rule": "At least 10 scored validation proposals, >=95% correct contacts/supports and both boundaries within 0.2s",
+  "validation_accuracy_target": 0.97,
+  "checkpoints": [
+    {
+      "file": "model_1.pt",
+      "sha256": "3aea6211ecc62eb79731536af388476b76a35d9af9483999fc8108decd479119"
+    },
+    {
+      "file": "model_2.pt",
+      "sha256": "ee003c9dad6df413f3347f3fad25bc62042cf02560ee7a41d9f6d30d4c7c2aac"
+    },
+    {
+      "file": "model_3.pt",
+      "sha256": "896ea4175834688ad445876cce6929969eca2e879db73f5fea713fa4b9796abb"
+    }
+  ],
+  "manifest_sha256": "bdad4d6e5a5e195987864c076958dbc4a09531899ef2e145d039592e1139fb65",
+  "baseline": {
+    "distance": 0.6,
+    "window": 13,
+    "penalty": 2.0
+  },
+  "scope": "Offline, one climber, reviewed hold map; unseen people on the same two routes",
+  "release_definition": "First frame no longer in contact",
+  "arrival_definition": "First frame in contact",
+  "confidence_warning": "Validation calibration is not a guarantee on a new wall."
+}

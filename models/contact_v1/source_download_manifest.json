@@ -1,0 +1,565 @@
+{
+  "source": "https://zenodo.org/api/records/15196867/files/dataset.zip/content",
+  "doi": "10.5281/zenodo.15196867",
+  "license": "CC-BY-4.0",
+  "authors": [
+    "Anna Maschek",
+    "David C. Schedl"
+  ],
+  "archive_bytes": 20889661515,
+  "selection": "All members except original large videos and macOS metadata",
+  "files": [
+    {
+      "path": "p1/green.mp4",
+      "bytes": 64888492,
+      "sha256": "03597390ad79826fe3b908d51b0da690165f30a9e6a410e6be09934ddd77b5fa",
+      "zip_crc32": 1752896097
+    },
+    {
+      "path": "p1/green_bolt_holes.json",
+      "bytes": 452,
+      "sha256": "b4f1a20c8d2de068739450ffafbdf8a4e63db2c24b1fd1f14d7bb1920482daca",
+      "zip_crc32": 333604773
+    },
+    {
+      "path": "p1/green_holdUsage.csv",
+      "bytes": 1446,
+      "sha256": "adf3383df467af1b7275427de01aefaa9a597598c8dffc5ab14366b800c5028c",
+      "zip_crc32": 3660308182
+    },
+    {
+      "path": "p1/green_routeAnnotation.json",
+      "bytes": 2311,
+      "sha256": "355e3bd4cb03f2d73b306290b3c3af04817a4a7f3626d3b477824fe82904b58b",
+      "zip_crc32": 1618152762
+    },
+    {
+      "path": "p1/orange.mp4",
+      "bytes": 30500224,
+      "sha256": "dacc44ce49f10ae5eacf887ad45658d87c1827444b32067619df469cb2b74c92",
+      "zip_crc32": 1302356705
+    },
+    {
+      "path": "p1/orange_bolt_holes.json",
+      "bytes": 463,
+      "sha256": "025ef38b49bd3df21c59201406cfa248c798f51b97d3063ff8f90f5d3a44b4c3",
+      "zip_crc32": 3818155946
+    },
+    {
+      "path": "p1/orange_holdUsage.csv",
+      "bytes": 1013,
+      "sha256": "95be8b400e80be5e500510fbdbcb6add2ae25e66d2b932f78b8c6e9efc5248c3",
+      "zip_crc32": 2182986469
+    },
+    {
+      "path": "p1/orange_routeAnnotation.json",
+      "bytes": 3250,
+      "sha256": "76424eb8fec257fdf0746fdb56500b430bca8ed6574caeadece6261ef8419a3e",
+      "zip_crc32": 1346542869
+    },
+    {
+      "path": "p2a/green.mp4",
+      "bytes": 23259316,
+      "sha256": "1d1b5bc4ab943c33f2eb867ca82641f50bf60f2af1021664801461aeac5e2c23",
+      "zip_crc32": 3443743323
+    },
+    {
+      "path": "p2a/green_bolt_holes.json",
+      "bytes": 41318,
+      "sha256": "72d5749279ed385d48f48cd027f16a9cfa53a09848e7c9d4e260c208607b1902",
+      "zip_crc32": 1680305117
+    },
+    {
+      "path": "p2a/green_holdUsage.csv",
+      "bytes": 1000,
+      "sha256": "9e2020406788b3a479b0752025827cd99b4f3dc1332636ad52777cbe1c2e8513",
+      "zip_crc32": 2655309259
+    },
+    {
+      "path": "p2a/green_routeAnnotation.json",
+      "bytes": 2308,
+      "sha256": "24f21202a22e09ef6204f958d4e6024e15e46f3006dae079e8576750f7e660fe",
+      "zip_crc32": 1065850695
+    },
+    {
+      "path": "p2a/orange.mp4",
+      "bytes": 16549066,
+      "sha256": "407a84bb7ff9f43f4c5e821bcc0ceb01c003ce842c0b17a54b0c282e8f45e534",
+      "zip_crc32": 3970288142
+    },
+    {
+      "path": "p2a/orange_bolt_holes.json",
+      "bytes": 461,
+      "sha256": "702d470664499582826696a52a5ca8adfc5961f0a7a9bb5ac9d5ea347ff92e8b",
+      "zip_crc32": 3652788868
+    },
+    {
+      "path": "p2a/orange_holdUsage.csv",
+      "bytes": 940,
+      "sha256": "dfed839c801db846f3c5b0627f15b97eaa48b4f0f2f02d7f19fdb86209b09884",
+      "zip_crc32": 455526644
+    },
+    {
+      "path": "p2a/orange_routeAnnotation.json",
+      "bytes": 3250,
+      "sha256": "f9bc889d86ffa901dac241fcf410e76a624f7a9832d27750b25388790ed0bd99",
+      "zip_crc32": 3259727386
+    },
+    {
+      "path": "p2b/green.mp4",
+      "bytes": 20029067,
+      "sha256": "b8509dc39b22b66ea725b16d9e464ba32929675540b12549f56084da6bfba245",
+      "zip_crc32": 766580459
+    },
+    {
+      "path": "p2b/green_bolt_holes.json",
+      "bytes": 454,
+      "sha256": "d6ee5cb631f8cc85e54f8840762b2b7e6403959520105c26b53be915cf1d9ca8",
+      "zip_crc32": 2750149422
+    },
+    {
+      "path": "p2b/green_holdUsage.csv",
+      "bytes": 978,
+      "sha256": "e0139bd286d2ee4a27a1178bd76abcf2f9aa609356523e8c303de1358ae4fb9b",
+      "zip_crc32": 2568997338
+    },
+    {
+      "path": "p2b/green_routeAnnotation.json",
+      "bytes": 2311,
+      "sha256": "353616b4b66070e9581e625209d89e663f091bb75c3537edee2d86364f3404a6",
+      "zip_crc32": 880308951
+    },
+    {
+      "path": "p2b/orange.mp4",
+      "bytes": 16019381,
+      "sha256": "db2cff44a645c5cfefae26d8048ebd8643853267fef87fd9400ecabfc0e2605b",
+      "zip_crc32": 852765167
+    },
+    {
+      "path": "p2b/orange_bolt_holes.json",
+      "bytes": 463,
+      "sha256": "53f6465332994903a7633aea32654dfe17f4a5824e519bf325c13ddf2aed83d3",
+      "zip_crc32": 3283608309
+    },
+    {
+      "path": "p2b/orange_holdUsage.csv",
+      "bytes": 939,
+      "sha256": "df36b433f52e45a602b096d650d34745da8396defa960ac756bc509667f0d2d3",
+      "zip_crc32": 3210048982
+    },
+    {
+      "path": "p2b/orange_routeAnnotation.json",
+      "bytes": 3251,
+      "sha256": "89cf3fd93befb2cdfdb0ae09f9984d830cfd1a193bac013c01328fa83a9d3bd2",
+      "zip_crc32": 2502984534
+    },
+    {
+      "path": "p3/green.mp4",
+      "bytes": 17680798,
+      "sha256": "008036bc6436a630d302590e0910bda87f502ca6611d269b18fc93cb27e09708",
+      "zip_crc32": 1410534486
+    },
+    {
+      "path": "p3/green_bolt_holes.json",
+      "bytes": 459,
+      "sha256": "21dd0474f88921eecc871797075f7ed4387128b6bf051de6f50b030cc7c61f38",
+      "zip_crc32": 707590348
+    },
+    {
+      "path": "p3/green_holdUsage.csv",
+      "bytes": 1026,
+      "sha256": "c28bea3071240aafffe456d1a7734a7441b9bc29d5934203ab65f77e67493a16",
+      "zip_crc32": 3876296616
+    },
+    {
+      "path": "p3/green_routeAnnotation.json",
+      "bytes": 2311,
+      "sha256": "07de687072ef38735fc828b65915a6ad5b400aa9280d596e99c6172b14d528cd",
+      "zip_crc32": 1761369316
+    },
+    {
+      "path": "p3/orange.mp4",
+      "bytes": 13171886,
+      "sha256": "e26c583af063660661f45df1d8f6b0929c12f402549e94a5f6b0b793baf140cb",
+      "zip_crc32": 3475715949
+    },
+    {
+      "path": "p3/orange_bolt_holes.json",
+      "bytes": 461,
+      "sha256": "e55982f26244021f7f946ccbb4dd37c0f69f706a4abed2f5e66b1b04b002b718",
+      "zip_crc32": 2920117972
+    },
+    {
+      "path": "p3/orange_holdUsage.csv",
+      "bytes": 800,
+      "sha256": "769a5ddf6fbcb3c9187be0ba25df7944059b1d98f3ad9768e6d5ddb892e5ba84",
+      "zip_crc32": 3376180072
+    },
+    {
+      "path": "p3/orange_routeAnnotation.json",
+      "bytes": 3251,
+      "sha256": "a79a5d4ed9d07dc5149e967e4eafcb6683105fb561bbb3d08e17828cc0347f10",
+      "zip_crc32": 1852994566
+    },
+    {
+      "path": "p4/green.mp4",
+      "bytes": 31769858,
+      "sha256": "3e8fbe31fb06376a151ebbea5e010f0316758ecce1290fbc1a50fa315428bb6e",
+      "zip_crc32": 2744226023
+    },
+    {
+      "path": "p4/green_bolt_holes.json",
+      "bytes": 465,
+      "sha256": "e2dff48b17f0c9c265b7a1e72553a3f79858535752d622007fe7bac8c92669b1",
+      "zip_crc32": 2449376965
+    },
+    {
+      "path": "p4/green_holdUsage.csv",
+      "bytes": 1090,
+      "sha256": "408a9e9b3814bab29c0f090322b9a21eae4d121ddd3d4e6cd80144f79ed44c70",
+      "zip_crc32": 488822273
+    },
+    {
+      "path": "p4/green_routeAnnotation.json",
+      "bytes": 2308,
+      "sha256": "bfe6059b298c8e2dec98ca0b5c9aa49d12fbf91afbe8d92157bc1ac95dede35b",
+      "zip_crc32": 384388455
+    },
+    {
+      "path": "p4/orange.mp4",
+      "bytes": 17224776,
+      "sha256": "88f1bf60d70085721feb34927e03c893214f0982fa4c54b66b2cfba0632eb1eb",
+      "zip_crc32": 1088097445
+    },
+    {
+      "path": "p4/orange_bolt_holes.json",
+      "bytes": 467,
+      "sha256": "e091afff58fb66878651dc9706e161628b0768cd5f15b4457a40c112ed02c5f4",
+      "zip_crc32": 92304783
+    },
+    {
+      "path": "p4/orange_holdUsage.csv",
+      "bytes": 870,
+      "sha256": "8e5fddb29c4fa5d1d1586103b0e6f42722ff91644309b34f83e5150096586221",
+      "zip_crc32": 1778146360
+    },
+    {
+      "path": "p4/orange_routeAnnotation.json",
+      "bytes": 3251,
+      "sha256": "ab363e827ce3835154f5a37fb9b16aef64ce61659e8c6ec7a9e06aef56d01f59",
+      "zip_crc32": 604381388
+    },
+    {
+      "path": "p5/green.mp4",
+      "bytes": 31580475,
+      "sha256": "92158754eb221ff98849bc4839b247a02af7052c6c7fff2dfd473b569b8ab703",
+      "zip_crc32": 185849949
+    },
+    {
+      "path": "p5/green_bolt_holes.json",
+      "bytes": 462,
+      "sha256": "e2c888b77b44da5f3055cb989a3440eeb6b4f3bf23110429a44f1195a198f426",
+      "zip_crc32": 3936103662
+    },
+    {
+      "path": "p5/green_holdUsage.csv",
+      "bytes": 840,
+      "sha256": "1b668674647ec94d8ef15b8ba31f0beb4c8f526e1fc20aa65b1c50dab3d0039c",
+      "zip_crc32": 1077329652
+    },
+    {
+      "path": "p5/green_routeAnnotation.json",
+      "bytes": 2314,
+      "sha256": "13a7d9d86c0aa2abc2e2a29a71847c9254560fb073deb35e69a7ef203a9863cd",
+      "zip_crc32": 3610351429
+    },
+    {
+      "path": "p5/orange.mp4",
+      "bytes": 20436912,
+      "sha256": "3c9aa5a954b45e18a40edcb3476633481d5758f96836e8488b640023c366f5aa",
+      "zip_crc32": 315517418
+    },
+    {
+      "path": "p5/orange_bolt_holes.json",
+      "bytes": 464,
+      "sha256": "6de91288fd00ede336f44baf986e11c3af81a3f8287966ca0005e3598bd399d0",
+      "zip_crc32": 1904290408
+    },
+    {
+      "path": "p5/orange_holdUsage.csv",
+      "bytes": 923,
+      "sha256": "941b012edda3f0957805290dee6a4facf27d53294e6d5d3adc2a665b7445c013",
+      "zip_crc32": 2345618233
+    },
+    {
+      "path": "p5/orange_routeAnnotation.json",
+      "bytes": 3256,
+      "sha256": "d8e4de926b2904290d6a9ae0cc7da3fb2ce0c80ebd20fde68e7bd66363105abe",
+      "zip_crc32": 2420473769
+    },
+    {
+      "path": "p6/green.mp4",
+      "bytes": 32404600,
+      "sha256": "d07d85fcfe3cd37d0d4627027b2bc030b8ee9bf1e678fb5905d3667db8f5aacb",
+      "zip_crc32": 3496224157
+    },
+    {
+      "path": "p6/green_bolt_holes.json",
+      "bytes": 465,
+      "sha256": "be17e380a450d80f51b36237b8a739347ae7752346f51851c686ff6487517c96",
+      "zip_crc32": 406136457
+    },
+    {
+      "path": "p6/green_holdUsage.csv",
+      "bytes": 1074,
+      "sha256": "08e9232da28b18b3d8543f159645005c782e72c47f7be86d0a0eb7af5d4a9060",
+      "zip_crc32": 3388054823
+    },
+    {
+      "path": "p6/green_routeAnnotation.json",
+      "bytes": 2314,
+      "sha256": "a686bafb61b2ac446d3db14520bb5d15f41b3b81f9e9295e42e6c87ab4284ac2",
+      "zip_crc32": 3831253376
+    },
+    {
+      "path": "p6/orange.mp4",
+      "bytes": 25129946,
+      "sha256": "b61c77851bff2a67b4f3c5ccb9a8b095f7a5b8d0c7049322ad626c45baa81e9e",
+      "zip_crc32": 264303452
+    },
+    {
+      "path": "p6/orange_bolt_holes.json",
+      "bytes": 464,
+      "sha256": "0618da0cc42e922ab86230f83a6d97f41d04ecc8ab10fe88ce69ead2d54841fb",
+      "zip_crc32": 4285564334
+    },
+    {
+      "path": "p6/orange_holdUsage.csv",
+      "bytes": 1046,
+      "sha256": "ec7ea2534afdb18a822bb69fa786222a36bc90deba635d8dbfef2ffdc7cf24c2",
+      "zip_crc32": 2851690154
+    },
+    {
+      "path": "p6/orange_routeAnnotation.json",
+      "bytes": 3252,
+      "sha256": "67e75170442c91e6324c6467ef285760f1849f377b4c4253bc5a0e9dbf077c6a",
+      "zip_crc32": 3892434588
+    },
+    {
+      "path": "p7/green.mp4",
+      "bytes": 28054763,
+      "sha256": "81005e226d3a509d8fa6411cff45f9ea474b3a50f674b8c30d81d833af6bd06a",
+      "zip_crc32": 1062523205
+    },
+    {
+      "path": "p7/green_bolt_holes.json",
+      "bytes": 466,
+      "sha256": "864c7b527d5aac75805737bb5442dcff168bec71f6f93d5e2b6355c54383f837",
+      "zip_crc32": 4019284458
+    },
+    {
+      "path": "p7/green_holdUsage.csv",
+      "bytes": 1094,
+      "sha256": "6023aca7e31a6f2b9cfb9c5c48e50c40fe0faf100bb62bc1cb087ea0deed4738",
+      "zip_crc32": 920707157
+    },
+    {
+      "path": "p7/green_routeAnnotation.json",
+      "bytes": 2312,
+      "sha256": "ea89f9124e8465af8ffe0deb5ce5177e9bd5b3a3388551198815a766d858a0d6",
+      "zip_crc32": 3017420732
+    },
+    {
+      "path": "p7/orange.mp4",
+      "bytes": 19650786,
+      "sha256": "488b7bbed46e27c2c995f68b6c13fb01f2a88af2a047f0f0dc552dbca1d4a191",
+      "zip_crc32": 107401420
+    },
+    {
+      "path": "p7/orange_bolt_holes.json",
+      "bytes": 467,
+      "sha256": "6c59f8fe312a7e24b52044753bc7b2023eb80d54947c611f8ce85a2c59450100",
+      "zip_crc32": 3140760810
+    },
+    {
+      "path": "p7/orange_holdUsage.csv",
+      "bytes": 894,
+      "sha256": "7d34bb9f63a77f89d94017d627a24aae3fc4b8fffe767b229cb30f4091e5c955",
+      "zip_crc32": 487807482
+    },
+    {
+      "path": "p7/orange_routeAnnotation.json",
+      "bytes": 3255,
+      "sha256": "39c77a206cca433f5f722c25ea698b5d109f91531111121f4d20d60ce9fcfdb2",
+      "zip_crc32": 2871692134
+    },
+    {
+      "path": "p8/green.mp4",
+      "bytes": 26573433,
+      "sha256": "3a9f35334462021b1f26669591b2734e6030b0570706c55fcec4f5e1a2961c3e",
+      "zip_crc32": 3404776989
+    },
+    {
+      "path": "p8/green_bolt_holes.json",
+      "bytes": 465,
+      "sha256": "38755909cc0f332eefdb0d9da0d6ee332c1ff3b7d567225e9dae0c932185765a",
+      "zip_crc32": 3303417215
+    },
+    {
+      "path": "p8/green_holdUsage.csv",
+      "bytes": 1041,
+      "sha256": "746fb086307ad3a23b1ec39ddfb0f19f8af5c9a54615b33a1ba1b2afd5a4e668",
+      "zip_crc32": 2634440007
+    },
+    {
+      "path": "p8/green_routeAnnotation.json",
+      "bytes": 2311,
+      "sha256": "d289e97abdf3684d5ed542c4778a175c624b5b00c7918fe43044eed1fd6c35ff",
+      "zip_crc32": 750310944
+    },
+    {
+      "path": "p8/orange.mp4",
+      "bytes": 13375711,
+      "sha256": "2f36883cefb8b22c5cebd44aee48cb60d4091bd47452849f2b2cbb8ce6e97431",
+      "zip_crc32": 869014731
+    },
+    {
+      "path": "p8/orange_bolt_holes.json",
+      "bytes": 464,
+      "sha256": "6cad7578f602ecf667d67c8167043ff1b9c3d53957bd718e45ad075c56e8ef04",
+      "zip_crc32": 3082239104
+    },
+    {
+      "path": "p8/orange_holdUsage.csv",
+      "bytes": 678,
+      "sha256": "7fba88bf1cebc6ee068794f0c40df2100146b97091bd23754ce52414d52d5227",
+      "zip_crc32": 644549549
+    },
+    {
+      "path": "p8/orange_routeAnnotation.json",
+      "bytes": 3254,
+      "sha256": "0270e65fac80eb15f69d4aca08055621ffb4cc3f6640cdecc06e35de530d125d",
+      "zip_crc32": 746078043
+    },
+    {
+      "path": "p9/green.mp4",
+      "bytes": 20417900,
+      "sha256": "754d073b9bbd2c427d753899122bf08a3609de6e2f36128349c226f02217699a",
+      "zip_crc32": 4293262258
+    },
+    {
+      "path": "p9/green_bolt_holes.json",
+      "bytes": 467,
+      "sha256": "2f44cca80dc828df0d5ae1cff8d36665edf0e51ca0429218e342e6c8e9077e09",
+      "zip_crc32": 3762042037
+    },
+    {
+      "path": "p9/green_holdUsage.csv",
+      "bytes": 1112,
+      "sha256": "468c8072ba1e20d3ae904dee37db5772711f26727298bc183ff3f0fea7c72218",
+      "zip_crc32": 3029661322
+    },
+    {
+      "path": "p9/green_routeAnnotation.json",
+      "bytes": 2311,
+      "sha256": "4091cdaa94ef9fb34981bd9e01c3c670272ae629dd8c352035de707f7db7a6ae",
+      "zip_crc32": 3532266201
+    },
+    {
+      "path": "p9/orange.mp4",
+      "bytes": 18479963,
+      "sha256": "2447a0f62b6b162c2a17839ec1d1b85305f9215f23b9c82cc87ae9747723c615",
+      "zip_crc32": 1417989776
+    },
+    {
+      "path": "p9/orange_bolt_holes.json",
+      "bytes": 463,
+      "sha256": "215c3756bd5b2ec150ad5df4c3ee8daf154771b4c15226c2200fe7b102bc5228",
+      "zip_crc32": 3801981948
+    },
+    {
+      "path": "p9/orange_holdUsage.csv",
+      "bytes": 1013,
+      "sha256": "b81c9de995a54bf2395e6666d382f9ed7380d5f234c25f5f1e6bd868974ef688",
+      "zip_crc32": 2351881774
+    },
+    {
+      "path": "p9/orange_routeAnnotation.json",
+      "bytes": 3254,
+      "sha256": "c3fe1c2a230fa12fc0f06b94ba25b8d2a8605369b8efc255f753ba8070485144",
+      "zip_crc32": 4154181110
+    },
+    {
+      "path": "p10/green.mp4",
+      "bytes": 24775340,
+      "sha256": "0adca7b3ce4527c1c5bb0ab3f344cc3f2d1486d5c75f5637bdd6e7d4bdb6ce5f",
+      "zip_crc32": 20207945
+    },
+    {
+      "path": "p10/green_bolt_holes.json",
+      "bytes": 462,
+      "sha256": "a15b09aae942974780db20711776cacc70039dbc5bb685cf9b56ec686f19719a",
+      "zip_crc32": 2438948242
+    },
+    {
+      "path": "p10/green_holdUsage.csv",
+      "bytes": 1120,
+      "sha256": "97064de49cacaac191035332a31a37631075099840d7f6cfbfb3bee14c46d038",
+      "zip_crc32": 3743652942
+    },
+    {
+      "path": "p10/green_routeAnnotation.json",
+      "bytes": 2312,
+      "sha256": "c7766afc3522ce9961a841d82dbc7c87438ac33c5077e65a0e90fbcf78aaae02",
+      "zip_crc32": 2212855474
+    },
+    {
+      "path": "p10/orange.mp4",
+      "bytes": 20524319,
+      "sha256": "b7df95593730e1e065416586d7210d2ebab5fb692db2b6cdf5599c06309f8d27",
+      "zip_crc32": 1646797218
+    },
+    {
+      "path": "p10/orange_bolt_holes.json",
+      "bytes": 462,
+      "sha256": "45e1ba5fcaea507ae3b5cfc62af49170551be0055e75f990a881d8a915663b62",
+      "zip_crc32": 2891192356
+    },
+    {
+      "path": "p10/orange_holdUsage.csv",
+      "bytes": 1045,
+      "sha256": "ebc58279ab66ef663c8e1e52fcc88c0a0deeb8ed33b3f1863157acbf14bd73c3",
+      "zip_crc32": 2908179566
+    },
+    {
+      "path": "p10/orange_routeAnnotation.json",
+      "bytes": 3252,
+      "sha256": "7ab66d3515584e725c288381d13585aa9d4dd6a528a53102f83709c0a82a7baa",
+      "zip_crc32": 942789290
+    },
+    {
+      "path": "participant_form_data.csv",
+      "bytes": 1418,
+      "sha256": "00b1bc2257754b1a9bfc9d378b3add64b8d5dc3374c97956d7a9be1115f454f5",
+      "zip_crc32": 2224866741
+    },
+    {
+      "path": "README.md",
+      "bytes": 2407,
+      "sha256": "78cdea23f87e351bad7f700cb2e8c2dd0015e7057f7c61de23f5936382c27ad3",
+      "zip_crc32": 344842085
+    },
+    {
+      "path": "topo_green.png",
+      "bytes": 6859727,
+      "sha256": "ebbe849e08bcf296163fe0b8256c09ea40eaaea13982410c1b977b5ed382c16b",
+      "zip_crc32": 3268677460
+    },
+    {
+      "path": "topo_orange.png",
+      "bytes": 6959343,
+      "sha256": "17de5de797a9af42628e0609f873975b0a18ad4ad6b7cf76465b20f9dbdc4a80",
+      "zip_crc32": 3781314672
+    }
+  ]
+}

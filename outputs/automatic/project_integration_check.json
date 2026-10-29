@@ -1,0 +1,25 @@
+{
+  "scope": "One existing project move; excluded from training and calibration",
+  "video_sha256": "db656ed38a93a619f6df7dbd65804718860aa9191e650a1a92952ab6063a007a",
+  "source_reference": "outputs/state/endpoint_annotations.json",
+  "fps": 30.0,
+  "from_hold": "H44",
+  "to_hold": "H28",
+  "reference_release": 117,
+  "predicted_release": 113,
+  "release_error_frames": -4,
+  "reference_arrival": 128,
+  "predicted_arrival": 136,
+  "arrival_error_frames": 8,
+  "predicted_release_range": [
+    112,
+    115
+  ],
+  "predicted_arrival_range": [
+    134,
+    138
+  ],
+  "confidence_gate_coverage": 0.7218225419664268,
+  "full_clip_accuracy": null,
+  "conclusion": "Correct source/target hold IDs; boundary estimates still need review. New-wall accuracy is not established."
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "seed": 17,
+    "selected_epoch": 15,
+    "epochs": 24,
+    "updates": 1440,
+    "validation_nll": 0.19571539305420166,
+    "elapsed_sec": 278.362818041991,
+    "parameters": 239233,
+    "trainer_sha256": "57592a1eaa8b36d2e5d6d34d87804aa42408f074d80efa98a340d0adde13ba4d"
+  },
+  {
+    "seed": 29,
+    "selected_epoch": 21,
+    "epochs": 24,
+    "updates": 1440,
+    "validation_nll": 0.17881378680318624,
+    "elapsed_sec": 286.66500050001196,
+    "parameters": 239233,
+    "trainer_sha256": "57592a1eaa8b36d2e5d6d34d87804aa42408f074d80efa98a340d0adde13ba4d"
+  },
+  {
+    "seed": 43,
+    "selected_epoch": 24,
+    "epochs": 24,
+    "updates": 1440,
+    "validation_nll": 0.20349709843187613,
+    "elapsed_sec": 287.8100462919974,
+    "parameters": 239233,
+    "trainer_sha256": "57592a1eaa8b36d2e5d6d34d87804aa42408f074d80efa98a340d0adde13ba4d"
+  }
+]
