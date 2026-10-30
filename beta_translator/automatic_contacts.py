@@ -14,6 +14,7 @@ from .contact_decoding import ensemble_probabilities, decode_probabilities, expo
 from .contact_features import build_features, FEATURE_VERSION, LANDMARKS
 from .contact_network import ContactTCN, predict_logits
 from .project_io import load_reviewed_holds
+from .contact_review import review_annotation_from_prediction
 from .wholebody_pose import sha256, POSE_SPEC
 
 
@@ -117,7 +118,9 @@ def run_automatic_contacts(video, pose_cache, reviewed_output, package, destinat
         'max_timing_width_sec': result['config'].get('max_timing_width_sec', -1.),
         'movement_accept_threshold': result['config'].get('movement_accept_threshold', 1.01),
         'accepted_frame_fraction': float((result['contacts']['status'] == 'accepted_model').mean()),
-        'eligible_moves': sum(m['eligible_for_ik'] for m in result['moves']), 'moves': result['moves']}
+        'eligible_moves': sum(m['eligible_for_ik'] for m in result['moves']), 'moves': result['moves'],
+        'artifact_sha256': {name: sha256(destination/name)
+                           for name in ('limb_contacts.csv', 'contact_events.csv')}}
     (destination/'automatic_contacts.json').write_text(json.dumps(summary, indent=2)+'\n')
     np.savez_compressed(destination/'contact_probabilities.npz', probabilities=result['probabilities'],
                         hold_ids=np.asarray(hold_ids), fps=np.array(metadata['fps']))
@@ -154,30 +157,6 @@ def motion_annotation_from_prediction(template, move, prediction):
     validate_motion_annotation(annotation)
     return annotation
 
-
-def review_annotation_from_prediction(template, move, prediction, contacts):
-    """Prefill a separate review draft; predicted timing never becomes human confirmation."""
-    for key in ('video_sha256', 'candidate_run_id', 'selected_hold_ids'):
-        if template[key] != prediction[key]:
-            raise ValueError('Template and prediction refer to different inputs.')
-    annotation = copy.deepcopy(template)
-    annotation['frames'] = {'before': move['before_frame'], 'after': move['after_frame']}
-    annotation['moving_limb'] = move['moving_limb']
-    annotation['contacts'] = {}
-    indexed = contacts.set_index(['frame', 'limb'])
-    from .contact_features import LIMBS
-    for phase, frame in annotation['frames'].items():
-        annotation['contacts'][phase] = {limb: str(indexed.loc[(frame, limb), 'hold_id']) for limb in LIMBS}
-    # Deliberately omit motion: existing IK validation requires confirmed timing/supports.
-    annotation.pop('motion', None)
-    annotation['annotation_source'] = 'automatic_review_draft'
-    annotation['suggested_motion'] = {
-        'release_frame': move['release_frame'], 'arrival_frame': move['arrival_frame'],
-        'release_frame_range': move.get('release_frame_range'),
-        'arrival_frame_range': move.get('arrival_frame_range'),
-        'support_contacts_maintained': False}
-    annotation['notes'] = 'Automatically prefilled draft. Review contact identities, timing, and support continuity before IK.'
-    return annotation
 
 
 def run_automatic_motion(video, reviewed_output, prediction_file, move_index, destination, settings=None):

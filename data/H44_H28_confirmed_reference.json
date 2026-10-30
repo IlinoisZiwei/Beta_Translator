@@ -1,0 +1,65 @@
+{
+  "video_sha256": "db656ed38a93a619f6df7dbd65804718860aa9191e650a1a92952ab6063a007a",
+  "candidate_run_id": "reviewed65_00e1a17b05674bba8bc9bc04fdb56bc1",
+  "selected_hold_ids": [
+    "H65",
+    "H64",
+    "H63",
+    "H60",
+    "H57",
+    "H51",
+    "H53",
+    "H45",
+    "H40",
+    "H48",
+    "H44",
+    "H38",
+    "H34",
+    "H33",
+    "H28",
+    "H26",
+    "H23",
+    "H17",
+    "H16",
+    "H13",
+    "H62"
+  ],
+  "frames": {
+    "before": 107,
+    "after": 129
+  },
+  "contacts": {
+    "before": {
+      "left_hand": "H44",
+      "right_hand": "H33",
+      "left_foot": "H62",
+      "right_foot": "H65"
+    },
+    "after": {
+      "left_hand": "H28",
+      "right_hand": "H33",
+      "left_foot": "H62",
+      "right_foot": "H65"
+    }
+  },
+  "moving_limb": "left_hand",
+  "notes": "",
+  "body": {
+    "height_cm": 165,
+    "ratios": {
+      "upper_arm": 0.186,
+      "forearm": 0.146,
+      "thigh": 0.245,
+      "shank": 0.246,
+      "shoulder_w": 0.259,
+      "hip_w": 0.191,
+      "torso": 0.288
+    },
+    "px_per_cm": 1.7980508245001927
+  },
+  "motion": {
+    "release_frame": 117,
+    "arrival_frame": 128,
+    "support_contacts_maintained": true
+  }
+}

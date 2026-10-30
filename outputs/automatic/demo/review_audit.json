@@ -1,0 +1,260 @@
+{
+  "confirmation_source": "Previously saved user confirmation, replayed for this demo",
+  "automatic_draft": {
+    "video_sha256": "db656ed38a93a619f6df7dbd65804718860aa9191e650a1a92952ab6063a007a",
+    "candidate_run_id": "reviewed65_00e1a17b05674bba8bc9bc04fdb56bc1",
+    "selected_hold_ids": [
+      "H65",
+      "H64",
+      "H63",
+      "H60",
+      "H57",
+      "H51",
+      "H53",
+      "H45",
+      "H40",
+      "H48",
+      "H44",
+      "H38",
+      "H34",
+      "H33",
+      "H28",
+      "H26",
+      "H23",
+      "H17",
+      "H16",
+      "H13",
+      "H62"
+    ],
+    "frames": {
+      "before": 105,
+      "after": 143
+    },
+    "contacts": {
+      "before": {
+        "left_hand": "H44",
+        "right_hand": "H33",
+        "left_foot": "H62",
+        "right_foot": "H65"
+      },
+      "after": {
+        "left_hand": "H28",
+        "right_hand": "H33",
+        "left_foot": "H62",
+        "right_foot": "H65"
+      }
+    },
+    "moving_limb": "left_hand",
+    "notes": "Automatically prefilled draft. Review contact identities, timing, and support continuity before IK.",
+    "body": {
+      "height_cm": 165,
+      "ratios": {
+        "upper_arm": 0.186,
+        "forearm": 0.146,
+        "thigh": 0.245,
+        "shank": 0.246,
+        "shoulder_w": 0.259,
+        "hip_w": 0.191,
+        "torso": 0.288
+      },
+      "px_per_cm": 1.7980508245001927
+    },
+    "automatic_review": {
+      "prediction_sha256": "2bcfc5c35c90aaa4098e739b0e008f292943f754bc4c92141eb242185aff3471",
+      "model_config_sha256": "5c15dee5f2cf3da1fd88ced97772f62d7c6ced24607094a78e721e72fef43dcd",
+      "original_suggestion": {
+        "moving_limb": "left_hand",
+        "from_hold": "H44",
+        "to_hold": "H28",
+        "before_frame": 105,
+        "after_frame": 143,
+        "release_frame": 113,
+        "arrival_frame": 136,
+        "release_frame_range": [
+          112,
+          115
+        ],
+        "arrival_frame_range": [
+          134,
+          138
+        ],
+        "timing_range_semantics": "Central 90% local path mass; empirical coverage is not guaranteed",
+        "uncertain_frame_range": [
+          112,
+          137
+        ],
+        "support_contacts": {
+          "right_hand": "unknown",
+          "left_foot": "unknown",
+          "right_foot": "unknown"
+        },
+        "supports_maintained": false,
+        "requires_review": true,
+        "eligible_for_ik": false,
+        "review_reasons": [
+          "Transition timing is insufficiently resolved",
+          "Contact/free/contact evidence needs review",
+          "Support contacts are uncertain or change"
+        ],
+        "evidence": "Visual model prediction; not physical contact-force confirmation"
+      },
+      "prefill_supports_confirmed": false
+    },
+    "annotation_source": "automatic_review_draft",
+    "suggested_motion": {
+      "release_frame": 113,
+      "arrival_frame": 136,
+      "release_frame_range": [
+        112,
+        115
+      ],
+      "arrival_frame_range": [
+        134,
+        138
+      ],
+      "support_contacts_maintained": false
+    }
+  },
+  "steps": [
+    {
+      "step": "automatic_prefill",
+      "frames": {
+        "before": 105,
+        "after": 143
+      },
+      "motion": {
+        "release_frame": 113,
+        "arrival_frame": 136,
+        "support_contacts_maintained": false
+      }
+    },
+    {
+      "step": "correct_endpoints_and_timing",
+      "frames": {
+        "before": 107,
+        "after": 129
+      },
+      "motion": {
+        "release_frame": 117,
+        "arrival_frame": 128,
+        "support_contacts_maintained": false
+      }
+    },
+    {
+      "step": "replay_saved_support_confirmation",
+      "motion": {
+        "release_frame": 117,
+        "arrival_frame": 128,
+        "support_contacts_maintained": true
+      },
+      "reference_sha256": "c62b11718a0a8d960f3020edcae558a39ff68e77bc228c66c68061628e93b97c"
+    }
+  ],
+  "reviewed_annotation": {
+    "video_sha256": "db656ed38a93a619f6df7dbd65804718860aa9191e650a1a92952ab6063a007a",
+    "candidate_run_id": "reviewed65_00e1a17b05674bba8bc9bc04fdb56bc1",
+    "selected_hold_ids": [
+      "H65",
+      "H64",
+      "H63",
+      "H60",
+      "H57",
+      "H51",
+      "H53",
+      "H45",
+      "H40",
+      "H48",
+      "H44",
+      "H38",
+      "H34",
+      "H33",
+      "H28",
+      "H26",
+      "H23",
+      "H17",
+      "H16",
+      "H13",
+      "H62"
+    ],
+    "frames": {
+      "before": 107,
+      "after": 129
+    },
+    "contacts": {
+      "before": {
+        "left_hand": "H44",
+        "right_hand": "H33",
+        "left_foot": "H62",
+        "right_foot": "H65"
+      },
+      "after": {
+        "left_hand": "H28",
+        "right_hand": "H33",
+        "left_foot": "H62",
+        "right_foot": "H65"
+      }
+    },
+    "moving_limb": "left_hand",
+    "notes": "Demonstration replay of the user-confirmed H44 to H28 move. Release/arrival and support continuity come from the saved human reference, not the model.",
+    "body": {
+      "height_cm": 165,
+      "ratios": {
+        "upper_arm": 0.186,
+        "forearm": 0.146,
+        "thigh": 0.245,
+        "shank": 0.246,
+        "shoulder_w": 0.259,
+        "hip_w": 0.191,
+        "torso": 0.288
+      },
+      "px_per_cm": 1.7980508245001927
+    },
+    "motion": {
+      "release_frame": 117,
+      "arrival_frame": 128,
+      "support_contacts_maintained": true
+    },
+    "automatic_review": {
+      "prediction_sha256": "2bcfc5c35c90aaa4098e739b0e008f292943f754bc4c92141eb242185aff3471",
+      "model_config_sha256": "5c15dee5f2cf3da1fd88ced97772f62d7c6ced24607094a78e721e72fef43dcd",
+      "original_suggestion": {
+        "moving_limb": "left_hand",
+        "from_hold": "H44",
+        "to_hold": "H28",
+        "before_frame": 105,
+        "after_frame": 143,
+        "release_frame": 113,
+        "arrival_frame": 136,
+        "release_frame_range": [
+          112,
+          115
+        ],
+        "arrival_frame_range": [
+          134,
+          138
+        ],
+        "timing_range_semantics": "Central 90% local path mass; empirical coverage is not guaranteed",
+        "uncertain_frame_range": [
+          112,
+          137
+        ],
+        "support_contacts": {
+          "right_hand": "unknown",
+          "left_foot": "unknown",
+          "right_foot": "unknown"
+        },
+        "supports_maintained": false,
+        "requires_review": true,
+        "eligible_for_ik": false,
+        "review_reasons": [
+          "Transition timing is insufficiently resolved",
+          "Contact/free/contact evidence needs review",
+          "Support contacts are uncertain or change"
+        ],
+        "evidence": "Visual model prediction; not physical contact-force confirmation"
+      },
+      "prefill_supports_confirmed": false,
+      "saved_confirmation_sha256": "c62b11718a0a8d960f3020edcae558a39ff68e77bc228c66c68061628e93b97c"
+    }
+  }
+}

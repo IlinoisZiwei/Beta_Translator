@@ -5,3 +5,5 @@ __pycache__/
 training_data/
 training_runs/
 *.part
+.venv-contact/
+outputs/automatic/model_cache/

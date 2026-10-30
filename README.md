@@ -10,7 +10,7 @@ Beta Translator analyzes a climbing video and fits a target body to reviewed con
 2. For first-time setup, run `bash setup.sh` from the repository. An already working `.venv` can be reused.
 3. Open `Beta_Translator.ipynb` in VS Code/Jupyter with the repository as the working directory. Select `.venv/bin/python` as its kernel.
 4. Run the notebook in order. Section 1 checks dependencies without installing packages or transferring files.
-5. In Section 7, review drafts, choose BEFORE/AFTER frames, and manually confirm four contacts per endpoint. Click **Save annotations**.
+5. Run Section 6B for learned proposals, then use **Prefill automatic draft** in Section 7. Review BEFORE/AFTER, contact IDs and release/arrival. Confirm support continuity and click **Save annotations**. Section 7B optionally replays the previously confirmed H44 → H28 example.
 6. Run Section 8 for a static target-body fit. To fit a sequence, enter release/arrival frames in Section 7, confirm the other three contacts remain fixed, save, and run Section 8B. Section 9 replays the original motion; Section 10 exports current results.
 
 Use **Load annotations** after restarting. Changing an endpoint resets its contact labels. Automatic drafts never replace manual choices. After editing a helper `.py` file, restart the kernel to import the changes.
@@ -121,4 +121,45 @@ depth, or human success probability are modeled. Numerical convergence is not ph
 The optional [automatic contact pipeline](docs/automatic_contacts.md) adds frozen
 whole-body pose tracking and a trained temporal model for hold association and
 release/arrival proposals. Open `Automatic_Contacts.ipynb` for inference and review.
-The existing reviewed annotations and IK notebook remain available.
+The same model is integrated into Sections 6B–8B of the main `Beta_Translator.ipynb`.
+
+
+## Main notebook: automatic prefill to reviewed continuous IK
+
+Keep the notebook on its existing `.venv` kernel. Create a separate inference environment
+once (already installed on the current machine):
+
+```sh
+.venv/bin/python -m venv .venv-contact
+.venv-contact/bin/python -m pip install -r requirements-contact.txt
+```
+
+Section 6B checks video, hold map, alignment, pose-cache, model and prediction-table hashes.
+It reuses matching predictions or calls `.venv-contact` to refresh them. The bundled
+whole-body feature cache avoids downloading RTMW weights for the current video.
+A new video needs pose extraction and its own output folder. Raw model downloads stay
+under `outputs/automatic/model_cache/` and are ignored by Git.
+
+1. **Section 6B:** load learned contact and movement proposals.
+2. **Section 7:** choose a move and click **Prefill automatic draft**. This fills contacts,
+   endpoints and timing, but always clears the support-confirmation checkbox.
+3. Review the source frames, edit endpoint/contact/time fields, confirm the three supports,
+   and save. Any contact or timing edit invalidates the previous support confirmation.
+4. **Section 7B:** optional replay of the user's saved H44 → H28 reference. Its default
+   `REPLAY_CONFIRMED_EXAMPLE = True` replaces the form with that reviewed example for the
+   matching video. **Set it to `False` when keeping your own edits or reviewing another move.**
+   The immutable reference is `data/H44_H28_confirmed_reference.json`; the replay audit is
+   `outputs/automatic/demo/review_audit.json`.
+5. **Section 8B:** optimize and embed normal-speed and one-third-speed continuous IK videos.
+
+For this example, the model proposes BEFORE 105 / release 113 / arrival 136 / AFTER 143.
+The saved human review corrects these to **107 / 117 / 128 / 129**, with left hand H44 → H28,
+right hand H33, left foot H62 and right foot H65 maintained, at 165 cm with default proportions.
+The model's timing ranges do not contain the reviewed release/arrival frames; they are
+uncertainty estimates, not guaranteed bounds. The original suggestion remains in annotation
+provenance alongside the corrected values. Section 7B replays an existing human confirmation;
+it does not represent a fresh human review or model verification of support forces.
+
+The automatic, unreviewed IK gate remains disabled in the deployed model. The demonstrated
+path is model suggestions → human-reviewed annotation → continuous 2D IK. The existing
+geometric contact tables are separate and are not overwritten by learned inference.

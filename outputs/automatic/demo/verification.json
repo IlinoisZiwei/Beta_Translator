@@ -1,0 +1,62 @@
+{
+  "widget_checks": [
+    "draft cannot bypass review",
+    "timing/contact/endpoint edits clear support confirmation",
+    "repeated prefill clears support confirmation"
+  ],
+  "model_timing": {
+    "release": 113,
+    "arrival": 136
+  },
+  "reviewed_timing": {
+    "release": 117,
+    "arrival": 128
+  },
+  "reviewed_reference_sha256": "c62b11718a0a8d960f3020edcae558a39ff68e77bc228c66c68061628e93b97c",
+  "motion_summary_sha256": "20c335dae2da11584f7f80f1fbd7379d475233bb0ef347f33ed6cd691560fc29",
+  "videos": {
+    "motion_ik_h264.mp4": {
+      "frames": 23,
+      "fps": 30.0,
+      "sha256": "67fbfbab4180fe7bc9ab7068c1cb7b1deb851d9c12e47446c5efa5f3adbbe215"
+    },
+    "motion_ik_slow_h264.mp4": {
+      "frames": 23,
+      "fps": 10.0,
+      "sha256": "e7c4c442a5f8615a847e51aeb7de0ca140f9a2bb8187554ad6a086a8f9498912"
+    }
+  },
+  "metrics": {
+    "max_contact_error_cm": 0.00020671025971279725,
+    "rms_contact_error_cm": 4.1692101943398005e-05,
+    "max_support_drift_cm": 0.0002017351583312795,
+    "max_angle_step_deg": 13.246743242575569,
+    "max_hip_step_cm": 1.208175034785019,
+    "bend_direction_changes": {
+      "left_hand": false,
+      "right_hand": false,
+      "left_foot": false,
+      "right_foot": false
+    },
+    "low_visibility_angle_observations": 112,
+    "angle_observations": 207,
+    "optimizer": {
+      "success": true,
+      "message": "`ftol` termination condition is satisfied.",
+      "nfev": 270,
+      "cost": 1.5014811385089768
+    },
+    "settings": {
+      "contact_scale_cm": 0.05,
+      "contact_tolerance_cm": 0.1,
+      "reference_angle_weight": 0.3,
+      "reference_hip_weight": 0.5,
+      "swing_weight": 0.7,
+      "swing_scale_cm": 20.0,
+      "velocity_weight": 0.04,
+      "acceleration_weight": 0.004,
+      "max_nfev": 500
+    }
+  },
+  "execution": "Main notebook cells and actual ipywidgets callbacks; verified upstream caches reused without rewriting baseline contact tables."
+}

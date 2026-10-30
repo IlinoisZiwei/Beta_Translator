@@ -43,7 +43,7 @@
     }
   },
   "moving_limb": "left_hand",
-  "notes": "",
+  "notes": "Demonstration replay of the user-confirmed H44 to H28 move. Release/arrival and support continuity come from the saved human reference, not the model.",
   "body": {
     "height_cm": 165,
     "ratios": {
@@ -61,5 +61,47 @@
     "release_frame": 117,
     "arrival_frame": 128,
     "support_contacts_maintained": true
+  },
+  "automatic_review": {
+    "prediction_sha256": "2bcfc5c35c90aaa4098e739b0e008f292943f754bc4c92141eb242185aff3471",
+    "model_config_sha256": "5c15dee5f2cf3da1fd88ced97772f62d7c6ced24607094a78e721e72fef43dcd",
+    "original_suggestion": {
+      "moving_limb": "left_hand",
+      "from_hold": "H44",
+      "to_hold": "H28",
+      "before_frame": 105,
+      "after_frame": 143,
+      "release_frame": 113,
+      "arrival_frame": 136,
+      "release_frame_range": [
+        112,
+        115
+      ],
+      "arrival_frame_range": [
+        134,
+        138
+      ],
+      "timing_range_semantics": "Central 90% local path mass; empirical coverage is not guaranteed",
+      "uncertain_frame_range": [
+        112,
+        137
+      ],
+      "support_contacts": {
+        "right_hand": "unknown",
+        "left_foot": "unknown",
+        "right_foot": "unknown"
+      },
+      "supports_maintained": false,
+      "requires_review": true,
+      "eligible_for_ik": false,
+      "review_reasons": [
+        "Transition timing is insufficiently resolved",
+        "Contact/free/contact evidence needs review",
+        "Support contacts are uncertain or change"
+      ],
+      "evidence": "Visual model prediction; not physical contact-force confirmation"
+    },
+    "prefill_supports_confirmed": false,
+    "saved_confirmation_sha256": "c62b11718a0a8d960f3020edcae558a39ff68e77bc228c66c68061628e93b97c"
   }
 }

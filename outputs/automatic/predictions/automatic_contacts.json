@@ -400,5 +400,9 @@
       ],
       "evidence": "Visual model prediction; not physical contact-force confirmation"
     }
-  ]
+  ],
+  "artifact_sha256": {
+    "limb_contacts.csv": "5d9f3498e2bc4b0200a3a323ce9298798592a575526ef8680b297805a984208b",
+    "contact_events.csv": "cbf23ef49da662ddd0006c2375616d67ddfa5429959a622bea352e3de617cf9e"
+  }
 }
