@@ -1,0 +1,55 @@
+{
+  "video_sha256": "9964d27ca051953d77cf10ee94a1772bd73e30d7e23fa09a54983c3630e8a068",
+  "analysis_fps": 30,
+  "analysis_frame_count": 976,
+  "frame_indexing": "Zero-based frames in videos/trial2.mp4; source timing is unchanged",
+  "previous": {
+    "reference_frame_number": 0,
+    "reference_time_sec": 0,
+    "outside_reference_fraction": {
+      "left_foot": 0.05737704918032782,
+      "left_hand": 0.47540983606557374,
+      "right_foot": 0.012295081967213073,
+      "right_hand": 0.389344262295082
+    },
+    "automatic_contacts": {
+      "limb_frames": 3904,
+      "accepted_limb_frames": 1414,
+      "confidence_threshold_coverage": 0.36219262295081966,
+      "review_required_limb_frames": 2490,
+      "movement_proposals": 17,
+      "ik_eligible_proposals": 0,
+      "accuracy": null,
+      "interpretation": "No trial2 ground-truth labels; confidence coverage is not accuracy or human time saved."
+    }
+  },
+  "current": {
+    "reference_frame_number": 450,
+    "reference_time_sec": 15,
+    "outside_reference_fraction": {
+      "left_foot": 0.0,
+      "left_hand": 0.0,
+      "right_foot": 0.0,
+      "right_hand": 0.0
+    },
+    "automatic_contacts": {
+      "limb_frames": 3904,
+      "accepted_limb_frames": 2223,
+      "confidence_threshold_coverage": 0.5694159836065574,
+      "review_required_limb_frames": 1681,
+      "movement_proposals": 9,
+      "ik_eligible_proposals": 0,
+      "accuracy": null,
+      "interpretation": "No trial2 ground-truth labels; confidence coverage is not accuracy or human time saved."
+    }
+  },
+  "controlled_settings": "Same analysis video, frozen pose features, detector settings, deployed contact model and confidence threshold; new reference map and alignment.",
+  "limitations": [
+    "Coverage measures projected limb locations inside the reference rectangle, not hold recall or alignment accuracy.",
+    "The accepted fraction includes free and wall_contact states; it does not measure contact accuracy.",
+    "The detector reached 100 candidates on both images; it can still omit route holds.",
+    "Hold IDs refer to different maps and cannot be compared by name.",
+    "No trial2 ground truth or physical feasibility validation is available."
+  ],
+  "previous_summary": "reference_runs/frame_0000_summary.json"
+}

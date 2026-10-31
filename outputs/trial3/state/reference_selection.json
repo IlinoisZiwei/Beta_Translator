@@ -1,0 +1,49 @@
+{
+  "reference_frame": 334,
+  "method": "Sampled visible area times log sharpness",
+  "candidates": [
+    {
+      "frame": 0,
+      "visible_fraction": 0.8285709204723289,
+      "sharpness": 264.4818115234375,
+      "score": 4.624706981825203
+    },
+    {
+      "frame": 83,
+      "visible_fraction": 0.8101757006686584,
+      "sharpness": 274.8208312988281,
+      "score": 4.552986103392222
+    },
+    {
+      "frame": 167,
+      "visible_fraction": 0.8403773652013089,
+      "sharpness": 263.6409606933594,
+      "score": 4.687939279538694
+    },
+    {
+      "frame": 251,
+      "visible_fraction": 0.7873559539052497,
+      "sharpness": 255.3384552001953,
+      "score": 4.367068744784745
+    },
+    {
+      "frame": 334,
+      "visible_fraction": 0.8554915350689999,
+      "sharpness": 291.026123046875,
+      "score": 4.8564913554902995
+    },
+    {
+      "frame": 418,
+      "visible_fraction": 0.8342900839379712,
+      "sharpness": 319.4623718261719,
+      "score": 4.813657613414531
+    },
+    {
+      "frame": 502,
+      "visible_fraction": 0.847309361217812,
+      "sharpness": 280.0742492675781,
+      "score": 4.777654550093865
+    }
+  ],
+  "video_sha256": "8b5f96c2cd634c82e28d09eba62ba9bf6939bea34cbafe15be1388d831b6eff4"
+}

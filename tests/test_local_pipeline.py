@@ -18,6 +18,7 @@ from beta_translator.contact_matching import CONTACT_LANDMARKS, match_limb_conta
 from beta_translator.project_io import (
     file_sha256, save_alignment, load_alignment, save_reviewed_holds,
     load_reviewed_holds, restore_reviewed_map, save_annotations, load_annotations,
+    validate_reference_alignment,
 )
 
 
@@ -84,6 +85,35 @@ class SavedInputTests(unittest.TestCase):
         np.savez(self.cache, frames=[0], matrices=[np.eye(3)], inliers=[100], statuses=['ok'],
                  video_sha256=file_sha256(self.video), pose_sha256=file_sha256(self.poses))
         self.assertIsNone(load_alignment(self.cache, self.video, self.poses, self.settings))
+
+    def test_reference_change_invalidates_alignment_but_legacy_zero_is_compatible(self):
+        save_alignment(self.cache, self.transforms, self.video, self.poses, self.settings)
+        self.assertIsNotNone(load_alignment(self.cache, self.video, self.poses,
+            dict(self.settings, reference_frame_number=0)))
+        self.assertIsNone(load_alignment(self.cache, self.video, self.poses,
+            dict(self.settings, reference_frame_number=450)))
+
+    def test_nonzero_reference_map_and_alignment_must_agree(self):
+        path = self.root / 'map.npz'
+        mask = np.ones((8, 8), dtype=bool)
+        save_reviewed_holds(path, self.video, np.zeros((8, 8, 3), np.uint8),
+            [{'hold_id': 'H01'}], {'H01': mask}, 'later-map', ['H01'], reference_frame_number=450)
+        self.assertEqual(load_reviewed_holds(path, self.video, reference_frame_number=450)[2], 'later-map')
+        with self.assertRaisesRegex(ValueError, 'another reference'):
+            load_reviewed_holds(path, self.video, reference_frame_number=0)
+        save_alignment(self.cache, self.transforms, self.video, self.poses, self.settings)
+        with self.assertRaisesRegex(ValueError, 'different reference'):
+            validate_reference_alignment(path, self.cache)
+        save_alignment(self.cache, self.transforms, self.video, self.poses,
+            dict(self.settings, reference_frame_number=450))
+        self.assertEqual(validate_reference_alignment(path, self.cache), 450)
+
+    def test_invalid_reference_indices_are_rejected(self):
+        for value in (-1, 1.5, True, '450'):
+            with self.subTest(value=value), self.assertRaisesRegex(ValueError, 'nonnegative integer'):
+                save_reviewed_holds(self.root/'bad.npz', self.video, np.zeros((8, 8, 3), np.uint8),
+                    [{'hold_id':'H01'}], {'H01':np.ones((8, 8), bool)}, 'map', ['H01'],
+                    reference_frame_number=value)
 
     def test_hold_restore_preserves_ids_without_replacing_poses(self):
         hold_map = self.root / 'map.npz'

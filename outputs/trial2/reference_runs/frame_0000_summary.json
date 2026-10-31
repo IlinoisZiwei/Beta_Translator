@@ -1,0 +1,92 @@
+{
+  "video": "videos/trial2.mp4",
+  "video_sha256": "9964d27ca051953d77cf10ee94a1772bd73e30d7e23fa09a54983c3630e8a068",
+  "analysis_frame_count": 976,
+  "analysis_fps": 30,
+  "source_frame_count": 1950,
+  "source_duration_sec": 32.545,
+  "target_body": {
+    "height_cm": 165,
+    "proportions": "default",
+    "interpretation": "Assumed target settings; not a measurement of the filmed climber."
+  },
+  "mediapipe": {
+    "detected_frames": 972,
+    "missing_frames": [
+      93,
+      126,
+      183,
+      237
+    ],
+    "frame_coverage": 0.9959016393442623,
+    "interpretation": "Detection coverage is not joint accuracy."
+  },
+  "rtmw": {
+    "finite_pose_frames": 976
+  },
+  "hold_map": {
+    "reference_frame": 0,
+    "detected_candidates": 100,
+    "selection": "All candidates; no human route confirmation",
+    "known_false_positive": "H100 overlaps the climber shoe in the reference image. It must not be treated as a confirmed wall hold.",
+    "limitation": "Later-visible and initially occluded holds can be missing."
+  },
+  "alignment": {
+    "frames": 976,
+    "passed_inlier_gate": 976,
+    "minimum_inliers": 305,
+    "median_inliers": 473.0,
+    "interpretation": "Passing global homography checks does not validate every wall plane."
+  },
+  "automatic_contacts": {
+    "limb_frames": 3904,
+    "accepted_limb_frames": 1414,
+    "confidence_threshold_coverage": 0.36219262295081966,
+    "review_required_limb_frames": 2490,
+    "movement_proposals": 17,
+    "ik_eligible_proposals": 0,
+    "accuracy": null,
+    "interpretation": "No trial2 ground-truth labels; confidence coverage is not accuracy or human time saved."
+  },
+  "outside_initial_reference_fraction": {
+    "left_foot": 0.05737704918032782,
+    "left_hand": 0.47540983606557374,
+    "right_foot": 0.012295081967213073,
+    "right_hand": 0.389344262295082
+  },
+  "ik": {
+    "status": "pending_inputs_and_geometry_review",
+    "generated": false,
+    "reasons": [
+      "No measured trial2 wall scale",
+      "Overhang and multiple wall planes require geometry review",
+      "No confirmed endpoint identities, release/arrival or three continuous supports",
+      "Automatic unreviewed IK remains disabled in the deployed model"
+    ]
+  },
+  "review_draft": "automatic/review_draft.json",
+  "videos": {
+    "pose_output_h264.mp4": {
+      "frames": 976,
+      "fps": 30.0,
+      "sha256": "c998ecaee9a56bedd549d10a8cc55ea59b5a9f6889d1b55517b2da7c4e089719"
+    },
+    "wall_motion_h264.mp4": {
+      "frames": 976,
+      "fps": 30.0,
+      "sha256": "9fc547f29decfbd039939254b447c02420d794a7def6df18bbe3c24cd25d3c26"
+    },
+    "automatic_contacts_h264.mp4": {
+      "frames": 976,
+      "fps": 30.0,
+      "sha256": "a3bb3e54edfa95933f2582a98dcea983fdd80fc3d0d7c399cf2fa2dc17dfe753"
+    }
+  },
+  "fixes": [
+    "Allow the existing wall_contact model class in the review loader"
+  ],
+  "tests": {
+    "passed": 34
+  },
+  "trial1_files_preserved": true
+}

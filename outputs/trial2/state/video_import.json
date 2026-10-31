@@ -1,0 +1,21 @@
+{
+  "source_name": "trial2.mov",
+  "source_sha256": "aef9179e99fe1f947547032900c860fc0bb2432c0e67edff9130f4797a246b7c",
+  "analysis_video": "videos/trial2.mp4",
+  "analysis_sha256": "9964d27ca051953d77cf10ee94a1772bd73e30d7e23fa09a54983c3630e8a068",
+  "source_frames": 1950,
+  "source_duration_sec": 32.545,
+  "analysis": {
+    "width": 1920,
+    "height": 1080,
+    "avg_frame_rate": "30/1",
+    "duration": "32.533333",
+    "nb_frames": "976",
+    "side_data_list": [
+      {}
+    ]
+  },
+  "transform": "1920x1080; 30 FPS; 8-bit H.264 analysis copy; BT.2020-to-BT.709 matrix conversion; no HDR tone mapping; video only; metadata removed",
+  "frame_convention": "All pipeline frame numbers are zero-based frames of the analysis copy. source_frame_map.csv records nearest original timestamps, not an exact claim of FFmpeg source-frame selection.",
+  "source_frame_map_sha256": "dc52f0156ede591b958dab1b6fc3353f72e09a9136890cf635a123ac53c603ca"
+}

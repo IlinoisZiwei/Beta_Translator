@@ -1,5 +1,6 @@
 {
   "schema_version": 1,
+  "reference_frame_number": 0,
   "annotation": {
     "video_sha256": "db656ed38a93a619f6df7dbd65804718860aa9191e650a1a92952ab6063a007a",
     "candidate_run_id": "reviewed65_00e1a17b05674bba8bc9bc04fdb56bc1",
@@ -117,9 +118,9 @@
     },
     "modules": {
       "motion_ik.py": "b364055818cce40733b0c074a20347bf17c8539ea5dd84ec50eec9b5aa82a2fb",
-      "motion_pipeline.py": "ee1f543c1798f3855ae54f34352aa8f1ff0c56e99e5a21ca58cc5bc92b82cbfb",
+      "motion_pipeline.py": "4aed22bbb0909e4e9bff0a20c77d092bcdc2a3980661d4ce654894e4c8362e20",
       "inverse_kinematics.py": "04596bb6d2ce100cf434741fb286d3ffc69ab53a70ae3ab37e267b64801e060f",
-      "pose_adapter.py": "4c3232646145873a9af605f0a9adda1661d6da0d7321b8a2d82ae26ea589ccde"
+      "pose_adapter.py": "0fd505b3ebd88ce69070aa9a39aa526d4ba1b8cf50922081abc85ab786e97ea7"
     }
   },
   "frame_count": 23,

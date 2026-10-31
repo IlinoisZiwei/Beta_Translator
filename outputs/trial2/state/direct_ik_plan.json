@@ -1,0 +1,696 @@
+{
+  "schema_version": 1,
+  "enabled": true,
+  "mode": "experimental_direct_predictions",
+  "execute_requested": true,
+  "statistical_gate_bypassed": true,
+  "current_prediction_user_accepted": true,
+  "review_note": {
+    "schema_version": 1,
+    "user_statement": "The current Trial2 Analysis notebook information has been reviewed and is accepted. Enable automatic results directly into IK.",
+    "acceptance_source": "Explicit user instruction in this chat",
+    "acceptance_date": "2026-10-30",
+    "prediction_sha256": "fe9c534af7a9129243c9cc7b9f27c7ed9ebfd375fc2b9fedd2665edd35f39b0c",
+    "contact_table_sha256": "d8d324f68116c935a593c5923cc8fb67ac1bd390e7fb45b9cb860e2663051237",
+    "scope": "Accept current model predictions for experimental IK input; this does not supply missing metric geometry or change decoded contact states."
+  },
+  "body": {
+    "height_cm": 190,
+    "ratios": {
+      "upper_arm": 0.186,
+      "forearm": 0.146,
+      "thigh": 0.245,
+      "shank": 0.246,
+      "shoulder_w": 0.259,
+      "hip_w": 0.191,
+      "torso": 0.288
+    },
+    "px_per_cm": null
+  },
+  "single_panel_confirmed": false,
+  "geometry_blockers": [
+    "PX_PER_CM is missing: local hole scales are not a whole-wall calibration.",
+    "A suitable single-panel interval has not been established for the 2D solver."
+  ],
+  "provenance": {
+    "prediction_sha256": "fe9c534af7a9129243c9cc7b9f27c7ed9ebfd375fc2b9fedd2665edd35f39b0c",
+    "contact_table_sha256": "d8d324f68116c935a593c5923cc8fb67ac1bd390e7fb45b9cb860e2663051237",
+    "pose_sha256": "8f8ee0c55b8be57862de3d3c16d6f590eece9f82b2ced602b709f096c9298f0b",
+    "alignment_sha256": "05c419c1804d5c90f61e6ead7a68c60c5a421c54d944bdc2e0903319506ccdc7",
+    "bridge_sha256": "162b2c335a40a4fd284bb3f933e71f6bb01c1a654e289a12df9e83e771886f0b"
+  },
+  "moves": [
+    {
+      "move_index": 0,
+      "moving_limb": "left_hand",
+      "from_hold": "H137",
+      "to_hold": "H109",
+      "before_frame": 171,
+      "after_frame": 225,
+      "release_frame": 179,
+      "arrival_frame": 218,
+      "support_states": {
+        "right_hand": [
+          "wall_contact",
+          "free",
+          "H109"
+        ],
+        "left_foot": [
+          "free"
+        ],
+        "right_foot": [
+          "H163",
+          "free"
+        ]
+      },
+      "solver_compatible": false,
+      "reasons": [
+        "Observed body poses are missing in this interval.",
+        "right_hand: contact changes within the proposed interval.",
+        "left_foot: free; the current solver requires a fixed hold support.",
+        "right_foot: contact changes within the proposed interval."
+      ],
+      "annotation": null,
+      "status": "unsupported_contact_schedule"
+    },
+    {
+      "move_index": 1,
+      "moving_limb": "left_hand",
+      "from_hold": "H109",
+      "to_hold": "H079",
+      "before_frame": 345,
+      "after_frame": 461,
+      "release_frame": 353,
+      "arrival_frame": 454,
+      "support_states": {
+        "right_hand": [
+          "wall_contact",
+          "H090",
+          "free"
+        ],
+        "left_foot": [
+          "free",
+          "H149"
+        ],
+        "right_foot": [
+          "H163",
+          "free"
+        ]
+      },
+      "solver_compatible": false,
+      "reasons": [
+        "Moving-limb labels differ from the proposed release/arrival schedule.",
+        "right_hand: contact changes within the proposed interval.",
+        "left_foot: contact changes within the proposed interval.",
+        "right_foot: contact changes within the proposed interval."
+      ],
+      "annotation": null,
+      "status": "unsupported_contact_schedule"
+    },
+    {
+      "move_index": 2,
+      "moving_limb": "left_hand",
+      "from_hold": "H079",
+      "to_hold": "H054",
+      "before_frame": 499,
+      "after_frame": 529,
+      "release_frame": 507,
+      "arrival_frame": 522,
+      "support_states": {
+        "right_hand": [
+          "H072"
+        ],
+        "left_foot": [
+          "H109"
+        ],
+        "right_foot": [
+          "free"
+        ]
+      },
+      "solver_compatible": false,
+      "reasons": [
+        "right_foot: free; the current solver requires a fixed hold support."
+      ],
+      "annotation": null,
+      "status": "unsupported_contact_schedule"
+    },
+    {
+      "move_index": 3,
+      "moving_limb": "left_hand",
+      "from_hold": "H054",
+      "to_hold": "H038",
+      "before_frame": 654,
+      "after_frame": 682,
+      "release_frame": 662,
+      "arrival_frame": 675,
+      "support_states": {
+        "right_hand": [
+          "H046"
+        ],
+        "left_foot": [
+          "H094"
+        ],
+        "right_foot": [
+          "free"
+        ]
+      },
+      "solver_compatible": false,
+      "reasons": [
+        "right_foot: free; the current solver requires a fixed hold support."
+      ],
+      "annotation": null,
+      "status": "unsupported_contact_schedule"
+    },
+    {
+      "move_index": 4,
+      "moving_limb": "left_hand",
+      "from_hold": "H038",
+      "to_hold": "H022",
+      "before_frame": 817,
+      "after_frame": 848,
+      "release_frame": 825,
+      "arrival_frame": 841,
+      "support_states": {
+        "right_hand": [
+          "H027"
+        ],
+        "left_foot": [
+          "H079"
+        ],
+        "right_foot": [
+          "free"
+        ]
+      },
+      "solver_compatible": false,
+      "reasons": [
+        "right_foot: free; the current solver requires a fixed hold support."
+      ],
+      "annotation": null,
+      "status": "unsupported_contact_schedule"
+    },
+    {
+      "move_index": 5,
+      "moving_limb": "left_hand",
+      "from_hold": "H022",
+      "to_hold": "H011",
+      "before_frame": 951,
+      "after_frame": 975,
+      "release_frame": 959,
+      "arrival_frame": 969,
+      "support_states": {
+        "right_hand": [
+          "H011"
+        ],
+        "left_foot": [
+          "H054"
+        ],
+        "right_foot": [
+          "free"
+        ]
+      },
+      "solver_compatible": false,
+      "reasons": [
+        "right_foot: free; the current solver requires a fixed hold support."
+      ],
+      "annotation": null,
+      "status": "unsupported_contact_schedule"
+    },
+    {
+      "move_index": 6,
+      "moving_limb": "right_hand",
+      "from_hold": "H137",
+      "to_hold": "H109",
+      "before_frame": 72,
+      "after_frame": 227,
+      "release_frame": 80,
+      "arrival_frame": 220,
+      "support_states": {
+        "left_hand": [
+          "H137",
+          "free",
+          "H109"
+        ],
+        "left_foot": [
+          "free"
+        ],
+        "right_foot": [
+          "free",
+          "H163"
+        ]
+      },
+      "solver_compatible": false,
+      "reasons": [
+        "Observed body poses are missing in this interval.",
+        "left_hand: contact changes within the proposed interval.",
+        "Moving-limb labels differ from the proposed release/arrival schedule.",
+        "left_foot: free; the current solver requires a fixed hold support.",
+        "right_foot: contact changes within the proposed interval."
+      ],
+      "annotation": null,
+      "status": "unsupported_contact_schedule"
+    },
+    {
+      "move_index": 7,
+      "moving_limb": "right_hand",
+      "from_hold": "H109",
+      "to_hold": "H090",
+      "before_frame": 264,
+      "after_frame": 371,
+      "release_frame": 272,
+      "arrival_frame": 364,
+      "support_states": {
+        "left_hand": [
+          "H109",
+          "free"
+        ],
+        "left_foot": [
+          "free",
+          "H149"
+        ],
+        "right_foot": [
+          "H149",
+          "H163"
+        ]
+      },
+      "solver_compatible": false,
+      "reasons": [
+        "left_hand: contact changes within the proposed interval.",
+        "Moving-limb labels differ from the proposed release/arrival schedule.",
+        "left_foot: contact changes within the proposed interval.",
+        "right_foot: contact changes within the proposed interval."
+      ],
+      "annotation": null,
+      "status": "unsupported_contact_schedule"
+    },
+    {
+      "move_index": 8,
+      "moving_limb": "right_hand",
+      "from_hold": "H090",
+      "to_hold": "H072",
+      "before_frame": 420,
+      "after_frame": 477,
+      "release_frame": 428,
+      "arrival_frame": 470,
+      "support_states": {
+        "left_hand": [
+          "wall_contact",
+          "H079"
+        ],
+        "left_foot": [
+          "free"
+        ],
+        "right_foot": [
+          "free"
+        ]
+      },
+      "solver_compatible": false,
+      "reasons": [
+        "left_hand: contact changes within the proposed interval.",
+        "left_foot: free; the current solver requires a fixed hold support.",
+        "right_foot: free; the current solver requires a fixed hold support."
+      ],
+      "annotation": null,
+      "status": "unsupported_contact_schedule"
+    },
+    {
+      "move_index": 9,
+      "moving_limb": "right_hand",
+      "from_hold": "H072",
+      "to_hold": "H046",
+      "before_frame": 583,
+      "after_frame": 618,
+      "release_frame": 591,
+      "arrival_frame": 611,
+      "support_states": {
+        "left_hand": [
+          "H054"
+        ],
+        "left_foot": [
+          "free"
+        ],
+        "right_foot": [
+          "free",
+          "H109"
+        ]
+      },
+      "solver_compatible": false,
+      "reasons": [
+        "left_foot: free; the current solver requires a fixed hold support.",
+        "right_foot: contact changes within the proposed interval."
+      ],
+      "annotation": null,
+      "status": "unsupported_contact_schedule"
+    },
+    {
+      "move_index": 10,
+      "moving_limb": "right_hand",
+      "from_hold": "H046",
+      "to_hold": "H027",
+      "before_frame": 749,
+      "after_frame": 784,
+      "release_frame": 757,
+      "arrival_frame": 777,
+      "support_states": {
+        "left_hand": [
+          "H038"
+        ],
+        "left_foot": [
+          "free"
+        ],
+        "right_foot": [
+          "wall_contact",
+          "free"
+        ]
+      },
+      "solver_compatible": false,
+      "reasons": [
+        "left_foot: free; the current solver requires a fixed hold support.",
+        "right_foot: contact changes within the proposed interval."
+      ],
+      "annotation": null,
+      "status": "unsupported_contact_schedule"
+    },
+    {
+      "move_index": 11,
+      "moving_limb": "right_hand",
+      "from_hold": "H027",
+      "to_hold": "H011",
+      "before_frame": 882,
+      "after_frame": 915,
+      "release_frame": 890,
+      "arrival_frame": 908,
+      "support_states": {
+        "left_hand": [
+          "H022"
+        ],
+        "left_foot": [
+          "free"
+        ],
+        "right_foot": [
+          "free",
+          "H079"
+        ]
+      },
+      "solver_compatible": false,
+      "reasons": [
+        "left_foot: free; the current solver requires a fixed hold support.",
+        "right_foot: contact changes within the proposed interval."
+      ],
+      "annotation": null,
+      "status": "unsupported_contact_schedule"
+    },
+    {
+      "move_index": 12,
+      "moving_limb": "left_foot",
+      "from_hold": "H149",
+      "to_hold": "H109",
+      "before_frame": 397,
+      "after_frame": 497,
+      "release_frame": 405,
+      "arrival_frame": 490,
+      "support_states": {
+        "left_hand": [
+          "wall_contact",
+          "H079"
+        ],
+        "right_hand": [
+          "H090",
+          "free",
+          "H072"
+        ],
+        "right_foot": [
+          "free"
+        ]
+      },
+      "solver_compatible": false,
+      "reasons": [
+        "left_hand: contact changes within the proposed interval.",
+        "right_hand: contact changes within the proposed interval.",
+        "right_foot: free; the current solver requires a fixed hold support."
+      ],
+      "annotation": null,
+      "status": "unsupported_contact_schedule"
+    },
+    {
+      "move_index": 13,
+      "moving_limb": "left_foot",
+      "from_hold": "H109",
+      "to_hold": "H094",
+      "before_frame": 566,
+      "after_frame": 652,
+      "release_frame": 574,
+      "arrival_frame": 645,
+      "support_states": {
+        "left_hand": [
+          "H054"
+        ],
+        "right_hand": [
+          "H072",
+          "free",
+          "H046"
+        ],
+        "right_foot": [
+          "free",
+          "H109"
+        ]
+      },
+      "solver_compatible": false,
+      "reasons": [
+        "right_hand: contact changes within the proposed interval.",
+        "right_foot: contact changes within the proposed interval."
+      ],
+      "annotation": null,
+      "status": "unsupported_contact_schedule"
+    },
+    {
+      "move_index": 14,
+      "moving_limb": "left_foot",
+      "from_hold": "H094",
+      "to_hold": "H079",
+      "before_frame": 728,
+      "after_frame": 817,
+      "release_frame": 736,
+      "arrival_frame": 810,
+      "support_states": {
+        "left_hand": [
+          "H038"
+        ],
+        "right_hand": [
+          "H046",
+          "free",
+          "H027"
+        ],
+        "right_foot": [
+          "free",
+          "wall_contact"
+        ]
+      },
+      "solver_compatible": false,
+      "reasons": [
+        "right_hand: contact changes within the proposed interval.",
+        "right_foot: contact changes within the proposed interval."
+      ],
+      "annotation": null,
+      "status": "unsupported_contact_schedule"
+    },
+    {
+      "move_index": 15,
+      "moving_limb": "left_foot",
+      "from_hold": "H079",
+      "to_hold": "H054",
+      "before_frame": 867,
+      "after_frame": 952,
+      "release_frame": 875,
+      "arrival_frame": 945,
+      "support_states": {
+        "left_hand": [
+          "H022"
+        ],
+        "right_hand": [
+          "H027",
+          "free",
+          "H011"
+        ],
+        "right_foot": [
+          "free",
+          "H079"
+        ]
+      },
+      "solver_compatible": false,
+      "reasons": [
+        "right_hand: contact changes within the proposed interval.",
+        "right_foot: contact changes within the proposed interval."
+      ],
+      "annotation": null,
+      "status": "unsupported_contact_schedule"
+    },
+    {
+      "move_index": 16,
+      "moving_limb": "right_foot",
+      "from_hold": "H163",
+      "to_hold": "H109",
+      "before_frame": 178,
+      "after_frame": 246,
+      "release_frame": 186,
+      "arrival_frame": 239,
+      "support_states": {
+        "left_hand": [
+          "H137",
+          "free",
+          "H109"
+        ],
+        "right_hand": [
+          "wall_contact",
+          "free",
+          "H109"
+        ],
+        "left_foot": [
+          "free"
+        ]
+      },
+      "solver_compatible": false,
+      "reasons": [
+        "Observed body poses are missing in this interval.",
+        "left_hand: contact changes within the proposed interval.",
+        "right_hand: contact changes within the proposed interval.",
+        "left_foot: free; the current solver requires a fixed hold support."
+      ],
+      "annotation": null,
+      "status": "unsupported_contact_schedule"
+    },
+    {
+      "move_index": 17,
+      "moving_limb": "right_foot",
+      "from_hold": "H109",
+      "to_hold": "H149",
+      "before_frame": 246,
+      "after_frame": 261,
+      "release_frame": 254,
+      "arrival_frame": 254,
+      "support_states": {
+        "left_hand": [
+          "H109"
+        ],
+        "right_hand": [
+          "H109"
+        ],
+        "left_foot": [
+          "free"
+        ]
+      },
+      "solver_compatible": false,
+      "reasons": [
+        "No ordered contact / free / contact interval.",
+        "left_foot: free; the current solver requires a fixed hold support."
+      ],
+      "annotation": null,
+      "status": "unsupported_contact_schedule"
+    },
+    {
+      "move_index": 18,
+      "moving_limb": "right_foot",
+      "from_hold": "H149",
+      "to_hold": "H163",
+      "before_frame": 291,
+      "after_frame": 306,
+      "release_frame": 299,
+      "arrival_frame": 299,
+      "support_states": {
+        "left_hand": [
+          "H109"
+        ],
+        "right_hand": [
+          "free"
+        ],
+        "left_foot": [
+          "free"
+        ]
+      },
+      "solver_compatible": false,
+      "reasons": [
+        "No ordered contact / free / contact interval.",
+        "right_hand: free; the current solver requires a fixed hold support.",
+        "left_foot: free; the current solver requires a fixed hold support."
+      ],
+      "annotation": null,
+      "status": "unsupported_contact_schedule"
+    },
+    {
+      "move_index": 19,
+      "moving_limb": "right_foot",
+      "from_hold": "H163",
+      "to_hold": "H109",
+      "before_frame": 380,
+      "after_frame": 606,
+      "release_frame": 388,
+      "arrival_frame": 599,
+      "support_states": {
+        "left_hand": [
+          "free",
+          "wall_contact",
+          "H079",
+          "H054"
+        ],
+        "right_hand": [
+          "H090",
+          "free",
+          "H072"
+        ],
+        "left_foot": [
+          "H149",
+          "free",
+          "H109"
+        ]
+      },
+      "solver_compatible": false,
+      "reasons": [
+        "left_hand: contact changes within the proposed interval.",
+        "right_hand: contact changes within the proposed interval.",
+        "left_foot: contact changes within the proposed interval."
+      ],
+      "annotation": null,
+      "status": "unsupported_contact_schedule"
+    },
+    {
+      "move_index": 20,
+      "moving_limb": "right_foot",
+      "from_hold": "H109",
+      "to_hold": "H079",
+      "before_frame": 613,
+      "after_frame": 901,
+      "release_frame": 621,
+      "arrival_frame": 894,
+      "support_states": {
+        "left_hand": [
+          "H054",
+          "free",
+          "H038",
+          "H022"
+        ],
+        "right_hand": [
+          "H046",
+          "free",
+          "H027"
+        ],
+        "left_foot": [
+          "free",
+          "H094",
+          "H079"
+        ]
+      },
+      "solver_compatible": false,
+      "reasons": [
+        "left_hand: contact changes within the proposed interval.",
+        "right_hand: contact changes within the proposed interval.",
+        "left_foot: contact changes within the proposed interval.",
+        "Moving-limb labels differ from the proposed release/arrival schedule."
+      ],
+      "annotation": null,
+      "status": "unsupported_contact_schedule"
+    }
+  ],
+  "interpretation": "Automatic kinematic candidates, not validated climbing-success predictions.",
+  "proposal_count": 21,
+  "solver_compatible_count": 0,
+  "generated_count": 0
+}

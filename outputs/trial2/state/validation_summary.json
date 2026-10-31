@@ -1,0 +1,119 @@
+{
+  "video_sha256": "9964d27ca051953d77cf10ee94a1772bd73e30d7e23fa09a54983c3630e8a068",
+  "pose_rows": 962,
+  "limb_rows": 3904,
+  "hold_candidates": 298,
+  "selected_holds": [
+    "H137",
+    "H113",
+    "H109",
+    "H163",
+    "H094",
+    "H090",
+    "H079",
+    "H072",
+    "H054",
+    "H046",
+    "H038",
+    "H027",
+    "H022",
+    "H011",
+    "H127",
+    "H149",
+    "H186"
+  ],
+  "draft_intervals": 29,
+  "sample_frames": [
+    0,
+    243,
+    487,
+    731,
+    975
+  ],
+  "alignment_frames": 976,
+  "alignment_fallbacks": 0,
+  "candidate_run_id": "ea806103e4af44ceb85fbfd48fac1ec8",
+  "status_counts": {
+    "ambiguous": {
+      "left_foot": 37,
+      "left_hand": 103,
+      "right_foot": 17,
+      "right_hand": 62
+    },
+    "likely_contact": {
+      "left_foot": 325,
+      "left_hand": 506,
+      "right_foot": 98,
+      "right_hand": 366
+    },
+    "low_visibility": {
+      "left_foot": 278,
+      "left_hand": 218,
+      "right_foot": 624,
+      "right_hand": 490
+    },
+    "missing_pose": {
+      "left_foot": 14,
+      "left_hand": 14,
+      "right_foot": 14,
+      "right_hand": 14
+    },
+    "no_candidate": {
+      "left_foot": 240,
+      "left_hand": 5,
+      "right_foot": 160,
+      "right_hand": 8
+    },
+    "tentative": {
+      "left_foot": 82,
+      "left_hand": 130,
+      "right_foot": 63,
+      "right_hand": 36
+    }
+  },
+  "body": {
+    "height_cm": 190,
+    "ratios": {
+      "upper_arm": 0.186,
+      "forearm": 0.146,
+      "thigh": 0.245,
+      "shank": 0.246,
+      "shoulder_w": 0.259,
+      "hip_w": 0.191,
+      "torso": 0.288
+    },
+    "px_per_cm": null
+  },
+  "geometry": {
+    "assumptions": {
+      "hole_spacing_cm": 15.0,
+      "spacing_status": "user_assumed_not_measured",
+      "spacing_definition": "Center-to-center distance for each marked adjacent-hole interval; grid angles are not assumed.",
+      "source_climber_height_cm": 173.0,
+      "source_height_status": "user_reported",
+      "target_user_height_cm": 190.0
+    },
+    "provenance": {
+      "video_sha256": "9964d27ca051953d77cf10ee94a1772bd73e30d7e23fa09a54983c3630e8a068",
+      "observation_sha256": "9bc32b0583645d9d5339c6a6352ec85088b94d8b2ab462c005b5785a2b3b9d1c",
+      "module_sha256": "bf502fd33808040b37a372f875201eb433db50bf908fcc91d08302d7c3b4eccc",
+      "frame_pixels_sha256": "5a3187edcf9822329708aafc396d2e8ce13c3775f523851ad97b4143fcd4228c",
+      "pixel_source": "Original decoded video frame, not the reconstructed wall composite."
+    },
+    "ready_for_metric_ik": false
+  },
+  "versions": {
+    "python": "3.12.15",
+    "opencv": "5.0.0",
+    "mediapipe": "1.1.1"
+  },
+  "automatic_ik": {
+    "enabled": true,
+    "mode": "experimental_direct_predictions",
+    "proposals": 21,
+    "generated": 0
+  },
+  "manual_endpoints_included": false,
+  "motion_results_included": false,
+  "interpretation": "Geometric drafts and reviewed annotations; no proof of grip or physical feasibility."
+}

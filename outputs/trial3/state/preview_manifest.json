@@ -1,0 +1,15 @@
+{
+  "inputs": {
+    "video_sha256": "8b5f96c2cd634c82e28d09eba62ba9bf6939bea34cbafe15be1388d831b6eff4",
+    "predictions": {
+      "limb_contacts.csv": "1464014ab9927d0a002576c6a7a9f299d4c624ee8f970899ec49dcb39af62cdf",
+      "contact_events.csv": "c9b77baf2321470997a88d7150b0416038472d5dc00bb627b41d0f53d4163136"
+    },
+    "map_sha256": "e13148db5f0f89eb2c42196c4ea1341375d18dc9f77b384e3f9dca83ad175c84",
+    "guard_sha256": "eb42b5bee339801e7f080fdffe82e8f11c9fd228613fc1e3fe8a4dd1d495ee45",
+    "renderer_version": 1
+  },
+  "artifacts": {
+    "/Users/ziwei/Desktop/2026 Fall/CIS 5810/Beta_Translator/outputs/trial3/videos/automatic_contacts_h264.mp4": "3512dbff3ab765b4ee2c349e7a24abbc3c79eccab907fac215316a0933c63ac7"
+  }
+}

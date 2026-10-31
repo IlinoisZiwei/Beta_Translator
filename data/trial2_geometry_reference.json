@@ -1,0 +1,244 @@
+{
+  "schema_version": 1,
+  "reference_frame": 450,
+  "image_size": [
+    1920,
+    1080
+  ],
+  "selection_source": "Assistant-selected visible holes and floor seams on original frame 450; review the overlay.",
+  "hole_pairs": [
+    {
+      "id": "upper_row_1",
+      "panel_id": "upper_wall",
+      "direction": "row",
+      "endpoints_px": [
+        [
+          675.19,
+          163.99
+        ],
+        [
+          708.29,
+          170.06
+        ]
+      ],
+      "intervals": 1,
+      "review_status": "assistant_selected_draft"
+    },
+    {
+      "id": "upper_row_2",
+      "panel_id": "upper_wall",
+      "direction": "row",
+      "endpoints_px": [
+        [
+          708.29,
+          170.06
+        ],
+        [
+          740.56,
+          176.15
+        ]
+      ],
+      "intervals": 1,
+      "review_status": "assistant_selected_draft"
+    },
+    {
+      "id": "upper_row_3",
+      "panel_id": "upper_wall",
+      "direction": "row",
+      "endpoints_px": [
+        [
+          740.56,
+          176.15
+        ],
+        [
+          771.9,
+          181.92
+        ]
+      ],
+      "intervals": 1,
+      "review_status": "assistant_selected_draft"
+    },
+    {
+      "id": "upper_column_1",
+      "panel_id": "upper_wall",
+      "direction": "column",
+      "endpoints_px": [
+        [
+          742.46,
+          143.13
+        ],
+        [
+          740.56,
+          176.15
+        ]
+      ],
+      "intervals": 1,
+      "review_status": "assistant_selected_draft"
+    },
+    {
+      "id": "upper_column_2",
+      "panel_id": "upper_wall",
+      "direction": "column",
+      "endpoints_px": [
+        [
+          740.56,
+          176.15
+        ],
+        [
+          738.77,
+          208.59
+        ]
+      ],
+      "intervals": 1,
+      "review_status": "assistant_selected_draft"
+    },
+    {
+      "id": "upper_column_3",
+      "panel_id": "upper_wall",
+      "direction": "column",
+      "endpoints_px": [
+        [
+          738.77,
+          208.59
+        ],
+        [
+          737.06,
+          240.52
+        ]
+      ],
+      "intervals": 1,
+      "review_status": "assistant_selected_draft"
+    },
+    {
+      "id": "right_row_1",
+      "panel_id": "right_wall",
+      "direction": "row",
+      "endpoints_px": [
+        [
+          1585.68,
+          127.17
+        ],
+        [
+          1616.92,
+          123.11
+        ]
+      ],
+      "intervals": 1,
+      "review_status": "assistant_selected_draft"
+    },
+    {
+      "id": "right_row_2",
+      "panel_id": "right_wall",
+      "direction": "row",
+      "endpoints_px": [
+        [
+          1616.92,
+          123.11
+        ],
+        [
+          1649.47,
+          118.87
+        ]
+      ],
+      "intervals": 1,
+      "review_status": "assistant_selected_draft"
+    },
+    {
+      "id": "right_row_3",
+      "panel_id": "right_wall",
+      "direction": "row",
+      "endpoints_px": [
+        [
+          1649.47,
+          118.87
+        ],
+        [
+          1682.76,
+          114.57
+        ]
+      ],
+      "intervals": 1,
+      "review_status": "assistant_selected_draft"
+    },
+    {
+      "id": "right_column_1",
+      "panel_id": "right_wall",
+      "direction": "column",
+      "endpoints_px": [
+        [
+          1652.24,
+          92.25
+        ],
+        [
+          1649.47,
+          118.87
+        ]
+      ],
+      "intervals": 1,
+      "review_status": "assistant_selected_draft"
+    },
+    {
+      "id": "right_column_2",
+      "panel_id": "right_wall",
+      "direction": "column",
+      "endpoints_px": [
+        [
+          1649.47,
+          118.87
+        ],
+        [
+          1646.37,
+          145.35
+        ]
+      ],
+      "intervals": 1,
+      "review_status": "assistant_selected_draft"
+    },
+    {
+      "id": "right_column_3",
+      "panel_id": "right_wall",
+      "direction": "column",
+      "endpoints_px": [
+        [
+          1646.37,
+          145.35
+        ],
+        [
+          1643.7,
+          171.62
+        ]
+      ],
+      "intervals": 1,
+      "review_status": "assistant_selected_draft"
+    }
+  ],
+  "floor_lines": {
+    "relation": "parallel_in_world",
+    "relation_source": "user_provided",
+    "image_lines_reviewed": true,
+    "line_endpoints_px": [
+      [
+        [
+          441,
+          1060
+        ],
+        [
+          505,
+          936
+        ]
+      ],
+      [
+        [
+          1258,
+          882
+        ],
+        [
+          1850,
+          1044
+        ]
+      ]
+    ],
+    "selection_note": "User confirmed the displayed F1 and F2 line identities and parallel relation on 2026-10-30. Pixel endpoints were selected by the assistant; seams may not be perfectly straight."
+  },
+  "video_sha256": "9964d27ca051953d77cf10ee94a1772bd73e30d7e23fa09a54983c3630e8a068"
+}

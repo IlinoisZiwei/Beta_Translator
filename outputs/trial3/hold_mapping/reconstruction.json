@@ -1,0 +1,142 @@
+{
+  "reference_frame_number": 334,
+  "source_frames": [
+    334,
+    0,
+    25,
+    50,
+    75,
+    100,
+    125,
+    150,
+    175,
+    200,
+    225,
+    251,
+    276,
+    301,
+    326,
+    351,
+    376,
+    401,
+    426,
+    451,
+    476,
+    502
+  ],
+  "sources": [
+    {
+      "source_frame": 334,
+      "used_pixels": 864439,
+      "unresolved_pixels": 57161
+    },
+    {
+      "source_frame": 0,
+      "used_pixels": 43835,
+      "unresolved_pixels": 13326
+    },
+    {
+      "source_frame": 25,
+      "used_pixels": 0,
+      "unresolved_pixels": 13326
+    },
+    {
+      "source_frame": 50,
+      "used_pixels": 91,
+      "unresolved_pixels": 13235
+    },
+    {
+      "source_frame": 75,
+      "used_pixels": 848,
+      "unresolved_pixels": 12387
+    },
+    {
+      "source_frame": 100,
+      "used_pixels": 3254,
+      "unresolved_pixels": 9133
+    },
+    {
+      "source_frame": 125,
+      "used_pixels": 5724,
+      "unresolved_pixels": 3409
+    },
+    {
+      "source_frame": 150,
+      "used_pixels": 2070,
+      "unresolved_pixels": 1339
+    },
+    {
+      "source_frame": 175,
+      "used_pixels": 0,
+      "unresolved_pixels": 1339
+    },
+    {
+      "source_frame": 200,
+      "used_pixels": 129,
+      "unresolved_pixels": 1210
+    },
+    {
+      "source_frame": 225,
+      "used_pixels": 0,
+      "unresolved_pixels": 1210
+    },
+    {
+      "source_frame": 251,
+      "used_pixels": 0,
+      "unresolved_pixels": 1210
+    },
+    {
+      "source_frame": 276,
+      "used_pixels": 0,
+      "unresolved_pixels": 1210
+    },
+    {
+      "source_frame": 301,
+      "used_pixels": 0,
+      "unresolved_pixels": 1210
+    },
+    {
+      "source_frame": 326,
+      "used_pixels": 0,
+      "unresolved_pixels": 1210
+    },
+    {
+      "source_frame": 351,
+      "used_pixels": 81,
+      "unresolved_pixels": 1129
+    },
+    {
+      "source_frame": 376,
+      "used_pixels": 1024,
+      "unresolved_pixels": 105
+    },
+    {
+      "source_frame": 401,
+      "used_pixels": 72,
+      "unresolved_pixels": 33
+    },
+    {
+      "source_frame": 426,
+      "used_pixels": 14,
+      "unresolved_pixels": 19
+    },
+    {
+      "source_frame": 451,
+      "used_pixels": 8,
+      "unresolved_pixels": 11
+    },
+    {
+      "source_frame": 476,
+      "used_pixels": 2,
+      "unresolved_pixels": 9
+    },
+    {
+      "source_frame": 502,
+      "used_pixels": 2,
+      "unresolved_pixels": 7
+    }
+  ],
+  "unresolved_pixels": 7,
+  "method": "Reference-image coordinates; observed donor pixels only; convex-hull person exclusion.",
+  "limitations": "One global homography per source; parallax and surface-depth errors remain possible."
+}

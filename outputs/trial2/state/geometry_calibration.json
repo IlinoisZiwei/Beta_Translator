@@ -1,0 +1,200 @@
+{
+  "schema_version": 1,
+  "assumptions": {
+    "hole_spacing_cm": 15.0,
+    "spacing_status": "user_assumed_not_measured",
+    "spacing_definition": "Center-to-center distance for each marked adjacent-hole interval; grid angles are not assumed.",
+    "source_climber_height_cm": 173.0,
+    "source_height_status": "user_reported",
+    "target_user_height_cm": 190.0
+  },
+  "body_priors": {
+    "source_segments_cm": {
+      "upper_arm": 32.178,
+      "forearm": 25.258,
+      "thigh": 42.385,
+      "shank": 42.558,
+      "shoulder_w": 44.807,
+      "hip_w": 33.043,
+      "torso": 49.824
+    },
+    "target_segments_cm": {
+      "upper_arm": 35.339999999999996,
+      "forearm": 27.74,
+      "thigh": 46.55,
+      "shank": 46.74,
+      "shoulder_w": 49.21,
+      "hip_w": 36.29,
+      "torso": 54.72
+    },
+    "source_ratios": {
+      "upper_arm": 0.186,
+      "forearm": 0.146,
+      "thigh": 0.245,
+      "shank": 0.246,
+      "shoulder_w": 0.259,
+      "hip_w": 0.191,
+      "torso": 0.288
+    },
+    "note": "Segment lengths use model ratios, not measured limb lengths. Height does not calibrate the crouched image silhouette."
+  },
+  "local_scale_samples": [
+    {
+      "sample_id": "upper_row_1",
+      "panel_id": "upper_wall",
+      "direction": "row",
+      "intervals": 1,
+      "assumed_length_cm": 15.0,
+      "image_distance_px": 33.65196725304472,
+      "local_px_per_cm": 2.2434644835363144,
+      "review_status": "assistant_selected_draft"
+    },
+    {
+      "sample_id": "upper_row_2",
+      "panel_id": "upper_wall",
+      "direction": "row",
+      "intervals": 1,
+      "assumed_length_cm": 15.0,
+      "image_distance_px": 32.839625454624155,
+      "local_px_per_cm": 2.18930836364161,
+      "review_status": "assistant_selected_draft"
+    },
+    {
+      "sample_id": "upper_row_3",
+      "panel_id": "upper_wall",
+      "direction": "row",
+      "intervals": 1,
+      "assumed_length_cm": 15.0,
+      "image_distance_px": 31.866730299797023,
+      "local_px_per_cm": 2.124448686653135,
+      "review_status": "assistant_selected_draft"
+    },
+    {
+      "sample_id": "upper_column_1",
+      "panel_id": "upper_wall",
+      "direction": "column",
+      "intervals": 1,
+      "assumed_length_cm": 15.0,
+      "image_distance_px": 33.07461866749186,
+      "local_px_per_cm": 2.204974577832791,
+      "review_status": "assistant_selected_draft"
+    },
+    {
+      "sample_id": "upper_column_2",
+      "panel_id": "upper_wall",
+      "direction": "column",
+      "intervals": 1,
+      "assumed_length_cm": 15.0,
+      "image_distance_px": 32.48934748498344,
+      "local_px_per_cm": 2.165956498998896,
+      "review_status": "assistant_selected_draft"
+    },
+    {
+      "sample_id": "upper_column_3",
+      "panel_id": "upper_wall",
+      "direction": "column",
+      "intervals": 1,
+      "assumed_length_cm": 15.0,
+      "image_distance_px": 31.975756441404176,
+      "local_px_per_cm": 2.131717096093612,
+      "review_status": "assistant_selected_draft"
+    },
+    {
+      "sample_id": "right_row_1",
+      "panel_id": "right_wall",
+      "direction": "row",
+      "intervals": 1,
+      "assumed_length_cm": 15.0,
+      "image_distance_px": 31.502717343111858,
+      "local_px_per_cm": 2.1001811562074573,
+      "review_status": "assistant_selected_draft"
+    },
+    {
+      "sample_id": "right_row_2",
+      "panel_id": "right_wall",
+      "direction": "row",
+      "intervals": 1,
+      "assumed_length_cm": 15.0,
+      "image_distance_px": 32.82499200304544,
+      "local_px_per_cm": 2.188332800203029,
+      "review_status": "assistant_selected_draft"
+    },
+    {
+      "sample_id": "right_row_3",
+      "panel_id": "right_wall",
+      "direction": "row",
+      "intervals": 1,
+      "assumed_length_cm": 15.0,
+      "image_distance_px": 33.566562230886824,
+      "local_px_per_cm": 2.2377708153924547,
+      "review_status": "assistant_selected_draft"
+    },
+    {
+      "sample_id": "right_column_1",
+      "panel_id": "right_wall",
+      "direction": "column",
+      "intervals": 1,
+      "assumed_length_cm": 15.0,
+      "image_distance_px": 26.763731055291977,
+      "local_px_per_cm": 1.784248737019465,
+      "review_status": "assistant_selected_draft"
+    },
+    {
+      "sample_id": "right_column_2",
+      "panel_id": "right_wall",
+      "direction": "column",
+      "intervals": 1,
+      "assumed_length_cm": 15.0,
+      "image_distance_px": 26.66084019681301,
+      "local_px_per_cm": 1.7773893464542005,
+      "review_status": "assistant_selected_draft"
+    },
+    {
+      "sample_id": "right_column_3",
+      "panel_id": "right_wall",
+      "direction": "column",
+      "intervals": 1,
+      "assumed_length_cm": 15.0,
+      "image_distance_px": 26.405336581835112,
+      "local_px_per_cm": 1.7603557721223408,
+      "review_status": "assistant_selected_draft"
+    }
+  ],
+  "floor": {
+    "status": "one_direction_estimated",
+    "vanishing_point": {
+      "homogeneous": [
+        622.6119174942704,
+        708.1269098548509,
+        1.0
+      ],
+      "pixel_xy": [
+        622.6119174942704,
+        708.1269098548509
+      ],
+      "at_infinity": false
+    }
+  },
+  "global_px_per_cm": null,
+  "wall_floor_angle_deg": null,
+  "floor_horizon": null,
+  "metric_panel_transform": null,
+  "ready_for_metric_ik": false,
+  "limitations": [
+    "Local directional scales are not a whole-image pixel-to-centimeter conversion.",
+    "One floor vanishing point does not determine the floor horizon or plane normal.",
+    "Wall angle needs additional camera/plane constraints; no angle is inferred here.",
+    "Hole selections are assistant-reviewed draft samples on original frame 450.",
+    "A second independent floor direction and calibrated camera intrinsics can constrain the floor normal.",
+    "Wall grid layout and plane-specific calibration are required before metric pose fitting."
+  ],
+  "reference_frame": 450,
+  "provenance": {
+    "video_sha256": "9964d27ca051953d77cf10ee94a1772bd73e30d7e23fa09a54983c3630e8a068",
+    "observation_sha256": "9bc32b0583645d9d5339c6a6352ec85088b94d8b2ab462c005b5785a2b3b9d1c",
+    "module_sha256": "bf502fd33808040b37a372f875201eb433db50bf908fcc91d08302d7c3b4eccc",
+    "frame_pixels_sha256": "5a3187edcf9822329708aafc396d2e8ce13c3775f523851ad97b4143fcd4228c",
+    "pixel_source": "Original decoded video frame, not the reconstructed wall composite."
+  },
+  "notebook_markdown": "### Inputs and their meaning\n\n- Adjacent-hole center spacing: **15 cm**, a user assumption, not a Movement specification or measurement.\n- Filmed climber height: **173 cm**, reported by the user.\n- Target user height: **190 cm**, kept separate for later retargeting.\n- Default body ratios give model priors only; the climber's bent image height is not used as a ruler.\n\n### Local scale from visible holes\n\nThe overlay marks the exact adjacent-hole pairs on the original video frame, before multi-frame compositing.\nEach sample uses `pixel distance / (number of intervals * assumed spacing)`.\nRow and column are image-grid directions, not world-horizontal or world-vertical axes.\n\n| Wall region | Grid direction | Median local px/cm | Pairs |\n|---|---|---:|---:|\n| right_wall | column | 1.777 | 3 |\n| right_wall | row | 2.188 | 3 |\n| upper_wall | column | 2.166 | 3 |\n| upper_wall | row | 2.189 | 3 |\n\nPerspective makes these scales vary with position and direction. No single value is assigned to `PX_PER_CM`.\nThe spacing assumption does not establish a square grid or angles between grid directions.\n\n### What the parallel floor lines tell us\n\nThe user identified F1 and F2 as parallel in the scene. Their image-line extensions give one\nvanishing point: **(622.6, 708.1) pixels**, in frame-450 image coordinates.\nThis is a directional perspective constraint, not the floor horizon and not a wall-angle estimate.\nEndpoint selection, lens distortion and curved mat seams affect the estimate.\n\nTo estimate a wall-to-floor angle, we still need the floor normal and the wall normal in the same\ncalibrated camera coordinates. For example: add a second floor-line family in another direction,\ncamera intrinsics, and known wall-grid geometry. A known vertical direction with camera calibration\nis another way to constrain the floor normal. One known human height does not supply these by itself.\n\n### Pipeline behavior\n\nSection 4C saves assumptions, body priors, local measurements and the floor constraint. Section 8\nshows them before the existing IK gate; Section 10 exports them. Contact predictions continue in\nimage coordinates. Metric IK remains pending until panel geometry and motion contacts are reviewed.\nNo wall angle, 3D wall reconstruction, physical success probability or contact-accuracy improvement is claimed.\n\nMethod references: [Single View Metrology](https://ora.ox.ac.uk/bookmarks/uuid%3A9b99df78-df75-49a9-a1b8-1b38e1b173a8),\n[OpenCV planar homography](https://docs.opencv.org/4.x/d9/dab/tutorial_homography.html).\n"
+}

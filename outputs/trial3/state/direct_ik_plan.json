@@ -1,0 +1,710 @@
+{
+  "schema_version": 1,
+  "enabled": true,
+  "mode": "experimental_direct_predictions",
+  "execute_requested": true,
+  "statistical_gate_bypassed": true,
+  "current_prediction_user_accepted": false,
+  "review_note": null,
+  "body": {
+    "height_cm": 190,
+    "ratios": {
+      "upper_arm": 0.186,
+      "forearm": 0.146,
+      "thigh": 0.245,
+      "shank": 0.246,
+      "shoulder_w": 0.259,
+      "hip_w": 0.191,
+      "torso": 0.288
+    },
+    "px_per_cm": null
+  },
+  "single_panel_confirmed": false,
+  "geometry_blockers": [
+    "PX_PER_CM is missing: local hole scales are not a whole-wall calibration.",
+    "A suitable single-panel interval has not been established for the 2D solver."
+  ],
+  "provenance": {
+    "prediction_sha256": "d4b9c540f040b57d40ec1a15c4e8cc31a0da1f4f11f0ffaa9883a5af0d8624bd",
+    "contact_table_sha256": "1464014ab9927d0a002576c6a7a9f299d4c624ee8f970899ec49dcb39af62cdf",
+    "pose_sha256": "2ba613782994daad386596690a9b3d9202064acaf6a407caab659ea3e5ad42e6",
+    "alignment_sha256": "f1405497f353345f552456316723ac44b777b8ef1d8dc9d97f9527d8bcb9deae",
+    "bridge_sha256": "162b2c335a40a4fd284bb3f933e71f6bb01c1a654e289a12df9e83e771886f0b"
+  },
+  "moves": [
+    {
+      "move_index": 0,
+      "moving_limb": "left_hand",
+      "from_hold": "H032",
+      "to_hold": "H017",
+      "before_frame": 88,
+      "after_frame": 118,
+      "release_frame": 96,
+      "arrival_frame": 111,
+      "support_states": {
+        "right_hand": [
+          "H021"
+        ],
+        "left_foot": [
+          "H053",
+          "free"
+        ],
+        "right_foot": [
+          "H050"
+        ]
+      },
+      "solver_compatible": false,
+      "reasons": [
+        "left_foot: contact changes within the proposed interval."
+      ],
+      "annotation": null,
+      "status": "unsupported_contact_schedule"
+    },
+    {
+      "move_index": 1,
+      "moving_limb": "left_hand",
+      "from_hold": "H017",
+      "to_hold": "H012",
+      "before_frame": 234,
+      "after_frame": 263,
+      "release_frame": 242,
+      "arrival_frame": 256,
+      "support_states": {
+        "right_hand": [
+          "H017"
+        ],
+        "left_foot": [
+          "H045"
+        ],
+        "right_foot": [
+          "wall_contact"
+        ]
+      },
+      "solver_compatible": false,
+      "reasons": [
+        "right_foot: wall_contact; the current solver requires a fixed hold support."
+      ],
+      "annotation": null,
+      "status": "unsupported_contact_schedule"
+    },
+    {
+      "move_index": 2,
+      "moving_limb": "left_hand",
+      "from_hold": "H012",
+      "to_hold": "H007",
+      "before_frame": 371,
+      "after_frame": 386,
+      "release_frame": 379,
+      "arrival_frame": 379,
+      "support_states": {
+        "right_hand": [
+          "H012"
+        ],
+        "left_foot": [
+          "H032"
+        ],
+        "right_foot": [
+          "free"
+        ]
+      },
+      "solver_compatible": false,
+      "reasons": [
+        "No ordered contact / free / contact interval.",
+        "right_foot: free; the current solver requires a fixed hold support."
+      ],
+      "annotation": null,
+      "status": "unsupported_contact_schedule"
+    },
+    {
+      "move_index": 3,
+      "moving_limb": "left_hand",
+      "from_hold": "H007",
+      "to_hold": "H001",
+      "before_frame": 463,
+      "after_frame": 493,
+      "release_frame": 471,
+      "arrival_frame": 486,
+      "support_states": {
+        "right_hand": [
+          "H001"
+        ],
+        "left_foot": [
+          "H032"
+        ],
+        "right_foot": [
+          "H021"
+        ]
+      },
+      "solver_compatible": true,
+      "reasons": [],
+      "annotation": {
+        "video_sha256": "8b5f96c2cd634c82e28d09eba62ba9bf6939bea34cbafe15be1388d831b6eff4",
+        "candidate_run_id": "e8596b6345034ed99839af04025601fe",
+        "selected_hold_ids": [
+          "H001",
+          "H002",
+          "H003",
+          "H004",
+          "H005",
+          "H006",
+          "H007",
+          "H008",
+          "H009",
+          "H010",
+          "H011",
+          "H012",
+          "H013",
+          "H014",
+          "H015",
+          "H016",
+          "H017",
+          "H018",
+          "H019",
+          "H020",
+          "H021",
+          "H022",
+          "H023",
+          "H024",
+          "H025",
+          "H026",
+          "H027",
+          "H028",
+          "H029",
+          "H030",
+          "H031",
+          "H032",
+          "H033",
+          "H034",
+          "H035",
+          "H036",
+          "H037",
+          "H038",
+          "H039",
+          "H040",
+          "H041",
+          "H042",
+          "H043",
+          "H044",
+          "H045",
+          "H046",
+          "H047",
+          "H048",
+          "H049",
+          "H050",
+          "H051",
+          "H052",
+          "H053"
+        ],
+        "reference_frame_number": 334,
+        "frames": {
+          "before": 463,
+          "after": 493
+        },
+        "moving_limb": "left_hand",
+        "contacts": {
+          "before": {
+            "right_hand": "H001",
+            "left_foot": "H032",
+            "right_foot": "H021",
+            "left_hand": "H007"
+          },
+          "after": {
+            "right_hand": "H001",
+            "left_foot": "H032",
+            "right_foot": "H021",
+            "left_hand": "H001"
+          }
+        },
+        "body": {
+          "height_cm": 190,
+          "ratios": {
+            "upper_arm": 0.186,
+            "forearm": 0.146,
+            "thigh": 0.245,
+            "shank": 0.246,
+            "shoulder_w": 0.259,
+            "hip_w": 0.191,
+            "torso": 0.288
+          },
+          "px_per_cm": null
+        },
+        "motion": {
+          "release_frame": 471,
+          "arrival_frame": 486,
+          "support_contacts_maintained": true
+        },
+        "annotation_source": "automatic_predictions_experimental",
+        "notes": "Automatic decoded contacts accepted through the user-enabled bridge. Support continuity is inferred from decoded labels, not individually human-verified.",
+        "automatic_evidence": {
+          "original_requires_review": true,
+          "original_eligible_for_ik": false,
+          "support_evidence": "Same decoded hold on every frame; confidence gate bypassed.",
+          "release_frame_range": [
+            468,
+            473
+          ],
+          "arrival_frame_range": [
+            484,
+            488
+          ]
+        }
+      },
+      "status": "pending_geometry"
+    },
+    {
+      "move_index": 4,
+      "moving_limb": "right_hand",
+      "from_hold": "H032",
+      "to_hold": "H021",
+      "before_frame": 35,
+      "after_frame": 62,
+      "release_frame": 43,
+      "arrival_frame": 55,
+      "support_states": {
+        "left_hand": [
+          "H032"
+        ],
+        "left_foot": [
+          "H053"
+        ],
+        "right_foot": [
+          "H050"
+        ]
+      },
+      "solver_compatible": true,
+      "reasons": [],
+      "annotation": {
+        "video_sha256": "8b5f96c2cd634c82e28d09eba62ba9bf6939bea34cbafe15be1388d831b6eff4",
+        "candidate_run_id": "e8596b6345034ed99839af04025601fe",
+        "selected_hold_ids": [
+          "H001",
+          "H002",
+          "H003",
+          "H004",
+          "H005",
+          "H006",
+          "H007",
+          "H008",
+          "H009",
+          "H010",
+          "H011",
+          "H012",
+          "H013",
+          "H014",
+          "H015",
+          "H016",
+          "H017",
+          "H018",
+          "H019",
+          "H020",
+          "H021",
+          "H022",
+          "H023",
+          "H024",
+          "H025",
+          "H026",
+          "H027",
+          "H028",
+          "H029",
+          "H030",
+          "H031",
+          "H032",
+          "H033",
+          "H034",
+          "H035",
+          "H036",
+          "H037",
+          "H038",
+          "H039",
+          "H040",
+          "H041",
+          "H042",
+          "H043",
+          "H044",
+          "H045",
+          "H046",
+          "H047",
+          "H048",
+          "H049",
+          "H050",
+          "H051",
+          "H052",
+          "H053"
+        ],
+        "reference_frame_number": 334,
+        "frames": {
+          "before": 35,
+          "after": 62
+        },
+        "moving_limb": "right_hand",
+        "contacts": {
+          "before": {
+            "left_hand": "H032",
+            "left_foot": "H053",
+            "right_foot": "H050",
+            "right_hand": "H032"
+          },
+          "after": {
+            "left_hand": "H032",
+            "left_foot": "H053",
+            "right_foot": "H050",
+            "right_hand": "H021"
+          }
+        },
+        "body": {
+          "height_cm": 190,
+          "ratios": {
+            "upper_arm": 0.186,
+            "forearm": 0.146,
+            "thigh": 0.245,
+            "shank": 0.246,
+            "shoulder_w": 0.259,
+            "hip_w": 0.191,
+            "torso": 0.288
+          },
+          "px_per_cm": null
+        },
+        "motion": {
+          "release_frame": 43,
+          "arrival_frame": 55,
+          "support_contacts_maintained": true
+        },
+        "annotation_source": "automatic_predictions_experimental",
+        "notes": "Automatic decoded contacts accepted through the user-enabled bridge. Support continuity is inferred from decoded labels, not individually human-verified.",
+        "automatic_evidence": {
+          "original_requires_review": true,
+          "original_eligible_for_ik": false,
+          "support_evidence": "Same decoded hold on every frame; confidence gate bypassed.",
+          "release_frame_range": [
+            41,
+            44
+          ],
+          "arrival_frame_range": [
+            54,
+            57
+          ]
+        }
+      },
+      "status": "pending_geometry"
+    },
+    {
+      "move_index": 5,
+      "moving_limb": "right_hand",
+      "from_hold": "H021",
+      "to_hold": "H017",
+      "before_frame": 118,
+      "after_frame": 133,
+      "release_frame": 126,
+      "arrival_frame": 126,
+      "support_states": {
+        "left_hand": [
+          "H017"
+        ],
+        "left_foot": [
+          "free"
+        ],
+        "right_foot": [
+          "H050"
+        ]
+      },
+      "solver_compatible": false,
+      "reasons": [
+        "No ordered contact / free / contact interval.",
+        "left_foot: free; the current solver requires a fixed hold support."
+      ],
+      "annotation": null,
+      "status": "unsupported_contact_schedule"
+    },
+    {
+      "move_index": 6,
+      "moving_limb": "right_hand",
+      "from_hold": "H017",
+      "to_hold": "H007",
+      "before_frame": 296,
+      "after_frame": 331,
+      "release_frame": 304,
+      "arrival_frame": 324,
+      "support_states": {
+        "left_hand": [
+          "H012"
+        ],
+        "left_foot": [
+          "H032"
+        ],
+        "right_foot": [
+          "wall_contact"
+        ]
+      },
+      "solver_compatible": false,
+      "reasons": [
+        "right_foot: wall_contact; the current solver requires a fixed hold support."
+      ],
+      "annotation": null,
+      "status": "unsupported_contact_schedule"
+    },
+    {
+      "move_index": 7,
+      "moving_limb": "right_hand",
+      "from_hold": "H007",
+      "to_hold": "H012",
+      "before_frame": 347,
+      "after_frame": 362,
+      "release_frame": 355,
+      "arrival_frame": 355,
+      "support_states": {
+        "left_hand": [
+          "H012"
+        ],
+        "left_foot": [
+          "H032"
+        ],
+        "right_foot": [
+          "wall_contact"
+        ]
+      },
+      "solver_compatible": false,
+      "reasons": [
+        "No ordered contact / free / contact interval.",
+        "right_foot: wall_contact; the current solver requires a fixed hold support."
+      ],
+      "annotation": null,
+      "status": "unsupported_contact_schedule"
+    },
+    {
+      "move_index": 8,
+      "moving_limb": "right_hand",
+      "from_hold": "H012",
+      "to_hold": "H001",
+      "before_frame": 401,
+      "after_frame": 435,
+      "release_frame": 409,
+      "arrival_frame": 428,
+      "support_states": {
+        "left_hand": [
+          "H007"
+        ],
+        "left_foot": [
+          "H032"
+        ],
+        "right_foot": [
+          "H021"
+        ]
+      },
+      "solver_compatible": true,
+      "reasons": [],
+      "annotation": {
+        "video_sha256": "8b5f96c2cd634c82e28d09eba62ba9bf6939bea34cbafe15be1388d831b6eff4",
+        "candidate_run_id": "e8596b6345034ed99839af04025601fe",
+        "selected_hold_ids": [
+          "H001",
+          "H002",
+          "H003",
+          "H004",
+          "H005",
+          "H006",
+          "H007",
+          "H008",
+          "H009",
+          "H010",
+          "H011",
+          "H012",
+          "H013",
+          "H014",
+          "H015",
+          "H016",
+          "H017",
+          "H018",
+          "H019",
+          "H020",
+          "H021",
+          "H022",
+          "H023",
+          "H024",
+          "H025",
+          "H026",
+          "H027",
+          "H028",
+          "H029",
+          "H030",
+          "H031",
+          "H032",
+          "H033",
+          "H034",
+          "H035",
+          "H036",
+          "H037",
+          "H038",
+          "H039",
+          "H040",
+          "H041",
+          "H042",
+          "H043",
+          "H044",
+          "H045",
+          "H046",
+          "H047",
+          "H048",
+          "H049",
+          "H050",
+          "H051",
+          "H052",
+          "H053"
+        ],
+        "reference_frame_number": 334,
+        "frames": {
+          "before": 401,
+          "after": 435
+        },
+        "moving_limb": "right_hand",
+        "contacts": {
+          "before": {
+            "left_hand": "H007",
+            "left_foot": "H032",
+            "right_foot": "H021",
+            "right_hand": "H012"
+          },
+          "after": {
+            "left_hand": "H007",
+            "left_foot": "H032",
+            "right_foot": "H021",
+            "right_hand": "H001"
+          }
+        },
+        "body": {
+          "height_cm": 190,
+          "ratios": {
+            "upper_arm": 0.186,
+            "forearm": 0.146,
+            "thigh": 0.245,
+            "shank": 0.246,
+            "shoulder_w": 0.259,
+            "hip_w": 0.191,
+            "torso": 0.288
+          },
+          "px_per_cm": null
+        },
+        "motion": {
+          "release_frame": 409,
+          "arrival_frame": 428,
+          "support_contacts_maintained": true
+        },
+        "annotation_source": "automatic_predictions_experimental",
+        "notes": "Automatic decoded contacts accepted through the user-enabled bridge. Support continuity is inferred from decoded labels, not individually human-verified.",
+        "automatic_evidence": {
+          "original_requires_review": true,
+          "original_eligible_for_ik": false,
+          "support_evidence": "Same decoded hold on every frame; confidence gate bypassed.",
+          "release_frame_range": [
+            408,
+            411
+          ],
+          "arrival_frame_range": [
+            426,
+            430
+          ]
+        }
+      },
+      "status": "pending_geometry"
+    },
+    {
+      "move_index": 9,
+      "moving_limb": "left_foot",
+      "from_hold": "H053",
+      "to_hold": "H045",
+      "before_frame": 85,
+      "after_frame": 154,
+      "release_frame": 93,
+      "arrival_frame": 147,
+      "support_states": {
+        "left_hand": [
+          "H032",
+          "free",
+          "H017"
+        ],
+        "right_hand": [
+          "H021",
+          "H017"
+        ],
+        "right_foot": [
+          "H050"
+        ]
+      },
+      "solver_compatible": false,
+      "reasons": [
+        "left_hand: contact changes within the proposed interval.",
+        "right_hand: contact changes within the proposed interval."
+      ],
+      "annotation": null,
+      "status": "unsupported_contact_schedule"
+    },
+    {
+      "move_index": 10,
+      "moving_limb": "left_foot",
+      "from_hold": "H045",
+      "to_hold": "H032",
+      "before_frame": 256,
+      "after_frame": 295,
+      "release_frame": 264,
+      "arrival_frame": 288,
+      "support_states": {
+        "left_hand": [
+          "H012"
+        ],
+        "right_hand": [
+          "H017"
+        ],
+        "right_foot": [
+          "wall_contact"
+        ]
+      },
+      "solver_compatible": false,
+      "reasons": [
+        "right_foot: wall_contact; the current solver requires a fixed hold support."
+      ],
+      "annotation": null,
+      "status": "unsupported_contact_schedule"
+    },
+    {
+      "move_index": 11,
+      "moving_limb": "right_foot",
+      "from_hold": "H050",
+      "to_hold": "H021",
+      "before_frame": 184,
+      "after_frame": 395,
+      "release_frame": 192,
+      "arrival_frame": 388,
+      "support_states": {
+        "left_hand": [
+          "H017",
+          "free",
+          "H012",
+          "H007"
+        ],
+        "right_hand": [
+          "H017",
+          "free",
+          "H007",
+          "H012"
+        ],
+        "left_foot": [
+          "H045",
+          "free",
+          "H032"
+        ]
+      },
+      "solver_compatible": false,
+      "reasons": [
+        "left_hand: contact changes within the proposed interval.",
+        "right_hand: contact changes within the proposed interval.",
+        "left_foot: contact changes within the proposed interval.",
+        "Moving-limb labels differ from the proposed release/arrival schedule."
+      ],
+      "annotation": null,
+      "status": "unsupported_contact_schedule"
+    }
+  ],
+  "interpretation": "Automatic kinematic candidates, not validated climbing-success predictions.",
+  "proposal_count": 12,
+  "solver_compatible_count": 3,
+  "generated_count": 0
+}

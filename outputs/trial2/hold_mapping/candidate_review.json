@@ -1,0 +1,58 @@
+{
+  "reviewer": "Assistant visual review; not user confirmation",
+  "rejected_ids": [
+    "H068",
+    "H139",
+    "H158",
+    "H164",
+    "H165",
+    "H177",
+    "H242",
+    "H252",
+    "H259",
+    "H266",
+    "H269",
+    "H270",
+    "H272",
+    "H275",
+    "H289"
+  ],
+  "reasons": {
+    "H068": "Flat wall panel mistaken for a volume",
+    "H139": "Route/grading marker mistaken for a hold",
+    "H158": "Route/grading marker mistaken for a hold",
+    "H164": "Route/grading marker mistaken for a hold",
+    "H165": "Route/grading marker mistaken for a hold",
+    "H177": "Route/grading marker mistaken for a hold",
+    "H242": "Flat wall panel mistaken for a volume",
+    "H252": "Route/grading marker mistaken for a hold",
+    "H259": "Route/grading marker mistaken for a hold",
+    "H266": "Route/grading marker mistaken for a hold",
+    "H269": "Route/grading marker mistaken for a hold",
+    "H270": "Route/grading marker mistaken for a hold",
+    "H272": "Route/grading marker mistaken for a hold",
+    "H275": "Route/grading marker mistaken for a hold",
+    "H289": "Route/grading marker mistaken for a hold"
+  },
+  "uncertain_ids": [
+    "H247"
+  ],
+  "scope": "Targeted review of small detections and volume candidates; other retained candidates remain unreviewed.",
+  "random_sample_audit": {
+    "seed": 20261030,
+    "sample_size": 40,
+    "likely_holds": 36,
+    "clear_non_holds": 3,
+    "uncertain": 1,
+    "false_positive_ids": [
+      "H269",
+      "H270",
+      "H289"
+    ],
+    "uncertain_ids": [
+      "H247"
+    ],
+    "interpretation": "Raw automatic-candidate spot check, not whole-wall segmentation AP. Do not report a post-cleanup precision estimate on this same reviewed sample."
+  },
+  "candidate_sha256": "f345ca281fe209766489e6367e89334c4e77eb3ce91919f06882ee64935435e4"
+}

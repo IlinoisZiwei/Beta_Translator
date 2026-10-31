@@ -1,0 +1,105 @@
+{
+  "metrics": {
+    "original_identity_rejected_frames": 53,
+    "cropped_pose_recoveries": 43,
+    "observed_pose_frames": 962,
+    "display_interpolated_frames": 14,
+    "wholebody_unobserved_frames": 10,
+    "unobserved_limb_frame_predictions": 40,
+    "accepted_contacts_on_guarded_frames": 0,
+    "before_max_wall_step_px_per_frame": 505.2173767089844,
+    "after_display_max_wall_step_px_per_frame": 10.863656997680664,
+    "comparison_start_frame": 154,
+    "comparison_end_frame": 266,
+    "interpretation": "Development-case diagnostics, including interpolation; not an independent pose or identity benchmark."
+  },
+  "tracking_summary": {
+    "inputs": {
+      "video_sha256": "9964d27ca051953d77cf10ee94a1772bd73e30d7e23fa09a54983c3630e8a068",
+      "raw_pose_sha256": "aa2be90f4283cc945aa98d79b65545510e78b2652d49ffec317dc66a2fd9abfe",
+      "wholebody_sha256": "cb861eaa2fa17ed2592d43033312a1f718bc054fa112c6ad1732c2e7315bc1c9",
+      "anchor_alignment_sha256": "36cb9f24809a8a9fb5278b65f24e52eaca91dae585b1bc875de4f37358a17e56",
+      "model_sha256": "64437af838a65d18e5ba7a0d39b465540069bc8aae8308de3e318aad31fcbc7b",
+      "code_sha256": "d6755280c92cf72553195bb7c14c055d4af261e0af34b8f599c7502aec5daf9c",
+      "pose_settings": {
+        "min_pose_detection_confidence": 0.5,
+        "min_pose_presence_confidence": 0.5,
+        "min_tracking_confidence": 0.5
+      },
+      "settings": {
+        "version": 1,
+        "min_anchor_score": 2.0,
+        "center_torso_limit": 0.75,
+        "min_torso_ratio": 0.5,
+        "max_torso_ratio": 1.8,
+        "crop_padding": 0.15,
+        "guard_padding_frames": 2,
+        "max_display_gap_sec": 2.0,
+        "max_endpoint_motion_torsos": 1.0
+      }
+    },
+    "frame_count": 976,
+    "observed_pose_frames": 962,
+    "original_pose_frames": 972,
+    "reused_raw_frames": 919,
+    "crop_recovered_frames": 43,
+    "raw_rejected_ranges": [
+      [
+        184,
+        236
+      ]
+    ],
+    "missing_observation_ranges": [
+      [
+        183,
+        183
+      ],
+      [
+        208,
+        218
+      ],
+      [
+        227,
+        227
+      ],
+      [
+        229,
+        229
+      ]
+    ],
+    "display_interpolated_ranges": [
+      [
+        183,
+        183
+      ],
+      [
+        208,
+        218
+      ],
+      [
+        227,
+        227
+      ],
+      [
+        229,
+        229
+      ]
+    ],
+    "wholebody_unobserved_ranges": [
+      [
+        208,
+        217
+      ]
+    ],
+    "wholebody_interpolated_ranges": [
+      [
+        208,
+        217
+      ]
+    ],
+    "limitations": "Rule-based identity checks for this video, not an independently measured pose-accuracy improvement. Display interpolation is an estimate, not proof of maintained contacts."
+  },
+  "notebook_markdown": "### What happened\n\nThe original full-frame MediaPipe pass switched to a foreground passerby during\nframes **184\u2013236 (6.13\u20137.87 s)**. Its setting `num_poses=1` limits the number of\nreturned poses; it does not identify which person the project intends to track.\nThe existing RTMW tracker retained the climber's bounding box in the reviewed\nexamples, providing a useful target prior. Severe overlap also weakened RTMW\npose evidence, so its coordinates were not treated as reliable throughout.\n\n### What changed in the pipeline\n\n- Section 2 retains the raw pose pass and checks target identity before Section 3.\n- Torso position, scale and short-term displacement are checked in wall coordinates,\n  using the initial SIFT alignment to compensate camera motion. Rejected poses are\n  re-detected with MediaPipe inside the tracked climber crop.\n- The raw RTMW torso score threshold is 2.0, with a two-frame uncertainty buffer.\n  These are engineering settings for this development clip, not calibrated probabilities.\n- Gaps of at most two seconds are interpolated only when both endpoints pass identity\n  checks and no joint moves more than one torso length between endpoints. Orange\n  skeletons are display-only estimates. Longer or incompatible gaps remain missing.\n- Contact matching and IK read observed poses only. Learned contact inference also\n  rejects identity-uncertain RTMW frames. No interpolation confirms a hold or support.\n\n### Observed results for this clip\n\n| Diagnostic | Result |\n| --- | ---: |\n| Original pose frames rejected by the identity check | 53 |\n| Frames recovered by target-crop detection | 43 |\n| Original pose rows, including wrong-person rows | 972/976 |\n| Corrected target-observation rows | 962/976 |\n| Display-only interpolated frames | 14 |\n| RTMW frames excluded from contact evidence | 10 |\n| Accepted contacts on those excluded frames | 0/40 |\n| Maximum wall-space torso step before / after display correction, case interval | 505.2 / 10.9 px per frame |\n\nThe main display gap is **208\u2013218**, about 0.37 seconds. Observation coverage is\nlower because wrong-person and uncertain estimates no longer count as evidence.\nThe before/after video shows the skeleton staying with the climber; lower motion\nin an interpolated display is not a pose-accuracy score. The 17 route holds and\ntrained model weights are unchanged. Section 5 alignment and downstream contacts\nare refreshed from the corrected inputs.\n\n### Limits and provenance\n\nThis is a reviewed development case, not proof of general multi-person robustness.\nThe method needs a correctly initialized target track, approximate wall registration\nand visible endpoints. Fast real movements or long occlusions may be rejected.\nThe frozen RTMW cache is preserved; the observation guard and corrected MediaPipe\ntables are separate. Raw poses, settings and bootstrap alignment are retained for\nreproduction. Joint visibility, grip and support continuity still need review.\n\nMediaPipe options: [official documentation](https://developers.google.com/edge/mediapipe/solutions/vision/pose_landmarker/python).\n",
+  "diagnostic_sha256": "cb63e82be4ed45fe723c95912e6b2a74cb671c7eda43fcd6ae433f79d5d614de",
+  "identity_guard_sha256": "f745b51dda2335d3e934983ae9a94045e4da5fd4400e9f8fe6dc51479cbd8e4a"
+}

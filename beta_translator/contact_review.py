@@ -10,7 +10,8 @@ from pathlib import Path
 import pandas as pd
 
 from .inverse_kinematics import LIMBS
-from .project_io import file_sha256, load_reviewed_holds
+from .identity_tracking import load_identity_guard
+from .project_io import file_sha256, load_reviewed_holds, validate_reference_alignment
 
 
 def load_review_bundle(video, reviewed_output, pose_cache, package, destination):
@@ -28,6 +29,13 @@ def load_review_bundle(video, reviewed_output, pose_cache, package, destination)
     for key, path in inputs.items():
         if prediction.get(key) != file_sha256(path):
             raise ValueError(f'Stale automatic predictions: {key}. Refresh Section 6B.')
+    identity = load_identity_guard(reviewed_output, video, pose_cache)
+    expected_guard = identity['sha256'] if identity is not None else None
+    if prediction.get('identity_guard_sha256') != expected_guard:
+        raise ValueError('Stale automatic predictions: identity guard. Refresh Section 6B.')
+    reference = validate_reference_alignment(inputs['reviewed_map_sha256'], inputs['alignment_sha256'])
+    if prediction.get('reference_frame_number', 0) != reference:
+        raise ValueError('Automatic predictions use another reference frame. Refresh Section 6B.')
     config = json.loads((package / 'deployment.json').read_text())
     for entry in config['checkpoints']:
         if Path(entry['file']).name != entry['file']:
@@ -48,7 +56,7 @@ def load_review_bundle(video, reviewed_output, pose_cache, package, destination)
         [range(int(contacts.frame.max()) + 1), LIMBS], names=['frame', 'limb'])
     if set(contacts.set_index(['frame', 'limb']).index) != set(expected):
         raise ValueError('Automatic contacts must include all four limbs on every frame.')
-    if not set(contacts.hold_id).issubset(set(hold_ids) | {'unknown', 'free'}):
+    if not set(contacts.hold_id).issubset(set(hold_ids) | {'unknown', 'free', 'wall_contact'}):
         raise ValueError('Automatic contacts contain an unknown hold ID.')
     return prediction, contacts
 

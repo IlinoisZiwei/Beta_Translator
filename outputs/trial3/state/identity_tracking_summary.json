@@ -1,0 +1,37 @@
+{
+  "inputs": {
+    "video_sha256": "8b5f96c2cd634c82e28d09eba62ba9bf6939bea34cbafe15be1388d831b6eff4",
+    "raw_pose_sha256": "61d2dd4680751838281c21bc33a82d29824ea510e48b54af30c00df0a93b1b5d",
+    "wholebody_sha256": "182e79fb40d8d9d292995eb6f80cb9f393cde7d2aa2e5677977558f39c85edb0",
+    "anchor_alignment_sha256": "70e71637648c2215fd9f2cb5db4f83f9365106c700e877971f3b57dd703a5979",
+    "model_sha256": "64437af838a65d18e5ba7a0d39b465540069bc8aae8308de3e318aad31fcbc7b",
+    "code_sha256": "13aafe67d75ada8c5b7cf9ebfa70fb03292c13eab3d730a5dc28fd3dfffdb2ef",
+    "pose_settings": {
+      "min_pose_detection_confidence": 0.5,
+      "min_pose_presence_confidence": 0.5,
+      "min_tracking_confidence": 0.5
+    },
+    "settings": {
+      "version": 1,
+      "min_anchor_score": 2.0,
+      "center_torso_limit": 0.75,
+      "min_torso_ratio": 0.5,
+      "max_torso_ratio": 1.8,
+      "crop_padding": 0.15,
+      "guard_padding_frames": 2,
+      "max_display_gap_sec": 2.0,
+      "max_endpoint_motion_torsos": 1.0
+    }
+  },
+  "frame_count": 503,
+  "observed_pose_frames": 503,
+  "original_pose_frames": 503,
+  "reused_raw_frames": 503,
+  "crop_recovered_frames": 0,
+  "raw_rejected_ranges": [],
+  "missing_observation_ranges": [],
+  "display_interpolated_ranges": [],
+  "wholebody_unobserved_ranges": [],
+  "wholebody_interpolated_ranges": [],
+  "limitations": "Rule-based identity checks for this video, not an independently measured pose-accuracy improvement. Display interpolation is an estimate, not proof of maintained contacts."
+}

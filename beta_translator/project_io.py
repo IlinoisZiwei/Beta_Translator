@@ -56,13 +56,38 @@ def save_npz(path, **arrays):
     temporary.replace(path)
 
 
-def load_reviewed_holds(path, video_file):
+def _reference_frame_number(value):
+    if type(value) is not int or value < 0:
+        raise ValueError('The reference frame must be a nonnegative integer.')
+    return value
+
+
+def validate_reference_alignment(hold_map, alignment):
+    """Return the shared reference index, rejecting mixed coordinate systems.
+
+    Legacy alignment caches omit the index and therefore refer to frame zero.
+    """
+    with np.load(hold_map, allow_pickle=False) as saved:
+        metadata = json.loads(str(saved['metadata'].item()))
+    with np.load(alignment, allow_pickle=False) as saved:
+        settings = json.loads(str(saved['settings'].item()))
+    reference = _reference_frame_number(metadata['reference_frame_number'])
+    aligned_reference = _reference_frame_number(settings.get('reference_frame_number', 0))
+    if reference != aligned_reference:
+        raise ValueError('Hold map and alignment use different reference frames; rerun alignment.')
+    return reference
+
+
+def load_reviewed_holds(path, video_file, *, reference_frame_number=None):
     with np.load(path, allow_pickle=False) as saved:
         metadata = json.loads(str(saved['metadata'].item()))
         if metadata['video_sha256'] != file_sha256(video_file):
             raise ValueError('This hold map belongs to a different video. Use a new output folder and fresh detection.')
-        if metadata['reference_frame_number'] != 0:
-            raise ValueError('This workflow requires a frame-0 hold map.')
+        reference_index = _reference_frame_number(metadata['reference_frame_number'])
+        if reference_frame_number is not None:
+            expected = _reference_frame_number(reference_frame_number)
+            if reference_index != expected:
+                raise ValueError('The saved hold map uses another reference frame. Detect a new map first.')
         records = metadata['records']
         masks = {record['hold_id']: saved[record['hold_id']].astype(bool) for record in records}
         reference = saved['reference_frame']
@@ -74,7 +99,7 @@ def load_reviewed_holds(path, video_file):
     return records, masks, metadata['candidate_run_id'], selected
 
 
-def restore_reviewed_map(bundle, destination, video_file):
+def restore_reviewed_map(bundle, destination, video_file, *, reference_frame_number=None):
     """Restore only the reviewed map; poses and alignment follow their own cache checks."""
     if not Path(bundle).is_file():
         raise FileNotFoundError('No reviewed map found. Set USE_SAVED_HOLD_MAP = False to detect new holds.')
@@ -82,21 +107,24 @@ def restore_reviewed_map(bundle, destination, video_file):
         name = ('state/reviewed_hold_map.npz' if 'state/reviewed_hold_map.npz' in archive.namelist()
                 else 'reviewed_hold_map.npz')
         data = archive.read(name)
-    load_reviewed_holds(io.BytesIO(data), video_file)
+    load_reviewed_holds(io.BytesIO(data), video_file, reference_frame_number=reference_frame_number)
     destination = Path(destination)
     destination.parent.mkdir(parents=True, exist_ok=True)
     destination.write_bytes(data)
 
 
-def save_reviewed_holds(path, video_file, reference, records, masks, run_id, selected):
+def save_reviewed_holds(path, video_file, reference, records, masks, run_id, selected,
+                        *, reference_frame_number=0):
     if not selected or len(selected) != len(set(selected)) or not set(selected).issubset(masks):
         raise ValueError('Select unique reviewed hold IDs before saving.')
-    metadata = dict(video_sha256=file_sha256(video_file), reference_frame_number=0,
+    reference_index = _reference_frame_number(reference_frame_number)
+    metadata = dict(video_sha256=file_sha256(video_file), reference_frame_number=reference_index,
                     candidate_run_id=run_id, records=records, selected_hold_ids=list(selected))
     save_npz(path, metadata=np.array(json.dumps(metadata)), reference_frame=reference, **masks)
 
 
 def save_alignment(path, transforms, video_file, pose_file, settings):
+    _reference_frame_number(settings.get('reference_frame_number', 0))
     frames = sorted(transforms)
     save_npz(path, frames=np.array(frames), matrices=np.array([transforms[f][0] for f in frames]),
              inliers=np.array([transforms[f][1] for f in frames]),
@@ -113,9 +141,14 @@ def load_alignment(path, video_file, pose_file, settings):
         required = {'video_sha256', 'pose_sha256', 'settings', 'frames', 'matrices', 'inliers', 'statuses'}
         if not required.issubset(saved.files):
             return None
+        expected_settings = dict(settings)
+        expected_settings.setdefault('reference_frame_number', 0)
+        cached_settings = json.loads(str(saved['settings'].item()))
+        cached_settings.setdefault('reference_frame_number', 0)
+        _reference_frame_number(expected_settings['reference_frame_number'])
         if (str(saved['video_sha256'].item()) != file_sha256(video_file)
                 or str(saved['pose_sha256'].item()) != file_sha256(pose_file)
-                or json.loads(str(saved['settings'].item())) != settings):
+                or cached_settings != expected_settings):
             return None
         lengths = [len(saved[name]) for name in ('frames', 'matrices', 'inliers', 'statuses')]
         if len(set(lengths)) != 1 or not lengths[0] or not np.isfinite(saved['matrices']).all():

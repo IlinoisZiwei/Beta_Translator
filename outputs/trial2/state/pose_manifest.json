@@ -1,0 +1,36 @@
+{
+  "inputs": {
+    "video_sha256": "9964d27ca051953d77cf10ee94a1772bd73e30d7e23fa09a54983c3630e8a068",
+    "raw_pose_sha256": "aa2be90f4283cc945aa98d79b65545510e78b2652d49ffec317dc66a2fd9abfe",
+    "wholebody_sha256": "cb861eaa2fa17ed2592d43033312a1f718bc054fa112c6ad1732c2e7315bc1c9",
+    "anchor_alignment_sha256": "36cb9f24809a8a9fb5278b65f24e52eaca91dae585b1bc875de4f37358a17e56",
+    "model_sha256": "64437af838a65d18e5ba7a0d39b465540069bc8aae8308de3e318aad31fcbc7b",
+    "code_sha256": "d6755280c92cf72553195bb7c14c055d4af261e0af34b8f599c7502aec5daf9c",
+    "pose_settings": {
+      "min_pose_detection_confidence": 0.5,
+      "min_pose_presence_confidence": 0.5,
+      "min_tracking_confidence": 0.5
+    },
+    "settings": {
+      "version": 1,
+      "min_anchor_score": 2.0,
+      "center_torso_limit": 0.75,
+      "min_torso_ratio": 0.5,
+      "max_torso_ratio": 1.8,
+      "crop_padding": 0.15,
+      "guard_padding_frames": 2,
+      "max_display_gap_sec": 2.0,
+      "max_endpoint_motion_torsos": 1.0
+    }
+  },
+  "pose_sha256": "8f8ee0c55b8be57862de3d3c16d6f590eece9f82b2ced602b709f096c9298f0b",
+  "overlay_sha256": "08c981976441e7c9e774e1a768dda78d42f870a79960b9032bcee507f6270471",
+  "artifacts": {
+    "tables/pose_coordinates.csv": "8f8ee0c55b8be57862de3d3c16d6f590eece9f82b2ced602b709f096c9298f0b",
+    "tables/pose_display_coordinates.csv": "792febe0e430e15702d737baab41cfbf5c150f1536ded140e0ed1421251da758",
+    "tables/identity_tracking.csv": "cb63e82be4ed45fe723c95912e6b2a74cb671c7eda43fcd6ae433f79d5d614de",
+    "state/identity_guard.npz": "f745b51dda2335d3e934983ae9a94045e4da5fd4400e9f8fe6dc51479cbd8e4a",
+    "state/identity_tracking_summary.json": "fea02b2967242a5acf240ce8fc56690f12b6f81fba636607e84c94e7b637db03",
+    "videos/pose_output.mp4": "08c981976441e7c9e774e1a768dda78d42f870a79960b9032bcee507f6270471"
+  }
+}

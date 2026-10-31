@@ -1,0 +1,34 @@
+{
+  "reference_frame_number": 450,
+  "source_frames": [
+    450,
+    0,
+    225,
+    975
+  ],
+  "sources": [
+    {
+      "source_frame": 450,
+      "used_pixels": 1996124,
+      "unresolved_pixels": 77476
+    },
+    {
+      "source_frame": 0,
+      "used_pixels": 67454,
+      "unresolved_pixels": 10022
+    },
+    {
+      "source_frame": 225,
+      "used_pixels": 5797,
+      "unresolved_pixels": 4225
+    },
+    {
+      "source_frame": 975,
+      "used_pixels": 4225,
+      "unresolved_pixels": 0
+    }
+  ],
+  "unresolved_pixels": 0,
+  "method": "Reference-image coordinates; observed donor pixels only; convex-hull person exclusion.",
+  "limitations": "One global homography per source; parallax and surface-depth errors remain possible."
+}

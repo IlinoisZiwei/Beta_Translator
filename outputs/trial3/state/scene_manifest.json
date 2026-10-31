@@ -1,0 +1,196 @@
+{
+  "inputs": {
+    "video_sha256": "8b5f96c2cd634c82e28d09eba62ba9bf6939bea34cbafe15be1388d831b6eff4",
+    "pose_sha256": "182e79fb40d8d9d292995eb6f80cb9f393cde7d2aa2e5677977558f39c85edb0",
+    "alignment_sha256": "f1405497f353345f552456316723ac44b777b8ef1d8dc9d97f9527d8bcb9deae",
+    "model_sha256": "995960a74819e21bd66d7be56ae6e1c8124ec0a06fece4fae13812887d86ebea",
+    "config_sha256": "9f8956803104604c3b99a9ef947cda94706c915ec0401e9aa0e135da5aa58f84",
+    "reference_frame": 334,
+    "frames": [
+      0,
+      25,
+      50,
+      75,
+      100,
+      125,
+      150,
+      175,
+      200,
+      225,
+      251,
+      276,
+      301,
+      326,
+      334,
+      351,
+      376,
+      401,
+      426,
+      451,
+      476,
+      502
+    ],
+    "threshold": 0.7,
+    "tiled": true,
+    "person_padding": 30,
+    "min_observed_fraction": 0.98,
+    "version": 2
+  },
+  "artifacts": {
+    "/Users/ziwei/Desktop/2026 Fall/CIS 5810/Beta_Translator/outputs/trial3/state/reviewed_hold_map.npz": "e13148db5f0f89eb2c42196c4ea1341375d18dc9f77b384e3f9dca83ad175c84",
+    "/Users/ziwei/Desktop/2026 Fall/CIS 5810/Beta_Translator/outputs/trial3/hold_mapping/candidates.jpg": "08a154d5e62f4646266ddc4e4cee0b6fb179ea305dbdc403a3e8db1489ffe837",
+    "/Users/ziwei/Desktop/2026 Fall/CIS 5810/Beta_Translator/outputs/trial3/hold_mapping/reconstructed_wall.png": "403135b6ff58482cd5b50e066262720e27c3ddaae026babd8964c0e23c8f9dd9"
+  },
+  "candidate_count": 53,
+  "selection": "All automatic candidates; no manual route filtering",
+  "human_reviewed": false,
+  "alignment_valid_frames": 503,
+  "alignment_total_frames": 503,
+  "reconstruction": {
+    "reference_frame_number": 334,
+    "source_frames": [
+      334,
+      0,
+      25,
+      50,
+      75,
+      100,
+      125,
+      150,
+      175,
+      200,
+      225,
+      251,
+      276,
+      301,
+      326,
+      351,
+      376,
+      401,
+      426,
+      451,
+      476,
+      502
+    ],
+    "sources": [
+      {
+        "source_frame": 334,
+        "used_pixels": 864439,
+        "unresolved_pixels": 57161
+      },
+      {
+        "source_frame": 0,
+        "used_pixels": 43835,
+        "unresolved_pixels": 13326
+      },
+      {
+        "source_frame": 25,
+        "used_pixels": 0,
+        "unresolved_pixels": 13326
+      },
+      {
+        "source_frame": 50,
+        "used_pixels": 91,
+        "unresolved_pixels": 13235
+      },
+      {
+        "source_frame": 75,
+        "used_pixels": 848,
+        "unresolved_pixels": 12387
+      },
+      {
+        "source_frame": 100,
+        "used_pixels": 3254,
+        "unresolved_pixels": 9133
+      },
+      {
+        "source_frame": 125,
+        "used_pixels": 5724,
+        "unresolved_pixels": 3409
+      },
+      {
+        "source_frame": 150,
+        "used_pixels": 2070,
+        "unresolved_pixels": 1339
+      },
+      {
+        "source_frame": 175,
+        "used_pixels": 0,
+        "unresolved_pixels": 1339
+      },
+      {
+        "source_frame": 200,
+        "used_pixels": 129,
+        "unresolved_pixels": 1210
+      },
+      {
+        "source_frame": 225,
+        "used_pixels": 0,
+        "unresolved_pixels": 1210
+      },
+      {
+        "source_frame": 251,
+        "used_pixels": 0,
+        "unresolved_pixels": 1210
+      },
+      {
+        "source_frame": 276,
+        "used_pixels": 0,
+        "unresolved_pixels": 1210
+      },
+      {
+        "source_frame": 301,
+        "used_pixels": 0,
+        "unresolved_pixels": 1210
+      },
+      {
+        "source_frame": 326,
+        "used_pixels": 0,
+        "unresolved_pixels": 1210
+      },
+      {
+        "source_frame": 351,
+        "used_pixels": 81,
+        "unresolved_pixels": 1129
+      },
+      {
+        "source_frame": 376,
+        "used_pixels": 1024,
+        "unresolved_pixels": 105
+      },
+      {
+        "source_frame": 401,
+        "used_pixels": 72,
+        "unresolved_pixels": 33
+      },
+      {
+        "source_frame": 426,
+        "used_pixels": 14,
+        "unresolved_pixels": 19
+      },
+      {
+        "source_frame": 451,
+        "used_pixels": 8,
+        "unresolved_pixels": 11
+      },
+      {
+        "source_frame": 476,
+        "used_pixels": 2,
+        "unresolved_pixels": 9
+      },
+      {
+        "source_frame": 502,
+        "used_pixels": 2,
+        "unresolved_pixels": 7
+      }
+    ],
+    "unresolved_pixels": 7,
+    "method": "Reference-image coordinates; observed donor pixels only; convex-hull person exclusion.",
+    "limitations": "One global homography per source; parallax and surface-depth errors remain possible."
+  },
+  "detection": {
+    "raw_candidates": 131,
+    "inference_regions": 3,
+    "rejected_unobserved_candidates": 0
+  }
+}

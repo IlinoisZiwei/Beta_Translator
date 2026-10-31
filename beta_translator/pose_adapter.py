@@ -5,8 +5,9 @@ import numpy as np
 
 from .inverse_kinematics import LIMBS
 
-# points_px: (N, 2) pixel points in frame `frame_index` -> same points in frame-0 pixels.
-# Homographies map the fixed frame-0 wall into each video frame.
+# points_px: current-frame pixels -> fixed wall-reference pixels.
+# The legacy name to_frame0 is retained for callers; the reference may be any frame.
+# Homographies map the configured wall reference into each video frame.
 def to_frame0(points_px, homographies, frame_index):
     points = np.asarray(points_px, dtype=np.float32).reshape(-1, 1, 2)
     H = homographies[frame_index][0]
@@ -14,13 +15,13 @@ def to_frame0(points_px, homographies, frame_index):
 
 
 def image_to_wall_cm(points_px, px_per_cm, image_height_px):
-    """Frame-0 pixel points (N, 2) -> wall coordinates in cm. Temporary: image-frame scaling."""
+    """Reference-image pixel points (N, 2) -> wall coordinates in cm. Temporary: image-frame scaling."""
     points_px = np.asarray(points_px, dtype=float)
     return np.stack([points_px[:, 0] / px_per_cm,
                      (image_height_px - points_px[:, 1]) / px_per_cm], axis=1)
 
 def wall_cm_to_image(points_cm, px_per_cm, image_height_px):
-    """Inverse, for drawing results back onto the frame-0 image."""
+    """Inverse, for drawing results back onto the reference image."""
     points_cm = np.asarray(points_cm, dtype=float)
     return np.stack([points_cm[:, 0] * px_per_cm,
                      image_height_px - points_cm[:, 1] * px_per_cm], axis=1)

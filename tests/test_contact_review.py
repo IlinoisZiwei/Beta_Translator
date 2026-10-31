@@ -6,6 +6,7 @@ import unittest
 from unittest.mock import patch
 
 import pandas as pd
+import numpy as np
 
 from beta_translator.contact_review import load_review_bundle
 from beta_translator.inverse_kinematics import LIMBS
@@ -29,6 +30,9 @@ class ContactReviewTests(unittest.TestCase):
             'reviewed_map_sha256': self.output / 'state/reviewed_hold_map.npz',
             'model_config_sha256': self.package / 'deployment.json'}
         for path in self.inputs.values(): path.write_bytes(b'test input')
+        np.savez(self.inputs['reviewed_map_sha256'],
+                 metadata=json.dumps({'reference_frame_number': 0}))
+        np.savez(self.inputs['alignment_sha256'], settings=json.dumps({}))
         (self.package / 'model.pt').write_bytes(b'model')
         self.inputs['model_config_sha256'].write_text(json.dumps({'checkpoints': [
             {'file': 'model.pt', 'sha256': file_sha256(self.package / 'model.pt')}]}))
@@ -54,6 +58,32 @@ class ContactReviewTests(unittest.TestCase):
     def test_matching_inputs_load(self):
         _, contacts = self.load()
         self.assertEqual(len(contacts), 12)
+
+    def test_wall_contact_is_a_valid_model_state(self):
+        path = self.destination / 'limb_contacts.csv'
+        rows = pd.read_csv(path)
+        rows.loc[0, 'hold_id'] = 'wall_contact'
+        rows.to_csv(path, index=False)
+        self.seal()
+        _, loaded = self.load()
+        self.assertEqual(loaded.loc[0, 'hold_id'], 'wall_contact')
+
+    def test_prediction_reference_must_match_map_and_alignment(self):
+        self.prediction['reference_frame_number'] = 450
+        self.seal()
+        with self.assertRaisesRegex(ValueError, 'another reference'):
+            self.load()
+
+    def test_matching_nonzero_reference_loads(self):
+        np.savez(self.inputs['reviewed_map_sha256'],
+                 metadata=json.dumps({'reference_frame_number': 450}))
+        np.savez(self.inputs['alignment_sha256'],
+                 settings=json.dumps({'reference_frame_number': 450}))
+        self.prediction.update({key: file_sha256(path) for key, path in self.inputs.items()})
+        self.prediction['reference_frame_number'] = 450
+        self.seal()
+        prediction, _ = self.load()
+        self.assertEqual(prediction['reference_frame_number'], 450)
 
     def test_changed_video_map_alignment_or_pose_rejected(self):
         for name in ('video_sha256', 'reviewed_map_sha256', 'alignment_sha256', 'pose_cache_sha256'):

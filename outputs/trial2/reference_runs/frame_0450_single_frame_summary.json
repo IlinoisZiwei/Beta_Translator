@@ -1,0 +1,105 @@
+{
+  "video": "videos/trial2.mp4",
+  "video_sha256": "9964d27ca051953d77cf10ee94a1772bd73e30d7e23fa09a54983c3630e8a068",
+  "analysis_frame_count": 976,
+  "analysis_fps": 30,
+  "source_frame_count": 1950,
+  "source_duration_sec": 32.545,
+  "target_body": {
+    "height_cm": 165,
+    "proportions": "default",
+    "interpretation": "Assumed target settings; not a measurement of the filmed climber."
+  },
+  "mediapipe": {
+    "detected_frames": 972,
+    "missing_frames": [
+      93,
+      126,
+      183,
+      237
+    ],
+    "frame_coverage": 0.9959016393442623,
+    "interpretation": "Detection coverage is not joint accuracy."
+  },
+  "rtmw": {
+    "finite_pose_frames": 976
+  },
+  "hold_map": {
+    "reference_frame": 450,
+    "detected_candidates": 100,
+    "candidate_run_id": "554ea2b737cd496390398959df3b4428",
+    "selection": "All candidates; no human route confirmation",
+    "detector_max_detections": 100,
+    "limitation": "The detector reached its 100-candidate cap. Small, occluded and missed holds remain possible. Being inside the reference image does not establish a detected hold or correct contact."
+  },
+  "alignment": {
+    "frames": 976,
+    "passed_inlier_gate": 976,
+    "minimum_inliers": 343,
+    "median_inliers": 1542.0,
+    "interpretation": "Passing global homography checks does not validate every wall plane.",
+    "reference_frame_number": 450
+  },
+  "automatic_contacts": {
+    "limb_frames": 3904,
+    "accepted_limb_frames": 2223,
+    "confidence_threshold_coverage": 0.5694159836065574,
+    "review_required_limb_frames": 1681,
+    "movement_proposals": 9,
+    "ik_eligible_proposals": 0,
+    "accuracy": null,
+    "interpretation": "No trial2 ground-truth labels; confidence coverage is not accuracy or human time saved."
+  },
+  "ik": {
+    "status": "pending_inputs_and_geometry_review",
+    "generated": false,
+    "reasons": [
+      "No measured trial2 wall scale",
+      "Overhang and multiple wall planes require geometry review",
+      "No confirmed endpoint identities, release/arrival or three continuous supports",
+      "Automatic unreviewed IK remains disabled in the deployed model"
+    ]
+  },
+  "review_draft": "automatic/review_draft.json",
+  "videos": {
+    "pose_output_h264.mp4": {
+      "frames": 976,
+      "fps": 30.0,
+      "sha256": "c998ecaee9a56bedd549d10a8cc55ea59b5a9f6889d1b55517b2da7c4e089719"
+    },
+    "wall_motion_h264.mp4": {
+      "frames": 976,
+      "fps": 30.0,
+      "sha256": "9a4e99e1e881f8288bf10146e7d4982c0bdffa45bee2375da3f76e088b53b135"
+    },
+    "automatic_contacts_h264.mp4": {
+      "frames": 976,
+      "fps": 30.0,
+      "sha256": "0abd92d3296fe137969b21cdaec0b28639ca23e32e144bcd662c0af82850e47a"
+    }
+  },
+  "fixes": [
+    "Allow the existing wall_contact model class in the review loader",
+    "Use one configurable reference index for hold detection, alignment, prediction and IK",
+    "Reject mixed reference maps, alignment caches and predictions",
+    "Keep legacy reference-zero caches compatible; disable the original scale on other references"
+  ],
+  "tests": {
+    "passed": 39,
+    "trial1_confirmed_motion_regression": "passed"
+  },
+  "reference_frame_number": 450,
+  "reference_time_sec": 15.0,
+  "outside_reference_fraction": {
+    "left_foot": 0.0,
+    "left_hand": 0.0,
+    "right_foot": 0.0,
+    "right_hand": 0.0
+  },
+  "preservation": {
+    "source_and_analysis_video_unchanged": true,
+    "trial1_manual_annotation_and_user_contact_tables_unchanged": true,
+    "trial1_main_notebook_default_reference": 0,
+    "trial1_motion_summary": "Refreshed code provenance; unchanged 23-frame fit and contact errors"
+  }
+}

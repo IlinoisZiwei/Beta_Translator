@@ -1,0 +1,826 @@
+{
+  "audit": {
+    "reference_frame_number": 450,
+    "candidate_run_id": "ea806103e4af44ceb85fbfd48fac1ec8",
+    "reviewed_map_sha256": "5b0c612f577e29c9514f075051341dadbb9a45c71f7172e0a1114d4a4091f5e6",
+    "selected_hold_ids": [
+      "H137",
+      "H113",
+      "H109",
+      "H163",
+      "H094",
+      "H090",
+      "H079",
+      "H072",
+      "H054",
+      "H046",
+      "H038",
+      "H027",
+      "H022",
+      "H011",
+      "H127",
+      "H149",
+      "H186"
+    ],
+    "tolerance_px": 3,
+    "holds": [
+      {
+        "audit_id": "H137",
+        "point": [
+          945,
+          567
+        ],
+        "point_source": "Historical source-image review"
+      },
+      {
+        "audit_id": "H113",
+        "point": [
+          993,
+          517
+        ],
+        "point_source": "Historical source-image review"
+      },
+      {
+        "audit_id": "H109",
+        "point": [
+          1023,
+          501
+        ],
+        "point_source": "Historical source-image review"
+      },
+      {
+        "audit_id": "H163",
+        "point": [
+          1026,
+          613
+        ],
+        "point_source": "Interior pixel nearest the selected-mask centroid; not independent ground truth"
+      },
+      {
+        "audit_id": "H094",
+        "point": [
+          1093,
+          462
+        ],
+        "point_source": "Historical source-image review"
+      },
+      {
+        "audit_id": "H090",
+        "point": [
+          1125,
+          450
+        ],
+        "point_source": "Historical source-image review"
+      },
+      {
+        "audit_id": "H079",
+        "point": [
+          1141,
+          407
+        ],
+        "point_source": "Historical source-image review"
+      },
+      {
+        "audit_id": "H072",
+        "point": [
+          1165,
+          380
+        ],
+        "point_source": "Historical source-image review"
+      },
+      {
+        "audit_id": "H054",
+        "point": [
+          1131,
+          332
+        ],
+        "point_source": "Historical source-image review"
+      },
+      {
+        "audit_id": "H046",
+        "point": [
+          1133,
+          305
+        ],
+        "point_source": "Historical source-image review"
+      },
+      {
+        "audit_id": "H038",
+        "point": [
+          1114,
+          274
+        ],
+        "point_source": "Historical source-image review"
+      },
+      {
+        "audit_id": "H027",
+        "point": [
+          1171,
+          198
+        ],
+        "point_source": "Historical source-image review"
+      },
+      {
+        "audit_id": "H022",
+        "point": [
+          1174,
+          175
+        ],
+        "point_source": "Historical source-image review"
+      },
+      {
+        "audit_id": "H011",
+        "point": [
+          1230,
+          99
+        ],
+        "point_source": "Historical source-image review"
+      },
+      {
+        "audit_id": "H127",
+        "point": [
+          1112,
+          543
+        ],
+        "point_source": "Interior pixel nearest the selected-mask centroid; not independent ground truth"
+      },
+      {
+        "audit_id": "H149",
+        "point": [
+          990,
+          588
+        ],
+        "point_source": "Historical source-image review"
+      },
+      {
+        "audit_id": "H186",
+        "point": [
+          981,
+          651
+        ],
+        "point_source": "Historical source-image review"
+      }
+    ],
+    "scope": "Coverage of currently selected hold points in frozen detector variants",
+    "limitation": "Selection comes from the final detected map. Missing unselected holds are not assessed. This is not independent detection recall, mask AP or contact accuracy."
+  },
+  "stages": {
+    "original100": {
+      "candidate_count": 100,
+      "matched_points": 6,
+      "audited_points": 17,
+      "priority_point_recall": 0.35294117647058826,
+      "matches": [
+        {
+          "audit_id": "H137",
+          "point": [
+            945,
+            567
+          ],
+          "hold_id": null,
+          "distance_px": null
+        },
+        {
+          "audit_id": "H113",
+          "point": [
+            993,
+            517
+          ],
+          "hold_id": null,
+          "distance_px": null
+        },
+        {
+          "audit_id": "H109",
+          "point": [
+            1023,
+            501
+          ],
+          "hold_id": null,
+          "distance_px": null
+        },
+        {
+          "audit_id": "H163",
+          "point": [
+            1026,
+            613
+          ],
+          "hold_id": null,
+          "distance_px": null
+        },
+        {
+          "audit_id": "H094",
+          "point": [
+            1093,
+            462
+          ],
+          "hold_id": "H54",
+          "distance_px": 0.0
+        },
+        {
+          "audit_id": "H090",
+          "point": [
+            1125,
+            450
+          ],
+          "hold_id": "H52",
+          "distance_px": 0.0
+        },
+        {
+          "audit_id": "H079",
+          "point": [
+            1141,
+            407
+          ],
+          "hold_id": null,
+          "distance_px": null
+        },
+        {
+          "audit_id": "H072",
+          "point": [
+            1165,
+            380
+          ],
+          "hold_id": "H43",
+          "distance_px": 0.0
+        },
+        {
+          "audit_id": "H054",
+          "point": [
+            1131,
+            332
+          ],
+          "hold_id": "H34",
+          "distance_px": 0.0
+        },
+        {
+          "audit_id": "H046",
+          "point": [
+            1133,
+            305
+          ],
+          "hold_id": "H30",
+          "distance_px": 0.0
+        },
+        {
+          "audit_id": "H038",
+          "point": [
+            1114,
+            274
+          ],
+          "hold_id": "H24",
+          "distance_px": 0.0
+        },
+        {
+          "audit_id": "H027",
+          "point": [
+            1171,
+            198
+          ],
+          "hold_id": null,
+          "distance_px": null
+        },
+        {
+          "audit_id": "H022",
+          "point": [
+            1174,
+            175
+          ],
+          "hold_id": null,
+          "distance_px": null
+        },
+        {
+          "audit_id": "H011",
+          "point": [
+            1230,
+            99
+          ],
+          "hold_id": null,
+          "distance_px": null
+        },
+        {
+          "audit_id": "H127",
+          "point": [
+            1112,
+            543
+          ],
+          "hold_id": null,
+          "distance_px": null
+        },
+        {
+          "audit_id": "H149",
+          "point": [
+            990,
+            588
+          ],
+          "hold_id": null,
+          "distance_px": null
+        },
+        {
+          "audit_id": "H186",
+          "point": [
+            981,
+            651
+          ],
+          "hold_id": null,
+          "distance_px": null
+        }
+      ]
+    },
+    "cap400": {
+      "candidate_count": 179,
+      "matched_points": 14,
+      "audited_points": 17,
+      "priority_point_recall": 0.8235294117647058,
+      "matches": [
+        {
+          "audit_id": "H137",
+          "point": [
+            945,
+            567
+          ],
+          "hold_id": "H089",
+          "distance_px": 0.0
+        },
+        {
+          "audit_id": "H113",
+          "point": [
+            993,
+            517
+          ],
+          "hold_id": null,
+          "distance_px": null
+        },
+        {
+          "audit_id": "H109",
+          "point": [
+            1023,
+            501
+          ],
+          "hold_id": "H078",
+          "distance_px": 0.0
+        },
+        {
+          "audit_id": "H163",
+          "point": [
+            1026,
+            613
+          ],
+          "hold_id": "H101",
+          "distance_px": 0.0
+        },
+        {
+          "audit_id": "H094",
+          "point": [
+            1093,
+            462
+          ],
+          "hold_id": "H069",
+          "distance_px": 0.0
+        },
+        {
+          "audit_id": "H090",
+          "point": [
+            1125,
+            450
+          ],
+          "hold_id": "H066",
+          "distance_px": 0.0
+        },
+        {
+          "audit_id": "H079",
+          "point": [
+            1141,
+            407
+          ],
+          "hold_id": null,
+          "distance_px": null
+        },
+        {
+          "audit_id": "H072",
+          "point": [
+            1165,
+            380
+          ],
+          "hold_id": "H056",
+          "distance_px": 0.0
+        },
+        {
+          "audit_id": "H054",
+          "point": [
+            1131,
+            332
+          ],
+          "hold_id": "H046",
+          "distance_px": 0.0
+        },
+        {
+          "audit_id": "H046",
+          "point": [
+            1133,
+            305
+          ],
+          "hold_id": "H041",
+          "distance_px": 0.0
+        },
+        {
+          "audit_id": "H038",
+          "point": [
+            1114,
+            274
+          ],
+          "hold_id": "H033",
+          "distance_px": 0.0
+        },
+        {
+          "audit_id": "H027",
+          "point": [
+            1171,
+            198
+          ],
+          "hold_id": "H024",
+          "distance_px": 0.0
+        },
+        {
+          "audit_id": "H022",
+          "point": [
+            1174,
+            175
+          ],
+          "hold_id": "H020",
+          "distance_px": 0.0
+        },
+        {
+          "audit_id": "H011",
+          "point": [
+            1230,
+            99
+          ],
+          "hold_id": "H009",
+          "distance_px": 0.0
+        },
+        {
+          "audit_id": "H127",
+          "point": [
+            1112,
+            543
+          ],
+          "hold_id": null,
+          "distance_px": null
+        },
+        {
+          "audit_id": "H149",
+          "point": [
+            990,
+            588
+          ],
+          "hold_id": "H094",
+          "distance_px": 0.0
+        },
+        {
+          "audit_id": "H186",
+          "point": [
+            981,
+            651
+          ],
+          "hold_id": "H116",
+          "distance_px": 0.0
+        }
+      ]
+    },
+    "fusion": {
+      "candidate_count": 171,
+      "matched_points": 16,
+      "audited_points": 17,
+      "priority_point_recall": 0.9411764705882353,
+      "matches": [
+        {
+          "audit_id": "H137",
+          "point": [
+            945,
+            567
+          ],
+          "hold_id": null,
+          "distance_px": null
+        },
+        {
+          "audit_id": "H113",
+          "point": [
+            993,
+            517
+          ],
+          "hold_id": "H078",
+          "distance_px": 0.0
+        },
+        {
+          "audit_id": "H109",
+          "point": [
+            1023,
+            501
+          ],
+          "hold_id": "H074",
+          "distance_px": 0.0
+        },
+        {
+          "audit_id": "H163",
+          "point": [
+            1026,
+            613
+          ],
+          "hold_id": "H102",
+          "distance_px": 0.0
+        },
+        {
+          "audit_id": "H094",
+          "point": [
+            1093,
+            462
+          ],
+          "hold_id": "H066",
+          "distance_px": 0.0
+        },
+        {
+          "audit_id": "H090",
+          "point": [
+            1125,
+            450
+          ],
+          "hold_id": "H063",
+          "distance_px": 0.0
+        },
+        {
+          "audit_id": "H079",
+          "point": [
+            1141,
+            407
+          ],
+          "hold_id": "H056",
+          "distance_px": 0.0
+        },
+        {
+          "audit_id": "H072",
+          "point": [
+            1165,
+            380
+          ],
+          "hold_id": "H051",
+          "distance_px": 0.0
+        },
+        {
+          "audit_id": "H054",
+          "point": [
+            1131,
+            332
+          ],
+          "hold_id": "H042",
+          "distance_px": 0.0
+        },
+        {
+          "audit_id": "H046",
+          "point": [
+            1133,
+            305
+          ],
+          "hold_id": "H037",
+          "distance_px": 0.0
+        },
+        {
+          "audit_id": "H038",
+          "point": [
+            1114,
+            274
+          ],
+          "hold_id": "H030",
+          "distance_px": 0.0
+        },
+        {
+          "audit_id": "H027",
+          "point": [
+            1171,
+            198
+          ],
+          "hold_id": "H022",
+          "distance_px": 0.0
+        },
+        {
+          "audit_id": "H022",
+          "point": [
+            1174,
+            175
+          ],
+          "hold_id": "H018",
+          "distance_px": 0.0
+        },
+        {
+          "audit_id": "H011",
+          "point": [
+            1230,
+            99
+          ],
+          "hold_id": "H009",
+          "distance_px": 0.0
+        },
+        {
+          "audit_id": "H127",
+          "point": [
+            1112,
+            543
+          ],
+          "hold_id": "H086",
+          "distance_px": 0.0
+        },
+        {
+          "audit_id": "H149",
+          "point": [
+            990,
+            588
+          ],
+          "hold_id": "H097",
+          "distance_px": 0.0
+        },
+        {
+          "audit_id": "H186",
+          "point": [
+            981,
+            651
+          ],
+          "hold_id": "H116",
+          "distance_px": 0.0
+        }
+      ]
+    },
+    "fusion_tiled": {
+      "candidate_count": 298,
+      "matched_points": 17,
+      "audited_points": 17,
+      "priority_point_recall": 1.0,
+      "matches": [
+        {
+          "audit_id": "H137",
+          "point": [
+            945,
+            567
+          ],
+          "hold_id": "H137",
+          "distance_px": 0.0
+        },
+        {
+          "audit_id": "H113",
+          "point": [
+            993,
+            517
+          ],
+          "hold_id": "H113",
+          "distance_px": 0.0
+        },
+        {
+          "audit_id": "H109",
+          "point": [
+            1023,
+            501
+          ],
+          "hold_id": "H109",
+          "distance_px": 0.0
+        },
+        {
+          "audit_id": "H163",
+          "point": [
+            1026,
+            613
+          ],
+          "hold_id": "H163",
+          "distance_px": 0.0
+        },
+        {
+          "audit_id": "H094",
+          "point": [
+            1093,
+            462
+          ],
+          "hold_id": "H094",
+          "distance_px": 0.0
+        },
+        {
+          "audit_id": "H090",
+          "point": [
+            1125,
+            450
+          ],
+          "hold_id": "H090",
+          "distance_px": 0.0
+        },
+        {
+          "audit_id": "H079",
+          "point": [
+            1141,
+            407
+          ],
+          "hold_id": "H079",
+          "distance_px": 0.0
+        },
+        {
+          "audit_id": "H072",
+          "point": [
+            1165,
+            380
+          ],
+          "hold_id": "H072",
+          "distance_px": 0.0
+        },
+        {
+          "audit_id": "H054",
+          "point": [
+            1131,
+            332
+          ],
+          "hold_id": "H054",
+          "distance_px": 0.0
+        },
+        {
+          "audit_id": "H046",
+          "point": [
+            1133,
+            305
+          ],
+          "hold_id": "H046",
+          "distance_px": 0.0
+        },
+        {
+          "audit_id": "H038",
+          "point": [
+            1114,
+            274
+          ],
+          "hold_id": "H038",
+          "distance_px": 0.0
+        },
+        {
+          "audit_id": "H027",
+          "point": [
+            1171,
+            198
+          ],
+          "hold_id": "H027",
+          "distance_px": 0.0
+        },
+        {
+          "audit_id": "H022",
+          "point": [
+            1174,
+            175
+          ],
+          "hold_id": "H022",
+          "distance_px": 0.0
+        },
+        {
+          "audit_id": "H011",
+          "point": [
+            1230,
+            99
+          ],
+          "hold_id": "H011",
+          "distance_px": 0.0
+        },
+        {
+          "audit_id": "H127",
+          "point": [
+            1112,
+            543
+          ],
+          "hold_id": "H127",
+          "distance_px": 0.0
+        },
+        {
+          "audit_id": "H149",
+          "point": [
+            990,
+            588
+          ],
+          "hold_id": "H149",
+          "distance_px": 0.0
+        },
+        {
+          "audit_id": "H186",
+          "point": [
+            981,
+            651
+          ],
+          "hold_id": "H186",
+          "distance_px": 0.0
+        }
+      ]
+    }
+  },
+  "contact_summary": {
+    "limb_frames": 3904,
+    "accepted_limb_frames": 1943,
+    "confidence_threshold_coverage": 0.49769467213114754,
+    "review_required_limb_frames": 1961,
+    "movement_proposals": 21,
+    "ik_eligible_proposals": 0,
+    "accuracy": null,
+    "interpretation": "No trial2 ground-truth labels; confidence coverage is not accuracy or human time saved.",
+    "comparison_warning": "Route selection changes the candidate space. Confidence coverage is not measured contact accuracy."
+  },
+  "historical_audit": "hold_mapping/hold_evaluation.json",
+  "notebook_markdown": "### Current route: 17 selected holds\n\nRead from the saved Section 4B selection and verified predictions:\nH137, H113, H109, H163, H094, H090, H079, H072, H054, H046, H038, H027, H022, H011, H127, H149, H186.\n\n| Current result | Value |\n| --- | ---: |\n| Stored detector candidates | 298 |\n| Selected route holds | 17 |\n| Video frames analyzed | 976 |\n| Limb-frame predictions above confidence threshold | 1943/3904 (49.77%) |\n| Movement proposals requiring review | 21 |\n| Proposals eligible for unreviewed IK | 0 |\n\nConfidence coverage is not contact accuracy or climbing-success probability.\nRoute membership does not confirm limb assignments, timing or support continuity.\n\n### Current-route point coverage across detector variants\n\n| Variant | Detector candidates | Selected points covered | Coverage |\n| --- | ---: | ---: | ---: |\n| Original frame 450, cap 100 | 100 | 6/17 | 35.3% |\n| Frame 450, cap 400 | 179 | 14/17 | 82.4% |\n| Reconstructed wall, cap 400 | 171 | 16/17 | 94.1% |\n| Reconstruction plus overlapping tiles | 298 | 17/17 | 100.0% |\n\nMatching uses one-to-one mask assignments within 3 reference-image pixels.\nHistorical source-review points are reused when available; additional points\n(H163, H127) use an interior pixel of the selected mask.\nThe route was selected from the final detections. This measures coverage of those\nselected points, not independent detection recall or all missing wall holds.\n\n### Historical experiment: fixed 15-point development audit\n\nThe original audit is preserved with its original points and denominator:\n\n| Variant | Original audit points covered |\n| --- | ---: |\n| Original frame 450, cap 100 | 6/15 |\n| Frame 450, cap 400 | 13/15 |\n| Reconstructed wall, cap 400 | 14/15 |\n| Reconstruction plus overlapping tiles | 15/15 |\n\nThis historical sample is separate from the current route. The original spot\ncheck of 40 raw candidates found 36 likely holds, 3 clear non-holds and 1 uncertain\nobject. Neither experiment establishes segmentation AP or contact accuracy.\n"
+}

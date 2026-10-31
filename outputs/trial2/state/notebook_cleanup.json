@@ -1,0 +1,22 @@
+[
+  {
+    "action" : "moved_to_macos_trash",
+    "original_path" : "\/Users\/ziwei\/Documents\/ChatGPT\/CIS5810\/outputs\/trial2_editor_reload_20261030\/Trial2_unsaved_editor_backup.ipynb",
+    "trash_path" : "\/Users\/ziwei\/Library\/Mobile Documents\/.Trash\/Trial2_unsaved_editor_backup.ipynb"
+  },
+  {
+    "action" : "moved_to_macos_trash",
+    "original_path" : "\/Users\/ziwei\/Documents\/ChatGPT\/CIS5810\/outputs\/trial2_editor_reload_20261030\/Trial2_latest_disk_before_reload.ipynb",
+    "trash_path" : "\/Users\/ziwei\/Library\/Mobile Documents\/.Trash\/Trial2_latest_disk_before_reload.ipynb"
+  },
+  {
+    "action" : "moved_to_macos_trash",
+    "original_path" : "\/Users\/ziwei\/Documents\/ChatGPT\/CIS5810\/outputs\/trial2_geometry_20261030\/backup\/Trial2_editor_before_geometry.ipynb",
+    "trash_path" : "\/Users\/ziwei\/Library\/Mobile Documents\/.Trash\/Trial2_editor_before_geometry.ipynb"
+  },
+  {
+    "action" : "moved_to_macos_trash",
+    "original_path" : "\/Users\/ziwei\/Documents\/ChatGPT\/CIS5810\/outputs\/motion_ik_update_20261026\/VSCode_unsaved_before_reload.ipynb",
+    "trash_path" : "\/Users\/ziwei\/Library\/Mobile Documents\/.Trash\/VSCode_unsaved_before_reload.ipynb"
+  }
+]

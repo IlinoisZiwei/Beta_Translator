@@ -1,0 +1,16 @@
+{
+  "inputs": {
+    "video_sha256": "8b5f96c2cd634c82e28d09eba62ba9bf6939bea34cbafe15be1388d831b6eff4",
+    "model_sha256": "64437af838a65d18e5ba7a0d39b465540069bc8aae8308de3e318aad31fcbc7b",
+    "settings": {
+      "min_pose_detection_confidence": 0.5,
+      "min_pose_presence_confidence": 0.5,
+      "min_tracking_confidence": 0.5
+    }
+  },
+  "artifacts": {
+    "/Users/ziwei/Desktop/2026 Fall/CIS 5810/Beta_Translator/outputs/trial3/tables/pose_coordinates_raw.csv": "61d2dd4680751838281c21bc33a82d29824ea510e48b54af30c00df0a93b1b5d"
+  },
+  "observed_frames": 503,
+  "total_frames": 503
+}

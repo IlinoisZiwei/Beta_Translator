@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "reference_frame_number": 450,
+  "annotation_source": "Assistant visual inspection of source frames and the observed-pixel reconstruction, before viewing updated detector overlays",
+  "scope": "Fifteen clearly visible reddish-brown priority-route holds; not a complete wall annotation or verified contact sequence",
+  "limitations": "This is a small development audit, not independent expert ground truth. Two visually ambiguous lower features are excluded. Center coverage does not measure instance-mask IoU, false-positive rate or contact accuracy.",
+  "match_rule": "One-to-one candidate assignment whose mask contains the annotated interior point within a fixed 3-pixel tolerance",
+  "tolerance_px": 3,
+  "holds": [
+    {
+      "audit_id": "R01",
+      "point": [
+        1230,
+        99
+      ]
+    },
+    {
+      "audit_id": "R02",
+      "point": [
+        1174,
+        175
+      ]
+    },
+    {
+      "audit_id": "R03",
+      "point": [
+        1171,
+        198
+      ]
+    },
+    {
+      "audit_id": "R04",
+      "point": [
+        1114,
+        274
+      ]
+    },
+    {
+      "audit_id": "R05",
+      "point": [
+        1133,
+        305
+      ]
+    },
+    {
+      "audit_id": "R06",
+      "point": [
+        1131,
+        332
+      ]
+    },
+    {
+      "audit_id": "R07",
+      "point": [
+        1165,
+        380
+      ]
+    },
+    {
+      "audit_id": "R08",
+      "point": [
+        1141,
+        407
+      ]
+    },
+    {
+      "audit_id": "R09",
+      "point": [
+        1125,
+        450
+      ]
+    },
+    {
+      "audit_id": "R10",
+      "point": [
+        1093,
+        462
+      ]
+    },
+    {
+      "audit_id": "R11",
+      "point": [
+        1023,
+        501
+      ]
+    },
+    {
+      "audit_id": "R12",
+      "point": [
+        993,
+        517
+      ]
+    },
+    {
+      "audit_id": "R13",
+      "point": [
+        945,
+        567
+      ]
+    },
+    {
+      "audit_id": "R15",
+      "point": [
+        990,
+        588
+      ]
+    },
+    {
+      "audit_id": "R16",
+      "point": [
+        981,
+        651
+      ]
+    }
+  ],
+  "annotation_correction": {
+    "removed_audit_id": "R14",
+    "point": [
+      925,
+      568
+    ],
+    "reason": "Magnified source-crop inspection shows a route marker next to R13, not a climbing hold. Removed from every stage denominator; original draft preserved."
+  }
+}

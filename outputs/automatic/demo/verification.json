@@ -13,7 +13,7 @@
     "arrival": 128
   },
   "reviewed_reference_sha256": "c62b11718a0a8d960f3020edcae558a39ff68e77bc228c66c68061628e93b97c",
-  "motion_summary_sha256": "20c335dae2da11584f7f80f1fbd7379d475233bb0ef347f33ed6cd691560fc29",
+  "motion_summary_sha256": "74b59ae0447d1f0e3cd71274deff20366d9bb2091e876a205f6a17aad4171617",
   "videos": {
     "motion_ik_h264.mp4": {
       "frames": 23,

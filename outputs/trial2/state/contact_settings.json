@@ -1,0 +1,39 @@
+{
+  "settings": {
+    "hand_margin_px": 20,
+    "foot_margin_px": 10,
+    "min_visibility": 0.5,
+    "min_contact_sec": 0.5,
+    "ambiguity_gap_px": 3,
+    "min_inliers": 25
+  },
+  "video": "/Users/ziwei/Desktop/2026 Fall/CIS 5810/Beta_Translator/videos/trial2.mp4",
+  "video_sha256": "9964d27ca051953d77cf10ee94a1772bd73e30d7e23fa09a54983c3630e8a068",
+  "pose_sha256": "8f8ee0c55b8be57862de3d3c16d6f590eece9f82b2ced602b709f096c9298f0b",
+  "alignment_sha256": "05c419c1804d5c90f61e6ead7a68c60c5a421c54d944bdc2e0903319506ccdc7",
+  "fps": 30.0,
+  "selected_holds": [
+    "H137",
+    "H113",
+    "H109",
+    "H163",
+    "H094",
+    "H090",
+    "H079",
+    "H072",
+    "H054",
+    "H046",
+    "H038",
+    "H027",
+    "H022",
+    "H011",
+    "H127",
+    "H149",
+    "H186"
+  ],
+  "candidate_run_id": "ea806103e4af44ceb85fbfd48fac1ec8",
+  "coordinates": "original current-frame pixels",
+  "margins": "pixels at 720px image width",
+  "interval": "start_frame/end_frame inclusive; end_sec exclusive",
+  "match_score": "geometric proximity only, not a probability"
+}

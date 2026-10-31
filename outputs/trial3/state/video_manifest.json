@@ -1,0 +1,20 @@
+{
+  "inputs": {
+    "source_sha256": "50ea46c3ec96737c55d20dc7ec3f2dd16dcac856246adcd6f36091446ab386c5",
+    "fps": 30,
+    "width": 720,
+    "version": 1
+  },
+  "artifacts": {
+    "/Users/ziwei/Desktop/2026 Fall/CIS 5810/Beta_Translator/videos/trial3.mp4": "8b5f96c2cd634c82e28d09eba62ba9bf6939bea34cbafe15be1388d831b6eff4",
+    "/Users/ziwei/Desktop/2026 Fall/CIS 5810/Beta_Translator/outputs/trial3/tables/source_frame_map.csv": "11e406fb4af0a143028ef73b717fbb59f4aa4b5dd37b0935c444678dee0a64da"
+  },
+  "source": "/Users/ziwei/Downloads/trial3.mov",
+  "frame_count": 503,
+  "fps": 30,
+  "width": 720,
+  "height": 1280,
+  "source_frame_count": 1005,
+  "rotation": "FFmpeg autorotation; upright pixels saved",
+  "mapping": "Exact selected source frame indices"
+}

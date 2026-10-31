@@ -17,6 +17,7 @@ from .pose_adapter import (
 )
 from .project_io import (
     file_sha256, load_reviewed_holds, load_alignment, load_annotations, convert_video,
+    validate_reference_alignment,
 )
 
 
@@ -183,6 +184,8 @@ def run_motion_analysis(video_file, output_dir, settings=None):
     video_file,output_dir = Path(video_file),Path(output_dir)
     before_hashes = provenance(video_file,output_dir)
     records,masks,run_id,hold_ids = load_reviewed_holds(output_dir/'state/reviewed_hold_map.npz',video_file)
+    reference_index = validate_reference_alignment(
+        output_dir/'state/reviewed_hold_map.npz', output_dir/'state/alignment_cache.npz')
     cap = cv2.VideoCapture(str(video_file))
     count = int(cap.get(cv2.CAP_PROP_FRAME_COUNT));fps = cap.get(cv2.CAP_PROP_FPS);cap.release()
     annotation = load_annotations(output_dir/'state/endpoint_annotations.json',video_file,run_id,hold_ids,count)
@@ -237,7 +240,8 @@ def run_motion_analysis(video_file, output_dir, settings=None):
             cap=cv2.VideoCapture(str(path));encoded_count=int(cap.get(cv2.CAP_PROP_FRAME_COUNT));encoded_fps=cap.get(cv2.CAP_PROP_FPS);cap.release()
             if encoded_count != len(frames) or not np.isclose(encoded_fps,expected_fps):
                 raise RuntimeError('Encoded motion timing does not match the source frame schedule.')
-        summary = dict(schema_version=1,annotation=annotation,provenance=before_hashes,
+        summary = dict(schema_version=1,reference_frame_number=reference_index,
+            annotation=annotation,provenance=before_hashes,
             frame_count=len(frames),source_fps=fps,endpoint_interval_seconds=float((frames[-1]-frames[0])/fps),
             encoded_duration_seconds=float(len(frames)/fps),metrics=result['metrics'],
             frame_convention='release=first free frame; arrival=first new-contact frame; endpoints inclusive',

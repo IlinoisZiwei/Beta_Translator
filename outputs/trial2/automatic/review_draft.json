@@ -1,0 +1,71 @@
+{
+  "video_sha256": "9964d27ca051953d77cf10ee94a1772bd73e30d7e23fa09a54983c3630e8a068",
+  "candidate_run_id": "ea806103e4af44ceb85fbfd48fac1ec8",
+  "selected_hold_ids": [
+    "H137",
+    "H113",
+    "H109",
+    "H163",
+    "H094",
+    "H090",
+    "H079",
+    "H072",
+    "H054",
+    "H046",
+    "H038",
+    "H027",
+    "H022",
+    "H011",
+    "H127",
+    "H149",
+    "H186"
+  ],
+  "frames": {
+    "before": 171,
+    "after": 225
+  },
+  "contacts": {
+    "before": {
+      "left_hand": "unknown",
+      "right_hand": "unknown",
+      "left_foot": "unknown",
+      "right_foot": "unknown"
+    },
+    "after": {
+      "left_hand": "unknown",
+      "right_hand": "unknown",
+      "left_foot": "unknown",
+      "right_foot": "unknown"
+    }
+  },
+  "moving_limb": "left_hand",
+  "notes": "Automatically prefilled draft. Review contact identities, timing, and support continuity before IK.",
+  "body": {
+    "height_cm": 190,
+    "ratios": {
+      "upper_arm": 0.186,
+      "forearm": 0.146,
+      "thigh": 0.245,
+      "shank": 0.246,
+      "shoulder_w": 0.259,
+      "hip_w": 0.191,
+      "torso": 0.288
+    },
+    "px_per_cm": null
+  },
+  "reference_frame_number": 450,
+  "annotation_source": "automatic_review_draft",
+  "suggested_motion": {
+    "release_frame": 179,
+    "arrival_frame": 218,
+    "release_frame_range": [
+      177,
+      180
+    ],
+    "arrival_frame_range": [
+      217,
+      220
+    ],
+    "support_contacts_maintained": false
+  }
+}

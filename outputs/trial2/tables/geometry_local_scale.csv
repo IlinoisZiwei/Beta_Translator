@@ -1,0 +1,13 @@
+sample_id,panel_id,direction,intervals,assumed_length_cm,image_distance_px,local_px_per_cm,review_status
+upper_row_1,upper_wall,row,1,15.0,33.65196725304472,2.2434644835363144,assistant_selected_draft
+upper_row_2,upper_wall,row,1,15.0,32.839625454624155,2.18930836364161,assistant_selected_draft
+upper_row_3,upper_wall,row,1,15.0,31.866730299797023,2.124448686653135,assistant_selected_draft
+upper_column_1,upper_wall,column,1,15.0,33.07461866749186,2.204974577832791,assistant_selected_draft
+upper_column_2,upper_wall,column,1,15.0,32.48934748498344,2.165956498998896,assistant_selected_draft
+upper_column_3,upper_wall,column,1,15.0,31.975756441404176,2.131717096093612,assistant_selected_draft
+right_row_1,right_wall,row,1,15.0,31.502717343111858,2.1001811562074573,assistant_selected_draft
+right_row_2,right_wall,row,1,15.0,32.82499200304544,2.188332800203029,assistant_selected_draft
+right_row_3,right_wall,row,1,15.0,33.566562230886824,2.2377708153924547,assistant_selected_draft
+right_column_1,right_wall,column,1,15.0,26.763731055291977,1.784248737019465,assistant_selected_draft
+right_column_2,right_wall,column,1,15.0,26.66084019681301,1.7773893464542005,assistant_selected_draft
+right_column_3,right_wall,column,1,15.0,26.405336581835112,1.7603557721223408,assistant_selected_draft

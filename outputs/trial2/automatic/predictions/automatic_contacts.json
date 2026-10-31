@@ -1,0 +1,806 @@
+{
+  "schema_version": 1,
+  "reference_frame_number": 450,
+  "video_sha256": "9964d27ca051953d77cf10ee94a1772bd73e30d7e23fa09a54983c3630e8a068",
+  "pose_cache_sha256": "cb861eaa2fa17ed2592d43033312a1f718bc054fa112c6ad1732c2e7315bc1c9",
+  "alignment_sha256": "05c419c1804d5c90f61e6ead7a68c60c5a421c54d944bdc2e0903319506ccdc7",
+  "model_config_sha256": "5c15dee5f2cf3da1fd88ced97772f62d7c6ced24607094a78e721e72fef43dcd",
+  "reviewed_map_sha256": "5b0c612f577e29c9514f075051341dadbb9a45c71f7172e0a1114d4a4091f5e6",
+  "candidate_run_id": "ea806103e4af44ceb85fbfd48fac1ec8",
+  "selected_hold_ids": [
+    "H137",
+    "H113",
+    "H109",
+    "H163",
+    "H094",
+    "H090",
+    "H079",
+    "H072",
+    "H054",
+    "H046",
+    "H038",
+    "H027",
+    "H022",
+    "H011",
+    "H127",
+    "H149",
+    "H186"
+  ],
+  "fps": 30.0,
+  "frame_indexing": "Zero-based native video frames",
+  "model_fps": 25.0,
+  "accept_threshold": 0.8,
+  "max_timing_width_sec": -1.0,
+  "movement_accept_threshold": 1.01,
+  "accepted_frame_fraction": 0.49769467213114754,
+  "eligible_moves": 0,
+  "moves": [
+    {
+      "moving_limb": "left_hand",
+      "from_hold": "H137",
+      "to_hold": "H109",
+      "before_frame": 171,
+      "after_frame": 225,
+      "release_frame": 179,
+      "arrival_frame": 218,
+      "release_frame_range": [
+        177,
+        180
+      ],
+      "arrival_frame_range": [
+        217,
+        220
+      ],
+      "timing_range_semantics": "Central 90% local path mass; empirical coverage is not guaranteed",
+      "uncertain_frame_range": [
+        171,
+        225
+      ],
+      "support_contacts": {
+        "right_hand": "unknown",
+        "left_foot": "unknown",
+        "right_foot": "unknown"
+      },
+      "supports_maintained": false,
+      "requires_review": true,
+      "eligible_for_ik": false,
+      "review_reasons": [
+        "Transition timing is insufficiently resolved",
+        "Contact/free/contact evidence needs review",
+        "Support contacts are uncertain or change"
+      ],
+      "evidence": "Visual model prediction; not physical contact-force confirmation"
+    },
+    {
+      "moving_limb": "left_hand",
+      "from_hold": "H109",
+      "to_hold": "H079",
+      "before_frame": 345,
+      "after_frame": 461,
+      "release_frame": 353,
+      "arrival_frame": 454,
+      "release_frame_range": [
+        352,
+        355
+      ],
+      "arrival_frame_range": [
+        446,
+        454
+      ],
+      "timing_range_semantics": "Central 90% local path mass; empirical coverage is not guaranteed",
+      "uncertain_frame_range": [
+        347,
+        461
+      ],
+      "support_contacts": {
+        "right_hand": "unknown",
+        "left_foot": "unknown",
+        "right_foot": "unknown"
+      },
+      "supports_maintained": false,
+      "requires_review": true,
+      "eligible_for_ik": false,
+      "review_reasons": [
+        "No confidently resolved free-motion phase",
+        "Transition timing is insufficiently resolved",
+        "Contact/free/contact evidence needs review",
+        "Support contacts are uncertain or change"
+      ],
+      "evidence": "Visual model prediction; not physical contact-force confirmation"
+    },
+    {
+      "moving_limb": "left_hand",
+      "from_hold": "H079",
+      "to_hold": "H054",
+      "before_frame": 499,
+      "after_frame": 529,
+      "release_frame": 507,
+      "arrival_frame": 522,
+      "release_frame_range": [
+        506,
+        509
+      ],
+      "arrival_frame_range": [
+        520,
+        524
+      ],
+      "timing_range_semantics": "Central 90% local path mass; empirical coverage is not guaranteed",
+      "uncertain_frame_range": [
+        506,
+        523
+      ],
+      "support_contacts": {
+        "right_hand": "unknown",
+        "left_foot": "unknown",
+        "right_foot": "unknown"
+      },
+      "supports_maintained": false,
+      "requires_review": true,
+      "eligible_for_ik": false,
+      "review_reasons": [
+        "Transition timing is insufficiently resolved",
+        "Contact/free/contact evidence needs review",
+        "Support contacts are uncertain or change"
+      ],
+      "evidence": "Visual model prediction; not physical contact-force confirmation"
+    },
+    {
+      "moving_limb": "left_hand",
+      "from_hold": "H054",
+      "to_hold": "H038",
+      "before_frame": 654,
+      "after_frame": 682,
+      "release_frame": 662,
+      "arrival_frame": 675,
+      "release_frame_range": [
+        660,
+        663
+      ],
+      "arrival_frame_range": [
+        674,
+        677
+      ],
+      "timing_range_semantics": "Central 90% local path mass; empirical coverage is not guaranteed",
+      "uncertain_frame_range": [
+        660,
+        676
+      ],
+      "support_contacts": {
+        "right_hand": "unknown",
+        "left_foot": "unknown",
+        "right_foot": "unknown"
+      },
+      "supports_maintained": false,
+      "requires_review": true,
+      "eligible_for_ik": false,
+      "review_reasons": [
+        "Transition timing is insufficiently resolved",
+        "Contact/free/contact evidence needs review",
+        "Support contacts are uncertain or change"
+      ],
+      "evidence": "Visual model prediction; not physical contact-force confirmation"
+    },
+    {
+      "moving_limb": "left_hand",
+      "from_hold": "H038",
+      "to_hold": "H022",
+      "before_frame": 817,
+      "after_frame": 848,
+      "release_frame": 825,
+      "arrival_frame": 841,
+      "release_frame_range": [
+        824,
+        826
+      ],
+      "arrival_frame_range": [
+        839,
+        843
+      ],
+      "timing_range_semantics": "Central 90% local path mass; empirical coverage is not guaranteed",
+      "uncertain_frame_range": [
+        824,
+        844
+      ],
+      "support_contacts": {
+        "right_hand": "unknown",
+        "left_foot": "unknown",
+        "right_foot": "unknown"
+      },
+      "supports_maintained": false,
+      "requires_review": true,
+      "eligible_for_ik": false,
+      "review_reasons": [
+        "Transition timing is insufficiently resolved",
+        "Contact/free/contact evidence needs review",
+        "Support contacts are uncertain or change"
+      ],
+      "evidence": "Visual model prediction; not physical contact-force confirmation"
+    },
+    {
+      "moving_limb": "left_hand",
+      "from_hold": "H022",
+      "to_hold": "H011",
+      "before_frame": 951,
+      "after_frame": 975,
+      "release_frame": 959,
+      "arrival_frame": 969,
+      "release_frame_range": [
+        958,
+        960
+      ],
+      "arrival_frame_range": [
+        968,
+        972
+      ],
+      "timing_range_semantics": "Central 90% local path mass; empirical coverage is not guaranteed",
+      "uncertain_frame_range": [
+        958,
+        971
+      ],
+      "support_contacts": {
+        "right_hand": "unknown",
+        "left_foot": "unknown",
+        "right_foot": "unknown"
+      },
+      "supports_maintained": false,
+      "requires_review": true,
+      "eligible_for_ik": false,
+      "review_reasons": [
+        "Transition timing is insufficiently resolved",
+        "Contact/free/contact evidence needs review",
+        "Support contacts are uncertain or change"
+      ],
+      "evidence": "Visual model prediction; not physical contact-force confirmation"
+    },
+    {
+      "moving_limb": "right_hand",
+      "from_hold": "H137",
+      "to_hold": "H109",
+      "before_frame": 72,
+      "after_frame": 227,
+      "release_frame": 80,
+      "arrival_frame": 220,
+      "release_frame_range": [
+        80,
+        88
+      ],
+      "arrival_frame_range": [
+        218,
+        225
+      ],
+      "timing_range_semantics": "Central 90% local path mass; empirical coverage is not guaranteed",
+      "uncertain_frame_range": [
+        72,
+        227
+      ],
+      "support_contacts": {
+        "left_hand": "unknown",
+        "left_foot": "unknown",
+        "right_foot": "unknown"
+      },
+      "supports_maintained": false,
+      "requires_review": true,
+      "eligible_for_ik": false,
+      "review_reasons": [
+        "No confidently resolved free-motion phase",
+        "Transition timing is insufficiently resolved",
+        "Contact/free/contact evidence needs review",
+        "Support contacts are uncertain or change"
+      ],
+      "evidence": "Visual model prediction; not physical contact-force confirmation"
+    },
+    {
+      "moving_limb": "right_hand",
+      "from_hold": "H109",
+      "to_hold": "H090",
+      "before_frame": 264,
+      "after_frame": 371,
+      "release_frame": 272,
+      "arrival_frame": 364,
+      "release_frame_range": [
+        270,
+        275
+      ],
+      "arrival_frame_range": [
+        356,
+        364
+      ],
+      "timing_range_semantics": "Central 90% local path mass; empirical coverage is not guaranteed",
+      "uncertain_frame_range": [
+        264,
+        371
+      ],
+      "support_contacts": {
+        "left_hand": "unknown",
+        "left_foot": "unknown",
+        "right_foot": "unknown"
+      },
+      "supports_maintained": false,
+      "requires_review": true,
+      "eligible_for_ik": false,
+      "review_reasons": [
+        "No confidently resolved free-motion phase",
+        "Transition timing is insufficiently resolved",
+        "Contact/free/contact evidence needs review",
+        "Support contacts are uncertain or change"
+      ],
+      "evidence": "Visual model prediction; not physical contact-force confirmation"
+    },
+    {
+      "moving_limb": "right_hand",
+      "from_hold": "H090",
+      "to_hold": "H072",
+      "before_frame": 420,
+      "after_frame": 477,
+      "release_frame": 428,
+      "arrival_frame": 470,
+      "release_frame_range": [
+        423,
+        433
+      ],
+      "arrival_frame_range": [
+        464,
+        472
+      ],
+      "timing_range_semantics": "Central 90% local path mass; empirical coverage is not guaranteed",
+      "uncertain_frame_range": [
+        420,
+        477
+      ],
+      "support_contacts": {
+        "left_hand": "unknown",
+        "left_foot": "unknown",
+        "right_foot": "unknown"
+      },
+      "supports_maintained": false,
+      "requires_review": true,
+      "eligible_for_ik": false,
+      "review_reasons": [
+        "Transition timing is insufficiently resolved",
+        "Contact/free/contact evidence needs review",
+        "Support contacts are uncertain or change"
+      ],
+      "evidence": "Visual model prediction; not physical contact-force confirmation"
+    },
+    {
+      "moving_limb": "right_hand",
+      "from_hold": "H072",
+      "to_hold": "H046",
+      "before_frame": 583,
+      "after_frame": 618,
+      "release_frame": 591,
+      "arrival_frame": 611,
+      "release_frame_range": [
+        590,
+        593
+      ],
+      "arrival_frame_range": [
+        608,
+        616
+      ],
+      "timing_range_semantics": "Central 90% local path mass; empirical coverage is not guaranteed",
+      "uncertain_frame_range": [
+        590,
+        616
+      ],
+      "support_contacts": {
+        "left_hand": "unknown",
+        "left_foot": "unknown",
+        "right_foot": "unknown"
+      },
+      "supports_maintained": false,
+      "requires_review": true,
+      "eligible_for_ik": false,
+      "review_reasons": [
+        "Transition timing is insufficiently resolved",
+        "Contact/free/contact evidence needs review",
+        "Support contacts are uncertain or change"
+      ],
+      "evidence": "Visual model prediction; not physical contact-force confirmation"
+    },
+    {
+      "moving_limb": "right_hand",
+      "from_hold": "H046",
+      "to_hold": "H027",
+      "before_frame": 749,
+      "after_frame": 784,
+      "release_frame": 757,
+      "arrival_frame": 777,
+      "release_frame_range": [
+        755,
+        759
+      ],
+      "arrival_frame_range": [
+        772,
+        782
+      ],
+      "timing_range_semantics": "Central 90% local path mass; empirical coverage is not guaranteed",
+      "uncertain_frame_range": [
+        749,
+        784
+      ],
+      "support_contacts": {
+        "left_hand": "unknown",
+        "left_foot": "unknown",
+        "right_foot": "unknown"
+      },
+      "supports_maintained": false,
+      "requires_review": true,
+      "eligible_for_ik": false,
+      "review_reasons": [
+        "Transition timing is insufficiently resolved",
+        "Contact/free/contact evidence needs review",
+        "Support contacts are uncertain or change"
+      ],
+      "evidence": "Visual model prediction; not physical contact-force confirmation"
+    },
+    {
+      "moving_limb": "right_hand",
+      "from_hold": "H027",
+      "to_hold": "H011",
+      "before_frame": 882,
+      "after_frame": 915,
+      "release_frame": 890,
+      "arrival_frame": 908,
+      "release_frame_range": [
+        888,
+        891
+      ],
+      "arrival_frame_range": [
+        907,
+        910
+      ],
+      "timing_range_semantics": "Central 90% local path mass; empirical coverage is not guaranteed",
+      "uncertain_frame_range": [
+        888,
+        910
+      ],
+      "support_contacts": {
+        "left_hand": "unknown",
+        "left_foot": "unknown",
+        "right_foot": "unknown"
+      },
+      "supports_maintained": false,
+      "requires_review": true,
+      "eligible_for_ik": false,
+      "review_reasons": [
+        "Transition timing is insufficiently resolved",
+        "Contact/free/contact evidence needs review",
+        "Support contacts are uncertain or change"
+      ],
+      "evidence": "Visual model prediction; not physical contact-force confirmation"
+    },
+    {
+      "moving_limb": "left_foot",
+      "from_hold": "H149",
+      "to_hold": "H109",
+      "before_frame": 397,
+      "after_frame": 497,
+      "release_frame": 405,
+      "arrival_frame": 490,
+      "release_frame_range": [
+        399,
+        411
+      ],
+      "arrival_frame_range": [
+        485,
+        496
+      ],
+      "timing_range_semantics": "Central 90% local path mass; empirical coverage is not guaranteed",
+      "uncertain_frame_range": [
+        397,
+        497
+      ],
+      "support_contacts": {
+        "left_hand": "unknown",
+        "right_hand": "unknown",
+        "right_foot": "unknown"
+      },
+      "supports_maintained": false,
+      "requires_review": true,
+      "eligible_for_ik": false,
+      "review_reasons": [
+        "Transition timing is insufficiently resolved",
+        "Contact/free/contact evidence needs review",
+        "Support contacts are uncertain or change"
+      ],
+      "evidence": "Visual model prediction; not physical contact-force confirmation"
+    },
+    {
+      "moving_limb": "left_foot",
+      "from_hold": "H109",
+      "to_hold": "H094",
+      "before_frame": 566,
+      "after_frame": 652,
+      "release_frame": 574,
+      "arrival_frame": 645,
+      "release_frame_range": [
+        569,
+        577
+      ],
+      "arrival_frame_range": [
+        643,
+        648
+      ],
+      "timing_range_semantics": "Central 90% local path mass; empirical coverage is not guaranteed",
+      "uncertain_frame_range": [
+        566,
+        649
+      ],
+      "support_contacts": {
+        "left_hand": "unknown",
+        "right_hand": "unknown",
+        "right_foot": "unknown"
+      },
+      "supports_maintained": false,
+      "requires_review": true,
+      "eligible_for_ik": false,
+      "review_reasons": [
+        "Transition timing is insufficiently resolved",
+        "Contact/free/contact evidence needs review",
+        "Support contacts are uncertain or change"
+      ],
+      "evidence": "Visual model prediction; not physical contact-force confirmation"
+    },
+    {
+      "moving_limb": "left_foot",
+      "from_hold": "H094",
+      "to_hold": "H079",
+      "before_frame": 728,
+      "after_frame": 817,
+      "release_frame": 736,
+      "arrival_frame": 810,
+      "release_frame_range": [
+        734,
+        737
+      ],
+      "arrival_frame_range": [
+        808,
+        812
+      ],
+      "timing_range_semantics": "Central 90% local path mass; empirical coverage is not guaranteed",
+      "uncertain_frame_range": [
+        734,
+        811
+      ],
+      "support_contacts": {
+        "left_hand": "unknown",
+        "right_hand": "unknown",
+        "right_foot": "unknown"
+      },
+      "supports_maintained": false,
+      "requires_review": true,
+      "eligible_for_ik": false,
+      "review_reasons": [
+        "Transition timing is insufficiently resolved",
+        "Contact/free/contact evidence needs review",
+        "Support contacts are uncertain or change"
+      ],
+      "evidence": "Visual model prediction; not physical contact-force confirmation"
+    },
+    {
+      "moving_limb": "left_foot",
+      "from_hold": "H079",
+      "to_hold": "H054",
+      "before_frame": 867,
+      "after_frame": 952,
+      "release_frame": 875,
+      "arrival_frame": 945,
+      "release_frame_range": [
+        873,
+        876
+      ],
+      "arrival_frame_range": [
+        942,
+        948
+      ],
+      "timing_range_semantics": "Central 90% local path mass; empirical coverage is not guaranteed",
+      "uncertain_frame_range": [
+        873,
+        952
+      ],
+      "support_contacts": {
+        "left_hand": "unknown",
+        "right_hand": "unknown",
+        "right_foot": "unknown"
+      },
+      "supports_maintained": false,
+      "requires_review": true,
+      "eligible_for_ik": false,
+      "review_reasons": [
+        "Transition timing is insufficiently resolved",
+        "Contact/free/contact evidence needs review",
+        "Support contacts are uncertain or change"
+      ],
+      "evidence": "Visual model prediction; not physical contact-force confirmation"
+    },
+    {
+      "moving_limb": "right_foot",
+      "from_hold": "H163",
+      "to_hold": "H109",
+      "before_frame": 178,
+      "after_frame": 246,
+      "release_frame": 186,
+      "arrival_frame": 239,
+      "release_frame_range": [
+        182,
+        189
+      ],
+      "arrival_frame_range": [
+        233,
+        242
+      ],
+      "timing_range_semantics": "Central 90% local path mass; empirical coverage is not guaranteed",
+      "uncertain_frame_range": [
+        178,
+        246
+      ],
+      "support_contacts": {
+        "left_hand": "unknown",
+        "right_hand": "unknown",
+        "left_foot": "unknown"
+      },
+      "supports_maintained": false,
+      "requires_review": true,
+      "eligible_for_ik": false,
+      "review_reasons": [
+        "Transition timing is insufficiently resolved",
+        "Contact/free/contact evidence needs review",
+        "Support contacts are uncertain or change"
+      ],
+      "evidence": "Visual model prediction; not physical contact-force confirmation"
+    },
+    {
+      "moving_limb": "right_foot",
+      "from_hold": "H109",
+      "to_hold": "H149",
+      "before_frame": 246,
+      "after_frame": 261,
+      "release_frame": 254,
+      "arrival_frame": 254,
+      "release_frame_range": [
+        248,
+        257
+      ],
+      "arrival_frame_range": [
+        250,
+        258
+      ],
+      "timing_range_semantics": "Central 90% local path mass; empirical coverage is not guaranteed",
+      "uncertain_frame_range": [
+        246,
+        261
+      ],
+      "support_contacts": {
+        "left_hand": "unknown",
+        "right_hand": "unknown",
+        "left_foot": "unknown"
+      },
+      "supports_maintained": false,
+      "requires_review": true,
+      "eligible_for_ik": false,
+      "review_reasons": [
+        "No confidently resolved free-motion phase",
+        "Transition timing is insufficiently resolved",
+        "Contact/free/contact evidence needs review",
+        "Support contacts are uncertain or change"
+      ],
+      "evidence": "Visual model prediction; not physical contact-force confirmation"
+    },
+    {
+      "moving_limb": "right_foot",
+      "from_hold": "H149",
+      "to_hold": "H163",
+      "before_frame": 291,
+      "after_frame": 306,
+      "release_frame": 299,
+      "arrival_frame": 299,
+      "release_frame_range": [
+        295,
+        301
+      ],
+      "arrival_frame_range": [
+        296,
+        302
+      ],
+      "timing_range_semantics": "Central 90% local path mass; empirical coverage is not guaranteed",
+      "uncertain_frame_range": [
+        291,
+        306
+      ],
+      "support_contacts": {
+        "left_hand": "unknown",
+        "right_hand": "unknown",
+        "left_foot": "unknown"
+      },
+      "supports_maintained": false,
+      "requires_review": true,
+      "eligible_for_ik": false,
+      "review_reasons": [
+        "No confidently resolved free-motion phase",
+        "Transition timing is insufficiently resolved",
+        "Contact/free/contact evidence needs review",
+        "Support contacts are uncertain or change"
+      ],
+      "evidence": "Visual model prediction; not physical contact-force confirmation"
+    },
+    {
+      "moving_limb": "right_foot",
+      "from_hold": "H163",
+      "to_hold": "H109",
+      "before_frame": 380,
+      "after_frame": 606,
+      "release_frame": 388,
+      "arrival_frame": 599,
+      "release_frame_range": [
+        386,
+        392
+      ],
+      "arrival_frame_range": [
+        593,
+        602
+      ],
+      "timing_range_semantics": "Central 90% local path mass; empirical coverage is not guaranteed",
+      "uncertain_frame_range": [
+        380,
+        606
+      ],
+      "support_contacts": {
+        "left_hand": "unknown",
+        "right_hand": "unknown",
+        "left_foot": "unknown"
+      },
+      "supports_maintained": false,
+      "requires_review": true,
+      "eligible_for_ik": false,
+      "review_reasons": [
+        "Transition timing is insufficiently resolved",
+        "Contact/free/contact evidence needs review",
+        "Support contacts are uncertain or change"
+      ],
+      "evidence": "Visual model prediction; not physical contact-force confirmation"
+    },
+    {
+      "moving_limb": "right_foot",
+      "from_hold": "H109",
+      "to_hold": "H079",
+      "before_frame": 613,
+      "after_frame": 901,
+      "release_frame": 621,
+      "arrival_frame": 894,
+      "release_frame_range": [
+        614,
+        624
+      ],
+      "arrival_frame_range": [
+        891,
+        896
+      ],
+      "timing_range_semantics": "Central 90% local path mass; empirical coverage is not guaranteed",
+      "uncertain_frame_range": [
+        613,
+        895
+      ],
+      "support_contacts": {
+        "left_hand": "unknown",
+        "right_hand": "unknown",
+        "left_foot": "unknown"
+      },
+      "supports_maintained": false,
+      "requires_review": true,
+      "eligible_for_ik": false,
+      "review_reasons": [
+        "No confidently resolved free-motion phase",
+        "Transition timing is insufficiently resolved",
+        "Contact/free/contact evidence needs review",
+        "Support contacts are uncertain or change"
+      ],
+      "evidence": "Visual model prediction; not physical contact-force confirmation"
+    }
+  ],
+  "artifact_sha256": {
+    "limb_contacts.csv": "d8d324f68116c935a593c5923cc8fb67ac1bd390e7fb45b9cb860e2663051237",
+    "contact_events.csv": "c015c7b13cbd4eea94a75ecadfed5cb0533c5ac072bd67e8490379eb3013c0b8"
+  },
+  "identity_guard_sha256": "f745b51dda2335d3e934983ae9a94045e4da5fd4400e9f8fe6dc51479cbd8e4a"
+}

@@ -1,0 +1,19 @@
+{
+  "frame_count": 503,
+  "fps": 30.0,
+  "hold_candidates": 53,
+  "observed_pose_frames": 503,
+  "alignment_valid_frames": 503,
+  "model_threshold_coverage": 0.7619284294234593,
+  "movement_proposals": 12,
+  "solver_compatible": 3,
+  "generated_ik_videos": 0,
+  "target_height_cm": 190,
+  "geometry_blockers": [
+    "PX_PER_CM is missing: local hole scales are not a whole-wall calibration.",
+    "A suitable single-panel interval has not been established for the 2D solver."
+  ],
+  "preview_video": "/Users/ziwei/Desktop/2026 Fall/CIS 5810/Beta_Translator/outputs/trial3/videos/automatic_contacts_h264.mp4",
+  "interpretation": "Coverage is not accuracy. No trial3 ground truth or climbing-success probability.",
+  "automatic_ik": "User-authorized experimental mode; predictions were not manually confirmed."
+}

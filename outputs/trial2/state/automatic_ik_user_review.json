@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "user_statement": "The current Trial2 Analysis notebook information has been reviewed and is accepted. Enable automatic results directly into IK.",
+  "acceptance_source": "Explicit user instruction in this chat",
+  "acceptance_date": "2026-10-30",
+  "prediction_sha256": "fe9c534af7a9129243c9cc7b9f27c7ed9ebfd375fc2b9fedd2665edd35f39b0c",
+  "contact_table_sha256": "d8d324f68116c935a593c5923cc8fb67ac1bd390e7fb45b9cb860e2663051237",
+  "scope": "Accept current model predictions for experimental IK input; this does not supply missing metric geometry or change decoded contact states."
+}

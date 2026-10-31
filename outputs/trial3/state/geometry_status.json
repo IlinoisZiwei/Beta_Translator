@@ -1,0 +1,22 @@
+{
+  "video_sha256": "8b5f96c2cd634c82e28d09eba62ba9bf6939bea34cbafe15be1388d831b6eff4",
+  "target_height_cm": 190,
+  "ratios": {
+    "upper_arm": 0.186,
+    "forearm": 0.146,
+    "thigh": 0.245,
+    "shank": 0.246,
+    "shoulder_w": 0.259,
+    "hip_w": 0.191,
+    "torso": 0.288
+  },
+  "source_height_cm": null,
+  "px_per_cm": null,
+  "single_panel_confirmed": false,
+  "calibration_note": "",
+  "blockers": [
+    "PX_PER_CM is missing: local hole scales are not a whole-wall calibration.",
+    "A suitable single-panel interval has not been established for the 2D solver."
+  ],
+  "inherited_trial2_geometry": false
+}

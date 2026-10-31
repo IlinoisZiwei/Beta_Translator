@@ -1,0 +1,233 @@
+{
+  "video": "videos/trial2.mp4",
+  "video_sha256": "9964d27ca051953d77cf10ee94a1772bd73e30d7e23fa09a54983c3630e8a068",
+  "analysis_frame_count": 976,
+  "analysis_fps": 30,
+  "source_frame_count": 1950,
+  "source_duration_sec": 32.545,
+  "target_body": {
+    "height_cm": 165,
+    "proportions": "default",
+    "interpretation": "Assumed target settings; not a measurement of the filmed climber."
+  },
+  "mediapipe": {
+    "detected_frames": 962,
+    "missing_frames": [
+      183,
+      208,
+      209,
+      210,
+      211,
+      212,
+      213,
+      214,
+      215,
+      216,
+      217,
+      218,
+      227,
+      229
+    ],
+    "frame_coverage": 0.985655737704918,
+    "interpretation": "Target-verified observation coverage; display-only estimates are excluded."
+  },
+  "rtmw": {
+    "finite_pose_frames": 976,
+    "identity_observed_frames": 966,
+    "interpretation": "Finite raw poses are not necessarily visible observations; the identity guard excludes uncertain frames."
+  },
+  "hold_map": {
+    "reference_frame": 450,
+    "source_frames": [
+      0,
+      225,
+      450,
+      975
+    ],
+    "detected_candidates": 298,
+    "selected_candidates": 17,
+    "clear_non_holds_rejected": 15,
+    "uncertain_candidates_withheld": 1,
+    "selection": "Current manual selection from Section 4B; order is not a movement sequence",
+    "method": "Observed-pixel reconstruction, cap 400, whole-image and six 768-pixel overlapping tiles, mask-overlap deduplication",
+    "candidate_run_id": "ea806103e4af44ceb85fbfd48fac1ec8",
+    "limitation": "Development point audit is not complete wall recall, mask AP or contact accuracy.",
+    "selected_hold_ids": [
+      "H137",
+      "H113",
+      "H109",
+      "H163",
+      "H094",
+      "H090",
+      "H079",
+      "H072",
+      "H054",
+      "H046",
+      "H038",
+      "H027",
+      "H022",
+      "H011",
+      "H127",
+      "H149",
+      "H186"
+    ],
+    "retained_candidates_after_cleanup": 282,
+    "human_route_confirmed": true
+  },
+  "alignment": {
+    "frames": 976,
+    "passed_inlier_gate": 976,
+    "minimum_inliers": 343,
+    "median_inliers": 1542.0,
+    "interpretation": "Passing global homography checks does not validate every wall plane.",
+    "reference_frame_number": 450
+  },
+  "automatic_contacts": {
+    "limb_frames": 3904,
+    "accepted_limb_frames": 1943,
+    "confidence_threshold_coverage": 0.49769467213114754,
+    "review_required_limb_frames": 1961,
+    "movement_proposals": 21,
+    "ik_eligible_proposals": 0,
+    "accuracy": null,
+    "interpretation": "No trial2 ground-truth labels; confidence coverage is not accuracy or human time saved.",
+    "comparison_warning": "Route selection changes the candidate space. Confidence coverage is not measured contact accuracy."
+  },
+  "ik": {
+    "status": "pending_inputs_and_geometry_review",
+    "generated": false,
+    "reasons": [
+      "No measured trial2 wall scale",
+      "Overhang and multiple wall planes require geometry review",
+      "No confirmed endpoint identities, release/arrival or three continuous supports",
+      "Automatic unreviewed IK remains disabled in the deployed model"
+    ]
+  },
+  "review_draft": "automatic/review_draft.json",
+  "videos": {
+    "pose_output_h264.mp4": {
+      "frames": 976,
+      "fps": 30.0,
+      "sha256": "cec60797925126caecf42e261019821bacdb250cfd5da16d664f7029404f5472"
+    },
+    "wall_motion_h264.mp4": {
+      "frames": 976,
+      "fps": 30.0,
+      "sha256": "921b1adeb63a09a1c8cd98fb067468a0e82b40106883a4169c93e6904b3aa2c0"
+    },
+    "automatic_contacts_h264.mp4": {
+      "frames": 976,
+      "fps": 30.0,
+      "sha256": "c70419da87d0d8996020c1b7bc2adc65cac83a84ea24f689281ce0e30ce97365"
+    },
+    "identity_comparison_h264.mp4": {
+      "frames": 113,
+      "fps": 30.0,
+      "source_start_frame": 154,
+      "source_end_frame": 266,
+      "sha256": "3d3edb36656d9a11d217cb0ff81705bb539af8538e90163b4f35f095e0c681af"
+    }
+  },
+  "fixes": [
+    "Allow the existing wall_contact model class in the review loader",
+    "Use one configurable reference index for hold detection, alignment, prediction and IK",
+    "Reject mixed reference maps, alignment caches and predictions",
+    "Keep legacy reference-zero caches compatible; disable the original scale on other references",
+    "Reconstruct masked wall pixels from observed donor frames",
+    "Raise the detector cap and add tiled inference with mask deduplication",
+    "Exclude explicit non-hold candidates and withhold an uncertain object",
+    "Validate reconstruction video/cache identity and preserve pixel provenance"
+  ],
+  "tests": {
+    "passed": 49,
+    "trial1_motion_artifacts": "Six artifacts and original automatic-contact cache remain valid",
+    "identity_tests_added": 5
+  },
+  "reference_frame_number": 450,
+  "reference_time_sec": 15.0,
+  "outside_reference_fraction": {
+    "left_foot": 0.0,
+    "left_hand": 0.0,
+    "right_foot": 0.0,
+    "right_hand": 0.0
+  },
+  "preservation": {
+    "source_and_analysis_video_unchanged": true,
+    "trial1_manual_annotation_and_user_contact_tables_unchanged": true,
+    "trial1_main_notebook_default_reference": 0,
+    "trial1_motion_summary": "Refreshed code provenance; unchanged 23-frame fit and contact errors"
+  },
+  "hold_evaluation": {
+    "priority_point_recall_before": 0.4,
+    "priority_point_recall_after": 1.0,
+    "audited_points": 15,
+    "scope": "Assistant-reviewed development sample, with one-to-one 3-pixel-tolerance mask matches; the audit sample differs from the subsequent user-confirmed route",
+    "raw_candidate_spot_check": {
+      "seed": 20261030,
+      "sample_size": 40,
+      "likely_holds": 36,
+      "clear_non_holds": 3,
+      "uncertain": 1,
+      "false_positive_ids": [
+        "H269",
+        "H270",
+        "H289"
+      ],
+      "uncertain_ids": [
+        "H247"
+      ],
+      "interpretation": "Raw automatic-candidate spot check, not whole-wall segmentation AP. Do not report a post-cleanup precision estimate on this same reviewed sample."
+    }
+  },
+  "hold_map_report": "reports/hold_map_evaluation.html",
+  "route_selection_comparison": {
+    "previous_selected_candidates": 282,
+    "selected_candidates": 17,
+    "previous_confidence_threshold_coverage": 0.4203381147540984,
+    "confidence_threshold_coverage": 0.49769467213114754,
+    "previous_movement_proposals": 26,
+    "movement_proposals": 21,
+    "limitation": "No trial2 frame-level contact ground truth; no measured accuracy comparison.",
+    "comparison_scope": "Earlier route selection predates identity correction; current results also include corrected pose alignment and an identity observation guard."
+  },
+  "current_route_point_coverage": {
+    "original100": {
+      "candidate_count": 100,
+      "matched_points": 6,
+      "audited_points": 17,
+      "priority_point_recall": 0.35294117647058826
+    },
+    "cap400": {
+      "candidate_count": 179,
+      "matched_points": 14,
+      "audited_points": 17,
+      "priority_point_recall": 0.8235294117647058
+    },
+    "fusion": {
+      "candidate_count": 171,
+      "matched_points": 16,
+      "audited_points": 17,
+      "priority_point_recall": 0.9411764705882353
+    },
+    "fusion_tiled": {
+      "candidate_count": 298,
+      "matched_points": 17,
+      "audited_points": 17,
+      "priority_point_recall": 1.0
+    }
+  },
+  "identity_tracking": {
+    "original_identity_rejected_frames": 53,
+    "cropped_pose_recoveries": 43,
+    "observed_pose_frames": 962,
+    "display_interpolated_frames": 14,
+    "wholebody_unobserved_frames": 10,
+    "unobserved_limb_frame_predictions": 40,
+    "accepted_contacts_on_guarded_frames": 0,
+    "before_max_wall_step_px_per_frame": 505.2173767089844,
+    "after_display_max_wall_step_px_per_frame": 10.863656997680664,
+    "comparison_start_frame": 154,
+    "comparison_end_frame": 266,
+    "interpretation": "Development-case diagnostics, including interpolation; not an independent pose or identity benchmark."
+  }
+}

@@ -13,9 +13,10 @@ import torch
 from .contact_decoding import ensemble_probabilities, decode_probabilities, export_predictions
 from .contact_features import build_features, FEATURE_VERSION, LANDMARKS
 from .contact_network import ContactTCN, predict_logits
-from .project_io import load_reviewed_holds
+from .project_io import load_reviewed_holds, validate_reference_alignment
 from .contact_review import review_annotation_from_prediction
 from .wholebody_pose import sha256, POSE_SPEC
+from .identity_tracking import load_identity_guard
 
 
 def load_package(directory, device='cpu'):
@@ -80,6 +81,8 @@ def run_automatic_contacts(video, pose_cache, reviewed_output, package, destinat
     if destination.resolve() == reviewed_output.resolve():
         raise ValueError('Choose a separate automatic-output directory to preserve reviewed tables.')
     records, masks, run_id, hold_ids = load_reviewed_holds(reviewed_output/'state/reviewed_hold_map.npz', video)
+    reference_index = validate_reference_alignment(
+        reviewed_output/'state/reviewed_hold_map.npz', reviewed_output/'state/alignment_cache.npz')
     boxes = []
     for hold in hold_ids:
         ys, xs = np.nonzero(masks[hold])
@@ -93,6 +96,9 @@ def run_automatic_contacts(video, pose_cache, reviewed_output, package, destinat
         if expected is not None and any(metadata.get(key) != value for key, value in expected.items()):
             raise ValueError('Pose extractor does not match the trained contact package.')
         points, scores = cache['keypoints'].copy(), cache['scores'].copy()
+    identity = load_identity_guard(reviewed_output, video, pose_cache)
+    if identity is not None and len(identity['observed']) != len(points):
+        raise ValueError('Identity guard and whole-body cache have different frame counts.')
     alignment = reviewed_output/'state/alignment_cache.npz'
     valid = np.zeros(len(points), bool)
     with np.load(alignment, allow_pickle=False) as saved:
@@ -104,12 +110,15 @@ def run_automatic_contacts(video, pose_cache, reviewed_output, package, destinat
             if status == 'ok' and inliers >= 25 and np.isfinite(H).all() and np.linalg.cond(H) < 1e12:
                 points[frame] = cv2.perspectiveTransform(points[frame, :, None], np.linalg.inv(H))[:, 0]
                 valid[frame] = True
+    if identity is not None:
+        valid &= identity['observed']
     points[~valid] = np.nan; scores[~valid] = 0
     result = predict_contacts(points, scores, np.asarray(boxes), hold_ids, metadata['fps'], package, device, valid)
     destination.mkdir(parents=True, exist_ok=True)
     result['contacts'].to_csv(destination/'limb_contacts.csv', index=False)
     result['events'].to_csv(destination/'contact_events.csv', index=False)
-    summary = {'schema_version': 1, 'video_sha256': sha256(video), 'pose_cache_sha256': sha256(pose_cache),
+    summary = {'schema_version': 1, 'reference_frame_number': reference_index,
+        'video_sha256': sha256(video), 'pose_cache_sha256': sha256(pose_cache),
         'alignment_sha256': sha256(alignment), 'model_config_sha256': sha256(package/'deployment.json'),
         'reviewed_map_sha256': sha256(reviewed_output/'state/reviewed_hold_map.npz'),
         'candidate_run_id': run_id, 'selected_hold_ids': hold_ids, 'fps': metadata['fps'],
@@ -121,6 +130,8 @@ def run_automatic_contacts(video, pose_cache, reviewed_output, package, destinat
         'eligible_moves': sum(m['eligible_for_ik'] for m in result['moves']), 'moves': result['moves'],
         'artifact_sha256': {name: sha256(destination/name)
                            for name in ('limb_contacts.csv', 'contact_events.csv')}}
+    if identity is not None:
+        summary['identity_guard_sha256'] = identity['sha256']
     (destination/'automatic_contacts.json').write_text(json.dumps(summary, indent=2)+'\n')
     np.savez_compressed(destination/'contact_probabilities.npz', probabilities=result['probabilities'],
                         hold_ids=np.asarray(hold_ids), fps=np.array(metadata['fps']))
