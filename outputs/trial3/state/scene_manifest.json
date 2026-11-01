@@ -37,12 +37,13 @@
     "version": 2
   },
   "artifacts": {
-    "/Users/ziwei/Desktop/2026 Fall/CIS 5810/Beta_Translator/outputs/trial3/state/reviewed_hold_map.npz": "e13148db5f0f89eb2c42196c4ea1341375d18dc9f77b384e3f9dca83ad175c84",
+    "/Users/ziwei/Desktop/2026 Fall/CIS 5810/Beta_Translator/outputs/trial3/state/reviewed_hold_map.npz": "39726e93e839e17dda02551466fe5e2c9f7a13b0f53cd74c3e7859f0fb8931f4",
     "/Users/ziwei/Desktop/2026 Fall/CIS 5810/Beta_Translator/outputs/trial3/hold_mapping/candidates.jpg": "08a154d5e62f4646266ddc4e4cee0b6fb179ea305dbdc403a3e8db1489ffe837",
-    "/Users/ziwei/Desktop/2026 Fall/CIS 5810/Beta_Translator/outputs/trial3/hold_mapping/reconstructed_wall.png": "403135b6ff58482cd5b50e066262720e27c3ddaae026babd8964c0e23c8f9dd9"
+    "/Users/ziwei/Desktop/2026 Fall/CIS 5810/Beta_Translator/outputs/trial3/hold_mapping/reconstructed_wall.png": "403135b6ff58482cd5b50e066262720e27c3ddaae026babd8964c0e23c8f9dd9",
+    "/Users/ziwei/Desktop/2026 Fall/CIS 5810/Beta_Translator/outputs/trial3/images/all_holds.png": "eff203ee7402ff00fba4a3de5e6a296c5c83a806de72d586b0f12daa355dd29f"
   },
-  "candidate_count": 53,
-  "selection": "All automatic candidates; no manual route filtering",
+  "candidate_count": 54,
+  "selection": "User-supplied route membership",
   "human_reviewed": false,
   "alignment_valid_frames": 503,
   "alignment_total_frames": 503,
@@ -192,5 +193,12 @@
     "raw_candidates": 131,
     "inference_regions": 3,
     "rejected_unobserved_candidates": 0
+  },
+  "selected_hold_count": 10,
+  "manual_hold_count": 1,
+  "automatic_candidate_count": 53,
+  "manual_hold_annotations": {
+    "path": "/Users/ziwei/Desktop/2026 Fall/CIS 5810/Beta_Translator/data/trial3_manual_holds.json",
+    "sha256": "622a6eb0fee913d0933232ba7ad97d04b5f4cf78bbf4455a33ea2bc97217b551"
   }
 }

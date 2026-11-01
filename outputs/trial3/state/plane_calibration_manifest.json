@@ -1,0 +1,15 @@
+{
+  "inputs": {
+    "video_sha256": "8b5f96c2cd634c82e28d09eba62ba9bf6939bea34cbafe15be1388d831b6eff4",
+    "observation_sha256": "2123d59dee5d6ce8716238bdb379c452ef4ead254c50ce2486037c91bde0fa9b",
+    "hold_map_sha256": "39726e93e839e17dda02551466fe5e2c9f7a13b0f53cd74c3e7859f0fb8931f4",
+    "pose_sha256": "182e79fb40d8d9d292995eb6f80cb9f393cde7d2aa2e5677977558f39c85edb0",
+    "module_sha256": "f9fa471fc3203137d4fc82169d61c9bc669df621fb3fe15497f471a910aee97c"
+  },
+  "artifacts": {
+    "/Users/ziwei/Desktop/2026 Fall/CIS 5810/Beta_Translator/outputs/trial3/state/white_wall_calibration.json": "1d8bcf75bc06ee332a31e227822f1730afe4368f956c5b088c2593979782e5c4",
+    "/Users/ziwei/Desktop/2026 Fall/CIS 5810/Beta_Translator/outputs/trial3/state/white_wall_grid_points.json": "6aebbdc3e8f52a221ffb7bec8512e4ec0d77dc06f35d468fc4dd4d44af16543d",
+    "/Users/ziwei/Desktop/2026 Fall/CIS 5810/Beta_Translator/outputs/trial3/images/white_wall_grid.png": "07506aa5479d8dd086d5a6b4a1c0f62685b798e1e6e9208f1619975845c6e972",
+    "/Users/ziwei/Desktop/2026 Fall/CIS 5810/Beta_Translator/outputs/trial3/images/white_wall_metric.png": "d02c285632eb471a8cac6b884fa99a89ce5ae7f98ad686f34966e1976f327ee9"
+  }
+}

@@ -14,23 +14,43 @@ def to_frame0(points_px, homographies, frame_index):
     return cv2.perspectiveTransform(points, np.linalg.inv(H)).reshape(-1, 2)
 
 
-def image_to_wall_cm(points_px, px_per_cm, image_height_px):
-    """Reference-image pixel points (N, 2) -> wall coordinates in cm. Temporary: image-frame scaling."""
+def checked_plane_transform(matrix):
+    matrix = np.asarray(matrix, dtype=float)
+    if matrix.shape != (3, 3) or not np.isfinite(matrix).all() or abs(np.linalg.det(matrix)) < 1e-12:
+        raise ValueError('Plane transform must be a finite invertible 3 x 3 matrix.')
+    return matrix
+
+
+def project_plane(points, matrix):
+    matrix = checked_plane_transform(matrix)
+    points = np.asarray(points, dtype=float).reshape(-1, 2)
+    q = np.c_[points, np.ones(len(points))] @ matrix.T
+    if not np.isfinite(q).all() or np.any(np.abs(q[:, 2]) < 1e-9):
+        raise ValueError('A point projects to the plane horizon or an invalid coordinate.')
+    return q[:, :2] / q[:, 2:]
+
+
+def image_to_wall_cm(points_px, px_per_cm, image_height_px, plane_transform=None):
+    """Reference pixels -> upward-positive metric wall coordinates."""
+    if plane_transform is not None:
+        return project_plane(points_px, plane_transform)
     points_px = np.asarray(points_px, dtype=float)
     return np.stack([points_px[:, 0] / px_per_cm,
                      (image_height_px - points_px[:, 1]) / px_per_cm], axis=1)
 
-def wall_cm_to_image(points_cm, px_per_cm, image_height_px):
-    """Inverse, for drawing results back onto the reference image."""
+
+def wall_cm_to_image(points_cm, px_per_cm, image_height_px, plane_transform=None):
+    """Inverse metric mapping for drawing fitted joints on the original wall."""
+    if plane_transform is not None:
+        return project_plane(points_cm, np.linalg.inv(checked_plane_transform(plane_transform)))
     points_cm = np.asarray(points_cm, dtype=float)
     return np.stack([points_cm[:, 0] * px_per_cm,
                      image_height_px - points_cm[:, 1] * px_per_cm], axis=1)
 
-# Convert aligned landmark rows into the solver's pose vector.
-def landmark_position_cm(row, landmark_name, px_per_cm, image_height_px):
-    x_cm = row[f'{landmark_name}_x_px'] / px_per_cm
-    y_cm = (image_height_px - row[f'{landmark_name}_y_px']) / px_per_cm   # flip so y points up
-    return np.array([x_cm, y_cm])
+
+def landmark_position_cm(row, landmark_name, px_per_cm, image_height_px, plane_transform=None):
+    point = [[row[f'{landmark_name}_x_px'], row[f'{landmark_name}_y_px']]]
+    return image_to_wall_cm(point, px_per_cm, image_height_px, plane_transform)[0]
 
 # Angle of start->end in the model's convention: 0 = straight down, counterclockwise positive.
 def segment_angle(start, end):
@@ -48,8 +68,8 @@ LIMB_LANDMARKS = {
 }
 
 # Converts a row to a pose vector
-def pose_row_to_vector(row, px_per_cm, image_height_px):
-    position = lambda name: landmark_position_cm(row, name, px_per_cm, image_height_px)
+def pose_row_to_vector(row, px_per_cm, image_height_px, plane_transform=None):
+    position = lambda name: landmark_position_cm(row, name, px_per_cm, image_height_px, plane_transform)
     hip_center = (position('left_hip') + position('right_hip')) / 2
     shoulder_center = (position('left_shoulder') + position('right_shoulder')) / 2
     torso_dx, torso_dy = shoulder_center - hip_center

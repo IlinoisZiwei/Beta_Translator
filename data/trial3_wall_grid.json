@@ -1,0 +1,154 @@
+{
+  "video_sha256": "8b5f96c2cd634c82e28d09eba62ba9bf6939bea34cbafe15be1388d831b6eff4",
+  "reference_frame_number": 334,
+  "image_size": [
+    720,
+    1280
+  ],
+  "candidate_run_id": "e8596b6345034ed99839af04025601fe",
+  "plane_id": "white_hold_wall",
+  "plane_polygon_xy": [
+    [
+      226,
+      112
+    ],
+    [
+      719,
+      213
+    ],
+    [
+      719,
+      940
+    ],
+    [
+      281,
+      966
+    ]
+  ],
+  "spacing_cm": 15.0,
+  "grid_angle_degrees": 90.0,
+  "spacing_source": "user_reported_for_trial3",
+  "image_annotation_source": "assistant_identified_seed_patch_and_plane_boundary",
+  "seed_holes": [
+    {
+      "pixel_xy": [
+        397.5,
+        229.5
+      ],
+      "grid_column_row": [
+        0,
+        0
+      ]
+    },
+    {
+      "pixel_xy": [
+        421.6667,
+        234.3333
+      ],
+      "grid_column_row": [
+        1,
+        0
+      ]
+    },
+    {
+      "pixel_xy": [
+        445.3333,
+        238.3333
+      ],
+      "grid_column_row": [
+        2,
+        0
+      ]
+    },
+    {
+      "pixel_xy": [
+        468.5,
+        242.5
+      ],
+      "grid_column_row": [
+        3,
+        0
+      ]
+    },
+    {
+      "pixel_xy": [
+        397.5,
+        251.5
+      ],
+      "grid_column_row": [
+        0,
+        1
+      ]
+    },
+    {
+      "pixel_xy": [
+        421.5,
+        255.5
+      ],
+      "grid_column_row": [
+        1,
+        1
+      ]
+    },
+    {
+      "pixel_xy": [
+        445.3333,
+        259.6667
+      ],
+      "grid_column_row": [
+        2,
+        1
+      ]
+    },
+    {
+      "pixel_xy": [
+        468.5,
+        263.5
+      ],
+      "grid_column_row": [
+        3,
+        1
+      ]
+    },
+    {
+      "pixel_xy": [
+        397.3333,
+        273.6667
+      ],
+      "grid_column_row": [
+        0,
+        2
+      ]
+    },
+    {
+      "pixel_xy": [
+        421.5,
+        277.5
+      ],
+      "grid_column_row": [
+        1,
+        2
+      ]
+    },
+    {
+      "pixel_xy": [
+        445.5,
+        281.5
+      ],
+      "grid_column_row": [
+        2,
+        2
+      ]
+    },
+    {
+      "pixel_xy": [
+        468.5,
+        285.5
+      ],
+      "grid_column_row": [
+        3,
+        2
+      ]
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "video_sha256": "8b5f96c2cd634c82e28d09eba62ba9bf6939bea34cbafe15be1388d831b6eff4",
+  "candidate_run_id": "e8596b6345034ed99839af04025601fe",
+  "reference_frame_number": 334,
+  "image_size": [
+    1280,
+    720
+  ],
+  "holds": [
+    {
+      "hold_id": "H054",
+      "polygon_xy": [
+        [
+          306,
+          696
+        ],
+        [
+          312,
+          695
+        ],
+        [
+          316,
+          698
+        ],
+        [
+          318,
+          703
+        ],
+        [
+          317,
+          709
+        ],
+        [
+          313,
+          713
+        ],
+        [
+          308,
+          715
+        ],
+        [
+          304,
+          713
+        ],
+        [
+          301,
+          709
+        ],
+        [
+          301,
+          703
+        ],
+        [
+          303,
+          698
+        ]
+      ],
+      "note": "Small white hold below H032, identified by the user in the supplied crop. Approximate boundary traced on the reconstructed reference; not an automatic detection."
+    }
+  ]
+}

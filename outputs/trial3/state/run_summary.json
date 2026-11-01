@@ -1,19 +1,26 @@
 {
   "frame_count": 503,
   "fps": 30.0,
-  "hold_candidates": 53,
+  "hold_candidates": 54,
+  "selected_route_holds": 10,
   "observed_pose_frames": 503,
   "alignment_valid_frames": 503,
-  "model_threshold_coverage": 0.7619284294234593,
-  "movement_proposals": 12,
-  "solver_compatible": 3,
-  "generated_ik_videos": 0,
-  "target_height_cm": 190,
-  "geometry_blockers": [
-    "PX_PER_CM is missing: local hole scales are not a whole-wall calibration.",
-    "A suitable single-panel interval has not been established for the 2D solver."
-  ],
+  "model_threshold_coverage": 0.8101391650099403,
+  "movement_proposals": 13,
+  "solver_compatible": 7,
+  "generated_ik_videos": 1,
+  "target_height_cm": 180,
+  "geometry_blockers": [],
   "preview_video": "/Users/ziwei/Desktop/2026 Fall/CIS 5810/Beta_Translator/outputs/trial3/videos/automatic_contacts_h264.mp4",
   "interpretation": "Coverage is not accuracy. No trial3 ground truth or climbing-success probability.",
-  "automatic_ik": "User-authorized experimental mode; predictions were not manually confirmed."
+  "automatic_ik": "User-authorized experimental mode; predictions were not manually confirmed.",
+  "metric_plane_calibration": {
+    "path": "/Users/ziwei/Desktop/2026 Fall/CIS 5810/Beta_Translator/outputs/trial3/state/white_wall_calibration.json",
+    "sha256": "1d8bcf75bc06ee332a31e227822f1730afe4368f956c5b088c2593979782e5c4",
+    "status": "plane_homography_fitted",
+    "ready_for_metric_ik": true,
+    "remaining_ik_work": null
+  },
+  "target_ik_demo": "/Users/ziwei/Desktop/2026 Fall/CIS 5810/Beta_Translator/outputs/trial3/videos/trial3_target_180cm_ik_demo.mp4",
+  "geometry_mode": "calibrated_wall_plane"
 }

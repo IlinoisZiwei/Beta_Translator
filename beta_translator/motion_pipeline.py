@@ -24,13 +24,14 @@ from .project_io import (
 SUMMARY_NAME = 'state/motion_ik_summary.json'
 INPUT_NAMES = ('state/endpoint_annotations.json', 'tables/pose_coordinates.csv',
                'state/reviewed_hold_map.npz', 'state/alignment_cache.npz')
-MODULE_NAMES = ('motion_ik.py', 'motion_pipeline.py', 'inverse_kinematics.py', 'pose_adapter.py')
+MODULE_NAMES = ('motion_ik.py', 'motion_pipeline.py', 'inverse_kinematics.py', 'pose_adapter.py', 'plane_ik.py')
 
 
 def provenance(video_file, output_dir):
     output_dir = Path(output_dir)
+    names = INPUT_NAMES + (('state/plane_calibration.json',) if (output_dir/'state/plane_calibration.json').exists() else ())
     return dict(video_sha256=file_sha256(video_file),
-        inputs={name:file_sha256(output_dir/name) for name in INPUT_NAMES},
+        inputs={name:file_sha256(output_dir/name) for name in names},
         modules={name:file_sha256(Path(__file__).parent/name) for name in MODULE_NAMES})
 
 
@@ -56,12 +57,13 @@ def current_motion_outputs(video_file, output_dir):
 
 
 def _render(result, annotation, aligned_points, rows, transforms, masks, records,
-            video_file, stage, fps):
+            video_file, stage, fps, wall_background=None):
     frames, poses = result['frames'], result['poses']
     moving = annotation['moving_limb']
     scale = annotation['body']['px_per_cm']
+    plane = annotation.get('plane_geometry', {}).get('image_to_wall_cm')
     height, width = next(iter(masks.values())).shape
-    all_joints = wall_cm_to_image(result['joints'].reshape(-1,2), scale, height)
+    all_joints = wall_cm_to_image(result['joints'].reshape(-1,2), scale, height, plane)
     # A stable crop includes the complete fitted and observed bodies throughout the clip.
     points = np.concatenate([all_joints, aligned_points.reshape(-1,2)])
     lo = np.floor(points.min(axis=0)-55).astype(int)
@@ -73,15 +75,17 @@ def _render(result, annotation, aligned_points, rows, transforms, masks, records
     panel_height = int(round((y1-y0)/(x1-x0)*panel_width/2))*2
     header, footer = 68, 72
     canvas_size = (panel_width*2, panel_height+header+footer)
-    background = np.full((height,width,3),245,np.uint8)
+    background = np.full((height,width,3),245,np.uint8) if wall_background is None else wall_background.copy()
     holds = {r['hold_id']:r for r in records}
     for hold_id in annotation['selected_hold_ids']:
         mask = masks[hold_id]
-        background[mask] = (210,215,218)
+        if wall_background is None:
+            background[mask] = (210,215,218)
         contours,_ = cv2.findContours(mask.astype(np.uint8),cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)
         cv2.drawContours(background,contours,-1,(130,135,140),1)
     for hold_id in set(annotation['contacts']['before'].values()) | set(annotation['contacts']['after'].values()):
-        background[masks[hold_id]] = (170,200,220)
+        if wall_background is None:
+            background[masks[hold_id]] = (170,200,220)
         h = holds[hold_id]
         cv2.putText(background,hold_id,(int(h['cx_px'])+8,int(h['cy_px'])-6),
                     cv2.FONT_HERSHEY_SIMPLEX,.48,(35,35,35),1,cv2.LINE_AA)
@@ -93,6 +97,11 @@ def _render(result, annotation, aligned_points, rows, transforms, masks, records
     writer = cv2.VideoWriter(str(raw),cv2.VideoWriter_fourcc(*'mp4v'),fps,canvas_size)
     if not writer.isOpened():
         raise RuntimeError('Could not create the motion preview.')
+    target_raw = stage/'raw_target_motion.mp4'
+    target_writer = cv2.VideoWriter(str(target_raw),cv2.VideoWriter_fourcc(*'mp4v'),fps,(panel_width,canvas_size[1]))
+    if not target_writer.isOpened():
+        writer.release()
+        raise RuntimeError('Could not create target-only preview.')
     capture = cv2.VideoCapture(str(video_file))
     capture.set(cv2.CAP_PROP_POS_FRAMES,int(frames[0]))
     samples = {}
@@ -112,7 +121,7 @@ def _render(result, annotation, aligned_points, rows, transforms, masks, records
                 cv2.line(observed,observed_joints[a],observed_joints[b],
                          (220,130,30) if visible else (150,150,150),2,cv2.LINE_AA)
             fitted = background.copy()
-            pixels = wall_cm_to_image(result['joints'][t].reshape(-1,2),scale,height).reshape(4,3,2)
+            pixels = wall_cm_to_image(result['joints'][t].reshape(-1,2),scale,height,plane).reshape(4,3,2)
             roots = np.rint(pixels[[0,1,3,2,0],0]).astype(int)
             cv2.polylines(fitted,[roots],False,(60,150,35),3,cv2.LINE_AA)
             for limb_index,limb in enumerate(LIMBS):
@@ -123,7 +132,7 @@ def _render(result, annotation, aligned_points, rows, transforms, masks, records
                 for xy in chain:
                     cv2.circle(fitted,tuple(xy),4,color,-1,cv2.LINE_AA)
                 if not free:
-                    xy = wall_cm_to_image([result['targets'][t,limb_index]],scale,height)[0]
+                    xy = wall_cm_to_image([result['targets'][t,limb_index]],scale,height,plane)[0]
                     cv2.drawMarker(fitted,tuple(np.rint(xy).astype(int)),(35,45,210),cv2.MARKER_CROSS,12,2)
             canvas = np.full((canvas_size[1],canvas_size[0],3),255,np.uint8)
             for panel,offset in ((observed,0),(fitted,panel_width)):
@@ -140,6 +149,14 @@ def _render(result, annotation, aligned_points, rows, transforms, masks, records
             cv2.putText(canvas,'2D geometric candidate; free-hand path is inferred. No force or balance model.',
                         (15,header+panel_height+54),cv2.FONT_HERSHEY_SIMPLEX,.49,(50,50,50),1,cv2.LINE_AA)
             writer.write(canvas)
+            target_canvas = np.full((canvas_size[1],panel_width,3),255,np.uint8)
+            target_canvas[header:header+panel_height] = canvas[header:header+panel_height,panel_width:]
+            cv2.putText(target_canvas,f"Target body: {annotation['body']['height_cm']:g} cm | fitted IK",
+                        (12,26),0,.58,(30,30,30),2,cv2.LINE_AA)
+            cv2.putText(target_canvas,f'Frame {frame_index} | {moving}: {status}',(12,53),0,.5,(35,35,35),1,cv2.LINE_AA)
+            cv2.putText(target_canvas,'2D IK candidate; contact geometry checked',(12,header+panel_height+27),0,.52,(35,35,35),1,cv2.LINE_AA)
+            cv2.putText(target_canvas,'Orange: released limb | No force/balance model',(12,header+panel_height+54),0,.43,(35,35,35),1,cv2.LINE_AA)
+            target_writer.write(target_canvas)
             if int(frame_index) in keyframes:
                 # Storyboard uses the fitted panel with frame and contact phase labels.
                 sample = np.full((panel_height+56,panel_width,3),255,np.uint8)
@@ -148,11 +165,13 @@ def _render(result, annotation, aligned_points, rows, transforms, masks, records
                             cv2.FONT_HERSHEY_SIMPLEX,.7,(35,35,35),2,cv2.LINE_AA)
                 samples[int(frame_index)] = sample
     finally:
-        capture.release(); writer.release()
+        capture.release(); writer.release(); target_writer.release()
     normal = stage/'videos/motion_ik_h264.mp4'
     slow = stage/'videos/motion_ik_slow_h264.mp4'
     normal.parent.mkdir(parents=True,exist_ok=True)
     convert_video(raw,normal)
+    target_video = stage/'videos/target_motion_h264.mp4'
+    convert_video(target_raw,target_video)
     # Render an explicitly labeled review copy at one-third speed.
     slow_raw = stage/'raw_motion_slow.mp4'
     source = cv2.VideoCapture(str(raw))
@@ -177,7 +196,7 @@ def _render(result, annotation, aligned_points, rows, transforms, masks, records
     path = stage/'images/ik_motion_storyboard.png';path.parent.mkdir(parents=True,exist_ok=True)
     if not cv2.imwrite(str(path),storyboard):
         raise RuntimeError('Could not write the motion storyboard.')
-    return [normal,slow,path]
+    return [normal,slow,path,target_video]
 
 
 def run_motion_analysis(video_file, output_dir, settings=None):
@@ -191,8 +210,10 @@ def run_motion_analysis(video_file, output_dir, settings=None):
     annotation = load_annotations(output_dir/'state/endpoint_annotations.json',video_file,run_id,hold_ids,count)
     validate_motion_annotation(annotation)
     scale = annotation['body']['px_per_cm']
-    if scale is None or not np.isfinite(scale) or scale <= 0:
-        raise ValueError('Set a measured positive wall scale before motion fitting.')
+    from .plane_ik import validate_saved_plane_geometry
+    plane = validate_saved_plane_geometry(annotation, video_file, output_dir, reference_index)
+    if plane is None and (scale is None or not np.isfinite(scale) or scale <= 0):
+        raise ValueError('Set a measured positive wall scale or supply a verified plane calibration.')
     with np.load(output_dir/'state/alignment_cache.npz',allow_pickle=False) as saved:
         alignment_settings = json.loads(str(saved['settings'].item()))
     transforms = load_alignment(output_dir/'state/alignment_cache.npz',video_file,
@@ -212,13 +233,17 @@ def run_motion_analysis(video_file, output_dir, settings=None):
         points = to_frame0([[row[n+'_x_px'],row[n+'_y_px']] for n in names],transforms,int(frame))
         if not np.isfinite(points).all():raise ValueError(f'Non-finite landmarks at frame {frame}.')
         for name,point in zip(names,points):row[name+'_x_px'],row[name+'_y_px'] = point
-        reference.append(pose_row_to_vector(row,scale,height))
+        reference.append(pose_row_to_vector(row,scale,height,plane))
         weights.append(angle_visibility_weights(row));aligned.append(points);rows.append(row)
-    targets = {r['hold_id']:image_to_wall_cm([[r['cx_px'],r['cy_px']]],scale,height)[0] for r in records}
+    targets = {r['hold_id']:image_to_wall_cm([[r['cx_px'],r['cy_px']]],scale,height,plane)[0] for r in records}
     result = solve_motion_sequence(reference,weights,frames,targets,annotation,fps,settings=settings)
     with tempfile.TemporaryDirectory(prefix='beta-motion-') as directory:
         stage = Path(directory)
-        files = _render(result,annotation,np.asarray(aligned),rows,transforms,masks,records,video_file,stage,fps)
+        wall_background = None
+        if plane is not None:
+            with np.load(output_dir/'state/reviewed_hold_map.npz',allow_pickle=False) as saved:
+                wall_background = saved['reference_frame'].copy()
+        files = _render(result,annotation,np.asarray(aligned),rows,transforms,masks,records,video_file,stage,fps,wall_background)
         table_rows = []
         for t,frame in enumerate(frames):
             row = dict(frame=int(frame),time_sec=float(frame/fps))
@@ -236,7 +261,7 @@ def run_motion_analysis(video_file, output_dir, settings=None):
                             swing_guide_cm=result['swing_guide_cm'])
         files.append(state)
         # Verify encoded frame counts and speed instead of assuming video encoding succeeded.
-        for path,expected_fps in [(files[0],fps),(files[1],fps/3)]:
+        for path,expected_fps in [(files[0],fps),(files[1],fps/3),(files[3],fps)]:
             cap=cv2.VideoCapture(str(path));encoded_count=int(cap.get(cv2.CAP_PROP_FRAME_COUNT));encoded_fps=cap.get(cv2.CAP_PROP_FPS);cap.release()
             if encoded_count != len(frames) or not np.isclose(encoded_fps,expected_fps):
                 raise RuntimeError('Encoded motion timing does not match the source frame schedule.')

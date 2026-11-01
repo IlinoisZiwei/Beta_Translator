@@ -1,0 +1,20 @@
+{
+  "candidate_run_id": "e8596b6345034ed99839af04025601fe",
+  "video_sha256": "8b5f96c2cd634c82e28d09eba62ba9bf6939bea34cbafe15be1388d831b6eff4",
+  "selected_hold_ids": [
+    "H001",
+    "H007",
+    "H012",
+    "H017",
+    "H021",
+    "H032",
+    "H045",
+    "H050",
+    "H053",
+    "H054"
+  ],
+  "candidate_count": 54,
+  "reference_frame_number": 334,
+  "source": "user_supplied_hold_ids",
+  "review_scope": "Route membership only; contact states and event times remain model predictions."
+}

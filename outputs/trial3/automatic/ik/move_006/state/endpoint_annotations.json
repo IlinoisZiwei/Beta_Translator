@@ -1,0 +1,156 @@
+{
+  "video_sha256": "8b5f96c2cd634c82e28d09eba62ba9bf6939bea34cbafe15be1388d831b6eff4",
+  "candidate_run_id": "e8596b6345034ed99839af04025601fe",
+  "selected_hold_ids": [
+    "H001",
+    "H007",
+    "H012",
+    "H017",
+    "H021",
+    "H032",
+    "H045",
+    "H050",
+    "H053",
+    "H054"
+  ],
+  "reference_frame_number": 334,
+  "frames": {
+    "before": 296,
+    "after": 331
+  },
+  "moving_limb": "right_hand",
+  "contacts": {
+    "before": {
+      "left_hand": "H012",
+      "left_foot": "H032",
+      "right_foot": "H054",
+      "right_hand": "H017"
+    },
+    "after": {
+      "left_hand": "H012",
+      "left_foot": "H032",
+      "right_foot": "H054",
+      "right_hand": "H007"
+    }
+  },
+  "body": {
+    "height_cm": 180,
+    "ratios": {
+      "upper_arm": 0.186,
+      "forearm": 0.146,
+      "thigh": 0.245,
+      "shank": 0.246,
+      "shoulder_w": 0.259,
+      "hip_w": 0.191,
+      "torso": 0.288
+    },
+    "px_per_cm": null
+  },
+  "motion": {
+    "release_frame": 304,
+    "arrival_frame": 324,
+    "support_contacts_maintained": true
+  },
+  "annotation_source": "automatic_predictions_experimental",
+  "notes": "Automatic decoded contacts accepted through the user-enabled bridge. Support continuity is inferred from decoded labels, not individually human-verified.",
+  "automatic_evidence": {
+    "original_requires_review": true,
+    "original_eligible_for_ik": false,
+    "support_evidence": "Same decoded hold on every frame; confidence gate bypassed.",
+    "release_frame_range": [
+      303,
+      306
+    ],
+    "arrival_frame_range": [
+      322,
+      326
+    ],
+    "prediction_sha256": "560a860785882aa3ed9458859c0e6f367bfb2d250a7a75efd43399bddc9f0743",
+    "contact_table_sha256": "4b36b4d50e6bf7089884b34255549af0c1bbcb62d772e45c90c7f07b119c56b1",
+    "pose_sha256": "2ba613782994daad386596690a9b3d9202064acaf6a407caab659ea3e5ad42e6",
+    "alignment_sha256": "f1405497f353345f552456316723ac44b777b8ef1d8dc9d97f9527d8bcb9deae",
+    "bridge_sha256": "2ffe56107d3d19f61286b1217d86942dd62a3822e359654905a1638c6e7e0f84",
+    "plane_calibration_sha256": "1d8bcf75bc06ee332a31e227822f1730afe4368f956c5b088c2593979782e5c4",
+    "current_prediction_user_accepted": false
+  },
+  "plane_geometry": {
+    "mode": "calibrated_wall_plane",
+    "plane_id": "white_hold_wall",
+    "image_to_wall_cm": [
+      [
+        0.6205335760343315,
+        0.003907377506291866,
+        -247.65648465233613
+      ],
+      [
+        0.12355868519359121,
+        -0.6900190525493701,
+        109.16067849608699
+      ],
+      [
+        -0.0003816790187303265,
+        0.00031385712007460733,
+        1.079776869588014
+      ]
+    ],
+    "video_sha256": "8b5f96c2cd634c82e28d09eba62ba9bf6939bea34cbafe15be1388d831b6eff4",
+    "hold_map_sha256": "39726e93e839e17dda02551466fe5e2c9f7a13b0f53cd74c3e7859f0fb8931f4",
+    "candidate_run_id": "e8596b6345034ed99839af04025601fe",
+    "reference_frame_number": 334,
+    "calibration_sha256": "1d8bcf75bc06ee332a31e227822f1730afe4368f956c5b088c2593979782e5c4",
+    "supported_hold_ids": [
+      "H001",
+      "H007",
+      "H012",
+      "H017",
+      "H021",
+      "H032",
+      "H045",
+      "H050",
+      "H054"
+    ],
+    "hold_positions_cm": {
+      "H001": [
+        -29.389583189733184,
+        -42.25481099431017
+      ],
+      "H007": [
+        -61.43019817850214,
+        -89.77309652877544
+      ],
+      "H012": [
+        -62.43884987150779,
+        -118.0110307795752
+      ],
+      "H017": [
+        0.9098540211350183,
+        -168.0493438102964
+      ],
+      "H021": [
+        0.2778292101854856,
+        -210.31497083391977
+      ],
+      "H032": [
+        -45.54240398232922,
+        -256.15491723913874
+      ],
+      "H045": [
+        -14.135497439641735,
+        -329.6342230216588
+      ],
+      "H050": [
+        1.2528680575372029,
+        -361.2350116066533
+      ],
+      "H053": [
+        -45.064369750572,
+        -390.6163147679846
+      ],
+      "H054": [
+        -44.81673872363342,
+        -286.5022759951786
+      ]
+    },
+    "interpretation": "2D projection onto the calibrated wall; body and hold depth are omitted."
+  }
+}

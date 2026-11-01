@@ -1,0 +1,23 @@
+{
+  "inputs": {
+    "source_sha256": "54be50ac72e837126a8088f0d19bda439e2cd556bef7d07248dc6be20d1b13c4",
+    "height_cm": 180,
+    "ratios": {
+      "upper_arm": 0.186,
+      "forearm": 0.146,
+      "thigh": 0.245,
+      "shank": 0.246,
+      "shoulder_w": 0.259,
+      "hip_w": 0.191,
+      "torso": 0.288
+    },
+    "slowdown": 3,
+    "pause_seconds": 1,
+    "module_sha256": "95cf680b3afe8d6ab52e61e1f166c84298f22e966221fb521a1c36cc8ab5a5dd"
+  },
+  "artifacts": {
+    "/Users/ziwei/Desktop/2026 Fall/CIS 5810/Beta_Translator/outputs/trial3/videos/trial3_target_180cm_ik_demo.mp4": "1faf5c9b4a0438c9b4785a2a44562e5f4a6b73b4a60f33ae04c2f0a6132ceece",
+    "/Users/ziwei/Desktop/2026 Fall/CIS 5810/Beta_Translator/outputs/trial3/images/target_ik_demo.png": "906912e99282870ddda64b286099dd1f04377177e8a47afb174c79ff14b4dd90",
+    "/Users/ziwei/Desktop/2026 Fall/CIS 5810/Beta_Translator/outputs/trial3/state/target_ik_demo.json": "7abd6a566cd6b4c71dc1d9fc2e5da2e1fb52ba0f60e6b392081e33cced370ae8"
+  }
+}

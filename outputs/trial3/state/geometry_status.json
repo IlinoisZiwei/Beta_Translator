@@ -1,6 +1,6 @@
 {
   "video_sha256": "8b5f96c2cd634c82e28d09eba62ba9bf6939bea34cbafe15be1388d831b6eff4",
-  "target_height_cm": 190,
+  "target_height_cm": 180,
   "ratios": {
     "upper_arm": 0.186,
     "forearm": 0.146,
@@ -14,9 +14,111 @@
   "px_per_cm": null,
   "single_panel_confirmed": false,
   "calibration_note": "",
-  "blockers": [
-    "PX_PER_CM is missing: local hole scales are not a whole-wall calibration.",
-    "A suitable single-panel interval has not been established for the 2D solver."
+  "blockers": [],
+  "inherited_trial2_geometry": false,
+  "qualitative_observations": [
+    {
+      "relation": "line_parallel_to_plane",
+      "line": "floor line extending toward the wall",
+      "plane": "ceiling plane",
+      "source": "user_statement",
+      "line_endpoints_px": null,
+      "plane_image_annotation": null,
+      "status": "qualitative_only_not_used_for_metric_calibration"
+    },
+    {
+      "relation": "planes_perpendicular",
+      "planes": [
+        "white_hold_wall",
+        "floor"
+      ],
+      "angle_degrees": 90,
+      "plane_region_px": null,
+      "source": "user_statement",
+      "status": "scene_constraint_not_yet_image_calibrated"
+    },
+    {
+      "relation": "planes_perpendicular",
+      "planes": [
+        "left_blue_hold_wall",
+        "floor"
+      ],
+      "angle_degrees": 90,
+      "plane_region_px": null,
+      "source": "user_statement",
+      "status": "scene_constraint_not_yet_image_calibrated"
+    },
+    {
+      "relation": "lines_parallel",
+      "lines": [
+        "door_left_edge",
+        "door_right_edge"
+      ],
+      "associated_wall": "left_blue_hold_wall",
+      "line_endpoints_px": null,
+      "source": "user_statement",
+      "status": "scene_constraint_not_yet_image_calibrated"
+    },
+    {
+      "relation": "lines_parallel",
+      "lines": [
+        "door_top_edge",
+        "door_bottom_edge"
+      ],
+      "associated_wall": "left_blue_hold_wall",
+      "line_endpoints_px": null,
+      "source": "user_statement",
+      "status": "scene_constraint_not_yet_image_calibrated"
+    },
+    {
+      "relation": "lines_perpendicular_to_plane",
+      "lines": [
+        "door_left_edge",
+        "door_right_edge"
+      ],
+      "plane": "floor",
+      "angle_degrees": 90,
+      "line_endpoints_px": null,
+      "source": "user_statement",
+      "status": "scene_constraint_not_yet_image_calibrated"
+    },
+    {
+      "relation": "lines_parallel_to_plane",
+      "lines": [
+        "door_top_edge",
+        "door_bottom_edge"
+      ],
+      "plane": "floor",
+      "line_endpoints_px": null,
+      "source": "user_statement",
+      "status": "scene_constraint_not_yet_image_calibrated"
+    },
+    {
+      "relation": "orthogonal_square_hole_grid",
+      "plane": "white_hold_wall",
+      "adjacent_center_spacing_cm": 15.0,
+      "grid_angle_degrees": 90,
+      "source": "user_statement",
+      "status": "used_for_plane_metric_calibration"
+    }
   ],
-  "inherited_trial2_geometry": false
+  "metric_plane_calibration": {
+    "path": "/Users/ziwei/Desktop/2026 Fall/CIS 5810/Beta_Translator/outputs/trial3/state/white_wall_calibration.json",
+    "sha256": "1d8bcf75bc06ee332a31e227822f1730afe4368f956c5b088c2593979782e5c4",
+    "status": "plane_homography_fitted",
+    "ready_for_metric_ik": true,
+    "remaining_ik_work": null
+  },
+  "geometry_mode": "calibrated_wall_plane",
+  "supported_hold_ids": [
+    "H001",
+    "H007",
+    "H012",
+    "H017",
+    "H021",
+    "H032",
+    "H045",
+    "H050",
+    "H054"
+  ]
 }

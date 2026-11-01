@@ -1,0 +1,229 @@
+{
+  "schema_version": 1,
+  "video_sha256": "8b5f96c2cd634c82e28d09eba62ba9bf6939bea34cbafe15be1388d831b6eff4",
+  "reference_frame_number": 334,
+  "candidate_run_id": "e8596b6345034ed99839af04025601fe",
+  "plane_id": "white_hold_wall",
+  "spacing_cm": 15.0,
+  "spacing_source": "user_reported",
+  "grid_angle_degrees": 90,
+  "wall_floor_angle_degrees": 90,
+  "coordinate_system": "centimeters; x follows grid columns; y points up; origin is the seed (0,0) hole",
+  "image_to_wall_cm": [
+    [
+      0.6205335760343315,
+      0.003907377506291866,
+      -247.65648465233613
+    ],
+    [
+      0.12355868519359121,
+      -0.6900190525493701,
+      109.16067849608699
+    ],
+    [
+      -0.0003816790187303265,
+      0.00031385712007460733,
+      1.079776869588014
+    ]
+  ],
+  "wall_cm_to_image": [
+    [
+      1.8180432356104947,
+      0.19117089375231427,
+      397.6579460998988
+    ],
+    [
+      0.4084332927171514,
+      -1.342576365749293,
+      229.40637782121038
+    ],
+    [
+      0.0005239223742569849,
+      0.00045781965209173623,
+      1.0
+    ]
+  ],
+  "plane_polygon_xy": [
+    [
+      226,
+      112
+    ],
+    [
+      719,
+      213
+    ],
+    [
+      719,
+      940
+    ],
+    [
+      281,
+      966
+    ]
+  ],
+  "metrics": {
+    "grid_holes": 373,
+    "fitting_holes": 301,
+    "fitting_inliers": 301,
+    "reserved_holes": 72,
+    "reserved_rmse_px": 0.3649280416416992,
+    "reserved_p95_px": 0.6316728774718986,
+    "reserved_rmse_cm": 0.22898516287574427,
+    "grid_column_span": 20.0,
+    "grid_row_span": 29.0
+  },
+  "selected_hold_positions": [
+    {
+      "hold_id": "H001",
+      "pixel_xy": [
+        348.2476722532588,
+        284.0
+      ],
+      "wall_xy_cm": [
+        -29.389583189733184,
+        -42.25481099431017
+      ],
+      "inside_plane": true,
+      "inside_grid_hull": true,
+      "distance_outside_grid_hull_px": 0.0
+    },
+    {
+      "hold_id": "H007",
+      "pixel_xy": [
+        290.07090012330457,
+        350.5320591861899
+      ],
+      "wall_xy_cm": [
+        -61.43019817850214,
+        -89.77309652877544
+      ],
+      "inside_plane": true,
+      "inside_grid_hull": true,
+      "distance_outside_grid_hull_px": 0.0
+    },
+    {
+      "hold_id": "H012",
+      "pixel_xy": [
+        286.4259850905218,
+        396.75825346112885
+      ],
+      "wall_xy_cm": [
+        -62.43884987150779,
+        -118.0110307795752
+      ],
+      "inside_plane": true,
+      "inside_grid_hull": true,
+      "distance_outside_grid_hull_px": 0.0
+    },
+    {
+      "hold_id": "H017",
+      "pixel_xy": [
+        397.5851586946804,
+        493.09924005364326
+      ],
+      "wall_xy_cm": [
+        0.9098540211350183,
+        -168.0493438102964
+      ],
+      "inside_plane": true,
+      "inside_grid_hull": true,
+      "distance_outside_grid_hull_px": 0.0
+    },
+    {
+      "hold_id": "H021",
+      "pixel_xy": [
+        396.031746031746,
+        566.331285202253
+      ],
+      "wall_xy_cm": [
+        0.2778292101854856,
+        -210.31497083391977
+      ],
+      "inside_plane": true,
+      "inside_grid_hull": true,
+      "distance_outside_grid_hull_px": 0.0
+    },
+    {
+      "hold_id": "H032",
+      "pixel_xy": [
+        309.58304161804745,
+        645.8661999222093
+      ],
+      "wall_xy_cm": [
+        -45.54240398232922,
+        -256.15491723913874
+      ],
+      "inside_plane": true,
+      "inside_grid_hull": true,
+      "distance_outside_grid_hull_px": 0.0
+    },
+    {
+      "hold_id": "H045",
+      "pixel_xy": [
+        367.05415162454875,
+        791.5018050541516
+      ],
+      "wall_xy_cm": [
+        -14.135497439641735,
+        -329.6342230216588
+      ],
+      "inside_plane": true,
+      "inside_grid_hull": true,
+      "distance_outside_grid_hull_px": 0.0
+    },
+    {
+      "hold_id": "H050",
+      "pixel_xy": [
+        396.1302931596091,
+        855.8892508143323
+      ],
+      "wall_xy_cm": [
+        1.2528680575372029,
+        -361.2350116066533
+      ],
+      "inside_plane": true,
+      "inside_grid_hull": true,
+      "distance_outside_grid_hull_px": 0.0
+    },
+    {
+      "hold_id": "H053",
+      "pixel_xy": [
+        302.24074074074076,
+        922.1058201058202
+      ],
+      "wall_xy_cm": [
+        -45.064369750572,
+        -390.6163147679846
+      ],
+      "inside_plane": true,
+      "inside_grid_hull": false,
+      "distance_outside_grid_hull_px": 60.67639709818653
+    },
+    {
+      "hold_id": "H054",
+      "pixel_xy": [
+        309.22968197879857,
+        704.73851590106
+      ],
+      "wall_xy_cm": [
+        -44.81673872363342,
+        -286.5022759951786
+      ],
+      "inside_plane": true,
+      "inside_grid_hull": true,
+      "distance_outside_grid_hull_px": 0.0
+    }
+  ],
+  "status": "plane_homography_fitted",
+  "ready_for_metric_ik": true,
+  "observation_file": "/Users/ziwei/Desktop/2026 Fall/CIS 5810/Beta_Translator/data/trial3_wall_grid.json",
+  "remaining_ik_work": null,
+  "ik_scope": "Only contact schedules on this wall and inside the observed-hole coverage are eligible.",
+  "limitations": [
+    "Conditional on the user-reported 15 cm orthogonal grid and one planar wall.",
+    "Grid residuals measure internal geometric consistency, not physical accuracy or contact accuracy.",
+    "Holds outside the observed-hole convex hull use extrapolation and need additional local checks.",
+    "Hold depth, body depth, camera intrinsics, and the second wall are not reconstructed.",
+    "Seed holes and the panel polygon were identified by the assistant; no user review of their image coordinates."
+  ]
+}

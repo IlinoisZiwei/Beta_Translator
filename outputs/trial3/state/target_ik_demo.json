@@ -1,0 +1,62 @@
+{
+  "video_file": "/Users/ziwei/Desktop/2026 Fall/CIS 5810/Beta_Translator/outputs/trial3/videos/trial3_target_180cm_ik_demo.mp4",
+  "poster_file": "/Users/ziwei/Desktop/2026 Fall/CIS 5810/Beta_Translator/outputs/trial3/images/target_ik_demo.png",
+  "height_cm": 180,
+  "ratios": {
+    "upper_arm": 0.186,
+    "forearm": 0.146,
+    "thigh": 0.245,
+    "shank": 0.246,
+    "shoulder_w": 0.259,
+    "hip_w": 0.191,
+    "torso": 0.288
+  },
+  "move_index": 6,
+  "moving_limb": "right_hand",
+  "from_hold": "H017",
+  "to_hold": "H007",
+  "before_frame": 296,
+  "after_frame": 331,
+  "source_clip": "/Users/ziwei/Desktop/2026 Fall/CIS 5810/Beta_Translator/outputs/trial3/automatic/ik/move_006/videos/target_motion_h264.mp4",
+  "comparison_video": "/Users/ziwei/Desktop/2026 Fall/CIS 5810/Beta_Translator/outputs/trial3/automatic/ik/move_006/videos/motion_ik_h264.mp4",
+  "source_frame_count": 36,
+  "output_frame_count": 168,
+  "fps": 30.0,
+  "duration_seconds": 5.6,
+  "playback_speed": 0.3333333333333333,
+  "pause_seconds": 1,
+  "metrics": {
+    "max_contact_error_cm": 0.005065339180439515,
+    "rms_contact_error_cm": 0.0007596872440416846,
+    "max_support_drift_cm": 0.005041406301104521,
+    "max_angle_step_deg": 25.36890841252113,
+    "max_hip_step_cm": 6.576794146717223,
+    "bend_direction_changes": {
+      "left_hand": false,
+      "right_hand": false,
+      "left_foot": false,
+      "right_foot": false
+    },
+    "low_visibility_angle_observations": 89,
+    "angle_observations": 324,
+    "optimizer": {
+      "success": true,
+      "message": "`xtol` termination condition is satisfied.",
+      "nfev": 70,
+      "cost": 11.798551551620022
+    },
+    "settings": {
+      "contact_scale_cm": 0.05,
+      "contact_tolerance_cm": 0.1,
+      "reference_angle_weight": 0.3,
+      "reference_hip_weight": 0.5,
+      "swing_weight": 0.7,
+      "swing_scale_cm": 20.0,
+      "velocity_weight": 0.04,
+      "acceleration_weight": 0.004,
+      "max_nfev": 500
+    }
+  },
+  "selection": "Generated clip with the lowest maximum frame-to-frame angle change.",
+  "interpretation": "One fitted 2D target-body movement; not a full-route animation or climbing-success prediction."
+}

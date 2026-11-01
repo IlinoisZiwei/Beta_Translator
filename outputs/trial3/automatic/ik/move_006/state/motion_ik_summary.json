@@ -1,0 +1,224 @@
+{
+  "schema_version": 1,
+  "reference_frame_number": 334,
+  "annotation": {
+    "video_sha256": "8b5f96c2cd634c82e28d09eba62ba9bf6939bea34cbafe15be1388d831b6eff4",
+    "candidate_run_id": "e8596b6345034ed99839af04025601fe",
+    "selected_hold_ids": [
+      "H001",
+      "H007",
+      "H012",
+      "H017",
+      "H021",
+      "H032",
+      "H045",
+      "H050",
+      "H053",
+      "H054"
+    ],
+    "reference_frame_number": 334,
+    "frames": {
+      "before": 296,
+      "after": 331
+    },
+    "moving_limb": "right_hand",
+    "contacts": {
+      "before": {
+        "left_hand": "H012",
+        "left_foot": "H032",
+        "right_foot": "H054",
+        "right_hand": "H017"
+      },
+      "after": {
+        "left_hand": "H012",
+        "left_foot": "H032",
+        "right_foot": "H054",
+        "right_hand": "H007"
+      }
+    },
+    "body": {
+      "height_cm": 180,
+      "ratios": {
+        "upper_arm": 0.186,
+        "forearm": 0.146,
+        "thigh": 0.245,
+        "shank": 0.246,
+        "shoulder_w": 0.259,
+        "hip_w": 0.191,
+        "torso": 0.288
+      },
+      "px_per_cm": null
+    },
+    "motion": {
+      "release_frame": 304,
+      "arrival_frame": 324,
+      "support_contacts_maintained": true
+    },
+    "annotation_source": "automatic_predictions_experimental",
+    "notes": "Automatic decoded contacts accepted through the user-enabled bridge. Support continuity is inferred from decoded labels, not individually human-verified.",
+    "automatic_evidence": {
+      "original_requires_review": true,
+      "original_eligible_for_ik": false,
+      "support_evidence": "Same decoded hold on every frame; confidence gate bypassed.",
+      "release_frame_range": [
+        303,
+        306
+      ],
+      "arrival_frame_range": [
+        322,
+        326
+      ],
+      "prediction_sha256": "560a860785882aa3ed9458859c0e6f367bfb2d250a7a75efd43399bddc9f0743",
+      "contact_table_sha256": "4b36b4d50e6bf7089884b34255549af0c1bbcb62d772e45c90c7f07b119c56b1",
+      "pose_sha256": "2ba613782994daad386596690a9b3d9202064acaf6a407caab659ea3e5ad42e6",
+      "alignment_sha256": "f1405497f353345f552456316723ac44b777b8ef1d8dc9d97f9527d8bcb9deae",
+      "bridge_sha256": "2ffe56107d3d19f61286b1217d86942dd62a3822e359654905a1638c6e7e0f84",
+      "plane_calibration_sha256": "1d8bcf75bc06ee332a31e227822f1730afe4368f956c5b088c2593979782e5c4",
+      "current_prediction_user_accepted": false
+    },
+    "plane_geometry": {
+      "mode": "calibrated_wall_plane",
+      "plane_id": "white_hold_wall",
+      "image_to_wall_cm": [
+        [
+          0.6205335760343315,
+          0.003907377506291866,
+          -247.65648465233613
+        ],
+        [
+          0.12355868519359121,
+          -0.6900190525493701,
+          109.16067849608699
+        ],
+        [
+          -0.0003816790187303265,
+          0.00031385712007460733,
+          1.079776869588014
+        ]
+      ],
+      "video_sha256": "8b5f96c2cd634c82e28d09eba62ba9bf6939bea34cbafe15be1388d831b6eff4",
+      "hold_map_sha256": "39726e93e839e17dda02551466fe5e2c9f7a13b0f53cd74c3e7859f0fb8931f4",
+      "candidate_run_id": "e8596b6345034ed99839af04025601fe",
+      "reference_frame_number": 334,
+      "calibration_sha256": "1d8bcf75bc06ee332a31e227822f1730afe4368f956c5b088c2593979782e5c4",
+      "supported_hold_ids": [
+        "H001",
+        "H007",
+        "H012",
+        "H017",
+        "H021",
+        "H032",
+        "H045",
+        "H050",
+        "H054"
+      ],
+      "hold_positions_cm": {
+        "H001": [
+          -29.389583189733184,
+          -42.25481099431017
+        ],
+        "H007": [
+          -61.43019817850214,
+          -89.77309652877544
+        ],
+        "H012": [
+          -62.43884987150779,
+          -118.0110307795752
+        ],
+        "H017": [
+          0.9098540211350183,
+          -168.0493438102964
+        ],
+        "H021": [
+          0.2778292101854856,
+          -210.31497083391977
+        ],
+        "H032": [
+          -45.54240398232922,
+          -256.15491723913874
+        ],
+        "H045": [
+          -14.135497439641735,
+          -329.6342230216588
+        ],
+        "H050": [
+          1.2528680575372029,
+          -361.2350116066533
+        ],
+        "H053": [
+          -45.064369750572,
+          -390.6163147679846
+        ],
+        "H054": [
+          -44.81673872363342,
+          -286.5022759951786
+        ]
+      },
+      "interpretation": "2D projection onto the calibrated wall; body and hold depth are omitted."
+    }
+  },
+  "provenance": {
+    "video_sha256": "8b5f96c2cd634c82e28d09eba62ba9bf6939bea34cbafe15be1388d831b6eff4",
+    "inputs": {
+      "state/endpoint_annotations.json": "5efe5e3d0aef5691017f953530aa5b678316798ed47f103bd5f699cda2cacbbf",
+      "tables/pose_coordinates.csv": "2ba613782994daad386596690a9b3d9202064acaf6a407caab659ea3e5ad42e6",
+      "state/reviewed_hold_map.npz": "39726e93e839e17dda02551466fe5e2c9f7a13b0f53cd74c3e7859f0fb8931f4",
+      "state/alignment_cache.npz": "f1405497f353345f552456316723ac44b777b8ef1d8dc9d97f9527d8bcb9deae",
+      "state/plane_calibration.json": "1d8bcf75bc06ee332a31e227822f1730afe4368f956c5b088c2593979782e5c4"
+    },
+    "modules": {
+      "motion_ik.py": "b364055818cce40733b0c074a20347bf17c8539ea5dd84ec50eec9b5aa82a2fb",
+      "motion_pipeline.py": "68f882285fa6aea607ad61775885925284788f1cd3b247f09f4660b985b3c4d0",
+      "inverse_kinematics.py": "04596bb6d2ce100cf434741fb286d3ffc69ab53a70ae3ab37e267b64801e060f",
+      "pose_adapter.py": "db9a6ed603092ad12967bd3c858d35fc3e4c83cbb556ae0aeaa0f5a01b91a454",
+      "plane_ik.py": "586064d4ad46faf07a3e5ce744c06b6bdb06105c90dc842f3ab5e55548be8ea1"
+    }
+  },
+  "frame_count": 36,
+  "source_fps": 30.0,
+  "endpoint_interval_seconds": 1.1666666666666667,
+  "encoded_duration_seconds": 1.2,
+  "metrics": {
+    "max_contact_error_cm": 0.005065339180439515,
+    "rms_contact_error_cm": 0.0007596872440416846,
+    "max_support_drift_cm": 0.005041406301104521,
+    "max_angle_step_deg": 25.36890841252113,
+    "max_hip_step_cm": 6.576794146717223,
+    "bend_direction_changes": {
+      "left_hand": false,
+      "right_hand": false,
+      "left_foot": false,
+      "right_foot": false
+    },
+    "low_visibility_angle_observations": 89,
+    "angle_observations": 324,
+    "optimizer": {
+      "success": true,
+      "message": "`xtol` termination condition is satisfied.",
+      "nfev": 70,
+      "cost": 11.798551551620022
+    },
+    "settings": {
+      "contact_scale_cm": 0.05,
+      "contact_tolerance_cm": 0.1,
+      "reference_angle_weight": 0.3,
+      "reference_hip_weight": 0.5,
+      "swing_weight": 0.7,
+      "swing_scale_cm": 20.0,
+      "velocity_weight": 0.04,
+      "acceleration_weight": 0.004,
+      "max_nfev": 500
+    }
+  },
+  "frame_convention": "release=first free frame; arrival=first new-contact frame; endpoints inclusive",
+  "swing_path": "Minimum-jerk straight-line soft guide, not an observed hand trajectory.",
+  "interpretation": "2D kinematic candidate with checked soft-contact residuals; no force, friction, balance, collision, or success prediction.",
+  "output_sha256": {
+    "videos/motion_ik_h264.mp4": "81b233f35fe01293d96ea17ddb807afb17564fde649934701c90a2e320a3b783",
+    "videos/motion_ik_slow_h264.mp4": "dee34b4736fde3bd881c23903fd488c7179323d0fad13b9f446ef5c22af0316e",
+    "images/ik_motion_storyboard.png": "90dc1f086ac4a09ba5416aa93bcf439d7d5952c45fe0c8b8634c37257e4d5f84",
+    "videos/target_motion_h264.mp4": "54be50ac72e837126a8088f0d19bda439e2cd556bef7d07248dc6be20d1b13c4",
+    "tables/motion_ik_poses.csv": "88c738240bc23a00be5ddfba12584d6e68b6b48ea6e9c3acb3fd5a2ad7d168a8",
+    "state/motion_ik_trajectory.npz": "83638397f9c8d28181663bc79290683f40d92d4a2430abc8ac2f0ce65b4e42b8"
+  }
+}

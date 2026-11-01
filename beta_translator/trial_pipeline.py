@@ -268,6 +268,124 @@ def build_scene(project, video, root, reference, threshold=.7):
         reconstruction=reconstruction, detection=details)
 
 
+def add_manual_holds(video, root, annotation_path):
+    """Append user-identified holds without renumbering the detector's candidates."""
+    root, annotation_path = Path(root), Path(annotation_path)
+    map_path, manifest_path = root/'state/reviewed_hold_map.npz', root/'state/scene_manifest.json'
+    manifest = json.loads(manifest_path.read_text())
+    if valid_cache(manifest_path, manifest['inputs']) is None:
+        raise ValueError('Scene artifacts changed; rerun wall mapping before adding holds.')
+    records, masks, run_id, selected = load_reviewed_holds(map_path, video)
+    with np.load(map_path, allow_pickle=False) as saved:
+        reference = saved['reference_frame'].copy()
+        reference_frame = json.loads(str(saved['metadata']))['reference_frame_number']
+    annotation = json.loads(annotation_path.read_text())
+    expected = dict(video_sha256=file_sha256(video), candidate_run_id=run_id,
+                    reference_frame_number=reference_frame, image_size=list(reference.shape[:2]))
+    if any(annotation.get(key) != value for key, value in expected.items()):
+        raise ValueError('Manual holds belong to another video, candidate map, or reference image.')
+    additions = annotation['holds']
+    ids = [item['hold_id'] for item in additions]
+    if not ids or len(ids) != len(set(ids)):
+        raise ValueError('Manual holds must have unique IDs.')
+    by_id = {r['hold_id']: r for r in records}
+    pending = []
+    height, width = reference.shape[:2]
+    for item in additions:
+        hold = item['hold_id']
+        if not isinstance(hold, str) or len(hold) < 2 or hold[0] != 'H' or not hold[1:].isdigit():
+            raise ValueError('Manual hold IDs must use H followed by digits.')
+        polygon = np.asarray(item['polygon_xy'], dtype=float)
+        if (polygon.ndim != 2 or polygon.shape[1] != 2 or len(polygon) < 3
+                or not np.isfinite(polygon).all() or np.any(polygon < 0)
+                or np.any(polygon[:, 0] > width-1) or np.any(polygon[:, 1] > height-1)):
+            raise ValueError('Manual hold polygon must lie inside the reference image.')
+        mask = np.zeros((height, width), np.uint8)
+        points = np.rint(polygon).astype(np.int32)
+        if abs(cv2.contourArea(points)) < 1:
+            raise ValueError('Manual hold polygon must enclose an area.')
+        cv2.fillPoly(mask, [points], 1)
+        mask = mask.astype(bool)
+        if hold in masks:
+            if by_id[hold].get('source') != 'user_identified_manual_outline' or not np.array_equal(masks[hold], mask):
+                raise ValueError(f'{hold} already exists with different geometry or provenance.')
+            continue
+        ys, xs = np.nonzero(mask)
+        record = dict(hold_id=hold, bbox=[int(xs.min()), int(ys.min()), int(xs.max()+1), int(ys.max()+1)],
+            area=int(mask.sum()), cx_px=float(xs.mean()), cy_px=float(ys.mean()),
+            class_id=0, class_name='hold', score=None, source='user_identified_manual_outline',
+            review_status='user_confirmed_presence', boundary_status='approximate_image_outline',
+            note=item.get('note', ''))
+        pending.append((record, mask))
+    # Validate every addition before writing; original IDs, masks and selections stay intact.
+    for record, mask in pending:
+        records.append(record)
+        masks[record['hold_id']] = mask
+    if pending:
+        save_reviewed_holds(map_path, video, reference, records, masks, run_id, selected,
+                            reference_frame_number=reference_frame)
+    image = reference.copy()
+    for record in records:
+        hold = record['hold_id']
+        contours, _ = cv2.findContours(masks[hold].astype(np.uint8), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+        cv2.drawContours(image, contours, -1, (0, 220, 255), 1)
+        location = (int(record['cx_px'])+3, int(record['cy_px'])-3)
+        cv2.putText(image, hold, location, 0, .36, (0, 0, 0), 2, cv2.LINE_AA)
+        cv2.putText(image, hold, location, 0, .36, (255, 255, 255), 1, cv2.LINE_AA)
+    output = root/'images/all_holds.png'
+    output.parent.mkdir(parents=True, exist_ok=True)
+    cv2.imwrite(str(output), image)
+    manifest['artifacts'].update({str(map_path): file_sha256(map_path), str(output): file_sha256(output)})
+    manifest['candidate_count'] = len(records)
+    manifest['manual_hold_count'] = sum(r.get('source') == 'user_identified_manual_outline' for r in records)
+    manifest['automatic_candidate_count'] = len(records)-manifest['manual_hold_count']
+    manifest['manual_hold_annotations'] = dict(path=str(annotation_path), sha256=file_sha256(annotation_path))
+    write_json(manifest_path, manifest)
+    return manifest
+
+
+def select_route(video, root, hold_ids=None, expected_run_id=None):
+    """Change route membership without rebuilding or discarding the full hold map."""
+    root = Path(root)
+    map_path, manifest_path = root/'state/reviewed_hold_map.npz', root/'state/scene_manifest.json'
+    manifest = json.loads(manifest_path.read_text())
+    if valid_cache(manifest_path, manifest['inputs']) is None:
+        raise ValueError('Scene artifacts changed; rerun wall mapping before selecting a route.')
+    records, masks, run_id, previous = load_reviewed_holds(map_path, video)
+    if expected_run_id is not None and expected_run_id != run_id:
+        raise ValueError('Hold IDs belong to another candidate map. Review the current IDs first.')
+    selected = list(masks) if hold_ids is None else list(hold_ids)
+    if not selected or len(selected) != len(set(selected)) or not set(selected).issubset(masks):
+        raise ValueError('Route must contain unique IDs from the current candidate map.')
+    with np.load(map_path, allow_pickle=False) as saved:
+        reference = saved['reference_frame'].copy()
+        reference_frame = json.loads(str(saved['metadata']))['reference_frame_number']
+    if selected != previous:
+        save_reviewed_holds(map_path, video, reference, records, masks, run_id, selected,
+                            reference_frame_number=reference_frame)
+    # Only the selected-ID metadata changed. Reuse the verified detection artifacts.
+    manifest['artifacts'][str(map_path)] = file_sha256(map_path)
+    manifest['selection'] = 'All automatic candidates' if hold_ids is None else 'User-supplied route membership'
+    manifest['selected_hold_count'] = len(selected)
+    write_json(manifest_path, manifest)
+    selection = dict(candidate_run_id=run_id, video_sha256=file_sha256(video),
+        selected_hold_ids=selected, candidate_count=len(masks), reference_frame_number=reference_frame,
+        source='all_candidates' if hold_ids is None else 'user_supplied_hold_ids',
+        review_scope='Route membership only; contact states and event times remain model predictions.')
+    write_json(root/'state/route_selection.json', selection)
+    image = reference.copy()
+    by_id = {r['hold_id']:r for r in records}
+    for hold in selected:
+        contours, _ = cv2.findContours(masks[hold].astype(np.uint8), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+        cv2.drawContours(image, contours, -1, (0,220,255), 2)
+        p = (int(by_id[hold]['cx_px'])+5, int(by_id[hold]['cy_px'])-5)
+        cv2.putText(image, hold, p, 0, .6, (0,0,0), 3, cv2.LINE_AA)
+        cv2.putText(image, hold, p, 0, .6, (255,255,255), 1, cv2.LINE_AA)
+    (root/'images').mkdir(parents=True, exist_ok=True)
+    cv2.imwrite(str(root/'images/selected_route.png'), image)
+    return selection
+
+
 def infer_contacts(project, video, root):
     from .contact_review import load_review_bundle
     project, root = Path(project), Path(root)
@@ -284,7 +402,7 @@ def infer_contacts(project, video, root):
 
 
 def geometry_status(video, root, height_cm, ratios, px_per_cm=None, single_panel=False,
-                    source_height_cm=None, calibration_note=''):
+                    source_height_cm=None, calibration_note='', observations=None):
     from .direct_ik import geometry_blockers
     from .inverse_kinematics import make_body
     make_body(height_cm, ratios)
@@ -293,7 +411,7 @@ def geometry_status(video, root, height_cm, ratios, px_per_cm=None, single_panel
     result = dict(video_sha256=file_sha256(video), target_height_cm=height_cm, ratios=dict(ratios),
         source_height_cm=source_height_cm, px_per_cm=px_per_cm, single_panel_confirmed=bool(single_panel),
         calibration_note=calibration_note, blockers=geometry_blockers(px_per_cm, single_panel),
-        inherited_trial2_geometry=False)
+        inherited_trial2_geometry=False, qualitative_observations=list(observations or []))
     write_json(Path(root)/'state/geometry_status.json', result)
     return result
 
@@ -365,6 +483,7 @@ def render_summary(video, root, prediction, contacts, plan):
     identity_summary=json.loads((root/'state/identity_tracking_summary.json').read_text())
     scene=json.loads((root/'state/scene_manifest.json').read_text())
     summary=dict(frame_count=count,fps=fps,hold_candidates=scene['candidate_count'],
+        selected_route_holds=len(prediction['selected_hold_ids']),
         observed_pose_frames=identity_summary['observed_pose_frames'],
         alignment_valid_frames=scene['alignment_valid_frames'],
         model_threshold_coverage=float((contacts.status=='accepted_model').mean()),

@@ -113,7 +113,7 @@ def automatic_ik_artifacts(output_dir):
 
 def run_direct_ik(video, output_dir, pose_cache, package, predictions,
                   height_cm, ratios, px_per_cm, single_panel_confirmed,
-                  enabled=True, execute=True):
+                  enabled=True, execute=True, plane_calibration_path=None):
     """Automatically prepare and run compatible moves without the manual widget form.
 
     The original model package and its held-out validation remain unchanged.
@@ -132,6 +132,9 @@ def run_direct_ik(video, output_dir, pose_cache, package, predictions,
         raise ValueError('The pose/alignment inputs changed. Rerun Section 5.')
     poses = pd.read_csv(pose_path)
     body = dict(height_cm=height_cm, ratios=dict(ratios), px_per_cm=px_per_cm)
+    from .plane_ik import load_ik_plane_geometry, plane_contact_blockers, contact_span_blockers
+    plane = (load_ik_plane_geometry(video, root, plane_calibration_path)
+             if plane_calibration_path is not None else None)
     rows = build_motion_candidates(prediction, contacts, body, set(poses.frame),
                                    {f for f, v in transforms.items() if v[2] == 'ok'})
     provenance = {
@@ -145,13 +148,20 @@ def run_direct_ik(video, output_dir, pose_cache, package, predictions,
     reviewed_current_prediction = bool(review and
         review.get('prediction_sha256') == provenance['prediction_sha256'] and
         review.get('contact_table_sha256') == provenance['contact_table_sha256'])
-    blockers = geometry_blockers(px_per_cm, single_panel_confirmed)
+    if plane is not None:
+        provenance['plane_calibration_sha256'] = plane['calibration_sha256']
+        for row in rows:
+            if row['annotation'] is not None:
+                row['annotation']['plane_geometry'] = copy.deepcopy(plane)
+    blockers = [] if plane is not None else geometry_blockers(px_per_cm, single_panel_confirmed)
     plan = dict(schema_version=1, enabled=bool(enabled),
         mode='experimental_direct_predictions', execute_requested=bool(execute),
         statistical_gate_bypassed=bool(enabled),
         current_prediction_user_accepted=reviewed_current_prediction,
         review_note=review if reviewed_current_prediction else None,
         body=body, single_panel_confirmed=bool(single_panel_confirmed),
+        geometry_mode='calibrated_wall_plane' if plane is not None else 'uniform_image_scale',
+        plane_geometry=plane,
         geometry_blockers=blockers, provenance=provenance, moves=rows,
         interpretation='Automatic kinematic candidates, not validated climbing-success predictions.')
     total_frames = int(contacts.frame.max()) + 1
@@ -160,12 +170,19 @@ def run_direct_ik(video, output_dir, pose_cache, package, predictions,
             row['status'] = 'disabled'
         elif not row['solver_compatible']:
             row['status'] = 'unsupported_contact_schedule'
+        elif plane is not None and plane_contact_blockers(row['annotation'], plane):
+            row['status'] = 'pending_plane_coverage'
+            row['reasons'].extend(plane_contact_blockers(row['annotation'], plane))
+        elif plane is not None and contact_span_blockers(row['annotation'], plane, body):
+            row['status'] = 'body_span_exceeded'
+            row['reasons'].extend(contact_span_blockers(row['annotation'], plane, body))
         elif blockers:
             row['status'] = 'pending_geometry'
         elif not execute:
             row['status'] = 'ready'
         else:
             destination = root / 'automatic/ik' / f"move_{row['move_index']:03d}"
+            print(f"Fitting move {row['move_index']}: {row['from_hold']} -> {row['to_hold']} | {height_cm:g} cm", flush=True)
             annotation = row['annotation']
             annotation['automatic_evidence'].update(provenance)
             annotation['automatic_evidence']['current_prediction_user_accepted'] = reviewed_current_prediction
@@ -173,6 +190,8 @@ def run_direct_ik(video, output_dir, pose_cache, package, predictions,
                 target = destination / name
                 target.parent.mkdir(parents=True, exist_ok=True)
                 shutil.copyfile(root / name, target)
+            if plane is not None:
+                shutil.copyfile(plane_calibration_path, destination / 'state/plane_calibration.json')
             save_annotations(destination / 'state/endpoint_annotations.json', annotation, video,
                              prediction['candidate_run_id'], prediction['selected_hold_ids'], total_frames)
             try:
@@ -185,9 +204,11 @@ def run_direct_ik(video, output_dir, pose_cache, package, predictions,
                 row['status'] = 'generated'
                 row['output_dir'] = str(destination)
                 row['video_file'] = str(destination / 'videos/motion_ik_h264.mp4')
+                row['target_video_file'] = str(destination / 'videos/target_motion_h264.mp4')
             except (ValueError, RuntimeError) as error:
                 row['status'] = 'solver_failed'
                 row['reasons'].append(str(error))
+            print(f"Move {row['move_index']}: {row['status']} | {'; '.join(row['reasons'])}", flush=True)
     plan['proposal_count'] = len(rows)
     plan['solver_compatible_count'] = sum(row['solver_compatible'] for row in rows)
     plan['generated_count'] = sum(row['status'] == 'generated' for row in rows)
