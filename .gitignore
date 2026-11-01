@@ -7,3 +7,19 @@ training_runs/
 *.part
 .venv-contact/
 outputs/automatic/model_cache/
+
+# Local cloud-environment state (archived outside the repository).
+/.config/
+
+# Superseded snapshots retained in the external cleanup archive.
+/outputs/trial3/state/reviewed_hold_map 2.npz
+/outputs/trial2/exports/reviewed_contact_data 2.zip
+
+# Byte-identical Trial 3 reconstruction intermediates.
+/outputs/trial3/hold_mapping/partial_after_0025.jpg
+/outputs/trial3/hold_mapping/partial_after_0175.jpg
+/outputs/trial3/hold_mapping/partial_after_0225.jpg
+/outputs/trial3/hold_mapping/partial_after_0251.jpg
+/outputs/trial3/hold_mapping/partial_after_0276.jpg
+/outputs/trial3/hold_mapping/partial_after_0301.jpg
+/outputs/trial3/hold_mapping/partial_after_0326.jpg
