@@ -1,0 +1,122 @@
+{
+  "repository": "IlinoisZiwei/Beta_Translator",
+  "revision": "f6dc3f6968ae1ece4f7057047c4934c520133aad",
+  "assets": [
+    {
+      "path": "models/model_final.pth",
+      "sha256": "995960a74819e21bd66d7be56ae6e1c8124ec0a06fece4fae13812887d86ebea",
+      "bytes": 351090931
+    },
+    {
+      "path": "outputs/trial2/videos/automatic_contacts_h264.mp4",
+      "sha256": "c70419da87d0d8996020c1b7bc2adc65cac83a84ea24f689281ce0e30ce97365",
+      "bytes": 14283853
+    },
+    {
+      "path": "outputs/trial2/videos/identity_comparison_h264.mp4",
+      "sha256": "3d3edb36656d9a11d217cb0ff81705bb539af8538e90163b4f35f095e0c681af",
+      "bytes": 2626874
+    },
+    {
+      "path": "outputs/trial2/videos/pose_output.mp4",
+      "sha256": "08c981976441e7c9e774e1a768dda78d42f870a79960b9032bcee507f6270471",
+      "bytes": 41479342
+    },
+    {
+      "path": "outputs/trial2/videos/pose_output_h264.mp4",
+      "sha256": "cec60797925126caecf42e261019821bacdb250cfd5da16d664f7029404f5472",
+      "bytes": 22850644
+    },
+    {
+      "path": "outputs/trial2/videos/pose_raw.mp4",
+      "sha256": "5abb34654961c9366be42328c953f129e77a8507553cf466b3d7ce6f5ccebb95",
+      "bytes": 46910300
+    },
+    {
+      "path": "outputs/trial2/videos/wall_motion_h264.mp4",
+      "sha256": "921b1adeb63a09a1c8cd98fb067468a0e82b40106883a4169c93e6904b3aa2c0",
+      "bytes": 1150230
+    },
+    {
+      "path": "outputs/trial3/automatic/ik/move_006/videos/motion_ik_h264.mp4",
+      "sha256": "81b233f35fe01293d96ea17ddb807afb17564fde649934701c90a2e320a3b783",
+      "bytes": 324393
+    },
+    {
+      "path": "outputs/trial3/automatic/ik/move_006/videos/motion_ik_slow_h264.mp4",
+      "sha256": "dee34b4736fde3bd881c23903fd488c7179323d0fad13b9f446ef5c22af0316e",
+      "bytes": 515839
+    },
+    {
+      "path": "outputs/trial3/automatic/ik/move_006/videos/target_motion_h264.mp4",
+      "sha256": "54be50ac72e837126a8088f0d19bda439e2cd556bef7d07248dc6be20d1b13c4",
+      "bytes": 116956
+    },
+    {
+      "path": "outputs/trial3/full_sequence/target_180cm_250e15b3ee81/trial3_target_180cm_full_sequence.mp4",
+      "sha256": "f40cc43464809230144b7716f6ae51f11890b9ff69c37c8c01ab2aefcdbc711e",
+      "bytes": 1744490
+    },
+    {
+      "path": "outputs/trial3/videos/automatic_contacts_h264.mp4",
+      "sha256": "03474183e612b00296f1601662a8ff2fc419a74f0a332c7054a99d1cdf24f727",
+      "bytes": 8119685
+    },
+    {
+      "path": "outputs/trial3/videos/pose_output.mp4",
+      "sha256": "8f317e8e3b502475a7c0e9ecf587d5e1968cd4d9ca457ae12ca00f3e93d014e6",
+      "bytes": 16201907
+    },
+    {
+      "path": "outputs/trial3/videos/trial3_target_180cm_ik_demo.mp4",
+      "sha256": "1faf5c9b4a0438c9b4785a2a44562e5f4a6b73b4a60f33ae04c2f0a6132ceece",
+      "bytes": 198240
+    },
+    {
+      "path": "outputs/videos/motion_ik_h264.mp4",
+      "sha256": "67fbfbab4180fe7bc9ab7068c1cb7b1deb851d9c12e47446c5efa5f3adbbe215",
+      "bytes": 247481
+    },
+    {
+      "path": "outputs/videos/motion_ik_slow_h264.mp4",
+      "sha256": "e7c4c442a5f8615a847e51aeb7de0ca140f9a2bb8187554ad6a086a8f9498912",
+      "bytes": 410464
+    },
+    {
+      "path": "outputs/videos/pose_output.mp4",
+      "sha256": "411e2e0d2f722d8c7d6b8c9eefc7519de64dfc3147786d21fd551a00fb72fe13",
+      "bytes": 16441105
+    },
+    {
+      "path": "outputs/videos/pose_output_h264.mp4",
+      "sha256": "090bb1e318784ee3cc6a2c6712218666522ea2b94ee6ba0cdba3eb69f8334209",
+      "bytes": 7525021
+    },
+    {
+      "path": "outputs/videos/wall_motion_h264.mp4",
+      "sha256": "2078b09ab32be3fc33280cbb8fd1b25c2c8ca7e14fcfd83eb7b5ffd2e440ee66",
+      "bytes": 532016
+    },
+    {
+      "path": "videos/trial1.mp4",
+      "sha256": "db656ed38a93a619f6df7dbd65804718860aa9191e650a1a92952ab6063a007a",
+      "bytes": 4634409
+    },
+    {
+      "path": "videos/trial2.mp4",
+      "sha256": "9964d27ca051953d77cf10ee94a1772bd73e30d7e23fa09a54983c3630e8a068",
+      "bytes": 24008341
+    },
+    {
+      "path": "videos/trial3.mp4",
+      "sha256": "8b5f96c2cd634c82e28d09eba62ba9bf6939bea34cbafe15be1388d831b6eff4",
+      "bytes": 7826013
+    },
+    {
+      "path": "models/pose_landmarker.task",
+      "storage": "git",
+      "bytes": 30664242,
+      "sha256": "64437af838a65d18e5ba7a0d39b465540069bc8aae8308de3e318aad31fcbc7b"
+    }
+  ]
+}

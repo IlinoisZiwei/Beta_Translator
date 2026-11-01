@@ -11,6 +11,7 @@ import pandas as pd
 
 from .project_io import (file_sha256, find_ffmpeg, read_frame, convert_video,
                          save_reviewed_holds, load_reviewed_holds, load_alignment)
+from .portable_paths import artifact_paths, set_artifacts
 
 
 def write_json(path, value):
@@ -28,14 +29,15 @@ def valid_cache(path, inputs):
     saved = json.loads(path.read_text())
     if saved.get('inputs') != inputs:
         return None
-    artifacts = saved.get('artifacts', {})
-    if artifacts and all(Path(p).is_file() and file_sha256(p) == h for p, h in artifacts.items()):
+    artifacts = artifact_paths(path, saved)
+    if artifacts and all(p.is_file() and file_sha256(p) == h for p, h in artifacts.items()):
         return saved
     return None
 
 
 def checkpoint(path, inputs, artifacts, **details):
-    value = dict(inputs=inputs, artifacts={str(p): file_sha256(p) for p in artifacts}, **details)
+    value = dict(inputs=inputs, **details)
+    set_artifacts(path, value, {p: file_sha256(p) for p in artifacts})
     write_json(path, value)
     return value
 
@@ -54,7 +56,22 @@ def nearest_source_indices(source_times, analysis_times):
 
 
 def prepare_video(source, video, output_dir, fps=30, width=720):
-    source, video, root = map(Path, (source, video, output_dir))
+    video, root = map(Path, (video, output_dir))
+    manifest = root/'state/video_manifest.json'
+    if source is None:
+        if manifest.is_file():
+            saved = json.loads(manifest.read_text())
+            inputs = saved.get('inputs', {})
+            artifacts = artifact_paths(manifest, saved)
+            if (all(inputs.get(k) == v for k, v in dict(fps=fps, width=width, version=1).items())
+                    and video.resolve() in artifacts
+                    and (root/'tables/source_frame_map.csv').resolve() in artifacts
+                    and valid_cache(manifest, inputs)):
+                print('Reused verified bundled video and source-frame map.', flush=True)
+                return saved
+        raise ValueError('Bundled analysis video/frame map is missing or stale. Run setup.sh to '
+                         'restore missing assets, or set SOURCE_VIDEO to an original clip and use a new output folder.')
+    source = Path(source)
     if not source.is_file():
         raise FileNotFoundError(source)
     for folder in ('state', 'tables', 'images', 'videos', 'automatic', 'reports'):
@@ -179,7 +196,7 @@ def track_climber(project, video, root, reference_frame=None):
     project, root = Path(project), Path(root)
     wholebody = root/'automatic/wholebody.npz'
     if not wholebody.exists():
-        subprocess.run([str(project/'.venv-contact/bin/python'),
+        subprocess.run([sys.executable,
             str(project/'scripts/extract_contact_poses.py'), '--video', str(video),
             '--output', str(wholebody), '--model-cache', str(project/'training_data/model_cache')],
             cwd=project, check=True)
@@ -335,7 +352,7 @@ def add_manual_holds(video, root, annotation_path):
     output = root/'images/all_holds.png'
     output.parent.mkdir(parents=True, exist_ok=True)
     cv2.imwrite(str(output), image)
-    manifest['artifacts'].update({str(map_path): file_sha256(map_path), str(output): file_sha256(output)})
+    set_artifacts(manifest_path, manifest, {map_path: file_sha256(map_path), output: file_sha256(output)})
     manifest['candidate_count'] = len(records)
     manifest['manual_hold_count'] = sum(r.get('source') == 'user_identified_manual_outline' for r in records)
     manifest['automatic_candidate_count'] = len(records)-manifest['manual_hold_count']
@@ -364,7 +381,7 @@ def select_route(video, root, hold_ids=None, expected_run_id=None):
         save_reviewed_holds(map_path, video, reference, records, masks, run_id, selected,
                             reference_frame_number=reference_frame)
     # Only the selected-ID metadata changed. Reuse the verified detection artifacts.
-    manifest['artifacts'][str(map_path)] = file_sha256(map_path)
+    set_artifacts(manifest_path, manifest, {map_path: file_sha256(map_path)})
     manifest['selection'] = 'All automatic candidates' if hold_ids is None else 'User-supplied route membership'
     manifest['selected_hold_count'] = len(selected)
     write_json(manifest_path, manifest)
@@ -394,7 +411,7 @@ def infer_contacts(project, video, root):
         prediction, contacts = load_review_bundle(*args)
         print('Reused verified automatic contacts.', flush=True)
     except (FileNotFoundError, ValueError, KeyError):
-        subprocess.run([str(project/'.venv-contact/bin/python'), '-m', 'beta_translator.contact_runner',
+        subprocess.run([sys.executable, '-m', 'beta_translator.contact_runner',
             '--video', str(video), '--outputs', str(root), '--package', str(project/'models/contact_v1')],
             cwd=project, check=True)
         prediction, contacts = load_review_bundle(*args)

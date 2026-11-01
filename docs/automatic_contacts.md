@@ -40,11 +40,10 @@ The comparison baseline uses the same whole-body landmarks, normalized point-to-
 
 ## Reproduce
 
-Use an isolated environment. Existing notebook dependencies need not be changed.
+Use the same environment as all five notebooks. Demo setup already includes the pretrained model and pose weights. The commands below are only for reproducing training and downloading its additional dataset.
 
 ```bash
-python3.12 -m venv .venv
-.venv/bin/python -m pip install -r requirements-contact.txt
+bash setup.sh
 .venv/bin/python scripts/download_wayup.py --output training_data/the_way_up
 .venv/bin/python scripts/extract_contact_poses.py \
   --dataset training_data/the_way_up --output training_data/poses_v2 \

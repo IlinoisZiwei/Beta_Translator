@@ -8,6 +8,7 @@ import numpy as np
 from .motion_pipeline import current_motion_outputs
 from .project_io import file_sha256, convert_video
 from .trial_pipeline import checkpoint, valid_cache, write_json
+from .portable_paths import project_path
 
 
 def build_target_demo(video, root, plan, slowdown=3, pause_seconds=1):
@@ -16,7 +17,7 @@ def build_target_demo(video, root, plan, slowdown=3, pause_seconds=1):
     for move in plan['moves']:
         if move['status'] != 'generated':
             continue
-        destination = Path(move['output_dir'])
+        destination = project_path(move['output_dir'], root/'state/direct_ik_plan.json')
         current_motion_outputs(video, destination)
         summary = json.loads((destination/'state/motion_ik_summary.json').read_text())
         candidates.append((summary['metrics']['max_angle_step_deg'], move, summary))
@@ -25,7 +26,7 @@ def build_target_demo(video, root, plan, slowdown=3, pause_seconds=1):
     if type(slowdown) is not int or slowdown < 1 or pause_seconds < 0:
         raise ValueError('Replay speed must be a positive integer factor with nonnegative pauses.')
     _, move, summary = min(candidates, key=lambda item:item[0])
-    source = Path(move['target_video_file'])
+    source = project_path(move['target_video_file'], root/'state/direct_ik_plan.json')
     height_cm = plan['body']['height_cm']
     output = root/f'videos/trial3_target_{height_cm:g}cm_ik_demo.mp4'
     poster = root/'images/target_ik_demo.png'
@@ -35,7 +36,10 @@ def build_target_demo(video, root, plan, slowdown=3, pause_seconds=1):
         module_sha256=file_sha256(__file__))
     manifest = root/'state/target_ik_demo_manifest.json'
     if valid_cache(manifest, inputs):
-        return json.loads(state.read_text())
+        result = json.loads(state.read_text())
+        for key in ('video_file', 'poster_file', 'source_clip', 'comparison_video'):
+            result[key] = str(project_path(result[key], state))
+        return result
     cap = cv2.VideoCapture(str(source))
     fps, count = cap.get(5), int(cap.get(7))
     width, height = int(cap.get(3)), int(cap.get(4))
@@ -67,7 +71,8 @@ def build_target_demo(video, root, plan, slowdown=3, pause_seconds=1):
     result=dict(video_file=str(output),poster_file=str(poster),height_cm=height_cm,
         ratios=plan['body']['ratios'],move_index=move['move_index'],moving_limb=move['moving_limb'],
         from_hold=move['from_hold'],to_hold=move['to_hold'],before_frame=move['before_frame'],
-        after_frame=move['after_frame'],source_clip=str(source),comparison_video=move['video_file'],
+        after_frame=move['after_frame'],source_clip=str(source),
+        comparison_video=str(project_path(move['video_file'], state)),
         source_frame_count=count,output_frame_count=actual,fps=fps,duration_seconds=actual/fps,
         playback_speed=1/slowdown,pause_seconds=pause_seconds,metrics=summary['metrics'],
         selection='Generated clip with the lowest maximum frame-to-frame angle change.',

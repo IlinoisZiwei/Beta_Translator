@@ -6,7 +6,7 @@ Beta Translator analyzes climbing videos and fits a target body to reviewed or m
 
 ## Notebook entry points
 
-Open notebooks from the repository root. Use `.venv/bin/python` unless noted below.
+All five notebooks use the same **Python (Beta Translator)** kernel from `.venv/bin/python`.
 
 | Notebook | Purpose and current result |
 | --- | --- |
@@ -14,7 +14,7 @@ Open notebooks from the repository root. Use `.venv/bin/python` unless noted bel
 | [Trial2_Analysis.ipynb](Trial2_Analysis.ipynb) | Trial 2 wall reconstruction, identity tracking, contact inference, and geometry diagnostics. Default target: 190 cm; no accepted target-body IK clip in the saved run. |
 | [Trial3_Analysis.ipynb](Trial3_Analysis.ipynb) | Trial 3 wall calibration and strict single-move IK. One 180 cm right-hand H017 → H007 move is generated for frames 296–331. |
 | [Trial3_Full_Sequence.ipynb](Trial3_Full_Sequence.ipynb) | Continuous 180 cm adaptation across frames 0–502, with changing contacts and per-frame warnings. Reuses the saved Trial 3 inputs. |
-| [Automatic_Contacts.ipynb](Automatic_Contacts.ipynb) | Trained contact-model inference and reports. Use the isolated environment from `requirements-contact.txt`; see [the inference guide](docs/automatic_contacts.md). |
+| [Automatic_Contacts.ipynb](Automatic_Contacts.ipynb) | Trained contact-model inference and reports. Uses the same project environment; see [the inference guide](docs/automatic_contacts.md). |
 
 ### Which demo to open
 
@@ -28,12 +28,29 @@ Notebook videos use repository-relative file references; images and numerical re
 
 ## Run locally on macOS
 
-1. Retrieve the actual Git LFS video/model assets with `git lfs install` and `git lfs pull`. Install Git LFS with `brew install git-lfs` if needed.
-2. For first-time setup, run `bash setup.sh` from the repository. An already working `.venv` can be reused.
-3. Choose a notebook from the table above. For the original reviewed Trial 1 workflow below, open `Beta_Translator.ipynb` in VS Code/Jupyter with the repository as the working directory. Select `.venv/bin/python` as its kernel.
-4. Run the notebook in order. Section 1 checks dependencies without installing packages or transferring files.
-5. Run Section 6B for learned proposals, then use **Prefill automatic draft** in Section 7. Review BEFORE/AFTER, contact IDs and release/arrival. Confirm support continuity and click **Save annotations**. Section 7B optionally replays the previously confirmed H44 → H28 example.
-6. Run Section 8 for a static target-body fit. To fit a sequence, enter release/arrival frames in Section 7, confirm the other three contacts remain fixed, save, and run Section 8B. Section 9 replays the original motion; Section 10 exports current results.
+1. Clone/pull `main`, or download **Code → Download ZIP** and unzip the whole repository.
+2. Double-click **`Start.command`** in that folder. The first run installs Python 3.12, FFmpeg, one `.venv`, all Python dependencies, and the required model/video assets. Later launches reuse the installation and open JupyterLab. If Finder does not launch it, open a terminal in the folder and run `bash Start.command`.
+3. Open a notebook and select **Python (Beta Translator)** if asked. Trial2, Trial3, Full Sequence, and Automatic Contacts support **Run → Run All Cells** with the bundled inputs. For the main notebook’s review step, see below. Keep the terminal open while using JupyterLab. In VS Code, choose **Python Environments → `.venv/bin/python`** for every notebook.
+
+This setup is tested on an Apple Silicon Mac. First-time Homebrew/Command Line Tools installation may require macOS prompts and your password. Allow several minutes and several GB of disk space; an internet connection is needed for the first installation. No second environment or manual model copying is needed. Both Git clones and GitHub ZIP downloads are supported; setup restores missing Git LFS assets directly with checksum verification.
+
+To install without opening JupyterLab, run `bash setup.sh`. With Python 3.12 and FFmpeg already on PATH, `bash setup.sh --skip-system` skips Homebrew. Setup never runs training or overwrites existing generated results. Existing `.venv-contact` folders can be left alone; they are no longer used. Do not copy a virtual environment between computers.
+
+**The main notebook has a manual review step.** Run through Section 7, click **Load annotations** to use the saved review (or review your own contacts/timing and click **Save annotations**), then continue through Sections 8–10. Running all cells without loading/saving the form intentionally stops at Section 8B to protect unsaved review choices. `REPLAY_CONFIRMED_EXAMPLE = False` preserves your form choices; set it to `True` to replay the bundled, previously reviewed H44 → H28 example. Uncertain contacts and geometry failures remain visible; installing dependencies does not make every move feasible.
+
+The three bundled trial inputs are:
+
+| Trial | Required analysis video | Frames | Duration at 30 FPS |
+| --- | --- | ---: | ---: |
+| Trial 1 / main notebook / Automatic Contacts | `videos/trial1.mp4` | 417 | 13.90 s |
+| Trial 2 | `videos/trial2.mp4` | 976 | 32.53 s |
+| Trial 3 / Full Sequence | `videos/trial3.mp4` | 503 | 16.77 s |
+
+These MP4s are tracked with Git LFS; `Start.command` restores their actual contents even if a ZIP/clone initially contains only pointer files. Keep the complete repository layout: the notebooks also need `data/`, `models/`, and `outputs/`. Saved demo videos live under `outputs/` and are downloaded by the same setup. Sending only an `.ipynb` is insufficient.
+
+**No original MOV from the author's Downloads folder is needed to run the bundled trials.** Trial3 defaults to `SOURCE_VIDEO = None`, reusing its verified MP4 and source-frame map. Old printed logs can still show `/Users/ziwei/...`; they are historical output. Legacy cache paths are resolved against the current checkout, not the author's computer. For a different clip or to redo the original MOV-to-MP4 conversion, supply your own source video and use fresh video/output paths; its holds and geometry need their own review.
+
+Training scripts use the same `.venv`. Reproducing training additionally requires the public dataset; follow [the training commands](docs/automatic_contacts.md#reproduce). Demo setup downloads the pretrained models, not the training dataset, and does not start a training job.
 
 Use **Load annotations** after restarting. Changing an endpoint resets its contact labels. Automatic drafts never replace manual choices. After editing a helper `.py` file, restart the kernel to import the changes.
 
@@ -148,26 +165,20 @@ The same model is integrated into Sections 6B–8B of the main `Beta_Translator.
 
 ## Main notebook: automatic prefill to reviewed continuous IK
 
-Keep the notebook on its existing `.venv` kernel. Create a separate inference environment
-once (already installed on the current machine):
-
-```sh
-.venv/bin/python -m venv .venv-contact
-.venv-contact/bin/python -m pip install -r requirements-contact.txt
-```
+Run `Start.command` (or `bash setup.sh`) once. The notebooks and their inference subprocesses all use the same `.venv` interpreter.
 
 Section 6B checks video, hold map, alignment, pose-cache, model and prediction-table hashes.
-It reuses matching predictions or calls `.venv-contact` to refresh them. The bundled
-whole-body feature cache avoids downloading RTMW weights for the current video.
+It reuses matching predictions or calls the current kernel’s Python interpreter to refresh them. The bundled
+whole-body feature cache avoids extracting poses again for the current video.
 A new video needs pose extraction and its own output folder. Raw model downloads stay
-under `outputs/automatic/model_cache/` and are ignored by Git.
+under `training_data/model_cache/` and are ignored by Git.
 
 1. **Section 6B:** load learned contact and movement proposals.
 2. **Section 7:** choose a move and click **Prefill automatic draft**. This fills contacts,
    endpoints and timing, but always clears the support-confirmation checkbox.
 3. Review the source frames, edit endpoint/contact/time fields, confirm the three supports,
    and save. Any contact or timing edit invalidates the previous support confirmation.
-4. **Section 7B:** optional replay of the user's saved H44 → H28 reference. Its default
+4. **Section 7B:** optional replay of the user's saved H44 → H28 reference. Setting
    `REPLAY_CONFIRMED_EXAMPLE = True` replaces the form with that reviewed example for the
    matching video. **Set it to `False` when keeping your own edits or reviewing another move.**
    The immutable reference is `data/H44_H28_confirmed_reference.json`; the replay audit is
@@ -279,7 +290,7 @@ person identity.
 The first raw pose/wall-alignment pass is retained as `pose_coordinates_raw.csv`
 and `identity_anchor_alignment.npz`. The bootstrap alignment is created if absent,
 using the raw pass; Section 5 separately recomputes alignment after pose correction.
-RTMW features are reused, or extracted with the contact environment if missing.
+RTMW features are reused, or extracted with the shared environment if missing.
 The frozen whole-body cache and trained model weights are not modified.
 
 `pose_coordinates.csv` contains observed target poses only.
@@ -359,7 +370,7 @@ these moves requires a solver with varying contacts and suitable wall geometry.
 
 ## Trial 3: compact automatic run
 
-Open `Trial3_Analysis.ipynb` with the repository `.venv` kernel. Its seven sections prepare the video/body inputs, track the climber, reconstruct and select wall holds, infer contacts, calibrate metric geometry, fit target-body IK, and summarize the outputs. The input is `/Users/ziwei/Downloads/trial3.mov`; `videos/trial3.mp4` contains 503 upright analysis frames at 30 FPS. `outputs/trial3/tables/source_frame_map.csv` records the exact source-frame mapping.
+Open `Trial3_Analysis.ipynb` with the repository `.venv` kernel. Its seven sections prepare the video/body inputs, track the climber, reconstruct and select wall holds, infer contacts, calibrate metric geometry, fit target-body IK, and summarize the outputs. The default `SOURCE_VIDEO = None` reuses the bundled video; `videos/trial3.mp4` contains 503 upright analysis frames at 30 FPS. `outputs/trial3/tables/source_frame_map.csv` records the exact source-frame mapping.
 
 Section 1 now sets the target to **180 cm with default proportions**. Source height and wall geometry are independent and are not inherited from Trial 2. The existing RTMW/contact ensemble is reused without retraining; MediaPipe and identity checks supply the IK reference poses. Verified caches avoid repeating expensive extraction.
 

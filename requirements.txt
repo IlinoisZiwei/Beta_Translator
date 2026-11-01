@@ -1,15 +1,22 @@
-torch
-torchvision
-numpy
-pandas
-ninja
-opencv-python
-matplotlib
-scipy
-pillow
-pyyaml
-mediapipe
-ipywidgets
-ipykernel
-setuptools
-wheel
+# Shared Python 3.12 environment for every notebook, inference and training script.
+torch==2.14.1
+torchvision==0.29.1
+numpy==2.5.4
+pandas==3.1.0
+scipy==1.18.1
+# RTMLib declares both distributions; keep their shared cv2 version identical.
+opencv-python==5.0.0.93
+opencv-contrib-python==5.0.0.93
+mediapipe==1.1.1
+rtmlib==0.0.16
+onnxruntime==1.31.1
+certifi==2026.10.23
+matplotlib==3.11.2
+pillow==13.0.0
+pyyaml==6.0.3
+ipywidgets==8.1.9
+ipykernel==7.4.0
+jupyterlab==4.6.5
+ninja==1.13.2
+setuptools==84.2.1
+wheel==0.48.0

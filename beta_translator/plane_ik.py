@@ -6,6 +6,7 @@ import numpy as np
 
 from .project_io import file_sha256, load_reviewed_holds, validate_reference_alignment
 from .pose_adapter import checked_plane_transform
+from .portable_paths import artifact_paths, project_path
 
 
 def load_ik_plane_geometry(video, root, calibration_path):
@@ -16,12 +17,12 @@ def load_ik_plane_geometry(video, root, calibration_path):
     manifest = json.loads(manifest_path.read_text())
     calibration = json.loads(calibration_path.read_text())
     inputs = dict(video_sha256=file_sha256(video),
-        observation_sha256=file_sha256(calibration['observation_file']),
+        observation_sha256=file_sha256(project_path(calibration['observation_file'], calibration_path)),
         hold_map_sha256=file_sha256(root/'state/reviewed_hold_map.npz'),
         pose_sha256=file_sha256(root/'automatic/wholebody.npz'),
         module_sha256=file_sha256(plane_calibration.__file__))
     if (valid_cache(manifest_path, inputs) is None or
-            manifest['artifacts'].get(str(calibration_path)) != file_sha256(calibration_path)):
+            artifact_paths(manifest_path, manifest).get(calibration_path.resolve()) != file_sha256(calibration_path)):
         raise ValueError('Plane calibration is stale; rerun the grid calibration.')
     _, _, run_id, selected = load_reviewed_holds(root/'state/reviewed_hold_map.npz', video)
     reference = validate_reference_alignment(root/'state/reviewed_hold_map.npz', root/'state/alignment_cache.npz')
