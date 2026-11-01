@@ -2,13 +2,35 @@
 
 Ziwei Wang · Justin Zou · Pengfan Zhang
 
-Beta Translator analyzes a climbing video and fits a target body to reviewed contact positions. The outputs include static 2D IK fits, a contact-aware continuous 2D candidate for a reviewed single-limb move, and a separate replay of the original tracked movement. Personalized movement recommendations remain a project goal.
+Beta Translator analyzes climbing videos and fits a target body to reviewed or model-predicted contacts. It includes static 2D IK, single-move IK, and a continuous 180 cm Trial 3 adaptation with explicit constraint and uncertainty diagnostics. Personalized movement recommendations remain a project goal.
+
+## Notebook entry points
+
+Open notebooks from the repository root. Use `.venv/bin/python` unless noted below.
+
+| Notebook | Purpose and current result |
+| --- | --- |
+| [Beta_Translator.ipynb](Beta_Translator.ipynb) | Original Trial 1 workflow: reviewed contacts, static IK, and the confirmed H44 → H28 single-move fit. Default target: 165 cm. |
+| [Trial2_Analysis.ipynb](Trial2_Analysis.ipynb) | Trial 2 wall reconstruction, identity tracking, contact inference, and geometry diagnostics. Default target: 190 cm; no accepted target-body IK clip in the saved run. |
+| [Trial3_Analysis.ipynb](Trial3_Analysis.ipynb) | Trial 3 wall calibration and strict single-move IK. One 180 cm right-hand H017 → H007 move is generated for frames 296–331. |
+| [Trial3_Full_Sequence.ipynb](Trial3_Full_Sequence.ipynb) | Continuous 180 cm adaptation across frames 0–502, with changing contacts and per-frame warnings. Reuses the saved Trial 3 inputs. |
+| [Automatic_Contacts.ipynb](Automatic_Contacts.ipynb) | Trained contact-model inference and reports. Use the isolated environment from `requirements-contact.txt`; see [the inference guide](docs/automatic_contacts.md). |
+
+### Which demo to open
+
+| Output | What it shows | Saved Trial 3 demo |
+| --- | --- | --- |
+| Original climber replay | Observed motion with tracked joints/contact predictions; target height does not change the body. | [Contact preview](outputs/trial3/videos/automatic_contacts_h264.mp4) |
+| Single-move IK | A fitted target body for one eligible move, accepted only after the strict contact-residual checks. | [180 cm H017 → H007](outputs/trial3/videos/trial3_target_180cm_ik_demo.mp4), frames 296–331, slowed with endpoint pauses |
+| Full-sequence adaptation | All 503 target-body poses optimized together, allowing contact changes and displaying unmet constraints or uncertainty. | [180 cm full-sequence video](outputs/trial3/full_sequence/target_180cm_250e15b3ee81/trial3_target_180cm_full_sequence.mp4), frames 0–502 at 30 FPS, about 16.77 s |
+
+Notebook videos use repository-relative file references; images and numerical results remain saved in the notebooks. Keep the `outputs/` video files alongside the notebooks and retrieve Git LFS assets before viewing. If a notebook preview does not render a video, open its MP4 link directly. See [full-sequence assumptions and diagnostics](docs/trial3_full_sequence.md) before interpreting the adaptation.
 
 ## Run locally on macOS
 
 1. Retrieve the actual Git LFS video/model assets with `git lfs install` and `git lfs pull`. Install Git LFS with `brew install git-lfs` if needed.
 2. For first-time setup, run `bash setup.sh` from the repository. An already working `.venv` can be reused.
-3. Open `Beta_Translator.ipynb` in VS Code/Jupyter with the repository as the working directory. Select `.venv/bin/python` as its kernel.
+3. Choose a notebook from the table above. For the original reviewed Trial 1 workflow below, open `Beta_Translator.ipynb` in VS Code/Jupyter with the repository as the working directory. Select `.venv/bin/python` as its kernel.
 4. Run the notebook in order. Section 1 checks dependencies without installing packages or transferring files.
 5. Run Section 6B for learned proposals, then use **Prefill automatic draft** in Section 7. Review BEFORE/AFTER, contact IDs and release/arrival. Confirm support continuity and click **Save annotations**. Section 7B optionally replays the previously confirmed H44 → H28 example.
 6. Run Section 8 for a static target-body fit. To fit a sequence, enter release/arrival frames in Section 7, confirm the other three contacts remain fixed, save, and run Section 8B. Section 9 replays the original motion; Section 10 exports current results.
@@ -223,8 +245,8 @@ The reconstruction helper checks video/cache identity and records pixel sources.
 The candidate builder does not overwrite a reviewed map. New detection IDs and
 review exclusions cannot be carried into unrelated maps. Continuous trial2 IK
 still needs independently measured wall scale, suitable panel geometry and
-confirmed endpoint/timing/support annotations. The 165 cm target and default
-ratios are assumptions, not the filmed climber's measurements. Forty-nine helper
+confirmed endpoint/timing/support annotations. The current default 190 cm target
+and default ratios are assumptions, not the filmed climber's measurements. Forty-nine helper
 tests pass; the original trial1 notebook, manual labels and IK remain intact.
 
 ### Current route evaluation
@@ -284,7 +306,8 @@ guard and retains its behavior.
 ### Trial2 geometry assumptions
 
 Section 1 now separates the filmed climber's user-reported **173 cm** height from
-the **165 cm** target body. Adjacent-hole spacing is **15 cm by user assumption**,
+the default **190 cm** target body. Loading saved annotations may restore their
+saved target height and proportions. Adjacent-hole spacing is **15 cm by user assumption**,
 not a measured value or a Movement-wide specification. Section 4C uses twelve
 visible adjacent-hole intervals on original frame 450 to calculate local,
 directional pixel scales. The editable observations and video hash are in
@@ -342,14 +365,27 @@ Section 1 now sets the target to **180 cm with default proportions**. Source hei
 
 Section 3 retains 53 detector candidates plus H054, the user-identified small white hold below H032. Its approximate manual outline is saved in `data/trial3_manual_holds.json`; original IDs and masks remain unchanged. The selected route is H001, H007, H012, H017, H021, H032, H045, H050, H053, and H054. Edit `USER_ROUTE_HOLD_IDS` to change membership, not movement order. IDs are tied to their candidate-map run. The legacy `reviewed_hold_map.npz` filename does not imply that every detection or contact was manually reviewed.
 
-The user reports that both walls are vertical, the left door frame has vertical parallel sides and horizontal parallel top/bottom edges, and a floor line is parallel to the ceiling plane. The user also confirmed a **15 cm orthogonal hole grid**. Section 5 calibrates only the white-hold wall using `data/trial3_wall_grid.json` and `beta_translator/plane_calibration.py`. The current fit uses 301 holes, with 72 reserved from the final fit; reserved RMS reprojection error is 0.365 px (0.229 cm conditional on the grid dimensions). This is internal grid consistency, not physical measurement accuracy. H053 lies outside observed-hole coverage and is excluded from calibrated IK. The second wall, relative wall angle, camera intrinsics, body depth, and hold depth remain unmodeled. See the [OpenCV homography tutorial](https://docs.opencv.org/4.x/d9/dab/tutorial_homography.html) for the planar mapping method.
+The user reports that both walls are vertical, the left door frame has vertical parallel sides and horizontal parallel top/bottom edges, and a floor line is parallel to the ceiling plane. The user also confirmed a **15 cm orthogonal hole grid**. Section 5 calibrates only the white-hold wall using `data/trial3_wall_grid.json` and `beta_translator/plane_calibration.py`. The current fit uses 301 holes, with 72 reserved from the final fit; reserved RMS reprojection error is 0.365 px (0.229 cm conditional on the grid dimensions). This is internal grid consistency, not physical measurement accuracy. H053 lies outside observed-hole coverage and is excluded from the strict single-move IK workflow. The separate full-sequence experiment uses it only as a reduced-weight, explicitly flagged extrapolated target. The second wall, relative wall angle, camera intrinsics, body depth, and hold depth remain unmodeled. See the [OpenCV homography tutorial](https://docs.opencv.org/4.x/d9/dab/tutorial_homography.html) for the planar mapping method.
 
 Section 6 passes the full homography into `pose_adapter.py` and `motion_pipeline.py`; no uniform raw-image pixel scale is substituted. `plane_ik.py` verifies calibration provenance, reference identity, and contact coverage. A conservative reach bound detects contact separations beyond the configured body's span. Converged trajectories must pass the existing 0.1 cm numerical contact tolerance before export. This tolerance is not a claim about real-world contact accuracy.
 
 The saved 180 cm run has 13 automatic movement proposals and seven contact-compatible schedules. One **right-hand H017 -> H007** move (frames 296-331) is generated; four exceed the model's body-span bounds, one uses H053 outside calibration coverage, and one reaches the optimizer iteration limit. The generated trajectory has 0.0051 cm maximum numerical contact residual. Numerical solver failure is not proof of physical impossibility, and a successful solve does not predict climbing success. The model omits forces, balance, friction, collisions, and out-of-plane motion.
 
-The main target-only demo is `outputs/trial3/videos/trial3_target_180cm_ik_demo.mp4`. It replays the fitted 1.2-second clip at 0.33x with one-second endpoint pauses (5.6 seconds total). `automatic/ik/move_006/videos/` also contains the normal-speed target clip, aligned original/target comparison, and a slow comparison. `target_ik_demo.json` records timing and provenance. The demo is one movement, not a continuous reconstruction of the complete route. Section 7's contact preview remains explicitly labeled **original climber**. Model-threshold coverage is approximately 81%, not measured contact accuracy.
+The single-move target-only demo is [trial3_target_180cm_ik_demo.mp4](outputs/trial3/videos/trial3_target_180cm_ik_demo.mp4). It replays the fitted 1.2-second clip at 0.33x with one-second endpoint pauses (5.6 seconds total). `automatic/ik/move_006/videos/` also contains the normal-speed target clip, aligned original/target comparison, and a slow comparison. `target_ik_demo.json` records timing and provenance. The demo is one movement, not a continuous reconstruction of the complete route. Section 7's contact preview remains explicitly labeled **original climber**. Model-threshold coverage is approximately 81%, not measured contact accuracy.
 
 `AUTOMATIC_IK_ENABLED = True` uses decoded predictions without the statistical review gate, while retaining actual support, timing, calibration, and solver checks. Change the target in Section 1 and rerun Section 5 onward to refit; the new body may yield different eligible or successful moves. Summaries are saved in `state/run_summary.json`, `geometry_status.json`, and `direct_ik_plan.json`.
 
 The earlier gray-region hold false positive was repaired with denser observed-frame reconstruction and an observed-pixel filter. H054 is a subsequent manual missed-hold correction, not a demonstrated detector-accuracy gain. `state/approved_cleanup.json` records the 15 obsolete files moved to macOS Trash with user approval; active Trial 2 data was preserved.
+
+
+### Trial 3: full-sequence 180 cm adaptation
+
+[Trial3_Full_Sequence.ipynb](Trial3_Full_Sequence.ipynb) provides the separate full-sequence workflow. Its [saved video](outputs/trial3/full_sequence/target_180cm_250e15b3ee81/trial3_target_180cm_full_sequence.mp4) contains every frame from 0 through 502 at 30 FPS. All 503 poses are jointly optimized with fixed segment lengths and temporal smoothness; this is not a concatenation of the existing single-move clips. Each limb can change its decoded contact independently.
+
+Known hold centers are soft targets. Incompatible contacts retain visible residual gaps instead of stretching the body. The saved run has 245 frames above the 0.1 cm numerical contact tolerance; 31 of those exceed 5 cm. H053 extrapolation, unresolved free-foot support, low-confidence contacts, low-visibility reference joints, and rapid pose changes are flagged separately. Every frame has at least one uncertainty flag. This diagnostic adaptation does not establish physical feasibility or climbing success; forces, balance, friction, collisions, and body depth remain unmodeled.
+
+The [saved run directory](outputs/trial3/full_sequence/target_180cm_250e15b3ee81/) contains the trajectory, per-frame and per-limb diagnostics, issue intervals, summary, and preview images. The strict single-move results remain separate. See [the full-sequence guide](docs/trial3_full_sequence.md) for assumptions, warning meanings, and reproduction steps.
+
+## Inspect cleanup candidates
+
+Run `bash cleanup.sh` (or `bash cleanup.sh --dry-run`) to list the paths considered by the old reset script and their current sizes. The script is read-only and has no deletion mode. `outputs/` includes retained videos, reviewed maps, annotations, caches, and diagnostics; the listing is not a recommendation to remove it. Review and back up any specific files before a separate, explicitly approved cleanup.
