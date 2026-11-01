@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "source": "learned_predictions",
+  "frame_count": 417,
+  "fps": 30.0,
+  "video_sha256": "db656ed38a93a619f6df7dbd65804718860aa9191e650a1a92952ab6063a007a",
+  "prediction_sha256": "2bcfc5c35c90aaa4098e739b0e008f292943f754bc4c92141eb242185aff3471",
+  "contacts_sha256": "5d9f3498e2bc4b0200a3a323ce9298798592a575526ef8680b297805a984208b",
+  "assembler_sha256": "2c80b6ace7b4fccb9455a0e46dacb85ceaba7b5f49bb136246ea3127a4815063",
+  "move_count": 10,
+  "schedule_segments": 85,
+  "frames_with_uncertainty": 257,
+  "unresolved_transitions": 2,
+  "overlapping_move_pairs": 0,
+  "frame_convention": "Zero-based native frames; end_frame inclusive, end_sec exclusive. Move intervals use [release_frame, arrival_frame); a zero-duration transition has unresolved timing and is not counted as an overlapping interval.",
+  "interpretation": "Original model predictions, not human-confirmed contacts or an IK-ready plan. No smoothing, gap filling, manual timing overrides, or new moves applied.",
+  "output_sha256": {
+    "move_sequence.csv": "b6b44d42b133908dac306ea271bc9662f064759577dc3582b883174cf9a47213",
+    "contact_schedule.csv": "f69cc61b66e363f991ecabff5d6354069977de37ee19c6688ff8a9b6e568c4ce",
+    "contact_timeline.png": "00e37ed94f1afb64643d2916b8e1d9bd4adcbad3d7257ff8afce81ce99c083b8"
+  }
+}
