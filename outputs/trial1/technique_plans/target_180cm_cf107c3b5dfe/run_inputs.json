@@ -1,0 +1,109 @@
+{
+  "config": {
+    "height_cm": 180.0,
+    "profiles": {
+      "control": {
+        "shift": 0.0,
+        "lift": 0.0,
+        "flag": 0.0,
+        "straight": 0.0,
+        "hand": 0.0,
+        "torque": 0.0
+      },
+      "weight_shift": {
+        "shift": 2.0,
+        "lift": 0.0,
+        "flag": 0.0,
+        "straight": 0.0,
+        "hand": 0.0,
+        "torque": 0.0
+      },
+      "leg_drive": {
+        "shift": 2.0,
+        "lift": 2.0,
+        "flag": 0.0,
+        "straight": 0.0,
+        "hand": 0.0,
+        "torque": 0.0
+      },
+      "flag_assist": {
+        "shift": 2.0,
+        "lift": 2.0,
+        "flag": 2.0,
+        "straight": 0.0,
+        "hand": 0.0,
+        "torque": 0.0
+      },
+      "arm_economy": {
+        "shift": 2.0,
+        "lift": 2.0,
+        "flag": 0.0,
+        "straight": 0.6,
+        "hand": 3.0,
+        "torque": 2.0
+      },
+      "combined": {
+        "shift": 2.0,
+        "lift": 2.0,
+        "flag": 2.0,
+        "straight": 0.6,
+        "hand": 3.0,
+        "torque": 2.0
+      }
+    },
+    "max_iterations": 1600,
+    "max_outer": 4,
+    "freeze_prefix_before_frame": 103,
+    "freeze_endpoint_frames": 2,
+    "contact_schedule": "unchanged automatic labels + existing ground evidence",
+    "rank": "feasibility, reliability, hand L1 integral/peak, distal arm-moment proxy, motion; numeric tie bands 0.005 BW*s / 0.005 BW / 0.05 BW*cm*s",
+    "force_allocation": "same two-stage hand-L1 then distal-arm-moment LP for every pose; lower bound under assumed 2D contacts"
+  },
+  "inputs_sha256": {
+    "videos/trial1.mp4": "db656ed38a93a619f6df7dbd65804718860aa9191e650a1a92952ab6063a007a",
+    "outputs/state/reviewed_hold_map.npz": "5da727d36e2e7a29366cef99ad5a2df3857e7b7c4a41f47c16def26184e23c43",
+    "outputs/state/alignment_cache.npz": "6750c2275ff0a8c79fd948d7b77746c226995175626896869d88e12688f9b5f1",
+    "outputs/state/pose_manifest.json": "2131ddcf90ed0be80fff8f91ed1b69bbfe1913e1dcef6b7537ae577e9d131eb7",
+    "outputs/tables/pose_coordinates.csv": "77a0ef059d17768465200cb1db986bdd681582e4ddb2f6f3d404ff63ddd8e3a4",
+    "outputs/automatic/wholebody.npz": "95960ed921a140ea5290fcb0918b72f366ccbc411218cef5b11e5f56e81f9f89",
+    "outputs/automatic/predictions/automatic_contacts.json": "6a8f07cb32244e3d01c8411acb386e2889b588e4e1b405a7c516c5e432d7c369",
+    "outputs/automatic/predictions/limb_contacts.csv": "e3be6fd54acf1ddff91c823862b830b673387fad7c058840a0cc9408bfebb16c",
+    "outputs/automatic/predictions/contact_events.csv": "e2986cd8fdd4dd0d27e597b9443aa98ed35daf759a553b9497e39f8f83952baa",
+    "data/H44_H28_confirmed_reference.json": "c62b11718a0a8d960f3020edcae558a39ff68e77bc228c66c68061628e93b97c",
+    "models/pose_landmarker.task": "64437af838a65d18e5ba7a0d39b465540069bc8aae8308de3e318aad31fcbc7b",
+    "models/contact_v1/deployment.json": "5c15dee5f2cf3da1fd88ced97772f62d7c6ced24607094a78e721e72fef43dcd",
+    "models/contact_v1/model_1.pt": "3aea6211ecc62eb79731536af388476b76a35d9af9483999fc8108decd479119",
+    "models/contact_v1/model_2.pt": "ee003c9dad6df413f3347f3fad25bc62042cf02560ee7a41d9f6d30d4c7c2aac",
+    "models/contact_v1/model_3.pt": "896ea4175834688ad445876cce6929969eca2e879db73f5fea713fa4b9796abb",
+    "beta_translator/trial1_sequence.py": "533ac468341a61982b8aa71ea70ceb0e1515ec7166f93c9e5c46c821a5f0cfc5",
+    "beta_translator/gravity_sequence.py": "65b2388797fed5e571a2927783705bf2779e7cd368ca76c385fdca6781d9e721",
+    "beta_translator/full_sequence.py": "07bf9d4b3ffb231770aa208f9029a551346b7ce1d76c2500c4ee516e13cfe0f1",
+    "beta_translator/full_sequence_pipeline.py": "a75f8f3fd15c0084dfc95341daa6dcf415c8509703af1f19910ef409683927e4",
+    "beta_translator/inverse_kinematics.py": "6262bac4be63170a8e4021c1d9c070200c92f7152663d9b8c0b2ebba144d04b6",
+    "beta_translator/motion_ik.py": "b364055818cce40733b0c074a20347bf17c8539ea5dd84ec50eec9b5aa82a2fb",
+    "beta_translator/pose_adapter.py": "db9a6ed603092ad12967bd3c858d35fc3e4c83cbb556ae0aeaa0f5a01b91a454",
+    "beta_translator/project_io.py": "2443301f901d70a7ef091233312242a90043a8eaabe709642e36f84bf1c74ace",
+    "beta_translator/contact_review.py": "1130bb833cab6d0a96c1e0d6785b53f5c1e7894ed34caeddaa094f8fa9fd8605",
+    "beta_translator/identity_tracking.py": "13aafe67d75ada8c5b7cf9ebfa70fb03292c13eab3d730a5dc28fd3dfffdb2ef",
+    "beta_translator/support_audit.py": "039328f7ffcee721264adf117a7d0eb579f7791a05b27484dc49553d4cf0a285",
+    "beta_translator/support_optimization.py": "461b60593a67b5737a939fa49cc1a618edbe537c5ff73542ed4132a7e5aac7e5",
+    "beta_translator/support_optimization_pipeline.py": "ca6b34fa7f6fcb3b0eeb8ea4b6a41977169f3967fa328ffd967a7b1bf980fefd",
+    "beta_translator/gravity_sequence_pipeline.py": "e579fee26ecc3022e7dbf1ed642f7abce558e72ce1990dc11f0c1b9dd4c8825e",
+    "beta_translator/contact_geometry.py": "3ffb0f096fd95cad0f3ba4253f451341dff4964593bfb297309468ed5570e8f9",
+    "beta_translator/ground_support.py": "03c5ca1b72070f177f6104de917c894d47931b757548459c3fab569456cca9b0",
+    "beta_translator/trial1_ground_pipeline.py": "f567ffd88d48b7b9c175067a801bab2970e4d0e0def86c990774b4f305b72995",
+    "beta_translator/trial1_support_pipeline.py": "2880c3aaa1313aedbb417432a823cbadd24af617981f035b16cbd1ca2cab7100",
+    "data/trial1_ground_support.json": "073e52fb26cd0b40c5243731cd9ed69483dab4964003fcad086b1223561ac57d",
+    "outputs/trial1/support_optimized/target_180cm_77aeef37c158/summary.json": "672b1b6163d79e09a9b960ac869737bef77e166ea2f959c39b43da9cc24f2202",
+    "beta_translator/support_refinement.py": "f33286e646641a5c3901bec602007e1eed359aaa7063c22944694135fab69251",
+    "beta_translator/trial1_refinement_pipeline.py": "a069c217636267347f7d2c0863f8ea140e9bd930d87585e62dbba691e87572f4",
+    "outputs/trial1/ground_support/target_180cm_bd8c3dc75cd8/summary.json": "3e2eefb56cffdb0ff8f1599f341cfcdc98aaa59dedff8a6c5c265ab0b78cce2b",
+    "outputs/trial1/ground_support/target_180cm_bd8c3dc75cd8/trajectory.npz": "7e6425c8990776fb0a03a80e73c4c90a271c2d748e69e2f310990b4f7748386c",
+    "beta_translator/technique_planner.py": "1707bc2159742c473669b9f6db9c9c3cbc82d29feedce6199e915446d324a2ed",
+    "beta_translator/trial1_technique_pipeline.py": "99f21d2c59d9f96834abe4389d8fb7fab49effd500f10c18cfa5dfef9db8011a",
+    "beta_translator/technique_render.py": "2f8ed933e87a7d5800e2df3c7255d4f26843100ac2ab7d6674f202267200228b",
+    "outputs/trial1/refined_support/target_180cm_f1456408fd1d/summary.json": "e10f84d4ddb7ec30d5b52755d14d2a1f35f08ab63034f36ae59e3ffc36250382",
+    "outputs/trial1/refined_support/target_180cm_f1456408fd1d/trajectory.npz": "e82608a8e79e92dc93d6c21189392eb2ab7a5d65e3750885a7ece665dd00dfc5",
+    "outputs/trial1/refined_support/target_180cm_f1456408fd1d/frame_diagnostics.csv": "f9ed48852b3886c02617f7fc3c166a4a3149598cd6d78c15a8faead32be562f6"
+  }
+}

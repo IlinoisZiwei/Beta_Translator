@@ -1,0 +1,4 @@
+tilt_deg,conditional_balance_frames,eligible_balance_frames,robust_frames,preunload_failure_frames,same_geometry,tilt_measured
+0.0,293,177,288,60,True,False
+15.0,156,84,116,68,True,False
+30.0,15,15,12,75,True,False

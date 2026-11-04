@@ -1,0 +1,15 @@
+{
+  "optimizer": {
+    "success": true,
+    "message": "Inner stationarity, cost stability, IRLS weight stability and refreshed stationarity satisfied.",
+    "nfev": 2701,
+    "cost": 541.7593480709763,
+    "optimality": 2.489808730591781e-07,
+    "gradient_definition": "infinity norm of projected J.T r / max(1, column L2 norm of J)",
+    "inner_success": true,
+    "outer_iterations": 3,
+    "relative_weight_change": 3.7972916895884095e-07,
+    "max_singleton_com_error_cm": 5.684341886080802e-14
+  },
+  "history": []
+}

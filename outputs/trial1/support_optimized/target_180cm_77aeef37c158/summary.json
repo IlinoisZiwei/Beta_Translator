@@ -1,0 +1,861 @@
+{
+  "schema_version": 1,
+  "provenance": {
+    "inputs": {
+      "videos/trial1.mp4": "db656ed38a93a619f6df7dbd65804718860aa9191e650a1a92952ab6063a007a",
+      "outputs/state/reviewed_hold_map.npz": "5da727d36e2e7a29366cef99ad5a2df3857e7b7c4a41f47c16def26184e23c43",
+      "outputs/state/alignment_cache.npz": "6750c2275ff0a8c79fd948d7b77746c226995175626896869d88e12688f9b5f1",
+      "outputs/state/pose_manifest.json": "2131ddcf90ed0be80fff8f91ed1b69bbfe1913e1dcef6b7537ae577e9d131eb7",
+      "outputs/tables/pose_coordinates.csv": "77a0ef059d17768465200cb1db986bdd681582e4ddb2f6f3d404ff63ddd8e3a4",
+      "outputs/automatic/wholebody.npz": "95960ed921a140ea5290fcb0918b72f366ccbc411218cef5b11e5f56e81f9f89",
+      "outputs/automatic/predictions/automatic_contacts.json": "6a8f07cb32244e3d01c8411acb386e2889b588e4e1b405a7c516c5e432d7c369",
+      "outputs/automatic/predictions/limb_contacts.csv": "e3be6fd54acf1ddff91c823862b830b673387fad7c058840a0cc9408bfebb16c",
+      "outputs/automatic/predictions/contact_events.csv": "e2986cd8fdd4dd0d27e597b9443aa98ed35daf759a553b9497e39f8f83952baa",
+      "data/H44_H28_confirmed_reference.json": "c62b11718a0a8d960f3020edcae558a39ff68e77bc228c66c68061628e93b97c",
+      "models/pose_landmarker.task": "64437af838a65d18e5ba7a0d39b465540069bc8aae8308de3e318aad31fcbc7b",
+      "models/contact_v1/deployment.json": "5c15dee5f2cf3da1fd88ced97772f62d7c6ced24607094a78e721e72fef43dcd",
+      "models/contact_v1/model_1.pt": "3aea6211ecc62eb79731536af388476b76a35d9af9483999fc8108decd479119",
+      "models/contact_v1/model_2.pt": "ee003c9dad6df413f3347f3fad25bc62042cf02560ee7a41d9f6d30d4c7c2aac",
+      "models/contact_v1/model_3.pt": "896ea4175834688ad445876cce6929969eca2e879db73f5fea713fa4b9796abb",
+      "beta_translator/trial1_sequence.py": "5b817a38f87ec98764ecf91d1ce87f175fe3f9e56852b15b865dc409a3158186",
+      "beta_translator/gravity_sequence.py": "8af04a5032f4fe26bed22ce9b33b87cd9f1867e233679edf1b733e61347950ca",
+      "beta_translator/full_sequence.py": "6e814fd61e0f84584894d273063c569ab1e9b6215a3cc030faa7861f8c0ce228",
+      "beta_translator/full_sequence_pipeline.py": "ede1ece0bd080be05cf5ffe5fe1a369639df29995614bad1a639ee6d5d95793f",
+      "beta_translator/inverse_kinematics.py": "6262bac4be63170a8e4021c1d9c070200c92f7152663d9b8c0b2ebba144d04b6",
+      "beta_translator/motion_ik.py": "b364055818cce40733b0c074a20347bf17c8539ea5dd84ec50eec9b5aa82a2fb",
+      "beta_translator/pose_adapter.py": "db9a6ed603092ad12967bd3c858d35fc3e4c83cbb556ae0aeaa0f5a01b91a454",
+      "beta_translator/project_io.py": "2443301f901d70a7ef091233312242a90043a8eaabe709642e36f84bf1c74ace",
+      "beta_translator/contact_review.py": "1130bb833cab6d0a96c1e0d6785b53f5c1e7894ed34caeddaa094f8fa9fd8605",
+      "beta_translator/identity_tracking.py": "13aafe67d75ada8c5b7cf9ebfa70fb03292c13eab3d730a5dc28fd3dfffdb2ef",
+      "beta_translator/support_audit.py": "281199f5ae46f5f9800f883b963be95e5f07f83786f09f8e047f3f284883f6d0",
+      "beta_translator/support_optimization.py": "03485c454f25939d48b97b23bb1b29a1f73e5068ae4b8b35d51e056797de7d7e",
+      "beta_translator/support_optimization_pipeline.py": "ca6b34fa7f6fcb3b0eeb8ea4b6a41977169f3967fa328ffd967a7b1bf980fefd",
+      "beta_translator/gravity_sequence_pipeline.py": "56e69e7db7da059d88565ffa0179a5fd7db82ecbf297d2f1ee2cc448831c4e32",
+      "beta_translator/trial1_support_pipeline.py": "2880c3aaa1313aedbb417432a823cbadd24af617981f035b16cbd1ca2cab7100"
+    },
+    "trial": "trial1",
+    "body": {
+      "height_cm": 180.0,
+      "ratios": {
+        "upper_arm": 0.186,
+        "forearm": 0.146,
+        "thigh": 0.245,
+        "shank": 0.246,
+        "shoulder_w": 0.259,
+        "hip_w": 0.191,
+        "torso": 0.288
+      }
+    },
+    "physics": {
+      "mass_kg": 70.0,
+      "foot_friction": 0.8,
+      "max_force_component_n": 686.7
+    },
+    "geometry": {
+      "reference_frame": 0,
+      "px_per_cm": 1.7980508245001927,
+      "model": "uniform_image_scale",
+      "gravity": "image_up"
+    },
+    "settings": {
+      "contact_scale_cm": 1.0,
+      "outside_hull_weight": 0.15,
+      "reference_angle_weight": 0.6,
+      "reference_hip_scale_cm": 35.0,
+      "free_endpoint_scale_cm": 30.0,
+      "velocity_weight": 0.08,
+      "acceleration_weight": 0.03,
+      "contact_tolerance_cm": 0.1,
+      "large_error_cm": 5.0,
+      "angle_step_warning_deg": 15.0,
+      "hip_step_warning_cm": 5.0,
+      "max_nfev": 1000,
+      "balance_weight": 30.0,
+      "force_weight": 0.05,
+      "force_velocity_weight": 0.02,
+      "balance_tolerance": 0.01,
+      "force_step_warning_bw": 0.5
+    },
+    "support_audit_settings": {
+      "com_perturbation_cm": 2.0,
+      "margin_warning": 0.1,
+      "unload_lookahead_frames": 6
+    },
+    "optimization_settings": {
+      "contact_gain": 30.0,
+      "robust_contact_cm": 1.0,
+      "force_contact_weight": 30.0,
+      "reserve_weight": 80.0,
+      "unloading_weight": 100.0,
+      "unload_force_weight": 30.0,
+      "motion_limit_weight": 200.0,
+      "rounds": 3,
+      "max_nfev": 800
+    }
+  },
+  "body": {
+    "height_cm": 180.0,
+    "ratios": {
+      "upper_arm": 0.186,
+      "forearm": 0.146,
+      "thigh": 0.245,
+      "shank": 0.246,
+      "shoulder_w": 0.259,
+      "hip_w": 0.191,
+      "torso": 0.288
+    }
+  },
+  "physics": {
+    "mass_kg": 70.0,
+    "foot_friction": 0.8,
+    "max_force_component_n": 686.7
+  },
+  "settings": {
+    "contact_scale_cm": 1.0,
+    "outside_hull_weight": 0.15,
+    "reference_angle_weight": 0.6,
+    "reference_hip_scale_cm": 35.0,
+    "free_endpoint_scale_cm": 30.0,
+    "velocity_weight": 0.08,
+    "acceleration_weight": 0.03,
+    "contact_tolerance_cm": 0.1,
+    "large_error_cm": 5.0,
+    "angle_step_warning_deg": 15.0,
+    "hip_step_warning_cm": 5.0,
+    "max_nfev": 1000,
+    "balance_weight": 30.0,
+    "force_weight": 0.05,
+    "force_velocity_weight": 0.02,
+    "balance_tolerance": 0.01,
+    "force_step_warning_bw": 0.5
+  },
+  "optimization_settings": {
+    "contact_gain": 30.0,
+    "robust_contact_cm": 1.0,
+    "force_contact_weight": 30.0,
+    "reserve_weight": 80.0,
+    "unloading_weight": 100.0,
+    "unload_force_weight": 30.0,
+    "motion_limit_weight": 200.0,
+    "rounds": 3,
+    "max_nfev": 800
+  },
+  "optimization_history": [
+    {
+      "round": 1,
+      "optimizer": {
+        "success": false,
+        "message": "The maximum number of function evaluations is exceeded.",
+        "nfev": 800,
+        "cost": 700.5599809728365,
+        "optimality": 112.0475566481629
+      },
+      "counts": {
+        "contact_residual": 4,
+        "large_contact_residual": 0,
+        "span_conflict": 0,
+        "hold_extrapolation": 0,
+        "unknown_contact": 0,
+        "unresolved_foot_support": 149,
+        "wall_contact_unlocated": 0,
+        "low_contact_confidence": 257,
+        "low_pose_visibility": 402,
+        "reference_extrapolation": 0,
+        "rapid_pose_change": 0,
+        "optimizer_unconverged": 417,
+        "force_imbalance": 0,
+        "moment_imbalance": 0,
+        "foot_friction_violation": 0,
+        "no_known_support": 0,
+        "force_at_missed_contact": 1,
+        "force_on_uncertain_contact": 192,
+        "rapid_force_change": 0,
+        "support_balance_failed": 49,
+        "support_balance_uncertain": 65,
+        "support_margin_low": 26,
+        "preunload_failed": 2,
+        "preunload_uncertain": 26,
+        "preunload_timing_uncertain": 12,
+        "preunload_margin_low": 0,
+        "support_audit_not_evaluated": 0
+      },
+      "numerical_pass_frames": 0,
+      "max_contact_error_cm": 1.5371281112869402,
+      "max_hip_step_cm": 4.756402245612031,
+      "max_angle_step_deg": 14.25782384209518
+    },
+    {
+      "round": 2,
+      "optimizer": {
+        "success": false,
+        "message": "The maximum number of function evaluations is exceeded.",
+        "nfev": 800,
+        "cost": 670.2460079573023,
+        "optimality": 149.1314725553379
+      },
+      "counts": {
+        "contact_residual": 4,
+        "large_contact_residual": 0,
+        "span_conflict": 0,
+        "hold_extrapolation": 0,
+        "unknown_contact": 0,
+        "unresolved_foot_support": 149,
+        "wall_contact_unlocated": 0,
+        "low_contact_confidence": 257,
+        "low_pose_visibility": 402,
+        "reference_extrapolation": 0,
+        "rapid_pose_change": 0,
+        "optimizer_unconverged": 417,
+        "force_imbalance": 0,
+        "moment_imbalance": 0,
+        "foot_friction_violation": 0,
+        "no_known_support": 0,
+        "force_at_missed_contact": 1,
+        "force_on_uncertain_contact": 192,
+        "rapid_force_change": 0,
+        "support_balance_failed": 49,
+        "support_balance_uncertain": 65,
+        "support_margin_low": 1,
+        "preunload_failed": 2,
+        "preunload_uncertain": 26,
+        "preunload_timing_uncertain": 12,
+        "preunload_margin_low": 0,
+        "support_audit_not_evaluated": 0
+      },
+      "numerical_pass_frames": 0,
+      "max_contact_error_cm": 0.3064814097667498,
+      "max_hip_step_cm": 4.761637495776346,
+      "max_angle_step_deg": 14.293014285790177
+    },
+    {
+      "round": 3,
+      "optimizer": {
+        "success": false,
+        "message": "The maximum number of function evaluations is exceeded.",
+        "nfev": 800,
+        "cost": 664.0155194110476,
+        "optimality": 167.42206062327918
+      },
+      "counts": {
+        "contact_residual": 1,
+        "large_contact_residual": 0,
+        "span_conflict": 0,
+        "hold_extrapolation": 0,
+        "unknown_contact": 0,
+        "unresolved_foot_support": 149,
+        "wall_contact_unlocated": 0,
+        "low_contact_confidence": 257,
+        "low_pose_visibility": 402,
+        "reference_extrapolation": 0,
+        "rapid_pose_change": 0,
+        "optimizer_unconverged": 417,
+        "force_imbalance": 0,
+        "moment_imbalance": 0,
+        "foot_friction_violation": 0,
+        "no_known_support": 0,
+        "force_at_missed_contact": 1,
+        "force_on_uncertain_contact": 193,
+        "rapid_force_change": 0,
+        "support_balance_failed": 49,
+        "support_balance_uncertain": 65,
+        "support_margin_low": 0,
+        "preunload_failed": 0,
+        "preunload_uncertain": 28,
+        "preunload_timing_uncertain": 12,
+        "preunload_margin_low": 0,
+        "support_audit_not_evaluated": 0
+      },
+      "numerical_pass_frames": 0,
+      "max_contact_error_cm": 0.10857559939042857,
+      "max_hip_step_cm": 4.759846104192254,
+      "max_angle_step_deg": 14.303006247562548
+    }
+  ],
+  "support_audit_settings": {
+    "com_perturbation_cm": 2.0,
+    "margin_warning": 0.1,
+    "unload_lookahead_frames": 6
+  },
+  "method": "Global IRLS pose/force optimization with contact-force coupling, COM reserve intervals and prospective unloading; all source frames remain coupled.",
+  "optimizer": {
+    "success": false,
+    "message": "The maximum number of function evaluations is exceeded.",
+    "nfev": 800,
+    "cost": 664.0155194110476,
+    "optimality": 167.42206062327918
+  },
+  "frame_count": 417,
+  "first_frame": 0,
+  "last_frame": 416,
+  "fps": 30.0,
+  "duration_seconds": 13.9,
+  "video_name": "trial1_support_optimized_180cm_full_sequence.mp4",
+  "comparison": [
+    {
+      "metric": "contact_residual",
+      "unit": "frames",
+      "before": 106.0,
+      "after": 1.0
+    },
+    {
+      "metric": "large_contact_residual",
+      "unit": "frames",
+      "before": 1.0,
+      "after": 0.0
+    },
+    {
+      "metric": "support_balance_failed",
+      "unit": "frames",
+      "before": 75.0,
+      "after": 49.0
+    },
+    {
+      "metric": "support_balance_uncertain",
+      "unit": "frames",
+      "before": 59.0,
+      "after": 65.0
+    },
+    {
+      "metric": "support_margin_low",
+      "unit": "frames",
+      "before": 31.0,
+      "after": 0.0
+    },
+    {
+      "metric": "preunload_failed",
+      "unit": "frames",
+      "before": 19.0,
+      "after": 0.0
+    },
+    {
+      "metric": "preunload_uncertain",
+      "unit": "frames",
+      "before": 13.0,
+      "after": 28.0
+    },
+    {
+      "metric": "preunload_margin_low",
+      "unit": "frames",
+      "before": 0.0,
+      "after": 0.0
+    },
+    {
+      "metric": "departing_load_remaining",
+      "unit": "frames",
+      "before": 11.0,
+      "after": 0.0
+    },
+    {
+      "metric": "rapid_pose_change",
+      "unit": "frames",
+      "before": 0.0,
+      "after": 0.0
+    },
+    {
+      "metric": "force_imbalance",
+      "unit": "frames",
+      "before": 0.0,
+      "after": 0.0
+    },
+    {
+      "metric": "moment_imbalance",
+      "unit": "frames",
+      "before": 0.0,
+      "after": 0.0
+    },
+    {
+      "metric": "optimizer_unconverged",
+      "unit": "frames",
+      "before": 417.0,
+      "after": 417.0
+    },
+    {
+      "metric": "combined_numerical_pass",
+      "unit": "frames",
+      "before": 0.0,
+      "after": 0.0
+    },
+    {
+      "metric": "max_contact_gap",
+      "unit": "cm",
+      "before": 5.364168045035575,
+      "after": 0.10857559939042857
+    },
+    {
+      "metric": "max_hip_step",
+      "unit": "cm/frame",
+      "before": 3.7292794684873334,
+      "after": 4.759846104192254
+    },
+    {
+      "metric": "max_angle_step",
+      "unit": "deg/frame",
+      "before": 12.132380148368714,
+      "after": 14.303006247562548
+    }
+  ],
+  "flag_counts": {
+    "contact_residual": 1,
+    "large_contact_residual": 0,
+    "span_conflict": 0,
+    "hold_extrapolation": 0,
+    "unknown_contact": 0,
+    "unresolved_foot_support": 149,
+    "wall_contact_unlocated": 0,
+    "low_contact_confidence": 257,
+    "low_pose_visibility": 402,
+    "reference_extrapolation": 0,
+    "rapid_pose_change": 0,
+    "optimizer_unconverged": 417,
+    "force_imbalance": 0,
+    "moment_imbalance": 0,
+    "foot_friction_violation": 0,
+    "no_known_support": 0,
+    "force_at_missed_contact": 1,
+    "force_on_uncertain_contact": 193,
+    "rapid_force_change": 0,
+    "support_balance_failed": 49,
+    "support_balance_uncertain": 65,
+    "support_margin_low": 0,
+    "preunload_failed": 0,
+    "preunload_uncertain": 28,
+    "preunload_timing_uncertain": 12,
+    "preunload_margin_low": 0,
+    "support_audit_not_evaluated": 0,
+    "departing_load_remaining": 0,
+    "uniform_scale_approximation": 417,
+    "image_up_gravity_assumed": 417,
+    "reviewed_contact_disagreement": 6
+  },
+  "status_counts": {
+    "constraint_warning": 417
+  },
+  "balance_audit_counts": {
+    "fails_located_support_model": 49,
+    "uncertain_support": 65,
+    "passes_model_checks": 303
+  },
+  "preunload_frame_counts": {
+    "not_applicable": 352,
+    "passes_model_checks": 37,
+    "uncertain_timing": 6,
+    "uncertain_support": 22
+  },
+  "last_pre_release_check_counts": {
+    "passes_model_checks": 6,
+    "uncertain_timing": 1,
+    "uncertain_support": 4
+  },
+  "release_event_count": 11,
+  "release_timing_uncertain_count": 2,
+  "numerical_pass_frame_count": 0,
+  "max_segment_length_error_cm": 4.973799150320701e-14,
+  "source_climber_height_cm": null,
+  "limitations": [
+    "Soft global objectives seek improved poses; convergence is not a global optimum or physical validation.",
+    "Prospective COM intervals assume desired contacts can be reached; final audits independently exclude missed holds.",
+    "IRLS favors achievable contacts and can increase errors on incompatible contacts; all original targets remain audited.",
+    "Support confidence and calibration are unchanged; conditional support never becomes confirmed evidence.",
+    "Contact labels/timing stay fixed. Direct hold changes retain timing uncertainty; ground support is not invented.",
+    "Unloading encourages a gradual reduction in departing candidate force and fixed-pose reserve without departing limbs.",
+    "The final pre-release candidate load is flagged above 1% body weight; counterfactual readiness is a separate check.",
+    "Assumed 2D quasi-static force capacities/friction omit depth, inertia, measured normals, grip strength and joint torques.",
+    "Temporal penalties and motion limits do not establish dynamic feasibility. Unresolved constraints remain visible."
+  ],
+  "output_sha256": {
+    "trial1_support_optimized_180cm_full_sequence.mp4": "5c30b89f86b5440d22318990d6cd1295333e34c118faaf0d185ed32332892c43",
+    "poster.png": "db47ab116c7ce692eff630baaf5b5069dba86f55ef1056319139217c3880147e",
+    "storyboard.png": "17f44d636f72ab1c91979a74bd32be3262f7c62878109c2b2446c9a8b9566eeb",
+    "frame_0000.png": "e867e07a2d20efe4479f6e6397ce07b327859701b8744106eef00cd039d1870c",
+    "frame_0069.png": "ec598b612e00c9d82144d9f9cf314719fc054299da27aa6361743853c9a4c09d",
+    "frame_0138.png": "41f708ace83bbdbbf6c8c076222db40d0bdf0842a89d59d9dafcee844db5e27e",
+    "frame_0208.png": "59ccf07c54c05ecced611f1b58e11f80d4750c070d3f97bbade9a2436a073c7e",
+    "frame_0277.png": "129df627ad6369807d56b6c78313794ebc995edc76c421b5aee15ab1cbe5c5c9",
+    "frame_0314.png": "db47ab116c7ce692eff630baaf5b5069dba86f55ef1056319139217c3880147e",
+    "frame_0346.png": "fbe3c1ba2549608287ee3f2646a3cf76c9a763f58ccbd1090659dba127316b1d",
+    "frame_0416.png": "bd0435a1f2bd14c991878ee47ffc37840dd8cd6687e366ce33d7b8816ae5b164",
+    "frame_diagnostics.csv": "1a4f80f75524e874a7013527a2137c5bf4820f87951eff8666f7611ba1420815",
+    "limb_diagnostics.csv": "d1175b8d054f6c2ca218a80014e1244b51781ababdb1b69e8f6bc950868cd97d",
+    "comparison.csv": "e40d712e574a760e87404bd590266d79ad63205f89961980e44a156457086e73",
+    "issue_intervals.csv": "1dc5c4eade9be66700a81209520ab77a888e5066169dbef7e771d61e5f8b2c18",
+    "release_events.csv": "927bffb018e91a4bb1f99b4a7657c10d991a1339fbe74a5378cb8d129dcaf6e6",
+    "preunload_checks.csv": "f5e0d6e85be0fa85de33199bcabcb79188e5f412d1f9a5704f4d1a43e666aa71",
+    "optimization_constraints.csv": "90d984df6a9a20fea2a6ba9e0a0112f5405f2cefb872b03daabf0aa11921e742",
+    "trajectory.npz": "37f3de0740e1628f36dc95edf8e9ad0682a462f56b221ca9e5ec4b47e325e226",
+    "trial1_gravity_180cm_baseline.mp4": "c8c09553e427999393ea1ed80e5ac818d83468c61a522178230d71479e3b8448",
+    "baseline_trajectory.npz": "46a226ecc1e1781c09329a47ae688ad506d559d316aa2a9f41238e520b1d8018",
+    "reviewed_reference_comparison.csv": "27c282b84043c6b74c8f6ed8b20fcce66f33b444d776ca8adbe8870080ac7bcc",
+    "review.html": "090c4a8fb30b35b8e564dfcbd0b58c48ae077c79b597d6ca423a1c84808fd48d"
+  },
+  "trial": "Trial1",
+  "geometry_model": {
+    "image_to_wall_cm": [
+      [
+        0.5561578050931746,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        -0.5561578050931746,
+        711.8819905192635
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "hold_positions_cm": {
+      "H01": [
+        275.5822477431539,
+        629.7019892189378
+      ],
+      "H02": [
+        300.64964013661864,
+        620.1722305520241
+      ],
+      "H03": [
+        200.54471790359779,
+        614.6197419229688
+      ],
+      "H04": [
+        62.987441904052446,
+        604.754313270816
+      ],
+      "H05": [
+        214.81274854324622,
+        595.2631313148872
+      ],
+      "H06": [
+        275.3854681501937,
+        590.4542030739203
+      ],
+      "H07": [
+        63.57104911342011,
+        576.3801452846164
+      ],
+      "H08": [
+        323.0896168566628,
+        569.36919939586
+      ],
+      "H09": [
+        275.12994923032824,
+        551.1422544683726
+      ],
+      "H10": [
+        341.19672983540437,
+        549.1997489402517
+      ],
+      "H11": [
+        63.75185759866271,
+        543.4635444499203
+      ],
+      "H12": [
+        142.73233909911232,
+        537.0393243852916
+      ],
+      "H13": [
+        235.69332170928632,
+        532.2913257520961
+      ],
+      "H14": [
+        112.46488814901684,
+        526.2184408242272
+      ],
+      "H15": [
+        36.41117086924821,
+        525.3150784206
+      ],
+      "H16": [
+        248.54611707033524,
+        521.1420290819278
+      ],
+      "H17": [
+        262.19351697343706,
+        509.6519304761398
+      ],
+      "H18": [
+        346.67169850807886,
+        509.1802202799852
+      ],
+      "H19": [
+        51.984533506896604,
+        508.39821704563576
+      ],
+      "H20": [
+        83.62972267209268,
+        499.3877692047621
+      ],
+      "H21": [
+        327.83338883911586,
+        498.28052987784423
+      ],
+      "H22": [
+        236.3716540330948,
+        495.57215256885956
+      ],
+      "H23": [
+        261.57427130994915,
+        484.37742765292364
+      ],
+      "H24": [
+        346.50582688199836,
+        481.85707376362154
+      ],
+      "H25": [
+        138.9070825765029,
+        477.46827722608043
+      ],
+      "H26": [
+        261.7809276747651,
+        471.84019994890184
+      ],
+      "H27": [
+        63.735684463677806,
+        467.36131286666193
+      ],
+      "H28": [
+        248.57343759614997,
+        457.94583362225865
+      ],
+      "H29": [
+        161.95173588057168,
+        457.63285583803787
+      ],
+      "H30": [
+        346.65445330482015,
+        454.67840651733627
+      ],
+      "H31": [
+        87.26359696408164,
+        450.99689485742425
+      ],
+      "H32": [
+        150.07581137575391,
+        444.4325572753864
+      ],
+      "H33": [
+        261.25512894251875,
+        433.8137833150818
+      ],
+      "H34": [
+        247.3578577088505,
+        420.36520308601484
+      ],
+      "H35": [
+        192.47866358243164,
+        415.4189827487629
+      ],
+      "H36": [
+        20.35123039084428,
+        412.0258827871582
+      ],
+      "H37": [
+        114.42438158872775,
+        411.14983103351517
+      ],
+      "H38": [
+        248.61265083674164,
+        407.74745594549285
+      ],
+      "H39": [
+        137.34916608387877,
+        397.7331183394098
+      ],
+      "H40": [
+        289.00640003918477,
+        394.52802647898295
+      ],
+      "H41": [
+        54.773365010426325,
+        390.83989752922844
+      ],
+      "H42": [
+        123.38308438274616,
+        390.62215650176273
+      ],
+      "H43": [
+        217.51454826887493,
+        387.83069701320926
+      ],
+      "H44": [
+        224.72810937955404,
+        382.16364660045343
+      ],
+      "H45": [
+        286.27036311026535,
+        372.01218462362357
+      ],
+      "H46": [
+        189.59442183667178,
+        370.2373029360421
+      ],
+      "H47": [
+        324.3438742006223,
+        369.02044185100584
+      ],
+      "H48": [
+        223.79928539473434,
+        367.0456896916166
+      ],
+      "H49": [
+        103.12988408477761,
+        361.26188316802313
+      ],
+      "H50": [
+        338.2191816984002,
+        359.2506505268109
+      ],
+      "H51": [
+        235.29548423872953,
+        357.5421030816183
+      ],
+      "H52": [
+        379.6540433727114,
+        356.77921766267735
+      ],
+      "H53": [
+        286.01110324172873,
+        356.062338780743
+      ],
+      "H54": [
+        308.5086410468963,
+        355.7440058381286
+      ],
+      "H55": [
+        143.7578223294067,
+        346.87502501746775
+      ],
+      "H56": [
+        96.67375928287218,
+        346.3458847107061
+      ],
+      "H57": [
+        247.84122776016704,
+        343.9026630577446
+      ],
+      "H58": [
+        89.89672966214397,
+        338.4838197108737
+      ],
+      "H59": [
+        357.89597421086836,
+        334.9671047008906
+      ],
+      "H60": [
+        260.92114758018187,
+        319.8294396315071
+      ],
+      "H61": [
+        328.33845557916123,
+        312.860156049722
+      ],
+      "H62": [
+        223.1606366178242,
+        307.6224686179743
+      ],
+      "H63": [
+        273.3469154937062,
+        306.1628806853973
+      ],
+      "H64": [
+        260.130454269997,
+        294.14104893423655
+      ],
+      "H65": [
+        245.6511276829238,
+        280.4117454665935
+      ]
+    },
+    "supported_hold_ids": [
+      "H01",
+      "H02",
+      "H03",
+      "H04",
+      "H05",
+      "H06",
+      "H07",
+      "H08",
+      "H09",
+      "H10",
+      "H11",
+      "H12",
+      "H13",
+      "H14",
+      "H15",
+      "H16",
+      "H17",
+      "H18",
+      "H19",
+      "H20",
+      "H21",
+      "H22",
+      "H23",
+      "H24",
+      "H25",
+      "H26",
+      "H27",
+      "H28",
+      "H29",
+      "H30",
+      "H31",
+      "H32",
+      "H33",
+      "H34",
+      "H35",
+      "H36",
+      "H37",
+      "H38",
+      "H39",
+      "H40",
+      "H41",
+      "H42",
+      "H43",
+      "H44",
+      "H45",
+      "H46",
+      "H47",
+      "H48",
+      "H49",
+      "H50",
+      "H51",
+      "H52",
+      "H53",
+      "H54",
+      "H55",
+      "H56",
+      "H57",
+      "H58",
+      "H59",
+      "H60",
+      "H61",
+      "H62",
+      "H63",
+      "H64",
+      "H65"
+    ],
+    "reference_frame_number": 0,
+    "candidate_run_id": "reviewed65_00e1a17b05674bba8bc9bc04fdb56bc1",
+    "coverage_kind": "mapped reference image; no plane-calibration hull",
+    "px_per_cm": 1.7980508245001927,
+    "scale_source": "46 cm measured image gap; uniform scale, image-up gravity assumed"
+  },
+  "baseline_video_name": "trial1_gravity_180cm_baseline.mp4",
+  "review_page": "review.html",
+  "reviewed_reference_frame_range": [
+    107,
+    129
+  ],
+  "reviewed_reference_limb_comparisons": 92,
+  "reviewed_reference_disagreements": 6,
+  "reviewed_reference_disagreement_frames": 6,
+  "deployed_automatic_eligible_moves": 0,
+  "geometry_limitations": [
+    "Uniform reference-image scale does not rectify perspective or recover depth.",
+    "Image-up gravity is an assumption; no camera-roll or wall-inclination calibration.",
+    "Eligible support means reached/confident/mapped under this approximation; no calibrated planar coverage claim.",
+    "The saved 107\u2013129 human reference is compared but never copied into or used to optimize the model schedule.",
+    "Automatic movement acceptance remains disabled by the deployment gate; this is an experimental diagnostic."
+  ]
+}

@@ -22,5 +22,10 @@
     "remaining_ik_work": null
   },
   "target_ik_demo": "/Users/ziwei/Desktop/2026 Fall/CIS 5810/Beta_Translator/outputs/trial3/videos/trial3_target_180cm_ik_demo.mp4",
-  "geometry_mode": "calibrated_wall_plane"
+  "geometry_mode": "calibrated_wall_plane",
+  "full_sequence_runs": {
+    "Geometric IK": "outputs/trial3/full_sequence/target_180cm_787124fd4c70/summary.json",
+    "Gravity IK": "outputs/trial3/gravity_sequence/target_180cm_2d99b8e3320c/summary.json",
+    "Support optimized": "outputs/trial3/support_optimized/target_180cm_a9a3f35dffe1/summary.json"
+  }
 }

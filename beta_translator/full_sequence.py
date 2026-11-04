@@ -11,6 +11,7 @@ from scipy.sparse import coo_matrix, diags, kron, vstack
 
 from .inverse_kinematics import LIMBS, make_body, forward_kinematics
 from .motion_ik import batch_joints
+from .contact_geometry import contact_points
 
 
 DEFAULT_SETTINGS = dict(
@@ -109,6 +110,8 @@ def endpoint_jacobian(poses, body):
 def solve_full_sequence(reference, visibility, reference_endpoints, schedule, body,
                         fps, settings=None, progress=None):
     """One sparse optimization over all frames; no move slicing or window stitching."""
+    if 'contact_offsets_cm' in schedule:
+        raise ValueError('Explicit sole/ground schedules require the gravity-sequence solver.')
     config = {**DEFAULT_SETTINGS, **(settings or {})}
     if set(config) != set(DEFAULT_SETTINGS):
         raise ValueError('Unknown full-sequence setting.')
@@ -221,7 +224,7 @@ def diagnose_sequence(result, reference_outside=None):
     q, joints, schedule, config = (result[k] for k in ('poses', 'joints', 'schedule', 'settings'))
     count = len(q)
     known, supported = schedule['known'], schedule['supported']
-    errors = np.linalg.norm(joints[:, :, 2] - schedule['targets'], axis=-1)
+    errors = np.linalg.norm(contact_points(joints[:, :, 2], schedule) - schedule['targets'], axis=-1)
     errors = np.where(known, errors, np.nan)
     max_error = np.max(np.where(known, errors, 0), axis=1)
     length_errors = []
@@ -235,7 +238,8 @@ def diagnose_sequence(result, reference_outside=None):
     span_pairs = [[] for _ in range(count)]
     for a, b in combinations(range(4), 2):
         bound = reaches[a]+reaches[b]+np.linalg.norm(roots[LIMBS[a]].root-roots[LIMBS[b]].root)
-        excess = np.linalg.norm(schedule['targets'][:, a]-schedule['targets'][:, b], axis=1)-bound
+        ankle_targets = schedule['targets'] - schedule.get('contact_offsets_cm', 0.)
+        excess = np.linalg.norm(ankle_targets[:, a]-ankle_targets[:, b], axis=1)-bound
         active = supported[:, a] & supported[:, b]
         span_excess = np.maximum(span_excess, np.where(active, excess, 0))
         for t in np.flatnonzero(active & (excess > 2*config['contact_tolerance_cm'])):
@@ -246,7 +250,7 @@ def diagnose_sequence(result, reference_outside=None):
         'contact_residual': max_error > config['contact_tolerance_cm'],
         'large_contact_residual': max_error > config['large_error_cm'],
         'span_conflict': span_excess > 2*config['contact_tolerance_cm'],
-        'hold_extrapolation': np.any(known & ~supported, axis=1),
+        'hold_extrapolation': np.any(known & ~supported & (schedule.get('contact_type', np.full(known.shape, 'hold')) != 'ground'), axis=1),
         'unknown_contact': np.any(schedule['states'] == 'unknown_or_uncalibrated', axis=1),
         'unresolved_foot_support': np.any(~known[:, 2:], axis=1),
         'wall_contact_unlocated': np.any(schedule['labels'] == 'wall_contact', axis=1),

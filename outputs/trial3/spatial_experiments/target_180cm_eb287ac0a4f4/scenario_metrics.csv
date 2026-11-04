@@ -1,0 +1,4 @@
+case,kind,tilt_deg,depth_prior_cm,frames,converged,projected_gradient,seconds,contact_failed_frames,max_contact_gap_cm,conditional_balance_frames,alternate_foot_normal_balance_frames,conditional_robust_frames,eligible_balance_frames,median_hip_depth_cm,max_segment_error_cm,min_wall_clearance_cm,max_source_guide_rmse_px
+key_0314_tilt15_depth25,keyframe,15.0,25.0,1,False,0.03694277643244999,24.19343966600718,0,0.011576617232979059,1,1,0,1,32.52269171259783,1.4210854715202004e-14,-3.552713678800501e-15,45.46794633526382
+key_0486_tilt15_depth25,keyframe,15.0,25.0,1,True,9.767620570211783e-06,3.879284833034035,1,11.020550619932436,0,0,0,0,3.0,7.105427357601002e-15,-0.007437871327901302,43.90347804849495
+reach_tilt15_depth25,clip,15.0,25.0,36,False,0.4870479270051067,42.796736582997255,0,0.014259999115831522,34,36,9,26,32.35610353121274,4.973799150320701e-14,-7.105427357601002e-15,53.804028143765926

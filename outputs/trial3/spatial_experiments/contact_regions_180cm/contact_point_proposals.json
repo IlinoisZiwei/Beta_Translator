@@ -1,0 +1,291 @@
+[
+  {
+    "episode": 0,
+    "limb": "left_hand",
+    "hold": "H032",
+    "start_frame": 0,
+    "end_frame": 95,
+    "accepted_frames": 80,
+    "point_cm": [
+      -47.76706630310729,
+      -244.20225106589226,
+      0.0
+    ],
+    "used_proxy": true,
+    "center_to_proxy_cm": 12.157933668619863,
+    "review_status": "assistant-derived unreviewed contact proxy; not ground truth",
+    "rule": "Median of near-region source fingertips/toes, projected to the observed mask; no target-body input."
+  },
+  {
+    "episode": 1,
+    "limb": "left_hand",
+    "hold": "H017",
+    "start_frame": 111,
+    "end_frame": 241,
+    "accepted_frames": 130,
+    "point_cm": [
+      -1.2069598454808665,
+      -158.73919464403164,
+      0.0
+    ],
+    "used_proxy": true,
+    "center_to_proxy_cm": 9.54776300732258,
+    "review_status": "assistant-derived unreviewed contact proxy; not ground truth",
+    "rule": "Median of near-region source fingertips/toes, projected to the observed mask; no target-body input."
+  },
+  {
+    "episode": 2,
+    "limb": "left_hand",
+    "hold": "H012",
+    "start_frame": 256,
+    "end_frame": 378,
+    "accepted_frames": 123,
+    "point_cm": [
+      -65.28661656359631,
+      -106.4983164553885,
+      0.0
+    ],
+    "used_proxy": true,
+    "center_to_proxy_cm": 11.859695031614521,
+    "review_status": "assistant-derived unreviewed contact proxy; not ground truth",
+    "rule": "Median of near-region source fingertips/toes, projected to the observed mask; no target-body input."
+  },
+  {
+    "episode": 3,
+    "limb": "left_hand",
+    "hold": "H007",
+    "start_frame": 379,
+    "end_frame": 470,
+    "accepted_frames": 78,
+    "point_cm": [
+      -65.54868372806412,
+      -84.51039154295157,
+      0.0
+    ],
+    "used_proxy": true,
+    "center_to_proxy_cm": 6.682663165966568,
+    "review_status": "assistant-derived unreviewed contact proxy; not ground truth",
+    "rule": "Median of near-region source fingertips/toes, projected to the observed mask; no target-body input."
+  },
+  {
+    "episode": 4,
+    "limb": "left_hand",
+    "hold": "H001",
+    "start_frame": 486,
+    "end_frame": 502,
+    "accepted_frames": 7,
+    "point_cm": [
+      -30.174689207065924,
+      -39.769345046912115,
+      0.0
+    ],
+    "used_proxy": true,
+    "center_to_proxy_cm": 2.60651729979438,
+    "review_status": "assistant-derived unreviewed contact proxy; not ground truth",
+    "rule": "Median of near-region source fingertips/toes, projected to the observed mask; no target-body input."
+  },
+  {
+    "episode": 5,
+    "limb": "right_hand",
+    "hold": "H032",
+    "start_frame": 0,
+    "end_frame": 42,
+    "accepted_frames": 40,
+    "point_cm": [
+      -38.11892177725324,
+      -252.7426067300413,
+      0.0
+    ],
+    "used_proxy": true,
+    "center_to_proxy_cm": 8.170186721218586,
+    "review_status": "assistant-derived unreviewed contact proxy; not ground truth",
+    "rule": "Median of near-region source fingertips/toes, projected to the observed mask; no target-body input."
+  },
+  {
+    "episode": 6,
+    "limb": "right_hand",
+    "hold": "H021",
+    "start_frame": 55,
+    "end_frame": 125,
+    "accepted_frames": 49,
+    "point_cm": [
+      -0.9192257569826564,
+      -201.71597849355587,
+      0.0
+    ],
+    "used_proxy": true,
+    "center_to_proxy_cm": 8.681912799841925,
+    "review_status": "assistant-derived unreviewed contact proxy; not ground truth",
+    "rule": "Median of near-region source fingertips/toes, projected to the observed mask; no target-body input."
+  },
+  {
+    "episode": 7,
+    "limb": "right_hand",
+    "hold": "H017",
+    "start_frame": 126,
+    "end_frame": 303,
+    "accepted_frames": 108,
+    "point_cm": [
+      1.0715695528603195,
+      -154.3377161080258,
+      0.0
+    ],
+    "used_proxy": true,
+    "center_to_proxy_cm": 13.712581309107176,
+    "review_status": "assistant-derived unreviewed contact proxy; not ground truth",
+    "rule": "Median of near-region source fingertips/toes, projected to the observed mask; no target-body input."
+  },
+  {
+    "episode": 8,
+    "limb": "right_hand",
+    "hold": "H007",
+    "start_frame": 324,
+    "end_frame": 354,
+    "accepted_frames": 11,
+    "point_cm": [
+      -54.49902918966487,
+      -98.27069543176694,
+      0.0
+    ],
+    "used_proxy": true,
+    "center_to_proxy_cm": 10.965869353039995,
+    "review_status": "assistant-derived unreviewed contact proxy; not ground truth",
+    "rule": "Median of near-region source fingertips/toes, projected to the observed mask; no target-body input."
+  },
+  {
+    "episode": 9,
+    "limb": "right_hand",
+    "hold": "H012",
+    "start_frame": 355,
+    "end_frame": 408,
+    "accepted_frames": 34,
+    "point_cm": [
+      -58.581370638860946,
+      -109.20535493258474,
+      0.0
+    ],
+    "used_proxy": true,
+    "center_to_proxy_cm": 9.613535933909684,
+    "review_status": "assistant-derived unreviewed contact proxy; not ground truth",
+    "rule": "Median of near-region source fingertips/toes, projected to the observed mask; no target-body input."
+  },
+  {
+    "episode": 10,
+    "limb": "right_hand",
+    "hold": "H001",
+    "start_frame": 428,
+    "end_frame": 502,
+    "accepted_frames": 52,
+    "point_cm": [
+      -25.535218618052976,
+      -34.322749211121696,
+      0.0
+    ],
+    "used_proxy": true,
+    "center_to_proxy_cm": 8.818941568223629,
+    "review_status": "assistant-derived unreviewed contact proxy; not ground truth",
+    "rule": "Median of near-region source fingertips/toes, projected to the observed mask; no target-body input."
+  },
+  {
+    "episode": 11,
+    "limb": "left_foot",
+    "hold": "H053",
+    "start_frame": 0,
+    "end_frame": 92,
+    "accepted_frames": 93,
+    "point_cm": [
+      -43.38076990131438,
+      -386.5581178485003,
+      0.0
+    ],
+    "used_proxy": true,
+    "center_to_proxy_cm": 4.39357151867729,
+    "review_status": "assistant-derived unreviewed contact proxy; not ground truth",
+    "rule": "Median of near-region source fingertips/toes, projected to the observed mask; no target-body input."
+  },
+  {
+    "episode": 12,
+    "limb": "left_foot",
+    "hold": "H045",
+    "start_frame": 147,
+    "end_frame": 263,
+    "accepted_frames": 117,
+    "point_cm": [
+      -12.645346192741648,
+      -326.91706936905325,
+      0.0
+    ],
+    "used_proxy": true,
+    "center_to_proxy_cm": 3.098947355232978,
+    "review_status": "assistant-derived unreviewed contact proxy; not ground truth",
+    "rule": "Median of near-region source fingertips/toes, projected to the observed mask; no target-body input."
+  },
+  {
+    "episode": 13,
+    "limb": "left_foot",
+    "hold": "H032",
+    "start_frame": 288,
+    "end_frame": 502,
+    "accepted_frames": 215,
+    "point_cm": [
+      -52.60797935444938,
+      -239.1448517872045,
+      0.0
+    ],
+    "used_proxy": true,
+    "center_to_proxy_cm": 18.419139014030982,
+    "review_status": "assistant-derived unreviewed contact proxy; not ground truth",
+    "rule": "Median of near-region source fingertips/toes, projected to the observed mask; no target-body input."
+  },
+  {
+    "episode": 14,
+    "limb": "right_foot",
+    "hold": "H050",
+    "start_frame": 30,
+    "end_frame": 191,
+    "accepted_frames": 162,
+    "point_cm": [
+      5.8583030468643456,
+      -358.97686599116264,
+      0.0
+    ],
+    "used_proxy": true,
+    "center_to_proxy_cm": 5.129254630224395,
+    "review_status": "assistant-derived unreviewed contact proxy; not ground truth",
+    "rule": "Median of near-region source fingertips/toes, projected to the observed mask; no target-body input."
+  },
+  {
+    "episode": 15,
+    "limb": "right_foot",
+    "hold": "H054",
+    "start_frame": 231,
+    "end_frame": 366,
+    "accepted_frames": 136,
+    "point_cm": [
+      -44.57106215590566,
+      -281.53866588831403,
+      0.0
+    ],
+    "used_proxy": true,
+    "center_to_proxy_cm": 4.969686335061655,
+    "review_status": "assistant-derived unreviewed contact proxy; not ground truth",
+    "rule": "Median of near-region source fingertips/toes, projected to the observed mask; no target-body input."
+  },
+  {
+    "episode": 16,
+    "limb": "right_foot",
+    "hold": "H021",
+    "start_frame": 388,
+    "end_frame": 502,
+    "accepted_frames": 115,
+    "point_cm": [
+      5.820466686409201,
+      -189.14246764583305,
+      0.0
+    ],
+    "used_proxy": true,
+    "center_to_proxy_cm": 21.88597088187732,
+    "review_status": "assistant-derived unreviewed contact proxy; not ground truth",
+    "rule": "Median of near-region source fingertips/toes, projected to the observed mask; no target-body input."
+  }
+]

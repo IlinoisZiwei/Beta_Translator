@@ -1,0 +1,26 @@
+{
+  "optimizer": {
+    "success": true,
+    "optimality": 3.413180304823712e-08,
+    "nfev": 1,
+    "message": "Technique objective + refreshed IRLS stationarity passed."
+  },
+  "history": [
+    {
+      "round": 1,
+      "inner": {
+        "success": true,
+        "message": "Projected gradient and relative cost tolerances both satisfied.",
+        "nfev": 1,
+        "nit": 0,
+        "cost": 541.7593480709763,
+        "optimality": 3.413180304823712e-08,
+        "relative_cost_change": 0.0,
+        "history": [],
+        "gradient_definition": "infinity norm of projected J.T r / max(1, column L2 norm of J)"
+      },
+      "fresh_gradient": 3.413180304823712e-08,
+      "reweight": 6.859101635226846e-16
+    }
+  ]
+}

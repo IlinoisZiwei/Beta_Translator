@@ -1,0 +1,43 @@
+{
+  "name": "evidence_point",
+  "height_cm": 180.0,
+  "tilt_deg": 15.0,
+  "depth_prior_cm": 25.0,
+  "solver": {
+    "success": false,
+    "message": "Maximum inner iterations reached.",
+    "nfev": 315,
+    "nit": 300,
+    "cost": 1226455.1220088527,
+    "optimality": 11.300127451917497,
+    "relative_cost_change": 2.0261755432178019e-07,
+    "gradient_definition": "infinity norm of projected J.T r / max(1, column L2 norm of J)",
+    "seconds": 195.70977870898787,
+    "earlier_stages": [
+      {
+        "success": false,
+        "message": "Maximum inner iterations reached.",
+        "nfev": 1091,
+        "nit": 800,
+        "cost": 1450244.2841005956,
+        "optimality": 31.089654060706195,
+        "relative_cost_change": 2.6696382728015756e-05,
+        "gradient_definition": "infinity norm of projected J.T r / max(1, column L2 norm of J)"
+      },
+      {
+        "method": "L-BFGS-B",
+        "cost": 1226629.6414683468,
+        "nfev": 977,
+        "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT"
+      }
+    ]
+  },
+  "frame_count": 503,
+  "first_frame": 0,
+  "last_frame": 502,
+  "pose_knot_count": 192,
+  "all_native_frames_in_objective": true,
+  "global_trajectory_solve": true,
+  "offsets": "Rigid unmeasured episode connector from surface to wrist/ankle; no hand/foot articulation or torque limits.",
+  "physical_validation": false
+}

@@ -1,0 +1,605 @@
+frame,index,kind,event_id,group,limbs,status,lower_cm,upper_cm,phase
+0,0,reserve,,eligible,[],no_support,,,1.0
+0,0,reserve,,conditional,"[0, 1, 2, 3]",available,-54.55404665379691,355.62462862446176,1.0
+1,1,reserve,,eligible,[],no_support,,,1.0
+1,1,reserve,,conditional,"[0, 1, 2, 3]",available,-53.50031743458364,357.6790856042488,1.0
+2,2,reserve,,eligible,[],no_support,,,1.0
+2,2,reserve,,conditional,"[0, 1, 2, 3]",available,-53.63308843340834,352.2866867928296,1.0
+3,3,reserve,,eligible,[],no_support,,,1.0
+3,3,reserve,,conditional,"[0, 1, 3]",available,113.15063933549646,302.9918872367723,1.0
+4,4,reserve,,eligible,[],no_support,,,1.0
+4,4,reserve,,conditional,"[0, 1, 3]",available,114.65096028502379,303.9739690465584,1.0
+5,5,reserve,,eligible,[],no_support,,,1.0
+5,5,reserve,,conditional,"[0, 1, 3]",available,115.39964210781051,305.0854612824943,1.0
+6,6,reserve,,eligible,[],no_support,,,1.0
+6,6,reserve,,conditional,"[0, 1, 3]",available,114.90934799684521,303.825240555086,1.0
+7,7,reserve,,eligible,[],no_support,,,1.0
+7,7,reserve,,conditional,"[0, 1, 3]",available,119.3185268845325,309.2050364721807,1.0
+8,8,reserve,,eligible,[],no_support,,,1.0
+8,8,reserve,,conditional,"[0, 1, 3]",available,119.74045947935275,309.8661343031224,1.0
+9,9,reserve,,eligible,[1],infeasible_capacity,,,1.0
+9,9,reserve,,conditional,"[0, 1, 3]",available,119.5552486109224,309.3271940357043,1.0
+10,10,reserve,,eligible,[1],infeasible_capacity,,,1.0
+10,10,reserve,,conditional,"[0, 1, 3]",available,119.34053042081939,309.0328974846615,1.0
+11,11,reserve,,eligible,[1],infeasible_capacity,,,1.0
+11,11,reserve,,conditional,"[0, 1, 3]",available,120.18388480341324,308.9523781633729,1.0
+12,12,reserve,,eligible,[1],infeasible_capacity,,,1.0
+12,12,reserve,,conditional,"[0, 1, 3]",available,121.36850310075314,309.7299758470416,1.0
+13,13,reserve,,eligible,"[0, 1]",sensitivity_interval_empty,224.72810937955404,224.72810937955404,1.0
+14,14,reserve,,eligible,[1],infeasible_capacity,,,1.0
+14,14,reserve,,conditional,"[0, 1, 3]",available,122.25295803395397,309.96236616865065,1.0
+15,15,reserve,,eligible,[1],infeasible_capacity,,,1.0
+15,15,reserve,,conditional,"[0, 1, 3]",available,122.44613868718105,310.21911392100674,1.0
+16,16,reserve,,eligible,"[0, 1]",sensitivity_interval_empty,224.72810937955404,224.72810937955404,1.0
+17,17,reserve,,eligible,"[0, 1]",sensitivity_interval_empty,224.72810937955404,224.72810937955404,1.0
+18,18,reserve,,eligible,"[0, 1]",sensitivity_interval_empty,224.72810937955404,224.72810937955404,1.0
+19,19,reserve,,eligible,"[0, 1]",sensitivity_interval_empty,224.72810937955404,224.72810937955404,1.0
+20,20,reserve,,eligible,"[0, 1]",sensitivity_interval_empty,224.72810937955404,224.72810937955404,1.0
+21,21,reserve,,eligible,"[0, 1]",sensitivity_interval_empty,224.72810937955404,224.72810937955404,1.0
+22,22,reserve,,eligible,"[0, 1]",sensitivity_interval_empty,224.72810937955404,224.72810937955404,1.0
+23,23,reserve,,eligible,"[0, 1]",sensitivity_interval_empty,224.72810937955404,224.72810937955404,1.0
+24,24,reserve,,eligible,"[0, 1]",sensitivity_interval_empty,224.72810937955404,224.72810937955404,1.0
+25,25,reserve,,eligible,"[0, 1]",sensitivity_interval_empty,224.72810937955404,224.72810937955404,1.0
+26,26,reserve,,eligible,"[0, 1]",sensitivity_interval_empty,224.72810937955404,224.72810937955404,1.0
+27,27,reserve,,eligible,"[0, 1]",sensitivity_interval_empty,224.72810937955404,224.72810937955404,1.0
+28,28,reserve,,eligible,"[0, 1]",sensitivity_interval_empty,224.72810937955404,224.72810937955404,1.0
+29,29,reserve,,eligible,"[0, 1]",sensitivity_interval_empty,224.72810937955404,224.72810937955404,1.0
+30,30,reserve,,eligible,"[0, 1]",sensitivity_interval_empty,224.72810937955404,224.72810937955404,1.0
+31,31,reserve,,eligible,"[0, 1]",sensitivity_interval_empty,224.72810937955404,224.72810937955404,1.0
+32,32,reserve,,eligible,"[0, 1]",sensitivity_interval_empty,224.72810937955404,224.72810937955404,1.0
+33,33,reserve,,eligible,"[0, 1]",sensitivity_interval_empty,224.72810937955404,224.72810937955404,1.0
+34,34,reserve,,eligible,"[0, 1]",sensitivity_interval_empty,224.72810937955404,224.72810937955404,1.0
+35,35,reserve,,eligible,"[0, 1]",sensitivity_interval_empty,224.72810937955404,224.72810937955404,1.0
+36,36,reserve,,eligible,"[0, 1]",sensitivity_interval_empty,224.72810937955404,224.72810937955404,1.0
+37,37,reserve,,eligible,"[0, 1]",sensitivity_interval_empty,224.72810937955404,224.72810937955404,1.0
+38,38,reserve,,eligible,"[0, 1]",sensitivity_interval_empty,224.72810937955404,224.72810937955404,1.0
+39,39,reserve,,eligible,"[0, 1]",sensitivity_interval_empty,224.72810937955404,224.72810937955404,1.0
+40,40,reserve,,eligible,"[0, 1]",sensitivity_interval_empty,224.72810937955404,224.72810937955404,1.0
+41,41,reserve,,eligible,"[0, 1]",sensitivity_interval_empty,224.72810937955404,224.72810937955404,1.0
+42,42,reserve,,eligible,"[0, 1]",sensitivity_interval_empty,224.72810937955404,224.72810937955404,1.0
+43,43,reserve,,eligible,"[0, 1]",sensitivity_interval_empty,224.72810937955404,224.72810937955404,1.0
+44,44,reserve,,eligible,"[0, 1]",sensitivity_interval_empty,224.72810937955404,224.72810937955404,1.0
+45,45,reserve,,eligible,"[0, 1]",sensitivity_interval_empty,224.72810937955404,224.72810937955404,1.0
+46,46,reserve,,eligible,"[0, 1]",sensitivity_interval_empty,224.72810937955404,224.72810937955404,1.0
+47,47,reserve,,eligible,[1],infeasible_capacity,,,1.0
+47,47,reserve,,conditional,"[0, 1, 2]",available,123.54582560470723,293.6807470330652,1.0
+48,48,reserve,,eligible,"[0, 1]",sensitivity_interval_empty,224.72810937955404,224.72810937955404,1.0
+49,49,reserve,,eligible,"[0, 1]",sensitivity_interval_empty,224.72810937955404,224.72810937955404,1.0
+50,50,reserve,,eligible,"[0, 1]",sensitivity_interval_empty,224.72810937955404,224.72810937955404,1.0
+51,51,reserve,,eligible,"[0, 1]",sensitivity_interval_empty,224.72810937955404,224.72810937955404,1.0
+52,52,reserve,,eligible,"[0, 1]",sensitivity_interval_empty,224.72810937955404,224.72810937955404,1.0
+53,53,reserve,,eligible,"[0, 1, 3]",available,173.60702708828202,312.6737038847568,1.0
+54,54,reserve,,eligible,"[1, 3]",available,173.60702708828208,312.6737038847568,1.0
+55,55,reserve,,eligible,"[0, 1, 3]",available,173.60702708828202,312.6737038847568,1.0
+56,56,reserve,,eligible,"[1, 3]",available,173.60702708828208,312.6737038847568,1.0
+57,57,reserve,,eligible,"[1, 3]",available,173.60702708828208,312.6737038847568,1.0
+58,58,reserve,,eligible,"[1, 3]",available,173.60702708828208,312.6737038847568,1.0
+59,59,reserve,,eligible,"[1, 3]",available,173.60702708828208,312.6737038847568,1.0
+60,60,reserve,,eligible,"[0, 1, 3]",available,173.60702708828202,312.6737038847568,1.0
+61,61,reserve,,eligible,"[0, 1, 3]",available,173.60702708828202,312.6737038847568,1.0
+62,62,reserve,,eligible,"[0, 1, 3]",available,173.60702708828202,312.6737038847568,1.0
+63,63,reserve,,eligible,"[0, 1, 3]",available,173.60702708828202,312.6737038847568,1.0
+64,64,reserve,,eligible,"[0, 1, 3]",available,173.60702708828202,312.6737038847568,1.0
+65,65,reserve,,eligible,"[0, 1, 3]",available,173.60702708828202,312.6737038847568,1.0
+66,66,reserve,,eligible,"[0, 1, 3]",available,173.60702708828202,312.6737038847568,1.0
+67,67,reserve,,eligible,"[0, 1, 3]",available,173.60702708828202,312.6737038847568,1.0
+68,68,reserve,,eligible,"[0, 1, 3]",available,173.60702708828202,312.6737038847568,1.0
+69,69,reserve,,eligible,"[0, 1, 3]",available,173.60702708828202,312.6737038847568,1.0
+70,70,reserve,,eligible,"[0, 1, 3]",available,173.60702708828202,312.6737038847568,1.0
+71,71,reserve,,eligible,"[0, 1, 3]",available,173.60702708828202,312.6737038847568,1.0
+72,72,reserve,,eligible,"[0, 1, 3]",available,173.60702708828202,312.6737038847568,1.0
+73,73,reserve,,eligible,"[0, 1, 3]",available,173.60702708828202,312.6737038847568,1.0
+74,74,reserve,,eligible,"[0, 3]",available,173.60702708828208,312.6737038847568,1.0
+75,75,reserve,,eligible,"[0, 3]",available,173.60702708828208,312.6737038847568,1.0
+76,76,reserve,,eligible,"[0, 3]",available,173.60702708828208,312.6737038847568,1.0
+77,77,reserve,,eligible,"[0, 3]",available,173.60702708828208,312.6737038847568,1.0
+78,78,reserve,,eligible,"[0, 3]",available,173.60702708828208,312.6737038847568,1.0
+79,79,reserve,,eligible,"[0, 3]",available,173.60702708828208,312.6737038847568,1.0
+80,80,reserve,,eligible,"[0, 3]",available,173.60702708828208,312.6737038847568,1.0
+81,81,reserve,,eligible,"[0, 3]",available,173.60702708828208,312.6737038847568,1.0
+82,82,reserve,,eligible,"[0, 3]",available,173.60702708828208,312.6737038847568,1.0
+83,83,reserve,,eligible,"[0, 3]",available,173.60702708828208,312.6737038847568,1.0
+84,84,reserve,,eligible,"[0, 3]",available,173.60702708828208,312.6737038847568,1.0
+85,85,reserve,,eligible,"[0, 3]",available,173.60702708828208,312.6737038847568,1.0
+86,86,reserve,,eligible,"[0, 3]",available,173.60702708828208,312.6737038847568,1.0
+87,87,reserve,,eligible,"[0, 2, 3]",available,159.1084037330435,325.4481072020925,1.0
+88,88,reserve,,eligible,"[0, 2, 3]",available,159.1084037330435,325.4481072020925,1.0
+89,89,reserve,,eligible,"[0, 2, 3]",available,159.1084037330435,325.4481072020925,1.0
+90,90,reserve,,eligible,"[0, 2, 3]",available,159.1084037330435,325.4481072020925,1.0
+91,91,reserve,,eligible,"[0, 2, 3]",available,159.1084037330435,325.4481072020925,1.0
+92,92,reserve,,eligible,"[0, 2, 3]",available,159.1084037330435,325.4481072020925,1.0
+93,93,reserve,,eligible,"[0, 2, 3]",available,159.1084037330435,325.4481072020925,1.0
+94,94,reserve,,eligible,"[0, 2, 3]",available,159.1084037330435,325.4481072020925,1.0
+95,95,reserve,,eligible,"[0, 2, 3]",available,159.1084037330435,325.4481072020925,1.0
+96,96,reserve,,eligible,"[0, 2, 3]",available,159.1084037330435,325.4481072020925,1.0
+97,97,reserve,,eligible,"[0, 2, 3]",available,159.1084037330435,325.4481072020925,1.0
+98,98,reserve,,eligible,"[0, 2, 3]",available,159.1084037330435,325.4481072020925,1.0
+99,99,reserve,,eligible,"[0, 2, 3]",available,159.1084037330435,325.4481072020925,1.0
+100,100,reserve,,eligible,"[0, 2, 3]",available,159.1084037330435,325.4481072020925,1.0
+101,101,reserve,,eligible,"[0, 2, 3]",available,159.1084037330435,325.4481072020925,1.0
+102,102,reserve,,eligible,"[0, 2, 3]",available,159.1084037330435,325.4481072020925,1.0
+103,103,reserve,,eligible,"[0, 2, 3]",available,159.1084037330435,325.4481072020925,1.0
+104,104,reserve,,eligible,"[0, 2, 3]",available,159.1084037330435,325.4481072020925,1.0
+105,105,reserve,,eligible,"[0, 1, 2, 3]",available,42.15476423401248,413.6066798105287,1.0
+106,106,reserve,,eligible,"[0, 1, 2, 3]",available,42.15476423401248,413.6066798105287,1.0
+107,107,reserve,,eligible,"[0, 1, 2, 3]",available,42.15476423401248,413.6066798105287,1.0
+108,108,reserve,,eligible,"[0, 1, 2, 3]",available,42.15476423401248,413.6066798105287,1.0
+109,109,reserve,,eligible,"[0, 1, 2, 3]",available,42.15476423401248,413.6066798105287,1.0
+110,110,reserve,,eligible,"[0, 1, 2, 3]",available,42.15476423401248,413.6066798105287,1.0
+111,111,reserve,,eligible,"[0, 1, 2, 3]",available,42.15476423401248,413.6066798105287,1.0
+112,112,reserve,,eligible,"[1, 2, 3]",available,85.89574855631736,367.24752555466904,1.0
+113,113,reserve,,eligible,"[1, 2, 3]",available,85.89574855631736,367.24752555466904,1.0
+114,114,reserve,,eligible,"[1, 2, 3]",available,85.89574855631736,367.24752555466904,1.0
+115,115,reserve,,eligible,"[1, 2, 3]",available,85.89574855631736,367.24752555466904,1.0
+116,116,reserve,,eligible,"[1, 2, 3]",available,85.89574855631736,367.24752555466904,1.0
+117,117,reserve,,eligible,"[1, 2, 3]",available,85.89574855631736,367.24752555466904,1.0
+118,118,reserve,,eligible,"[1, 2, 3]",available,85.89574855631736,367.24752555466904,1.0
+119,119,reserve,,eligible,"[1, 2, 3]",available,85.89574855631736,367.24752555466904,1.0
+120,120,reserve,,eligible,"[1, 2, 3]",available,85.89574855631736,367.24752555466904,1.0
+121,121,reserve,,eligible,"[1, 2, 3]",available,85.89574855631736,367.24752555466904,1.0
+122,122,reserve,,eligible,"[1, 2, 3]",available,85.89574855631736,367.24752555466904,1.0
+123,123,reserve,,eligible,"[1, 2, 3]",available,85.89574855631736,367.24752555466904,1.0
+124,124,reserve,,eligible,"[1, 2, 3]",available,85.89574855631736,367.24752555466904,1.0
+125,125,reserve,,eligible,"[1, 2, 3]",available,85.89574855631736,367.24752555466904,1.0
+126,126,reserve,,eligible,"[1, 2, 3]",available,85.89574855631736,367.24752555466904,1.0
+127,127,reserve,,eligible,"[1, 2, 3]",available,85.89574855631736,367.24752555466904,1.0
+128,128,reserve,,eligible,"[1, 2, 3]",available,85.89574855631736,367.24752555466904,1.0
+129,129,reserve,,eligible,"[1, 2, 3]",available,85.89574855631736,367.24752555466904,1.0
+130,130,reserve,,eligible,"[1, 2, 3]",available,85.89574855631736,367.24752555466904,1.0
+131,131,reserve,,eligible,"[1, 2, 3]",available,85.89574855631736,367.24752555466904,1.0
+132,132,reserve,,eligible,"[1, 2, 3]",available,85.89574855631736,367.24752555466904,1.0
+133,133,reserve,,eligible,"[1, 2, 3]",available,85.89574855631736,367.24752555466904,1.0
+134,134,reserve,,eligible,"[1, 2, 3]",available,85.89574855631736,367.24752555466904,1.0
+135,135,reserve,,eligible,"[1, 2, 3]",available,85.89574855631736,367.24752555466904,1.0
+136,136,reserve,,eligible,"[1, 2, 3]",available,85.89574855631736,367.24752555466904,1.0
+137,137,reserve,,eligible,"[1, 2, 3]",available,85.89574855631736,367.24752555466904,1.0
+138,138,reserve,,eligible,"[0, 1, 2, 3]",available,-3.4912728356353226,441.1302674355636,1.0
+139,139,reserve,,eligible,"[0, 1, 2, 3]",available,-3.4912728356353226,441.1302674355636,1.0
+140,140,reserve,,eligible,"[0, 1, 2, 3]",available,-3.4912728356353226,441.1302674355636,1.0
+141,141,reserve,,eligible,"[0, 1, 2, 3]",available,-3.4912728356353226,441.1302674355636,1.0
+142,142,reserve,,eligible,"[0, 1, 2, 3]",available,-3.4912728356353226,441.1302674355636,1.0
+143,143,reserve,,eligible,"[0, 1, 2, 3]",available,-3.4912728356353226,441.1302674355636,1.0
+144,144,reserve,,eligible,"[0, 1, 2, 3]",available,-3.4912728356353226,441.1302674355636,1.0
+145,145,reserve,,eligible,"[0, 1, 2, 3]",available,-3.4912728356353226,441.1302674355636,1.0
+146,146,reserve,,eligible,"[0, 1, 2, 3]",available,-3.4912728356353226,441.1302674355636,1.0
+147,147,reserve,,eligible,"[0, 1, 2, 3]",available,-3.4912728356353226,441.1302674355636,1.0
+148,148,reserve,,eligible,"[0, 1, 2, 3]",available,-3.4912728356353226,441.1302674355636,1.0
+149,149,reserve,,eligible,"[0, 1, 2, 3]",available,-3.4912728356353226,441.1302674355636,1.0
+150,150,reserve,,eligible,"[0, 1, 2, 3]",available,-3.4912728356353226,441.1302674355636,1.0
+151,151,reserve,,eligible,"[0, 1, 2, 3]",available,-3.4912728356353226,441.1302674355636,1.0
+152,152,reserve,,eligible,"[0, 1, 2]",available,108.59719749490372,345.3449509371071,1.0
+153,153,reserve,,eligible,"[0, 1, 2]",available,108.59719749490372,345.3449509371071,1.0
+154,154,reserve,,eligible,"[0, 1, 2]",available,108.59719749490372,345.3449509371071,1.0
+155,155,reserve,,eligible,"[0, 1, 2]",available,108.59719749490372,345.3449509371071,1.0
+156,156,reserve,,eligible,"[0, 1, 2]",available,108.59719749490372,345.3449509371071,1.0
+157,157,reserve,,eligible,"[0, 1, 2]",available,108.59719749490372,345.3449509371071,1.0
+158,158,reserve,,eligible,"[0, 1, 2]",available,108.59719749490372,345.3449509371071,1.0
+159,159,reserve,,eligible,"[0, 1, 2]",available,108.59719749490372,345.3449509371071,1.0
+160,160,reserve,,eligible,"[0, 1, 2]",available,108.59719749490372,345.3449509371071,1.0
+161,161,reserve,,eligible,"[0, 1, 2]",available,108.59719749490372,345.3449509371071,1.0
+162,162,reserve,,eligible,"[0, 1, 2]",available,108.59719749490372,345.3449509371071,1.0
+163,163,reserve,,eligible,"[0, 1, 2]",available,108.59719749490372,345.3449509371071,1.0
+164,164,reserve,,eligible,"[0, 1, 2]",available,108.59719749490372,345.3449509371071,1.0
+165,165,reserve,,eligible,"[0, 1, 2]",available,108.59719749490372,345.3449509371071,1.0
+166,166,reserve,,eligible,"[0, 1, 2]",available,108.59719749490372,345.3449509371071,1.0
+167,167,reserve,,eligible,"[0, 1, 2]",available,108.59719749490372,345.3449509371071,1.0
+168,168,reserve,,eligible,"[0, 1, 2]",available,108.59719749490372,345.3449509371071,1.0
+169,169,reserve,,eligible,"[0, 1, 2]",available,108.59719749490372,345.3449509371071,1.0
+170,170,reserve,,eligible,"[0, 1, 2]",available,108.59719749490372,345.3449509371071,1.0
+171,171,reserve,,eligible,"[0, 1, 2]",available,108.59719749490372,345.3449509371071,1.0
+172,172,reserve,,eligible,"[0, 1, 2]",available,108.59719749490372,345.3449509371071,1.0
+173,173,reserve,,eligible,"[0, 1, 2]",available,108.59719749490372,345.3449509371071,1.0
+174,174,reserve,,eligible,"[0, 1, 2, 3]",available,37.69640136605094,426.8178282530515,1.0
+175,175,reserve,,eligible,"[0, 1, 2, 3]",available,37.69640136605094,426.8178282530515,1.0
+176,176,reserve,,eligible,"[0, 1, 2, 3]",available,37.69640136605094,426.8178282530515,1.0
+177,177,reserve,,eligible,"[0, 1, 2, 3]",available,37.69640136605094,426.8178282530515,1.0
+178,178,reserve,,eligible,"[0, 1, 2, 3]",available,37.69640136605094,426.8178282530515,1.0
+179,179,reserve,,eligible,"[0, 1, 3]",available,150.42015473530557,369.9804929904547,1.0
+180,180,reserve,,eligible,"[0, 1, 3]",available,150.42015473530557,369.9804929904547,1.0
+181,181,reserve,,eligible,"[0, 1, 3]",available,150.42015473530557,369.9804929904547,1.0
+182,182,reserve,,eligible,"[0, 1, 3]",available,150.42015473530557,369.9804929904547,1.0
+183,183,reserve,,eligible,"[0, 1, 3]",available,150.42015473530557,369.9804929904547,1.0
+184,184,reserve,,eligible,"[0, 1, 3]",available,150.42015473530557,369.9804929904547,1.0
+185,185,reserve,,eligible,"[0, 1, 3]",available,150.42015473530557,369.9804929904547,1.0
+186,186,reserve,,eligible,"[0, 1, 3]",available,150.42015473530557,369.9804929904547,1.0
+187,187,reserve,,eligible,"[0, 1, 3]",available,150.42015473530557,369.9804929904547,1.0
+188,188,reserve,,eligible,"[0, 1, 3]",available,150.42015473530557,369.9804929904547,1.0
+189,189,reserve,,eligible,"[0, 1, 3]",available,150.42015473530557,369.9804929904547,1.0
+190,190,reserve,,eligible,"[0, 1, 3]",available,150.42015473530557,369.9804929904547,1.0
+191,191,reserve,,eligible,"[0, 1, 3]",available,150.42015473530557,369.9804929904547,1.0
+192,192,reserve,,eligible,"[0, 1, 3]",available,150.42015473530557,369.9804929904547,1.0
+193,193,reserve,,eligible,"[0, 1, 3]",available,150.42015473530557,369.9804929904547,1.0
+194,194,reserve,,eligible,"[0, 1, 3]",available,150.42015473530557,369.9804929904547,1.0
+195,195,reserve,,eligible,"[0, 1, 3]",available,150.42015473530557,369.9804929904547,1.0
+196,196,reserve,,eligible,"[0, 1, 3]",available,150.42015473530557,369.9804929904547,1.0
+197,197,reserve,,eligible,"[0, 1, 3]",available,150.42015473530557,369.9804929904547,1.0
+198,198,reserve,,eligible,"[0, 1, 3]",available,150.42015473530557,369.9804929904547,1.0
+199,199,reserve,,eligible,"[0, 1, 3]",available,150.42015473530557,369.9804929904547,1.0
+200,200,reserve,,eligible,"[0, 1, 3]",available,150.42015473530557,369.9804929904547,1.0
+201,201,reserve,,eligible,"[0, 1, 3]",available,150.42015473530557,369.9804929904547,1.0
+202,202,reserve,,eligible,"[0, 1, 3]",available,150.42015473530557,369.9804929904547,1.0
+203,203,reserve,,eligible,"[0, 1, 3]",available,150.42015473530557,369.9804929904547,1.0
+204,204,reserve,,eligible,"[0, 1, 3]",available,150.42015473530557,369.9804929904547,1.0
+205,205,reserve,,eligible,"[0, 1, 3]",available,150.42015473530557,369.9804929904547,1.0
+206,206,reserve,,eligible,"[0, 1, 3]",available,150.42015473530557,369.9804929904547,1.0
+207,207,reserve,,eligible,"[0, 1, 3]",available,150.42015473530557,369.9804929904547,1.0
+208,208,reserve,,eligible,"[0, 3]",available,164.30548101260896,354.57336375158707,1.0
+209,209,reserve,,eligible,"[0, 3]",available,164.30548101260896,354.57336375158707,1.0
+210,210,reserve,,eligible,"[0, 2, 3]",available,134.94982548292626,369.3232705881073,1.0
+211,211,reserve,,eligible,"[0, 2, 3]",available,134.94982548292626,369.3232705881073,1.0
+212,212,reserve,,eligible,"[0, 2, 3]",available,134.94982548292626,369.3232705881073,1.0
+213,213,reserve,,eligible,"[0, 2, 3]",available,134.94982548292626,369.3232705881073,1.0
+214,214,reserve,,eligible,"[0, 2, 3]",available,134.94982548292626,369.3232705881073,1.0
+215,215,reserve,,eligible,"[0, 2, 3]",available,134.94982548292626,369.3232705881073,1.0
+216,216,reserve,,eligible,"[0, 2, 3]",available,134.94982548292626,369.3232705881073,1.0
+217,217,reserve,,eligible,"[0, 2, 3]",available,134.94982548292626,369.3232705881073,1.0
+218,218,reserve,,eligible,"[0, 2, 3]",available,134.94982548292626,369.3232705881073,1.0
+219,219,reserve,,eligible,"[0, 2, 3]",available,134.94982548292626,369.3232705881073,1.0
+220,220,reserve,,eligible,"[0, 2, 3]",available,134.94982548292626,369.3232705881073,1.0
+221,221,reserve,,eligible,"[0, 2, 3]",available,134.94982548292626,369.3232705881073,1.0
+222,222,reserve,,eligible,"[0, 2, 3]",available,134.94982548292626,369.3232705881073,1.0
+223,223,reserve,,eligible,"[0, 2, 3]",available,134.94982548292626,369.3232705881073,1.0
+224,224,reserve,,eligible,"[0, 2, 3]",available,134.94982548292626,369.3232705881073,1.0
+225,225,reserve,,eligible,"[0, 2, 3]",available,134.94982548292626,369.3232705881073,1.0
+226,226,reserve,,eligible,"[0, 2, 3]",available,134.94982548292626,369.3232705881073,1.0
+227,227,reserve,,eligible,"[0, 2, 3]",available,134.94982548292626,369.3232705881073,1.0
+228,228,reserve,,eligible,"[0, 2, 3]",available,134.94982548292626,369.3232705881073,1.0
+229,229,reserve,,eligible,"[0, 1, 2, 3]",available,58.08702212084081,427.3849322745478,1.0
+230,230,reserve,,eligible,"[0, 1, 2, 3]",available,58.08702212084081,427.3849322745478,1.0
+231,231,reserve,,eligible,"[0, 1, 2, 3]",available,58.08702212084081,427.3849322745478,1.0
+232,232,reserve,,eligible,"[0, 1, 2, 3]",available,58.08702212084081,427.3849322745478,1.0
+233,233,reserve,,eligible,"[1, 2, 3]",available,112.68509065573275,380.22956394769176,1.0
+234,234,reserve,,eligible,"[1, 2, 3]",available,112.68509065573275,380.22956394769176,1.0
+235,235,reserve,,eligible,"[1, 2, 3]",available,112.68509065573275,380.22956394769176,1.0
+236,236,reserve,,eligible,"[1, 2, 3]",available,112.68509065573275,380.22956394769176,1.0
+237,237,reserve,,eligible,"[1, 2, 3]",available,112.68509065573275,380.22956394769176,1.0
+238,238,reserve,,eligible,"[0, 1, 2, 3]",available,58.08702212084081,427.3849322745478,1.0
+239,239,reserve,,eligible,"[1, 2, 3]",available,112.68509065573275,380.22956394769176,1.0
+240,240,reserve,,eligible,"[1, 2, 3]",available,112.68509065573275,380.22956394769176,1.0
+241,241,reserve,,eligible,"[1, 2, 3]",available,112.68509065573275,380.22956394769176,1.0
+242,242,reserve,,eligible,"[1, 2, 3]",available,112.68509065573275,380.22956394769176,1.0
+243,243,reserve,,eligible,"[1, 2, 3]",available,112.68509065573275,380.22956394769176,1.0
+244,244,reserve,,eligible,"[1, 2, 3]",available,112.68509065573275,380.22956394769176,1.0
+245,245,reserve,,eligible,"[0, 1, 2, 3]",available,52.33569550980699,423.09856642583406,1.0
+246,246,reserve,,eligible,"[0, 1, 2, 3]",available,52.33569550980699,423.09856642583406,1.0
+247,247,reserve,,eligible,"[0, 1, 2, 3]",available,52.33569550980699,423.09856642583406,1.0
+248,248,reserve,,eligible,"[0, 1, 2, 3]",available,52.33569550980699,423.09856642583406,1.0
+249,249,reserve,,eligible,"[0, 1, 2, 3]",available,52.33569550980699,423.09856642583406,1.0
+250,250,reserve,,eligible,"[0, 1, 2, 3]",available,52.33569550980699,423.09856642583406,1.0
+251,251,reserve,,eligible,"[0, 1, 2, 3]",available,52.33569550980699,423.09856642583406,1.0
+252,252,reserve,,eligible,"[0, 1, 2, 3]",available,52.33569550980699,423.09856642583406,1.0
+253,253,reserve,,eligible,"[0, 1, 2, 3]",available,52.33569550980699,423.09856642583406,1.0
+254,254,reserve,,eligible,"[0, 1, 2, 3]",available,52.33569550980699,423.09856642583406,1.0
+255,255,reserve,,eligible,"[0, 1, 2, 3]",available,52.33569550980699,423.09856642583406,1.0
+256,256,reserve,,eligible,"[0, 2, 3]",available,112.68509065573275,380.22956394769176,1.0
+257,257,reserve,,eligible,"[0, 2, 3]",available,112.68509065573275,380.22956394769176,1.0
+258,258,reserve,,eligible,"[0, 2, 3]",available,112.68509065573275,380.22956394769176,1.0
+259,259,reserve,,eligible,"[0, 2, 3]",available,112.68509065573275,380.22956394769176,1.0
+260,260,reserve,,eligible,"[0, 2, 3]",available,112.68509065573275,380.22956394769176,1.0
+261,261,reserve,,eligible,"[2, 3]",available,235.12325052941125,261.09338128950014,1.0
+262,262,reserve,,eligible,"[2, 3]",available,235.12325052941125,261.09338128950014,1.0
+263,263,reserve,,eligible,"[2, 3]",available,235.12325052941125,261.09338128950014,1.0
+264,264,reserve,,eligible,"[2, 3]",available,235.12325052941125,261.09338128950014,1.0
+265,265,reserve,,eligible,[2],infeasible_capacity,,,1.0
+265,265,reserve,,conditional,"[0, 1, 2, 3]",available,52.33569550980699,423.09856642583406,1.0
+266,266,reserve,,eligible,[2],infeasible_capacity,,,1.0
+266,266,reserve,,conditional,"[0, 1, 2]",available,160.10787725648615,316.83959764562144,1.0
+267,267,reserve,,eligible,[2],infeasible_capacity,,,1.0
+267,267,reserve,,conditional,"[0, 1, 2]",available,160.10787725648615,316.83959764562144,1.0
+268,268,reserve,,eligible,"[0, 2]",available,160.10787725648615,316.83959764562144,1.0
+269,269,reserve,,eligible,"[0, 2]",available,160.10787725648615,316.83959764562144,1.0
+270,270,reserve,,eligible,"[0, 2]",available,160.10787725648615,316.83959764562144,1.0
+271,271,reserve,,eligible,"[0, 2]",available,160.10787725648615,316.83959764562144,1.0
+272,272,reserve,,eligible,"[0, 2]",available,160.10787725648615,316.83959764562144,1.0
+273,273,reserve,,eligible,"[0, 2]",available,160.10787725648615,316.83959764562144,1.0
+274,274,reserve,,eligible,"[0, 2]",available,160.10787725648615,316.83959764562144,1.0
+275,275,reserve,,eligible,[2],infeasible_capacity,,,1.0
+275,275,reserve,,conditional,"[0, 1, 2]",available,160.10787725648615,316.83959764562144,1.0
+276,276,reserve,,eligible,[2],infeasible_capacity,,,1.0
+276,276,reserve,,conditional,"[0, 1, 2]",available,160.10787725648615,316.83959764562144,1.0
+277,277,reserve,,eligible,[2],infeasible_capacity,,,1.0
+277,277,reserve,,conditional,"[0, 1, 2]",available,160.10787725648615,316.83959764562144,1.0
+278,278,reserve,,eligible,[2],infeasible_capacity,,,1.0
+278,278,reserve,,conditional,"[0, 1, 2]",available,160.10787725648615,316.83959764562144,1.0
+279,279,reserve,,eligible,[2],infeasible_capacity,,,1.0
+279,279,reserve,,conditional,"[0, 1, 2]",available,160.10787725648615,316.83959764562144,1.0
+280,280,reserve,,eligible,[2],infeasible_capacity,,,1.0
+280,280,reserve,,conditional,"[0, 1, 2]",available,160.10787725648615,316.83959764562144,1.0
+281,281,reserve,,eligible,[2],infeasible_capacity,,,1.0
+281,281,reserve,,conditional,"[0, 1, 2]",available,160.10787725648615,316.83959764562144,1.0
+282,282,reserve,,eligible,[2],infeasible_capacity,,,1.0
+282,282,reserve,,conditional,"[0, 1, 2]",available,160.10787725648615,316.83959764562144,1.0
+283,283,reserve,,eligible,[2],infeasible_capacity,,,1.0
+283,283,reserve,,conditional,"[0, 1, 2]",available,148.89325927590892,328.02941686242076,1.0
+284,284,reserve,,eligible,[2],infeasible_capacity,,,1.0
+284,284,reserve,,conditional,"[0, 1, 2]",available,148.89325927590892,328.02941686242076,1.0
+285,285,reserve,,eligible,[2],infeasible_capacity,,,1.0
+285,285,reserve,,conditional,"[0, 1, 2]",available,148.89325927590892,328.02941686242076,1.0
+286,286,reserve,,eligible,[2],infeasible_capacity,,,1.0
+286,286,reserve,,conditional,"[0, 1, 2, 3]",available,100.3220985074133,419.88384159843474,1.0
+287,287,reserve,,eligible,[2],infeasible_capacity,,,1.0
+287,287,reserve,,conditional,"[0, 1, 2, 3]",available,100.3220985074133,419.88384159843474,1.0
+288,288,reserve,,eligible,"[2, 3]",available,242.1233418752813,279.4425054737135,1.0
+289,289,reserve,,eligible,"[1, 2, 3]",available,136.91372761198963,376.85364715573604,1.0
+290,290,reserve,,eligible,"[1, 2, 3]",available,136.91372761198963,376.85364715573604,1.0
+291,291,reserve,,eligible,"[1, 2, 3]",available,136.91372761198963,376.85364715573604,1.0
+292,292,reserve,,eligible,"[1, 2, 3]",available,136.91372761198963,376.85364715573604,1.0
+293,293,reserve,,eligible,"[1, 2, 3]",available,136.91372761198963,376.85364715573604,1.0
+294,294,reserve,,eligible,"[1, 2, 3]",available,136.91372761198963,376.85364715573604,1.0
+295,295,reserve,,eligible,"[1, 2, 3]",available,136.91372761198963,376.85364715573604,1.0
+296,296,reserve,,eligible,"[1, 2, 3]",available,136.91372761198963,376.85364715573604,1.0
+297,297,reserve,,eligible,"[1, 2, 3]",available,136.91372761198963,376.85364715573604,1.0
+298,298,reserve,,eligible,"[1, 2, 3]",available,136.91372761198963,376.85364715573604,1.0
+299,299,reserve,,eligible,"[2, 3]",available,242.1233418752813,279.4425054737135,1.0
+300,300,reserve,,eligible,"[1, 2, 3]",available,136.91372761198963,376.85364715573604,1.0
+301,301,reserve,,eligible,"[1, 2, 3]",available,136.91372761198963,376.85364715573604,1.0
+302,302,reserve,,eligible,"[1, 2, 3]",available,136.91372761198963,376.85364715573604,1.0
+303,303,reserve,,eligible,"[1, 2, 3]",available,136.91372761198963,376.85364715573604,1.0
+304,304,reserve,,eligible,"[2, 3]",available,242.1233418752813,279.4425054737135,1.0
+305,305,reserve,,eligible,"[2, 3]",available,242.1233418752813,279.4425054737135,1.0
+306,306,reserve,,eligible,"[2, 3]",available,242.1233418752813,279.4425054737135,1.0
+307,307,reserve,,eligible,"[2, 3]",available,242.1233418752813,279.4425054737135,1.0
+308,308,reserve,,eligible,"[2, 3]",available,242.1233418752813,279.4425054737135,1.0
+309,309,reserve,,eligible,"[2, 3]",available,242.1233418752813,279.4425054737135,1.0
+310,310,reserve,,eligible,"[2, 3]",available,242.1233418752813,279.4425054737135,1.0
+311,311,reserve,,eligible,"[2, 3]",available,242.1233418752813,279.4425054737135,1.0
+312,312,reserve,,eligible,"[2, 3]",available,242.1233418752813,279.4425054737135,1.0
+313,313,reserve,,eligible,"[2, 3]",available,242.1233418752813,279.4425054737135,1.0
+314,314,reserve,,eligible,"[2, 3]",available,242.1233418752813,279.4425054737135,1.0
+315,315,reserve,,eligible,"[2, 3]",available,242.1233418752813,279.4425054737135,1.0
+316,316,reserve,,eligible,"[2, 3]",available,242.1233418752813,279.4425054737135,1.0
+317,317,reserve,,eligible,"[2, 3]",available,242.1233418752813,279.4425054737135,1.0
+318,318,reserve,,eligible,"[2, 3]",available,242.1233418752813,279.4425054737135,1.0
+319,319,reserve,,eligible,"[2, 3]",available,242.1233418752813,279.4425054737135,1.0
+320,320,reserve,,eligible,"[2, 3]",available,242.1233418752813,279.4425054737135,1.0
+321,321,reserve,,eligible,"[2, 3]",available,242.1233418752813,279.4425054737135,1.0
+322,322,reserve,,eligible,"[2, 3]",available,242.1233418752813,279.4425054737135,1.0
+323,323,reserve,,eligible,"[2, 3]",available,242.1233418752813,279.4425054737135,1.0
+324,324,reserve,,eligible,"[2, 3]",available,242.1233418752813,279.4425054737135,1.0
+325,325,reserve,,eligible,"[2, 3]",available,242.1233418752813,279.4425054737135,1.0
+326,326,reserve,,eligible,"[2, 3]",available,242.1233418752813,279.4425054737135,1.0
+327,327,reserve,,eligible,"[2, 3]",available,242.1233418752813,279.4425054737135,1.0
+328,328,reserve,,eligible,"[2, 3]",available,242.1233418752813,279.4425054737135,1.0
+329,329,reserve,,eligible,"[2, 3]",available,242.1233418752813,279.4425054737135,1.0
+330,330,reserve,,eligible,"[2, 3]",available,242.1233418752813,279.4425054737135,1.0
+331,331,reserve,,eligible,"[2, 3]",available,242.1233418752813,279.4425054737135,1.0
+332,332,reserve,,eligible,"[2, 3]",available,242.1233418752813,279.4425054737135,1.0
+333,333,reserve,,eligible,"[2, 3]",available,242.1233418752813,279.4425054737135,1.0
+334,334,reserve,,eligible,"[2, 3]",available,242.1233418752813,279.4425054737135,1.0
+335,335,reserve,,eligible,"[2, 3]",available,242.1233418752813,279.4425054737135,1.0
+336,336,reserve,,eligible,"[2, 3]",available,242.1233418752813,279.4425054737135,1.0
+337,337,reserve,,eligible,"[2, 3]",available,242.1233418752813,279.4425054737135,1.0
+338,338,reserve,,eligible,"[2, 3]",available,242.1233418752813,279.4425054737135,1.0
+339,339,reserve,,eligible,"[2, 3]",available,242.1233418752813,279.4425054737135,1.0
+340,340,reserve,,eligible,"[2, 3]",available,242.1233418752813,279.4425054737135,1.0
+341,341,reserve,,eligible,"[2, 3]",available,242.1233418752813,279.4425054737135,1.0
+342,342,reserve,,eligible,"[2, 3]",available,242.1233418752813,279.4425054737135,1.0
+343,343,reserve,,eligible,"[0, 2, 3]",available,105.86369377842729,410.50931183722116,1.0
+344,344,reserve,,eligible,"[0, 2, 3]",available,105.86369377842729,410.50931183722116,1.0
+345,345,reserve,,eligible,"[0, 2, 3]",available,105.86369377842729,410.50931183722116,1.0
+346,346,reserve,,eligible,"[2, 3]",available,242.1233418752813,279.4425054737135,1.0
+347,347,reserve,,eligible,"[0, 2, 3]",available,105.86369377842729,410.50931183722116,1.0
+348,348,reserve,,eligible,"[0, 2, 3]",available,105.86369377842729,410.50931183722116,1.0
+349,349,reserve,,eligible,"[2, 3]",available,242.1233418752813,279.4425054737135,1.0
+350,350,reserve,,eligible,"[2, 3]",available,242.1233418752813,279.4425054737135,1.0
+351,351,reserve,,eligible,"[2, 3]",available,242.1233418752813,279.4425054737135,1.0
+352,352,reserve,,eligible,"[2, 3]",available,242.1233418752813,279.4425054737135,1.0
+353,353,reserve,,eligible,"[2, 3]",available,242.1233418752813,279.4425054737135,1.0
+354,354,reserve,,eligible,"[2, 3]",available,242.1233418752813,279.4425054737135,1.0
+355,355,reserve,,eligible,"[2, 3]",available,242.1233418752813,279.4425054737135,1.0
+356,356,reserve,,eligible,[3],infeasible_capacity,,,1.0
+356,356,reserve,,conditional,"[0, 1, 2, 3]",available,46.078198439923064,483.715571021041,1.0
+357,357,reserve,,eligible,[3],infeasible_capacity,,,1.0
+357,357,reserve,,conditional,"[0, 1, 2, 3]",available,46.078198439923064,483.715571021041,1.0
+358,358,reserve,,eligible,[3],infeasible_capacity,,,1.0
+358,358,reserve,,conditional,"[0, 1, 2, 3]",available,46.078198439923064,483.715571021041,1.0
+359,359,reserve,,eligible,[3],infeasible_capacity,,,1.0
+359,359,reserve,,conditional,"[0, 1, 2, 3]",available,46.078198439923064,483.715571021041,1.0
+360,360,reserve,,eligible,[3],infeasible_capacity,,,1.0
+360,360,reserve,,conditional,"[0, 1, 2, 3]",available,46.078198439923064,483.715571021041,1.0
+361,361,reserve,,eligible,[3],infeasible_capacity,,,1.0
+361,361,reserve,,conditional,"[0, 1, 2, 3]",available,46.078198439923064,483.715571021041,1.0
+362,362,reserve,,eligible,[3],infeasible_capacity,,,1.0
+362,362,reserve,,conditional,"[0, 1, 2, 3]",available,46.078198439923064,483.715571021041,1.0
+363,363,reserve,,eligible,[3],infeasible_capacity,,,1.0
+363,363,reserve,,conditional,"[0, 1, 2, 3]",available,46.078198439923064,483.715571021041,1.0
+364,364,reserve,,eligible,[3],infeasible_capacity,,,1.0
+364,364,reserve,,conditional,"[0, 1, 2, 3]",available,46.078198439923064,483.715571021041,1.0
+365,365,reserve,,eligible,[3],infeasible_capacity,,,1.0
+365,365,reserve,,conditional,"[0, 1, 2, 3]",available,46.078198439923064,483.715571021041,1.0
+366,366,reserve,,eligible,[3],infeasible_capacity,,,1.0
+366,366,reserve,,conditional,"[0, 1, 2, 3]",available,46.078198439923064,483.715571021041,1.0
+367,367,reserve,,eligible,[3],infeasible_capacity,,,1.0
+367,367,reserve,,conditional,"[1, 2, 3]",available,114.61024056121059,399.0332850738175,1.0
+368,368,reserve,,eligible,[3],infeasible_capacity,,,1.0
+368,368,reserve,,conditional,"[1, 2, 3]",available,114.61024056121059,399.0332850738175,1.0
+369,369,reserve,,eligible,[3],infeasible_capacity,,,1.0
+369,369,reserve,,conditional,"[1, 2, 3]",available,114.61024056121059,399.0332850738175,1.0
+370,370,reserve,,eligible,[3],infeasible_capacity,,,1.0
+370,370,reserve,,conditional,"[1, 2, 3]",available,114.61024056121059,399.0332850738175,1.0
+371,371,reserve,,eligible,[3],infeasible_capacity,,,1.0
+371,371,reserve,,conditional,"[1, 2, 3]",available,114.61024056121059,399.0332850738175,1.0
+372,372,reserve,,eligible,[3],infeasible_capacity,,,1.0
+372,372,reserve,,conditional,"[1, 2, 3]",available,114.61024056121059,399.0332850738175,1.0
+373,373,reserve,,eligible,"[1, 3]",available,188.58276049367444,378.1795226540174,1.0
+374,374,reserve,,eligible,[3],infeasible_capacity,,,1.0
+374,374,reserve,,conditional,"[1, 2, 3]",available,114.61024056121059,399.0332850738175,1.0
+375,375,reserve,,eligible,[3],infeasible_capacity,,,1.0
+375,375,reserve,,conditional,"[1, 2, 3]",available,114.61024056121059,399.0332850738175,1.0
+376,376,reserve,,eligible,[3],infeasible_capacity,,,1.0
+376,376,reserve,,conditional,"[1, 2, 3]",available,114.61024056121059,399.0332850738175,1.0
+377,377,reserve,,eligible,[3],infeasible_capacity,,,1.0
+377,377,reserve,,conditional,"[1, 2, 3]",available,114.61024056121059,399.0332850738175,1.0
+378,378,reserve,,eligible,[3],infeasible_capacity,,,1.0
+378,378,reserve,,conditional,"[1, 2, 3]",available,114.61024056121059,399.0332850738175,1.0
+379,379,reserve,,eligible,[3],infeasible_capacity,,,1.0
+379,379,reserve,,conditional,"[1, 2, 3]",available,114.61024056121059,399.0332850738175,1.0
+380,380,reserve,,eligible,[3],infeasible_capacity,,,1.0
+380,380,reserve,,conditional,"[1, 2, 3]",available,114.61024056121059,399.0332850738175,1.0
+381,381,reserve,,eligible,[3],infeasible_capacity,,,1.0
+381,381,reserve,,conditional,"[1, 2, 3]",available,114.61024056121059,399.0332850738175,1.0
+382,382,reserve,,eligible,[3],infeasible_capacity,,,1.0
+382,382,reserve,,conditional,"[1, 2, 3]",available,114.61024056121059,399.0332850738175,1.0
+383,383,reserve,,eligible,[3],infeasible_capacity,,,1.0
+383,383,reserve,,conditional,"[1, 2, 3]",available,114.61024056121059,399.0332850738175,1.0
+384,384,reserve,,eligible,"[1, 3]",available,188.58276049367444,378.1795226540174,1.0
+385,385,reserve,,eligible,"[1, 3]",available,188.58276049367444,378.1795226540174,1.0
+386,386,reserve,,eligible,"[1, 3]",available,188.58276049367444,378.1795226540174,1.0
+387,387,reserve,,eligible,"[1, 3]",available,188.58276049367444,378.1795226540174,1.0
+388,388,reserve,,eligible,"[1, 3]",available,188.58276049367444,378.1795226540174,1.0
+389,389,reserve,,eligible,"[1, 3]",available,188.58276049367444,378.1795226540174,1.0
+390,390,reserve,,eligible,"[1, 3]",available,188.58276049367444,378.1795226540174,1.0
+391,391,reserve,,eligible,"[1, 3]",available,188.58276049367444,378.1795226540174,1.0
+392,392,reserve,,eligible,"[1, 3]",available,188.58276049367444,378.1795226540174,1.0
+393,393,reserve,,eligible,"[1, 3]",available,188.58276049367444,378.1795226540174,1.0
+394,394,reserve,,eligible,"[1, 3]",available,188.58276049367444,378.1795226540174,1.0
+395,395,reserve,,eligible,"[1, 3]",available,188.58276049367444,378.1795226540174,1.0
+396,396,reserve,,eligible,"[1, 3]",available,188.58276049367444,378.1795226540174,1.0
+397,397,reserve,,eligible,"[1, 3]",available,188.58276049367444,378.1795226540174,1.0
+398,398,reserve,,eligible,"[1, 3]",available,188.58276049367444,378.1795226540174,1.0
+399,399,reserve,,eligible,[3],infeasible_capacity,,,1.0
+399,399,reserve,,conditional,"[0, 1, 2, 3]",available,46.078198439923064,483.715571021041,1.0
+400,400,reserve,,eligible,[3],infeasible_capacity,,,1.0
+400,400,reserve,,conditional,"[0, 1, 2, 3]",available,46.078198439923064,483.715571021041,1.0
+401,401,reserve,,eligible,[3],infeasible_capacity,,,1.0
+401,401,reserve,,conditional,"[0, 1, 2, 3]",available,46.078198439923064,483.715571021041,1.0
+402,402,reserve,,eligible,[3],infeasible_capacity,,,1.0
+402,402,reserve,,conditional,"[0, 1, 2, 3]",available,46.078198439923064,483.715571021041,1.0
+403,403,reserve,,eligible,[3],infeasible_capacity,,,1.0
+403,403,reserve,,conditional,"[0, 1, 2, 3]",available,46.078198439923064,483.715571021041,1.0
+404,404,reserve,,eligible,[3],infeasible_capacity,,,1.0
+404,404,reserve,,conditional,"[0, 1, 2, 3]",available,46.078198439923064,483.715571021041,1.0
+405,405,reserve,,eligible,[3],infeasible_capacity,,,1.0
+405,405,reserve,,conditional,"[0, 1, 2, 3]",available,46.078198439923064,483.715571021041,1.0
+406,406,reserve,,eligible,[3],infeasible_capacity,,,1.0
+406,406,reserve,,conditional,"[0, 1, 2, 3]",available,46.078198439923064,483.715571021041,1.0
+407,407,reserve,,eligible,[3],infeasible_capacity,,,1.0
+407,407,reserve,,conditional,"[0, 1, 2, 3]",available,46.078198439923064,483.715571021041,1.0
+408,408,reserve,,eligible,[3],infeasible_capacity,,,1.0
+408,408,reserve,,conditional,"[0, 1, 2, 3]",available,46.078198439923064,483.715571021041,1.0
+409,409,reserve,,eligible,[3],infeasible_capacity,,,1.0
+409,409,reserve,,conditional,"[0, 1, 2, 3]",available,46.078198439923064,483.715571021041,1.0
+410,410,reserve,,eligible,[3],infeasible_capacity,,,1.0
+410,410,reserve,,conditional,"[0, 1, 2, 3]",available,46.078198439923064,483.715571021041,1.0
+411,411,reserve,,eligible,[],no_support,,,1.0
+411,411,reserve,,conditional,"[0, 1, 2, 3]",available,46.078198439923064,483.715571021041,1.0
+412,412,reserve,,eligible,[],no_support,,,1.0
+412,412,reserve,,conditional,"[0, 1, 2, 3]",available,46.078198439923064,483.715571021041,1.0
+413,413,reserve,,eligible,[],no_support,,,1.0
+413,413,reserve,,conditional,"[0, 1, 2, 3]",available,46.078198439923064,483.715571021041,1.0
+414,414,reserve,,eligible,[],no_support,,,1.0
+414,414,reserve,,conditional,"[0, 1, 2, 3]",available,46.078198439923064,483.715571021041,1.0
+415,415,reserve,,eligible,[],no_support,,,1.0
+415,415,reserve,,conditional,"[0, 1, 2, 3]",available,46.078198439923064,483.715571021041,1.0
+416,416,reserve,,eligible,[],no_support,,,1.0
+416,416,reserve,,conditional,"[0, 1, 2, 3]",available,46.078198439923064,483.715571021041,1.0
+0,0,unloading,R001,eligible,[],no_support,,,0.3333333333333333
+0,0,unloading,R001,conditional,"[0, 1, 3]",available,118.55073908589856,302.45338608418365,0.3333333333333333
+1,1,unloading,R001,eligible,[],no_support,,,0.6666666666666666
+1,1,unloading,R001,conditional,"[0, 1, 3]",available,117.68786351003368,304.2283061481158,0.6666666666666666
+2,2,unloading,R001,eligible,[],no_support,,,1.0
+2,2,unloading,R001,conditional,"[0, 1, 3]",available,114.90877445910871,301.880565269852,1.0
+12,12,unloading,R002,eligible,[1],infeasible_capacity,,,0.16666666666666666
+12,12,unloading,R002,conditional,"[0, 1]",sensitivity_interval_empty,224.72810937955404,224.72810937955404,0.16666666666666666
+13,13,unloading,R002,eligible,"[0, 1]",sensitivity_interval_empty,224.72810937955404,224.72810937955404,0.3333333333333333
+14,14,unloading,R002,eligible,[1],infeasible_capacity,,,0.5
+14,14,unloading,R002,conditional,"[0, 1]",sensitivity_interval_empty,224.72810937955404,224.72810937955404,0.5
+15,15,unloading,R002,eligible,[1],infeasible_capacity,,,0.6666666666666666
+15,15,unloading,R002,conditional,"[0, 1]",sensitivity_interval_empty,224.72810937955404,224.72810937955404,0.6666666666666666
+16,16,unloading,R002,eligible,"[0, 1]",sensitivity_interval_empty,224.72810937955404,224.72810937955404,0.8333333333333334
+17,17,unloading,R002,eligible,"[0, 1]",sensitivity_interval_empty,224.72810937955404,224.72810937955404,1.0
+57,57,unloading,R003,eligible,"[1, 3]",available,173.60702708828208,312.6737038847568,0.16666666666666666
+58,58,unloading,R003,eligible,"[1, 3]",available,173.60702708828208,312.6737038847568,0.3333333333333333
+59,59,unloading,R003,eligible,"[1, 3]",available,173.60702708828208,312.6737038847568,0.5
+60,60,unloading,R003,eligible,"[0, 1, 3]",available,173.60702708828202,312.6737038847568,0.6666666666666666
+61,61,unloading,R003,eligible,"[0, 1, 3]",available,173.60702708828202,312.6737038847568,0.8333333333333334
+62,62,unloading,R003,eligible,"[0, 1, 3]",available,173.60702708828202,312.6737038847568,1.0
+70,70,unloading,R004,eligible,"[0, 3]",available,173.60702708828208,312.6737038847568,0.16666666666666666
+71,71,unloading,R004,eligible,"[0, 3]",available,173.60702708828208,312.6737038847568,0.3333333333333333
+72,72,unloading,R004,eligible,"[0, 3]",available,173.60702708828208,312.6737038847568,0.5
+73,73,unloading,R004,eligible,"[0, 3]",available,173.60702708828208,312.6737038847568,0.6666666666666666
+74,74,unloading,R004,eligible,"[0, 3]",available,173.60702708828208,312.6737038847568,0.8333333333333334
+75,75,unloading,R004,eligible,"[0, 3]",available,173.60702708828208,312.6737038847568,1.0
+107,107,unloading,R005,eligible,"[1, 2, 3]",available,85.89574855631736,367.24752555466904,0.16666666666666666
+108,108,unloading,R005,eligible,"[1, 2, 3]",available,85.89574855631736,367.24752555466904,0.3333333333333333
+109,109,unloading,R005,eligible,"[1, 2, 3]",available,85.89574855631736,367.24752555466904,0.5
+110,110,unloading,R005,eligible,"[1, 2, 3]",available,85.89574855631736,367.24752555466904,0.6666666666666666
+111,111,unloading,R005,eligible,"[1, 2, 3]",available,85.89574855631736,367.24752555466904,0.8333333333333334
+112,112,unloading,R005,eligible,"[1, 2, 3]",available,85.89574855631736,367.24752555466904,1.0
+147,147,unloading,R006,eligible,"[0, 1, 2]",available,108.59719749490372,345.3449509371071,0.16666666666666666
+148,148,unloading,R006,eligible,"[0, 1, 2]",available,108.59719749490372,345.3449509371071,0.3333333333333333
+149,149,unloading,R006,eligible,"[0, 1, 2]",available,108.59719749490372,345.3449509371071,0.5
+150,150,unloading,R006,eligible,"[0, 1, 2]",available,108.59719749490372,345.3449509371071,0.6666666666666666
+151,151,unloading,R006,eligible,"[0, 1, 2]",available,108.59719749490372,345.3449509371071,0.8333333333333334
+152,152,unloading,R006,eligible,"[0, 1, 2]",available,108.59719749490372,345.3449509371071,1.0
+174,174,unloading,R007,eligible,"[0, 1, 3]",available,150.42015473530557,369.9804929904547,0.16666666666666666
+175,175,unloading,R007,eligible,"[0, 1, 3]",available,150.42015473530557,369.9804929904547,0.3333333333333333
+176,176,unloading,R007,eligible,"[0, 1, 3]",available,150.42015473530557,369.9804929904547,0.5
+177,177,unloading,R007,eligible,"[0, 1, 3]",available,150.42015473530557,369.9804929904547,0.6666666666666666
+178,178,unloading,R007,eligible,"[0, 1, 3]",available,150.42015473530557,369.9804929904547,0.8333333333333334
+179,179,unloading,R007,eligible,"[0, 1, 3]",available,150.42015473530557,369.9804929904547,1.0
+205,205,unloading,R008,eligible,"[0, 3]",available,164.30548101260896,354.57336375158707,0.16666666666666666
+206,206,unloading,R008,eligible,"[0, 3]",available,164.30548101260896,354.57336375158707,0.3333333333333333
+207,207,unloading,R008,eligible,"[0, 3]",available,164.30548101260896,354.57336375158707,0.5
+208,208,unloading,R008,eligible,"[0, 3]",available,164.30548101260896,354.57336375158707,0.6666666666666666
+209,209,unloading,R008,eligible,"[0, 3]",available,164.30548101260896,354.57336375158707,0.8333333333333334
+210,210,unloading,R008,eligible,"[0, 2, 3]",available,134.94982548292626,369.3232705881073,1.0
+235,235,unloading,R009,eligible,"[1, 2, 3]",available,112.68509065573275,380.22956394769176,0.16666666666666666
+236,236,unloading,R009,eligible,"[1, 2, 3]",available,112.68509065573275,380.22956394769176,0.3333333333333333
+237,237,unloading,R009,eligible,"[1, 2, 3]",available,112.68509065573275,380.22956394769176,0.5
+238,238,unloading,R009,eligible,"[1, 2, 3]",available,112.68509065573275,380.22956394769176,0.6666666666666666
+239,239,unloading,R009,eligible,"[1, 2, 3]",available,112.68509065573275,380.22956394769176,0.8333333333333334
+240,240,unloading,R009,eligible,"[1, 2, 3]",available,112.68509065573275,380.22956394769176,1.0
+260,260,unloading,R010,eligible,"[0, 2]",available,160.10787725648615,316.83959764562144,0.16666666666666666
+261,261,unloading,R010,eligible,[2],infeasible_capacity,,,0.3333333333333333
+261,261,unloading,R010,conditional,"[0, 1, 2]",available,160.10787725648615,316.83959764562144,0.3333333333333333
+262,262,unloading,R010,eligible,[2],infeasible_capacity,,,0.5
+262,262,unloading,R010,conditional,"[0, 1, 2]",available,160.10787725648615,316.83959764562144,0.5
+263,263,unloading,R010,eligible,[2],infeasible_capacity,,,0.6666666666666666
+263,263,unloading,R010,conditional,"[0, 1, 2]",available,160.10787725648615,316.83959764562144,0.6666666666666666
+264,264,unloading,R010,eligible,[2],infeasible_capacity,,,0.8333333333333334
+264,264,unloading,R010,conditional,"[0, 1, 2]",available,160.10787725648615,316.83959764562144,0.8333333333333334
+265,265,unloading,R010,eligible,[2],infeasible_capacity,,,1.0
+265,265,unloading,R010,conditional,"[0, 1, 2]",available,160.10787725648615,316.83959764562144,1.0
+277,277,unloading,R011,eligible,[2],infeasible_capacity,,,0.16666666666666666
+277,277,unloading,R011,conditional,"[0, 2]",available,160.10787725648615,316.83959764562144,0.16666666666666666
+278,278,unloading,R011,eligible,[2],infeasible_capacity,,,0.3333333333333333
+278,278,unloading,R011,conditional,"[0, 2]",available,160.10787725648615,316.83959764562144,0.3333333333333333
+279,279,unloading,R011,eligible,[2],infeasible_capacity,,,0.5
+279,279,unloading,R011,conditional,"[0, 2]",available,160.10787725648615,316.83959764562144,0.5
+280,280,unloading,R011,eligible,[2],infeasible_capacity,,,0.6666666666666666
+280,280,unloading,R011,conditional,"[0, 2]",available,160.10787725648615,316.83959764562144,0.6666666666666666
+281,281,unloading,R011,eligible,[2],infeasible_capacity,,,0.8333333333333334
+281,281,unloading,R011,conditional,"[0, 2]",available,160.10787725648615,316.83959764562144,0.8333333333333334
+282,282,unloading,R011,eligible,[2],infeasible_capacity,,,1.0
+282,282,unloading,R011,conditional,"[0, 2]",available,160.10787725648615,316.83959764562144,1.0
+282,282,unloading,R012,eligible,[2],infeasible_capacity,,,0.16666666666666666
+282,282,unloading,R012,conditional,"[1, 2]",available,160.10787725648615,316.83959764562144,0.16666666666666666
+283,283,unloading,R012,eligible,[2],infeasible_capacity,,,0.3333333333333333
+283,283,unloading,R012,conditional,"[1, 2]",available,151.25687018907686,325.64100718547485,0.3333333333333333
+284,284,unloading,R012,eligible,[2],infeasible_capacity,,,0.5
+284,284,unloading,R012,conditional,"[1, 2]",available,151.25687018907686,325.64100718547485,0.5
+285,285,unloading,R012,eligible,[2],infeasible_capacity,,,0.6666666666666666
+285,285,unloading,R012,conditional,"[1, 2]",available,151.25687018907686,325.64100718547485,0.6666666666666666
+286,286,unloading,R012,eligible,[2],infeasible_capacity,,,0.8333333333333334
+286,286,unloading,R012,conditional,"[1, 2, 3]",available,136.91372761198963,376.85364715573604,0.8333333333333334
+287,287,unloading,R012,eligible,[2],infeasible_capacity,,,1.0
+287,287,unloading,R012,conditional,"[1, 2, 3]",available,136.91372761198963,376.85364715573604,1.0
+302,302,unloading,R013,eligible,"[2, 3]",available,242.1233418752813,279.4425054737135,0.16666666666666666
+303,303,unloading,R013,eligible,"[2, 3]",available,242.1233418752813,279.4425054737135,0.3333333333333333
+304,304,unloading,R013,eligible,"[2, 3]",available,242.1233418752813,279.4425054737135,0.5
+305,305,unloading,R013,eligible,"[2, 3]",available,242.1233418752813,279.4425054737135,0.6666666666666666
+306,306,unloading,R013,eligible,"[2, 3]",available,242.1233418752813,279.4425054737135,0.8333333333333334
+307,307,unloading,R013,eligible,"[2, 3]",available,242.1233418752813,279.4425054737135,1.0
+361,361,unloading,R014,eligible,[3],infeasible_capacity,,,0.16666666666666666
+361,361,unloading,R014,conditional,"[1, 2, 3]",available,114.61024056121059,399.0332850738175,0.16666666666666666
+362,362,unloading,R014,eligible,[3],infeasible_capacity,,,0.3333333333333333
+362,362,unloading,R014,conditional,"[1, 2, 3]",available,114.61024056121059,399.0332850738175,0.3333333333333333
+363,363,unloading,R014,eligible,[3],infeasible_capacity,,,0.5
+363,363,unloading,R014,conditional,"[1, 2, 3]",available,114.61024056121059,399.0332850738175,0.5
+364,364,unloading,R014,eligible,[3],infeasible_capacity,,,0.6666666666666666
+364,364,unloading,R014,conditional,"[1, 2, 3]",available,114.61024056121059,399.0332850738175,0.6666666666666666
+365,365,unloading,R014,eligible,[3],infeasible_capacity,,,0.8333333333333334
+365,365,unloading,R014,conditional,"[1, 2, 3]",available,114.61024056121059,399.0332850738175,0.8333333333333334
+366,366,unloading,R014,eligible,[3],infeasible_capacity,,,1.0
+366,366,unloading,R014,conditional,"[1, 2, 3]",available,114.61024056121059,399.0332850738175,1.0

@@ -1,0 +1,487 @@
+{
+  "schema_version": 1,
+  "provenance": {
+    "inputs": {
+      "videos/trial3.mp4": "8b5f96c2cd634c82e28d09eba62ba9bf6939bea34cbafe15be1388d831b6eff4",
+      "models/contact_v1/deployment.json": "5c15dee5f2cf3da1fd88ced97772f62d7c6ced24607094a78e721e72fef43dcd",
+      "outputs/trial3/state/reviewed_hold_map.npz": "39726e93e839e17dda02551466fe5e2c9f7a13b0f53cd74c3e7859f0fb8931f4",
+      "outputs/trial3/state/alignment_cache.npz": "f1405497f353345f552456316723ac44b777b8ef1d8dc9d97f9527d8bcb9deae",
+      "outputs/trial3/state/white_wall_calibration.json": "1d8bcf75bc06ee332a31e227822f1730afe4368f956c5b088c2593979782e5c4",
+      "outputs/trial3/tables/pose_coordinates.csv": "2ba613782994daad386596690a9b3d9202064acaf6a407caab659ea3e5ad42e6",
+      "outputs/trial3/tables/source_frame_map.csv": "11e406fb4af0a143028ef73b717fbb59f4aa4b5dd37b0935c444678dee0a64da",
+      "outputs/trial3/automatic/wholebody.npz": "182e79fb40d8d9d292995eb6f80cb9f393cde7d2aa2e5677977558f39c85edb0",
+      "outputs/trial3/automatic/predictions/automatic_contacts.json": "560a860785882aa3ed9458859c0e6f367bfb2d250a7a75efd43399bddc9f0743",
+      "outputs/trial3/automatic/predictions/limb_contacts.csv": "4b36b4d50e6bf7089884b34255549af0c1bbcb62d772e45c90c7f07b119c56b1",
+      "outputs/trial3/automatic/predictions/contact_events.csv": "90ed5fe402605335d80662bdf6b90fb072eb04367aa391814dee3387cd629704",
+      "outputs/trial3/state/identity_guard.npz": "eb42b5bee339801e7f080fdffe82e8f11c9fd228613fc1e3fe8a4dd1d495ee45",
+      "data/trial3_wall_grid.json": "2123d59dee5d6ce8716238bdb379c452ef4ead254c50ce2486037c91bde0fa9b",
+      "outputs/trial3/state/white_wall_grid_points.json": "6aebbdc3e8f52a221ffb7bec8512e4ec0d77dc06f35d468fc4dd4d44af16543d",
+      "outputs/trial3/state/plane_calibration_manifest.json": "ef3c058c96d9da18462ec057664578f321047dc3e976b74034b4471b29e7aebf",
+      "models/contact_v1/model_1.pt": "3aea6211ecc62eb79731536af388476b76a35d9af9483999fc8108decd479119",
+      "models/contact_v1/model_2.pt": "ee003c9dad6df413f3347f3fad25bc62042cf02560ee7a41d9f6d30d4c7c2aac",
+      "models/contact_v1/model_3.pt": "896ea4175834688ad445876cce6929969eca2e879db73f5fea713fa4b9796abb",
+      "beta_translator/inverse_kinematics.py": "6262bac4be63170a8e4021c1d9c070200c92f7152663d9b8c0b2ebba144d04b6",
+      "beta_translator/motion_ik.py": "b364055818cce40733b0c074a20347bf17c8539ea5dd84ec50eec9b5aa82a2fb",
+      "beta_translator/pose_adapter.py": "db9a6ed603092ad12967bd3c858d35fc3e4c83cbb556ae0aeaa0f5a01b91a454",
+      "beta_translator/plane_ik.py": "140537a1aa49876616d4a566d3e0ebb0858c50bc1f225651f8d0ff99b963aff6",
+      "beta_translator/plane_calibration.py": "f9fa471fc3203137d4fc82169d61c9bc669df621fb3fe15497f471a910aee97c",
+      "beta_translator/contact_review.py": "1130bb833cab6d0a96c1e0d6785b53f5c1e7894ed34caeddaa094f8fa9fd8605",
+      "beta_translator/identity_tracking.py": "13aafe67d75ada8c5b7cf9ebfa70fb03292c13eab3d730a5dc28fd3dfffdb2ef",
+      "beta_translator/project_io.py": "2443301f901d70a7ef091233312242a90043a8eaabe709642e36f84bf1c74ace",
+      "beta_translator/full_sequence.py": "6e814fd61e0f84584894d273063c569ab1e9b6215a3cc030faa7861f8c0ce228",
+      "beta_translator/full_sequence_pipeline.py": "ede1ece0bd080be05cf5ffe5fe1a369639df29995614bad1a639ee6d5d95793f",
+      "beta_translator/support_audit.py": "281199f5ae46f5f9800f883b963be95e5f07f83786f09f8e047f3f284883f6d0",
+      "beta_translator/gravity_sequence.py": "8af04a5032f4fe26bed22ce9b33b87cd9f1867e233679edf1b733e61347950ca",
+      "beta_translator/gravity_sequence_pipeline.py": "a376d68bd9bd8d2e70f6d7535371e18fcf72bf24207546f5e84c3f1dc281f247",
+      "beta_translator/support_optimization.py": "03485c454f25939d48b97b23bb1b29a1f73e5068ae4b8b35d51e056797de7d7e",
+      "beta_translator/support_optimization_pipeline.py": "334f27a29938c522b54d985b4976341c40dcd77a4ec225df2b2cc531887ee643"
+    },
+    "baseline_summary": "outputs/trial3/gravity_sequence/target_180cm_c1d9a4e6c5db/summary.json",
+    "baseline_summary_sha256": "1878d16f3b8a01f7a06c02682c0c7b19d3b3bd96bae592694edbf99972b611fb",
+    "body": {
+      "height_cm": 180,
+      "ratios": {
+        "upper_arm": 0.186,
+        "forearm": 0.146,
+        "thigh": 0.245,
+        "shank": 0.246,
+        "shoulder_w": 0.259,
+        "hip_w": 0.191,
+        "torso": 0.288
+      }
+    },
+    "physics": {
+      "mass_kg": 70.0,
+      "gravity_m_s2": 9.81,
+      "foot_friction": 0.8,
+      "max_force_component_n": 686.7
+    },
+    "settings": {
+      "contact_scale_cm": 1.0,
+      "outside_hull_weight": 0.15,
+      "reference_angle_weight": 0.6,
+      "reference_hip_scale_cm": 35.0,
+      "free_endpoint_scale_cm": 30.0,
+      "velocity_weight": 0.08,
+      "acceleration_weight": 0.03,
+      "contact_tolerance_cm": 0.1,
+      "large_error_cm": 5.0,
+      "angle_step_warning_deg": 15.0,
+      "hip_step_warning_cm": 5.0,
+      "max_nfev": 1000,
+      "balance_weight": 30.0,
+      "force_weight": 0.05,
+      "force_velocity_weight": 0.02,
+      "balance_tolerance": 0.01,
+      "force_step_warning_bw": 0.5
+    },
+    "optimization_settings": {
+      "contact_gain": 30.0,
+      "robust_contact_cm": 1.0,
+      "force_contact_weight": 30.0,
+      "reserve_weight": 80.0,
+      "unloading_weight": 100.0,
+      "unload_force_weight": 30.0,
+      "motion_limit_weight": 200.0,
+      "rounds": 3,
+      "max_nfev": 800
+    },
+    "support_audit_settings": {
+      "com_perturbation_cm": 2.0,
+      "margin_warning": 0.1,
+      "unload_lookahead_frames": 6
+    }
+  },
+  "body": {
+    "height_cm": 180,
+    "ratios": {
+      "upper_arm": 0.186,
+      "forearm": 0.146,
+      "thigh": 0.245,
+      "shank": 0.246,
+      "shoulder_w": 0.259,
+      "hip_w": 0.191,
+      "torso": 0.288
+    }
+  },
+  "physics": {
+    "mass_kg": 70.0,
+    "gravity_m_s2": 9.81,
+    "foot_friction": 0.8,
+    "max_force_component_n": 686.7
+  },
+  "settings": {
+    "contact_scale_cm": 1.0,
+    "outside_hull_weight": 0.15,
+    "reference_angle_weight": 0.6,
+    "reference_hip_scale_cm": 35.0,
+    "free_endpoint_scale_cm": 30.0,
+    "velocity_weight": 0.08,
+    "acceleration_weight": 0.03,
+    "contact_tolerance_cm": 0.1,
+    "large_error_cm": 5.0,
+    "angle_step_warning_deg": 15.0,
+    "hip_step_warning_cm": 5.0,
+    "max_nfev": 1000,
+    "balance_weight": 30.0,
+    "force_weight": 0.05,
+    "force_velocity_weight": 0.02,
+    "balance_tolerance": 0.01,
+    "force_step_warning_bw": 0.5
+  },
+  "optimization_settings": {
+    "contact_gain": 30.0,
+    "robust_contact_cm": 1.0,
+    "force_contact_weight": 30.0,
+    "reserve_weight": 80.0,
+    "unloading_weight": 100.0,
+    "unload_force_weight": 30.0,
+    "motion_limit_weight": 200.0,
+    "rounds": 3,
+    "max_nfev": 800
+  },
+  "optimization_history": [
+    {
+      "round": 1,
+      "optimizer": {
+        "success": false,
+        "message": "The maximum number of function evaluations is exceeded.",
+        "nfev": 800,
+        "cost": 29463.11905187677,
+        "optimality": 241.53229102422006
+      },
+      "counts": {
+        "contact_residual": 100,
+        "large_contact_residual": 31,
+        "span_conflict": 83,
+        "hold_extrapolation": 93,
+        "unknown_contact": 0,
+        "unresolved_foot_support": 168,
+        "wall_contact_unlocated": 0,
+        "low_contact_confidence": 276,
+        "low_pose_visibility": 503,
+        "reference_extrapolation": 277,
+        "rapid_pose_change": 0,
+        "optimizer_unconverged": 503,
+        "force_imbalance": 16,
+        "moment_imbalance": 16,
+        "foot_friction_violation": 0,
+        "no_known_support": 0,
+        "force_at_missed_contact": 43,
+        "force_on_uncertain_contact": 261,
+        "rapid_force_change": 0,
+        "support_balance_failed": 37,
+        "support_balance_uncertain": 93,
+        "support_margin_low": 12,
+        "preunload_failed": 8,
+        "preunload_uncertain": 22,
+        "preunload_timing_uncertain": 18,
+        "preunload_margin_low": 1,
+        "support_audit_not_evaluated": 0
+      },
+      "numerical_pass_frames": 0,
+      "max_contact_error_cm": 22.32580991498345,
+      "max_hip_step_cm": 4.779024487407152,
+      "max_angle_step_deg": 14.600126872837278
+    },
+    {
+      "round": 2,
+      "optimizer": {
+        "success": false,
+        "message": "The maximum number of function evaluations is exceeded.",
+        "nfev": 800,
+        "cost": 26000.127062413987,
+        "optimality": 67.43083179464757
+      },
+      "counts": {
+        "contact_residual": 98,
+        "large_contact_residual": 29,
+        "span_conflict": 83,
+        "hold_extrapolation": 93,
+        "unknown_contact": 0,
+        "unresolved_foot_support": 168,
+        "wall_contact_unlocated": 0,
+        "low_contact_confidence": 276,
+        "low_pose_visibility": 503,
+        "reference_extrapolation": 277,
+        "rapid_pose_change": 0,
+        "optimizer_unconverged": 503,
+        "force_imbalance": 0,
+        "moment_imbalance": 0,
+        "foot_friction_violation": 0,
+        "no_known_support": 0,
+        "force_at_missed_contact": 24,
+        "force_on_uncertain_contact": 261,
+        "rapid_force_change": 0,
+        "support_balance_failed": 18,
+        "support_balance_uncertain": 93,
+        "support_margin_low": 2,
+        "preunload_failed": 7,
+        "preunload_uncertain": 23,
+        "preunload_timing_uncertain": 18,
+        "preunload_margin_low": 1,
+        "support_audit_not_evaluated": 0
+      },
+      "numerical_pass_frames": 0,
+      "max_contact_error_cm": 29.22468611511438,
+      "max_hip_step_cm": 4.797139994916397,
+      "max_angle_step_deg": 14.717204655903847
+    },
+    {
+      "round": 3,
+      "optimizer": {
+        "success": true,
+        "message": "`ftol` termination condition is satisfied.",
+        "nfev": 597,
+        "cost": 24259.75036071367,
+        "optimality": 40.41654389607763
+      },
+      "counts": {
+        "contact_residual": 98,
+        "large_contact_residual": 29,
+        "span_conflict": 83,
+        "hold_extrapolation": 93,
+        "unknown_contact": 0,
+        "unresolved_foot_support": 168,
+        "wall_contact_unlocated": 0,
+        "low_contact_confidence": 276,
+        "low_pose_visibility": 503,
+        "reference_extrapolation": 277,
+        "rapid_pose_change": 0,
+        "optimizer_unconverged": 0,
+        "force_imbalance": 0,
+        "moment_imbalance": 0,
+        "foot_friction_violation": 0,
+        "no_known_support": 0,
+        "force_at_missed_contact": 25,
+        "force_on_uncertain_contact": 261,
+        "rapid_force_change": 0,
+        "support_balance_failed": 19,
+        "support_balance_uncertain": 94,
+        "support_margin_low": 1,
+        "preunload_failed": 7,
+        "preunload_uncertain": 23,
+        "preunload_timing_uncertain": 18,
+        "preunload_margin_low": 0,
+        "support_audit_not_evaluated": 0
+      },
+      "numerical_pass_frames": 309,
+      "max_contact_error_cm": 33.44677835373252,
+      "max_hip_step_cm": 4.831528270434292,
+      "max_angle_step_deg": 14.721224681755057
+    }
+  ],
+  "support_audit_settings": {
+    "com_perturbation_cm": 2.0,
+    "margin_warning": 0.1,
+    "unload_lookahead_frames": 6
+  },
+  "method": "Global IRLS pose/force optimization with contact-force coupling, COM reserve intervals and prospective unloading; all source frames remain coupled.",
+  "optimizer": {
+    "success": true,
+    "message": "`ftol` termination condition is satisfied.",
+    "nfev": 597,
+    "cost": 24259.75036071367,
+    "optimality": 40.41654389607763
+  },
+  "frame_count": 503,
+  "first_frame": 0,
+  "last_frame": 502,
+  "fps": 30.0,
+  "duration_seconds": 16.766666666666666,
+  "video_name": "trial3_support_optimized_180cm_full_sequence.mp4",
+  "comparison": [
+    {
+      "metric": "contact_residual",
+      "unit": "frames",
+      "before": 246.0,
+      "after": 98.0
+    },
+    {
+      "metric": "large_contact_residual",
+      "unit": "frames",
+      "before": 31.0,
+      "after": 29.0
+    },
+    {
+      "metric": "support_balance_failed",
+      "unit": "frames",
+      "before": 116.0,
+      "after": 19.0
+    },
+    {
+      "metric": "support_balance_uncertain",
+      "unit": "frames",
+      "before": 88.0,
+      "after": 94.0
+    },
+    {
+      "metric": "support_margin_low",
+      "unit": "frames",
+      "before": 0.0,
+      "after": 1.0
+    },
+    {
+      "metric": "preunload_failed",
+      "unit": "frames",
+      "before": 41.0,
+      "after": 7.0
+    },
+    {
+      "metric": "preunload_uncertain",
+      "unit": "frames",
+      "before": 9.0,
+      "after": 23.0
+    },
+    {
+      "metric": "preunload_margin_low",
+      "unit": "frames",
+      "before": 0.0,
+      "after": 0.0
+    },
+    {
+      "metric": "departing_load_remaining",
+      "unit": "frames",
+      "before": 13.0,
+      "after": 1.0
+    },
+    {
+      "metric": "rapid_pose_change",
+      "unit": "frames",
+      "before": 3.0,
+      "after": 0.0
+    },
+    {
+      "metric": "force_imbalance",
+      "unit": "frames",
+      "before": 0.0,
+      "after": 0.0
+    },
+    {
+      "metric": "moment_imbalance",
+      "unit": "frames",
+      "before": 0.0,
+      "after": 0.0
+    },
+    {
+      "metric": "optimizer_unconverged",
+      "unit": "frames",
+      "before": 0.0,
+      "after": 0.0
+    },
+    {
+      "metric": "combined_numerical_pass",
+      "unit": "frames",
+      "before": 191.0,
+      "after": 309.0
+    },
+    {
+      "metric": "max_contact_gap",
+      "unit": "cm",
+      "before": 14.812748466438338,
+      "after": 33.44677835373252
+    },
+    {
+      "metric": "max_hip_step",
+      "unit": "cm/frame",
+      "before": 5.818819590288149,
+      "after": 4.831528270434292
+    },
+    {
+      "metric": "max_angle_step",
+      "unit": "deg/frame",
+      "before": 16.467240554263523,
+      "after": 14.721224681755057
+    }
+  ],
+  "flag_counts": {
+    "contact_residual": 98,
+    "large_contact_residual": 29,
+    "span_conflict": 83,
+    "hold_extrapolation": 93,
+    "unknown_contact": 0,
+    "unresolved_foot_support": 168,
+    "wall_contact_unlocated": 0,
+    "low_contact_confidence": 276,
+    "low_pose_visibility": 503,
+    "reference_extrapolation": 277,
+    "rapid_pose_change": 0,
+    "optimizer_unconverged": 0,
+    "force_imbalance": 0,
+    "moment_imbalance": 0,
+    "foot_friction_violation": 0,
+    "no_known_support": 0,
+    "force_at_missed_contact": 25,
+    "force_on_uncertain_contact": 261,
+    "rapid_force_change": 0,
+    "support_balance_failed": 19,
+    "support_balance_uncertain": 94,
+    "support_margin_low": 1,
+    "preunload_failed": 7,
+    "preunload_uncertain": 23,
+    "preunload_timing_uncertain": 18,
+    "preunload_margin_low": 0,
+    "support_audit_not_evaluated": 0,
+    "departing_load_remaining": 1
+  },
+  "status_counts": {
+    "uncertain": 405,
+    "constraint_warning": 98
+  },
+  "balance_audit_counts": {
+    "uncertain_support": 94,
+    "passes_model_checks": 389,
+    "fails_located_support_model": 19,
+    "low_margin": 1
+  },
+  "preunload_frame_counts": {
+    "not_applicable": 428,
+    "passes_model_checks": 45,
+    "uncertain_support": 22,
+    "uncertain_timing": 1,
+    "fails_located_support_model": 7
+  },
+  "last_pre_release_check_counts": {
+    "passes_model_checks": 8,
+    "uncertain_support": 2,
+    "uncertain_timing": 1,
+    "fails_located_support_model": 2
+  },
+  "release_event_count": 13,
+  "release_timing_uncertain_count": 3,
+  "numerical_pass_frame_count": 309,
+  "max_segment_length_error_cm": 3.552713678800501e-14,
+  "source_climber_height_cm": null,
+  "limitations": [
+    "Soft global objectives seek improved poses; convergence is not a global optimum or physical validation.",
+    "Prospective COM intervals assume desired contacts can be reached; final audits independently exclude missed holds.",
+    "IRLS favors achievable contacts and can increase errors on incompatible contacts; all original targets remain audited.",
+    "Support confidence and calibration are unchanged; conditional support never becomes confirmed evidence.",
+    "Contact labels/timing stay fixed. Direct hold changes retain timing uncertainty; ground support is not invented.",
+    "Unloading encourages a gradual reduction in departing candidate force and fixed-pose reserve without departing limbs.",
+    "The final pre-release candidate load is flagged above 1% body weight; counterfactual readiness is a separate check.",
+    "Assumed 2D quasi-static force capacities/friction omit depth, inertia, measured normals, grip strength and joint torques.",
+    "Temporal penalties and motion limits do not establish dynamic feasibility. Unresolved constraints remain visible."
+  ],
+  "output_sha256": {
+    "trial3_support_optimized_180cm_full_sequence.mp4": "7e85d0a6073494417fa6c2a7e1713b7072c9da5264617d857c465ccac2405ad0",
+    "poster.png": "c47ace8d820197c7ae49a9ae098d7feb0ddacf4c56f98beefdab50cbaf4ec79a",
+    "storyboard.png": "3d9eb8a617a6bfa73c3d4bcadf281a8bb958d5b60981a8c346738948ee1e1f8b",
+    "frame_0000.png": "df3dcbb153654a3e4c3f599e32a9cbfa1ea7971e0e02b32e72b3df323dd00f56",
+    "frame_0083.png": "cb69937860c1c3b6b73cfc03c77784557fab3583c171675c45e788df60635496",
+    "frame_0167.png": "1fcc348cdf5d09a1d5af77e6882aa770dcbc0e9fee63f7051a14c94ed6ea20a1",
+    "frame_0251.png": "65a5bc40bc685b78214a26572b1779d5dc4cb8928bb7fba9c4e6b72290fa931f",
+    "frame_0314.png": "c47ace8d820197c7ae49a9ae098d7feb0ddacf4c56f98beefdab50cbaf4ec79a",
+    "frame_0334.png": "d7e7996497af3d3e182a9c2405458ede4bde83a9d14dea6db7be979f012a6f8e",
+    "frame_0418.png": "67a1236c75d147a45e47ea1c8806fe707681954973b0962940bb10d542eb9039",
+    "frame_0502.png": "31715d8f26130e6d516078cb4306ea8db1fc9b2803ea154061c4da19b0b66839",
+    "frame_diagnostics.csv": "c976b98c2092da40262d47800db94228039b350ac1a2051fda0b5632fc1dfe6b",
+    "limb_diagnostics.csv": "6d08a2a287134c2665beaa2c90ff106611a3b5ca6fa66009eb27c15d6f0d23c7",
+    "comparison.csv": "f1224364f236983a0b0a2c64a35c2fea148980c1eacb0e464a87d46aa7c3ecd2",
+    "issue_intervals.csv": "ae6ba4823c25a72ab6d35621b765352b61c34e84429049d64fb95651972ed657",
+    "release_events.csv": "a9ec4c1d6ed871b2730c31f4a8c1a8dce54a803110b2a744a87c0cf998259b85",
+    "preunload_checks.csv": "98a741d507053d2df618739a14e7ca70fe6647a169b040b70923ba2dbb404161",
+    "optimization_constraints.csv": "f7e0510c59cb95a7986903b59dfbc8bfe1bbcaa5030fc55c056b37c6f8e2eb3d",
+    "trajectory.npz": "6790ebec45b12f8c827df7985ba7c921ac93e65dd9ae584216c1b1c7774fe92f"
+  }
+}

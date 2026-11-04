@@ -1,0 +1,17 @@
+[
+  {
+    "tilt_deg": 0.0,
+    "max_projected_pixel_change": 0.0,
+    "interpretation": "Rotating wall and camera together changes relation to gravity, not wall image; gravity is unobserved."
+  },
+  {
+    "tilt_deg": 15.0,
+    "max_projected_pixel_change": 1.1368683772161603e-13,
+    "interpretation": "Rotating wall and camera together changes relation to gravity, not wall image; gravity is unobserved."
+  },
+  {
+    "tilt_deg": 30.0,
+    "max_projected_pixel_change": 1.1368683772161603e-13,
+    "interpretation": "Rotating wall and camera together changes relation to gravity, not wall image; gravity is unobserved."
+  }
+]

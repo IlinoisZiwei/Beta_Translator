@@ -1,0 +1,44 @@
+{
+  "name": "region_offset_native",
+  "height_cm": 180.0,
+  "tilt_deg": 15.0,
+  "depth_prior_cm": 25.0,
+  "solver": {
+    "success": false,
+    "message": "Maximum inner iterations reached.",
+    "nfev": 459,
+    "nit": 300,
+    "cost": 222300.3439749196,
+    "optimality": 0.35590159835645374,
+    "relative_cost_change": 3.0749654393059944e-07,
+    "gradient_definition": "infinity norm of projected J.T r / max(1, column L2 norm of J)",
+    "seconds": 380.2425976669765,
+    "earlier_stages": [
+      {
+        "success": false,
+        "message": "Maximum inner iterations reached.",
+        "nfev": 923,
+        "nit": 600,
+        "cost": 222627.70987739254,
+        "optimality": 0.6574129431989086,
+        "relative_cost_change": 2.6221101271426165e-06,
+        "gradient_definition": "infinity norm of projected J.T r / max(1, column L2 norm of J)"
+      },
+      {
+        "method": "L-BFGS-B",
+        "cost": 222309.50273868546,
+        "nfev": 631,
+        "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT"
+      }
+    ]
+  },
+  "first_frame": 0,
+  "last_frame": 502,
+  "frame_count": 503,
+  "pose_knot_count": 503,
+  "all_native_frames_in_objective": true,
+  "global_trajectory_solve": true,
+  "initialization": "Complete region_offset candidate, converted to segment directions.",
+  "comparison_caveat": "Additional native-frame DOFs and solve budget; a refinement, not an equal-budget ablation.",
+  "physical_validation": false
+}

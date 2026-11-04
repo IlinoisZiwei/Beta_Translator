@@ -22,7 +22,8 @@ class FullSequencePipelineTests(unittest.TestCase):
 
     @staticmethod
     def render(inputs, result, diagnostic, path):
-        files = [path/name for name in ['trial3_target_180cm_full_sequence.mp4','poster.png','storyboard.png']]
+        video_name = f'trial3_target_{result["body"]["height_cm"]:g}cm_full_sequence.mp4'
+        files = [path/name for name in [video_name,'poster.png','storyboard.png']]
         for f in files:
             f.write_bytes(b'test artifact')
         return files
@@ -50,6 +51,25 @@ class FullSequencePipelineTests(unittest.TestCase):
                 third = run_full_sequence(project, progress=None)
                 self.assertNotEqual(second['output_dir'],third['output_dir'])
                 self.assertEqual(Path(second['video_file']).read_bytes(),b'user changed this')
+
+    def test_height_changes_body_video_name_and_cache(self):
+        with tempfile.TemporaryDirectory() as directory:
+            project = Path(directory)
+            with patch('beta_translator.full_sequence_pipeline.load_full_sequence_inputs', return_value=self.inputs()), \
+                 patch('beta_translator.full_sequence_pipeline.render_full_sequence', side_effect=self.render) as render, \
+                 patch('beta_translator.full_sequence_pipeline.input_provenance', return_value={'data': 'a'}):
+                first = run_full_sequence(project, height_cm=180, progress=None)
+                changed = run_full_sequence(project, height_cm=170, progress=None)
+                again = run_full_sequence(project, height_cm=170, progress=None)
+                self.assertEqual(render.call_count, 2)
+                self.assertEqual(changed['body']['height_cm'], 170)
+                self.assertEqual(Path(changed['video_file']).name, 'trial3_target_170cm_full_sequence.mp4')
+                self.assertEqual(changed['output_dir'], again['output_dir'])
+                self.assertNotEqual(first['output_dir'], changed['output_dir'])
+                self.assertTrue(Path(first['video_file']).is_file())
+                self.assertTrue(Path(changed['video_file']).is_file())
+                with np.load(Path(changed['output_dir']) / 'trajectory.npz') as z:
+                    self.assertEqual(len(z['frames']), 4)
 
     def test_input_changes_during_solve_block_publication(self):
         with tempfile.TemporaryDirectory() as directory:

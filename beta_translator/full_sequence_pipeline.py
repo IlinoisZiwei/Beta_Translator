@@ -14,7 +14,7 @@ import pandas as pd
 from . import full_sequence
 from .contact_review import load_review_bundle
 from .full_sequence import build_schedule, solve_full_sequence, diagnose_sequence, DEFAULT_SETTINGS
-from .inverse_kinematics import LIMBS, RATIOS, POSE_VECTOR_NAMES
+from .inverse_kinematics import LIMBS, RATIOS, POSE_VECTOR_NAMES, make_body
 from .plane_ik import load_ik_plane_geometry
 from .pose_adapter import LIMB_LANDMARKS, to_frame0, pose_row_to_vector, angle_visibility_weights, project_plane
 from .project_io import file_sha256, load_alignment, load_reviewed_holds, convert_video
@@ -42,6 +42,7 @@ def input_provenance(project):
                  'plane_calibration.py', 'contact_review.py', 'identity_tracking.py', 'project_io.py']:
         files['beta_translator/'+name] = file_sha256(project/'beta_translator'/name)
     files['beta_translator/full_sequence.py'] = file_sha256(full_sequence.__file__)
+    files['beta_translator/contact_geometry.py'] = file_sha256(Path(__file__).with_name('contact_geometry.py'))
     files['beta_translator/full_sequence_pipeline.py'] = file_sha256(__file__)
     return files
 
@@ -181,7 +182,8 @@ def render_full_sequence(inputs, result, diagnostic, destination):
     panel_h = int(round(padded.shape[0]/padded.shape[1]*panel_w/2))*2
     header, footer, sidebar = 100, 96, 424
     width, height = panel_w+sidebar, panel_h+header+footer
-    raw, video = destination/'encoding.mp4', destination/'trial3_target_180cm_full_sequence.mp4'
+    raw = destination/'encoding.mp4'
+    video = destination/f'trial3_target_{result["body"]["height_cm"]:g}cm_full_sequence.mp4'
     writer = cv2.VideoWriter(str(raw), cv2.VideoWriter_fourcc(*'mp4v'), inputs['fps'], (width,height))
     if not writer.isOpened():
         raise RuntimeError('Could not open video writer.')
@@ -219,7 +221,7 @@ def render_full_sequence(inputs, result, diagnostic, destination):
                             cv2.line(wall, tuple(np.rint(a).astype(int)), tuple(np.rint(b).astype(int)), color, 2, cv2.LINE_AA)
             canvas = np.full((height,width,3), 250, np.uint8)
             canvas[header:header+panel_h,:panel_w] = cv2.resize(wall,(panel_w,panel_h),interpolation=cv2.INTER_AREA)
-            put(canvas, '180 cm | Full-sequence 2D body adaptation', 18, 29, .72, thickness=2)
+            put(canvas, f'{result["body"]["height_cm"]:g} cm | Full-sequence 2D body adaptation', 18, 29, .72, thickness=2)
             put(canvas, f'Frame {frame:03d} / 502 | {frame/inputs["fps"]:.2f} s | 1.00x | fixed body lengths', 18, 55, .54)
             color = status_colors[diagnostic['status'][t]]
             put(canvas, f'{diagnostic["status"][t].upper()} | max contact gap {diagnostic["max_contact_error_cm"][t]:.2f} cm', 18, 82, .54, color, 2)
@@ -285,20 +287,20 @@ def render_full_sequence(inputs, result, diagnostic, destination):
 def run_full_sequence(project, height_cm=180, ratios=None, settings=None, progress=print):
     """Create/reuse an immutable run directory; never replace earlier results."""
     project = Path(project).resolve()
-    body = dict(height_cm=height_cm, ratios=dict(RATIOS if ratios is None else ratios))
-    if height_cm != 180:
-        raise ValueError('This Trial 3 presentation currently labels the requested 180 cm body.')
+    body = dict(height_cm=float(height_cm), ratios=dict(RATIOS if ratios is None else ratios))
+    make_body(**body)
+    video_name = f'trial3_target_{height_cm:g}cm_full_sequence.mp4'
     config = {**DEFAULT_SETTINGS, **(settings or {})}
     before = input_provenance(project)
     identity = dict(inputs=before, body=body, settings=config)
     key = hashlib.sha256(json.dumps(identity, sort_keys=True).encode()).hexdigest()[:12]
-    destination = project/'outputs/trial3/full_sequence'/f'target_180cm_{key}'
+    destination = project/'outputs/trial3/full_sequence'/f'target_{height_cm:g}cm_{key}'
     if (destination/'summary.json').is_file():
         summary = json.loads((destination/'summary.json').read_text())
         if summary.get('provenance') == identity and all((destination/name).is_file() and
                 file_sha256(destination/name) == digest for name,digest in summary['output_sha256'].items()):
             if progress: progress('Reused verified full-sequence outputs.')
-            return {**summary, 'output_dir':str(destination), 'video_file':str(destination/'trial3_target_180cm_full_sequence.mp4')}
+            return {**summary, 'output_dir':str(destination), 'video_file':str(destination/video_name)}
     if destination.exists():
         destination = destination.with_name(destination.name+'_'+uuid.uuid4().hex[:8])
     inputs = load_full_sequence_inputs(project)
@@ -321,7 +323,7 @@ def run_full_sequence(project, height_cm=180, ratios=None, settings=None, progre
         if progress: progress('Rendering the complete target-body video and diagnostic tables.')
         files = render_full_sequence(inputs, result, diagnostic, stage)
         files += [stage/name for name in ['trajectory.npz','frame_diagnostics.csv','limb_diagnostics.csv','issue_intervals.csv']]
-        summary = dict(schema_version=1, provenance=identity, frame_count=len(result['frames']),
+        summary = dict(schema_version=1, provenance=identity, video_name=video_name, frame_count=len(result['frames']),
             first_frame=int(result['frames'][0]), last_frame=int(result['frames'][-1]),
             fps=inputs['fps'], duration_seconds=len(result['frames'])/inputs['fps'],
             body=body, source_climber_height_cm=None, method=result['method'],
@@ -356,4 +358,4 @@ def run_full_sequence(project, height_cm=180, ratios=None, settings=None, progre
         for f in files:
             (destination/f.name).write_bytes(f.read_bytes())
     if progress: progress(f'Full sequence saved: {destination}')
-    return {**summary, 'output_dir':str(destination), 'video_file':str(destination/'trial3_target_180cm_full_sequence.mp4')}
+    return {**summary, 'output_dir':str(destination), 'video_file':str(destination/video_name)}

@@ -1,0 +1,151 @@
+{
+  "schema_version": 1,
+  "provenance": {
+    "inputs": {
+      "videos/trial3.mp4": "8b5f96c2cd634c82e28d09eba62ba9bf6939bea34cbafe15be1388d831b6eff4",
+      "models/contact_v1/deployment.json": "5c15dee5f2cf3da1fd88ced97772f62d7c6ced24607094a78e721e72fef43dcd",
+      "outputs/trial3/state/reviewed_hold_map.npz": "39726e93e839e17dda02551466fe5e2c9f7a13b0f53cd74c3e7859f0fb8931f4",
+      "outputs/trial3/state/alignment_cache.npz": "f1405497f353345f552456316723ac44b777b8ef1d8dc9d97f9527d8bcb9deae",
+      "outputs/trial3/state/white_wall_calibration.json": "1d8bcf75bc06ee332a31e227822f1730afe4368f956c5b088c2593979782e5c4",
+      "outputs/trial3/tables/pose_coordinates.csv": "2ba613782994daad386596690a9b3d9202064acaf6a407caab659ea3e5ad42e6",
+      "outputs/trial3/tables/source_frame_map.csv": "11e406fb4af0a143028ef73b717fbb59f4aa4b5dd37b0935c444678dee0a64da",
+      "outputs/trial3/automatic/wholebody.npz": "182e79fb40d8d9d292995eb6f80cb9f393cde7d2aa2e5677977558f39c85edb0",
+      "outputs/trial3/automatic/predictions/automatic_contacts.json": "560a860785882aa3ed9458859c0e6f367bfb2d250a7a75efd43399bddc9f0743",
+      "outputs/trial3/automatic/predictions/limb_contacts.csv": "4b36b4d50e6bf7089884b34255549af0c1bbcb62d772e45c90c7f07b119c56b1",
+      "outputs/trial3/automatic/predictions/contact_events.csv": "90ed5fe402605335d80662bdf6b90fb072eb04367aa391814dee3387cd629704",
+      "outputs/trial3/state/identity_guard.npz": "eb42b5bee339801e7f080fdffe82e8f11c9fd228613fc1e3fe8a4dd1d495ee45",
+      "data/trial3_wall_grid.json": "2123d59dee5d6ce8716238bdb379c452ef4ead254c50ce2486037c91bde0fa9b",
+      "outputs/trial3/state/white_wall_grid_points.json": "6aebbdc3e8f52a221ffb7bec8512e4ec0d77dc06f35d468fc4dd4d44af16543d",
+      "outputs/trial3/state/plane_calibration_manifest.json": "ef3c058c96d9da18462ec057664578f321047dc3e976b74034b4471b29e7aebf",
+      "models/contact_v1/model_1.pt": "3aea6211ecc62eb79731536af388476b76a35d9af9483999fc8108decd479119",
+      "models/contact_v1/model_2.pt": "ee003c9dad6df413f3347f3fad25bc62042cf02560ee7a41d9f6d30d4c7c2aac",
+      "models/contact_v1/model_3.pt": "896ea4175834688ad445876cce6929969eca2e879db73f5fea713fa4b9796abb",
+      "beta_translator/inverse_kinematics.py": "6262bac4be63170a8e4021c1d9c070200c92f7152663d9b8c0b2ebba144d04b6",
+      "beta_translator/motion_ik.py": "b364055818cce40733b0c074a20347bf17c8539ea5dd84ec50eec9b5aa82a2fb",
+      "beta_translator/pose_adapter.py": "db9a6ed603092ad12967bd3c858d35fc3e4c83cbb556ae0aeaa0f5a01b91a454",
+      "beta_translator/plane_ik.py": "140537a1aa49876616d4a566d3e0ebb0858c50bc1f225651f8d0ff99b963aff6",
+      "beta_translator/plane_calibration.py": "f9fa471fc3203137d4fc82169d61c9bc669df621fb3fe15497f471a910aee97c",
+      "beta_translator/contact_review.py": "1130bb833cab6d0a96c1e0d6785b53f5c1e7894ed34caeddaa094f8fa9fd8605",
+      "beta_translator/identity_tracking.py": "13aafe67d75ada8c5b7cf9ebfa70fb03292c13eab3d730a5dc28fd3dfffdb2ef",
+      "beta_translator/project_io.py": "2443301f901d70a7ef091233312242a90043a8eaabe709642e36f84bf1c74ace",
+      "beta_translator/full_sequence.py": "07bf9d4b3ffb231770aa208f9029a551346b7ce1d76c2500c4ee516e13cfe0f1",
+      "beta_translator/contact_geometry.py": "3ffb0f096fd95cad0f3ba4253f451341dff4964593bfb297309468ed5570e8f9",
+      "beta_translator/full_sequence_pipeline.py": "a75f8f3fd15c0084dfc95341daa6dcf415c8509703af1f19910ef409683927e4"
+    },
+    "body": {
+      "height_cm": 180.0,
+      "ratios": {
+        "upper_arm": 0.186,
+        "forearm": 0.146,
+        "thigh": 0.245,
+        "shank": 0.246,
+        "shoulder_w": 0.259,
+        "hip_w": 0.191,
+        "torso": 0.288
+      }
+    },
+    "settings": {
+      "contact_scale_cm": 1.0,
+      "outside_hull_weight": 0.15,
+      "reference_angle_weight": 0.6,
+      "reference_hip_scale_cm": 35.0,
+      "free_endpoint_scale_cm": 30.0,
+      "velocity_weight": 0.08,
+      "acceleration_weight": 0.03,
+      "contact_tolerance_cm": 0.1,
+      "large_error_cm": 5.0,
+      "angle_step_warning_deg": 15.0,
+      "hip_step_warning_cm": 5.0,
+      "max_nfev": 1000
+    }
+  },
+  "video_name": "trial3_target_180cm_full_sequence.mp4",
+  "frame_count": 503,
+  "first_frame": 0,
+  "last_frame": 502,
+  "fps": 30.0,
+  "duration_seconds": 16.766666666666666,
+  "body": {
+    "height_cm": 180.0,
+    "ratios": {
+      "upper_arm": 0.186,
+      "forearm": 0.146,
+      "thigh": 0.245,
+      "shank": 0.246,
+      "shoulder_w": 0.259,
+      "hip_w": 0.191,
+      "torso": 0.288
+    }
+  },
+  "source_climber_height_cm": null,
+  "method": "One joint optimization over every source frame; variable per-limb contacts.",
+  "optimizer": {
+    "success": true,
+    "message": "`ftol` termination condition is satisfied.",
+    "nfev": 804,
+    "cost": 2611.6949939953847,
+    "optimality": 1.8418027722033015
+  },
+  "flag_counts": {
+    "contact_residual": 241,
+    "large_contact_residual": 31,
+    "span_conflict": 83,
+    "hold_extrapolation": 93,
+    "unknown_contact": 0,
+    "unresolved_foot_support": 168,
+    "wall_contact_unlocated": 0,
+    "low_contact_confidence": 276,
+    "low_pose_visibility": 503,
+    "reference_extrapolation": 277,
+    "rapid_pose_change": 3,
+    "optimizer_unconverged": 0
+  },
+  "status_counts": {
+    "uncertain": 262,
+    "constraint_warning": 241
+  },
+  "max_contact_error_cm": 14.8127634410708,
+  "median_frame_max_contact_error_cm": 0.09710603629171587,
+  "max_segment_length_error_cm": 3.552713678800501e-14,
+  "max_angle_step_deg": 16.428996206705065,
+  "max_hip_step_cm": 5.870136723771774,
+  "settings": {
+    "contact_scale_cm": 1.0,
+    "outside_hull_weight": 0.15,
+    "reference_angle_weight": 0.6,
+    "reference_hip_scale_cm": 35.0,
+    "free_endpoint_scale_cm": 30.0,
+    "velocity_weight": 0.08,
+    "acceleration_weight": 0.03,
+    "contact_tolerance_cm": 0.1,
+    "large_error_cm": 5.0,
+    "angle_step_warning_deg": 15.0,
+    "hip_step_warning_cm": 5.0,
+    "max_nfev": 1000
+  },
+  "candidate_run_id": "e8596b6345034ed99839af04025601fe",
+  "reference_frame": 334,
+  "model_threshold_coverage": 0.8101391650099403,
+  "contact_source": "Original decoded per-frame predictions; no reclassification or retraining.",
+  "floor_support": "Not measured. Free feet remain ground/wall/air unresolved.",
+  "calibration_scope": "Existing white-wall transform; H053 is a low-weight flagged extrapolation. No expanded calibration.",
+  "interpretation": "Full-duration best-effort 2D adaptation. Warning frames are exported for diagnosis, not accepted IK or climbing success.",
+  "limitations": [
+    "Contact centers and timing are unreviewed model predictions.",
+    "A joint global objective balances contact gaps, projected references, velocity and acceleration.",
+    "The 0.1 cm diagnostic threshold is numerical, not measurement accuracy.",
+    "Body lengths are fixed; infeasible contacts remain residuals instead of stretching limbs.",
+    "Ground/wall/air support cannot be distinguished from free labels alone.",
+    "No force, friction, balance, collision, grasp shape, depth, or alternative-beta planner.",
+    "Future frames are used; this is an offline animation."
+  ],
+  "output_sha256": {
+    "trial3_target_180cm_full_sequence.mp4": "3c7b74aec66e7a29b1f8d48147b9483343012dd199fcfc11cce2a70af3c8ed12",
+    "poster.png": "6ffaff1eb3a6a8261d9c2361287f39b58dacd80966604707a520d2c1baee6bc0",
+    "storyboard.png": "2c37090ba3c96252986369ce3c79d8514e0499f5c0c9f955783cb9d01ae8de05",
+    "trajectory.npz": "312d60c30628614e5a0990d6882fc4cf96e8f8f89620dae6704b110578ac8f5c",
+    "frame_diagnostics.csv": "2c952703923502144f37cbc400d2115f76f9f8cbb740e9855b1c383215121be4",
+    "limb_diagnostics.csv": "c6c1964d4faa1581c2c73b9fbeee6b071ef1b0b6d5b01d895529dc3e171dabf5",
+    "issue_intervals.csv": "b3074e988a88d4d27ff436a447dcbe0992ee06ff896709f789ab81cf73a749c4"
+  }
+}

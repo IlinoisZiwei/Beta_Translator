@@ -1,0 +1,15 @@
+event_id,release_index,release_frame,moving_indices,moving_limbs,from_labels,to_labels,timing_uncertain,timing_reason
+R001,3,3,[2],left_foot,ground_left_001,free,True,ground_observation_ends_boundary_uncertain
+R002,18,18,[3],right_foot,ground_right_001,free,True,ground_observation_ends_boundary_uncertain
+R003,63,63,[2],left_foot,ground_left_002,free,True,ground_observation_ends_boundary_uncertain
+R004,76,76,[1],right_hand,H44,free,False,predicted_first_free_frame
+R005,113,113,[0],left_hand,H44,free,False,predicted_first_free_frame
+R006,153,153,[3],right_foot,H65,free,False,predicted_first_free_frame
+R007,180,180,[2],left_foot,H62,free,False,predicted_first_free_frame
+R008,211,211,[1],right_hand,H33,free,False,predicted_first_free_frame
+R009,241,241,[0],left_hand,H28,H26,True,direct_hold_change
+R010,266,266,[3],right_foot,H60,free,False,predicted_first_free_frame
+R011,283,283,[1],right_hand,H26,H23,True,direct_hold_change
+R012,288,288,[0],left_hand,H26,free,False,predicted_first_free_frame
+R013,308,308,[1],right_hand,H23,free,False,predicted_first_free_frame
+R014,367,367,[0],left_hand,H16,free,False,predicted_first_free_frame

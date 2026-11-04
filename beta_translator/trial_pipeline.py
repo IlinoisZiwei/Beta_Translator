@@ -433,7 +433,7 @@ def geometry_status(video, root, height_cm, ratios, px_per_cm=None, single_panel
     return result
 
 
-def render_summary(video, root, prediction, contacts, plan):
+def render_contact_preview(video, root, prediction, contacts):
     """One compact prediction video, explicitly separate from retargeted IK output."""
     from .contact_features import LANDMARKS, LIMBS
     from .identity_tracking import load_identity_guard
@@ -497,6 +497,16 @@ def render_summary(video, root, prediction, contacts, plan):
         raw.unlink()  # Encoding scratch file; the verified H.264 preview is retained.
     else:
         cap.release()
+    return output
+
+
+def render_summary(video, root, prediction, contacts, plan):
+    """Summarize analysis and IK separately, reusing the verified contact replay."""
+    root = Path(root)
+    output = render_contact_preview(video, root, prediction, contacts)
+    cap = cv2.VideoCapture(str(video))
+    count, fps = int(cap.get(7)), cap.get(5)
+    cap.release()
     identity_summary=json.loads((root/'state/identity_tracking_summary.json').read_text())
     scene=json.loads((root/'state/scene_manifest.json').read_text())
     summary=dict(frame_count=count,fps=fps,hold_candidates=scene['candidate_count'],

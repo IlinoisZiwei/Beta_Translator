@@ -1,0 +1,44 @@
+{
+  "name": "key_0250_tilt30_depth10",
+  "tilt_deg": 30.0,
+  "depth_prior_cm": 10.0,
+  "height_cm": 180.0,
+  "first_frame": 250,
+  "last_frame": 250,
+  "frames": 1,
+  "contact_weight": 20.0,
+  "depth_weight": 1.0,
+  "force_weight": 0.0,
+  "support_weight": 0.0,
+  "solver": {
+    "success": true,
+    "message": "L-BFGS-B fallback; fresh projected gradient audited: CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "nfev": 1889,
+    "nit": 1449,
+    "cost": 2.8106538455431376,
+    "optimality": 2.3099375535921724e-08,
+    "relative_cost_change": 1.9306820088155507e-05,
+    "gradient_definition": "infinity norm of projected J.T r / max(1, column L2 norm of J)",
+    "initial_direct_solver": {
+      "success": false,
+      "message": "Maximum inner iterations reached.",
+      "nfev": 1549,
+      "nit": 1200,
+      "cost": 2.8931822414150967,
+      "optimality": 0.004447784179213257,
+      "relative_cost_change": 1.9306820088155507e-05,
+      "gradient_definition": "infinity norm of projected J.T r / max(1, column L2 norm of J)"
+    },
+    "fallback_attempted": true,
+    "seconds": 0.0,
+    "shared_pose_solve_seconds": 13.53476079198299
+  },
+  "code_sha256": {
+    "scene3d.py": "f3d99c84bf34fb1f84ef9ce9375cb6af91ca1c2272db5235e4596e1ef054588f",
+    "ik3d.py": "9fc7bcbcd807da80f6305b4f8d76ad526fbb3b2896cb4d6da05ff26444def327",
+    "trial3_3d_pipeline.py": "12935d3e7d085d72ac9db476684a865550a4eaab1265c10c2623274db23c65c8"
+  },
+  "kinematics_reused_from": "key_0250_tilt0_depth10",
+  "physical_validation": false,
+  "geometry": "Single plane with unmeasured intrinsics, tilt and body depth."
+}

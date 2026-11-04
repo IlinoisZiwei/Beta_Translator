@@ -1,0 +1,682 @@
+[
+  {
+    "episode": 0,
+    "limb": "left_hand",
+    "limb_index": 0,
+    "hold": "H032",
+    "start_frame": 0,
+    "end_frame": 95,
+    "evidence_frames": 80,
+    "evidence_available": true,
+    "expert_confirmed": false,
+    "center_cm": [
+      -45.54240398232922,
+      -256.15491723913874,
+      0.0
+    ],
+    "anchor_px": [
+      306,
+      623
+    ],
+    "prior_px": [
+      306.0,
+      623.0
+    ],
+    "rectangle_px": [
+      289.0,
+      614.0,
+      306.0,
+      647.0
+    ],
+    "offset_cm": [
+      -6.021512327858259,
+      -1.852400951589862,
+      2.16
+    ],
+    "direction_observations": 80,
+    "offset_measured": false,
+    "region_is_surface": false,
+    "region_rule": "Closed rectangle inside observed mask, one-pixel erosion when available; max 24 px per edge.",
+    "offset_rule": "Source-derived planar direction only; hand 0.035h + 0.012h outward; foot 0.045h + 0.025h outward."
+  },
+  {
+    "episode": 1,
+    "limb": "left_hand",
+    "limb_index": 0,
+    "hold": "H017",
+    "start_frame": 111,
+    "end_frame": 241,
+    "evidence_frames": 130,
+    "evidence_available": true,
+    "expert_confirmed": false,
+    "center_cm": [
+      0.9098540211350183,
+      -168.0493438102964,
+      0.0
+    ],
+    "anchor_px": [
+      394,
+      477
+    ],
+    "prior_px": [
+      394.0,
+      477.0
+    ],
+    "rectangle_px": [
+      390.0,
+      474.0,
+      415.0,
+      498.0
+    ],
+    "offset_cm": [
+      -1.6177642202071187,
+      -6.088746909489477,
+      2.16
+    ],
+    "direction_observations": 130,
+    "offset_measured": false,
+    "region_is_surface": false,
+    "region_rule": "Closed rectangle inside observed mask, one-pixel erosion when available; max 24 px per edge.",
+    "offset_rule": "Source-derived planar direction only; hand 0.035h + 0.012h outward; foot 0.045h + 0.025h outward."
+  },
+  {
+    "episode": 2,
+    "limb": "left_hand",
+    "limb_index": 0,
+    "hold": "H012",
+    "start_frame": 256,
+    "end_frame": 378,
+    "evidence_frames": 123,
+    "evidence_available": true,
+    "expert_confirmed": false,
+    "center_cm": [
+      -62.43884987150779,
+      -118.0110307795752,
+      0.0
+    ],
+    "anchor_px": [
+      282,
+      377
+    ],
+    "prior_px": [
+      282.0,
+      377.0
+    ],
+    "rectangle_px": [
+      266.0,
+      373.0,
+      283.0,
+      389.0
+    ],
+    "offset_cm": [
+      1.9872939022058802,
+      -5.978349516903084,
+      2.16
+    ],
+    "direction_observations": 123,
+    "offset_measured": false,
+    "region_is_surface": false,
+    "region_rule": "Closed rectangle inside observed mask, one-pixel erosion when available; max 24 px per edge.",
+    "offset_rule": "Source-derived planar direction only; hand 0.035h + 0.012h outward; foot 0.045h + 0.025h outward."
+  },
+  {
+    "episode": 3,
+    "limb": "left_hand",
+    "limb_index": 0,
+    "hold": "H007",
+    "start_frame": 379,
+    "end_frame": 470,
+    "evidence_frames": 78,
+    "evidence_available": true,
+    "expert_confirmed": false,
+    "center_cm": [
+      -61.43019817850214,
+      -89.77309652877544,
+      0.0
+    ],
+    "anchor_px": [
+      283,
+      341
+    ],
+    "prior_px": [
+      283.0,
+      341.0
+    ],
+    "rectangle_px": [
+      271.0,
+      326.0,
+      289.0,
+      341.0
+    ],
+    "offset_cm": [
+      -1.9700202104714886,
+      -5.984063867501239,
+      2.16
+    ],
+    "direction_observations": 78,
+    "offset_measured": false,
+    "region_is_surface": false,
+    "region_rule": "Closed rectangle inside observed mask, one-pixel erosion when available; max 24 px per edge.",
+    "offset_rule": "Source-derived planar direction only; hand 0.035h + 0.012h outward; foot 0.045h + 0.025h outward."
+  },
+  {
+    "episode": 4,
+    "limb": "left_hand",
+    "limb_index": 0,
+    "hold": "H001",
+    "start_frame": 486,
+    "end_frame": 502,
+    "evidence_frames": 7,
+    "evidence_available": true,
+    "expert_confirmed": false,
+    "center_cm": [
+      -29.389583189733184,
+      -42.25481099431017,
+      0.0
+    ],
+    "anchor_px": [
+      347,
+      280
+    ],
+    "prior_px": [
+      347.0,
+      280.0
+    ],
+    "rectangle_px": [
+      341.0,
+      275.0,
+      356.0,
+      296.0
+    ],
+    "offset_cm": [
+      -0.7154325273865894,
+      -6.2592456653144115,
+      2.16
+    ],
+    "direction_observations": 7,
+    "offset_measured": false,
+    "region_is_surface": false,
+    "region_rule": "Closed rectangle inside observed mask, one-pixel erosion when available; max 24 px per edge.",
+    "offset_rule": "Source-derived planar direction only; hand 0.035h + 0.012h outward; foot 0.045h + 0.025h outward."
+  },
+  {
+    "episode": 5,
+    "limb": "right_hand",
+    "limb_index": 1,
+    "hold": "H032",
+    "start_frame": 0,
+    "end_frame": 42,
+    "evidence_frames": 40,
+    "evidence_available": true,
+    "expert_confirmed": false,
+    "center_cm": [
+      -45.54240398232922,
+      -256.15491723913874,
+      0.0
+    ],
+    "anchor_px": [
+      324,
+      640
+    ],
+    "prior_px": [
+      324.0,
+      640.0
+    ],
+    "rectangle_px": [
+      303.0,
+      639.0,
+      324.0,
+      659.0
+    ],
+    "offset_cm": [
+      -0.9112974512452834,
+      -6.233741810129279,
+      2.16
+    ],
+    "direction_observations": 40,
+    "offset_measured": false,
+    "region_is_surface": false,
+    "region_rule": "Closed rectangle inside observed mask, one-pixel erosion when available; max 24 px per edge.",
+    "offset_rule": "Source-derived planar direction only; hand 0.035h + 0.012h outward; foot 0.045h + 0.025h outward."
+  },
+  {
+    "episode": 6,
+    "limb": "right_hand",
+    "limb_index": 1,
+    "hold": "H021",
+    "start_frame": 55,
+    "end_frame": 125,
+    "evidence_frames": 49,
+    "evidence_available": true,
+    "expert_confirmed": false,
+    "center_cm": [
+      0.2778292101854856,
+      -210.31497083391977,
+      0.0
+    ],
+    "anchor_px": [
+      394,
+      551
+    ],
+    "prior_px": [
+      394.0,
+      551.0
+    ],
+    "rectangle_px": [
+      394.0,
+      551.0,
+      408.0,
+      568.0
+    ],
+    "offset_cm": [
+      5.508617424870446,
+      -3.0569812015146107,
+      2.16
+    ],
+    "direction_observations": 49,
+    "offset_measured": false,
+    "region_is_surface": false,
+    "region_rule": "Closed rectangle inside observed mask, one-pixel erosion when available; max 24 px per edge.",
+    "offset_rule": "Source-derived planar direction only; hand 0.035h + 0.012h outward; foot 0.045h + 0.025h outward."
+  },
+  {
+    "episode": 7,
+    "limb": "right_hand",
+    "limb_index": 1,
+    "hold": "H017",
+    "start_frame": 126,
+    "end_frame": 303,
+    "evidence_frames": 108,
+    "evidence_available": true,
+    "expert_confirmed": false,
+    "center_cm": [
+      0.9098540211350183,
+      -168.0493438102964,
+      0.0
+    ],
+    "anchor_px": [
+      398,
+      471
+    ],
+    "prior_px": [
+      398.0,
+      471.0
+    ],
+    "rectangle_px": [
+      392.0,
+      466.0,
+      418.0,
+      492.0
+    ],
+    "offset_cm": [
+      5.641649664582291,
+      -2.8038882042832127,
+      2.16
+    ],
+    "direction_observations": 108,
+    "offset_measured": false,
+    "region_is_surface": false,
+    "region_rule": "Closed rectangle inside observed mask, one-pixel erosion when available; max 24 px per edge.",
+    "offset_rule": "Source-derived planar direction only; hand 0.035h + 0.012h outward; foot 0.045h + 0.025h outward."
+  },
+  {
+    "episode": 8,
+    "limb": "right_hand",
+    "limb_index": 1,
+    "hold": "H007",
+    "start_frame": 324,
+    "end_frame": 354,
+    "evidence_frames": 11,
+    "evidence_available": true,
+    "expert_confirmed": false,
+    "center_cm": [
+      -61.43019817850214,
+      -89.77309652877544,
+      0.0
+    ],
+    "anchor_px": [
+      302,
+      366
+    ],
+    "prior_px": [
+      302.0,
+      366.0
+    ],
+    "rectangle_px": [
+      285.0,
+      346.0,
+      303.0,
+      367.0
+    ],
+    "offset_cm": [
+      5.190879413139514,
+      -3.569981921276966,
+      2.16
+    ],
+    "direction_observations": 11,
+    "offset_measured": false,
+    "region_is_surface": false,
+    "region_rule": "Closed rectangle inside observed mask, one-pixel erosion when available; max 24 px per edge.",
+    "offset_rule": "Source-derived planar direction only; hand 0.035h + 0.012h outward; foot 0.045h + 0.025h outward."
+  },
+  {
+    "episode": 9,
+    "limb": "right_hand",
+    "limb_index": 1,
+    "hold": "H012",
+    "start_frame": 355,
+    "end_frame": 408,
+    "evidence_frames": 34,
+    "evidence_available": true,
+    "expert_confirmed": false,
+    "center_cm": [
+      -62.43884987150779,
+      -118.0110307795752,
+      0.0
+    ],
+    "anchor_px": [
+      295,
+      383
+    ],
+    "prior_px": [
+      295.0,
+      383.0
+    ],
+    "rectangle_px": [
+      274.0,
+      380.0,
+      295.0,
+      403.0
+    ],
+    "offset_cm": [
+      4.323782684983276,
+      4.5820195648904445,
+      2.16
+    ],
+    "direction_observations": 34,
+    "offset_measured": false,
+    "region_is_surface": false,
+    "region_rule": "Closed rectangle inside observed mask, one-pixel erosion when available; max 24 px per edge.",
+    "offset_rule": "Source-derived planar direction only; hand 0.035h + 0.012h outward; foot 0.045h + 0.025h outward."
+  },
+  {
+    "episode": 10,
+    "limb": "right_hand",
+    "limb_index": 1,
+    "hold": "H001",
+    "start_frame": 428,
+    "end_frame": 502,
+    "evidence_frames": 52,
+    "evidence_available": true,
+    "expert_confirmed": false,
+    "center_cm": [
+      -29.389583189733184,
+      -42.25481099431017,
+      0.0
+    ],
+    "anchor_px": [
+      355,
+      273
+    ],
+    "prior_px": [
+      355.0,
+      273.0
+    ],
+    "rectangle_px": [
+      343.0,
+      273.0,
+      355.0,
+      296.0
+    ],
+    "offset_cm": [
+      2.345324419612221,
+      -5.847174819241391,
+      2.16
+    ],
+    "direction_observations": 52,
+    "offset_measured": false,
+    "region_is_surface": false,
+    "region_rule": "Closed rectangle inside observed mask, one-pixel erosion when available; max 24 px per edge.",
+    "offset_rule": "Source-derived planar direction only; hand 0.035h + 0.012h outward; foot 0.045h + 0.025h outward."
+  },
+  {
+    "episode": 11,
+    "limb": "left_foot",
+    "limb_index": 2,
+    "hold": "H053",
+    "start_frame": 0,
+    "end_frame": 92,
+    "evidence_frames": 93,
+    "evidence_available": true,
+    "expert_confirmed": false,
+    "center_cm": [
+      -45.064369750572,
+      -390.6163147679846,
+      0.0
+    ],
+    "anchor_px": [
+      306,
+      913
+    ],
+    "prior_px": [
+      305.0,
+      913.0
+    ],
+    "rectangle_px": [
+      302.0,
+      913.0,
+      305.0,
+      931.0
+    ],
+    "offset_cm": [
+      -7.6667251342982,
+      2.6136804921643075,
+      4.5
+    ],
+    "direction_observations": 93,
+    "offset_measured": false,
+    "region_is_surface": false,
+    "region_rule": "Closed rectangle inside observed mask, one-pixel erosion when available; max 24 px per edge.",
+    "offset_rule": "Source-derived planar direction only; hand 0.035h + 0.012h outward; foot 0.045h + 0.025h outward."
+  },
+  {
+    "episode": 12,
+    "limb": "left_foot",
+    "limb_index": 2,
+    "hold": "H045",
+    "start_frame": 147,
+    "end_frame": 263,
+    "evidence_frames": 117,
+    "evidence_available": true,
+    "expert_confirmed": false,
+    "center_cm": [
+      -14.135497439641735,
+      -329.6342230216588,
+      0.0
+    ],
+    "anchor_px": [
+      370,
+      786
+    ],
+    "prior_px": [
+      370.0,
+      786.0
+    ],
+    "rectangle_px": [
+      365.0,
+      785.0,
+      371.0,
+      797.0
+    ],
+    "offset_cm": [
+      6.895607247189343,
+      4.24977654618567,
+      4.5
+    ],
+    "direction_observations": 117,
+    "offset_measured": false,
+    "region_is_surface": false,
+    "region_rule": "Closed rectangle inside observed mask, one-pixel erosion when available; max 24 px per edge.",
+    "offset_rule": "Source-derived planar direction only; hand 0.035h + 0.012h outward; foot 0.045h + 0.025h outward."
+  },
+  {
+    "episode": 13,
+    "limb": "left_foot",
+    "limb_index": 2,
+    "hold": "H032",
+    "start_frame": 288,
+    "end_frame": 502,
+    "evidence_frames": 215,
+    "evidence_available": true,
+    "expert_confirmed": false,
+    "center_cm": [
+      -45.54240398232922,
+      -256.15491723913874,
+      0.0
+    ],
+    "anchor_px": [
+      297,
+      613
+    ],
+    "prior_px": [
+      297.0,
+      613.0
+    ],
+    "rectangle_px": [
+      295.0,
+      611.0,
+      303.0,
+      637.0
+    ],
+    "offset_cm": [
+      0.2968498700777823,
+      8.094558675717584,
+      4.5
+    ],
+    "direction_observations": 215,
+    "offset_measured": false,
+    "region_is_surface": false,
+    "region_rule": "Closed rectangle inside observed mask, one-pixel erosion when available; max 24 px per edge.",
+    "offset_rule": "Source-derived planar direction only; hand 0.035h + 0.012h outward; foot 0.045h + 0.025h outward."
+  },
+  {
+    "episode": 14,
+    "limb": "right_foot",
+    "limb_index": 3,
+    "hold": "H050",
+    "start_frame": 30,
+    "end_frame": 191,
+    "evidence_frames": 162,
+    "evidence_available": true,
+    "expert_confirmed": false,
+    "center_cm": [
+      1.2528680575372029,
+      -361.2350116066533,
+      0.0
+    ],
+    "anchor_px": [
+      405,
+      851
+    ],
+    "prior_px": [
+      404.0,
+      852.0
+    ],
+    "rectangle_px": [
+      389.0,
+      852.0,
+      404.0,
+      860.0
+    ],
+    "offset_cm": [
+      -7.264486722925254,
+      3.582908406929027,
+      4.5
+    ],
+    "direction_observations": 162,
+    "offset_measured": false,
+    "region_is_surface": false,
+    "region_rule": "Closed rectangle inside observed mask, one-pixel erosion when available; max 24 px per edge.",
+    "offset_rule": "Source-derived planar direction only; hand 0.035h + 0.012h outward; foot 0.045h + 0.025h outward."
+  },
+  {
+    "episode": 15,
+    "limb": "right_foot",
+    "limb_index": 3,
+    "hold": "H054",
+    "start_frame": 231,
+    "end_frame": 366,
+    "evidence_frames": 136,
+    "evidence_available": true,
+    "expert_confirmed": false,
+    "center_cm": [
+      -44.81673872363342,
+      -286.5022759951786,
+      0.0
+    ],
+    "anchor_px": [
+      310,
+      695
+    ],
+    "prior_px": [
+      311.0,
+      696.0
+    ],
+    "rectangle_px": [
+      311.0,
+      696.0,
+      311.0,
+      712.0
+    ],
+    "offset_cm": [
+      6.67969298618181,
+      4.581670176950052,
+      4.5
+    ],
+    "direction_observations": 136,
+    "offset_measured": false,
+    "region_is_surface": false,
+    "region_rule": "Closed rectangle inside observed mask, one-pixel erosion when available; max 24 px per edge.",
+    "offset_rule": "Source-derived planar direction only; hand 0.035h + 0.012h outward; foot 0.045h + 0.025h outward."
+  },
+  {
+    "episode": 16,
+    "limb": "right_foot",
+    "limb_index": 3,
+    "hold": "H021",
+    "start_frame": 388,
+    "end_frame": 502,
+    "evidence_frames": 115,
+    "evidence_available": true,
+    "expert_confirmed": false,
+    "center_cm": [
+      0.2778292101854856,
+      -210.31497083391977,
+      0.0
+    ],
+    "anchor_px": [
+      406,
+      530
+    ],
+    "prior_px": [
+      406.0,
+      530.0
+    ],
+    "rectangle_px": [
+      405.0,
+      530.0,
+      416.0,
+      543.0
+    ],
+    "offset_cm": [
+      -8.083298010347558,
+      -0.5198973705561296,
+      4.5
+    ],
+    "direction_observations": 115,
+    "offset_measured": false,
+    "region_is_surface": false,
+    "region_rule": "Closed rectangle inside observed mask, one-pixel erosion when available; max 24 px per edge.",
+    "offset_rule": "Source-derived planar direction only; hand 0.035h + 0.012h outward; foot 0.045h + 0.025h outward."
+  }
+]

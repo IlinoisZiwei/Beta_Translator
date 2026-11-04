@@ -1,0 +1,2 @@
+case,kind,tilt_deg,depth_prior_cm,frames,converged,projected_gradient,seconds,contact_failed_frames,max_contact_gap_cm,conditional_balance_frames,alternate_foot_normal_balance_frames,conditional_robust_frames,eligible_balance_frames,median_hip_depth_cm,max_segment_error_cm,min_wall_clearance_cm,max_source_guide_rmse_px
+continued_trajectory,continuation,15.0,25.0,36,True,8.717128351923285e-06,46.78306587500265,0,0.010562011145038418,8,16,8,7,24.790594001918578,4.973799150320701e-14,-7.105427357601002e-15,27.991328873606918

@@ -1,14 +1,15 @@
 # Trial 3: full-sequence 180 cm adaptation
 
-Run `Trial3_Full_Sequence.ipynb` from the repository with its `.venv` kernel, or:
+Open `Trial3_Analysis.ipynb`, configure the target body in Section 1, and run through
+Section 7 in order with the **Python (Beta Translator)** kernel, or:
 
 ```bash
 .venv/bin/python scripts/run_trial3_full_sequence.py
 ```
 
-This companion workflow reads the existing Trial 3 video, reviewed hold map,
+This workflow reads the existing Trial 3 video, reviewed hold map,
 pose/alignment caches, decoded contacts, and white-wall calibration. It does not
-retrain models, rebuild hold IDs, edit `Trial3_Analysis.ipynb`, or replace the
+retrain models, rebuild hold IDs, or replace the
 single-move IK outputs. Results live in separate, content-addressed directories
 under `outputs/trial3/full_sequence/`. Identical verified runs are reused;
 changed inputs or code create a new directory.

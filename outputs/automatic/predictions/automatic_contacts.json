@@ -1,5 +1,6 @@
 {
   "schema_version": 1,
+  "reference_frame_number": 0,
   "video_sha256": "db656ed38a93a619f6df7dbd65804718860aa9191e650a1a92952ab6063a007a",
   "pose_cache_sha256": "95960ed921a140ea5290fcb0918b72f366ccbc411218cef5b11e5f56e81f9f89",
   "alignment_sha256": "6750c2275ff0a8c79fd948d7b77746c226995175626896869d88e12688f9b5f1",
@@ -402,7 +403,7 @@
     }
   ],
   "artifact_sha256": {
-    "limb_contacts.csv": "5d9f3498e2bc4b0200a3a323ce9298798592a575526ef8680b297805a984208b",
-    "contact_events.csv": "cbf23ef49da662ddd0006c2375616d67ddfa5429959a622bea352e3de617cf9e"
+    "limb_contacts.csv": "e3be6fd54acf1ddff91c823862b830b673387fad7c058840a0cc9408bfebb16c",
+    "contact_events.csv": "e2986cd8fdd4dd0d27e597b9443aa98ed35daf759a553b9497e39f8f83952baa"
   }
 }

@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "body_height_cm": 180,
+  "geometry_measured": false,
+  "preferred_video": "refined_angles_180cm/refined_angles.mp4",
+  "preferred_viewer": "refined_angles_180cm/viewer.html",
+  "results_report": "../../../docs/trial3_spatial_results.md",
+  "runs": {
+    "target_180cm_8aa2d71aa739": {
+      "summary": "target_180cm_8aa2d71aa739/summary.json",
+      "sha256": "b276bcfa8a571c0065196aebc025b1cc0ef6e5bd7359e24072765fbc23a8242e"
+    },
+    "target_180cm_eb287ac0a4f4": {
+      "summary": "target_180cm_eb287ac0a4f4/summary.json",
+      "sha256": "511291aa6665687b27e7c48141ff1982f5f4b9e88e3c8ffc283dd1b5238f2d7a"
+    },
+    "refinement_180cm": {
+      "summary": "refinement_180cm/summary.json",
+      "sha256": "f7d78736576bfa3c8fc6d05cdcf9c5420f605b53eaa6605e62b5452f56d4ea40"
+    },
+    "refined_angles_180cm": {
+      "summary": "refined_angles_180cm/summary.json",
+      "sha256": "481b003add977c6586e3bed8822fb647b5a432390b6fc4f3bccd7b178299f547"
+    },
+    "scaling_180cm": {
+      "summary": "scaling_180cm/summary.json",
+      "sha256": "d2cf708fdb7b1c2d9151fb0b6224478d8832d3a6a785d16bc32202b1fdb31420"
+    },
+    "contact_regions_180cm": {
+      "summary": "contact_regions_180cm/summary.json",
+      "sha256": "4d72b41ff58204ea221f93dd7d31bc3e56a0679fc9b1d9edc62587e2a42e550f"
+    },
+    "depth_probe_280": {
+      "summary": "depth_probe_280/summary.json",
+      "sha256": "a02c13d45923ff6a2069c3a2871f73dfce1bd775cc8dbd70d9f3ab7b966facdb"
+    },
+    "depth_probe_518": {
+      "summary": "depth_probe_518/summary.json",
+      "sha256": "a61d9bd1f4f2478132e8af7e680d2a4f67daece40d843d152bde4497f33a9167"
+    }
+  },
+  "depth_probe_artifacts_sha256": {
+    "depth_probe_280/summary.json": "a02c13d45923ff6a2069c3a2871f73dfce1bd775cc8dbd70d9f3ab7b966facdb",
+    "depth_probe_280/conditional_neural_surface.ply": "4f0606d43b7cd2d0b4e5b4a75c78d6244955c0a8b6ed733e9d83493f63923bf7",
+    "depth_probe_280/frame_0314.jpg": "3227628cbb46226363db03aef1b68b5adc1fa3a7f28222861bac457d32bcad9f",
+    "depth_probe_280/metrics.csv": "1499cd823dc11d32bf633d7e6337320d33b57f43496106c5d2e9efe915b3e739",
+    "depth_probe_280/frame_0334.jpg": "6ecf73bff412b0771fadd2f60232d22accec2420f1f54ca39dadf6f752d6ace7",
+    "depth_probe_280/frame_0296.jpg": "178c628025b8d89f35bd563da2e30dab1cc1697531914adbc2c0596d930a6917",
+    "depth_probe_280/frame_0486.jpg": "f6c12175c07ef32d957eda09980771e5662579621ff9ce399bb2659fcf9d440c",
+    "depth_probe_280/relative_depth.npz": "30dc0cdf4cf96dc99fd6a6746c6341ef00ecd9a6b56c9b7f9b7a336852169c7a",
+    "depth_probe_518/summary.json": "a61d9bd1f4f2478132e8af7e680d2a4f67daece40d843d152bde4497f33a9167",
+    "depth_probe_518/conditional_neural_surface.ply": "b7cf873e4655e4777d8bd640d5104c3bcc884e0d33b346bbfaf589123fd257bf",
+    "depth_probe_518/frame_0314.jpg": "4250ca88f6551de1667b810c7abf1a1c3ded0c3226741f9d9f62af0f05b11f44",
+    "depth_probe_518/metrics.csv": "aea104ced17b53e99f8ca820586b84f31194326dfe33fbf3314e90b89c79deec",
+    "depth_probe_518/frame_0334.jpg": "8a8f64724578b32a6d4a6a36275ef6b90efbff6d04f36dd0719be7252f897e6d",
+    "depth_probe_518/frame_0296.jpg": "1a756dc9e4a6df3fcfe1d079e7aa6cfcc67ee947ffc948efbcb51df49ed05976",
+    "depth_probe_518/frame_0486.jpg": "3c16dcb22b32de07003bd6cea641dd9f98768b0c21575522ede5ad40c3d29292",
+    "depth_probe_518/relative_depth.npz": "4bbb5a22eac6b2f765215bff2fed760b7f1ae7c64595e20e7f1554e7420f270f"
+  },
+  "reproduction_source_sha256": {
+    "beta_translator/scene3d.py": "f3d99c84bf34fb1f84ef9ce9375cb6af91ca1c2272db5235e4596e1ef054588f",
+    "beta_translator/ik3d.py": "9fc7bcbcd807da80f6305b4f8d76ad526fbb3b2896cb4d6da05ff26444def327",
+    "beta_translator/scene3d_render.py": "1815a38f3eb9806d712aff97bed21533a1356f8455806bef1621a8f992dcbd22",
+    "beta_translator/trial3_3d_pipeline.py": "12935d3e7d085d72ac9db476684a865550a4eaab1265c10c2623274db23c65c8",
+    "scripts/run_trial3_3d_experiment.py": "89cca5ebf19309a9292fa77e1e7f76e21b72e9fc0680cf38e57e5518107061ba",
+    "scripts/probe_trial3_depth.py": "d6e7b654288969d03d33feede850a33a377a75fddd28ad202786c0b90804d4f2",
+    "scripts/download_3d_probe_assets.py": "3d01d9fb2fa6b96e778922b1e0f7446aa53d54ec115d5ae6ffe8d427b89eab31",
+    "scripts/benchmark_trial3_3d.py": "788596ffbb4cf09ed9e717e96f442ab812f1ba2a0b61fa1065ba3b961e1cc467",
+    "scripts/compare_refined_trial3_angles.py": "0eab6a5b79d5bf858f746a2d5442f59ef12fd1b5998cb706be385ac05a51dec1",
+    "scripts/review_trial3_contact_regions.py": "d7665144042448e338b1e0487cb8ca5186a331dc3c00b134910bfe51d002003b",
+    "tests/test_spatial_experiment.py": "c80ac8a67b7e58119790c775a89b31f03d4b3f6db51db2f0162f48b552c7a09e"
+  },
+  "validation": {
+    "targeted_unit_tests_passed": 23,
+    "notebook": "New Section 12 executed in a fresh kernel; original code cells and outputs preserved; earlier sections not rerun.",
+    "video_exports": 9,
+    "actual_glb_meshes": 26,
+    "trajectory_artifacts": 103,
+    "viewers": "Five viewers: JavaScript syntax and each scenario first/last frame draw validated with a mocked Canvas API; not a browser screenshot test.",
+    "prior_files_unchanged_before_install": 626,
+    "physical_validation": false
+  },
+  "limitations": [
+    "No measured wall tilt, intrinsics, hold surfaces or body depth.",
+    "Region pair bounds alone do not prove full-body feasibility.",
+    "Source-derived contact proxies are unreviewed and change the targets.",
+    "Only selected native clips; arbitrary-length streaming is not implemented."
+  ]
+}

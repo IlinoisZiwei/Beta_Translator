@@ -1,0 +1,14 @@
+event_id,release_index,release_frame,moving_indices,moving_limbs,from_labels,to_labels,timing_uncertain,timing_reason
+R001,43,43,[1],right_hand,H032,free,False,predicted_first_free_frame
+R002,93,93,[2],left_foot,H053,free,False,predicted_first_free_frame
+R003,96,96,[0],left_hand,H032,free,False,predicted_first_free_frame
+R004,126,126,[1],right_hand,H021,H017,True,direct_hold_change
+R005,192,192,[3],right_foot,H050,free,False,predicted_first_free_frame
+R006,242,242,[0],left_hand,H017,free,False,predicted_first_free_frame
+R007,264,264,[2],left_foot,H045,free,False,predicted_first_free_frame
+R008,304,304,[1],right_hand,H017,free,False,predicted_first_free_frame
+R009,355,355,[1],right_hand,H007,H012,True,direct_hold_change
+R010,367,367,[3],right_foot,H054,free,False,predicted_first_free_frame
+R011,379,379,[0],left_hand,H012,H007,True,direct_hold_change
+R012,409,409,[1],right_hand,H012,free,False,predicted_first_free_frame
+R013,471,471,[0],left_hand,H007,free,False,predicted_first_free_frame

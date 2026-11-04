@@ -1,0 +1,90 @@
+{
+  "model": "Depth Anything V2 Small",
+  "license": "Apache-2.0 (Small)",
+  "source_revision": "a561b849ebae10a6f5ef49e26c83cbbcd36c71bf",
+  "weights_sha256": "715fade13be8f229f8a70cc02066f656f2423a59effd0579197bbf57860e1378",
+  "device": "cpu",
+  "frames": [
+    296,
+    314,
+    334,
+    486
+  ],
+  "input_size": 518,
+  "rows": [
+    {
+      "frame": 296,
+      "seconds": 0.7911653330083936,
+      "input_size": 518,
+      "wall_fit_points": 270,
+      "wall_reserved_points": 66,
+      "inverse_depth_scale": 0.0007295799918005368,
+      "inverse_depth_shift": 0.0010756613611242673,
+      "reserved_wall_relative_depth_error": 0.014091048194846731,
+      "source_keypoint_surface_depth_median_cm": 20.693066366881965,
+      "source_keypoint_surface_depth_min_cm": 5.563769920146737,
+      "source_keypoint_surface_depth_max_cm": 31.419691664289843,
+      "negative_inverse_depth_fraction": 0.0,
+      "metric_depth_measured": false,
+      "used_in_ik": false,
+      "reason": "Surface-depth probe only; joint centers, scale/shift and wall camera are unverified."
+    },
+    {
+      "frame": 314,
+      "seconds": 0.5060303330537863,
+      "input_size": 518,
+      "wall_fit_points": 289,
+      "wall_reserved_points": 71,
+      "inverse_depth_scale": 0.0007599792408390848,
+      "inverse_depth_shift": 0.0010999699818289295,
+      "reserved_wall_relative_depth_error": 0.013465107128110115,
+      "source_keypoint_surface_depth_median_cm": 23.32707686103522,
+      "source_keypoint_surface_depth_min_cm": 11.889412067111081,
+      "source_keypoint_surface_depth_max_cm": 33.369443565029094,
+      "negative_inverse_depth_fraction": 0.0,
+      "metric_depth_measured": false,
+      "used_in_ik": false,
+      "reason": "Surface-depth probe only; joint centers, scale/shift and wall camera are unverified."
+    },
+    {
+      "frame": 334,
+      "seconds": 0.49292737495852634,
+      "input_size": 518,
+      "wall_fit_points": 295,
+      "wall_reserved_points": 71,
+      "inverse_depth_scale": 0.0007164595410184664,
+      "inverse_depth_shift": 0.0012274469793862935,
+      "reserved_wall_relative_depth_error": 0.010509264906948724,
+      "source_keypoint_surface_depth_median_cm": 20.43254665599147,
+      "source_keypoint_surface_depth_min_cm": 7.181087588139101,
+      "source_keypoint_surface_depth_max_cm": 32.77233852207985,
+      "negative_inverse_depth_fraction": 0.0,
+      "metric_depth_measured": false,
+      "used_in_ik": false,
+      "reason": "Surface-depth probe only; joint centers, scale/shift and wall camera are unverified."
+    },
+    {
+      "frame": 486,
+      "seconds": 0.4544849169906229,
+      "input_size": 518,
+      "wall_fit_points": 259,
+      "wall_reserved_points": 63,
+      "inverse_depth_scale": 0.0007715993604470177,
+      "inverse_depth_shift": 0.0011825208384224697,
+      "reserved_wall_relative_depth_error": 0.022089590211326452,
+      "source_keypoint_surface_depth_median_cm": 32.7794242727535,
+      "source_keypoint_surface_depth_min_cm": 5.819363464957218,
+      "source_keypoint_surface_depth_max_cm": 43.12004496936208,
+      "negative_inverse_depth_fraction": 0.0,
+      "metric_depth_measured": false,
+      "used_in_ik": false,
+      "reason": "Surface-depth probe only; joint centers, scale/shift and wall camera are unverified."
+    }
+  ],
+  "used_in_ik": false,
+  "links": [
+    "https://github.com/DepthAnything/Depth-Anything-V2",
+    "https://huggingface.co/depth-anything/Depth-Anything-V2-Small"
+  ],
+  "caution": "Wall consistency and visually plausible surfaces are not independent 3D accuracy."
+}

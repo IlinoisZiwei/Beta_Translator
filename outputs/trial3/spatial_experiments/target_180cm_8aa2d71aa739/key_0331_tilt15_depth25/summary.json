@@ -1,0 +1,33 @@
+{
+  "name": "key_0331_tilt15_depth25",
+  "tilt_deg": 15.0,
+  "depth_prior_cm": 25.0,
+  "height_cm": 180.0,
+  "first_frame": 331,
+  "last_frame": 331,
+  "frames": 1,
+  "contact_weight": 20.0,
+  "depth_weight": 1.0,
+  "force_weight": 0.0,
+  "support_weight": 0.0,
+  "solver": {
+    "success": true,
+    "message": "Projected gradient and relative cost tolerances both satisfied.",
+    "nfev": 126,
+    "nit": 90,
+    "cost": 5.028836272157369,
+    "optimality": 9.593867953033625e-06,
+    "relative_cost_change": 1.485104214252262e-10,
+    "gradient_definition": "infinity norm of projected J.T r / max(1, column L2 norm of J)",
+    "seconds": 0.0,
+    "shared_pose_solve_seconds": 0.871172540995758
+  },
+  "code_sha256": {
+    "scene3d.py": "f3d99c84bf34fb1f84ef9ce9375cb6af91ca1c2272db5235e4596e1ef054588f",
+    "ik3d.py": "9fc7bcbcd807da80f6305b4f8d76ad526fbb3b2896cb4d6da05ff26444def327",
+    "trial3_3d_pipeline.py": "12935d3e7d085d72ac9db476684a865550a4eaab1265c10c2623274db23c65c8"
+  },
+  "kinematics_reused_from": "key_0331_tilt0_depth25",
+  "physical_validation": false,
+  "geometry": "Single plane with unmeasured intrinsics, tilt and body depth."
+}
