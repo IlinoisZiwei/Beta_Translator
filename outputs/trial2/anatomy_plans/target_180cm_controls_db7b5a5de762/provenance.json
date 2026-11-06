@@ -1,0 +1,162 @@
+{
+  "config": {
+    "height_cm": 180.0,
+    "fps": 30.0,
+    "full_iterations": 160,
+    "control_stride_frames": 8,
+    "profiles": {
+      "balanced": 1.0,
+      "steady": 2.5
+    },
+    "angles_deg": [
+      15.0,
+      0.0
+    ],
+    "short_clip_run": "outputs/trial2/anatomy_plans/target_180cm_109acb7b8238",
+    "full_solver": "restored_sparse_SQP"
+  },
+  "input_sha256": {
+    "outputs/trial2/spatial_plans/target_180cm_5f9e7fcd448b_native/native_refinement/trajectory.npz": "e8e92d9b79a1dd3376d5b79ffb5fe023db00aac0cfc309a5d5d6c1dc6acee8ec",
+    "outputs/trial2/spatial_plans/target_180cm_5f9e7fcd448b_native/native_refinement/summary.json": "0b24925c7b710e982ec15f21f1c993fb0fd09700c0dc25bea8fc63a6e2b8970f",
+    "data/trial2_arm_model_sources.json": "ff4bf98290fc96594f0d7b713db37fa0b3d833f53cc10d2d49688ac6f4bcd92d",
+    "data/trial2_spatial_hypotheses.json": "4bd444723882313190e8990f6831478062b24120082587636ecb816a9272c9a3",
+    "videos/trial2.mp4": "9964d27ca051953d77cf10ee94a1772bd73e30d7e23fa09a54983c3630e8a068",
+    "outputs/trial2/state/alignment_cache.npz": "05c419c1804d5c90f61e6ead7a68c60c5a421c54d944bdc2e0903319506ccdc7",
+    "outputs/trial2/state/reviewed_hold_map.npz": "5b0c612f577e29c9514f075051341dadbb9a45c71f7172e0a1114d4a4091f5e6",
+    "outputs/trial2/state/identity_guard.npz": "f745b51dda2335d3e934983ae9a94045e4da5fd4400e9f8fe6dc51479cbd8e4a",
+    "outputs/trial2/tables/pose_coordinates.csv": "8f8ee0c55b8be57862de3d3c16d6f590eece9f82b2ced602b709f096c9298f0b",
+    "outputs/trial2/automatic/wholebody.npz": "cb861eaa2fa17ed2592d43033312a1f718bc054fa112c6ad1732c2e7315bc1c9",
+    "outputs/trial2/automatic/predictions/limb_contacts.csv": "d8d324f68116c935a593c5923cc8fb67ac1bd390e7fb45b9cb860e2663051237",
+    "beta_translator/anatomical_arms.py": "22ab73e501f5d9938cce25f40996f4b8e728c5b6c8662d5b861be829f5420de0",
+    "beta_translator/trial2_anatomy_optimizer.py": "c74d01ea7b6bee8cf526a6ff8701e63104bfbf98fc60369b004d2b5b93a59220",
+    "beta_translator/trial2_anatomy_pipeline.py": "97e1b1b865b330fb5bad8ac061af4fdfa67ef5a1474ea419c1fef27325e77529",
+    "beta_translator/constrained_sequence_solver.py": "8350fa2ce97b954ac0bd6587042b46bcf0d4a8e873f8a5f23a4d022a68ae59d4",
+    "beta_translator/restored_sequence_solver.py": "d356ed3d071c59357e7157fb8060590a8fd0099d06b20de191cea2571d156c6a",
+    "beta_translator/trial2_spatial_data.py": "d24a8275c23bfd7aef710a3b75ab16093fb03f1e90a057eb274e03db62ee00d7",
+    "beta_translator/trial2_spatial_optimizer.py": "7b291d755f5415a7feef882c2714ed8b1faa5a529df6a2ecc6f688b54d1aac66",
+    "beta_translator/trial2_scene3d.py": "f9241ef48c2acf0dc8d5fda8b89c1cb65b9e7d1b63d5fe7e9ddb3370f468adcb",
+    "beta_translator/contact_regions3d.py": "7145d2e67d4963704ada30110605b8e6ab529a1179b12e440e65b72cd819de3a",
+    "beta_translator/inverse_kinematics.py": "6262bac4be63170a8e4021c1d9c070200c92f7152663d9b8c0b2ebba144d04b6",
+    "beta_translator/ik3d.py": "9fc7bcbcd807da80f6305b4f8d76ad526fbb3b2896cb4d6da05ff26444def327",
+    "beta_translator/scene3d.py": "f3d99c84bf34fb1f84ef9ce9375cb6af91ca1c2272db5235e4596e1ef054588f",
+    "beta_translator/support_refinement.py": "f33286e646641a5c3901bec602007e1eed359aaa7063c22944694135fab69251",
+    "beta_translator/temporal_control_basis.py": "f01ca54df8dacd5bcbc293659d0c8da0735b4809bfc7203ee028db52bed05cdf",
+    "beta_translator/trial2_anatomy_controls.py": "2bdd0f5c7eb3bbaa8d2751705ca950694c0d4ff2f7876a386be978dbff3b40e3",
+    "outputs/trial2/anatomy_plans/target_180cm_109acb7b8238/initialization.npz": "05f57ece9f02937c9596480c91aea79565c9bb2e940b6e05d59611f6defa7264",
+    "outputs/trial2/anatomy_plans/target_180cm_109acb7b8238/clip_summary.json": "2118a72d75f761659cb24372ddb3f0a247decb87565b8ce2ce8a0a769681bb8a",
+    "requirements.txt": "d3f3352d07753ca29ff37356d3616bb43e2f8a59e5b2cfc00e296606ef4b8679"
+  },
+  "short_clip_provenance": {
+    "config": {
+      "height_cm": 180.0,
+      "fps": 30.0,
+      "ratios": {
+        "upper_arm": 0.186,
+        "forearm": 0.146,
+        "thigh": 0.245,
+        "shank": 0.246,
+        "shoulder_w": 0.259,
+        "hip_w": 0.191,
+        "torso": 0.288
+      },
+      "clip_iterations": 150,
+      "full_iterations": 350,
+      "clips": [
+        [
+          "hinge_transition",
+          475,
+          515
+        ],
+        [
+          "right_elbow",
+          550,
+          595
+        ],
+        [
+          "left_elbow",
+          615,
+          650
+        ]
+      ],
+      "profiles": {
+        "balanced": 1.0,
+        "steady": 2.5
+      },
+      "angles_deg": [
+        15.0,
+        0.0
+      ],
+      "velocity_limits_status": "Project assumptions, not measured human limits or MoBL limits",
+      "arm_model": "reduced_MoBL_inspired",
+      "support_optimized": true,
+      "initialization": "wrist_priority_with_elbow_hint_and_adaptive_multistart"
+    },
+    "input_sha256": {
+      "outputs/trial2/spatial_plans/target_180cm_5f9e7fcd448b_native/native_refinement/trajectory.npz": "e8e92d9b79a1dd3376d5b79ffb5fe023db00aac0cfc309a5d5d6c1dc6acee8ec",
+      "outputs/trial2/spatial_plans/target_180cm_5f9e7fcd448b_native/native_refinement/summary.json": "0b24925c7b710e982ec15f21f1c993fb0fd09700c0dc25bea8fc63a6e2b8970f",
+      "data/trial2_arm_model_sources.json": "ff4bf98290fc96594f0d7b713db37fa0b3d833f53cc10d2d49688ac6f4bcd92d",
+      "data/trial2_spatial_hypotheses.json": "4bd444723882313190e8990f6831478062b24120082587636ecb816a9272c9a3",
+      "videos/trial2.mp4": "9964d27ca051953d77cf10ee94a1772bd73e30d7e23fa09a54983c3630e8a068",
+      "outputs/trial2/state/alignment_cache.npz": "05c419c1804d5c90f61e6ead7a68c60c5a421c54d944bdc2e0903319506ccdc7",
+      "outputs/trial2/state/reviewed_hold_map.npz": "5b0c612f577e29c9514f075051341dadbb9a45c71f7172e0a1114d4a4091f5e6",
+      "outputs/trial2/state/identity_guard.npz": "f745b51dda2335d3e934983ae9a94045e4da5fd4400e9f8fe6dc51479cbd8e4a",
+      "outputs/trial2/tables/pose_coordinates.csv": "8f8ee0c55b8be57862de3d3c16d6f590eece9f82b2ced602b709f096c9298f0b",
+      "outputs/trial2/automatic/wholebody.npz": "cb861eaa2fa17ed2592d43033312a1f718bc054fa112c6ad1732c2e7315bc1c9",
+      "outputs/trial2/automatic/predictions/limb_contacts.csv": "d8d324f68116c935a593c5923cc8fb67ac1bd390e7fb45b9cb860e2663051237",
+      "beta_translator/anatomical_arms.py": "22ab73e501f5d9938cce25f40996f4b8e728c5b6c8662d5b861be829f5420de0",
+      "beta_translator/trial2_anatomy_optimizer.py": "c74d01ea7b6bee8cf526a6ff8701e63104bfbf98fc60369b004d2b5b93a59220",
+      "beta_translator/trial2_anatomy_pipeline.py": "97e1b1b865b330fb5bad8ac061af4fdfa67ef5a1474ea419c1fef27325e77529",
+      "beta_translator/constrained_sequence_solver.py": "8350fa2ce97b954ac0bd6587042b46bcf0d4a8e873f8a5f23a4d022a68ae59d4",
+      "beta_translator/restored_sequence_solver.py": "d356ed3d071c59357e7157fb8060590a8fd0099d06b20de191cea2571d156c6a",
+      "beta_translator/trial2_spatial_data.py": "d24a8275c23bfd7aef710a3b75ab16093fb03f1e90a057eb274e03db62ee00d7",
+      "beta_translator/trial2_spatial_optimizer.py": "7b291d755f5415a7feef882c2714ed8b1faa5a529df6a2ecc6f688b54d1aac66",
+      "beta_translator/trial2_scene3d.py": "f9241ef48c2acf0dc8d5fda8b89c1cb65b9e7d1b63d5fe7e9ddb3370f468adcb",
+      "beta_translator/contact_regions3d.py": "7145d2e67d4963704ada30110605b8e6ab529a1179b12e440e65b72cd819de3a",
+      "beta_translator/inverse_kinematics.py": "6262bac4be63170a8e4021c1d9c070200c92f7152663d9b8c0b2ebba144d04b6",
+      "beta_translator/ik3d.py": "9fc7bcbcd807da80f6305b4f8d76ad526fbb3b2896cb4d6da05ff26444def327",
+      "beta_translator/scene3d.py": "f3d99c84bf34fb1f84ef9ce9375cb6af91ca1c2272db5235e4596e1ef054588f",
+      "beta_translator/support_refinement.py": "f33286e646641a5c3901bec602007e1eed359aaa7063c22944694135fab69251"
+    }
+  },
+  "short_clip_sha256": {
+    "clips/right_elbow_comparison.json": "a465ecf00a47e753ea5e6f3d0e46810b2c303ecd04b78ba0cfdb43a6784b1ab3",
+    "clips/hinge_transition_comparison.json": "643bc9578e33f67527bc05794d94e4ae66d7665b84039cb35ae842e97b3a781d",
+    "clips/left_elbow_comparison.json": "5d0dce64c30f6ea8332ae413986a959e851971e1b5ffade2ebc27b4f90a077a9",
+    "clips/right_elbow_steady/summary.json": "71992bda2c36cbef16731929711fb28ee718d89127ae8a1958dabfdf8ca8ff13",
+    "clips/right_elbow_steady/trajectory.npz": "0b1d0737be2c18290df4c799383a277c0bf19656c28f0a815f070308c079d6d3",
+    "clips/right_elbow_steady/metrics.csv": "ef5fe78ac2613cc028c757b7684555dcddb357de1fc0455b1af3aaee9c183bb9",
+    "clips/right_elbow_steady/scene.json": "4c908cb012fa91c3a86c3e92564ebb3bb477c537c6a8b9e1ade7b1dd4c5ea41b",
+    "clips/right_elbow_steady/contact_episodes.json": "d6514b9e8bc8066213d071b57d86e6f04b77dfd6a58af6bb49633408f30faa4e",
+    "clips/right_elbow_steady/solver_history.csv": "19f5a29941ea25d10558d276513e813e7040b0c3705c8630f10608fe16fd1dc1",
+    "clips/right_elbow_balanced/summary.json": "3be5db9e1ae62e348e8ceb86951e8ed2c710b32472cf05b4c3c45140edde4f3c",
+    "clips/right_elbow_balanced/trajectory.npz": "24d6b34650dd93f5240c0110aa1dff20e05885ad967e23a234d8251439023f70",
+    "clips/right_elbow_balanced/metrics.csv": "edf8ef341e4697c63ab9ff266ae2c88702cd2607afa3c3702cf1e1f88d7957f5",
+    "clips/right_elbow_balanced/scene.json": "4c908cb012fa91c3a86c3e92564ebb3bb477c537c6a8b9e1ade7b1dd4c5ea41b",
+    "clips/right_elbow_balanced/contact_episodes.json": "d6514b9e8bc8066213d071b57d86e6f04b77dfd6a58af6bb49633408f30faa4e",
+    "clips/right_elbow_balanced/solver_history.csv": "d002551310d479e99c91fab0814a6cab47cfd8b2d3fde2df58edfeef43f52430",
+    "clips/hinge_transition_steady/summary.json": "af8d4141f157c617f7396aff10810145aada10646e4ca9a65cc00ab7c779ab9f",
+    "clips/hinge_transition_steady/trajectory.npz": "3a113bf79aa41bfdc6098acb04f2e9d0dac1919bffe187de2827a73cb2532abe",
+    "clips/hinge_transition_steady/metrics.csv": "a7bb535db5ecfd6a5d66209352e724157bdb5cc5d9a5cc9157a7aa61a6e395dc",
+    "clips/hinge_transition_steady/scene.json": "4c908cb012fa91c3a86c3e92564ebb3bb477c537c6a8b9e1ade7b1dd4c5ea41b",
+    "clips/hinge_transition_steady/contact_episodes.json": "d6514b9e8bc8066213d071b57d86e6f04b77dfd6a58af6bb49633408f30faa4e",
+    "clips/hinge_transition_steady/solver_history.csv": "55df7e37acd12ac615982b92e4a083c6f15d94242e24fd5860fa6428cc418012",
+    "clips/left_elbow_balanced/summary.json": "15e2294dfa758bc13f5fdcfa88059cd27b86ed9bcbadaa31fa24fc5299420e25",
+    "clips/left_elbow_balanced/trajectory.npz": "8f3e1250b59e01e9591fe5977f61a5c71ef998b6c5c9e01e49d3d1dc3bb84d78",
+    "clips/left_elbow_balanced/metrics.csv": "41fcec693b122b7cb1041b3679ecf6e07ecca10f5295393f17c7b216346dffd2",
+    "clips/left_elbow_balanced/scene.json": "4c908cb012fa91c3a86c3e92564ebb3bb477c537c6a8b9e1ade7b1dd4c5ea41b",
+    "clips/left_elbow_balanced/contact_episodes.json": "d6514b9e8bc8066213d071b57d86e6f04b77dfd6a58af6bb49633408f30faa4e",
+    "clips/left_elbow_balanced/solver_history.csv": "542a435ae22e3ef994d712c7c2ede2e34d478a9d770dc73d1453e61070dc6213",
+    "clips/hinge_transition_balanced/summary.json": "4ba5e5c836e70a0a03ab99e479521b69c6ad6611f45bfe695f8a18082ca640e4",
+    "clips/hinge_transition_balanced/trajectory.npz": "64e5ae4217c5690e6bce0cc045380ddc130dc51ac91fb120c2926eeb34131817",
+    "clips/hinge_transition_balanced/metrics.csv": "6e165b7c711339731782d6a909e4a99083d796934fcdffbe8486090f64d0d54a",
+    "clips/hinge_transition_balanced/scene.json": "4c908cb012fa91c3a86c3e92564ebb3bb477c537c6a8b9e1ade7b1dd4c5ea41b",
+    "clips/hinge_transition_balanced/contact_episodes.json": "d6514b9e8bc8066213d071b57d86e6f04b77dfd6a58af6bb49633408f30faa4e",
+    "clips/hinge_transition_balanced/solver_history.csv": "37fb0553a88b30fc617c3105a494ef98e36b2c458b0808f20af5c96f71746efc",
+    "clips/left_elbow_steady/summary.json": "88a375f6a2d858285e910bc169908ca8cabb7e4e1e45a2cdfadff876deb08e39",
+    "clips/left_elbow_steady/trajectory.npz": "97e11bade509db83ffb9d9e63c172475269757dc04831ef4e2bc25db32afb956",
+    "clips/left_elbow_steady/metrics.csv": "5d874b6845277ebd79b6d4ad0d7de278b7c857dc5c359d922d4471cc178e24e4",
+    "clips/left_elbow_steady/scene.json": "4c908cb012fa91c3a86c3e92564ebb3bb477c537c6a8b9e1ade7b1dd4c5ea41b",
+    "clips/left_elbow_steady/contact_episodes.json": "d6514b9e8bc8066213d071b57d86e6f04b77dfd6a58af6bb49633408f30faa4e",
+    "clips/left_elbow_steady/solver_history.csv": "fa959b080d8497e46e51bba81e91f2f51b012bb3f0339e687cdca99b63a01147"
+  }
+}

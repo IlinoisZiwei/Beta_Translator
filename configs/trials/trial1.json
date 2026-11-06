@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "trial": "trial1",
+  "adapter": "projected_ground",
+  "input_root": "outputs",
+  "video": "videos/trial1.mp4",
+  "frame_count": 417,
+  "fps": 30.0,
+  "scene": {
+    "depth_cm": 25.0
+  },
+  "baseline": "outputs/trial1/refined_support/target_180cm_f1456408fd1d/trajectory.npz",
+  "verification_frames": [
+    113,
+    136
+  ],
+  "notes": [
+    "Uniform projected scale; no measured 3D camera or floor.",
+    "Ground support requires the existing reviewed evidence; raw hold predictions remain unchanged."
+  ]
+}

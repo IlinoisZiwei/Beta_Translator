@@ -1,0 +1,225 @@
+{
+  "date": "2026-11-05",
+  "scope": "Approved A+B+C1 archive, reference correction and cleanup",
+  "repository": "/Users/ziwei/Desktop/2026 Fall/CIS 5810/Beta_Translator",
+  "archive_directory": "/Users/ziwei/Desktop/2026 Fall/CIS 5810/Beta_Translator_Archive/2026-11-05",
+  "main_notebook_sha256": "576d0dd873849c1b59a452cf17f81ee6d1e3cb96add72d4ddb1be5b791748d4d",
+  "edited_existing_files": [
+    "README.md",
+    "Trial1_Analysis.ipynb",
+    "Trial2_Analysis.ipynb",
+    "Trial3_Analysis.ipynb",
+    "docs/history/README_before_report_cleanup_20261105.md",
+    "notebooks/workflow_catalog.json"
+  ],
+  "added_files": [
+    "docs/history/Codespaces_Setup_Guide_20261009.tex",
+    "docs/history/cleanup_20261105.md",
+    "docs/history/cleanup_inventory_legacy.sh.txt",
+    "docs/validation/repository_cleanup_20261105.json"
+  ],
+  "execution": [
+    {
+      "notebook": "Trial1_Analysis.ipynb",
+      "mode": "default",
+      "code_cells": 19,
+      "errors": 0,
+      "rich_outputs": 77,
+      "seconds": 0.38,
+      "full_run": "outputs/trial1/shared_body/target_175cm_0000_0416_86258d08517d",
+      "full_frame_count": 417,
+      "short_run": "outputs/trial1/shared_body/target_175cm_0113_0136_b552020f1f38",
+      "short_frame_count": 24
+    },
+    {
+      "notebook": "Trial2_Analysis.ipynb",
+      "mode": "default",
+      "code_cells": 23,
+      "errors": 0,
+      "rich_outputs": 88,
+      "seconds": 1.94,
+      "full_run": "outputs/trial2/shared_body/target_175cm_0000_0975_3cd414e63797",
+      "full_frame_count": 976,
+      "short_run": "outputs/trial2/shared_body/target_175cm_0550_0595_0c78856747bb",
+      "short_frame_count": 46
+    },
+    {
+      "notebook": "Trial3_Analysis.ipynb",
+      "mode": "default",
+      "code_cells": 21,
+      "errors": 0,
+      "rich_outputs": 88,
+      "seconds": 0.33,
+      "full_run": "outputs/trial3/shared_body/target_175cm_0000_0502_1f9a2446bc6b",
+      "full_frame_count": 503,
+      "short_run": "outputs/trial3/shared_body/target_175cm_0296_0331_0349d243c3f8",
+      "short_frame_count": 36
+    },
+    {
+      "notebook": "Trial1_Analysis.ipynb",
+      "mode": "expanded",
+      "code_cells": 19,
+      "errors": 0,
+      "rich_outputs": 119,
+      "seconds": 0.69,
+      "full_run": "outputs/trial1/shared_body/target_175cm_0000_0416_86258d08517d",
+      "full_frame_count": 417,
+      "short_run": "outputs/trial1/shared_body/target_175cm_0113_0136_b552020f1f38",
+      "short_frame_count": 24
+    },
+    {
+      "notebook": "Trial2_Analysis.ipynb",
+      "mode": "expanded",
+      "code_cells": 23,
+      "errors": 0,
+      "rich_outputs": 136,
+      "seconds": 2.45,
+      "full_run": "outputs/trial2/shared_body/target_175cm_0000_0975_3cd414e63797",
+      "full_frame_count": 976,
+      "short_run": "outputs/trial2/shared_body/target_175cm_0550_0595_0c78856747bb",
+      "short_frame_count": 46
+    },
+    {
+      "notebook": "Trial3_Analysis.ipynb",
+      "mode": "expanded",
+      "code_cells": 21,
+      "errors": 0,
+      "rich_outputs": 131,
+      "seconds": 0.73,
+      "full_run": "outputs/trial3/shared_body/target_175cm_0000_0502_1f9a2446bc6b",
+      "full_frame_count": 503,
+      "short_run": "outputs/trial3/shared_body/target_175cm_0296_0331_0349d243c3f8",
+      "short_frame_count": 36
+    }
+  ],
+  "tests": [
+    {
+      "suite": "test_report_workflow.py",
+      "passed": 9,
+      "failures": 0,
+      "errors": 0
+    },
+    {
+      "suite": "test_notebook_workflow.py",
+      "passed": 5,
+      "failures": 0,
+      "errors": 0
+    }
+  ],
+  "unexpected_changes": [],
+  "missing_local_links": [],
+  "removed_paths": [
+    {
+      "path": ".venv-contact",
+      "entries": 40791,
+      "bytes": 1272068373
+    },
+    {
+      "path": "training_data/model_cache/coreml_static_v1_rtmw-dw-x-l_simcc-cocktail14_270e-384x288_20231122",
+      "entries": 10,
+      "bytes": 459001932
+    },
+    {
+      "path": "training_data/model_cache/coreml_static_v1_yolox_m_8xb8-300e_humanart-c2c7a14a",
+      "entries": 26,
+      "bytes": 203096899
+    },
+    {
+      "path": "requirements-contact.txt",
+      "entries": 1,
+      "bytes": 95
+    },
+    {
+      "path": "outputs/trial2/images/reconstructed_wall.png",
+      "entries": 1,
+      "bytes": 2102333
+    },
+    {
+      "path": "docs/Codespaces_Setup_Guide.tex",
+      "entries": 1,
+      "bytes": 8248
+    },
+    {
+      "path": "cleanup.sh",
+      "entries": 1,
+      "bytes": 1192
+    },
+    {
+      "path": "outputs/trial1/ground_support/target_180cm_98e558876cb0",
+      "entries": 27,
+      "bytes": 16455157
+    },
+    {
+      "path": "outputs/trial1/refined_support/target_180cm_d7658052307a",
+      "entries": 29,
+      "bytes": 18469990
+    }
+  ],
+  "removed_logical_bytes": 1971204219,
+  "result_pairs": [
+    {
+      "old": "outputs/trial1/ground_support/target_180cm_98e558876cb0",
+      "keep": "outputs/trial1/ground_support/target_180cm_bd8c3dc75cd8",
+      "archive_file": "trial1_ground_98e558876cb0.zip",
+      "identical_files": 26,
+      "summary_only_difference": "/provenance/inputs/beta_translator/full_sequence_pipeline.py",
+      "old_source_hash": "a75f8f3fd15c0084dfc95341daa6dcf415c8509703af1f19910ef409683927e4",
+      "retained_source_hash": "3315afcfcc49f9a53f16b691dfcfce150e967a99d612ba79aa09157ce46ea1dd"
+    },
+    {
+      "old": "outputs/trial1/refined_support/target_180cm_d7658052307a",
+      "keep": "outputs/trial1/refined_support/target_180cm_f1456408fd1d",
+      "archive_file": "trial1_refinement_d7658052307a.zip",
+      "identical_files": 28,
+      "summary_only_difference": "/provenance/inputs/beta_translator/full_sequence_pipeline.py",
+      "old_source_hash": "a75f8f3fd15c0084dfc95341daa6dcf415c8509703af1f19910ef409683927e4",
+      "retained_source_hash": "3315afcfcc49f9a53f16b691dfcfce150e967a99d612ba79aa09157ce46ea1dd"
+    }
+  ],
+  "archived_member_files_verified": 66,
+  "external_manifest_sha256": "5cd87a5b0d61dac26ad7561f6d8ac11eec7341ed1fabaf2a9948bed056c4b127",
+  "archive_checksums": {
+    "trial1_ground_98e558876cb0.zip": "daea8e0aa67b4fa5fb05da7db4e33a14dca01f1018117cf5c43ea353eb0b84b7",
+    "trial1_refinement_d7658052307a.zip": "9c77f19558c9272631e1187ff1c4fb11312c96ab617d6530ea22df411d0c5651",
+    "cleanup_recovery.zip": "84c918f9da2436166a7aa7f926875360b8976bafc5dafc987e4d0e26baa67438"
+  },
+  "external_zip_bytes": 34947170,
+  "preserved_preexisting_files": 2272,
+  "preserved_output_files": 2011,
+  "all_notebook_code_and_settings_unchanged": true,
+  "saved_output_changes": [
+    "Trial1_Analysis.ipynb: refinement appendix links only"
+  ],
+  "catalog_artifacts_hash_verified": 114,
+  "execution_guards": {
+    "beta_translator.body_model.BodyModel.fit": 0,
+    "beta_translator.body_render.render_run": 0,
+    "beta_translator.avatar_pipeline.run_avatar": 0,
+    "notebooks.trial_workflow.Evidence.export_route": 0,
+    "notebooks.trial_workflow.ContactReview.export": 0
+  },
+  "local_link_targets_checked": 317,
+  "head_unchanged": true,
+  "staging_unchanged": true,
+  "delivery_sha256": {
+    "README.md": "4c6befdd3629f095f3cdedde4f344b83de86eb1ced9d14f90414ee1f6050f42d",
+    "Trial1_Analysis.ipynb": "275d973a65d1f7b063e42d13e0d0d61612d1bc4be82d6f60e37224c1359e3a82",
+    "Trial2_Analysis.ipynb": "8dece73733a2e34ecc890449bb046d242d2e0202860819ed898f71c6f1c0bf5a",
+    "Trial3_Analysis.ipynb": "ef6051958e9845094ac328618a220239c05a96c6d5e8c8506ef87300d24b331c",
+    "docs/history/Codespaces_Setup_Guide_20261009.tex": "c4f80d2863e438b253e681af8167fea6ed3158dc667e709b3ebc5542ea2eef2c",
+    "docs/history/README_before_report_cleanup_20261105.md": "e488f25ea39bdd63ce1a2df8b10b66afda70cfbc7b252d3c860549dcc34addc6",
+    "docs/history/cleanup_20261105.md": "bc2f51d12828fb62dc8c22665457e7d3e0ec8e57867c4f3fbbbebfdfe366bf7a",
+    "docs/history/cleanup_inventory_legacy.sh.txt": "94e7ecfceee9078e2bca226f224cb501c854762d04df98594d1c6295c2c5b908",
+    "notebooks/workflow_catalog.json": "2bc1227152a5c3f32b4286b2416821fb4f37b3e94f7f20533294948903a88d6a"
+  },
+  "status": "passed",
+  "removed_path_reference_audit": {
+    "active_code_configs_notebooks_setup": "No references to removed result IDs or removed compatibility/image/document paths.",
+    "historical_exceptions": [
+      "docs/history/cleanup_20261105.md",
+      "docs/history/cleanup_inventory_legacy.sh.txt",
+      "docs/history/README_before_report_cleanup_20261105.md",
+      "docs/validation/complete_notebooks_verification.json"
+    ]
+  }
+}

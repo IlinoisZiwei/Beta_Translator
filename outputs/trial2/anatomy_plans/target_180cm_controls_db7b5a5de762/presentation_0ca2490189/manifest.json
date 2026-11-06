@@ -1,0 +1,30 @@
+{
+  "provenance": {
+    "numerical_summary": "719fe11e0915d88cf5cddb25901ca59d22878f8c9dd672b62462b79cb3e7e883",
+    "renderer": "33be7a7089eb6bb8f890da4533506af46978ed3f57e1fd684d0a2d09269077df",
+    "shared_renderer": "9c5fe826e219df2198c3485e2dca8182825594c658ff37935284943901559d26",
+    "reach_diagnostic": "106cc7d32356ff8592fc221677385b720a00c4daff29aa000c07026744247907"
+  },
+  "frames": 976,
+  "fps": 30,
+  "output_sha256": {
+    "selected_target_reach.csv": "29dc9ffa3aec4fb53e47f09aba4a4f60372f8662d6511dd2e39332a02e628456",
+    "hinge_transition_comparison.mp4": "1d46e16d9817f642253f987eb3435eaa710c9bddae51c91d697be410c772e344",
+    "motion_and_failures.png": "5118eb4ec03f68323bf493da10fa6856c74f48e8c533f5244b302bb5a3067d14",
+    "selected_plan_3d.jpg": "3a7ded50d6e911a8d85542b0ee91d993e7f5bac8fbe412a09f0e15ee7f41aab4",
+    "joint_range_rate_summary.csv": "b04005e082737e707bfe8c9199254f7cfc879f81d2c656cf99e84e48de1a181c",
+    "right_elbow_comparison.mp4": "696cba607873388981c6b6b14b80715dca186cffc0c58bdcd8dffa1ecdeeb1f6",
+    "left_elbow_comparison.jpg": "493dcaf6513c89dbbc75db38bee10d5f7c553c83697c1c3ca84a00191d511ead",
+    "full_comparison_3d.mp4": "7efa6f02a0b13d2bad8c0b8f6585735d9664c01a954a298242297ad95b4ace79",
+    "left_elbow_comparison.mp4": "6d5661663ed6564296e1a49e4ca07d96b743492681b4a45771d49a9b419002bd",
+    "common_observable_swivel.csv": "515dfaf36b16574f0b3d75b8b1ec60a1cab8916a3d770fc8a2af402d32e2cc74",
+    "full_comparison_3d.jpg": "bf75eae7054d76ebfee0da1f62b45c665dd2d62579a451dc080a2c07af6288ae",
+    "result_notes.md": "4f503cdfe95eb9dbf4a3577be91c9fc4d7381d37168bf11561aa77860002a52d",
+    "legacy_target_reach.csv": "f5389b3fe6d46bd3465edd9bdfe27175971df3ba434b31c49877ad83bccfb8b3",
+    "frame_0630.jpg": "9d094c8069c908a95ffb8f2ce4515e6bdeab378268a981221662a767db1b3fe0",
+    "hinge_transition_comparison.jpg": "da6c810d28f1a50998b0a7a522ecd31fb04d97599f4516a1cc8ab6c296861827",
+    "right_elbow_comparison.jpg": "b1162026f8659b19f5d12c0ed0f72443efab7de2900ff50a9ab4444ec0b97c12",
+    "clip_common_observable_swivel.csv": "20d389fa1bb17fdf9a6bc0038f7308343c66b1531cf8b0f03362157b1a321e51",
+    "selected_plan_3d.mp4": "35f80cc531889d3af80a129d497bd33d419b1fbadd66a59511db6a65034680a2"
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "frames": [
+    615,
+    650
+  ],
+  "ranking": [
+    {
+      "candidate": "left_elbow_balanced",
+      "native_frames": 36,
+      "numerically_feasible": false,
+      "anatomy_temporal_failure_frames": 0,
+      "contact_failure_frames": 0,
+      "geometric_failure_frames": 0,
+      "support_failure_frames": 36,
+      "preunload_failure_frames": 6,
+      "grip_proxy_failure_frames": 0,
+      "total_failed_frames": 36,
+      "worst_failure_fraction": 1.0,
+      "max_contact_gap_cm": 0.0010040435602045935,
+      "max_rate_ratio": 0.20656337950789097,
+      "max_acceleration_ratio": 0.16543187434370976,
+      "max_elbow_swivel_deg_s": 3.5936736889716276,
+      "max_torso_rotation_deg_s": 8.120051789832196,
+      "converged": false,
+      "uncertainty": "Unmeasured geometry, approximate anatomy, inferred wrist orientation; no dynamic or full collision validation.",
+      "rank": 1,
+      "selection_status": "diagnostic_only_not_feasible",
+      "selection_reason": "All tested plans checked; no feasible plan; least-violating diagnostic under the declared anatomy/physics ordering."
+    },
+    {
+      "candidate": "left_elbow_steady",
+      "native_frames": 36,
+      "numerically_feasible": false,
+      "anatomy_temporal_failure_frames": 0,
+      "contact_failure_frames": 0,
+      "geometric_failure_frames": 0,
+      "support_failure_frames": 36,
+      "preunload_failure_frames": 6,
+      "grip_proxy_failure_frames": 0,
+      "total_failed_frames": 36,
+      "worst_failure_fraction": 1.0,
+      "max_contact_gap_cm": 0.0013669378105657147,
+      "max_rate_ratio": 0.1375512483249387,
+      "max_acceleration_ratio": 0.11988752999080833,
+      "max_elbow_swivel_deg_s": 0.638436060374393,
+      "max_torso_rotation_deg_s": 3.9233900426193675,
+      "converged": false,
+      "uncertainty": "Unmeasured geometry, approximate anatomy, inferred wrist orientation; no dynamic or full collision validation.",
+      "rank": 2,
+      "selection_status": "diagnostic_only_not_feasible",
+      "selection_reason": "First differing criterion: max_contact_gap_cm (0.0013669378105657147 vs 0.0010040435602045935)."
+    }
+  ],
+  "comparison": [
+    {
+      "model": "legacy",
+      "frames": 36,
+      "elbow_swivel_max_deg_s": 1017.7860094614452,
+      "elbow_swivel_p95_deg_s": 1017.150759518345,
+      "joint_acceleration_rms_cm_s2": 868.7290562506429,
+      "hip_acceleration_rms_cm_s2": 680.9390966831635,
+      "torso_axis_rotation_p95_deg_s": 100.84182896334761,
+      "contact_failure_frames": 0,
+      "maximum_contact_gap_cm": 0.012157827100635791,
+      "support_failure_frames": 30,
+      "preunload_failure_frames": 6,
+      "motion_warning_frames": 0,
+      "maximum_bone_error_cm": 2.842170943040401e-14
+    },
+    {
+      "model": "anatomical",
+      "frames": 36,
+      "elbow_swivel_max_deg_s": 3.5936736889716276,
+      "elbow_swivel_p95_deg_s": 3.4689960452429736,
+      "joint_acceleration_rms_cm_s2": 38.30525401342843,
+      "hip_acceleration_rms_cm_s2": 12.042255492772115,
+      "torso_axis_rotation_p95_deg_s": 7.552907896015553,
+      "contact_failure_frames": 0,
+      "maximum_contact_gap_cm": 0.0010040435602045935,
+      "support_failure_frames": 36,
+      "preunload_failure_frames": 6,
+      "motion_warning_frames": 0,
+      "maximum_bone_error_cm": 3.907985046680551e-14
+    }
+  ]
+}

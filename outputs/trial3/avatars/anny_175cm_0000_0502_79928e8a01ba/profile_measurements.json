@@ -1,0 +1,20 @@
+{
+  "head_neck_extent": "inferred to complete requested stature",
+  "surface_shape": "Anny template with segment calibration; no identity/sex inference",
+  "shoe_shape": "Anny foot with a flat inferred sole",
+  "hand_pose": "fixed template fingers; grasp unobserved and unvalidated",
+  "height_cm": 175.0,
+  "arm_span_cm": 176.0104986279165,
+  "rig_arm_span_cm": 176.0,
+  "rig_dimensions_cm": {
+    "upper_arm": 30.0,
+    "forearm": 24.0,
+    "thigh": 43.0,
+    "shank": 42.0,
+    "torso": 49.0,
+    "shoulder_w": 40.0,
+    "hip_w": 30.0
+  },
+  "vertices": 13718,
+  "triangles": 27420
+}

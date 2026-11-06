@@ -1,9 +1,0 @@
-metric,previous_published_no_ground,ground_optimized,unit,interpretation
-contact_residual,1,5,frames,Contact model changed; not an isolated optimizer comparison.
-support_balance_failed,49,18,frames,Contact model changed; not an isolated optimizer comparison.
-support_balance_uncertain,65,96,frames,Contact model changed; not an isolated optimizer comparison.
-preunload_failed,0,6,frames,Contact model changed; not an isolated optimizer comparison.
-preunload_uncertain,28,37,frames,Contact model changed; not an isolated optimizer comparison.
-departing_load_remaining,0,0,frames,Contact model changed; not an isolated optimizer comparison.
-rapid_pose_change,0,0,frames,Contact model changed; not an isolated optimizer comparison.
-optimizer_unconverged,417,417,frames,Contact model changed; not an isolated optimizer comparison.

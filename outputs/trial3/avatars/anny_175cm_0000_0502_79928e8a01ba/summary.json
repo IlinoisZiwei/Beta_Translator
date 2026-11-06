@@ -1,0 +1,320 @@
+{
+  "trial": "trial3",
+  "source_run": "outputs/trial3/shared_body/target_175cm_0000_0502_1f9a2446bc6b",
+  "source_candidate": "steady",
+  "source_selection_status": "diagnostic_only_not_feasible",
+  "source_solver_converged": false,
+  "height_cm": 175.0,
+  "arm_span_cm": 176.0,
+  "frame_count": 503,
+  "first_frame": 0,
+  "last_frame": 502,
+  "fps": 30.0,
+  "mapping_pass": true,
+  "max_patch_drift_cm": 1.7053025658242404e-13,
+  "source_failed_frames": 503,
+  "mesh_contact_failed_frames": 464,
+  "mesh_wall_penetration_frames": 503,
+  "max_wall_penetration_cm": 14.485598240819456,
+  "physical_validation": false,
+  "finger_grasp_validation": false,
+  "note": "Mapping checks concern the display adapter only. Source failures remain. No mesh collision avoidance or person removal.",
+  "provenance": {
+    "source_summary_sha256": "f7901d398c0faf7462defc6d13973ac8f76c938c8e8637063e01d37f1ed7e9af",
+    "source_trajectory_sha256": "8fd4a59117ce254ca694b07bc320f648795c352103c7be3c23d06765d925ca2c",
+    "source_metrics_sha256": "44d2093df0678475d320485f381ccb381dadffc4c37f8bdedcfdea9326599ca8",
+    "user_profile": {
+      "schema_version": 1,
+      "user_id": "trial_user_175",
+      "height_cm": 175.0,
+      "arm_span_cm": 176.0,
+      "mass_kg": 70.0,
+      "dimensions_cm": {
+        "upper_arm": 30.0,
+        "forearm": 24.0,
+        "thigh": 43.0,
+        "shank": 42.0,
+        "shoulder_w": 40.0,
+        "hip_w": 30.0,
+        "torso": 49.0,
+        "hand_length": 14.0,
+        "hand_patch_distance": 7.0,
+        "hand_patch_depth": 2.0,
+        "foot_length": 25.0,
+        "foot_width": 9.0,
+        "foot_depth": 3.0
+      },
+      "evidence": {
+        "height": "user_requested_demonstration_value",
+        "arm_span": "user_confirmed_demonstration_value",
+        "geometry": "project_assumption: symmetric proportions; not a measured person",
+        "mass": "project_assumption: 70 kg; replace with user measurement",
+        "capabilities": "project_assumption: illustrative screening limits, not personal calibration",
+        "fatigue": "project_assumption: joint-actuator 3CC proxy; fresh start at clip boundary",
+        "inertia": "project_assumption: uniform cylinders/sphere with population mass priors"
+      },
+      "biomechanics": {
+        "shoulder_envelope": {
+          "plane_deg": [
+            -90,
+            20,
+            130
+          ],
+          "elevation_deg": [
+            0,
+            60,
+            120,
+            180
+          ],
+          "lower_deg": [
+            [
+              -70,
+              -80,
+              -65,
+              -40
+            ],
+            [
+              -70,
+              -90,
+              -70,
+              -45
+            ],
+            [
+              -65,
+              -75,
+              -60,
+              -35
+            ]
+          ],
+          "upper_deg": [
+            [
+              15,
+              20,
+              10,
+              0
+            ],
+            [
+              20,
+              20,
+              15,
+              5
+            ],
+            [
+              10,
+              15,
+              5,
+              0
+            ]
+          ]
+        },
+        "capsule_radii_cm": [
+          9,
+          8,
+          3.8,
+          3,
+          2.5,
+          3.8,
+          3,
+          2.5,
+          6.5,
+          4.5,
+          3,
+          6.5,
+          4.5,
+          3
+        ],
+        "mass_fractions": [
+          0.497,
+          0.081,
+          0.028,
+          0.016,
+          0.006,
+          0.028,
+          0.016,
+          0.006,
+          0.1,
+          0.0465,
+          0.0145,
+          0.1,
+          0.0465,
+          0.0145
+        ],
+        "com_fractions": [
+          0.5,
+          0.5,
+          0.436,
+          0.43,
+          0.5,
+          0.436,
+          0.43,
+          0.5,
+          0.433,
+          0.433,
+          0.5,
+          0.433,
+          0.433,
+          0.5
+        ],
+        "collision_clearance_cm": 0.2,
+        "torque_positive_nm": [
+          [
+            60,
+            50,
+            35
+          ],
+          [
+            45,
+            20,
+            20
+          ],
+          [
+            12,
+            10,
+            10
+          ],
+          [
+            60,
+            50,
+            35
+          ],
+          [
+            45,
+            20,
+            20
+          ],
+          [
+            12,
+            10,
+            10
+          ],
+          [
+            100,
+            80,
+            60
+          ],
+          [
+            90,
+            35,
+            35
+          ],
+          [
+            60,
+            25,
+            25
+          ],
+          [
+            100,
+            80,
+            60
+          ],
+          [
+            90,
+            35,
+            35
+          ],
+          [
+            60,
+            25,
+            25
+          ]
+        ],
+        "torque_negative_nm": [
+          [
+            50,
+            45,
+            30
+          ],
+          [
+            35,
+            18,
+            18
+          ],
+          [
+            10,
+            9,
+            9
+          ],
+          [
+            50,
+            45,
+            30
+          ],
+          [
+            35,
+            18,
+            18
+          ],
+          [
+            10,
+            9,
+            9
+          ],
+          [
+            90,
+            70,
+            55
+          ],
+          [
+            70,
+            30,
+            30
+          ],
+          [
+            45,
+            20,
+            20
+          ],
+          [
+            90,
+            70,
+            55
+          ],
+          [
+            70,
+            30,
+            30
+          ],
+          [
+            45,
+            20,
+            20
+          ]
+        ],
+        "velocity_scale_rad_s": 4.0,
+        "fatigue_rate_s": 0.02,
+        "recovery_rate_s": 0.005,
+        "activation_rate_s": 5.0,
+        "deactivation_rate_s": 5.0,
+        "initial_fatigue_state": [
+          0,
+          1,
+          0
+        ],
+        "max_fatigued_fraction": 0.35,
+        "force_tolerance_bw": 0.02,
+        "moment_tolerance_bw_m": 0.01
+      }
+    },
+    "anny_version": "0.6.2",
+    "render": true,
+    "adapter_sha256": {
+      "avatar_model.py": "5def34aebabd977524b212a606ae3bbe83081898b2a8f21a6bd30324536b49ef",
+      "avatar_render.py": "3fec4ad12af5a61552947dc6268262225093505feb18d51f817fc83cc8e1b654",
+      "avatar_pipeline.py": "7ce5f28a9c0e0d4425fdc946d78fd0f33c176cce7da073104e7948cabeebc64f"
+    }
+  },
+  "output_sha256": {
+    "avatar_source_overlay.mp4": "d6e4a3f20e737ba737e9c5ea714931ef1d2ad23ca222eb40d96028bb0de431b2",
+    "provenance.json": "709665873d2b9b6b5ba53b494050d9ebb7a1da5a6d7c477b5bda8a0c3e6f0fa4",
+    "surface_anchor_calibration.json": "de3a96d555b39d7bc498a7e543dc8f8a6783dfffb3c5197c9c691c565014f05c",
+    "avatar_comparison_3d.png": "f79772deac28b4c0be8e4f26e1c66ab407a2a74faf8e6d98b78828d9d63e2caf",
+    "avatar_bind.npz": "1a997cfa8f52f1f67f817bdb37e190f7e92eba94ca30b45ac5c8987a11267bc4",
+    "profile_measurements.json": "30cca6047b74543da5b7700ed219d461835bd22b272831773e40c672551307a5",
+    "surface_metrics.csv": "78725ef1fba560f433a88c52e96095850c9218236a3896f4bcecf836735900d1",
+    "avatar_comparison_3d.mp4": "4f5de5d9c347c40bc4597214ede19c7ab637e07d01bcdfb75e3f700963c5d52c",
+    "avatar_motion.npz": "901d64ea57479d8fdfc5036f4cdb9de3b0211cb980e55de3907ef08773678b02",
+    "contact_audit.npz": "8eacf4d58a4a4107fb2a1941b7c601a3e77d350df70b218b58100c990fa7e863",
+    "avatar_source_overlay.png": "e0e34ff1a225d92fafdd309b17be6c0e28e4b6a048fbab7758ec54ef12d74eb6",
+    "bone_mapping.csv": "9adaf8d422f687e01c0de17d5aa948cb7db0c79888758f3893e3d42297835be6"
+  }
+}

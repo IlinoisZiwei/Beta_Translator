@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "trial": "trial2",
+  "adapter": "joined_panels",
+  "input_root": "outputs/trial2",
+  "video": "videos/trial2.mp4",
+  "frame_count": 976,
+  "fps": 30.0,
+  "scene": {
+    "middle_deg": 15.0,
+    "upper_deg": 0.0,
+    "spacing_cm": 15.0
+  },
+  "baseline": "outputs/trial2/anatomy_plans/target_180cm_controls_db7b5a5de762/balanced/trajectory.npz",
+  "verification_frames": [
+    550,
+    595
+  ],
+  "notes": [
+    "Joined wall panels are hypotheses, not measured angles.",
+    "Identity-rejected observations retain zero evidence weight."
+  ]
+}

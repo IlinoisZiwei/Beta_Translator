@@ -7,9 +7,10 @@ import sys
 def main():
     if sys.version_info[:2] != (3, 12):
         raise RuntimeError('Beta Translator requires Python 3.12.')
-    for name in ('cv2', 'numpy', 'pandas', 'scipy', 'matplotlib', 'PIL', 'yaml',
+    for name in ('cv2', 'numpy', 'pandas', 'scipy', 'osqp', 'matplotlib', 'PIL', 'yaml',
                  'mediapipe', 'torch', 'torchvision', 'rtmlib', 'onnxruntime',
-                 'ipywidgets', 'ipykernel', 'jupyterlab', 'detectron2._C'):
+                 'ipywidgets', 'ipykernel', 'jupyterlab', 'detectron2._C',
+                 'anny', 'roma', 'trimesh', 'safetensors', 'warp'):
         importlib.import_module(name)
     import torch
     from torchvision.ops import nms

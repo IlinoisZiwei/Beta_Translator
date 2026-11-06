@@ -1,0 +1,13 @@
+{
+  "source_sha256": "3af1ca20aa87bc88b0b8cd54f2504331afa2aa03537cc868f1175fa1f50f3c0f",
+  "poses_per_side": 65,
+  "rotation_max_absolute_error": 6.661338147750939e-16,
+  "position_max_error_m": 3.885780586188048e-16,
+  "knee_curve_max_error_m": 1.1102230246251565e-16,
+  "passed": true,
+  "source_knee_translations_preserved": true,
+  "source_ankle_subtalar_offsets_preserved": true,
+  "opensim_engine_crosscheck": false,
+  "personal_anatomical_validation": false,
+  "scope": "Independent source-parameter composition; scaled project hip roots and proportions remain assumptions."
+}

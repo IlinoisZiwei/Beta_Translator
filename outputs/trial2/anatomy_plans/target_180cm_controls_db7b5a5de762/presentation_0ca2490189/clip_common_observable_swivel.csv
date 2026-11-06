@@ -1,0 +1,7 @@
+clip,model,common_observable_limb_intervals,total_limb_intervals,swivel_max_common_deg_s,swivel_p95_common_deg_s
+hinge_transition,legacy,48,80,203.68380291377872,187.47027899025238
+hinge_transition,anatomical,48,80,3.403566150603329,3.3816339118838687
+right_elbow,legacy,3,90,180.82928727055688,179.5732894626256
+right_elbow,anatomical,3,90,2.491242067004122,2.4804567348554416
+left_elbow,legacy,35,70,1017.7860094614452,1017.150759518345
+left_elbow,anatomical,35,70,3.5936736889716276,3.4689960452429736

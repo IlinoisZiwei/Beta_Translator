@@ -1,0 +1,401 @@
+{
+  "camera": {
+    "K": [
+      [
+        842.7827922587359,
+        0.0,
+        960.0
+      ],
+      [
+        0.0,
+        842.7827922587359,
+        540.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "R": [
+      [
+        0.929918321630965,
+        0.10871285428858396,
+        0.35133094143197463
+      ],
+      [
+        0.03675414394606372,
+        -0.9780000022236441,
+        0.20534149252731204
+      ],
+      [
+        0.3659249212582282,
+        -0.17803794809809853,
+        -0.9134557685182016
+      ]
+    ],
+    "t_cm": [
+      -102.59171576421855,
+      454.64616766972455,
+      550.7335568718931
+    ],
+    "camera_center_cm": [
+      -122.83534798696756,
+      12.39942400932646,
+      445.7566658826185
+    ],
+    "fitting_rmse_px": 0.03243577561437971,
+    "reserved_rmse_px": 0.20518626451646357,
+    "reserved_p95_px": 0.20518626451646357,
+    "principal_x_px": 960.0,
+    "fit_principal_y": false,
+    "measured_intrinsics": false,
+    "measured_wall_tilt": false,
+    "distortion": "Assumed zero; resized/cropped video intrinsics not supplied.",
+    "solver_success": true,
+    "middle_deg": 45.0,
+    "upper_deg": 0.0,
+    "floor_edge_height_disagreement_cm": 13.022144472869059,
+    "actual_panel_tilts_deg": [
+      0.0,
+      44.9993750019929,
+      -0.0
+    ],
+    "intrinsics_status": "Unmeasured square-pixel, centered-principal-point, zero-distortion model.",
+    "grid_validation_status": "One local held-out point; not independent global calibration.",
+    "tracking_status": "Existing global image homographies are approximate for moving cameras and multiple planes."
+  },
+  "angles_deg": [
+    45.0,
+    0.0
+  ],
+  "normals": [
+    [
+      0.0,
+      -0.0,
+      1.0
+    ],
+    [
+      0.003302767482194038,
+      -0.7070990678306389,
+      0.7071067811865476
+    ],
+    [
+      -0.024576585142321375,
+      0.0,
+      0.9996979501143043
+    ],
+    [
+      0.0,
+      1.0,
+      0.0
+    ]
+  ],
+  "origins_cm": [
+    [
+      0.0,
+      541.449039643966,
+      0.0
+    ],
+    [
+      -6.499379014026346,
+      542.8822564624218,
+      0.0
+    ],
+    [
+      204.73819091021383,
+      169.74876270001687,
+      -374.1160758617573
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ]
+  ],
+  "meshes_cm": [
+    [
+      [
+        -331.0145908198542,
+        640.0819488923879,
+        0.0
+      ],
+      [
+        298.4763980354127,
+        779.5881607982818,
+        0.0
+      ],
+      [
+        324.24031319977746,
+        544.427098409203,
+        0.0
+      ],
+      [
+        -337.23907122783015,
+        541.3374145156408,
+        0.0
+      ]
+    ],
+    [
+      [
+        -337.2390712278301,
+        541.3374145156408,
+        1.7053025658242404e-13
+      ],
+      [
+        324.2403131997773,
+        544.427098409203,
+        1.7053025658242404e-13
+      ],
+      [
+        755.1749660284848,
+        185.85187225827303,
+        -360.584132270583
+      ],
+      [
+        -345.69858420805747,
+        153.64565314176127,
+        -387.648019452931
+      ],
+      [
+        -476.1863600322585,
+        284.52173674322324,
+        -256.1638787652652
+      ]
+    ],
+    [
+      [
+        -345.6985842080576,
+        153.6456531417611,
+        -387.64801945293135
+      ],
+      [
+        755.1749660284854,
+        185.8518722582728,
+        -360.58413227058344
+      ],
+      [
+        888.1644179259322,
+        6.511072236434643,
+        -357.3147181568357
+      ],
+      [
+        -348.41694005785183,
+        -6.511072236434416,
+        -387.7148475423376
+      ]
+    ]
+  ],
+  "hinges_cm": [
+    [
+      [
+        -337.23907122783015,
+        541.3374145156408,
+        0.0
+      ],
+      [
+        324.24031319977746,
+        544.427098409203,
+        0.0
+      ]
+    ],
+    [
+      [
+        -345.69858420805747,
+        153.64565314176127,
+        -387.648019452931
+      ],
+      [
+        755.1749660284848,
+        185.85187225827303,
+        -360.584132270583
+      ]
+    ]
+  ],
+  "assumptions": {
+    "reference_frame": 450,
+    "image_size": [
+      1920,
+      1080
+    ],
+    "hole_spacing_cm": 15.0,
+    "spacing_status": "Existing user assumption, not measured",
+    "grid_orthogonal": true,
+    "grid_status": "New explicit rectangular-grid hypothesis for this experiment only",
+    "upper_grid_px": [
+      [
+        675.19,
+        163.99
+      ],
+      [
+        708.29,
+        170.06
+      ],
+      [
+        740.56,
+        176.15
+      ],
+      [
+        771.9,
+        181.92
+      ],
+      [
+        742.46,
+        143.13
+      ],
+      [
+        738.77,
+        208.59
+      ],
+      [
+        737.06,
+        240.52
+      ]
+    ],
+    "upper_grid_indices": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        -1
+      ],
+      [
+        2,
+        -2
+      ]
+    ],
+    "upper_hinge_px": [
+      [
+        50,
+        318
+      ],
+      [
+        1340,
+        443
+      ]
+    ],
+    "lower_hinge_px": [
+      [
+        350,
+        778
+      ],
+      [
+        1330,
+        710
+      ]
+    ],
+    "floor_edge_px": [
+      [
+        350,
+        939
+      ],
+      [
+        1380,
+        826
+      ]
+    ],
+    "selection_status": "Assistant-selected draft boundaries, not user-reviewed measurements",
+    "wall_polygons_px": {
+      "upper": [
+        [
+          50,
+          50
+        ],
+        [
+          1380,
+          60
+        ],
+        [
+          1340,
+          443
+        ],
+        [
+          50,
+          318
+        ]
+      ],
+      "middle": [
+        [
+          50,
+          318
+        ],
+        [
+          1340,
+          443
+        ],
+        [
+          1330,
+          710
+        ],
+        [
+          350,
+          778
+        ],
+        [
+          50,
+          700
+        ]
+      ],
+      "lower": [
+        [
+          350,
+          778
+        ],
+        [
+          1330,
+          710
+        ],
+        [
+          1380,
+          826
+        ],
+        [
+          350,
+          939
+        ]
+      ]
+    },
+    "angle_scenarios": [
+      [
+        15,
+        0
+      ],
+      [
+        30,
+        0
+      ],
+      [
+        45,
+        0
+      ],
+      [
+        30,
+        15
+      ]
+    ],
+    "angle_definition": "Degrees from vertical, positive overhang. Middle and upper are spatial panels, not a time-varying rotation of the whole wall.",
+    "lower_panel_rule": "Vertical plane through the observed lower hinge; its normal is inferred conditionally from that edge.",
+    "floor_rule": "Horizontal plane at mean reconstructed floor-edge height; endpoint disagreement is reported.",
+    "ground_evidence_rule": "Only source-visible feet near the modeled floor edge, below its boundary, and stable for at least 10 frames. Raw contact labels are retained separately; no lack-of-hold inference.",
+    "all_geometry_measured": false
+  },
+  "physical_validation": false
+}

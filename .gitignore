@@ -23,3 +23,6 @@ outputs/automatic/model_cache/
 /outputs/trial3/hold_mapping/partial_after_0276.jpg
 /outputs/trial3/hold_mapping/partial_after_0301.jpg
 /outputs/trial3/hold_mapping/partial_after_0326.jpg
+
+# Derived native Anny asset cache (regenerated locally).
+/.cache/anny/

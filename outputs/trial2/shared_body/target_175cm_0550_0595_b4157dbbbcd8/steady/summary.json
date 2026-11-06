@@ -1,0 +1,53 @@
+{
+  "solver": {
+    "success": false,
+    "message": "Maximum constrained iterations reached.",
+    "nit": 150,
+    "nfev": 852,
+    "cost": 1176.5146412115114,
+    "optimality": 7.451001567267521,
+    "relative_cost_change": 0.005381436104995064,
+    "linear_violation": 0.0,
+    "complementarity": 0.005593766272465008,
+    "initial_projection": {
+      "iterations": 3350,
+      "primal": 2.5123399867781642e-08,
+      "dual": 5.93082745007527e-10,
+      "success": true,
+      "status": "solved"
+    },
+    "seconds": 202.10448137496132,
+    "gradient_definition": "Fresh Lagrangian gradient normalized by current Jacobian columns; explicit box and linear rate multipliers."
+  },
+  "metrics": {
+    "candidate": "steady",
+    "native_frames": 46,
+    "numerically_feasible": false,
+    "anatomy_temporal_failure_frames": 0,
+    "contact_failure_frames": 0,
+    "geometric_failure_frames": 0,
+    "support_failure_frames": 22,
+    "preunload_failure_frames": 12,
+    "grip_proxy_failure_frames": 0,
+    "total_failed_frames": 28,
+    "worst_failure_fraction": 0.4782608695652174,
+    "max_contact_gap_cm": 0.036135220865165844,
+    "max_rate_ratio": 0.32841829291741076,
+    "max_acceleration_ratio": 0.47776048527807274,
+    "max_elbow_swivel_deg_s": 13.046598157921476,
+    "max_torso_rotation_deg_s": 18.609359559382106,
+    "converged": false,
+    "uncertainty": "Reduced anatomy; inferred hand/foot and scene geometry; full specification coverage is explicit in constraints.csv.",
+    "departing_force_failure_frames": 0,
+    "joint_acceleration_rms_cm_s2": 34.62565285366506,
+    "specification_status": "fail",
+    "trusted_support_failure_frames": 46,
+    "reserve_failure_frames": 22,
+    "preunload_applicable_frames": 12,
+    "preunload_failure_fraction_applicable": 1.0,
+    "optimized_hand_load_integral_bw_s": 1.6519374224178536,
+    "lower_limb_rom_failure_frames": 0,
+    "max_knee_coupling_displacement_cm": 2.2831622249534025,
+    "unknown_constraints": 24
+  }
+}

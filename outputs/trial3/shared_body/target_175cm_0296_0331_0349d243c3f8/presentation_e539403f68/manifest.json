@@ -1,0 +1,15 @@
+{
+  "provenance": {
+    "summary": "5b6b5a3ad2875228abc61fd1c7a1d74b9fb47eeff905676c970cb423d12fca8b",
+    "renderer": "b0858cac84feb12b89f836e721b8cf74f902e01df96470870b46d1205c48d8d9"
+  },
+  "frames": 36,
+  "fps": 30.0,
+  "output_sha256": {
+    "candidate_comparison_3d.mp4": "a68004b6ee692da8043e1237b2dcb5e8df141da3d96e4ee715e03623824667de",
+    "selected_plan_3d.png": "fdcc14d217bb5e179b682850a9856fd28edc9454b50cb600e2f503ec2e3f152c",
+    "metrics.png": "82f672345ed4f6388bb7c0cc6e9d67d89d5a83035b77eb1a525dd1fcf72433c1",
+    "candidate_comparison_3d.png": "df2b99653766adcbf835734a51f087e8f04753d6869da9eac88018d1e6b28873",
+    "selected_plan_3d.mp4": "e525c92861da8c325197625b27dd5a93375087d7084537bddfeb06b5616edade"
+  }
+}

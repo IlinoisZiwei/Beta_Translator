@@ -1,2 +1,0 @@
-# Compatibility entry point. All workflows now share the repository .venv.
--r requirements.txt

@@ -1,0 +1,15 @@
+{
+  "provenance": {
+    "summary": "4418427d2ff75946ae14f4563f3a6ab7605db770d40bad31363dcf97d1449b66",
+    "renderer": "9ec5cd3fedc98f6d951f0c6064745091e32c67f23041b526f064f710683fa983"
+  },
+  "frames": 46,
+  "fps": 30.0,
+  "output_sha256": {
+    "candidate_comparison_3d.mp4": "76bafa4444279317ec4aea6bf2c728200f51aa743e085218ab56f968b0d7358b",
+    "selected_plan_3d.png": "a5e21e8ab3f0dd387e457f49964d16f66acc6c321026fb9a57ac4542964a6ea6",
+    "metrics.png": "a7d756dca492454bf0b6cfb6b05f67c826e652c0999b1e9702cb885aa2b769b8",
+    "candidate_comparison_3d.png": "eeb9df2c53fb0a8237cc5fbbfb980f488e91ff793b9a53f824d35c03ab914fbc",
+    "selected_plan_3d.mp4": "fff1479807fc81324e5015f313bc5a1ad983bb1d067149caa651de46d25c8bfc"
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "config": {
+    "height_cm": 180.0,
+    "fps": 30.0,
+    "ratios": {
+      "upper_arm": 0.186,
+      "forearm": 0.146,
+      "thigh": 0.245,
+      "shank": 0.246,
+      "shoulder_w": 0.259,
+      "hip_w": 0.191,
+      "torso": 0.288
+    },
+    "clip_iterations": 150,
+    "full_iterations": 350,
+    "clips": [
+      [
+        "hinge_transition",
+        475,
+        515
+      ],
+      [
+        "right_elbow",
+        550,
+        595
+      ],
+      [
+        "left_elbow",
+        615,
+        650
+      ]
+    ],
+    "profiles": {
+      "balanced": 1.0,
+      "steady": 2.5
+    },
+    "angles_deg": [
+      15.0,
+      0.0
+    ],
+    "velocity_limits_status": "Project assumptions, not measured human limits or MoBL limits",
+    "arm_model": "reduced_MoBL_inspired",
+    "support_optimized": true,
+    "frames": [
+      475,
+      515
+    ],
+    "smoothness": 1.0
+  },
+  "solver": {
+    "success": false,
+    "message": "Maximum constrained iterations reached.",
+    "nit": 150,
+    "nfev": 736,
+    "cost": 189.35582373045233,
+    "optimality": 3.681727212141932,
+    "relative_cost_change": 0.025554968880086765,
+    "linear_violation": 0.0,
+    "initial_projection": {
+      "iterations": 2975,
+      "primal": 4.002808996432639e-15,
+      "dual": 5.663065000634813e-15,
+      "success": true,
+      "status": "solved"
+    },
+    "seconds": 250.12382725003408,
+    "gradient_definition": "Fresh Lagrangian gradient normalized by current Jacobian columns; explicit box and linear rate multipliers."
+  },
+  "metrics": {
+    "candidate": "hinge_transition_balanced",
+    "native_frames": 41,
+    "numerically_feasible": false,
+    "anatomy_temporal_failure_frames": 0,
+    "contact_failure_frames": 0,
+    "geometric_failure_frames": 0,
+    "support_failure_frames": 24,
+    "preunload_failure_frames": 6,
+    "grip_proxy_failure_frames": 0,
+    "total_failed_frames": 30,
+    "worst_failure_fraction": 0.5853658536585366,
+    "max_contact_gap_cm": 0.03914673363462547,
+    "max_rate_ratio": 0.15509155440202685,
+    "max_acceleration_ratio": 0.3207934086085303,
+    "max_elbow_swivel_deg_s": 6.631753290931479,
+    "max_torso_rotation_deg_s": 11.980872935567723,
+    "converged": false,
+    "uncertainty": "Unmeasured geometry, approximate anatomy, inferred wrist orientation; no dynamic or full collision validation."
+  },
+  "physical_validation": false,
+  "output_sha256": {
+    "trajectory.npz": "a0de545e74ffc01191d4d44fe8f9493f64605e4b1c642d9bee63e2555dea5ef7",
+    "metrics.csv": "88f9580fd150802921052da944f1b0c83547f9af42849377698806bd42205d45",
+    "scene.json": "4c908cb012fa91c3a86c3e92564ebb3bb477c537c6a8b9e1ade7b1dd4c5ea41b",
+    "contact_episodes.json": "d6514b9e8bc8066213d071b57d86e6f04b77dfd6a58af6bb49633408f30faa4e",
+    "solver_history.csv": "e4975f0f862e0ef885ea0122a27ef572d18f28f48ccebcea95928bb88609545f"
+  }
+}

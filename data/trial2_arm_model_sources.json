@@ -1,0 +1,59 @@
+{
+  "source_url": "https://github.com/aikkala/O2MConverter/blob/ad2599d5ecb2c18b44570b4d0b53e062ac9b82ae/models/opensim/MoBL_ARMS_OpenSim_tutorial_33/MoBL_ARMS_model_for_mujoco.osim",
+  "repository_commit": "ad2599d5ecb2c18b44570b4d0b53e062ac9b82ae",
+  "original_project": "https://simtk.org/home/upexdyn",
+  "publication": "https://doi.org/10.1080/10255842.2014.916698",
+  "source_status": "OpenSim model snapshot distributed by the authors of O2MConverter; not the latest personalized MoBL release.",
+  "coordinates": [
+    {
+      "name": "elv_angle",
+      "range_rad": [
+        -1.57079633,
+        2.26892803
+      ]
+    },
+    {
+      "name": "shoulder_elv",
+      "range_rad": [
+        0,
+        3.14159265
+      ]
+    },
+    {
+      "name": "shoulder_rot",
+      "range_rad": [
+        -1.57079633,
+        0.34906585
+      ]
+    },
+    {
+      "name": "elbow_flexion",
+      "range_rad": [
+        0,
+        2.26892803
+      ]
+    },
+    {
+      "name": "pro_sup",
+      "range_rad": [
+        -1.57079633,
+        1.57079633
+      ]
+    },
+    {
+      "name": "deviation",
+      "range_rad": [
+        -0.17453293,
+        0.43633231
+      ]
+    },
+    {
+      "name": "flexion",
+      "range_rad": [
+        -1.22173048,
+        1.22173048
+      ]
+    }
+  ],
+  "implementation_scope": "MoBL-inspired reduced bilateral kinematic chain with retained Beta Translator lengths; no imported muscle, scapulothoracic or ligament dynamics. Velocity limits are project assumptions, not MoBL measurements."
+}

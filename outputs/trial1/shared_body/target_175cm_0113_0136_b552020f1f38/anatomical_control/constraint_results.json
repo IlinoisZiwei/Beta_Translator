@@ -1,0 +1,280 @@
+[
+  {
+    "id": "fixed_geometry",
+    "specification_section": "3\u20134",
+    "enforcement": "hard",
+    "status": "pass",
+    "reason": "height-scaled project proportions"
+  },
+  {
+    "id": "arm_chain",
+    "specification_section": "4",
+    "enforcement": "partial",
+    "status": "unknown",
+    "reason": "source translations and shoulder girdle"
+  },
+  {
+    "id": "arm_rom",
+    "specification_section": "5.1",
+    "enforcement": "hard",
+    "status": "pass",
+    "reason": "published model coordinate ranges"
+  },
+  {
+    "id": "shoulder_envelope",
+    "specification_section": "5.3",
+    "enforcement": "profile_soft_and_audit",
+    "status": "fail",
+    "reason": "Numerical check under user profile assumptions; no personal physiological calibration.",
+    "calibrated": false,
+    "failed_frames": 6
+  },
+  {
+    "id": "wrist_coupling",
+    "specification_section": "5.4",
+    "enforcement": "not_implemented",
+    "status": "unknown",
+    "reason": "calibrated coupled flexion/deviation envelope"
+  },
+  {
+    "id": "finger_toe_rom",
+    "specification_section": "5.4",
+    "enforcement": "not_implemented",
+    "status": "unknown",
+    "reason": "task-specific articulated digit model"
+  },
+  {
+    "id": "lower_limb_chain",
+    "specification_section": "4.3",
+    "enforcement": "hard",
+    "status": "pass",
+    "reason": "source hip/knee/ankle/subtalar rotations and coupled knee translation"
+  },
+  {
+    "id": "lower_limb_rom",
+    "specification_section": "4.3,5.4",
+    "enforcement": "hard",
+    "status": "pass",
+    "reason": "assumed signed hip/knee/ankle/subtalar screening bounds"
+  },
+  {
+    "id": "lower_limb_personal_rom",
+    "specification_section": "5.4",
+    "enforcement": "not_implemented",
+    "status": "unknown",
+    "reason": "person-specific coupled loaded lower-limb envelope"
+  },
+  {
+    "id": "spine_neck_rom",
+    "specification_section": "5.4",
+    "enforcement": "not_implemented",
+    "status": "unknown",
+    "reason": "segment-relative spine/neck model"
+  },
+  {
+    "id": "coordinate_rates",
+    "specification_section": "6.1",
+    "enforcement": "hard",
+    "status": "pass",
+    "reason": "project speed/acceleration assumptions"
+  },
+  {
+    "id": "rotation_rates",
+    "specification_section": "6.2",
+    "enforcement": "parameterized_audit",
+    "status": "unknown",
+    "reason": "justified segment rate caps"
+  },
+  {
+    "id": "continuous_time_limits",
+    "specification_section": "6.2",
+    "enforcement": "not_implemented",
+    "status": "unknown",
+    "reason": "substep or analytic derivative certificate"
+  },
+  {
+    "id": "shared_contact_regions",
+    "specification_section": "7.1",
+    "enforcement": "hard",
+    "status": "pass",
+    "reason": "image-derived regions; fixed within episode"
+  },
+  {
+    "id": "physical_patch_contact",
+    "specification_section": "7.1\u20137.2",
+    "enforcement": "soft_and_audit",
+    "status": "fail",
+    "reason": "same patch in objective, audit and video"
+  },
+  {
+    "id": "hand_orientation",
+    "specification_section": "7.2",
+    "enforcement": "partial",
+    "status": "unknown",
+    "reason": "measured grip/patch orientation"
+  },
+  {
+    "id": "foot_orientation",
+    "specification_section": "7.2",
+    "enforcement": "partial",
+    "status": "unknown",
+    "reason": "measured shoe orientation and contact-mode validation"
+  },
+  {
+    "id": "contact_pose_slip",
+    "specification_section": "7.2",
+    "enforcement": "not_implemented",
+    "status": "unknown",
+    "reason": "surface-normal compatibility, patch overlap and slip law"
+  },
+  {
+    "id": "contact_complementarity",
+    "specification_section": "7.3",
+    "enforcement": "partial",
+    "status": "unknown",
+    "reason": "rigid complementarity or declared compliance"
+  },
+  {
+    "id": "free_contact_force",
+    "specification_section": "7.3",
+    "enforcement": "hard",
+    "status": "pass",
+    "reason": "free/unknown contacts exert zero optimized force"
+  },
+  {
+    "id": "friction_and_support",
+    "specification_section": "7.3",
+    "enforcement": "soft_and_audit",
+    "status": "fail",
+    "reason": "assumed foot cone and hand force box"
+  },
+  {
+    "id": "grip_wrench",
+    "specification_section": "7.3",
+    "enforcement": "not_implemented",
+    "status": "unknown",
+    "reason": "hold-specific grip wrench capacity"
+  },
+  {
+    "id": "release",
+    "specification_section": "7.3",
+    "enforcement": "soft_and_audit",
+    "status": "not_applicable",
+    "reason": "remaining-support audit plus departing-force check"
+  },
+  {
+    "id": "trusted_support",
+    "specification_section": "2.3",
+    "enforcement": "audit",
+    "status": "fail",
+    "reason": "source/confidence/ground eligibility"
+  },
+  {
+    "id": "balance_reserve",
+    "specification_section": "2.3",
+    "enforcement": "audit",
+    "status": "fail",
+    "reason": "Quasi-static perturbation diagnostic only; dynamic reserve is not certified"
+  },
+  {
+    "id": "wall_floor",
+    "specification_section": "8",
+    "enforcement": "partial",
+    "status": "unknown",
+    "reason": "whole-body environment collision"
+  },
+  {
+    "id": "self_collision",
+    "specification_section": "8",
+    "enforcement": "profile_soft_and_audit",
+    "status": "pass",
+    "reason": "Numerical check under user profile assumptions; no personal physiological calibration.",
+    "calibrated": false,
+    "failed_frames": 0
+  },
+  {
+    "id": "swept_collision",
+    "specification_section": "8",
+    "enforcement": "not_implemented",
+    "status": "unknown",
+    "reason": "continuous collision coverage"
+  },
+  {
+    "id": "torque_capacity",
+    "specification_section": "9.2",
+    "enforcement": "profile_soft_and_audit",
+    "status": "fail",
+    "reason": "Numerical check under user profile assumptions; no personal physiological calibration.",
+    "calibrated": false,
+    "failed_frames": 24
+  },
+  {
+    "id": "musculotendon",
+    "specification_section": "9.3",
+    "enforcement": "not_implemented",
+    "status": "unknown",
+    "reason": "verified muscle model and person parameters"
+  },
+  {
+    "id": "fatigue",
+    "specification_section": "10",
+    "enforcement": "profile_soft_and_audit",
+    "status": "fail",
+    "reason": "Numerical check under user profile assumptions; no personal physiological calibration.",
+    "calibrated": false,
+    "failed_frames": 24
+  },
+  {
+    "id": "strength_fatigue_coupling",
+    "specification_section": "9\u201310",
+    "enforcement": "profile_soft_and_audit",
+    "status": "fail",
+    "reason": "Numerical check under user profile assumptions; no personal physiological calibration.",
+    "calibrated": false,
+    "failed_frames": 24
+  },
+  {
+    "id": "parameter_calibration",
+    "specification_section": "13",
+    "enforcement": "not_implemented",
+    "status": "unknown",
+    "reason": "person-specific geometry, mass, inertia and capacity evidence"
+  },
+  {
+    "id": "centroidal_dynamics",
+    "specification_section": "11",
+    "enforcement": "profile_soft_and_audit",
+    "status": "fail",
+    "reason": "Numerical check under user profile assumptions; no personal physiological calibration.",
+    "calibrated": false,
+    "failed_frames": 24
+  },
+  {
+    "id": "joint_dynamics",
+    "specification_section": "11",
+    "enforcement": "parameterized_audit",
+    "status": "unknown",
+    "reason": "mass matrix, bias, contact Jacobian and actuation"
+  },
+  {
+    "id": "impact_forward_validation",
+    "specification_section": "11.3",
+    "enforcement": "not_implemented",
+    "status": "unknown",
+    "reason": "impact law, integration and replay validation"
+  },
+  {
+    "id": "candidate_selection",
+    "specification_section": "12",
+    "enforcement": "gate",
+    "status": "pass",
+    "reason": "feasibility before motion/effort; uncertainty retained"
+  },
+  {
+    "id": "provenance",
+    "specification_section": "13",
+    "enforcement": "audit",
+    "status": "pass",
+    "reason": "input/code/config hashes and independent saved-result checks"
+  }
+]

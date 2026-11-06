@@ -1,0 +1,105 @@
+anny_bone,source_group,finger_motion
+root,torso,
+pelvis.L,torso,
+upperleg01.L,thigh.L,
+upperleg02.L,thigh.L,
+lowerleg01.L,shank.L,
+lowerleg02.L,shank.L,
+foot.L,foot.L,
+toe1-1.L,foot.L,
+toe1-2.L,foot.L,
+toe2-1.L,foot.L,
+toe2-2.L,foot.L,
+toe2-3.L,foot.L,
+toe3-1.L,foot.L,
+toe3-2.L,foot.L,
+toe3-3.L,foot.L,
+toe4-1.L,foot.L,
+toe4-2.L,foot.L,
+toe4-3.L,foot.L,
+toe5-1.L,foot.L,
+toe5-2.L,foot.L,
+toe5-3.L,foot.L,
+pelvis.R,torso,
+upperleg01.R,thigh.R,
+upperleg02.R,thigh.R,
+lowerleg01.R,shank.R,
+lowerleg02.R,shank.R,
+foot.R,foot.R,
+toe1-1.R,foot.R,
+toe1-2.R,foot.R,
+toe2-1.R,foot.R,
+toe2-2.R,foot.R,
+toe2-3.R,foot.R,
+toe3-1.R,foot.R,
+toe3-2.R,foot.R,
+toe3-3.R,foot.R,
+toe4-1.R,foot.R,
+toe4-2.R,foot.R,
+toe4-3.R,foot.R,
+toe5-1.R,foot.R,
+toe5-2.R,foot.R,
+toe5-3.R,foot.R,
+spine05,torso,
+spine04,torso,
+spine03,torso,
+spine02,torso,
+spine01,torso,
+clavicle.L,torso,
+shoulder01.L,torso,
+upperarm01.L,upper_arm.L,
+upperarm02.L,upper_arm.L,
+lowerarm01.L,forearm.L,
+lowerarm02.L,forearm.L,
+wrist.L,hand.L,
+finger1-1.L,hand.L,fixed template
+finger1-2.L,hand.L,fixed template
+finger1-3.L,hand.L,fixed template
+metacarpal1.L,hand.L,fixed template
+finger2-1.L,hand.L,fixed template
+finger2-2.L,hand.L,fixed template
+finger2-3.L,hand.L,fixed template
+metacarpal2.L,hand.L,fixed template
+finger3-1.L,hand.L,fixed template
+finger3-2.L,hand.L,fixed template
+finger3-3.L,hand.L,fixed template
+metacarpal3.L,hand.L,fixed template
+finger4-1.L,hand.L,fixed template
+finger4-2.L,hand.L,fixed template
+finger4-3.L,hand.L,fixed template
+metacarpal4.L,hand.L,fixed template
+finger5-1.L,hand.L,fixed template
+finger5-2.L,hand.L,fixed template
+finger5-3.L,hand.L,fixed template
+clavicle.R,torso,
+shoulder01.R,torso,
+upperarm01.R,upper_arm.R,
+upperarm02.R,upper_arm.R,
+lowerarm01.R,forearm.R,
+lowerarm02.R,forearm.R,
+wrist.R,hand.R,
+finger1-1.R,hand.R,fixed template
+finger1-2.R,hand.R,fixed template
+finger1-3.R,hand.R,fixed template
+metacarpal1.R,hand.R,fixed template
+finger2-1.R,hand.R,fixed template
+finger2-2.R,hand.R,fixed template
+finger2-3.R,hand.R,fixed template
+metacarpal2.R,hand.R,fixed template
+finger3-1.R,hand.R,fixed template
+finger3-2.R,hand.R,fixed template
+finger3-3.R,hand.R,fixed template
+metacarpal3.R,hand.R,fixed template
+finger4-1.R,hand.R,fixed template
+finger4-2.R,hand.R,fixed template
+finger4-3.R,hand.R,fixed template
+metacarpal4.R,hand.R,fixed template
+finger5-1.R,hand.R,fixed template
+finger5-2.R,hand.R,fixed template
+finger5-3.R,hand.R,fixed template
+neck01,head,
+neck02,head,
+neck03,head,
+head,head,
+eye.L,head,
+eye.R,head,

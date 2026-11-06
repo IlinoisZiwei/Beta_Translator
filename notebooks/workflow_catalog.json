@@ -1,0 +1,495 @@
+{
+  "trial1": {
+    "single": {
+      "scope": "165 cm; historical manual example",
+      "tables": [
+        "outputs/state/ik_endpoints_165cm.json"
+      ],
+      "images": [
+        "outputs/images/ik_endpoints_165cm.png"
+      ],
+      "videos": [
+        "outputs/videos/motion_ik_h264.mp4"
+      ],
+      "links": [
+        "outputs/state/endpoint_annotations.json",
+        "outputs/state/motion_ik_summary.json"
+      ],
+      "sha256": {
+        "outputs/state/ik_endpoints_165cm.json": "2622c140069a4499f653623e58b191ca28d96aabce9390edd660e7c54b093d2e",
+        "outputs/images/ik_endpoints_165cm.png": "b850ef228afffd76039ffdc02a5845219fb64862aa0a2def5bff36e0f6c6d20f",
+        "outputs/videos/motion_ik_h264.mp4": "67fbfbab4180fe7bc9ab7068c1cb7b1deb851d9c12e47446c5efa5f3adbbe215",
+        "outputs/state/endpoint_annotations.json": "1301c451b3b015c5eab5a76f75c0f8a6c26b68098ac0233b319e0f103a9e1f94",
+        "outputs/state/motion_ik_summary.json": "74b59ae0447d1f0e3cd71274deff20366d9bb2091e876a205f6a17aad4171617"
+      }
+    },
+    "support": {
+      "scope": "180 cm; all 417 frames; no ground support",
+      "tables": [
+        "outputs/trial1/support_optimized/target_180cm_b55939aa0a8b/comparison.csv"
+      ],
+      "images": [],
+      "videos": [
+        "outputs/trial1/support_optimized/target_180cm_b55939aa0a8b/trial1_gravity_180cm_baseline.mp4",
+        "outputs/trial1/support_optimized/target_180cm_b55939aa0a8b/trial1_support_optimized_180cm_full_sequence.mp4"
+      ],
+      "links": [
+        "outputs/trial1/support_optimized/target_180cm_b55939aa0a8b/review.html",
+        "outputs/trial1/support_optimized/target_180cm_b55939aa0a8b/frame_diagnostics.csv",
+        "outputs/trial1/support_optimized/target_180cm_b55939aa0a8b/issue_intervals.csv"
+      ],
+      "summary": "outputs/trial1/support_optimized/target_180cm_b55939aa0a8b/summary.json",
+      "sha256": {
+        "outputs/trial1/support_optimized/target_180cm_b55939aa0a8b/comparison.csv": "e40d712e574a760e87404bd590266d79ad63205f89961980e44a156457086e73",
+        "outputs/trial1/support_optimized/target_180cm_b55939aa0a8b/trial1_gravity_180cm_baseline.mp4": "438b6e9e567e8e30d928b79f06472678a0d97eb99ccfaf2e6ab77763613d4028",
+        "outputs/trial1/support_optimized/target_180cm_b55939aa0a8b/trial1_support_optimized_180cm_full_sequence.mp4": "91e0a3709e9dc24c3be77918c2c5ca1eb9759048b5849b4976a7293e02694228",
+        "outputs/trial1/support_optimized/target_180cm_b55939aa0a8b/review.html": "090c4a8fb30b35b8e564dfcbd0b58c48ae077c79b597d6ca423a1c84808fd48d",
+        "outputs/trial1/support_optimized/target_180cm_b55939aa0a8b/frame_diagnostics.csv": "1a4f80f75524e874a7013527a2137c5bf4820f87951eff8666f7611ba1420815",
+        "outputs/trial1/support_optimized/target_180cm_b55939aa0a8b/issue_intervals.csv": "1dc5c4eade9be66700a81209520ab77a888e5066169dbef7e771d61e5f8b2c18",
+        "outputs/trial1/support_optimized/target_180cm_b55939aa0a8b/summary.json": "af7abb8fb487b2752c9280d34643e617537df01cfc71cd8090f63492f840aa0c"
+      }
+    },
+    "ground": {
+      "scope": "180 cm; all 417 frames; conditional ground support",
+      "tables": [
+        "outputs/trial1/ground_support/target_180cm_bd8c3dc75cd8/comparison.csv",
+        "outputs/trial1/ground_support/target_180cm_bd8c3dc75cd8/ground_evidence.csv"
+      ],
+      "images": [
+        "outputs/trial1/ground_support/target_180cm_bd8c3dc75cd8/ground_evidence.jpg"
+      ],
+      "videos": [
+        "outputs/trial1/ground_support/target_180cm_bd8c3dc75cd8/trial1_support_optimized_180cm_full_sequence.mp4"
+      ],
+      "links": [
+        "outputs/trial1/ground_support/target_180cm_bd8c3dc75cd8/review.html"
+      ],
+      "summary": "outputs/trial1/ground_support/target_180cm_bd8c3dc75cd8/summary.json",
+      "sha256": {
+        "outputs/trial1/ground_support/target_180cm_bd8c3dc75cd8/comparison.csv": "a4b14344b5313dd5978b7b8f658c88c2f0f5734782d1ecdaa7652ed20df7a9e2",
+        "outputs/trial1/ground_support/target_180cm_bd8c3dc75cd8/ground_evidence.csv": "fecc54367b395aa25f36552d48f5782ae4d801b084a4c83058826b3c721fabed",
+        "outputs/trial1/ground_support/target_180cm_bd8c3dc75cd8/ground_evidence.jpg": "4f89978d12ca8b3d2907508d6b486cb90bba6ad0a2883337bc6117d34ac20120",
+        "outputs/trial1/ground_support/target_180cm_bd8c3dc75cd8/trial1_support_optimized_180cm_full_sequence.mp4": "e74af97b7beaa2102ed8da1436ee2373a4c2672b363a224ce1cb14dc84d7e246",
+        "outputs/trial1/ground_support/target_180cm_bd8c3dc75cd8/review.html": "5ed84176d0718a1b0be09ad3f78cf64b12830e54b2609c3751160eebba37f3af",
+        "outputs/trial1/ground_support/target_180cm_bd8c3dc75cd8/summary.json": "3e2eefb56cffdb0ff8f1599f341cfcdc98aaa59dedff8a6c5c265ab0b78cce2b"
+      }
+    },
+    "refinement": {
+      "scope": "180 cm; all 417 frames; same ground evidence",
+      "tables": [
+        "outputs/trial1/refined_support/target_180cm_f1456408fd1d/comparison.csv",
+        "outputs/trial1/refined_support/target_180cm_f1456408fd1d/issue_intervals.csv",
+        "outputs/trial1/refined_support/target_180cm_f1456408fd1d/release_events.csv"
+      ],
+      "images": [
+        "outputs/trial1/refined_support/target_180cm_f1456408fd1d/storyboard.png"
+      ],
+      "videos": [
+        "outputs/trial1/refined_support/target_180cm_f1456408fd1d/trial1_support_optimized_180cm_full_sequence.mp4"
+      ],
+      "links": [
+        "outputs/trial1/refined_support/target_180cm_f1456408fd1d/review.html",
+        "outputs/trial1/refined_support/target_180cm_f1456408fd1d/convergence.json",
+        "outputs/trial1/refined_support/target_180cm_f1456408fd1d/preunload_checks.csv",
+        "outputs/trial1/refined_support/target_180cm_f1456408fd1d/singleton_com_constraints.csv"
+      ],
+      "summary": "outputs/trial1/refined_support/target_180cm_f1456408fd1d/summary.json",
+      "sha256": {
+        "outputs/trial1/refined_support/target_180cm_f1456408fd1d/comparison.csv": "7eca0a6d4d6f8c6dbab873eaa0269cd788cc9926b38f2034c5bb852da594cf0e",
+        "outputs/trial1/refined_support/target_180cm_f1456408fd1d/issue_intervals.csv": "8939ce8a6044ac9e466db34493a895cb3d852730db42050a8df2dff09eccaae3",
+        "outputs/trial1/refined_support/target_180cm_f1456408fd1d/release_events.csv": "7cc16f9f717a8b1817afbc3c3beaf2dfc8feaf433af03a309cf693960583b813",
+        "outputs/trial1/refined_support/target_180cm_f1456408fd1d/storyboard.png": "01b606ab0e5874540d109eb6b150785f53343ab3639780c305f8f0396f21b2f6",
+        "outputs/trial1/refined_support/target_180cm_f1456408fd1d/trial1_support_optimized_180cm_full_sequence.mp4": "e6dda0366984a94aba601e0accb7782e003b48be829b94a1153a4ec3de3a1d5e",
+        "outputs/trial1/refined_support/target_180cm_f1456408fd1d/review.html": "151a9c8a8f14a6cf2a0cd3384faebe55425bd6c5736a6d9867dc2caa91146a0c",
+        "outputs/trial1/refined_support/target_180cm_f1456408fd1d/convergence.json": "ac221fc384c16d78c31b6148692639bc9331adc047c254197c9aa9d5c7542d01",
+        "outputs/trial1/refined_support/target_180cm_f1456408fd1d/preunload_checks.csv": "4041a995e7580f1fc0d1dfb04f8fe8db45284c8504fad9afef0daf4bf801be75",
+        "outputs/trial1/refined_support/target_180cm_f1456408fd1d/singleton_com_constraints.csv": "2ef0d42c306d6f4de2ce1ae1a015669a2f15c0cf48ea7baed5aed36d69dd64ea",
+        "outputs/trial1/refined_support/target_180cm_f1456408fd1d/summary.json": "e10f84d4ddb7ec30d5b52755d14d2a1f35f08ab63034f36ae59e3ffc36250382"
+      }
+    },
+    "techniques": {
+      "scope": "180 cm; all 417 native frames",
+      "tables": [
+        "outputs/trial1/technique_plans/target_180cm_cf107c3b5dfe/candidate_comparison.csv",
+        "outputs/trial1/technique_plans/target_180cm_cf107c3b5dfe/technique_review_queue.csv"
+      ],
+      "images": [
+        "outputs/trial1/technique_plans/target_180cm_cf107c3b5dfe/source_evidence.jpg"
+      ],
+      "videos": [
+        "outputs/trial1/technique_plans/target_180cm_cf107c3b5dfe/selected_plan.mp4"
+      ],
+      "links": [
+        "outputs/trial1/technique_plans/target_180cm_cf107c3b5dfe/review.html",
+        "outputs/trial1/technique_plans/target_180cm_cf107c3b5dfe/phase_explanations.csv"
+      ],
+      "summary": "outputs/trial1/technique_plans/target_180cm_cf107c3b5dfe/summary.json",
+      "sha256": {
+        "outputs/trial1/technique_plans/target_180cm_cf107c3b5dfe/candidate_comparison.csv": "a3bd0b6de46465075e6f6cb63a02d76540496ba0fb73d90e7f96ee2000ff0bf9",
+        "outputs/trial1/technique_plans/target_180cm_cf107c3b5dfe/technique_review_queue.csv": "97167ac08ce5f8a8327c2903de60330a28a418e60741a352082e583579a6b4d7",
+        "outputs/trial1/technique_plans/target_180cm_cf107c3b5dfe/source_evidence.jpg": "6b409be20607436c074f43fac094222c7c9999024ebba3e585f2e956821a510a",
+        "outputs/trial1/technique_plans/target_180cm_cf107c3b5dfe/selected_plan.mp4": "4a0f61bb2605d08d6439769fe70e1ec446836a9ccd3e328292c652cfca469184",
+        "outputs/trial1/technique_plans/target_180cm_cf107c3b5dfe/review.html": "c5cb10b07609e4dbb023059dbbe8ec906bda46677378754b97c6985f3d6a0593",
+        "outputs/trial1/technique_plans/target_180cm_cf107c3b5dfe/phase_explanations.csv": "531e710c58f31d003fbd9fb5381bec7174f4024ce0d808107f4af8a87bf19166",
+        "outputs/trial1/technique_plans/target_180cm_cf107c3b5dfe/summary.json": "f989f674f57af7cfad43d92177133003cad92c4c9b258b776fa1ba0df88aea8b"
+      }
+    }
+  },
+  "trial2": {
+    "single": {
+      "scope": "190 cm request; zero generated 2D IK moves",
+      "tables": [
+        "outputs/trial2/state/direct_ik_plan.json"
+      ],
+      "images": [],
+      "videos": [],
+      "links": [
+        "outputs/trial2/state/geometry_calibration.json"
+      ],
+      "sha256": {
+        "outputs/trial2/state/direct_ik_plan.json": "aa7e06d1f3b204e826a419af389745d39d776cde05215c2e594b0821bc072c0f",
+        "outputs/trial2/state/geometry_calibration.json": "5a9ff79753a85fe90f47e4262dc37765492267d0d246a76942aadeadd51ed34e"
+      }
+    },
+    "evaluation": {
+      "scope": "source observations; independent of target height",
+      "tables": [],
+      "images": [
+        "outputs/trial2/images/hold_map_ablation.png",
+        "outputs/trial2/images/current_route_hold_coverage.png",
+        "outputs/trial2/images/identity_before_after.jpg"
+      ],
+      "videos": [
+        "outputs/trial2/videos/identity_comparison_h264.mp4"
+      ],
+      "links": [
+        "outputs/trial2/state/hold_map_build.json",
+        "outputs/trial2/state/identity_evaluation.json"
+      ],
+      "sha256": {
+        "outputs/trial2/images/hold_map_ablation.png": "7db09a44a746049a9410a1dc6e9b67c124f15ab5e0b94dfbd9135121e75fa003",
+        "outputs/trial2/images/current_route_hold_coverage.png": "52544bc4c5153c44e0c9ad2bbcb81d1f7b184bd5e71111552027dc5f211758b2",
+        "outputs/trial2/images/identity_before_after.jpg": "6eca3f499755e27753ff194b46344c685af80936dca7be951077249130549f27",
+        "outputs/trial2/videos/identity_comparison_h264.mp4": "3d3edb36656d9a11d217cb0ff81705bb539af8538e90163b4f35f095e0c681af",
+        "outputs/trial2/state/hold_map_build.json": "2fba59179b6ecbf0c9e146eb15ccf713d52870c957f239035bc0546bb3b84f4b",
+        "outputs/trial2/state/identity_evaluation.json": "a771829f76f57f4614a8ffd0a0b39e238455f42395825c3314f71dabaebaf4bd"
+      }
+    },
+    "angles": {
+      "scope": "180 cm; frames 0\u2013975",
+      "tables": [
+        "outputs/trial2/spatial_plans/target_180cm_5f9e7fcd448b_native/candidate_comparison.csv",
+        "outputs/trial2/spatial_plans/target_180cm_5f9e7fcd448b_native/angle_comparison.csv"
+      ],
+      "images": [],
+      "videos": [
+        "outputs/trial2/spatial_plans/target_180cm_5f9e7fcd448b_native/angle_comparison_3d.mp4"
+      ],
+      "links": [
+        "outputs/trial2/spatial_plans/target_180cm_5f9e7fcd448b_native/failure_review.json"
+      ],
+      "summary": "outputs/trial2/spatial_plans/target_180cm_5f9e7fcd448b_native/summary.json",
+      "sha256": {
+        "outputs/trial2/spatial_plans/target_180cm_5f9e7fcd448b_native/candidate_comparison.csv": "e76868232f04a600346ad4385e6bc37398e8d54e6f1d803bd7bddd4567d7451a",
+        "outputs/trial2/spatial_plans/target_180cm_5f9e7fcd448b_native/angle_comparison.csv": "de7bfd61cd5d8df03a41afba644ff4a33c50747a677ed29aed9483fb1b008bac",
+        "outputs/trial2/spatial_plans/target_180cm_5f9e7fcd448b_native/angle_comparison_3d.mp4": "e287a09840ecd0604362c3f00f03faf7db43a9c88d569d4658c8599531446b90",
+        "outputs/trial2/spatial_plans/target_180cm_5f9e7fcd448b_native/failure_review.json": "9c6f3f0bc4d847acda8d4ecbf8c7528ff12d36ee24268ce73e99ab91965e6d94",
+        "outputs/trial2/spatial_plans/target_180cm_5f9e7fcd448b_native/summary.json": "77e4cc1f1ff61a57609eb1702b410cabfa5e678ebe96aa5c8eecbf3b3a1fc94a"
+      }
+    },
+    "selected3d": {
+      "scope": "180 cm; frames 0\u2013975",
+      "tables": [
+        "outputs/trial2/spatial_plans/target_180cm_5f9e7fcd448b_native/phase_explanations.csv",
+        "outputs/trial2/spatial_plans/target_180cm_5f9e7fcd448b_native/failure_intervals.csv"
+      ],
+      "images": [],
+      "videos": [
+        "outputs/trial2/spatial_plans/target_180cm_5f9e7fcd448b_native/selected_plan_3d.mp4"
+      ],
+      "links": [
+        "outputs/trial2/spatial_plans/target_180cm_5f9e7fcd448b_native/viewer.html",
+        "outputs/trial2/spatial_plans/target_180cm_5f9e7fcd448b_native/contact_span_review.csv",
+        "outputs/trial2/spatial_plans/target_180cm_5f9e7fcd448b_native/timing_conflicts.csv"
+      ],
+      "summary": "outputs/trial2/spatial_plans/target_180cm_5f9e7fcd448b_native/summary.json",
+      "sha256": {
+        "outputs/trial2/spatial_plans/target_180cm_5f9e7fcd448b_native/phase_explanations.csv": "91eaba7810ba4dadee99464589881ff8c33309bed89e9874fbe71738d6f23c5b",
+        "outputs/trial2/spatial_plans/target_180cm_5f9e7fcd448b_native/failure_intervals.csv": "24656dbd4f92f2ed1b64877f98ff2e123e8a5bcba52991cbf82f169f3a04dffa",
+        "outputs/trial2/spatial_plans/target_180cm_5f9e7fcd448b_native/selected_plan_3d.mp4": "052470d9a2f0c19a7fc2aa8737b95c803fe98ac9ffe66d8fd9d4ac19fe85ecac",
+        "outputs/trial2/spatial_plans/target_180cm_5f9e7fcd448b_native/viewer.html": "b749dce910e2e4d6a6159b36c2e629a8231120582d6358a7ece8fc2fcbbc2d0a",
+        "outputs/trial2/spatial_plans/target_180cm_5f9e7fcd448b_native/contact_span_review.csv": "92d80c19c169400a85b53ce7107242b36ee66c1923599b550cf53c1fa8657559",
+        "outputs/trial2/spatial_plans/target_180cm_5f9e7fcd448b_native/timing_conflicts.csv": "57b02c45d9be3b0442949b8c854b629ed28516346236d3b532a3d06ddc681ce5",
+        "outputs/trial2/spatial_plans/target_180cm_5f9e7fcd448b_native/summary.json": "77e4cc1f1ff61a57609eb1702b410cabfa5e678ebe96aa5c8eecbf3b3a1fc94a"
+      }
+    },
+    "armclips": {
+      "scope": "180 cm; three predefined anomaly clips",
+      "tables": [
+        "outputs/trial2/anatomy_plans/target_180cm_controls_db7b5a5de762/presentation_0ca2490189/clip_common_observable_swivel.csv"
+      ],
+      "images": [],
+      "videos": [
+        "outputs/trial2/anatomy_plans/target_180cm_controls_db7b5a5de762/presentation_0ca2490189/hinge_transition_comparison.mp4",
+        "outputs/trial2/anatomy_plans/target_180cm_controls_db7b5a5de762/presentation_0ca2490189/right_elbow_comparison.mp4",
+        "outputs/trial2/anatomy_plans/target_180cm_controls_db7b5a5de762/presentation_0ca2490189/left_elbow_comparison.mp4"
+      ],
+      "links": [],
+      "sha256": {
+        "outputs/trial2/anatomy_plans/target_180cm_controls_db7b5a5de762/presentation_0ca2490189/clip_common_observable_swivel.csv": "20d389fa1bb17fdf9a6bc0038f7308343c66b1531cf8b0f03362157b1a321e51",
+        "outputs/trial2/anatomy_plans/target_180cm_controls_db7b5a5de762/presentation_0ca2490189/hinge_transition_comparison.mp4": "1d46e16d9817f642253f987eb3435eaa710c9bddae51c91d697be410c772e344",
+        "outputs/trial2/anatomy_plans/target_180cm_controls_db7b5a5de762/presentation_0ca2490189/right_elbow_comparison.mp4": "696cba607873388981c6b6b14b80715dca186cffc0c58bdcd8dffa1ecdeeb1f6",
+        "outputs/trial2/anatomy_plans/target_180cm_controls_db7b5a5de762/presentation_0ca2490189/left_elbow_comparison.mp4": "6d5661663ed6564296e1a49e4ca07d96b743492681b4a45771d49a9b419002bd"
+      }
+    },
+    "arms": {
+      "scope": "180 cm; frames 0\u2013975",
+      "tables": [
+        "outputs/trial2/anatomy_plans/target_180cm_controls_db7b5a5de762/candidate_comparison.csv",
+        "outputs/trial2/anatomy_plans/target_180cm_controls_db7b5a5de762/before_after.csv"
+      ],
+      "images": [],
+      "videos": [],
+      "links": [
+        "outputs/trial2/anatomy_plans/target_180cm_controls_db7b5a5de762/phase_explanations.csv"
+      ],
+      "summary": "outputs/trial2/anatomy_plans/target_180cm_controls_db7b5a5de762/summary.json",
+      "sha256": {
+        "outputs/trial2/anatomy_plans/target_180cm_controls_db7b5a5de762/candidate_comparison.csv": "e2285b07d0fc5d60eb47dfdfcc405361f1aaab4abb79085d4730872ef3c1d773",
+        "outputs/trial2/anatomy_plans/target_180cm_controls_db7b5a5de762/before_after.csv": "b71fadded609ac94fff543ed4f8304ffe1af9bb67e38d3ab45ba29f8bfaf1d30",
+        "outputs/trial2/anatomy_plans/target_180cm_controls_db7b5a5de762/phase_explanations.csv": "74a265576fc41138ae8cc4d10e3fa9f8a1df0907e8c26997ebe8fa24a9cd63f6",
+        "outputs/trial2/anatomy_plans/target_180cm_controls_db7b5a5de762/summary.json": "719fe11e0915d88cf5cddb25901ca59d22878f8c9dd672b62462b79cb3e7e883"
+      }
+    },
+    "armsvideo": {
+      "scope": "180 cm; frames 0\u2013975",
+      "tables": [
+        "outputs/trial2/anatomy_plans/target_180cm_controls_db7b5a5de762/presentation_0ca2490189/joint_range_rate_summary.csv"
+      ],
+      "images": [
+        "outputs/trial2/anatomy_plans/target_180cm_controls_db7b5a5de762/presentation_0ca2490189/motion_and_failures.png"
+      ],
+      "videos": [
+        "outputs/trial2/anatomy_plans/target_180cm_controls_db7b5a5de762/presentation_0ca2490189/selected_plan_3d.mp4",
+        "outputs/trial2/anatomy_plans/target_180cm_controls_db7b5a5de762/presentation_0ca2490189/full_comparison_3d.mp4"
+      ],
+      "links": [
+        "outputs/trial2/anatomy_plans/target_180cm_controls_db7b5a5de762/presentation_0ca2490189/result_notes.md"
+      ],
+      "sha256": {
+        "outputs/trial2/anatomy_plans/target_180cm_controls_db7b5a5de762/presentation_0ca2490189/joint_range_rate_summary.csv": "b04005e082737e707bfe8c9199254f7cfc879f81d2c656cf99e84e48de1a181c",
+        "outputs/trial2/anatomy_plans/target_180cm_controls_db7b5a5de762/presentation_0ca2490189/motion_and_failures.png": "5118eb4ec03f68323bf493da10fa6856c74f48e8c533f5244b302bb5a3067d14",
+        "outputs/trial2/anatomy_plans/target_180cm_controls_db7b5a5de762/presentation_0ca2490189/selected_plan_3d.mp4": "35f80cc531889d3af80a129d497bd33d419b1fbadd66a59511db6a65034680a2",
+        "outputs/trial2/anatomy_plans/target_180cm_controls_db7b5a5de762/presentation_0ca2490189/full_comparison_3d.mp4": "7efa6f02a0b13d2bad8c0b8f6585735d9664c01a954a298242297ad95b4ace79",
+        "outputs/trial2/anatomy_plans/target_180cm_controls_db7b5a5de762/presentation_0ca2490189/result_notes.md": "4f503cdfe95eb9dbf4a3577be91c9fc4d7381d37168bf11561aa77860002a52d"
+      }
+    },
+    "stage1": {
+      "scope": "180 cm; frames 550\u2013595",
+      "tables": [
+        "outputs/trial2/stage1_contacts/target_180cm_right_elbow_f848fc019f86/before_after.csv",
+        "outputs/trial2/stage1_contacts/target_180cm_right_elbow_f848fc019f86/candidate_comparison.csv"
+      ],
+      "images": [],
+      "videos": [],
+      "links": [
+        "outputs/trial2/stage1_contacts/target_180cm_right_elbow_f848fc019f86/chain_verification.json"
+      ],
+      "summary": "outputs/trial2/stage1_contacts/target_180cm_right_elbow_f848fc019f86/summary.json",
+      "sha256": {
+        "outputs/trial2/stage1_contacts/target_180cm_right_elbow_f848fc019f86/before_after.csv": "6626c88d9d8a4c6431216b37f7711c394d51190ddc210087b40a8f6be0c644d9",
+        "outputs/trial2/stage1_contacts/target_180cm_right_elbow_f848fc019f86/candidate_comparison.csv": "cf0f40c6d39e8db8527d992278928731a1139f405a70043748790456e16b5e27",
+        "outputs/trial2/stage1_contacts/target_180cm_right_elbow_f848fc019f86/chain_verification.json": "5763862a6315e85f671c74cad4c2455817b8bd1d4d8931f57ca0e275cb0a613e",
+        "outputs/trial2/stage1_contacts/target_180cm_right_elbow_f848fc019f86/summary.json": "58478324f28d2dcb3c38202504b35ced96598c81e01ca9d26891817c1873ea74"
+      }
+    },
+    "stage1video": {
+      "scope": "180 cm; frames 550\u2013595",
+      "tables": [],
+      "images": [
+        "outputs/trial2/stage1_contacts/target_180cm_right_elbow_f848fc019f86/presentation_9b15375e0f/contact_metrics.png"
+      ],
+      "videos": [
+        "outputs/trial2/stage1_contacts/target_180cm_right_elbow_f848fc019f86/presentation_9b15375e0f/contact_comparison_3d.mp4"
+      ],
+      "links": [
+        "outputs/trial2/stage1_contacts/target_180cm_right_elbow_f848fc019f86/presentation_9b15375e0f/contact_review.csv",
+        "outputs/trial2/stage1_contacts/target_180cm_right_elbow_f848fc019f86/presentation_9b15375e0f/result_notes.md"
+      ],
+      "sha256": {
+        "outputs/trial2/stage1_contacts/target_180cm_right_elbow_f848fc019f86/presentation_9b15375e0f/contact_metrics.png": "3a56c71a9d94d7de60e3466cbd47b97225fe4ce958fdb50cd1f7333417246a1e",
+        "outputs/trial2/stage1_contacts/target_180cm_right_elbow_f848fc019f86/presentation_9b15375e0f/contact_comparison_3d.mp4": "58743ef34a82199800fc6a6622fbda6bb1c046b8e55f1a4a55f7739f20ae6ba5",
+        "outputs/trial2/stage1_contacts/target_180cm_right_elbow_f848fc019f86/presentation_9b15375e0f/contact_review.csv": "5b4b4f2d9f60109ad5c74dd2dc0d00a608461106d743893720f989c61ac476d2",
+        "outputs/trial2/stage1_contacts/target_180cm_right_elbow_f848fc019f86/presentation_9b15375e0f/result_notes.md": "0facbc2779cf0546c2e5d74ab71762937f8f3f5031b500bddbf0205bff230cbf"
+      }
+    }
+  },
+  "trial3": {
+    "single": {
+      "scope": "180 cm; right hand H017 \u2192 H007; frames 296\u2013331",
+      "tables": [
+        "outputs/trial3/state/direct_ik_plan.json"
+      ],
+      "images": [
+        "outputs/trial3/images/target_ik_demo.png"
+      ],
+      "videos": [
+        "outputs/trial3/videos/trial3_target_180cm_ik_demo.mp4"
+      ],
+      "links": [
+        "outputs/trial3/state/target_ik_demo.json"
+      ],
+      "sha256": {
+        "outputs/trial3/state/direct_ik_plan.json": "a17957ce47352a3c0f7f178040ce5e309e22bd4046d19a7649126c18c05fa6ea",
+        "outputs/trial3/images/target_ik_demo.png": "906912e99282870ddda64b286099dd1f04377177e8a47afb174c79ff14b4dd90",
+        "outputs/trial3/videos/trial3_target_180cm_ik_demo.mp4": "1faf5c9b4a0438c9b4785a2a44562e5f4a6b73b4a60f33ae04c2f0a6132ceece",
+        "outputs/trial3/state/target_ik_demo.json": "7abd6a566cd6b4c71dc1d9fc2e5da2e1fb52ba0f60e6b392081e33cced370ae8"
+      }
+    },
+    "geometric": {
+      "scope": "180 cm; all 503 frames (0\u2013502)",
+      "tables": [
+        "outputs/trial3/full_sequence/target_180cm_787124fd4c70/issue_intervals.csv"
+      ],
+      "images": [],
+      "videos": [
+        "outputs/trial3/full_sequence/target_180cm_787124fd4c70/trial3_target_180cm_full_sequence.mp4"
+      ],
+      "links": [
+        "outputs/trial3/full_sequence/target_180cm_787124fd4c70/frame_diagnostics.csv"
+      ],
+      "summary": "outputs/trial3/full_sequence/target_180cm_787124fd4c70/summary.json",
+      "sha256": {
+        "outputs/trial3/full_sequence/target_180cm_787124fd4c70/issue_intervals.csv": "b3074e988a88d4d27ff436a447dcbe0992ee06ff896709f789ab81cf73a749c4",
+        "outputs/trial3/full_sequence/target_180cm_787124fd4c70/trial3_target_180cm_full_sequence.mp4": "3c7b74aec66e7a29b1f8d48147b9483343012dd199fcfc11cce2a70af3c8ed12",
+        "outputs/trial3/full_sequence/target_180cm_787124fd4c70/frame_diagnostics.csv": "2c952703923502144f37cbc400d2115f76f9f8cbb740e9855b1c383215121be4",
+        "outputs/trial3/full_sequence/target_180cm_787124fd4c70/summary.json": "1ad40a71c0f30432bc626067b91cc27563915ee43aaab62595cba3ae55a86542"
+      }
+    },
+    "gravity": {
+      "scope": "180 cm; all 503 frames",
+      "tables": [
+        "outputs/trial3/gravity_sequence/target_180cm_2d99b8e3320c/release_events.csv",
+        "outputs/trial3/gravity_sequence/target_180cm_2d99b8e3320c/issue_intervals.csv"
+      ],
+      "images": [],
+      "videos": [
+        "outputs/trial3/gravity_sequence/target_180cm_2d99b8e3320c/trial3_gravity_180cm_full_sequence.mp4"
+      ],
+      "links": [
+        "outputs/trial3/gravity_sequence/target_180cm_2d99b8e3320c/preunload_checks.csv"
+      ],
+      "summary": "outputs/trial3/gravity_sequence/target_180cm_2d99b8e3320c/summary.json",
+      "sha256": {
+        "outputs/trial3/gravity_sequence/target_180cm_2d99b8e3320c/release_events.csv": "a9ec4c1d6ed871b2730c31f4a8c1a8dce54a803110b2a744a87c0cf998259b85",
+        "outputs/trial3/gravity_sequence/target_180cm_2d99b8e3320c/issue_intervals.csv": "15049bf208fe04eb99d189e42d51923990388c20a0c10b48d56f9e9c7a0ebd46",
+        "outputs/trial3/gravity_sequence/target_180cm_2d99b8e3320c/trial3_gravity_180cm_full_sequence.mp4": "be7e5fec3f1e5113a3bb6e065349cfb7e1ab5c377ab6990b6fa80c3291eb6202",
+        "outputs/trial3/gravity_sequence/target_180cm_2d99b8e3320c/preunload_checks.csv": "79ecbcd1d0cb4010d8ce106e403e602f56b0e9793d35b0864a10fd9ef2bc81b1",
+        "outputs/trial3/gravity_sequence/target_180cm_2d99b8e3320c/summary.json": "4e174b9dddd0b202dd4e05b7ef243cfe70acb7e7922eef80a7eab405551ee43a"
+      }
+    },
+    "support": {
+      "scope": "180 cm; all 503 frames",
+      "tables": [
+        "outputs/trial3/support_optimized/target_180cm_a9a3f35dffe1/comparison.csv",
+        "outputs/trial3/support_optimized/target_180cm_a9a3f35dffe1/issue_intervals.csv"
+      ],
+      "images": [
+        "outputs/trial3/support_optimized/target_180cm_a9a3f35dffe1/storyboard.png"
+      ],
+      "videos": [
+        "outputs/trial3/support_optimized/target_180cm_a9a3f35dffe1/trial3_support_optimized_180cm_full_sequence.mp4"
+      ],
+      "links": [
+        "outputs/trial3/support_optimized/target_180cm_a9a3f35dffe1/release_events.csv",
+        "outputs/trial3/support_optimized/target_180cm_a9a3f35dffe1/preunload_checks.csv"
+      ],
+      "summary": "outputs/trial3/support_optimized/target_180cm_a9a3f35dffe1/summary.json",
+      "sha256": {
+        "outputs/trial3/support_optimized/target_180cm_a9a3f35dffe1/comparison.csv": "f1224364f236983a0b0a2c64a35c2fea148980c1eacb0e464a87d46aa7c3ecd2",
+        "outputs/trial3/support_optimized/target_180cm_a9a3f35dffe1/issue_intervals.csv": "ae6ba4823c25a72ab6d35621b765352b61c34e84429049d64fb95651972ed657",
+        "outputs/trial3/support_optimized/target_180cm_a9a3f35dffe1/storyboard.png": "26dd9e435604af6be153819c48228395bb74862c7fe06c47f0001e3844592ab8",
+        "outputs/trial3/support_optimized/target_180cm_a9a3f35dffe1/trial3_support_optimized_180cm_full_sequence.mp4": "1b3013114281eff92c251a505cea7745ae123e5dcd1a1e094f44e3b882d4a211",
+        "outputs/trial3/support_optimized/target_180cm_a9a3f35dffe1/release_events.csv": "a9ec4c1d6ed871b2730c31f4a8c1a8dce54a803110b2a744a87c0cf998259b85",
+        "outputs/trial3/support_optimized/target_180cm_a9a3f35dffe1/preunload_checks.csv": "98a741d507053d2df618739a14e7ca70fe6647a169b040b70923ba2dbb404161",
+        "outputs/trial3/support_optimized/target_180cm_a9a3f35dffe1/summary.json": "d2fb06be01a80bafd328b3d07385591df5231558227124cdb958c3ac1ecaef80"
+      }
+    },
+    "depth": {
+      "scope": "180 cm; keyframes and short clips",
+      "tables": [
+        "outputs/trial3/spatial_experiments/target_180cm_8aa2d71aa739/scenario_metrics.csv"
+      ],
+      "images": [
+        "outputs/trial3/spatial_experiments/target_180cm_8aa2d71aa739/keyframe_0314_angles.jpg"
+      ],
+      "videos": [
+        "outputs/trial3/spatial_experiments/target_180cm_8aa2d71aa739/reachable_angles.mp4",
+        "outputs/trial3/spatial_experiments/target_180cm_8aa2d71aa739/span_conflict_angles.mp4"
+      ],
+      "links": [
+        "outputs/trial3/spatial_experiments/target_180cm_8aa2d71aa739/viewer.html"
+      ],
+      "summary": "outputs/trial3/spatial_experiments/target_180cm_8aa2d71aa739/summary.json",
+      "sha256": {
+        "outputs/trial3/spatial_experiments/target_180cm_8aa2d71aa739/scenario_metrics.csv": "92c3a5af621170dfc7478762d429d15cf8f0a6a3cce1a6c8dd40a39b23c570c1",
+        "outputs/trial3/spatial_experiments/target_180cm_8aa2d71aa739/keyframe_0314_angles.jpg": "cccc23dfa0f0145ba3cf7a70d547a1df6fedf1a3ff80cab22cbe7e5f50068c30",
+        "outputs/trial3/spatial_experiments/target_180cm_8aa2d71aa739/reachable_angles.mp4": "e7f5bd53da50adab759882524a377e2f56fbc73f38f5c62f3be097aaac639603",
+        "outputs/trial3/spatial_experiments/target_180cm_8aa2d71aa739/span_conflict_angles.mp4": "4b33fe8fa5653179eaf1ccc2ccaa14b08a241b2bb799d943c0671864690fbca5",
+        "outputs/trial3/spatial_experiments/target_180cm_8aa2d71aa739/viewer.html": "097c2f4bcc48651492348b6c8be342fc05bce120f8c6a495e0d7bff00bd31152",
+        "outputs/trial3/spatial_experiments/target_180cm_8aa2d71aa739/summary.json": "b276bcfa8a571c0065196aebc025b1cc0ef6e5bd7359e24072765fbc23a8242e"
+      }
+    },
+    "refinedangles": {
+      "scope": "180 cm; frames 296\u2013331",
+      "tables": [
+        "outputs/trial3/spatial_experiments/refined_angles_180cm/scenario_metrics.csv"
+      ],
+      "images": [],
+      "videos": [
+        "outputs/trial3/spatial_experiments/refined_angles_180cm/refined_angles.mp4"
+      ],
+      "links": [
+        "outputs/trial3/spatial_experiments/refined_angles_180cm/viewer.html"
+      ],
+      "summary": "outputs/trial3/spatial_experiments/refined_angles_180cm/summary.json",
+      "sha256": {
+        "outputs/trial3/spatial_experiments/refined_angles_180cm/scenario_metrics.csv": "9e436d84b8d5a4ac16bd331b8620087c9afb91bdc22c16cd19c14524612c9537",
+        "outputs/trial3/spatial_experiments/refined_angles_180cm/refined_angles.mp4": "d1e9a2bb121418e9fc6cf6c27a7670d32ec29c009cff1164fd7a9e409c613168",
+        "outputs/trial3/spatial_experiments/refined_angles_180cm/viewer.html": "9db64a7c60cf77d670ba86a6cbcb279c6e81f0a843c9365d1a1dbfe07330c1fb",
+        "outputs/trial3/spatial_experiments/refined_angles_180cm/summary.json": "481b003add977c6586e3bed8822fb647b5a432390b6fc4f3bccd7b178299f547"
+      }
+    },
+    "regions": {
+      "scope": "180 cm; all 503 native frames",
+      "tables": [
+        "outputs/trial3/contact_region_plans/target_180cm_9cd2cf3084ba_native/candidate_comparison.csv",
+        "outputs/trial3/contact_region_plans/target_180cm_9cd2cf3084ba_native/angle_sensitivity.csv",
+        "outputs/trial3/contact_region_plans/target_180cm_9cd2cf3084ba_native/contact_episodes.json"
+      ],
+      "images": [
+        "outputs/trial3/contact_region_plans/target_180cm_9cd2cf3084ba_native/comparison_poster.jpg"
+      ],
+      "videos": [
+        "outputs/trial3/contact_region_plans/target_180cm_9cd2cf3084ba_native/selected_plan.mp4",
+        "outputs/trial3/contact_region_plans/target_180cm_9cd2cf3084ba_native/comparison.mp4"
+      ],
+      "links": [
+        "outputs/trial3/contact_region_plans/target_180cm_9cd2cf3084ba_native/viewer.html",
+        "outputs/trial3/contact_region_plans/target_180cm_9cd2cf3084ba_native/phase_explanations.csv"
+      ],
+      "summary": "outputs/trial3/contact_region_plans/target_180cm_9cd2cf3084ba_native/summary.json",
+      "sha256": {
+        "outputs/trial3/contact_region_plans/target_180cm_9cd2cf3084ba_native/candidate_comparison.csv": "219796583a91d9e2b46dc499c63291f82fd8d961c85c4c81a5d0ede6065c92c6",
+        "outputs/trial3/contact_region_plans/target_180cm_9cd2cf3084ba_native/angle_sensitivity.csv": "f1c80f17a3b7b316ec14dccd1509e1f228a360479858077ba126a08db79c3947",
+        "outputs/trial3/contact_region_plans/target_180cm_9cd2cf3084ba_native/contact_episodes.json": "3676053a4739329f60a1d9e31bf56a420300372a4cf573e295cc96711ca259bd",
+        "outputs/trial3/contact_region_plans/target_180cm_9cd2cf3084ba_native/comparison_poster.jpg": "9ead25f3d8d4ed6b3db23603a2c6938b06651c893b955f779916244ef744b685",
+        "outputs/trial3/contact_region_plans/target_180cm_9cd2cf3084ba_native/selected_plan.mp4": "7168781811eebaf56e8f8f926243ad33bb92a3b8a181979c999715643be8b31c",
+        "outputs/trial3/contact_region_plans/target_180cm_9cd2cf3084ba_native/comparison.mp4": "bf8ac04cfc01d25f7f75634a410017bc9d5963cb53b57be8265780e243aaf6eb",
+        "outputs/trial3/contact_region_plans/target_180cm_9cd2cf3084ba_native/viewer.html": "e4139de710cd5c83efb13ac594562d0139972e661a3c2decefbd40f81fd1015b",
+        "outputs/trial3/contact_region_plans/target_180cm_9cd2cf3084ba_native/phase_explanations.csv": "74c5f839df9608ce4985a917b17463df6e355deeecfdbe9c895393ae6d38e4e9",
+        "outputs/trial3/contact_region_plans/target_180cm_9cd2cf3084ba_native/summary.json": "9068071cc24f852494113ed00fbb69108fc2ee7c9e54fe60dbbd58f20893f534"
+      }
+    }
+  }
+}

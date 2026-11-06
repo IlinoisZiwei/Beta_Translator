@@ -1,0 +1,39 @@
+id,specification_section,enforcement,evidence,missing,status
+fixed_geometry,3–4,hard,height-scaled project proportions,,available
+arm_chain,4,partial,pinned source rotational chain,source translations and shoulder girdle,unknown
+arm_rom,5.1,hard,published model coordinate ranges,,available
+shoulder_envelope,5.3,profile_soft_and_audit,requires calibrated pose envelope,person/model envelope,unknown
+wrist_coupling,5.4,not_implemented,scalar wrist bounds only,calibrated coupled flexion/deviation envelope,unknown
+finger_toe_rom,5.4,not_implemented,no fingers or toes,task-specific articulated digit model,unknown
+lower_limb_chain,4.3,hard,source hip/knee/ankle/subtalar rotations and coupled knee translation,,available
+lower_limb_rom,"4.3,5.4",hard,assumed signed hip/knee/ankle/subtalar screening bounds,,available
+lower_limb_personal_rom,5.4,not_implemented,fixed screening boxes,person-specific coupled loaded lower-limb envelope,unknown
+spine_neck_rom,5.4,not_implemented,rigid torso/head proxy,segment-relative spine/neck model,unknown
+coordinate_rates,6.1,hard,project speed/acceleration assumptions,,available
+rotation_rates,6.2,parameterized_audit,rotation-matrix rates,justified segment rate caps,unknown
+continuous_time_limits,6.2,not_implemented,native-frame checks only,substep or analytic derivative certificate,unknown
+shared_contact_regions,7.1,hard,image-derived regions; fixed within episode,,available
+physical_patch_contact,7.1–7.2,soft_and_audit,"same patch in objective, audit and video",,available
+hand_orientation,7.2,partial,source wrist chain; palm orientation inferred,measured grip/patch orientation,unknown
+foot_orientation,7.2,partial,articulated foot frame with bounded ankle/subtalar coordinates,measured shoe orientation and contact-mode validation,unknown
+contact_pose_slip,7.2,not_implemented,persistent patch position only,"surface-normal compatibility, patch overlap and slip law",unknown
+contact_complementarity,7.3,partial,soft gap-force product only,rigid complementarity or declared compliance,unknown
+free_contact_force,7.3,hard,free/unknown contacts exert zero optimized force,,available
+friction_and_support,7.3,soft_and_audit,assumed foot cone and hand force box,,available
+grip_wrench,7.3,not_implemented,point-contact force model,hold-specific grip wrench capacity,unknown
+release,7.3,soft_and_audit,remaining-support audit plus departing-force check,,available
+trusted_support,2.3,audit,source/confidence/ground eligibility,,available
+balance_reserve,2.3,audit,four declared COM perturbations,,available
+wall_floor,8,partial,joint penetration and conditional scene,whole-body environment collision,unknown
+self_collision,8,profile_soft_and_audit,capsule clearance,body radii and collision-pair profile,unknown
+swept_collision,8,not_implemented,sample checks are insufficient,continuous collision coverage,unknown
+torque_capacity,9.2,profile_soft_and_audit,directional bounds on supplied required actuation,calibrated torque/velocity/fatigue profile,unknown
+musculotendon,9.3,not_implemented,no muscle paths or tendon states,verified muscle model and person parameters,unknown
+fatigue,10,profile_soft_and_audit,three-compartment state integration,"recruitment input, rates and initial state",unknown
+strength_fatigue_coupling,9–10,profile_soft_and_audit,causal 3CC joint-actuator capacity coupling,personal capability calibration,unknown
+parameter_calibration,13,not_implemented,height and population/project proxies,"person-specific geometry, mass, inertia and capacity evidence",unknown
+centroidal_dynamics,11,profile_soft_and_audit,linear/angular momentum equations,"mass, momentum, external forces and tolerances",unknown
+joint_dynamics,11,parameterized_audit,floating-base equation residual,"mass matrix, bias, contact Jacobian and actuation",unknown
+impact_forward_validation,11.3,not_implemented,no forward dynamic replay,"impact law, integration and replay validation",unknown
+candidate_selection,12,gate,feasibility before motion/effort; uncertainty retained,,available
+provenance,13,audit,input/code/config hashes and independent saved-result checks,,available

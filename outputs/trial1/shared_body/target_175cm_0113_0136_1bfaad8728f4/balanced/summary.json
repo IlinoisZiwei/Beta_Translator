@@ -1,0 +1,53 @@
+{
+  "solver": {
+    "success": false,
+    "message": "Maximum constrained iterations reached.",
+    "nit": 150,
+    "nfev": 748,
+    "cost": 507.6281432010611,
+    "optimality": 0.9445820127201642,
+    "relative_cost_change": 1.1892045973590747e-05,
+    "linear_violation": 8.970456044643527e-09,
+    "complementarity": 1.6453482461210718e-06,
+    "initial_projection": {
+      "iterations": 375,
+      "primal": 5.8222676311747475e-15,
+      "dual": 4.039198169127481e-14,
+      "success": true,
+      "status": "solved"
+    },
+    "seconds": 118.7474964580033,
+    "gradient_definition": "Fresh Lagrangian gradient normalized by current Jacobian columns; explicit box and linear rate multipliers."
+  },
+  "metrics": {
+    "candidate": "balanced",
+    "native_frames": 24,
+    "numerically_feasible": false,
+    "anatomy_temporal_failure_frames": 0,
+    "contact_failure_frames": 0,
+    "geometric_failure_frames": 0,
+    "support_failure_frames": 23,
+    "preunload_failure_frames": 0,
+    "grip_proxy_failure_frames": 0,
+    "total_failed_frames": 23,
+    "worst_failure_fraction": 0.9583333333333334,
+    "max_contact_gap_cm": 0.022367051074833614,
+    "max_rate_ratio": 0.19252579278522736,
+    "max_acceleration_ratio": 0.05027904593914899,
+    "max_elbow_swivel_deg_s": 6.1600164888182904,
+    "max_torso_rotation_deg_s": 17.157886543255778,
+    "converged": false,
+    "uncertainty": "Reduced anatomy; inferred hand/foot and scene geometry; full specification coverage is explicit in constraints.csv.",
+    "departing_force_failure_frames": 0,
+    "joint_acceleration_rms_cm_s2": 10.379116438638842,
+    "specification_status": "fail",
+    "trusted_support_failure_frames": 24,
+    "reserve_failure_frames": 23,
+    "preunload_applicable_frames": 0,
+    "preunload_failure_fraction_applicable": 0.0,
+    "optimized_hand_load_integral_bw_s": 0.7348536104001009,
+    "lower_limb_rom_failure_frames": 0,
+    "max_knee_coupling_displacement_cm": 2.387224433319008,
+    "unknown_constraints": 24
+  }
+}

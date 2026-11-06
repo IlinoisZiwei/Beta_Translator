@@ -1,0 +1,15 @@
+{
+  "trial1": {
+    "verification": "outputs/trial1/avatars/anny_175cm_0113_0136_c482b177e9af",
+    "demonstration": "outputs/trial1/avatars/anny_175cm_0103_0180_05340a6289a7",
+    "full": "outputs/trial1/avatars/anny_175cm_0000_0416_d15d2578a4fd"
+  },
+  "trial2": {
+    "verification": "outputs/trial2/avatars/anny_175cm_0550_0595_7b6cdea52b74",
+    "full": "outputs/trial2/avatars/anny_175cm_0000_0975_1c0857ff17ac"
+  },
+  "trial3": {
+    "verification": "outputs/trial3/avatars/anny_175cm_0296_0331_928d02c79b30",
+    "full": "outputs/trial3/avatars/anny_175cm_0000_0502_79928e8a01ba"
+  }
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "limb": "left_hand",
+    "pad_adjustment_cm": 1.405302470125684
+  },
+  {
+    "limb": "right_hand",
+    "pad_adjustment_cm": 1.4053027815364763
+  },
+  {
+    "limb": "left_foot",
+    "mode": "ground",
+    "bind_surface_error_cm": 0.04119280461262711
+  },
+  {
+    "limb": "left_foot",
+    "mode": "hold",
+    "bind_surface_error_cm": 0.0
+  },
+  {
+    "limb": "right_foot",
+    "mode": "ground",
+    "bind_surface_error_cm": 0.04119280461262714
+  },
+  {
+    "limb": "right_foot",
+    "mode": "hold",
+    "bind_surface_error_cm": 1.7763568394002505e-15
+  }
+]

@@ -10,6 +10,7 @@ from scipy.sparse import coo_matrix, diags, kron, vstack
 from .full_sequence import DEFAULT_SETTINGS as GEOMETRY_SETTINGS, endpoint_jacobian, diagnose_sequence
 from .inverse_kinematics import (
     GRAVITY, MASS_FRACTIONS, CENTER_OF_MASS_FRACTIONS, make_body, make_mass_model,
+    validate_com_fractions,
 )
 from .motion_ik import batch_joints
 from .contact_geometry import contact_points, support_ids, validate_contact_geometry
@@ -20,8 +21,12 @@ DEFAULT_SETTINGS = {**GEOMETRY_SETTINGS, 'balance_weight': 30., 'force_weight': 
     'force_step_warning_bw': .5}
 
 
-def batch_com_and_jacobian(poses, lengths):
-    """Match the existing static IK mass model, with exact pose derivatives."""
+def batch_com_and_jacobian(poses, lengths, com_fractions=None):
+    """COM and exact pose derivatives; optional fractions permit profile sensitivity.
+
+    Sequence optimizers retain the legacy default unless explicitly wired to a
+    different profile throughout both optimization and audit.
+    """
     q = np.asarray(poses)
     n = len(q)
     joints = batch_joints(q, lengths)
@@ -31,7 +36,9 @@ def batch_com_and_jacobian(poses, lengths):
     hip_jac[:, 0, 0] = hip_jac[:, 1, 1] = 1
     up = np.stack([-np.sin(q[:, 2]), np.cos(q[:, 2])], axis=-1)
     right = np.stack([np.cos(q[:, 2]), np.sin(q[:, 2])], axis=-1)
-    f, c = MASS_FRACTIONS, CENTER_OF_MASS_FRACTIONS
+    f = MASS_FRACTIONS
+    c = CENTER_OF_MASS_FRACTIONS if com_fractions is None else com_fractions
+    validate_com_fractions(c)
     torso_factor = f['head'] * (1 + c['head']) + f['torso'] * c['torso']
     com = (f['head'] + f['torso']) * hip + torso_factor * lengths['torso'] * up
     jac = (f['head'] + f['torso']) * hip_jac

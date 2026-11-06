@@ -1,0 +1,3 @@
+frame,limb,from_label,to_label,target_step_cm,required_endpoint_gap_if_step_at_most_8cm,raw_labels_preserved,scope
+254,right_foot,H109,H149,65.34444613611208,28.67222306805604,True,"Numerical continuity bound for selected fixed episode targets, not a speed limit for humans."
+299,right_foot,H149,H163,22.581268655658395,7.290634327829197,True,"Numerical continuity bound for selected fixed episode targets, not a speed limit for humans."

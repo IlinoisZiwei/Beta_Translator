@@ -1,0 +1,68 @@
+{
+  "date": "2026-11-05",
+  "scope": "Report structure and result selection only; no solver or saved-result changes.",
+  "edited_or_added_files": [
+    "Trial1_Analysis.ipynb",
+    "Trial2_Analysis.ipynb",
+    "Trial3_Analysis.ipynb",
+    "README.md",
+    "notebooks/report_workflow.py",
+    "tests/test_report_workflow.py",
+    "docs/complete_trial_notebooks.md",
+    "docs/history/README_before_report_cleanup_20261105.md"
+  ],
+  "main_notebook_unchanged": true,
+  "preserved_preexisting_files": 2319,
+  "default_execution": [
+    {
+      "notebook": "Trial1_Analysis.ipynb",
+      "code_cells": 19,
+      "seconds": 1.86,
+      "errors": 0
+    },
+    {
+      "notebook": "Trial2_Analysis.ipynb",
+      "code_cells": 23,
+      "seconds": 3.39,
+      "errors": 0
+    },
+    {
+      "notebook": "Trial3_Analysis.ipynb",
+      "code_cells": 21,
+      "seconds": 1.76,
+      "errors": 0
+    }
+  ],
+  "execution_guards": [
+    "BodyModel.fit",
+    "body_render.render_run",
+    "avatar_pipeline.run_avatar",
+    "Evidence.export_route",
+    "ContactReview.export"
+  ],
+  "report_selection_tests_passed": 9,
+  "existing_review_tests_passed": 5,
+  "historical_stage_counts_preserved": {
+    "trial1": 5,
+    "trial2": 9,
+    "trial3": 7
+  },
+  "default_video_counts": {
+    "trial1": 4,
+    "trial2": 4,
+    "trial3": 4
+  },
+  "local_markdown_links_checked": 92,
+  "missing_local_markdown_links": 0,
+  "unexpected_preexisting_file_changes": [],
+  "delivery_sha256": {
+    "Trial1_Analysis.ipynb": "4586f5150ea8448289b711934a2bfb32d024361e3f382c44c7011cd7f12fcaa9",
+    "Trial2_Analysis.ipynb": "a49addede837d604b8a0f046dec5a67932c3d4eab0b62b1feb03377eee89d64e",
+    "Trial3_Analysis.ipynb": "d0f5f50eee100858515fbfcad12daf220efc08ee21eaaf71ef6b46c7669deffe",
+    "README.md": "f70f1c77a0eb03b4418b2affd8c3e210c9d6915612b05b1feab7ac38423400bd",
+    "notebooks/report_workflow.py": "e150237a5f962a008ffb6767c0ea3238ead19c792fd07811d89969fe60dad64c",
+    "tests/test_report_workflow.py": "65d41bd2944b16de2d0cbf8ef1a71ea247677d29300ae7efaa58e43e899e992e",
+    "docs/complete_trial_notebooks.md": "0e5c633456c1e13bfaf4dcf912473475d7edf5371594cbffaf20949f4cf90169",
+    "docs/history/README_before_report_cleanup_20261105.md": "30ea72aeb55e39ab85d63db6500b85bcf6253f1040602a6fb2b7b5557a7980b6"
+  }
+}

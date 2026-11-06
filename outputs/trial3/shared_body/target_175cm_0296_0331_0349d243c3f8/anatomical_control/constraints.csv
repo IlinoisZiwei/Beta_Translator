@@ -1,0 +1,39 @@
+id,specification_section,enforcement,status,reason,calibrated,failed_frames
+fixed_geometry,3–4,hard,pass,height-scaled project proportions,,
+arm_chain,4,partial,unknown,source translations and shoulder girdle,,
+arm_rom,5.1,hard,pass,published model coordinate ranges,,
+shoulder_envelope,5.3,profile_soft_and_audit,fail,Numerical check under user profile assumptions; no personal physiological calibration.,False,36.0
+wrist_coupling,5.4,not_implemented,unknown,calibrated coupled flexion/deviation envelope,,
+finger_toe_rom,5.4,not_implemented,unknown,task-specific articulated digit model,,
+lower_limb_chain,4.3,hard,pass,source hip/knee/ankle/subtalar rotations and coupled knee translation,,
+lower_limb_rom,"4.3,5.4",hard,pass,assumed signed hip/knee/ankle/subtalar screening bounds,,
+lower_limb_personal_rom,5.4,not_implemented,unknown,person-specific coupled loaded lower-limb envelope,,
+spine_neck_rom,5.4,not_implemented,unknown,segment-relative spine/neck model,,
+coordinate_rates,6.1,hard,pass,project speed/acceleration assumptions,,
+rotation_rates,6.2,parameterized_audit,unknown,justified segment rate caps,,
+continuous_time_limits,6.2,not_implemented,unknown,substep or analytic derivative certificate,,
+shared_contact_regions,7.1,hard,pass,image-derived regions; fixed within episode,,
+physical_patch_contact,7.1–7.2,soft_and_audit,fail,"same patch in objective, audit and video",,
+hand_orientation,7.2,partial,unknown,measured grip/patch orientation,,
+foot_orientation,7.2,partial,unknown,measured shoe orientation and contact-mode validation,,
+contact_pose_slip,7.2,not_implemented,unknown,"surface-normal compatibility, patch overlap and slip law",,
+contact_complementarity,7.3,partial,unknown,rigid complementarity or declared compliance,,
+free_contact_force,7.3,hard,pass,free/unknown contacts exert zero optimized force,,
+friction_and_support,7.3,soft_and_audit,fail,assumed foot cone and hand force box,,
+grip_wrench,7.3,not_implemented,unknown,hold-specific grip wrench capacity,,
+release,7.3,soft_and_audit,fail,remaining-support audit plus departing-force check,,
+trusted_support,2.3,audit,fail,source/confidence/ground eligibility,,
+balance_reserve,2.3,audit,fail,Quasi-static perturbation diagnostic only; dynamic reserve is not certified,,
+wall_floor,8,partial,unknown,whole-body environment collision,,
+self_collision,8,profile_soft_and_audit,pass,Numerical check under user profile assumptions; no personal physiological calibration.,False,0.0
+swept_collision,8,not_implemented,unknown,continuous collision coverage,,
+torque_capacity,9.2,profile_soft_and_audit,fail,Numerical check under user profile assumptions; no personal physiological calibration.,False,36.0
+musculotendon,9.3,not_implemented,unknown,verified muscle model and person parameters,,
+fatigue,10,profile_soft_and_audit,fail,Numerical check under user profile assumptions; no personal physiological calibration.,False,36.0
+strength_fatigue_coupling,9–10,profile_soft_and_audit,fail,Numerical check under user profile assumptions; no personal physiological calibration.,False,36.0
+parameter_calibration,13,not_implemented,unknown,"person-specific geometry, mass, inertia and capacity evidence",,
+centroidal_dynamics,11,profile_soft_and_audit,fail,Numerical check under user profile assumptions; no personal physiological calibration.,False,32.0
+joint_dynamics,11,parameterized_audit,unknown,"mass matrix, bias, contact Jacobian and actuation",,
+impact_forward_validation,11.3,not_implemented,unknown,"impact law, integration and replay validation",,
+candidate_selection,12,gate,pass,feasibility before motion/effort; uncertainty retained,,
+provenance,13,audit,pass,input/code/config hashes and independent saved-result checks,,

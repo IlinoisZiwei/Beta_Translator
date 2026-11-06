@@ -20,3 +20,13 @@ jupyterlab==4.6.5
 ninja==1.13.2
 setuptools==84.2.1
 wheel==0.48.0
+
+# Sparse constrained trajectory optimization (Trial2 anatomical arms)
+osqp==1.0.5
+
+# Native Anny avatar, in the same environment; no SMPL assets or GPU required.
+anny==0.6.2
+roma==1.8.0
+trimesh==5.2.0
+safetensors==0.8.0
+warp-lang==1.19.0

@@ -1,0 +1,53 @@
+{
+  "solver": {
+    "success": false,
+    "message": "Maximum constrained iterations reached.",
+    "nit": 150,
+    "nfev": 713,
+    "cost": 1169.5871296509213,
+    "optimality": 3.8381228120791304,
+    "relative_cost_change": 0.0005029022332257128,
+    "linear_violation": 0.0,
+    "complementarity": 0.0005635242726039482,
+    "initial_projection": {
+      "iterations": 5775,
+      "primal": 2.328907052469899e-14,
+      "dual": 5.558446129137142e-14,
+      "success": true,
+      "status": "solved"
+    },
+    "seconds": 182.1872607920086,
+    "gradient_definition": "Fresh Lagrangian gradient normalized by current Jacobian columns; explicit box and linear rate multipliers."
+  },
+  "metrics": {
+    "candidate": "steady",
+    "native_frames": 36,
+    "numerically_feasible": false,
+    "anatomy_temporal_failure_frames": 0,
+    "contact_failure_frames": 0,
+    "geometric_failure_frames": 0,
+    "support_failure_frames": 20,
+    "preunload_failure_frames": 6,
+    "grip_proxy_failure_frames": 0,
+    "total_failed_frames": 26,
+    "worst_failure_fraction": 0.5555555555555556,
+    "max_contact_gap_cm": 0.04718055110739212,
+    "max_rate_ratio": 0.6647939582052714,
+    "max_acceleration_ratio": 0.9999590184890577,
+    "max_elbow_swivel_deg_s": 11.402374094766074,
+    "max_torso_rotation_deg_s": 28.62214854907812,
+    "converged": false,
+    "uncertainty": "Reduced anatomy; inferred hand/foot and scene geometry; full specification coverage is explicit in constraints.csv.",
+    "departing_force_failure_frames": 0,
+    "joint_acceleration_rms_cm_s2": 86.81034713694721,
+    "specification_status": "fail",
+    "trusted_support_failure_frames": 29,
+    "reserve_failure_frames": 20,
+    "preunload_applicable_frames": 6,
+    "preunload_failure_fraction_applicable": 1.0,
+    "optimized_hand_load_integral_bw_s": 1.1813105356026818,
+    "lower_limb_rom_failure_frames": 0,
+    "max_knee_coupling_displacement_cm": 2.903933568770259,
+    "unknown_constraints": 24
+  }
+}

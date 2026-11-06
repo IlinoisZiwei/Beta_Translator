@@ -1,0 +1,79 @@
+{
+  "config": {
+    "height_cm": 180.0,
+    "fps": 30.0,
+    "full_iterations": 160,
+    "control_stride_frames": 8,
+    "profiles": {
+      "balanced": 1.0,
+      "steady": 2.5
+    },
+    "angles_deg": [
+      15.0,
+      0.0
+    ],
+    "short_clip_run": "outputs/trial2/anatomy_plans/target_180cm_109acb7b8238",
+    "full_solver": "restored_sparse_SQP",
+    "frames": [
+      0,
+      975
+    ],
+    "smoothness": 1.0
+  },
+  "solver": {
+    "success": false,
+    "message": "Maximum constrained iterations reached.",
+    "nit": 160,
+    "nfev": 1304,
+    "cost": 76878728.5238546,
+    "optimality": 2668.9604039899887,
+    "relative_cost_change": 0.0006709397824636124,
+    "linear_violation": 0.0,
+    "complementarity": 0.004159935133564579,
+    "initial_projection": {
+      "iterations": 17925,
+      "primal": 3.076276859174743e-08,
+      "dual": 8.879455778562942e-09,
+      "success": true,
+      "status": "solved"
+    },
+    "seconds": 2083.4605129159754,
+    "gradient_definition": "Fresh Lagrangian gradient normalized by current Jacobian columns; explicit box and linear rate multipliers.",
+    "parameterization": {
+      "kind": "clamped_cubic_joint_coordinate_controls",
+      "control_stride_frames": 8,
+      "control_points": 125,
+      "native_frames": 976,
+      "variables": 10017,
+      "guarantees": "Nonnegative partition of unity preserves coordinate ROM; rate/acceleration constraints are tested on every native frame; no post-fit filtering."
+    }
+  },
+  "metrics": {
+    "candidate": "balanced",
+    "native_frames": 976,
+    "numerically_feasible": false,
+    "anatomy_temporal_failure_frames": 0,
+    "contact_failure_frames": 534,
+    "geometric_failure_frames": 550,
+    "support_failure_frames": 872,
+    "preunload_failure_frames": 156,
+    "grip_proxy_failure_frames": 468,
+    "total_failed_frames": 947,
+    "worst_failure_fraction": 0.8934426229508197,
+    "max_contact_gap_cm": 33.68944791218372,
+    "max_rate_ratio": 0.9999686249929375,
+    "max_acceleration_ratio": 0.999997850044165,
+    "max_elbow_swivel_deg_s": 257.5981019888221,
+    "max_torso_rotation_deg_s": 115.06061274339578,
+    "converged": false,
+    "uncertainty": "Unmeasured geometry, approximate anatomy, inferred wrist orientation; no dynamic or full collision validation."
+  },
+  "physical_validation": false,
+  "output_sha256": {
+    "trajectory.npz": "4373de66f366e8c875f4ae66d9ce319082d41a8c9a6da1e5b2675d3b77ab330b",
+    "metrics.csv": "575c0b312082568a73aac40c191a6f6d69d48836cec473b37f3b1ee8e89d2681",
+    "scene.json": "4c908cb012fa91c3a86c3e92564ebb3bb477c537c6a8b9e1ade7b1dd4c5ea41b",
+    "contact_episodes.json": "d6514b9e8bc8066213d071b57d86e6f04b77dfd6a58af6bb49633408f30faa4e",
+    "solver_history.csv": "6c999fb1d5406019a0317ad4a36bf3726e88841f84e2cb7d507e12f2198721e5"
+  }
+}

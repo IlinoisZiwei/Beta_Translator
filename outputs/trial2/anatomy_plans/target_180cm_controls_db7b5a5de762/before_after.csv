@@ -1,0 +1,3 @@
+model,frames,elbow_swivel_max_deg_s,elbow_swivel_p95_deg_s,joint_acceleration_rms_cm_s2,hip_acceleration_rms_cm_s2,torso_axis_rotation_p95_deg_s,contact_failure_frames,maximum_contact_gap_cm,support_failure_frames,preunload_failure_frames,motion_warning_frames,maximum_bone_error_cm
+legacy,976,1110.3231797074484,634.94359580067,911.3004953885185,919.151630845749,100.15836020476779,91,26.292618430323568,748,156,17,5.3290705182007514e-14
+anatomical,976,257.5981019888221,172.78681132059347,299.6919512474109,194.0151959410655,72.11833372129648,534,33.68944791218372,872,156,13,6.039613253960852e-14

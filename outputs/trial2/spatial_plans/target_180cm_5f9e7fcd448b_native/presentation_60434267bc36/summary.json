@@ -1,0 +1,16 @@
+{
+  "provenance": {
+    "input_sha256": {
+      "outputs/trial2/spatial_plans/target_180cm_5f9e7fcd448b_native/summary.json": "77e4cc1f1ff61a57609eb1702b410cabfa5e678ebe96aa5c8eecbf3b3a1fc94a",
+      "beta_translator/trial2_spatial_presentation.py": "22ae6a9b44076c6d86434bab2d49132e063212b65f1083b36d717c75797654fa"
+    },
+    "purpose": "Presentation only. Numerical trajectories, ranking and checks are unchanged."
+  },
+  "frame_count": 976,
+  "fps": 30.0,
+  "output_sha256": {
+    "angle_comparison_3d.mp4": "1ff5fa6ff3092f88f1e777085941e757c77bc162acbe1c933411b959f103cd60",
+    "angle_comparison_poster.jpg": "352f490dde10c3b5aeb02c5be09ff461e9d691a33bfedb6a174ddc43714ca05f",
+    "viewer.html": "25f1092313ec4706c3d70d7eac9acd18e3dc7464789dfa88e641e0229258b482"
+  }
+}

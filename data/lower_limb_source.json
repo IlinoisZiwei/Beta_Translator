@@ -1,0 +1,1424 @@
+{
+  "model": "OpenSim Gait2392 Thelen2003",
+  "commit": "d9b05d470b1a481c222372c85b75772faf8f7792",
+  "source_sha256": "3af1ca20aa87bc88b0b8cd54f2504331afa2aa03537cc868f1175fa1f50f3c0f",
+  "url": "https://github.com/opensim-org/opensim-models/blob/d9b05d470b1a481c222372c85b75772faf8f7792/Models/Gait2392_Simbody/gait2392_thelen2003muscle.osim",
+  "documentation": "https://opensimconfluence.atlassian.net/wiki/spaces/OpenSim/pages/53086215/Gait+2392+and+2354+Models",
+  "spline_source": "https://github.com/opensim-org/opensim-core/blob/01683ac33568a3cb5eef2e445c7815f8220e8905/OpenSim/Common/SimmSpline.cpp",
+  "joints": {
+    "hip_r": {
+      "parent": {
+        "parent": "/bodyset/pelvis",
+        "translation": [
+          -0.0707,
+          -0.0661,
+          0.0835
+        ],
+        "orientation": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "child": {
+        "parent": "/bodyset/femur_r",
+        "translation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "orientation": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "axes": [
+        {
+          "name": "rotation1",
+          "coordinate": "hip_flexion_r",
+          "axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "function": {
+            "type": "LinearFunction",
+            "coefficients": [
+              1.0,
+              0.0
+            ]
+          }
+        },
+        {
+          "name": "rotation2",
+          "coordinate": "hip_adduction_r",
+          "axis": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "function": {
+            "type": "LinearFunction",
+            "coefficients": [
+              1.0,
+              0.0
+            ]
+          }
+        },
+        {
+          "name": "rotation3",
+          "coordinate": "hip_rotation_r",
+          "axis": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "function": {
+            "type": "LinearFunction",
+            "coefficients": [
+              1.0,
+              0.0
+            ]
+          }
+        },
+        {
+          "name": "translation1",
+          "coordinate": null,
+          "axis": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "function": {
+            "type": "Constant",
+            "value": [
+              0.0
+            ]
+          }
+        },
+        {
+          "name": "translation2",
+          "coordinate": null,
+          "axis": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "function": {
+            "type": "Constant",
+            "value": [
+              0.0
+            ]
+          }
+        },
+        {
+          "name": "translation3",
+          "coordinate": null,
+          "axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "function": {
+            "type": "Constant",
+            "value": [
+              0.0
+            ]
+          }
+        }
+      ],
+      "coordinates": {
+        "hip_flexion_r": {
+          "range": [
+            -2.0943951,
+            2.0943951
+          ],
+          "source_clamped": "false"
+        },
+        "hip_adduction_r": {
+          "range": [
+            -2.0943951,
+            2.0943951
+          ],
+          "source_clamped": "false"
+        },
+        "hip_rotation_r": {
+          "range": [
+            -2.0943951,
+            2.0943951
+          ],
+          "source_clamped": "false"
+        }
+      }
+    },
+    "knee_r": {
+      "parent": {
+        "parent": "/bodyset/femur_r",
+        "translation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "orientation": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "child": {
+        "parent": "/bodyset/tibia_r",
+        "translation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "orientation": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "axes": [
+        {
+          "name": "rotation1",
+          "coordinate": "knee_angle_r",
+          "axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "function": {
+            "type": "LinearFunction",
+            "coefficients": [
+              1.0,
+              0.0
+            ]
+          }
+        },
+        {
+          "name": "rotation2",
+          "coordinate": null,
+          "axis": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "function": {
+            "type": "Constant",
+            "value": [
+              0.0
+            ]
+          }
+        },
+        {
+          "name": "rotation3",
+          "coordinate": null,
+          "axis": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "function": {
+            "type": "Constant",
+            "value": [
+              0.0
+            ]
+          }
+        },
+        {
+          "name": "translation1",
+          "coordinate": "knee_angle_r",
+          "axis": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "function": {
+            "type": "SimmSpline",
+            "x": [
+              -2.0944,
+              -1.74533,
+              -1.39626,
+              -1.0472,
+              -0.698132,
+              -0.349066,
+              -0.174533,
+              0.197344,
+              0.337395,
+              0.490178,
+              1.52146,
+              2.0944
+            ],
+            "y": [
+              -0.0032,
+              0.00179,
+              0.00411,
+              0.0041,
+              0.00212,
+              -0.001,
+              -0.0031,
+              -0.005227,
+              -0.005435,
+              -0.005574,
+              -0.005435,
+              -0.00525
+            ]
+          }
+        },
+        {
+          "name": "translation2",
+          "coordinate": "knee_angle_r",
+          "axis": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "function": {
+            "type": "SimmSpline",
+            "x": [
+              -2.0944,
+              -1.22173,
+              -0.523599,
+              -0.349066,
+              -0.174533,
+              0.159149,
+              2.0944
+            ],
+            "y": [
+              -0.4226,
+              -0.4082,
+              -0.399,
+              -0.3976,
+              -0.3966,
+              -0.395264,
+              -0.396
+            ]
+          }
+        },
+        {
+          "name": "translation3",
+          "coordinate": null,
+          "axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "function": {
+            "type": "Constant",
+            "value": [
+              0.0
+            ]
+          }
+        }
+      ],
+      "coordinates": {
+        "knee_angle_r": {
+          "range": [
+            -2.0943951,
+            0.17453293
+          ],
+          "source_clamped": "false"
+        }
+      }
+    },
+    "ankle_r": {
+      "parent": {
+        "parent": "/bodyset/tibia_r",
+        "translation": [
+          0.0,
+          -0.43,
+          0.0
+        ],
+        "orientation": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "child": {
+        "parent": "/bodyset/talus_r",
+        "translation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "orientation": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "axes": [
+        {
+          "name": "rotation1",
+          "coordinate": "ankle_angle_r",
+          "axis": [
+            -0.10501355,
+            -0.17402245,
+            0.97912632
+          ],
+          "function": {
+            "type": "LinearFunction",
+            "coefficients": [
+              1.0,
+              0.0
+            ]
+          }
+        },
+        {
+          "name": "rotation2",
+          "coordinate": null,
+          "axis": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "function": {
+            "type": "Constant",
+            "value": [
+              0.0
+            ]
+          }
+        },
+        {
+          "name": "rotation3",
+          "coordinate": null,
+          "axis": [
+            0.97912632,
+            -0.0,
+            0.10501355
+          ],
+          "function": {
+            "type": "Constant",
+            "value": [
+              0.0
+            ]
+          }
+        },
+        {
+          "name": "translation1",
+          "coordinate": null,
+          "axis": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "function": {
+            "type": "Constant",
+            "value": [
+              0.0
+            ]
+          }
+        },
+        {
+          "name": "translation2",
+          "coordinate": null,
+          "axis": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "function": {
+            "type": "Constant",
+            "value": [
+              0.0
+            ]
+          }
+        },
+        {
+          "name": "translation3",
+          "coordinate": null,
+          "axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "function": {
+            "type": "Constant",
+            "value": [
+              0.0
+            ]
+          }
+        }
+      ],
+      "coordinates": {
+        "ankle_angle_r": {
+          "range": [
+            -1.57079633,
+            1.57079633
+          ],
+          "source_clamped": "false"
+        }
+      }
+    },
+    "subtalar_r": {
+      "parent": {
+        "parent": "/bodyset/talus_r",
+        "translation": [
+          -0.04877,
+          -0.04195,
+          0.00792
+        ],
+        "orientation": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "child": {
+        "parent": "/bodyset/calcn_r",
+        "translation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "orientation": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "axes": [
+        {
+          "name": "rotation1",
+          "coordinate": "subtalar_angle_r",
+          "axis": [
+            0.78717961,
+            0.60474746,
+            -0.12094949
+          ],
+          "function": {
+            "type": "LinearFunction",
+            "coefficients": [
+              1.0,
+              0.0
+            ]
+          }
+        },
+        {
+          "name": "rotation2",
+          "coordinate": null,
+          "axis": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "function": {
+            "type": "Constant",
+            "value": [
+              0.0
+            ]
+          }
+        },
+        {
+          "name": "rotation3",
+          "coordinate": null,
+          "axis": [
+            -0.12094949,
+            0.0,
+            -0.78717961
+          ],
+          "function": {
+            "type": "Constant",
+            "value": [
+              0.0
+            ]
+          }
+        },
+        {
+          "name": "translation1",
+          "coordinate": null,
+          "axis": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "function": {
+            "type": "Constant",
+            "value": [
+              0.0
+            ]
+          }
+        },
+        {
+          "name": "translation2",
+          "coordinate": null,
+          "axis": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "function": {
+            "type": "Constant",
+            "value": [
+              0.0
+            ]
+          }
+        },
+        {
+          "name": "translation3",
+          "coordinate": null,
+          "axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "function": {
+            "type": "Constant",
+            "value": [
+              0.0
+            ]
+          }
+        }
+      ],
+      "coordinates": {
+        "subtalar_angle_r": {
+          "range": [
+            -1.57079633,
+            1.57079633
+          ],
+          "source_clamped": "false"
+        }
+      }
+    },
+    "mtp_r": {
+      "parent": {
+        "parent": "/bodyset/calcn_r",
+        "translation": [
+          0.1788,
+          -0.002,
+          0.00108
+        ],
+        "orientation": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "child": {
+        "parent": "/bodyset/toes_r",
+        "translation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "orientation": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "axes": [
+        {
+          "name": "rotation1",
+          "coordinate": "mtp_angle_r",
+          "axis": [
+            -0.5809544,
+            0.0,
+            0.81393611
+          ],
+          "function": {
+            "type": "LinearFunction",
+            "coefficients": [
+              1.0,
+              0.0
+            ]
+          }
+        },
+        {
+          "name": "rotation2",
+          "coordinate": null,
+          "axis": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "function": {
+            "type": "Constant",
+            "value": [
+              0.0
+            ]
+          }
+        },
+        {
+          "name": "rotation3",
+          "coordinate": null,
+          "axis": [
+            0.81393611,
+            -0.0,
+            0.5809544
+          ],
+          "function": {
+            "type": "Constant",
+            "value": [
+              0.0
+            ]
+          }
+        },
+        {
+          "name": "translation1",
+          "coordinate": null,
+          "axis": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "function": {
+            "type": "Constant",
+            "value": [
+              0.0
+            ]
+          }
+        },
+        {
+          "name": "translation2",
+          "coordinate": null,
+          "axis": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "function": {
+            "type": "Constant",
+            "value": [
+              0.0
+            ]
+          }
+        },
+        {
+          "name": "translation3",
+          "coordinate": null,
+          "axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "function": {
+            "type": "Constant",
+            "value": [
+              0.0
+            ]
+          }
+        }
+      ],
+      "coordinates": {
+        "mtp_angle_r": {
+          "range": [
+            -1.57079633,
+            1.57079633
+          ],
+          "source_clamped": "false"
+        }
+      }
+    },
+    "hip_l": {
+      "parent": {
+        "parent": "/bodyset/pelvis",
+        "translation": [
+          -0.0707,
+          -0.0661,
+          -0.0835
+        ],
+        "orientation": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "child": {
+        "parent": "/bodyset/femur_l",
+        "translation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "orientation": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "axes": [
+        {
+          "name": "rotation1",
+          "coordinate": "hip_flexion_l",
+          "axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "function": {
+            "type": "LinearFunction",
+            "coefficients": [
+              1.0,
+              0.0
+            ]
+          }
+        },
+        {
+          "name": "rotation2",
+          "coordinate": "hip_adduction_l",
+          "axis": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "function": {
+            "type": "LinearFunction",
+            "coefficients": [
+              1.0,
+              0.0
+            ]
+          }
+        },
+        {
+          "name": "rotation3",
+          "coordinate": "hip_rotation_l",
+          "axis": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "function": {
+            "type": "LinearFunction",
+            "coefficients": [
+              1.0,
+              0.0
+            ]
+          }
+        },
+        {
+          "name": "translation1",
+          "coordinate": null,
+          "axis": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "function": {
+            "type": "Constant",
+            "value": [
+              0.0
+            ]
+          }
+        },
+        {
+          "name": "translation2",
+          "coordinate": null,
+          "axis": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "function": {
+            "type": "Constant",
+            "value": [
+              0.0
+            ]
+          }
+        },
+        {
+          "name": "translation3",
+          "coordinate": null,
+          "axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "function": {
+            "type": "Constant",
+            "value": [
+              0.0
+            ]
+          }
+        }
+      ],
+      "coordinates": {
+        "hip_flexion_l": {
+          "range": [
+            -2.0943951,
+            2.0943951
+          ],
+          "source_clamped": "false"
+        },
+        "hip_adduction_l": {
+          "range": [
+            -2.0943951,
+            2.0943951
+          ],
+          "source_clamped": "false"
+        },
+        "hip_rotation_l": {
+          "range": [
+            -2.0943951,
+            2.0943951
+          ],
+          "source_clamped": "false"
+        }
+      }
+    },
+    "knee_l": {
+      "parent": {
+        "parent": "/bodyset/femur_l",
+        "translation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "orientation": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "child": {
+        "parent": "/bodyset/tibia_l",
+        "translation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "orientation": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "axes": [
+        {
+          "name": "rotation1",
+          "coordinate": "knee_angle_l",
+          "axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "function": {
+            "type": "LinearFunction",
+            "coefficients": [
+              1.0,
+              0.0
+            ]
+          }
+        },
+        {
+          "name": "rotation2",
+          "coordinate": null,
+          "axis": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "function": {
+            "type": "Constant",
+            "value": [
+              0.0
+            ]
+          }
+        },
+        {
+          "name": "rotation3",
+          "coordinate": null,
+          "axis": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "function": {
+            "type": "Constant",
+            "value": [
+              0.0
+            ]
+          }
+        },
+        {
+          "name": "translation1",
+          "coordinate": "knee_angle_l",
+          "axis": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "function": {
+            "type": "SimmSpline",
+            "x": [
+              -2.0944,
+              -1.74533,
+              -1.39626,
+              -1.0472,
+              -0.698132,
+              -0.349066,
+              -0.174533,
+              0.197344,
+              0.337395,
+              0.490178,
+              1.52146,
+              2.0944
+            ],
+            "y": [
+              -0.0032,
+              0.00179,
+              0.00411,
+              0.0041,
+              0.00212,
+              -0.001,
+              -0.0031,
+              -0.005227,
+              -0.005435,
+              -0.005574,
+              -0.005435,
+              -0.00525
+            ]
+          }
+        },
+        {
+          "name": "translation2",
+          "coordinate": "knee_angle_l",
+          "axis": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "function": {
+            "type": "SimmSpline",
+            "x": [
+              -2.0944,
+              -1.22173,
+              -0.523599,
+              -0.349066,
+              -0.174533,
+              0.159149,
+              2.0944
+            ],
+            "y": [
+              -0.4226,
+              -0.4082,
+              -0.399,
+              -0.3976,
+              -0.3966,
+              -0.395264,
+              -0.396
+            ]
+          }
+        },
+        {
+          "name": "translation3",
+          "coordinate": null,
+          "axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "function": {
+            "type": "Constant",
+            "value": [
+              0.0
+            ]
+          }
+        }
+      ],
+      "coordinates": {
+        "knee_angle_l": {
+          "range": [
+            -2.0943951,
+            0.17453293
+          ],
+          "source_clamped": "false"
+        }
+      }
+    },
+    "ankle_l": {
+      "parent": {
+        "parent": "/bodyset/tibia_l",
+        "translation": [
+          0.0,
+          -0.43,
+          0.0
+        ],
+        "orientation": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "child": {
+        "parent": "/bodyset/talus_l",
+        "translation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "orientation": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "axes": [
+        {
+          "name": "rotation1",
+          "coordinate": "ankle_angle_l",
+          "axis": [
+            0.10501355,
+            0.17402245,
+            0.97912632
+          ],
+          "function": {
+            "type": "LinearFunction",
+            "coefficients": [
+              1.0,
+              0.0
+            ]
+          }
+        },
+        {
+          "name": "rotation2",
+          "coordinate": null,
+          "axis": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "function": {
+            "type": "Constant",
+            "value": [
+              0.0
+            ]
+          }
+        },
+        {
+          "name": "rotation3",
+          "coordinate": null,
+          "axis": [
+            0.97912632,
+            0.0,
+            -0.10501355
+          ],
+          "function": {
+            "type": "Constant",
+            "value": [
+              0.0
+            ]
+          }
+        },
+        {
+          "name": "translation1",
+          "coordinate": null,
+          "axis": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "function": {
+            "type": "Constant",
+            "value": [
+              0.0
+            ]
+          }
+        },
+        {
+          "name": "translation2",
+          "coordinate": null,
+          "axis": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "function": {
+            "type": "Constant",
+            "value": [
+              0.0
+            ]
+          }
+        },
+        {
+          "name": "translation3",
+          "coordinate": null,
+          "axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "function": {
+            "type": "Constant",
+            "value": [
+              0.0
+            ]
+          }
+        }
+      ],
+      "coordinates": {
+        "ankle_angle_l": {
+          "range": [
+            -1.57079633,
+            1.57079633
+          ],
+          "source_clamped": "false"
+        }
+      }
+    },
+    "subtalar_l": {
+      "parent": {
+        "parent": "/bodyset/talus_l",
+        "translation": [
+          -0.04877,
+          -0.04195,
+          -0.00792
+        ],
+        "orientation": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "child": {
+        "parent": "/bodyset/calcn_l",
+        "translation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "orientation": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "axes": [
+        {
+          "name": "rotation1",
+          "coordinate": "subtalar_angle_l",
+          "axis": [
+            -0.78717961,
+            -0.60474746,
+            -0.12094949
+          ],
+          "function": {
+            "type": "LinearFunction",
+            "coefficients": [
+              1.0,
+              0.0
+            ]
+          }
+        },
+        {
+          "name": "rotation2",
+          "coordinate": null,
+          "axis": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "function": {
+            "type": "Constant",
+            "value": [
+              0.0
+            ]
+          }
+        },
+        {
+          "name": "rotation3",
+          "coordinate": null,
+          "axis": [
+            -0.12094949,
+            0.0,
+            0.78717961
+          ],
+          "function": {
+            "type": "Constant",
+            "value": [
+              0.0
+            ]
+          }
+        },
+        {
+          "name": "translation1",
+          "coordinate": null,
+          "axis": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "function": {
+            "type": "Constant",
+            "value": [
+              0.0
+            ]
+          }
+        },
+        {
+          "name": "translation2",
+          "coordinate": null,
+          "axis": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "function": {
+            "type": "Constant",
+            "value": [
+              0.0
+            ]
+          }
+        },
+        {
+          "name": "translation3",
+          "coordinate": null,
+          "axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "function": {
+            "type": "Constant",
+            "value": [
+              0.0
+            ]
+          }
+        }
+      ],
+      "coordinates": {
+        "subtalar_angle_l": {
+          "range": [
+            -1.57079633,
+            1.57079633
+          ],
+          "source_clamped": "false"
+        }
+      }
+    },
+    "mtp_l": {
+      "parent": {
+        "parent": "/bodyset/calcn_l",
+        "translation": [
+          0.1788,
+          -0.002,
+          -0.00108
+        ],
+        "orientation": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "child": {
+        "parent": "/bodyset/toes_l",
+        "translation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "orientation": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "axes": [
+        {
+          "name": "rotation1",
+          "coordinate": "mtp_angle_l",
+          "axis": [
+            0.5809544,
+            0.0,
+            0.81393611
+          ],
+          "function": {
+            "type": "LinearFunction",
+            "coefficients": [
+              1.0,
+              0.0
+            ]
+          }
+        },
+        {
+          "name": "rotation2",
+          "coordinate": null,
+          "axis": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "function": {
+            "type": "Constant",
+            "value": [
+              0.0
+            ]
+          }
+        },
+        {
+          "name": "rotation3",
+          "coordinate": null,
+          "axis": [
+            0.81393611,
+            0.0,
+            -0.5809544
+          ],
+          "function": {
+            "type": "Constant",
+            "value": [
+              0.0
+            ]
+          }
+        },
+        {
+          "name": "translation1",
+          "coordinate": null,
+          "axis": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "function": {
+            "type": "Constant",
+            "value": [
+              0.0
+            ]
+          }
+        },
+        {
+          "name": "translation2",
+          "coordinate": null,
+          "axis": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "function": {
+            "type": "Constant",
+            "value": [
+              0.0
+            ]
+          }
+        },
+        {
+          "name": "translation3",
+          "coordinate": null,
+          "axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "function": {
+            "type": "Constant",
+            "value": [
+              0.0
+            ]
+          }
+        }
+      ],
+      "coordinates": {
+        "mtp_angle_l": {
+          "range": [
+            -1.57079633,
+            1.57079633
+          ],
+          "source_clamped": "false"
+        }
+      }
+    }
+  },
+  "scope": "Kinematic source parameters only; no muscles, inertia, subject scaling or clinical validation imported.",
+  "spline_license": "Apache-2.0; Stanford University and the Authors"
+}

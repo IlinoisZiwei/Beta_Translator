@@ -1,0 +1,41 @@
+[
+  {
+    "trial": "trial1",
+    "height_cm": 175,
+    "native_frames": 417,
+    "pose_coordinates": 32,
+    "max_rigid_bone_error_cm": 7.105427357601002e-14,
+    "contact_definition_disagreement_cm": 5.684341886080802e-14,
+    "missing_source_frames": 0,
+    "source_masks_preserved": true,
+    "free_contact_force_zero": true,
+    "knee_translation_retained": true,
+    "full_optimization_performed": false
+  },
+  {
+    "trial": "trial2",
+    "height_cm": 175,
+    "native_frames": 976,
+    "pose_coordinates": 32,
+    "max_rigid_bone_error_cm": 7.105427357601002e-14,
+    "contact_definition_disagreement_cm": 2.842170943040401e-14,
+    "missing_source_frames": 10,
+    "source_masks_preserved": true,
+    "free_contact_force_zero": true,
+    "knee_translation_retained": true,
+    "full_optimization_performed": false
+  },
+  {
+    "trial": "trial3",
+    "height_cm": 175,
+    "native_frames": 503,
+    "pose_coordinates": 32,
+    "max_rigid_bone_error_cm": 4.973799150320701e-14,
+    "contact_definition_disagreement_cm": 1.4210854715202004e-14,
+    "missing_source_frames": 0,
+    "source_masks_preserved": true,
+    "free_contact_force_zero": true,
+    "knee_translation_retained": true,
+    "full_optimization_performed": false
+  }
+]

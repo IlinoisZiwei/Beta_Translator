@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "trial": "trial3",
+  "adapter": "calibrated_plane",
+  "input_root": "outputs/trial3",
+  "video": "videos/trial3.mp4",
+  "frame_count": 503,
+  "fps": 30.0,
+  "scene": {
+    "tilt_deg": 15.0,
+    "origin_y_cm": 400.0
+  },
+  "baseline": "outputs/trial3/contact_region_plans/target_180cm_9cd2cf3084ba_native/region_offset_native/trajectory.npz",
+  "verification_frames": [
+    296,
+    331
+  ],
+  "notes": [
+    "Camera/wall tilt and body depth are unmeasured hypotheses.",
+    "The arbitrary world origin does not create a floor or ground support."
+  ]
+}

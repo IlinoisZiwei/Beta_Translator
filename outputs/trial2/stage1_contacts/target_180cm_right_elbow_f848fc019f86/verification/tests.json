@@ -1,0 +1,13 @@
+{
+  "tests_passed": 43,
+  "test_suites": [
+    "anatomical_arms",
+    "trial2_anatomy_objective",
+    "trial2_stage1",
+    "trial2_spatial",
+    "constrained_sequence_solver",
+    "temporal_control_basis",
+    "anthropometry"
+  ],
+  "model_runs": "right_elbow 550-595, 180 cm; three equal-budget candidates; 250 iterations each"
+}

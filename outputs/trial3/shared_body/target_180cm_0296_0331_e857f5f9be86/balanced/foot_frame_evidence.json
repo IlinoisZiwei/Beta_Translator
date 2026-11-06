@@ -1,0 +1,64 @@
+[
+  {
+    "episode": 13,
+    "limb": "left_foot",
+    "frame_world": [
+      [
+        -0.06931140976929683,
+        0.9975950723995146,
+        0.0
+      ],
+      [
+        -0.963602844609404,
+        -0.06694968075266823,
+        -0.25881904510252074
+      ],
+      [
+        -0.25819660403742234,
+        -0.01793911289119893,
+        0.9659258262890683
+      ]
+    ],
+    "ankle_to_patch_local_cm": [
+      8.1,
+      0.0,
+      -4.5
+    ],
+    "direction_source": "episode ankle-to-contact image direction",
+    "sole_normal_status": "assumed_from_scene_surface",
+    "ankle_rom_status": "not_checked",
+    "measured": false,
+    "evidence_frames": 215
+  },
+  {
+    "episode": 15,
+    "limb": "right_foot",
+    "frame_world": [
+      [
+        -0.8248117839400647,
+        0.565407393897186,
+        0.0
+      ],
+      [
+        -0.546141604140088,
+        -0.7967070039352675,
+        -0.25881904510252074
+      ],
+      [
+        -0.1463382017823745,
+        -0.2134769983086742,
+        0.9659258262890683
+      ]
+    ],
+    "ankle_to_patch_local_cm": [
+      8.1,
+      0.0,
+      -4.5
+    ],
+    "direction_source": "episode ankle-to-contact image direction",
+    "sole_normal_status": "assumed_from_scene_surface",
+    "ankle_rom_status": "not_checked",
+    "measured": false,
+    "evidence_frames": 136
+  }
+]

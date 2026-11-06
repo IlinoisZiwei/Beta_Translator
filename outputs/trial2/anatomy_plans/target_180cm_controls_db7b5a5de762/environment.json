@@ -1,0 +1,13 @@
+{
+  "python": "3.12.15",
+  "architecture": "arm64",
+  "packages": {
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "pandas": "3.1.0",
+    "osqp": "1.0.5",
+    "matplotlib": "3.11.2",
+    "joblib": "1.6.0"
+  },
+  "tests": "31 focused model, solver, reach-diagnostic and spatial-regression tests passed in the actual Desktop repository environment."
+}

@@ -1,0 +1,29 @@
+[
+  {
+    "trial": "trial1",
+    "native_frames": 417,
+    "max_bone_error_cm": 7.105427357601002e-14,
+    "contact_definition_disagreement_cm": 5.684341886080802e-14,
+    "missing_source_frames": 0,
+    "height_cm": 180,
+    "full_optimization_performed": false
+  },
+  {
+    "trial": "trial2",
+    "native_frames": 976,
+    "max_bone_error_cm": 6.039613253960852e-14,
+    "contact_definition_disagreement_cm": 7.105427357601002e-15,
+    "missing_source_frames": 10,
+    "height_cm": 180,
+    "full_optimization_performed": false
+  },
+  {
+    "trial": "trial3",
+    "native_frames": 503,
+    "max_bone_error_cm": 4.263256414560601e-14,
+    "contact_definition_disagreement_cm": 1.4210854715202004e-14,
+    "missing_source_frames": 0,
+    "height_cm": 180,
+    "full_optimization_performed": false
+  }
+]

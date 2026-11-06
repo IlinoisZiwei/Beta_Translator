@@ -1,0 +1,380 @@
+{
+  "source_url": "https://raw.githubusercontent.com/aikkala/O2MConverter/ad2599d5ecb2c18b44570b4d0b53e062ac9b82ae/models/opensim/MoBL_ARMS_OpenSim_tutorial_33/MoBL_ARMS_model_for_mujoco.osim",
+  "source_sha256": "2dc242259e0f5004d935646a424af7f1fd4ba99d79ff05b3a7b1f2e605949dad",
+  "scope": "Extracted numeric rotation and rest-transform parameters; translational offsets recorded for discrepancy reporting, not applied to fixed-length project skeleton. Not an OpenSim simulation.",
+  "spline_source": "https://github.com/opensim-org/opensim-core/blob/4.5/OpenSim/Common/SimmSpline.cpp",
+  "joints": [
+    {
+      "name": "shoulder0",
+      "parent": "scapphant",
+      "child": "humphant",
+      "location_in_parent": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "orientation_in_parent": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "orientation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotations": [
+        {
+          "axis": [
+            0.0048,
+            0.99908918,
+            0.04240001
+          ],
+          "coordinate": "elv_angle",
+          "function": "LinearFunction",
+          "coefficients": [
+            1.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "name": "shoulder1",
+      "parent": "humphant",
+      "child": "humphant1",
+      "location_in_parent": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "orientation_in_parent": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "orientation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotations": [
+        {
+          "axis": [
+            -0.99826136,
+            0.0023,
+            0.05889802
+          ],
+          "coordinate": "shoulder_elv",
+          "function": "LinearFunction",
+          "coefficients": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "axis": [
+            0.0048,
+            0.99908918,
+            0.04240001
+          ],
+          "coordinate": "shoulder1_r2",
+          "function": "LinearFunction",
+          "coefficients": [
+            1.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "name": "shoulder2",
+      "parent": "humphant1",
+      "child": "humerus",
+      "location_in_parent": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "orientation_in_parent": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "orientation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotations": [
+        {
+          "axis": [
+            0.0048,
+            0.99908918,
+            0.04240001
+          ],
+          "coordinate": "shoulder_rot",
+          "function": "LinearFunction",
+          "coefficients": [
+            1.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "name": "elbow",
+      "parent": "humerus",
+      "child": "ulna",
+      "location_in_parent": [
+        0.0061,
+        -0.2904,
+        -0.0123
+      ],
+      "orientation_in_parent": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "orientation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotations": [
+        {
+          "axis": [
+            0.04940001,
+            0.03660001,
+            0.99810825
+          ],
+          "coordinate": "elbow_flexion",
+          "function": "LinearFunction",
+          "coefficients": [
+            1.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "name": "radioulnar",
+      "parent": "ulna",
+      "child": "radius",
+      "location_in_parent": [
+        0.0004,
+        -0.011503,
+        0.019999
+      ],
+      "orientation_in_parent": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "orientation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotations": [
+        {
+          "axis": [
+            -0.01716099,
+            0.99266564,
+            -0.11966796
+          ],
+          "coordinate": "pro_sup",
+          "function": "LinearFunction",
+          "coefficients": [
+            1.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "name": "radiocarpal",
+      "parent": "radius",
+      "child": "proximal_row",
+      "location_in_parent": [
+        0.018,
+        -0.242,
+        0.025
+      ],
+      "orientation_in_parent": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "orientation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotations": [
+        {
+          "axis": [
+            -0.819064,
+            -0.135611,
+            -0.557444
+          ],
+          "coordinate": "deviation",
+          "function": "SimmSpline",
+          "x": [
+            -0.174533,
+            0.0,
+            0.436332
+          ],
+          "y": [
+            -0.174533,
+            0.0,
+            0.436332
+          ]
+        },
+        {
+          "axis": [
+            0.95642673,
+            -0.25220693,
+            0.14710396
+          ],
+          "coordinate": "flexion",
+          "function": "SimmSpline",
+          "x": [
+            -1.5708,
+            1.5708
+          ],
+          "y": [
+            -0.785398,
+            0.785398
+          ]
+        }
+      ]
+    },
+    {
+      "name": "wrist_hand",
+      "parent": "proximal_row",
+      "child": "hand",
+      "location_in_parent": [
+        0.003992,
+        -0.015054,
+        0.002327
+      ],
+      "orientation_in_parent": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "orientation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotations": [
+        {
+          "axis": [
+            0.8991357,
+            -0.34905288,
+            -0.26403991
+          ],
+          "coordinate": "wrist_hand_r1",
+          "function": "LinearFunction",
+          "coefficients": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "axis": [
+            0.99711853,
+            0.01069999,
+            -0.07510096
+          ],
+          "coordinate": "wrist_hand_r3",
+          "function": "LinearFunction",
+          "coefficients": [
+            1.0,
+            0.0
+          ]
+        }
+      ]
+    }
+  ],
+  "couplers": [
+    {
+      "coordinate": "shoulder1_r2",
+      "independent": "elv_angle",
+      "function": "SimmSpline",
+      "x": [
+        -1.5708,
+        3.14159
+      ],
+      "y": [
+        1.5708,
+        -3.14159
+      ]
+    },
+    {
+      "coordinate": "wrist_hand_r1",
+      "independent": "deviation",
+      "function": "SimmSpline",
+      "x": [
+        -0.174533,
+        0.0,
+        0.436332
+      ],
+      "y": [
+        -0.261799,
+        0.0,
+        0.436332
+      ]
+    },
+    {
+      "coordinate": "wrist_hand_r3",
+      "independent": "flexion",
+      "function": "SimmSpline",
+      "x": [
+        -1.22173,
+        1.22173
+      ],
+      "y": [
+        -0.610865,
+        0.610865
+      ]
+    }
+  ]
+}

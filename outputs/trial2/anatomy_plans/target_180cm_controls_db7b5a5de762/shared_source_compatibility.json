@@ -1,0 +1,10 @@
+{
+  "joints_max_error": 0.0,
+  "com_max_error": 0.0,
+  "head_max_error": 0.0,
+  "preserved_external_files": {
+    "beta_translator/inverse_kinematics.py": "164c34768cb5a55dee18249bd16f1376a58a98670065d12fd2274dc1783b8544",
+    "beta_translator/ik3d.py": "fbbdb991d8d2301f3f8e21e8b6cc6a64a9603eaac79beadad68362a69fed171a",
+    "beta_translator/gravity_sequence.py": "19b33afefef5ed2bf68bd2242d7c8523139dfdd36fa6c41e1cbd2cbf7c3eab36"
+  }
+}

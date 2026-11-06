@@ -1,0 +1,66 @@
+{
+  "metrics": {
+    "candidate": "stage1_steady",
+    "native_frames": 46,
+    "numerically_feasible": false,
+    "anatomy_temporal_failure_frames": 0,
+    "contact_failure_frames": 0,
+    "geometric_failure_frames": 0,
+    "support_failure_frames": 22,
+    "preunload_failure_frames": 12,
+    "grip_proxy_failure_frames": 0,
+    "total_failed_frames": 28,
+    "worst_failure_fraction": 0.4782608695652174,
+    "max_contact_gap_cm": 0.002098387579800451,
+    "max_rate_ratio": 0.23078955300123596,
+    "max_acceleration_ratio": 0.20921548321641845,
+    "max_elbow_swivel_deg_s": 3.5916192569567276,
+    "max_torso_rotation_deg_s": 8.586874492436213,
+    "converged": false,
+    "uncertainty": "Unmeasured geometry, approximate anatomy, inferred wrist orientation; no dynamic or full collision validation."
+  },
+  "solver": {
+    "success": false,
+    "message": "Maximum constrained iterations reached.",
+    "nit": 250,
+    "nfev": 1270,
+    "cost": 232.05193041041275,
+    "optimality": 0.019771618354896082,
+    "relative_cost_change": 0.00021825564588637543,
+    "linear_violation": 9.706480064153311e-11,
+    "complementarity": 6.025703685345186e-12,
+    "initial_projection": {
+      "iterations": 1725,
+      "primal": 2.328907052469899e-14,
+      "dual": 3.293220128883217e-14,
+      "success": true,
+      "status": "solved"
+    },
+    "seconds": 174.3252857089974,
+    "gradient_definition": "Fresh Lagrangian gradient normalized by current Jacobian columns; explicit box and linear rate multipliers."
+  },
+  "config": {
+    "height_cm": 180.0,
+    "clip": "right_elbow",
+    "frames": [
+      550,
+      595
+    ],
+    "iterations": 250,
+    "angles_deg": [
+      15,
+      0
+    ],
+    "fps": 30,
+    "experiment": "stage1_contact_consistency_v1",
+    "candidates": {
+      "legacy_control": 1.0,
+      "stage1_balanced": 1.0,
+      "stage1_steady": 2.5
+    },
+    "foot_model": "episode_surface_aligned_proxy; ankle ROM unchecked",
+    "hand_model": "source_rotational_chain; translations/girdle omitted",
+    "contact_tolerance_cm": 0.1,
+    "contact_labels_changed": false
+  }
+}

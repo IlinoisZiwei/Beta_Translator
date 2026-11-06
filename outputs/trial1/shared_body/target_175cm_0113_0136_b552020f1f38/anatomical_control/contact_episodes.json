@@ -1,0 +1,578 @@
+[
+  {
+    "episode": 0,
+    "limb": "left_hand",
+    "limb_index": 0,
+    "hold": "H44",
+    "start_frame": 0,
+    "end_frame": 112,
+    "panel": 0,
+    "rectangle_px": [
+      395.0,
+      585.0,
+      408.0,
+      592.0
+    ],
+    "anchor_px": [
+      396.0,
+      592.0
+    ],
+    "center_px": [
+      404.0725623582766,
+      592.8503401360545
+    ],
+    "offset_cm": [
+      -5.4405414312384295,
+      -2.813562498857651,
+      2.1
+    ],
+    "evidence_frames": 55,
+    "ground_proposal": false,
+    "expert_confirmed": false,
+    "offset_measured": false
+  },
+  {
+    "episode": 1,
+    "limb": "left_hand",
+    "limb_index": 0,
+    "hold": "H28",
+    "start_frame": 136,
+    "end_frame": 240,
+    "panel": 0,
+    "rectangle_px": [
+      443.0,
+      449.0,
+      452.0,
+      463.0
+    ],
+    "anchor_px": [
+      448.0,
+      452.0
+    ],
+    "center_px": [
+      446.94767441860466,
+      456.5901162790698
+    ],
+    "offset_cm": [
+      0.597834236346381,
+      -6.0957541966398345,
+      2.1
+    ],
+    "evidence_frames": 88,
+    "ground_proposal": false,
+    "expert_confirmed": false,
+    "offset_measured": false
+  },
+  {
+    "episode": 2,
+    "limb": "left_hand",
+    "limb_index": 0,
+    "hold": "H26",
+    "start_frame": 241,
+    "end_frame": 287,
+    "panel": 0,
+    "rectangle_px": [
+      460.0,
+      430.0,
+      476.0,
+      439.0
+    ],
+    "anchor_px": [
+      462.0,
+      438.0
+    ],
+    "center_px": [
+      470.6954128440367,
+      431.60733944954126
+    ],
+    "offset_cm": [
+      -6.118030608362187,
+      -0.29210695839608236,
+      2.1
+    ],
+    "evidence_frames": 23,
+    "ground_proposal": false,
+    "expert_confirmed": false,
+    "offset_measured": false
+  },
+  {
+    "episode": 3,
+    "limb": "left_hand",
+    "limb_index": 0,
+    "hold": "H16",
+    "start_frame": 305,
+    "end_frame": 366,
+    "panel": 0,
+    "rectangle_px": [
+      445.0,
+      332.0,
+      455.0,
+      350.0
+    ],
+    "anchor_px": [
+      455.0,
+      332.0
+    ],
+    "center_px": [
+      446.8985507246377,
+      342.96014492753625
+    ],
+    "offset_cm": [
+      -6.097910487690106,
+      -0.5754239168813114,
+      2.1
+    ],
+    "evidence_frames": 9,
+    "ground_proposal": false,
+    "expert_confirmed": false,
+    "offset_measured": false
+  },
+  {
+    "episode": 4,
+    "limb": "left_hand",
+    "limb_index": 0,
+    "hold": "H16",
+    "start_frame": 384,
+    "end_frame": 416,
+    "panel": 0,
+    "rectangle_px": [
+      447,
+      343,
+      447,
+      343
+    ],
+    "anchor_px": [
+      447,
+      343
+    ],
+    "center_px": [
+      446.8985507246377,
+      342.96014492753625
+    ],
+    "offset_cm": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "evidence_frames": 1,
+    "ground_proposal": false,
+    "expert_confirmed": false,
+    "offset_measured": false
+  },
+  {
+    "episode": 5,
+    "limb": "right_hand",
+    "limb_index": 1,
+    "hold": "H44",
+    "start_frame": 0,
+    "end_frame": 75,
+    "panel": 0,
+    "rectangle_px": [
+      399.0,
+      583.0,
+      405.0,
+      603.0
+    ],
+    "anchor_px": [
+      400.0,
+      583.0
+    ],
+    "center_px": [
+      404.0725623582766,
+      592.8503401360545
+    ],
+    "offset_cm": [
+      -4.891787660960319,
+      -3.6859243725389126,
+      2.1
+    ],
+    "evidence_frames": 48,
+    "ground_proposal": false,
+    "expert_confirmed": false,
+    "offset_measured": false
+  },
+  {
+    "episode": 6,
+    "limb": "right_hand",
+    "limb_index": 1,
+    "hold": "H33",
+    "start_frame": 103,
+    "end_frame": 210,
+    "panel": 0,
+    "rectangle_px": [
+      466.0,
+      492.0,
+      474.0,
+      506.0
+    ],
+    "anchor_px": [
+      471.0,
+      495.0
+    ],
+    "center_px": [
+      469.75,
+      499.9807692307692
+    ],
+    "offset_cm": [
+      1.1476273041888365,
+      -6.016525290454639,
+      2.1
+    ],
+    "evidence_frames": 102,
+    "ground_proposal": false,
+    "expert_confirmed": false,
+    "offset_measured": false
+  },
+  {
+    "episode": 7,
+    "limb": "right_hand",
+    "limb_index": 1,
+    "hold": "H26",
+    "start_frame": 226,
+    "end_frame": 282,
+    "panel": 0,
+    "rectangle_px": [
+      460.0,
+      430.0,
+      476.0,
+      439.0
+    ],
+    "anchor_px": [
+      466.0,
+      438.0
+    ],
+    "center_px": [
+      470.6954128440367,
+      431.60733944954126
+    ],
+    "offset_cm": [
+      5.976676041512573,
+      -1.3397643430132051,
+      2.1
+    ],
+    "evidence_frames": 34,
+    "ground_proposal": false,
+    "expert_confirmed": false,
+    "offset_measured": false
+  },
+  {
+    "episode": 8,
+    "limb": "right_hand",
+    "limb_index": 1,
+    "hold": "H23",
+    "start_frame": 283,
+    "end_frame": 307,
+    "panel": 0,
+    "rectangle_px": [
+      470,
+      409,
+      470,
+      409
+    ],
+    "anchor_px": [
+      470,
+      409
+    ],
+    "center_px": [
+      470.3238341968912,
+      409.06476683937825
+    ],
+    "offset_cm": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "evidence_frames": 0,
+    "ground_proposal": false,
+    "expert_confirmed": false,
+    "offset_measured": false
+  },
+  {
+    "episode": 9,
+    "limb": "right_hand",
+    "limb_index": 1,
+    "hold": "H17",
+    "start_frame": 327,
+    "end_frame": 416,
+    "panel": 0,
+    "rectangle_px": [
+      465.0,
+      354.0,
+      478.0,
+      371.0
+    ],
+    "anchor_px": [
+      476.0,
+      366.0
+    ],
+    "center_px": [
+      471.4372693726937,
+      363.619926199262
+    ],
+    "offset_cm": [
+      0.754605273436966,
+      -6.078338249990792,
+      2.1
+    ],
+    "evidence_frames": 44,
+    "ground_proposal": false,
+    "expert_confirmed": false,
+    "offset_measured": false
+  },
+  {
+    "episode": 10,
+    "limb": "left_foot",
+    "limb_index": 2,
+    "hold": "ground_left_001",
+    "start_frame": 0,
+    "end_frame": 2,
+    "panel": 3,
+    "rectangle_px": [
+      293.4362191208756,
+      878.411342037331,
+      293.4362191208756,
+      878.411342037331
+    ],
+    "anchor_px": [
+      293.4362191208756,
+      878.411342037331
+    ],
+    "center_px": [
+      293.4362191208756,
+      878.411342037331
+    ],
+    "offset_cm": [
+      0.0,
+      6.125000000000001,
+      0.0
+    ],
+    "evidence_frames": 3,
+    "ground_proposal": true,
+    "expert_confirmed": false,
+    "offset_measured": false
+  },
+  {
+    "episode": 11,
+    "limb": "left_foot",
+    "limb_index": 2,
+    "hold": "ground_left_002",
+    "start_frame": 36,
+    "end_frame": 62,
+    "panel": 3,
+    "rectangle_px": [
+      377.62908339409097,
+      815.1983774048789,
+      377.62908339409097,
+      815.1983774048789
+    ],
+    "anchor_px": [
+      377.62908339409097,
+      815.1983774048789
+    ],
+    "center_px": [
+      377.62908339409097,
+      815.1983774048789
+    ],
+    "offset_cm": [
+      0.0,
+      6.125000000000001,
+      0.0
+    ],
+    "evidence_frames": 27,
+    "ground_proposal": true,
+    "expert_confirmed": false,
+    "offset_measured": false
+  },
+  {
+    "episode": 12,
+    "limb": "left_foot",
+    "limb_index": 2,
+    "hold": "H62",
+    "start_frame": 83,
+    "end_frame": 179,
+    "panel": 0,
+    "rectangle_px": [
+      395.0,
+      722.0,
+      406.0,
+      731.0
+    ],
+    "anchor_px": [
+      403.0,
+      724.0
+    ],
+    "center_px": [
+      401.25416666666666,
+      726.8791666666667
+    ],
+    "offset_cm": [
+      0.8414846157653912,
+      7.829912428720399,
+      4.375
+    ],
+    "evidence_frames": 97,
+    "ground_proposal": false,
+    "expert_confirmed": false,
+    "offset_measured": false
+  },
+  {
+    "episode": 13,
+    "limb": "left_foot",
+    "limb_index": 2,
+    "hold": "H51",
+    "start_frame": 206,
+    "end_frame": 416,
+    "panel": 0,
+    "rectangle_px": [
+      416.0,
+      631.0,
+      428.0,
+      642.0
+    ],
+    "anchor_px": [
+      421.0,
+      634.0
+    ],
+    "center_px": [
+      423.0732394366197,
+      637.1211267605634
+    ],
+    "offset_cm": [
+      6.290522203821462,
+      4.737610727279012,
+      4.375
+    ],
+    "evidence_frames": 211,
+    "ground_proposal": false,
+    "expert_confirmed": false,
+    "offset_measured": false
+  },
+  {
+    "episode": 14,
+    "limb": "right_foot",
+    "limb_index": 3,
+    "hold": "ground_right_001",
+    "start_frame": 0,
+    "end_frame": 17,
+    "panel": 3,
+    "rectangle_px": [
+      396.9767104557773,
+      838.3903477857053,
+      396.9767104557773,
+      838.3903477857053
+    ],
+    "anchor_px": [
+      396.9767104557773,
+      838.3903477857053
+    ],
+    "center_px": [
+      396.9767104557773,
+      838.3903477857053
+    ],
+    "offset_cm": [
+      0.0,
+      6.125000000000001,
+      0.0
+    ],
+    "evidence_frames": 18,
+    "ground_proposal": true,
+    "expert_confirmed": false,
+    "offset_measured": false
+  },
+  {
+    "episode": 15,
+    "limb": "right_foot",
+    "limb_index": 3,
+    "hold": "H65",
+    "start_frame": 49,
+    "end_frame": 152,
+    "panel": 0,
+    "rectangle_px": [
+      440.0,
+      766.0,
+      455.0,
+      785.0
+    ],
+    "anchor_px": [
+      450.0,
+      768.0
+    ],
+    "center_px": [
+      441.69321266968325,
+      775.8054298642534
+    ],
+    "offset_cm": [
+      -6.523721012859289,
+      4.410973718622474,
+      4.375
+    ],
+    "evidence_frames": 104,
+    "ground_proposal": false,
+    "expert_confirmed": false,
+    "offset_measured": false
+  },
+  {
+    "episode": 16,
+    "limb": "right_foot",
+    "limb_index": 3,
+    "hold": "H60",
+    "start_frame": 173,
+    "end_frame": 265,
+    "panel": 0,
+    "rectangle_px": [
+      456.0,
+      696.0,
+      480.0,
+      711.0
+    ],
+    "anchor_px": [
+      480.0,
+      698.0
+    ],
+    "center_px": [
+      469.14948453608247,
+      704.930412371134
+    ],
+    "offset_cm": [
+      -6.2615559188424275,
+      4.775828983036282,
+      4.375
+    ],
+    "evidence_frames": 93,
+    "ground_proposal": false,
+    "expert_confirmed": false,
+    "offset_measured": false
+  },
+  {
+    "episode": 17,
+    "limb": "right_foot",
+    "limb_index": 3,
+    "hold": "H45",
+    "start_frame": 286,
+    "end_frame": 416,
+    "panel": 0,
+    "rectangle_px": [
+      512.0,
+      600.0,
+      526.0,
+      621.0
+    ],
+    "anchor_px": [
+      522.0,
+      603.0
+    ],
+    "center_px": [
+      514.7286624203822,
+      611.1031847133758
+    ],
+    "offset_cm": [
+      -7.180134650365761,
+      3.2343919679928983,
+      4.375
+    ],
+    "evidence_frames": 131,
+    "ground_proposal": false,
+    "expert_confirmed": false,
+    "offset_measured": false
+  }
+]

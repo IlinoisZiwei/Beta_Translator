@@ -1,0 +1,58 @@
+[
+  {
+    "episode": 12,
+    "limb": "left_foot",
+    "direction_source": "episode ankle-to-contact image direction",
+    "sole_normal_status": "assumed_from_scene_surface",
+    "ankle_rom_status": "checked against assumed screening bounds",
+    "measured": false,
+    "evidence_frames": 97,
+    "prior_frame_world": [
+      [
+        -0.10685518930354175,
+        0.9942745941232253,
+        0.0
+      ],
+      [
+        -0.9942745941232253,
+        -0.10685518930354175,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "role": "uncertain orientation prior, not actual foot transform",
+    "actual_patch": "trajectory.npz: foot_origins + foot_frames @ foot_patch_local_cm"
+  },
+  {
+    "episode": 15,
+    "limb": "right_foot",
+    "direction_source": "episode ankle-to-contact image direction",
+    "sole_normal_status": "assumed_from_scene_surface",
+    "ankle_rom_status": "checked against assumed screening bounds",
+    "measured": false,
+    "evidence_frames": 104,
+    "prior_frame_world": [
+      [
+        0.8284090175059414,
+        0.560123646809203,
+        0.0
+      ],
+      [
+        -0.560123646809203,
+        0.8284090175059414,
+        0.0
+      ],
+      [
+        0.0,
+        -0.0,
+        1.0
+      ]
+    ],
+    "role": "uncertain orientation prior, not actual foot transform",
+    "actual_patch": "trajectory.npz: foot_origins + foot_frames @ foot_patch_local_cm"
+  }
+]

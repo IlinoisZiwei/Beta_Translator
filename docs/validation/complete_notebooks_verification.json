@@ -1,0 +1,84 @@
+{
+  "date": "2026-11-05",
+  "notebooks": [
+    {
+      "path": "Trial1_Analysis.ipynb",
+      "sections": 20,
+      "executed_code_cells": 20,
+      "errors": 0,
+      "file_referenced_videos": 11,
+      "video_paths": [
+        "videos/trial1.mp4",
+        "outputs/videos/pose_output_h264.mp4",
+        "outputs/videos/wall_motion_h264.mp4",
+        "outputs/videos/motion_ik_h264.mp4",
+        "outputs/trial1/support_optimized/target_180cm_b55939aa0a8b/trial1_gravity_180cm_baseline.mp4",
+        "outputs/trial1/support_optimized/target_180cm_b55939aa0a8b/trial1_support_optimized_180cm_full_sequence.mp4",
+        "outputs/trial1/ground_support/target_180cm_bd8c3dc75cd8/trial1_support_optimized_180cm_full_sequence.mp4",
+        "outputs/trial1/refined_support/target_180cm_d7658052307a/trial1_support_optimized_180cm_full_sequence.mp4",
+        "outputs/trial1/technique_plans/target_180cm_cf107c3b5dfe/selected_plan.mp4",
+        "outputs/trial1/shared_body/target_175cm_0113_0136_1bfaad8728f4/presentation_2079d917c5/selected_plan_3d.mp4",
+        "outputs/trial1/shared_body/target_175cm_0113_0136_1bfaad8728f4/presentation_2079d917c5/candidate_comparison_3d.mp4"
+      ],
+      "sha256": "f056138236bd04e50bc32ac54ccce1af4d5197b97ea9f5f7f3fbf0a2bc956c09"
+    },
+    {
+      "path": "Trial2_Analysis.ipynb",
+      "sections": 24,
+      "executed_code_cells": 24,
+      "errors": 0,
+      "file_referenced_videos": 14,
+      "video_paths": [
+        "videos/trial2.mp4",
+        "outputs/trial2/videos/pose_output_h264.mp4",
+        "outputs/trial2/videos/automatic_contacts_h264.mp4",
+        "outputs/trial2/videos/identity_comparison_h264.mp4",
+        "outputs/trial2/spatial_plans/target_180cm_5f9e7fcd448b_native/angle_comparison_3d.mp4",
+        "outputs/trial2/spatial_plans/target_180cm_5f9e7fcd448b_native/selected_plan_3d.mp4",
+        "outputs/trial2/anatomy_plans/target_180cm_controls_db7b5a5de762/presentation_0ca2490189/hinge_transition_comparison.mp4",
+        "outputs/trial2/anatomy_plans/target_180cm_controls_db7b5a5de762/presentation_0ca2490189/right_elbow_comparison.mp4",
+        "outputs/trial2/anatomy_plans/target_180cm_controls_db7b5a5de762/presentation_0ca2490189/left_elbow_comparison.mp4",
+        "outputs/trial2/anatomy_plans/target_180cm_controls_db7b5a5de762/presentation_0ca2490189/selected_plan_3d.mp4",
+        "outputs/trial2/anatomy_plans/target_180cm_controls_db7b5a5de762/presentation_0ca2490189/full_comparison_3d.mp4",
+        "outputs/trial2/stage1_contacts/target_180cm_right_elbow_f848fc019f86/presentation_9b15375e0f/contact_comparison_3d.mp4",
+        "outputs/trial2/shared_body/target_175cm_0550_0595_b4157dbbbcd8/presentation_93eed2af0c/selected_plan_3d.mp4",
+        "outputs/trial2/shared_body/target_175cm_0550_0595_b4157dbbbcd8/presentation_93eed2af0c/candidate_comparison_3d.mp4"
+      ],
+      "sha256": "ad7acf7c7ae8614ec97c491c82550720fe46b39dc6dc6212f5bbf8ab885f7073"
+    },
+    {
+      "path": "Trial3_Analysis.ipynb",
+      "sections": 22,
+      "executed_code_cells": 22,
+      "errors": 0,
+      "file_referenced_videos": 13,
+      "video_paths": [
+        "videos/trial3.mp4",
+        "outputs/trial3/videos/automatic_contacts_h264.mp4",
+        "outputs/trial3/videos/trial3_target_180cm_ik_demo.mp4",
+        "outputs/trial3/full_sequence/target_180cm_787124fd4c70/trial3_target_180cm_full_sequence.mp4",
+        "outputs/trial3/gravity_sequence/target_180cm_2d99b8e3320c/trial3_gravity_180cm_full_sequence.mp4",
+        "outputs/trial3/support_optimized/target_180cm_a9a3f35dffe1/trial3_support_optimized_180cm_full_sequence.mp4",
+        "outputs/trial3/spatial_experiments/target_180cm_8aa2d71aa739/reachable_angles.mp4",
+        "outputs/trial3/spatial_experiments/target_180cm_8aa2d71aa739/span_conflict_angles.mp4",
+        "outputs/trial3/spatial_experiments/refined_angles_180cm/refined_angles.mp4",
+        "outputs/trial3/contact_region_plans/target_180cm_9cd2cf3084ba_native/selected_plan.mp4",
+        "outputs/trial3/contact_region_plans/target_180cm_9cd2cf3084ba_native/comparison.mp4",
+        "outputs/trial3/shared_body/target_175cm_0296_0331_9e658f0d515a/presentation_dd7502e91d/selected_plan_3d.mp4",
+        "outputs/trial3/shared_body/target_175cm_0296_0331_9e658f0d515a/presentation_dd7502e91d/candidate_comparison_3d.mp4"
+      ],
+      "sha256": "9ec25f36e1584f689226d3bd26222a68dc78f43a4d5a20fc29d67f75e2b722cf"
+    }
+  ],
+  "review_workflow_tests_passed": 5,
+  "model_code_unchanged": true,
+  "preserved_output_files": 1777,
+  "source_videos_unchanged": true,
+  "beta_translator_notebook_unchanged": true,
+  "old_notebook_snapshots_exact": true,
+  "missing_files": [],
+  "unexpected_changes": [],
+  "prior_results_recomputed": false,
+  "review_exports_created_by_run_all": false,
+  "note": "66 code cells executed in the actual repository. Historical result heights and current 175 cm verification remain separate."
+}

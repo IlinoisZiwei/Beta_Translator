@@ -1,0 +1,258 @@
+{
+  "native_frames": 503,
+  "known_contact_samples": 1749,
+  "ground_samples": 0,
+  "body_implementation": "beta_translator.body_articulation.BodyProblem",
+  "native_time_axis_complete": true,
+  "source_visibility_preserved": true,
+  "scene": {
+    "kind": "single_plane_hypothesis",
+    "angles_deg": [
+      15.0,
+      15.0
+    ],
+    "normals": [
+      [
+        0.0,
+        -0.25881904510252074,
+        0.9659258262890683
+      ],
+      [
+        0.0,
+        -0.25881904510252074,
+        0.9659258262890683
+      ],
+      [
+        0.0,
+        -0.25881904510252074,
+        0.9659258262890683
+      ],
+      [
+        0.0,
+        1.0,
+        0.0
+      ]
+    ],
+    "origins_cm": [
+      [
+        0.0,
+        400.0,
+        0.0
+      ],
+      [
+        0.0,
+        400.0,
+        0.0
+      ],
+      [
+        0.0,
+        400.0,
+        0.0
+      ],
+      [
+        0.0,
+        400.0,
+        0.0
+      ]
+    ],
+    "meshes_cm": [
+      [
+        [
+          -229.7837516398252,
+          497.9659755075343,
+          26.249904022970924
+        ],
+        [
+          247.3819591658143,
+          637.5043546208682,
+          63.639100019536585
+        ],
+        [
+          169.12275140776387,
+          -148.1291658108567,
+          -146.870767326964
+        ],
+        [
+          -163.9642096671114,
+          -104.77313267658238,
+          -135.25355326161818
+        ]
+      ]
+    ],
+    "hinges_cm": [],
+    "physical_validation": false,
+    "camera": {
+      "K": [
+        [
+          566.7378851855864,
+          0.0,
+          360.0
+        ],
+        [
+          0.0,
+          566.7378851855864,
+          640.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "R": [
+        [
+          0.9830182174089251,
+          0.01596172534663772,
+          0.18281249291593274
+        ],
+        [
+          0.04418753412118265,
+          -0.9874866545209224,
+          -0.15138549788987607
+        ],
+        [
+          0.17810852329540203,
+          0.1568927355457698,
+          -0.9714226801256476
+        ]
+      ],
+      "t_cm": [
+        22.769615071327667,
+        -247.90371941027087,
+        342.2190699039135
+      ],
+      "camera_center_cm": [
+        -72.38082554240648,
+        -298.856742898913,
+        290.7477679905644
+      ],
+      "fitting_rmse_px": 0.34320795022683004,
+      "reserved_rmse_px": 0.3712069717126721,
+      "reserved_p95_px": 0.6468838478272367,
+      "principal_x_px": 360.0,
+      "fit_principal_y": false,
+      "measured_intrinsics": false,
+      "measured_wall_tilt": false,
+      "distortion": "Assumed zero; resized/cropped video intrinsics not supplied.",
+      "solver_success": true,
+      "alternatives": [
+        {
+          "K": [
+            [
+              303.0056801396069,
+              0.0,
+              324.0
+            ],
+            [
+              0.0,
+              303.0056801396069,
+              672.2261297916779
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "R": [
+            [
+              0.9948466196681383,
+              0.02589460676167433,
+              0.09802893794965192
+            ],
+            [
+              0.033897992994184924,
+              -0.9961473540345591,
+              -0.08087876804769535
+            ],
+            [
+              0.0955569432634,
+              0.08378495324701786,
+              -0.9918916030512358
+            ]
+          ],
+          "t_cm": [
+            44.46929484904865,
+            -267.2890320859991,
+            182.9141743972092
+          ],
+          "camera_center_cm": [
+            -52.6582853074739,
+            -282.73623252809847,
+            155.45374829044246
+          ],
+          "fitting_rmse_px": 0.3350876823050967,
+          "reserved_rmse_px": 0.36063999841529315,
+          "reserved_p95_px": 0.6333974745849631,
+          "principal_x_px": 324.0,
+          "fit_principal_y": true,
+          "measured_intrinsics": false,
+          "measured_wall_tilt": false,
+          "distortion": "Assumed zero; resized/cropped video intrinsics not supplied.",
+          "solver_success": true
+        },
+        {
+          "K": [
+            [
+              724.2872281615519,
+              0.0,
+              396.00000000000006
+            ],
+            [
+              0.0,
+              724.2872281615519,
+              612.8225360701183
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "R": [
+            [
+              0.9721404453550004,
+              0.005985684322050499,
+              0.23432269648537712
+            ],
+            [
+              0.052631720140983995,
+              -0.9797214993032803,
+              -0.19332792306838054
+            ],
+            [
+              0.22841378360331616,
+              0.20027469981535184,
+              -0.95274193151865
+            ]
+          ],
+          "t_cm": [
+            1.0053553511692663,
+            -231.42911258836807,
+            437.2274484031833
+          ],
+          "camera_center_cm": [
+            -88.66561009759324,
+            -314.30769088724696,
+            371.5876364535402
+          ],
+          "fitting_rmse_px": 0.3350876823050985,
+          "reserved_rmse_px": 0.3606400050462989,
+          "reserved_p95_px": 0.6333974798348193,
+          "principal_x_px": 396.00000000000006,
+          "fit_principal_y": true,
+          "measured_intrinsics": false,
+          "measured_wall_tilt": false,
+          "distortion": "Assumed zero; resized/cropped video intrinsics not supplied.",
+          "solver_success": true
+        }
+      ],
+      "frame_pose_note": "Tracked wall homographies supply correspondences; not independent multi-view depth observations.",
+      "tilt_identifiable": false,
+      "grid_point_count": 373,
+      "reserved_count": 72
+    },
+    "floor_model": "unmodeled",
+    "world_origin_note": "Arbitrary vertical translation; not a measured floor"
+  }
+}

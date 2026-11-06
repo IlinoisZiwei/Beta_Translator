@@ -1,0 +1,19 @@
+{
+  "provenance": {
+    "summary": "58478324f28d2dcb3c38202504b35ced96598c81e01ca9d26891817c1873ea74",
+    "renderer": "88a32f81d6dd781fe0b8ce5926c68b93702f69b723553297a28d2a6d7ec11920",
+    "shared_renderer": "9c5fe826e219df2198c3485e2dca8182825594c658ff37935284943901559d26",
+    "encoder": "33be7a7089eb6bb8f890da4533506af46978ed3f57e1fd684d0a2d09269077df"
+  },
+  "frames": 46,
+  "fps": 30,
+  "output_sha256": {
+    "contact_metrics.png": "3a56c71a9d94d7de60e3466cbd47b97225fe4ce958fdb50cd1f7333417246a1e",
+    "selected_target_reach.csv": "36d4c35684078d7f095d148413540cd30f5ccf47c8916c7adadba59615435d28",
+    "contact_review.csv": "5b4b4f2d9f60109ad5c74dd2dc0d00a608461106d743893720f989c61ac476d2",
+    "common_swivel.csv": "937e9feb78c80e6ec49f1faf87adf6646e328171624b3bbe282b0f937cd39007",
+    "contact_comparison_3d.mp4": "062fa4b3d99b6dc80372118358266f41ceaa7870ff13ce2df55b286bd8ff2064",
+    "result_notes.md": "0facbc2779cf0546c2e5d74ab71762937f8f3f5031b500bddbf0205bff230cbf",
+    "contact_comparison_3d.jpg": "a56c01fd903d6eb9fc08823299ad4b235b3338680eafb8011c37b58c776225a2"
+  }
+}

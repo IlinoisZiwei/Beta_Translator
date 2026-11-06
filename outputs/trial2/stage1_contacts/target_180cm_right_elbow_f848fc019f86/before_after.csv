@@ -1,0 +1,4 @@
+candidate,frames,declared_contact_failure_frames,common_patch_failure_frames,common_hand_max_gap_cm,common_foot_max_gap_cm,common_support_failure_frames,common_preunload_failure_frames,matched_contact_samples,contact_samples,stance_patch_step_max_cm,joint_acceleration_rms_cm_s2,elbow_swivel_p95_deg_s,anatomical_temporal_failure_frames,bone_error_cm,converged
+legacy_control,46,0,30,3.703876536108037,0.0012150842032279212,44,12,57,111,0.5640876221136173,130.39319457632686,52.129790882292696,0,4.263256414560601e-14,False
+stage1_balanced,46,0,0,0.0008185281084139978,0.0016473488089193476,22,12,111,111,0.0030298672361653406,59.43550738591595,20.689687931936426,0,4.263256414560601e-14,False
+stage1_steady,46,0,0,0.0007948388953436647,0.002098387579800451,22,12,111,111,0.003808209524684367,41.94085843556491,3.447685258931308,0,4.973799150320701e-14,False

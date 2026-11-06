@@ -1,0 +1,11 @@
+{
+  "whole_patch_span_conflict_frames": 53,
+  "max_whole_patch_endpoint_bound_cm": 17.547122327870014,
+  "instantaneous_known_contact_switches": 2,
+  "floor_edge_height_disagreement_cm": 2.604209820097992,
+  "missing_source_pose_frames": 14,
+  "identity_rejected_frames": 10,
+  "ground_proposal_limb_frames": 78,
+  "physical_validation": false,
+  "interpretation": "Geometry and timing contradictions are conditional diagnoses; solver failure is reported independently."
+}

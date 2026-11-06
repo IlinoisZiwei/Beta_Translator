@@ -1,0 +1,52 @@
+{
+  "config": {
+    "height_cm": 180.0,
+    "clip": "right_elbow",
+    "frames": [
+      550,
+      595
+    ],
+    "iterations": 250,
+    "angles_deg": [
+      15,
+      0
+    ],
+    "fps": 30,
+    "experiment": "stage1_contact_consistency_v1",
+    "candidates": {
+      "legacy_control": 1.0,
+      "stage1_balanced": 1.0,
+      "stage1_steady": 2.5
+    },
+    "foot_model": "episode_surface_aligned_proxy; ankle ROM unchecked",
+    "hand_model": "source_rotational_chain; translations/girdle omitted",
+    "contact_tolerance_cm": 0.1,
+    "contact_labels_changed": false
+  },
+  "input_sha256": {
+    "outputs/trial2/anatomy_plans/target_180cm_controls_db7b5a5de762/balanced/trajectory.npz": "4373de66f366e8c875f4ae66d9ce319082d41a8c9a6da1e5b2675d3b77ab330b",
+    "outputs/trial2/anatomy_plans/target_180cm_controls_db7b5a5de762/initialization.npz": "05f57ece9f02937c9596480c91aea79565c9bb2e940b6e05d59611f6defa7264",
+    "data/trial2_stage1_chain_reference.json": "146986abbb5dab2ef54acebac5a1b5b43a19df80330163f5fd464bd67212626e",
+    "data/trial2_spatial_hypotheses.json": "4bd444723882313190e8990f6831478062b24120082587636ecb816a9272c9a3",
+    "videos/trial2.mp4": "9964d27ca051953d77cf10ee94a1772bd73e30d7e23fa09a54983c3630e8a068",
+    "outputs/trial2/state/reviewed_hold_map.npz": "5b0c612f577e29c9514f075051341dadbb9a45c71f7172e0a1114d4a4091f5e6",
+    "outputs/trial2/state/alignment_cache.npz": "05c419c1804d5c90f61e6ead7a68c60c5a421c54d944bdc2e0903319506ccdc7",
+    "outputs/trial2/state/identity_guard.npz": "f745b51dda2335d3e934983ae9a94045e4da5fd4400e9f8fe6dc51479cbd8e4a",
+    "outputs/trial2/tables/pose_coordinates.csv": "8f8ee0c55b8be57862de3d3c16d6f590eece9f82b2ced602b709f096c9298f0b",
+    "outputs/trial2/automatic/wholebody.npz": "cb861eaa2fa17ed2592d43033312a1f718bc054fa112c6ad1732c2e7315bc1c9",
+    "outputs/trial2/automatic/predictions/limb_contacts.csv": "d8d324f68116c935a593c5923cc8fb67ac1bd390e7fb45b9cb860e2663051237",
+    "beta_translator/trial2_stage1.py": "ae78616e591a1e00406336afb974daaa90a53722afcff6fb5ea3f19e628ac81a",
+    "beta_translator/trial2_stage1_pipeline.py": "add7b640b1a4a3418aecb303581e4e2e09609342c8c0e6de7534107d9e58ced4",
+    "beta_translator/anatomical_arms.py": "22ab73e501f5d9938cce25f40996f4b8e728c5b6c8662d5b861be829f5420de0",
+    "beta_translator/trial2_anatomy_optimizer.py": "7f2ba21b2b8278d0c669793ede19e55f69e6d37eed21ade1e526dbf8fd846b96",
+    "beta_translator/trial2_spatial_optimizer.py": "4612f083eb487748338a4f8bd56f7668fd74a3ae305748e1fb183ad6fdddb3a6",
+    "beta_translator/trial2_spatial_data.py": "d24a8275c23bfd7aef710a3b75ab16093fb03f1e90a057eb274e03db62ee00d7",
+    "beta_translator/trial2_scene3d.py": "f9241ef48c2acf0dc8d5fda8b89c1cb65b9e7d1b63d5fe7e9ddb3370f468adcb",
+    "beta_translator/restored_sequence_solver.py": "d356ed3d071c59357e7157fb8060590a8fd0099d06b20de191cea2571d156c6a",
+    "beta_translator/constrained_sequence_solver.py": "8350fa2ce97b954ac0bd6587042b46bcf0d4a8e873f8a5f23a4d022a68ae59d4",
+    "beta_translator/inverse_kinematics.py": "164c34768cb5a55dee18249bd16f1376a58a98670065d12fd2274dc1783b8544",
+    "beta_translator/ik3d.py": "fbbdb991d8d2301f3f8e21e8b6cc6a64a9603eaac79beadad68362a69fed171a",
+    "beta_translator/scene3d.py": "f3d99c84bf34fb1f84ef9ce9375cb6af91ca1c2272db5235e4596e1ef054588f",
+    "beta_translator/contact_regions3d.py": "7145d2e67d4963704ada30110605b8e6ab529a1179b12e440e65b72cd819de3a"
+  }
+}

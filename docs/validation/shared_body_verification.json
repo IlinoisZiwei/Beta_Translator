@@ -1,0 +1,117 @@
+{
+  "height_cm": 180,
+  "regression_tests_passed": 242,
+  "native_frame_checks": [
+    {
+      "trial": "trial1",
+      "native_frames": 417,
+      "max_bone_error_cm": 7.105427357601002e-14,
+      "contact_definition_disagreement_cm": 5.684341886080802e-14,
+      "missing_source_frames": 0,
+      "height_cm": 180,
+      "full_optimization_performed": false
+    },
+    {
+      "trial": "trial2",
+      "native_frames": 976,
+      "max_bone_error_cm": 6.039613253960852e-14,
+      "contact_definition_disagreement_cm": 7.105427357601002e-15,
+      "missing_source_frames": 10,
+      "height_cm": 180,
+      "full_optimization_performed": false
+    },
+    {
+      "trial": "trial3",
+      "native_frames": 503,
+      "max_bone_error_cm": 4.263256414560601e-14,
+      "contact_definition_disagreement_cm": 1.4210854715202004e-14,
+      "missing_source_frames": 0,
+      "height_cm": 180,
+      "full_optimization_performed": false
+    }
+  ],
+  "short_runs": [
+    {
+      "trial": "trial1",
+      "frames": [
+        113,
+        136
+      ],
+      "native_verification_frames": 24,
+      "selected_candidate": "steady",
+      "contact_failure_frames": 0,
+      "support_failure_frames": 23,
+      "preunload_failure_frames": 0,
+      "preunload_applicable_frames": 0,
+      "anatomy_temporal_failure_frames": 0,
+      "converged": false,
+      "unknown_constraint_categories": 24,
+      "selection_status": "diagnostic_only_not_feasible",
+      "notebook_cells_executed": 9,
+      "notebook_errors": 0,
+      "output_path": "outputs/trial1/shared_body/target_180cm_0113_0136_c6d7e47a7336"
+    },
+    {
+      "trial": "trial2",
+      "frames": [
+        550,
+        595
+      ],
+      "native_verification_frames": 46,
+      "selected_candidate": "steady",
+      "contact_failure_frames": 0,
+      "support_failure_frames": 22,
+      "preunload_failure_frames": 12,
+      "preunload_applicable_frames": 12,
+      "anatomy_temporal_failure_frames": 0,
+      "converged": false,
+      "unknown_constraint_categories": 24,
+      "selection_status": "diagnostic_only_not_feasible",
+      "notebook_cells_executed": 9,
+      "notebook_errors": 0,
+      "output_path": "outputs/trial2/shared_body/target_180cm_0550_0595_9508cd8b47a8"
+    },
+    {
+      "trial": "trial3",
+      "frames": [
+        296,
+        331
+      ],
+      "native_verification_frames": 36,
+      "selected_candidate": "steady",
+      "contact_failure_frames": 0,
+      "support_failure_frames": 20,
+      "preunload_failure_frames": 6,
+      "preunload_applicable_frames": 6,
+      "anatomy_temporal_failure_frames": 0,
+      "converged": false,
+      "unknown_constraint_categories": 24,
+      "selection_status": "diagnostic_only_not_feasible",
+      "notebook_cells_executed": 9,
+      "notebook_errors": 0,
+      "output_path": "outputs/trial3/shared_body/target_180cm_0296_0331_e857f5f9be86"
+    }
+  ],
+  "preservation": {
+    "preexisting_files": 1801,
+    "preexisting_output_files_preserved": 1558,
+    "changed_existing_files": [
+      "Trial3_Analysis.ipynb",
+      "Trial2_Analysis.ipynb",
+      "Trial1_Analysis.ipynb",
+      "README.md",
+      "beta_translator/trial2_spatial_render.py",
+      "beta_translator/trial2_spatial_optimizer.py",
+      "beta_translator/anatomical_arms.py",
+      "beta_translator/trial2_anatomy_optimizer.py",
+      "beta_translator/trial2_spatial_data.py",
+      "beta_translator/trial2_stage1.py",
+      "docs/body_constraint_specification.md"
+    ],
+    "unexpected_changes": [],
+    "missing_old_files": [],
+    "Beta_Translator_unchanged": true
+  },
+  "full_sequence_optimization_performed": false,
+  "full_specification_implemented": false
+}

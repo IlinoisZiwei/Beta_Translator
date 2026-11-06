@@ -1,0 +1,588 @@
+{
+  "provenance": {
+    "config": {
+      "trial_config": {
+        "schema_version": 1,
+        "trial": "trial2",
+        "adapter": "joined_panels",
+        "input_root": "outputs/trial2",
+        "video": "videos/trial2.mp4",
+        "frame_count": 976,
+        "fps": 30.0,
+        "scene": {
+          "middle_deg": 15.0,
+          "upper_deg": 0.0,
+          "spacing_cm": 15.0
+        },
+        "baseline": "outputs/trial2/anatomy_plans/target_180cm_controls_db7b5a5de762/balanced/trajectory.npz",
+        "verification_frames": [
+          550,
+          595
+        ],
+        "notes": [
+          "Joined wall panels are hypotheses, not measured angles.",
+          "Identity-rejected observations retain zero evidence weight."
+        ]
+      },
+      "height_cm": 175.0,
+      "ratios": {
+        "upper_arm": 0.17142857142857143,
+        "forearm": 0.13714285714285715,
+        "thigh": 0.24571428571428572,
+        "shank": 0.24,
+        "shoulder_w": 0.22857142857142856,
+        "hip_w": 0.17142857142857143,
+        "torso": 0.28
+      },
+      "frames": [
+        550,
+        595
+      ],
+      "iterations": 35,
+      "candidates": {
+        "anatomical_control": 1.0,
+        "steady": 2.5
+      },
+      "body_model": "personalized_mechanics_v3",
+      "user_profile": {
+        "schema_version": 1,
+        "user_id": "trial_user_175",
+        "height_cm": 175.0,
+        "arm_span_cm": 176.0,
+        "mass_kg": 70.0,
+        "dimensions_cm": {
+          "upper_arm": 30.0,
+          "forearm": 24.0,
+          "thigh": 43.0,
+          "shank": 42.0,
+          "shoulder_w": 40.0,
+          "hip_w": 30.0,
+          "torso": 49.0,
+          "hand_length": 14.0,
+          "hand_patch_distance": 7.0,
+          "hand_patch_depth": 2.0,
+          "foot_length": 25.0,
+          "foot_width": 9.0,
+          "foot_depth": 3.0
+        },
+        "evidence": {
+          "height": "user_requested_demonstration_value",
+          "arm_span": "user_confirmed_demonstration_value",
+          "geometry": "project_assumption: symmetric proportions; not a measured person",
+          "mass": "project_assumption: 70 kg; replace with user measurement",
+          "capabilities": "project_assumption: illustrative screening limits, not personal calibration",
+          "fatigue": "project_assumption: joint-actuator 3CC proxy; fresh start at clip boundary",
+          "inertia": "project_assumption: uniform cylinders/sphere with population mass priors"
+        },
+        "biomechanics": {
+          "shoulder_envelope": {
+            "plane_deg": [
+              -90,
+              20,
+              130
+            ],
+            "elevation_deg": [
+              0,
+              60,
+              120,
+              180
+            ],
+            "lower_deg": [
+              [
+                -70,
+                -80,
+                -65,
+                -40
+              ],
+              [
+                -70,
+                -90,
+                -70,
+                -45
+              ],
+              [
+                -65,
+                -75,
+                -60,
+                -35
+              ]
+            ],
+            "upper_deg": [
+              [
+                15,
+                20,
+                10,
+                0
+              ],
+              [
+                20,
+                20,
+                15,
+                5
+              ],
+              [
+                10,
+                15,
+                5,
+                0
+              ]
+            ]
+          },
+          "capsule_radii_cm": [
+            9,
+            8,
+            3.8,
+            3,
+            2.5,
+            3.8,
+            3,
+            2.5,
+            6.5,
+            4.5,
+            3,
+            6.5,
+            4.5,
+            3
+          ],
+          "mass_fractions": [
+            0.497,
+            0.081,
+            0.028,
+            0.016,
+            0.006,
+            0.028,
+            0.016,
+            0.006,
+            0.1,
+            0.0465,
+            0.0145,
+            0.1,
+            0.0465,
+            0.0145
+          ],
+          "com_fractions": [
+            0.5,
+            0.5,
+            0.436,
+            0.43,
+            0.5,
+            0.436,
+            0.43,
+            0.5,
+            0.433,
+            0.433,
+            0.5,
+            0.433,
+            0.433,
+            0.5
+          ],
+          "collision_clearance_cm": 0.2,
+          "torque_positive_nm": [
+            [
+              60,
+              50,
+              35
+            ],
+            [
+              45,
+              20,
+              20
+            ],
+            [
+              12,
+              10,
+              10
+            ],
+            [
+              60,
+              50,
+              35
+            ],
+            [
+              45,
+              20,
+              20
+            ],
+            [
+              12,
+              10,
+              10
+            ],
+            [
+              100,
+              80,
+              60
+            ],
+            [
+              90,
+              35,
+              35
+            ],
+            [
+              60,
+              25,
+              25
+            ],
+            [
+              100,
+              80,
+              60
+            ],
+            [
+              90,
+              35,
+              35
+            ],
+            [
+              60,
+              25,
+              25
+            ]
+          ],
+          "torque_negative_nm": [
+            [
+              50,
+              45,
+              30
+            ],
+            [
+              35,
+              18,
+              18
+            ],
+            [
+              10,
+              9,
+              9
+            ],
+            [
+              50,
+              45,
+              30
+            ],
+            [
+              35,
+              18,
+              18
+            ],
+            [
+              10,
+              9,
+              9
+            ],
+            [
+              90,
+              70,
+              55
+            ],
+            [
+              70,
+              30,
+              30
+            ],
+            [
+              45,
+              20,
+              20
+            ],
+            [
+              90,
+              70,
+              55
+            ],
+            [
+              70,
+              30,
+              30
+            ],
+            [
+              45,
+              20,
+              20
+            ]
+          ],
+          "velocity_scale_rad_s": 4.0,
+          "fatigue_rate_s": 0.02,
+          "recovery_rate_s": 0.005,
+          "activation_rate_s": 5.0,
+          "deactivation_rate_s": 5.0,
+          "initial_fatigue_state": [
+            0,
+            1,
+            0
+          ],
+          "max_fatigued_fraction": 0.35,
+          "force_tolerance_bw": 0.02,
+          "moment_tolerance_bw_m": 0.01
+        }
+      },
+      "advanced_constraints": true
+    },
+    "input_sha256": {
+      "beta_translator/__init__.py": "5133d13ec6483d3ef2ade0dbd05cd67da2fffb42e7b1d542b592c88983370469",
+      "beta_translator/anatomical_arms.py": "a86de348c801d776914496850dc072bd9e59c0522a5202b7b70ffdca67eb6dd7",
+      "beta_translator/automatic_contacts.py": "3b7d021482eb1c40693633c5f056a7f5925861257a90565643adeded68bddff1",
+      "beta_translator/body_articulation.py": "1ca51b58e50170241091b2341d8a9e5e8a33c6ed8ad85a275f14ce38c155849b",
+      "beta_translator/body_checks.py": "6d92ffa480bab458b9471b7531c6f0709a2e6356ff620551bb24e1228cdba151",
+      "beta_translator/body_constraints.py": "c0b510eb75b5c86e070720c578145694cc6ce4f1a5ed73fa8182bf5e4f5172b1",
+      "beta_translator/body_contacts.py": "ca78545d295a7585bc9d3a8c61ea6d4c83cf72f37e22b88598f96ea78599f1d0",
+      "beta_translator/body_kinematics.py": "d7156e9fe38642342264d0d20bbb0f65364932484dcd59883d6ee3eaee60a5d0",
+      "beta_translator/body_leg_reference.py": "46ccd7ad6a28648d4b6a0f368fb6c6c076a9f5a06bfdaf13ba2fe1127f1323de",
+      "beta_translator/body_legs.py": "61781c19fcecc40284bdb8ebe232825b7f247a5a42f85401ddf80d9bb5f8291f",
+      "beta_translator/body_mechanics.py": "20daef3f92021cfac8dc3f89464f7ecbe4aa151a48ca67bd6840fa3cf59d105a",
+      "beta_translator/body_model.py": "114c0294acc3fd4c0c2bba889b8c34c5232e67df2419e09a0b3ab5938b3cc03c",
+      "beta_translator/body_notebook.py": "0d83b394e998d2ccf669ff21352e3287b1063cd53309fef8aca9b3a35e76663a",
+      "beta_translator/body_optimizer.py": "5919ab4b9fc0f2e1d43cf671677deea4dc3440b920f86a2883e39577aff527ae",
+      "beta_translator/body_personalized.py": "3af0bab756c5a9b267015b3bf7fe0f8c0a4899f1592f7c5c243dafcebfd36f00",
+      "beta_translator/body_pipeline.py": "1c6a743342fbbb361f220f38276653610ed507fe61694fbfbb63e75aee364416",
+      "beta_translator/body_reference.py": "ff6348746047bde4530c5e1c4b4434cba5e0d98300f9145ba0a8ebf27970148f",
+      "beta_translator/body_regions.py": "7f7bb1780418b4a66b47e5098b0e813537a3a7ecbf8b17a9e0eb749b50e88ae8",
+      "beta_translator/body_render.py": "1f60b8c44038911f2a0c07111311adb3cd0ff2a4514273d2eeebbde5008b78af",
+      "beta_translator/body_report.py": "9dafe21c8212a841eb7a3b2738bee762828aa4374a6b1a12813b56cd1ec9dbd3",
+      "beta_translator/body_scenes.py": "2858ec660ddb95d7713c650fde76bce0bddddfb197d47d206e3532a22ee36e75",
+      "beta_translator/body_support.py": "a46398080bacf7a58d926d8eec4d5d2f39c2df2967f627587baea810e0ebbafb",
+      "beta_translator/body_user.py": "de193e74111d678557032e362398675ec1cfbadc776f25031d199d42c92700a4",
+      "beta_translator/constrained_sequence_solver.py": "8350fa2ce97b954ac0bd6587042b46bcf0d4a8e873f8a5f23a4d022a68ae59d4",
+      "beta_translator/contact_baseline.py": "a02934a954f915f74d6d49d313ee1c61b0b7b976cf4d0ed0cdee00f5b47dea4e",
+      "beta_translator/contact_decoding.py": "e858d44ff5808d7c859d55e2080bc33624d6f5a08fecb4f6eb131d0cacded2e9",
+      "beta_translator/contact_evaluation.py": "50545e92d81539617d227e4e3a0e167132f05c89843761b492599d0750e7eec9",
+      "beta_translator/contact_features.py": "71736645e2f1128bf7f6d7f0c13f67e9deb3e30972723c093564d5100e3ef6ed",
+      "beta_translator/contact_geometry.py": "3ffb0f096fd95cad0f3ba4253f451341dff4964593bfb297309468ed5570e8f9",
+      "beta_translator/contact_matching.py": "511f637c5d83d85535f05961df860cfa01586e2a6d45008189596b05910a668e",
+      "beta_translator/contact_network.py": "45f5623f9d558dd6c6a26c5bfa39815a67f93947372159158cc13355bc69264a",
+      "beta_translator/contact_regions3d.py": "7145d2e67d4963704ada30110605b8e6ab529a1179b12e440e65b72cd819de3a",
+      "beta_translator/contact_review.py": "1130bb833cab6d0a96c1e0d6785b53f5c1e7894ed34caeddaa094f8fa9fd8605",
+      "beta_translator/contact_runner.py": "c29fa6297e282895e0d338a83e622e8c805edcd655a579f86e4363aca3b988fc",
+      "beta_translator/direct_ik.py": "2ffe56107d3d19f61286b1217d86942dd62a3822e359654905a1638c6e7e0f84",
+      "beta_translator/full_sequence.py": "07bf9d4b3ffb231770aa208f9029a551346b7ce1d76c2500c4ee516e13cfe0f1",
+      "beta_translator/full_sequence_pipeline.py": "a75f8f3fd15c0084dfc95341daa6dcf415c8509703af1f19910ef409683927e4",
+      "beta_translator/gravity_comparison.py": "841b91c021af38917e5926a871ab0337859ce255b9a28115fea24b3c6fa0d105",
+      "beta_translator/gravity_sequence.py": "19b33afefef5ed2bf68bd2242d7c8523139dfdd36fa6c41e1cbd2cbf7c3eab36",
+      "beta_translator/gravity_sequence_pipeline.py": "e579fee26ecc3022e7dbf1ed642f7abce558e72ce1990dc11f0c1b9dd4c8825e",
+      "beta_translator/ground_support.py": "03c5ca1b72070f177f6104de917c894d47931b757548459c3fab569456cca9b0",
+      "beta_translator/hold_mapping.py": "bde3c81e6326e16a2648ba8534089eb89e8947e81f89a4ac0436905ea81499e0",
+      "beta_translator/identity_tracking.py": "13aafe67d75ada8c5b7cf9ebfa70fb03292c13eab3d730a5dc28fd3dfffdb2ef",
+      "beta_translator/ik3d.py": "fbbdb991d8d2301f3f8e21e8b6cc6a64a9603eaac79beadad68362a69fed171a",
+      "beta_translator/inverse_kinematics.py": "164c34768cb5a55dee18249bd16f1376a58a98670065d12fd2274dc1783b8544",
+      "beta_translator/motion_ik.py": "b364055818cce40733b0c074a20347bf17c8539ea5dd84ec50eec9b5aa82a2fb",
+      "beta_translator/motion_pipeline.py": "68f882285fa6aea607ad61775885925284788f1cd3b247f09f4660b985b3c4d0",
+      "beta_translator/native_region3d.py": "dc117e693070203e3f14cd1f925db8296a4c3c71cffac9b781f20bfb43a7c564",
+      "beta_translator/plane_calibration.py": "f9fa471fc3203137d4fc82169d61c9bc669df621fb3fe15497f471a910aee97c",
+      "beta_translator/plane_ik.py": "140537a1aa49876616d4a566d3e0ebb0858c50bc1f225651f8d0ff99b963aff6",
+      "beta_translator/portable_paths.py": "43dae008db08069a4ab01f986911d66f9ce4c1dd2454af0a3ec9a1f4c2fda9df",
+      "beta_translator/pose_adapter.py": "db9a6ed603092ad12967bd3c858d35fc3e4c83cbb556ae0aeaa0f5a01b91a454",
+      "beta_translator/project_io.py": "2443301f901d70a7ef091233312242a90043a8eaabe709642e36f84bf1c74ace",
+      "beta_translator/region3d_render.py": "a2f4aa02ee2294a7e5f5b9396e41ccd26e7b6600e7e5bea9aa16e18aa4a01d8d",
+      "beta_translator/region_ik3d.py": "4f8a89d866d224f65520ccfdebcb67a268001f370b2db4a4ba4308fb4e29c506",
+      "beta_translator/restored_sequence_solver.py": "d356ed3d071c59357e7157fb8060590a8fd0099d06b20de191cea2571d156c6a",
+      "beta_translator/scene3d.py": "f3d99c84bf34fb1f84ef9ce9375cb6af91ca1c2272db5235e4596e1ef054588f",
+      "beta_translator/scene3d_render.py": "1815a38f3eb9806d712aff97bed21533a1356f8455806bef1621a8f992dcbd22",
+      "beta_translator/scene_geometry.py": "bf502fd33808040b37a372f875201eb433db50bf908fcc91d08302d7c3b4eccc",
+      "beta_translator/support_audit.py": "039328f7ffcee721264adf117a7d0eb579f7791a05b27484dc49553d4cf0a285",
+      "beta_translator/support_optimization.py": "461b60593a67b5737a939fa49cc1a618edbe537c5ff73542ed4132a7e5aac7e5",
+      "beta_translator/support_optimization_pipeline.py": "ca6b34fa7f6fcb3b0eeb8ea4b6a41977169f3967fa328ffd967a7b1bf980fefd",
+      "beta_translator/support_refinement.py": "f33286e646641a5c3901bec602007e1eed359aaa7063c22944694135fab69251",
+      "beta_translator/target_demo.py": "4df65c765b4cff7288b2e348c31badf2a85cfa7c320adab6a037d2fc89328102",
+      "beta_translator/technique_planner.py": "1707bc2159742c473669b9f6db9c9c3cbc82d29feedce6199e915446d324a2ed",
+      "beta_translator/technique_render.py": "2f8ed933e87a7d5800e2df3c7255d4f26843100ac2ab7d6674f202267200228b",
+      "beta_translator/temporal_control_basis.py": "f01ca54df8dacd5bcbc293659d0c8da0735b4809bfc7203ee028db52bed05cdf",
+      "beta_translator/trial1_ground_pipeline.py": "f567ffd88d48b7b9c175067a801bab2970e4d0e0def86c990774b4f305b72995",
+      "beta_translator/trial1_refinement_pipeline.py": "a069c217636267347f7d2c0863f8ea140e9bd930d87585e62dbba691e87572f4",
+      "beta_translator/trial1_sequence.py": "533ac468341a61982b8aa71ea70ceb0e1515ec7166f93c9e5c46c821a5f0cfc5",
+      "beta_translator/trial1_support_pipeline.py": "2880c3aaa1313aedbb417432a823cbadd24af617981f035b16cbd1ca2cab7100",
+      "beta_translator/trial1_technique_pipeline.py": "99f21d2c59d9f96834abe4389d8fb7fab49effd500f10c18cfa5dfef9db8011a",
+      "beta_translator/trial2_anatomy_controls.py": "2bdd0f5c7eb3bbaa8d2751705ca950694c0d4ff2f7876a386be978dbff3b40e3",
+      "beta_translator/trial2_anatomy_optimizer.py": "64081f9f90c1ae347b60ea51695613b3be1d9eba6831bcb000a2e1a9a2a15435",
+      "beta_translator/trial2_anatomy_pipeline.py": "97e1b1b865b330fb5bad8ac061af4fdfa67ef5a1474ea419c1fef27325e77529",
+      "beta_translator/trial2_anatomy_render.py": "33be7a7089eb6bb8f890da4533506af46978ed3f57e1fd684d0a2d09269077df",
+      "beta_translator/trial2_reach_diagnostics.py": "106cc7d32356ff8592fc221677385b720a00c4daff29aa000c07026744247907",
+      "beta_translator/trial2_scene3d.py": "f9241ef48c2acf0dc8d5fda8b89c1cb65b9e7d1b63d5fe7e9ddb3370f468adcb",
+      "beta_translator/trial2_spatial_complete.py": "c76295e0a2b687e28ae4daf4d04eae4f16e88d14e34a9a9a9ac713f7c197485d",
+      "beta_translator/trial2_spatial_data.py": "3a2ba007b4296e26c6c0956622fcbb17f451d0ad0489fc968c3fa649b525f93d",
+      "beta_translator/trial2_spatial_optimizer.py": "ea3ba7362019f10f8b771df082e22c0ea07d491b4481ae1b273bb09181f9a277",
+      "beta_translator/trial2_spatial_pipeline.py": "b23118a60b4c548e5f3a2c49852f0e7049e296a5f34665cbbd194f7a1793141b",
+      "beta_translator/trial2_spatial_presentation.py": "22ae6a9b44076c6d86434bab2d49132e063212b65f1083b36d717c75797654fa",
+      "beta_translator/trial2_spatial_render.py": "39994a6eb4acdca11d7ef09adf09633f710d4a327830129cc289fec8fd2aed58",
+      "beta_translator/trial2_stage1.py": "c67eccee8d050b5ce5dcb75f5921c79d544cbf3e3767d21f1649fdc0290dda0d",
+      "beta_translator/trial2_stage1_pipeline.py": "add7b640b1a4a3418aecb303581e4e2e09609342c8c0e6de7534107d9e58ced4",
+      "beta_translator/trial2_stage1_render.py": "f0e3d52ed90fac6be602f0ff7574be20341d9d88de78e05bf5925e30c09bd1ba",
+      "beta_translator/trial3_3d_pipeline.py": "12935d3e7d085d72ac9db476684a865550a4eaab1265c10c2623274db23c65c8",
+      "beta_translator/trial3_native_region_pipeline.py": "e5a5daea5ea74c69c44a5e025a485aa0d22ab3670374ff21931659585f68f59b",
+      "beta_translator/trial3_region_pipeline.py": "283a3fbf07f4c3c49318ffe5ffde627c4a3c67b1c2608abc9056be934e20d044",
+      "beta_translator/trial_pipeline.py": "e6b99ae1a5a14cfef90e03f2203d992dd51fe00f4d3fd8711b710f504589e7f3",
+      "beta_translator/trials.py": "871cdc3ff6d79fb54e313214c9fe9d64fb0cc47bfd57717e7149d81bbf82e694",
+      "beta_translator/wayup_data.py": "73533801da3774d1395dbc188b34435f068f43c9f6f19d348fa86f7e5479b6a2",
+      "beta_translator/wholebody_pose.py": "aadabe67ed1c574027aa8ecd9efca11518c5219127ab2da031cf89171f9c9a44",
+      "data/H44_H28_confirmed_reference.json": "c62b11718a0a8d960f3020edcae558a39ff68e77bc228c66c68061628e93b97c",
+      "data/lower_limb_source.json": "87402282d00887015aa76e8e2b55c67887484c7ceaa0f32767f0bdf729985eae",
+      "data/trial1_ground_support.json": "073e52fb26cd0b40c5243731cd9ed69483dab4964003fcad086b1223561ac57d",
+      "data/trial2_arm_model_sources.json": "ff4bf98290fc96594f0d7b713db37fa0b3d833f53cc10d2d49688ac6f4bcd92d",
+      "data/trial2_geometry_reference.json": "9bc32b0583645d9d5339c6a6352ec85088b94d8b2ab462c005b5785a2b3b9d1c",
+      "data/trial2_spatial_hypotheses.json": "4bd444723882313190e8990f6831478062b24120082587636ecb816a9272c9a3",
+      "data/trial2_stage1_chain_reference.json": "146986abbb5dab2ef54acebac5a1b5b43a19df80330163f5fd464bd67212626e",
+      "data/trial3_manual_holds.json": "622a6eb0fee913d0933232ba7ad97d04b5f4cf78bbf4455a33ea2bc97217b551",
+      "data/trial3_wall_grid.json": "2123d59dee5d6ce8716238bdb379c452ef4ead254c50ce2486037c91bde0fa9b",
+      "outputs/trial2/anatomy_plans/target_180cm_controls_db7b5a5de762/balanced/trajectory.npz": "4373de66f366e8c875f4ae66d9ce319082d41a8c9a6da1e5b2675d3b77ab330b",
+      "outputs/trial2/automatic/predictions/automatic_contacts.json": "fe9c534af7a9129243c9cc7b9f27c7ed9ebfd375fc2b9fedd2665edd35f39b0c",
+      "outputs/trial2/automatic/predictions/contact_events.csv": "c015c7b13cbd4eea94a75ecadfed5cb0533c5ac072bd67e8490379eb3013c0b8",
+      "outputs/trial2/automatic/predictions/contact_probabilities.npz": "815d6e1256b171384461c521e7279313dd10ad4da525172e45f3b8cd2dc97857",
+      "outputs/trial2/automatic/predictions/limb_contacts.csv": "d8d324f68116c935a593c5923cc8fb67ac1bd390e7fb45b9cb860e2663051237",
+      "outputs/trial2/automatic/wholebody.npz": "cb861eaa2fa17ed2592d43033312a1f718bc054fa112c6ad1732c2e7315bc1c9",
+      "outputs/trial2/state/alignment_cache.npz": "05c419c1804d5c90f61e6ead7a68c60c5a421c54d944bdc2e0903319506ccdc7",
+      "outputs/trial2/state/automatic_ik_user_review.json": "f07a247e4407a2e69b6b739f642a33ea8865619f8bca9bd28b5afa344a2167c9",
+      "outputs/trial2/state/contact_settings.json": "c2c6cf1277f0fc4cb1d63bdc2c77725a6d189860623fb285fb19f33c66d91ef4",
+      "outputs/trial2/state/direct_ik_plan.json": "aa7e06d1f3b204e826a419af389745d39d776cde05215c2e594b0821bc072c0f",
+      "outputs/trial2/state/geometry_calibration.json": "5a9ff79753a85fe90f47e4262dc37765492267d0d246a76942aadeadd51ed34e",
+      "outputs/trial2/state/geometry_observations.json": "9bc32b0583645d9d5339c6a6352ec85088b94d8b2ab462c005b5785a2b3b9d1c",
+      "outputs/trial2/state/hold_map_build.json": "2fba59179b6ecbf0c9e146eb15ccf713d52870c957f239035bc0546bb3b84f4b",
+      "outputs/trial2/state/hold_selection_status.json": "a0aa3663992a1e899fd15918c571470e7501e64eaa30f6d98b8fecfac618d3c7",
+      "outputs/trial2/state/identity_anchor_alignment.npz": "36cb9f24809a8a9fb5278b65f24e52eaca91dae585b1bc875de4f37358a17e56",
+      "outputs/trial2/state/identity_evaluation.json": "a771829f76f57f4614a8ffd0a0b39e238455f42395825c3314f71dabaebaf4bd",
+      "outputs/trial2/state/identity_guard.npz": "f745b51dda2335d3e934983ae9a94045e4da5fd4400e9f8fe6dc51479cbd8e4a",
+      "outputs/trial2/state/identity_tracking_summary.json": "fea02b2967242a5acf240ce8fc56690f12b6f81fba636607e84c94e7b637db03",
+      "outputs/trial2/state/notebook_cleanup.json": "e48967f9b89d0edc8fcbf8739ea0409a2d53cb7650df594f2ca92b1898c80121",
+      "outputs/trial2/state/pose_manifest.json": "986cd6f206b5eeb90050adfba5be7415fa771118f5bd4fee97d75e8b4a871013",
+      "outputs/trial2/state/pose_raw_manifest.json": "d9f8a9f54153688bb95b4741daef5b00fa3ecd8689e63fa1029ca9136a52806c",
+      "outputs/trial2/state/reference_frame_comparison.json": "75a36140735651fe4ef804e16737b76a7b043eff6cf817b520cbd0c991db13d6",
+      "outputs/trial2/state/reviewed_hold_map.npz": "5b0c612f577e29c9514f075051341dadbb9a45c71f7172e0a1114d4a4091f5e6",
+      "outputs/trial2/state/trial2_run_summary.json": "fd5c6ec2ad50f77201dd423ba1236cdcc15ecee0b1d849f883e4d40bb740db08",
+      "outputs/trial2/state/validation_summary.json": "1fcee718a855f0239c35d9b265ff01191b627965e2a14e8d7a7c9e58c67c5190",
+      "outputs/trial2/state/video_import.json": "9bcbc76f23b53e98d4051ba66d58a251b5d9af554cf4cc5609df9869364467ea",
+      "outputs/trial2/tables/contact_events.csv": "ada44f2f129f97fa92b7a212ab8982215c8600ff2f08397363256eb8cfbc3236",
+      "outputs/trial2/tables/geometry_local_scale.csv": "128d4abe189636bee3929726c91169ad83a1d3ac01e3740bb3db7962abfcfcf7",
+      "outputs/trial2/tables/identity_tracking.csv": "cb63e82be4ed45fe723c95912e6b2a74cb671c7eda43fcd6ae433f79d5d614de",
+      "outputs/trial2/tables/limb_contacts.csv": "641c88a2877484e7e3b8cebc70c41c30fd6440d49700ebfe7aafc0d9e9b1b77d",
+      "outputs/trial2/tables/pose_coordinates.csv": "8f8ee0c55b8be57862de3d3c16d6f590eece9f82b2ced602b709f096c9298f0b",
+      "outputs/trial2/tables/pose_coordinates_raw.csv": "aa2be90f4283cc945aa98d79b65545510e78b2652d49ffec317dc66a2fd9abfe",
+      "outputs/trial2/tables/pose_display_coordinates.csv": "792febe0e430e15702d737baab41cfbf5c150f1536ded140e0ed1421251da758",
+      "outputs/trial2/tables/reference_coverage.csv": "7c1b9635857911e47f259635a982e30deb347a19e0a04bc5916ed3ea68781c0c",
+      "outputs/trial2/tables/source_frame_map.csv": "dc52f0156ede591b958dab1b6fc3353f72e09a9136890cf635a123ac53c603ca",
+      "videos/trial2.mp4": "9964d27ca051953d77cf10ee94a1772bd73e30d7e23fa09a54983c3630e8a068"
+    }
+  },
+  "trial": "trial2",
+  "height_cm": 175.0,
+  "first_frame": 550,
+  "last_frame": 595,
+  "frame_count": 46,
+  "fps": 30.0,
+  "selected_candidate": "steady",
+  "selection_status": "diagnostic_only_not_feasible",
+  "specification_status": "fail",
+  "ranking": [
+    {
+      "candidate": "steady",
+      "native_frames": 46,
+      "numerically_feasible": false,
+      "anatomy_temporal_failure_frames": 0,
+      "contact_failure_frames": 43,
+      "geometric_failure_frames": 43,
+      "support_failure_frames": 46,
+      "preunload_failure_frames": 2,
+      "grip_proxy_failure_frames": 40,
+      "total_failed_frames": 46,
+      "worst_failure_fraction": 1.0,
+      "max_contact_gap_cm": 1.7352055716386396,
+      "max_rate_ratio": 0.9994288789391126,
+      "max_acceleration_ratio": 0.9999959794482923,
+      "max_elbow_swivel_deg_s": 0.0,
+      "max_torso_rotation_deg_s": 79.26193227797154,
+      "converged": false,
+      "uncertainty": "Reduced anatomy; inferred hand/foot and scene geometry; full specification coverage is explicit in constraints.csv.",
+      "shoulder_envelope_failure_frames": 45,
+      "self_collision_failure_frames": 8,
+      "torque_capacity_failure_frames": 46,
+      "fatigue_failure_frames": 46,
+      "dynamic_balance_failure_frames": 0,
+      "advanced_failure_frames": 46,
+      "departing_force_failure_frames": 2,
+      "joint_acceleration_rms_cm_s2": 220.72776254140354,
+      "specification_status": "fail",
+      "trusted_support_failure_frames": 46,
+      "reserve_failure_frames": 43,
+      "preunload_applicable_frames": 2,
+      "preunload_failure_fraction_applicable": 1.0,
+      "optimized_hand_load_integral_bw_s": 1.8178815017076846,
+      "lower_limb_rom_failure_frames": 0,
+      "max_knee_coupling_displacement_cm": 2.91239907036143,
+      "unknown_constraints": 18,
+      "rank": 1,
+      "selection_status": "diagnostic_only_not_feasible",
+      "selection_reason": "Selected among complete tested candidates; required failures precede motion, and unknown physiology remains unknown.",
+      "eligible_for_selection": true
+    }
+  ],
+  "controls": [
+    {
+      "candidate": "anatomical_control",
+      "native_frames": 46,
+      "numerically_feasible": false,
+      "anatomy_temporal_failure_frames": 0,
+      "contact_failure_frames": 11,
+      "geometric_failure_frames": 11,
+      "support_failure_frames": 46,
+      "preunload_failure_frames": 2,
+      "grip_proxy_failure_frames": 11,
+      "total_failed_frames": 46,
+      "worst_failure_fraction": 1.0,
+      "max_contact_gap_cm": 0.1456791114790334,
+      "max_rate_ratio": 0.7853237244221292,
+      "max_acceleration_ratio": 0.8390268986521656,
+      "max_elbow_swivel_deg_s": 12.84823743300774,
+      "max_torso_rotation_deg_s": 50.58999081863787,
+      "converged": false,
+      "uncertainty": "Reduced anatomy; inferred hand/foot and scene geometry; full specification coverage is explicit in constraints.csv.",
+      "shoulder_envelope_failure_frames": 46,
+      "self_collision_failure_frames": 1,
+      "torque_capacity_failure_frames": 46,
+      "fatigue_failure_frames": 46,
+      "dynamic_balance_failure_frames": 43,
+      "advanced_failure_frames": 46,
+      "departing_force_failure_frames": 1,
+      "joint_acceleration_rms_cm_s2": 84.46964915206941,
+      "specification_status": "fail",
+      "trusted_support_failure_frames": 46,
+      "reserve_failure_frames": 22,
+      "preunload_applicable_frames": 2,
+      "preunload_failure_fraction_applicable": 1.0,
+      "optimized_hand_load_integral_bw_s": 1.7784548528514297,
+      "lower_limb_rom_failure_frames": 0,
+      "max_knee_coupling_displacement_cm": 2.546005621749975,
+      "unknown_constraints": 18,
+      "eligible_for_selection": false,
+      "selection_status": "comparison_only",
+      "selection_reason": "Comparison control; does not optimize all active personalized constraints."
+    }
+  ],
+  "physical_validation": false,
+  "seconds": 447.8255145410076,
+  "output_sha256": {
+    "provenance.json": "66f69f5c3fcfea1fe50e4f90ea1ad92afe4b75e3a824a37c293b3b47873a1603",
+    "source_snapshot.zip": "46a4f1719de7f38aa3d8dcc1f5589890749584c2524ed05a6bbe534eb87c6d3a",
+    "constraint_contract.csv": "dd19250ccb735fa8291cf7a4cf595d1f9d3a2ee9788f8423c4c8acd64ed38338",
+    "candidate_comparison.csv": "012e445d08d072a7f128df8f97123eaccd958bbbeae4cb183b6591c06fb20868",
+    "chain_verification.json": "5763862a6315e85f671c74cad4c2455817b8bd1d4d8931f57ca0e275cb0a613e",
+    "scene.json": "0eca3cc0128fb14f36236b41a7b7a8b7f83889cf960a0a7fad528584d76a14c0",
+    "initialization.npz": "0fb181fb9bc25fdb8bb779b6175b189d416a5e8e8adedcbb0fbacb7189481ad5",
+    "all_frame_input_validation.json": "7844f122f1282874d6fe57c617c14685d5cdb77ad979186a4445e66fc7556498",
+    "user_profile.json": "2553c821e86112cb2565dd509f256959d85afecf7210ba47bf292b0ea489c499",
+    "lower_limb_verification.json": "44f70c42b726fad8d955e53e5006f0dc2e90b26896724f3e2b72b7d2b6418487",
+    "environment.json": "00c7241eb459e8088f4c7db8481e124600acd44455cd8c85de7f8e80bd2a0a19",
+    "anatomical_control/summary.json": "05856c5debcf917830b1232093cfb091360542a407058921770e408742f62918",
+    "anatomical_control/trajectory.npz": "ec5afa152f3fa0344ecc13bf102082e05036195bf71ef1b7d9633ff3cbfa7de4",
+    "anatomical_control/constraint_results.json": "47e5fee7f817e566568db1f705a50be95ded2fb0cab6ea5c0867d7de185874b6",
+    "anatomical_control/metrics.csv": "36d3b4ec63a8c2b215f974728d2925d5f8117c5492e80f8e0c762dee1eb5f34e",
+    "anatomical_control/foot_frame_evidence.json": "7277af2da03f662ba2f05eccdcb0164d3ef4242e4b414f252c4db8d45f76646e",
+    "anatomical_control/constraints.csv": "59ae819df2dbe9fe7b147d4a8902fe99086334c5e626fa34269d35b6f4000ada",
+    "anatomical_control/contact_episodes.json": "a7732afd123c9b0f3884886c96823293b9f37fa6b0b57c71a66a5d3271c2fd91",
+    "anatomical_control/solver_history.csv": "8f0f0c27f2ed9baa20d109baef2d6f9574945c6372d66f2f415e65faa8e3ce0d",
+    "steady/summary.json": "dd456d7cdfec453b67ed021f069899f4e2176daf82d93309c0c06169f230323a",
+    "steady/trajectory.npz": "8970774e69cc25a571b8bada59b3a4616325cc574b0ca179691931ab89e65037",
+    "steady/constraint_results.json": "d12ad7fe09a2b44d6b26a073b3d6b5f88787d95338e1157fd567bed473a52910",
+    "steady/metrics.csv": "15ee89d84d181a493092aed00e7992b7178874887510f44d9b6b17821fdde9dd",
+    "steady/foot_frame_evidence.json": "7277af2da03f662ba2f05eccdcb0164d3ef4242e4b414f252c4db8d45f76646e",
+    "steady/constraints.csv": "83ffa3b800a63adc921da4ddbbfb1f5a4debdcdf4030fc723bea2f09e16b172c",
+    "steady/contact_episodes.json": "a7732afd123c9b0f3884886c96823293b9f37fa6b0b57c71a66a5d3271c2fd91",
+    "steady/solver_history.csv": "d137d228886a0df4b4d5077f41be2445b281dbd8acdcf3f53f93ac26228cdf83"
+  }
+}

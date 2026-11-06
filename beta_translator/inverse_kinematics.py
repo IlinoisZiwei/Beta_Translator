@@ -204,11 +204,12 @@ def solve_inverse_kinematics(
 
 GRAVITY = 9.81  # m/s^2
 
-# Fractions of total body mass for one whole body based on SEGMENT_COUNTS
-# An approximate adult averages in the style of Winter/Dempster tables; replace
-# with the values from your cited source if you have them. Two lumps follow from the
-# skeleton ending at the wrist/ankle: "forearm" includes the hand and "shank" the foot.
-# "torso" is the trunk between the hip center and the shoulder center.
+# Per-side mass fractions, checked against Xu & Zhou (2017), Table 1,
+# which attributes its parameters to Dempster. These are population priors,
+# not measurements of this climber. See anthropometry_profile() for provenance.
+# The skeleton ends at the wrist/ankle: "forearm" includes hand, "shank" foot,
+# and "torso" combines thorax/abdomen and pelvis. Combined MASS does not imply
+# that the combined COM has the same position as either constituent's COM.
 MASS_FRACTIONS = {
     "head": 0.081,  # neck included
     "torso": 0.497,
@@ -218,7 +219,7 @@ MASS_FRACTIONS = {
     "shank": 0.061  # shank (knees to ankles) + foot
 }
 
-# DO NOT EDIT! Changing the skeleton also requires changing
+# Multiplicities in the current skeleton; limb masses are for ONE side.
 SEGMENT_COUNTS = {
     "head": 1,
     "torso": 1,
@@ -228,8 +229,10 @@ SEGMENT_COUNTS = {
     "shank": 2
 }
 
-# Where each segment's center-of-mass sits, as a fraction of segment length 
-# from the proximal joint (the joint that rotates it)
+# Legacy COM defaults retained for reproducibility. Upper-arm/thigh fractions
+# match the cited table; the other positions are explicit project proxies.
+# All except "head" interpolate between joint centers. "head" is an offset
+# ABOVE the shoulder center, measured in torso lengths, not a head-length ratio.
 CENTER_OF_MASS_FRACTIONS = {
     "head": 0.40,
     "torso": 0.50,
@@ -239,14 +242,127 @@ CENTER_OF_MASS_FRACTIONS = {
     "shank": 0.57
 }
 
-# For internal use only by this file
+ANTHROPOMETRY_PROFILES = ("legacy_v1", "dempster_endpoint_proxy_v1")
+ANTHROPOMETRY_SOURCES = {
+    "values_table": "https://journals.sagepub.com/doi/10.1177/1550147717703257",
+    "dempster_report_catalog": "https://contrails.library.iit.edu/item/154630",
+    "landmark_caution": "https://doi.org/10.1016/0021-9290(95)00178-6",
+}
+# Uncombined lower-limb/arm entries from the cited Table 1. The coefficient
+# refers to the bone segment, not to the bone-plus-hand/foot lump.
+DISTAL_COMPONENTS = {
+    "forearm": {"bone_mass": .016, "distal_mass": .006, "bone_com_fraction": .430},
+    "shank": {"bone_mass": .0465, "distal_mass": .0145, "bone_com_fraction": .433},
+}
+
+
+def weighted_center_of_mass(points_cm, masses):
+    """Mass-weighted points (..., segments, 2 or 3); preserves complex derivatives.
+
+    Masses may be kg or relative weights. No automatic equal-weight averaging,
+    missing-point substitution, or normalization of an invalid mass table.
+    """
+    points, weights = np.asarray(points_cm), np.asarray(masses)
+    if (points.ndim < 2 or points.shape[-1] not in (2, 3)
+            or weights.ndim != 1 or len(weights) == 0
+            or points.shape[-2] != len(weights)
+            or not np.isfinite(points).all() or not np.isfinite(weights).all()
+            or not np.isrealobj(weights) or np.any(weights <= 0)):
+        raise ValueError("Finite 2D/3D points and matching positive real masses required.")
+    # Scale first so finite large relative weights cannot overflow their sum.
+    scaled = weights / weights.max()
+    return np.sum(points * (scaled / scaled.sum())[:, None], axis=-2)
+
+
+def combined_distal_center_of_mass(proximal_cm, endpoint_cm, distal_com_cm, segment):
+    """Combine forearm+hand or shank+foot using the published mass split.
+
+    proximal/endpoint are elbow/wrist for 'forearm', knee/ankle for 'shank'.
+    distal_com_cm is the HAND/FOOT COM, not a hold/contact point. All positions
+    must share the same coordinate frame and cm units, with shape (..., 2 or 3).
+    Passing the wrist/ankle as distal COM is an explicit zero-offset proxy;
+    measured/estimated hand or foot COM positions can instead reflect orientation.
+    This function does not infer anatomy or a hand/foot orientation from contacts.
+    """
+    if segment not in DISTAL_COMPONENTS:
+        raise ValueError("segment must be 'forearm' or 'shank'.")
+    proximal, endpoint, distal = map(np.asarray, (proximal_cm, endpoint_cm, distal_com_cm))
+    if proximal.shape != endpoint.shape or proximal.shape != distal.shape:
+        raise ValueError("All component positions must have the same shape.")
+    values = DISTAL_COMPONENTS[segment]
+    bone = proximal + values['bone_com_fraction'] * (endpoint - proximal)
+    return weighted_center_of_mass(np.stack([bone, distal], axis=-2),
+                                   [values['bone_mass'], values['distal_mass']])
+
+
+def anthropometry_profile(name="legacy_v1"):
+    """Return independent, JSON-serializable parameters, endpoints and caveats.
+
+    The endpoint proxy is an alternative for sensitivity experiments, not a
+    validated improvement. Pass its com_fractions to the 2D/3D COM APIs or the
+    static gravity IK solver; persist this entire record alongside new results.
+    """
+    if name not in ANTHROPOMETRY_PROFILES:
+        raise ValueError(f"Unknown anthropometry profile; choose {ANTHROPOMETRY_PROFILES}.")
+    c = dict(CENTER_OF_MASS_FRACTIONS)
+    if name == "dempster_endpoint_proxy_v1":
+        for segment in DISTAL_COMPONENTS:
+            c[segment] = float(combined_distal_center_of_mass(
+                [0., 0.], [1., 0.], [1., 0.], segment)[0])
+    endpoint = name == "dempster_endpoint_proxy_v1"
+    rules = {
+        "head": {"mass_rule": "head+neck: 0.081", "com_evidence": "project_proxy",
+                 "coordinates": "shoulder_center + 0.40 * (shoulder_center - hip_center)"},
+        "torso": {"mass_rule": "thorax/abdomen 0.355 + pelvis 0.142", "com_evidence": "project_proxy",
+                  "coordinates": "hip_center + 0.50 * (shoulder_center - hip_center)"},
+        "upper_arm": {"mass_rule": "0.028 per side", "com_evidence": "published_fraction_mapped_to_joint_centers",
+                      "coordinates": "shoulder -> elbow; proximal fraction 0.436"},
+        "forearm": {"mass_rule": "forearm 0.016 + hand 0.006 per side",
+                    "com_evidence": "derived_with_endpoint_proxy" if endpoint else "legacy_project_proxy",
+                    "coordinates": "elbow -> wrist; combined forearm+hand COM"},
+        "thigh": {"mass_rule": "0.100 per side", "com_evidence": "published_fraction_mapped_to_joint_centers",
+                  "coordinates": "hip -> knee; proximal fraction 0.433"},
+        "shank": {"mass_rule": "shank 0.0465 + foot 0.0145 per side",
+                  "com_evidence": "derived_with_endpoint_proxy" if endpoint else "legacy_project_proxy",
+                  "coordinates": "knee -> ankle; combined shank+foot COM"},
+    }
+    return dict(profile=name, schema_version=1, mass_fractions=dict(MASS_FRACTIONS),
+                segment_counts=dict(SEGMENT_COUNTS), com_fractions=c, rules=rules,
+                distal_components={k: dict(v) for k, v in DISTAL_COMPONENTS.items()},
+                sources=dict(ANTHROPOMETRY_SOURCES), validated_for_individual=False,
+                assumptions=[
+                    "Population mass fractions; no personal body-composition measurement.",
+                    "Published segment landmarks are approximated by this skeleton's joint centers.",
+                    "Head offset and combined torso COM are unmeasured project proxies.",
+                    ("Hand COM = wrist; foot COM = ankle; orientation/length is not observed."
+                     if endpoint else "Combined COM fractions 0.69/0.57 have no verified derivation in this project."),
+                    "A profile comparison is sensitivity analysis, not a confidence interval or physical validation.",
+                ])
+
+
 def _check_segment_values(values, name):
     # Checks if all required dict keys are present in `name`
     if set(values) != set(MASS_FRACTIONS):
         raise ValueError(f"{name} must contain exactly {list(MASS_FRACTIONS)}.")
 
-    if any(not np.isfinite(value) or value <= 0 for value in values.values()):
+    if any(np.ndim(value) != 0 or not np.isrealobj(value)
+           or not np.isfinite(value) or value <= 0 for value in values.values()):
         raise ValueError(f"Every {name} entry must be positive and finite.")
+
+
+def validate_com_fractions(values):
+    """Joint interpolation fractions lie in [0, 1]; head is a torso-length offset.
+
+    This checks the parameter representation, not the anatomy of an individual.
+    No evidence-based head-offset range is available, so only nonnegativity and
+    finiteness are imposed on that explicitly separate proxy.
+    """
+    if set(values) != set(MASS_FRACTIONS):
+        raise ValueError(f"com_fractions must contain exactly {list(MASS_FRACTIONS)}.")
+    for name, value in values.items():
+        if (np.ndim(value) != 0 or not np.isrealobj(value) or not np.isfinite(value)
+                or value < 0 or (name != 'head' and value > 1)):
+            raise ValueError(f"Invalid COM fraction for {name}; segments require [0, 1], head a nonnegative offset.")
 
 def make_mass_model(mass_kg, mass_fractions=None):
     """Convert total mass and per-segment mass fractions to the mass in kg for one of each segment"""
@@ -271,19 +387,19 @@ def center_of_mass(pose_vector, body_lengths, segment_masses_kg, center_of_mass_
     if center_of_mass_fractions is None:
         center_of_mass_fractions = CENTER_OF_MASS_FRACTIONS
     
-    _check_segment_values(center_of_mass_fractions, "Center of Mass Fractions")
+    validate_com_fractions(center_of_mass_fractions)
+    _check_segment_values(segment_masses_kg, "segment_masses_kg")
 
     joints = forward_kinematics(pose_vector, body_lengths)
 
     torso_vector = joints.shoulder_center - joints.hip_center
-    torso_direction_normalized = torso_vector / np.linalg.norm(torso_vector)
 
     # A list of 2-element tuples representing a list of center of mass points for each segment
     # The first element is the weight of it (based on segment_masses_kg)
     # The second element is the approximate location of this segments center of mass
     weighted_com_points = [
         (segment_masses_kg["head"],
-         joints.shoulder_center + center_of_mass_fractions["head"] * body_lengths["torso"] * torso_direction_normalized),
+         joints.shoulder_center + center_of_mass_fractions["head"] * torso_vector),
         (segment_masses_kg["torso"], joints.hip_center + center_of_mass_fractions["torso"] * torso_vector)
     ]
 
@@ -297,7 +413,7 @@ def center_of_mass(pose_vector, body_lengths, segment_masses_kg, center_of_mass_
     # Calculate the center of mass for the whole body based on the intermediate weighted center of mass points
     masses = np.array([mass for mass, _ in weighted_com_points])
     points = np.array([point for _, point in weighted_com_points])
-    return masses @ points / masses.sum()
+    return weighted_center_of_mass(points, masses)
 
 def static_balance_error(center_of_mass_cm, contact_points_cm, contact_forces_n, mass_kg, gravity=GRAVITY):
     """Leftover wrench after gravity and the contact forces (both in newtons, positions in cm).

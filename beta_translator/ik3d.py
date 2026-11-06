@@ -8,7 +8,7 @@ import numpy as np
 from scipy.sparse import coo_matrix, diags, kron, vstack
 from scipy.optimize import linprog, minimize
 from scipy.spatial import ConvexHull, QhullError
-from .inverse_kinematics import make_body, MASS_FRACTIONS, CENTER_OF_MASS_FRACTIONS
+from .inverse_kinematics import make_body, MASS_FRACTIONS, CENTER_OF_MASS_FRACTIONS, validate_com_fractions
 from .scene3d import project, upward_force
 from .support_refinement import sparse_direct_least_squares, stationarity
 
@@ -39,7 +39,12 @@ def limb_basis(delta,helper=None):
     return distance,axis,u,np.cross(axis,u)
 
 
-def kinematics(poses, lengths, targets=None, known=None,basis_helper=None):
+def kinematics(poses, lengths, targets=None, known=None,basis_helper=None, *, com_fractions=None):
+    """Spatial joints/COM; optional COM fractions support fixed-pose sensitivity.
+
+    The existing spatial optimizers use the legacy default. Merely reevaluating
+    COM with other fractions does not reoptimize forces or validate a new motion.
+    """
     q = np.atleast_2d(poses)
     rot = rotation(q[:,3:6]);hip=q[:,:3]
     up,right = rot[:,:,1],rot[:,:,0]
@@ -66,7 +71,9 @@ def kinematics(poses, lengths, targets=None, known=None,basis_helper=None):
         middle=np.where(np.asarray(known)[...,None],contact_middle,middle)
         end=np.where(np.asarray(known)[...,None],contact_end,end)
     joints=np.stack([roots,middle,end],axis=2)
-    f,c=MASS_FRACTIONS,CENTER_OF_MASS_FRACTIONS
+    f=MASS_FRACTIONS
+    c=CENTER_OF_MASS_FRACTIONS if com_fractions is None else com_fractions
+    validate_com_fractions(c)
     head=shoulder+c['head']*lengths['torso']*up
     com=f['head']*head+f['torso']*(hip+c['torso']*lengths['torso']*up)
     for i in range(4):

@@ -1,0 +1,284 @@
+{
+  "source_summary_sha256": "5e1f689a69036d7b9edac62eb23db5adb21fb1977dda702336de1a14022f2beb",
+  "source_trajectory_sha256": "3daa4c39cdae13c85fa19223630ef4b2b66a9725b3cf0df8da9d910e2aeb67eb",
+  "source_metrics_sha256": "5c6f19cbc588c0fdd5e52d93adfb9b7976b7baff0c232964914507e48e4b2db0",
+  "user_profile": {
+    "schema_version": 1,
+    "user_id": "trial_user_175",
+    "height_cm": 175.0,
+    "arm_span_cm": 176.0,
+    "mass_kg": 70.0,
+    "dimensions_cm": {
+      "upper_arm": 30.0,
+      "forearm": 24.0,
+      "thigh": 43.0,
+      "shank": 42.0,
+      "shoulder_w": 40.0,
+      "hip_w": 30.0,
+      "torso": 49.0,
+      "hand_length": 14.0,
+      "hand_patch_distance": 7.0,
+      "hand_patch_depth": 2.0,
+      "foot_length": 25.0,
+      "foot_width": 9.0,
+      "foot_depth": 3.0
+    },
+    "evidence": {
+      "height": "user_requested_demonstration_value",
+      "arm_span": "user_confirmed_demonstration_value",
+      "geometry": "project_assumption: symmetric proportions; not a measured person",
+      "mass": "project_assumption: 70 kg; replace with user measurement",
+      "capabilities": "project_assumption: illustrative screening limits, not personal calibration",
+      "fatigue": "project_assumption: joint-actuator 3CC proxy; fresh start at clip boundary",
+      "inertia": "project_assumption: uniform cylinders/sphere with population mass priors"
+    },
+    "biomechanics": {
+      "shoulder_envelope": {
+        "plane_deg": [
+          -90,
+          20,
+          130
+        ],
+        "elevation_deg": [
+          0,
+          60,
+          120,
+          180
+        ],
+        "lower_deg": [
+          [
+            -70,
+            -80,
+            -65,
+            -40
+          ],
+          [
+            -70,
+            -90,
+            -70,
+            -45
+          ],
+          [
+            -65,
+            -75,
+            -60,
+            -35
+          ]
+        ],
+        "upper_deg": [
+          [
+            15,
+            20,
+            10,
+            0
+          ],
+          [
+            20,
+            20,
+            15,
+            5
+          ],
+          [
+            10,
+            15,
+            5,
+            0
+          ]
+        ]
+      },
+      "capsule_radii_cm": [
+        9,
+        8,
+        3.8,
+        3,
+        2.5,
+        3.8,
+        3,
+        2.5,
+        6.5,
+        4.5,
+        3,
+        6.5,
+        4.5,
+        3
+      ],
+      "mass_fractions": [
+        0.497,
+        0.081,
+        0.028,
+        0.016,
+        0.006,
+        0.028,
+        0.016,
+        0.006,
+        0.1,
+        0.0465,
+        0.0145,
+        0.1,
+        0.0465,
+        0.0145
+      ],
+      "com_fractions": [
+        0.5,
+        0.5,
+        0.436,
+        0.43,
+        0.5,
+        0.436,
+        0.43,
+        0.5,
+        0.433,
+        0.433,
+        0.5,
+        0.433,
+        0.433,
+        0.5
+      ],
+      "collision_clearance_cm": 0.2,
+      "torque_positive_nm": [
+        [
+          60,
+          50,
+          35
+        ],
+        [
+          45,
+          20,
+          20
+        ],
+        [
+          12,
+          10,
+          10
+        ],
+        [
+          60,
+          50,
+          35
+        ],
+        [
+          45,
+          20,
+          20
+        ],
+        [
+          12,
+          10,
+          10
+        ],
+        [
+          100,
+          80,
+          60
+        ],
+        [
+          90,
+          35,
+          35
+        ],
+        [
+          60,
+          25,
+          25
+        ],
+        [
+          100,
+          80,
+          60
+        ],
+        [
+          90,
+          35,
+          35
+        ],
+        [
+          60,
+          25,
+          25
+        ]
+      ],
+      "torque_negative_nm": [
+        [
+          50,
+          45,
+          30
+        ],
+        [
+          35,
+          18,
+          18
+        ],
+        [
+          10,
+          9,
+          9
+        ],
+        [
+          50,
+          45,
+          30
+        ],
+        [
+          35,
+          18,
+          18
+        ],
+        [
+          10,
+          9,
+          9
+        ],
+        [
+          90,
+          70,
+          55
+        ],
+        [
+          70,
+          30,
+          30
+        ],
+        [
+          45,
+          20,
+          20
+        ],
+        [
+          90,
+          70,
+          55
+        ],
+        [
+          70,
+          30,
+          30
+        ],
+        [
+          45,
+          20,
+          20
+        ]
+      ],
+      "velocity_scale_rad_s": 4.0,
+      "fatigue_rate_s": 0.02,
+      "recovery_rate_s": 0.005,
+      "activation_rate_s": 5.0,
+      "deactivation_rate_s": 5.0,
+      "initial_fatigue_state": [
+        0,
+        1,
+        0
+      ],
+      "max_fatigued_fraction": 0.35,
+      "force_tolerance_bw": 0.02,
+      "moment_tolerance_bw_m": 0.01
+    }
+  },
+  "anny_version": "0.6.2",
+  "render": true,
+  "adapter_sha256": {
+    "avatar_model.py": "5def34aebabd977524b212a606ae3bbe83081898b2a8f21a6bd30324536b49ef",
+    "avatar_render.py": "3fec4ad12af5a61552947dc6268262225093505feb18d51f817fc83cc8e1b654",
+    "avatar_pipeline.py": "7ce5f28a9c0e0d4425fdc946d78fd0f33c176cce7da073104e7948cabeebc64f"
+  }
+}

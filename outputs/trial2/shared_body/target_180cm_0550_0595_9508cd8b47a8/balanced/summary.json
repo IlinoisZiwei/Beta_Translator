@@ -1,0 +1,51 @@
+{
+  "solver": {
+    "success": false,
+    "message": "Maximum constrained iterations reached.",
+    "nit": 150,
+    "nfev": 799,
+    "cost": 234.84034155460623,
+    "optimality": 3.6120426245025565,
+    "relative_cost_change": 0.002944262140458308,
+    "linear_violation": 0.0,
+    "complementarity": 1.8077687072630782e-06,
+    "initial_projection": {
+      "iterations": 100,
+      "primal": 0.0,
+      "dual": 3.624702748900294e-17,
+      "success": true,
+      "status": "solved"
+    },
+    "seconds": 114.90275941597065,
+    "gradient_definition": "Fresh Lagrangian gradient normalized by current Jacobian columns; explicit box and linear rate multipliers."
+  },
+  "metrics": {
+    "candidate": "balanced",
+    "native_frames": 46,
+    "numerically_feasible": false,
+    "anatomy_temporal_failure_frames": 0,
+    "contact_failure_frames": 0,
+    "geometric_failure_frames": 0,
+    "support_failure_frames": 22,
+    "preunload_failure_frames": 12,
+    "grip_proxy_failure_frames": 0,
+    "total_failed_frames": 28,
+    "worst_failure_fraction": 0.4782608695652174,
+    "max_contact_gap_cm": 0.025681818033025723,
+    "max_rate_ratio": 0.34531317991177013,
+    "max_acceleration_ratio": 0.28754879360811125,
+    "max_elbow_swivel_deg_s": 18.843112711840234,
+    "max_torso_rotation_deg_s": 21.322546490374485,
+    "converged": false,
+    "uncertainty": "Reduced anatomy; inferred hand/foot and scene geometry; full specification coverage is explicit in constraints.csv.",
+    "departing_force_failure_frames": 0,
+    "joint_acceleration_rms_cm_s2": 32.21467319385157,
+    "specification_status": "fail",
+    "trusted_support_failure_frames": 46,
+    "reserve_failure_frames": 22,
+    "preunload_applicable_frames": 12,
+    "preunload_failure_fraction_applicable": 1.0,
+    "optimized_hand_load_integral_bw_s": 1.593558457760261,
+    "unknown_constraints": 24
+  }
+}

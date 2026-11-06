@@ -1,0 +1,546 @@
+[
+  {
+    "episode": 0,
+    "limb": "left_hand",
+    "limb_index": 0,
+    "hold": "H032",
+    "start_frame": 0,
+    "end_frame": 95,
+    "panel": 0,
+    "rectangle_px": [
+      284.0,
+      617.0,
+      308.0,
+      641.0
+    ],
+    "anchor_px": [
+      308.0,
+      624.0
+    ],
+    "center_px": [
+      309.58304161804745,
+      645.8661999222093
+    ],
+    "offset_cm": [
+      -6.086977860376462,
+      -2.1281065323080313,
+      1.665972122946446
+    ],
+    "evidence_frames": 80,
+    "ground_proposal": false,
+    "expert_confirmed": false,
+    "offset_measured": false
+  },
+  {
+    "episode": 1,
+    "limb": "left_hand",
+    "limb_index": 0,
+    "hold": "H017",
+    "start_frame": 111,
+    "end_frame": 241,
+    "panel": 0,
+    "rectangle_px": [
+      390.0,
+      474.0,
+      415.0,
+      498.0
+    ],
+    "anchor_px": [
+      393.0,
+      476.0
+    ],
+    "center_px": [
+      397.5851586946804,
+      493.09924005364326
+    ],
+    "offset_cm": [
+      -1.632077539175431,
+      -6.436636191287336,
+      0.5115050802574006
+    ],
+    "evidence_frames": 130,
+    "ground_proposal": false,
+    "expert_confirmed": false,
+    "offset_measured": false
+  },
+  {
+    "episode": 2,
+    "limb": "left_hand",
+    "limb_index": 0,
+    "hold": "H012",
+    "start_frame": 256,
+    "end_frame": 378,
+    "panel": 0,
+    "rectangle_px": [
+      267.0,
+      374.0,
+      285.0,
+      391.0
+    ],
+    "anchor_px": [
+      284.0,
+      377.0
+    ],
+    "center_px": [
+      286.4259850905218,
+      396.75825346112885
+    ],
+    "offset_cm": [
+      1.9502652394138467,
+      -6.345458052605657,
+      0.5359361888845291
+    ],
+    "evidence_frames": 123,
+    "ground_proposal": false,
+    "expert_confirmed": false,
+    "offset_measured": false
+  },
+  {
+    "episode": 3,
+    "limb": "left_hand",
+    "limb_index": 0,
+    "hold": "H007",
+    "start_frame": 379,
+    "end_frame": 470,
+    "panel": 0,
+    "rectangle_px": [
+      271.0,
+      326.0,
+      289.0,
+      341.0
+    ],
+    "anchor_px": [
+      285.0,
+      340.0
+    ],
+    "center_px": [
+      290.07090012330457,
+      350.5320591861899
+    ],
+    "offset_cm": [
+      -1.768153079602818,
+      -6.399796999673583,
+      0.521376111900121
+    ],
+    "evidence_frames": 78,
+    "ground_proposal": false,
+    "expert_confirmed": false,
+    "offset_measured": false
+  },
+  {
+    "episode": 4,
+    "limb": "left_hand",
+    "limb_index": 0,
+    "hold": "H001",
+    "start_frame": 486,
+    "end_frame": 502,
+    "panel": 0,
+    "rectangle_px": [
+      341.0,
+      275.0,
+      356.0,
+      296.0
+    ],
+    "anchor_px": [
+      347.0,
+      280.0
+    ],
+    "center_px": [
+      348.2476722532588,
+      284.0
+    ],
+    "offset_cm": [
+      -0.715709403108459,
+      -6.604985604058971,
+      0.4663959910589872
+    ],
+    "evidence_frames": 7,
+    "ground_proposal": false,
+    "expert_confirmed": false,
+    "offset_measured": false
+  },
+  {
+    "episode": 5,
+    "limb": "right_hand",
+    "limb_index": 1,
+    "hold": "H032",
+    "start_frame": 0,
+    "end_frame": 42,
+    "panel": 0,
+    "rectangle_px": [
+      303.0,
+      639.0,
+      324.0,
+      659.0
+    ],
+    "anchor_px": [
+      324.0,
+      640.0
+    ],
+    "center_px": [
+      309.58304161804745,
+      645.8661999222093
+    ],
+    "offset_cm": [
+      -0.5144349341165266,
+      -6.624060149479747,
+      0.46128498201749957
+    ],
+    "evidence_frames": 40,
+    "ground_proposal": false,
+    "expert_confirmed": false,
+    "offset_measured": false
+  },
+  {
+    "episode": 6,
+    "limb": "right_hand",
+    "limb_index": 1,
+    "hold": "H021",
+    "start_frame": 55,
+    "end_frame": 125,
+    "panel": 0,
+    "rectangle_px": [
+      395.0,
+      548.0,
+      410.0,
+      562.0
+    ],
+    "anchor_px": [
+      395.0,
+      550.0
+    ],
+    "center_px": [
+      396.031746031746,
+      566.331285202253
+    ],
+    "offset_cm": [
+      5.5772396266242295,
+      -3.389129084958127,
+      1.3280821483264198
+    ],
+    "evidence_frames": 49,
+    "ground_proposal": false,
+    "expert_confirmed": false,
+    "offset_measured": false
+  },
+  {
+    "episode": 7,
+    "limb": "right_hand",
+    "limb_index": 1,
+    "hold": "H017",
+    "start_frame": 126,
+    "end_frame": 303,
+    "panel": 0,
+    "rectangle_px": [
+      392.0,
+      466.0,
+      418.0,
+      492.0
+    ],
+    "anchor_px": [
+      398.0,
+      471.0
+    ],
+    "center_px": [
+      397.5851586946804,
+      493.09924005364326
+    ],
+    "offset_cm": [
+      5.808025404577778,
+      -2.916549555797869,
+      1.454709451524391
+    ],
+    "evidence_frames": 108,
+    "ground_proposal": false,
+    "expert_confirmed": false,
+    "offset_measured": false
+  },
+  {
+    "episode": 8,
+    "limb": "right_hand",
+    "limb_index": 1,
+    "hold": "H007",
+    "start_frame": 324,
+    "end_frame": 354,
+    "panel": 0,
+    "rectangle_px": [
+      286.0,
+      348.0,
+      304.0,
+      368.0
+    ],
+    "anchor_px": [
+      299.0,
+      368.0
+    ],
+    "center_px": [
+      290.07090012330457,
+      350.5320591861899
+    ],
+    "offset_cm": [
+      5.578735350006633,
+      -3.3863772089055715,
+      1.3288195112923724
+    ],
+    "evidence_frames": 11,
+    "ground_proposal": false,
+    "expert_confirmed": false,
+    "offset_measured": false
+  },
+  {
+    "episode": 9,
+    "limb": "right_hand",
+    "limb_index": 1,
+    "hold": "H012",
+    "start_frame": 355,
+    "end_frame": 408,
+    "panel": 0,
+    "rectangle_px": [
+      274.0,
+      380.0,
+      295.0,
+      403.0
+    ],
+    "anchor_px": [
+      295.0,
+      382.0
+    ],
+    "center_px": [
+      286.4259850905218,
+      396.75825346112885
+    ],
+    "offset_cm": [
+      4.304233128774626,
+      3.8845852219778045,
+      3.277068022844606
+    ],
+    "evidence_frames": 34,
+    "ground_proposal": false,
+    "expert_confirmed": false,
+    "offset_measured": false
+  },
+  {
+    "episode": 10,
+    "limb": "right_hand",
+    "limb_index": 1,
+    "hold": "H001",
+    "start_frame": 428,
+    "end_frame": 502,
+    "panel": 0,
+    "rectangle_px": [
+      345.0,
+      271.0,
+      352.0,
+      296.0
+    ],
+    "anchor_px": [
+      352.0,
+      274.0
+    ],
+    "center_px": [
+      348.2476722532588,
+      284.0
+    ],
+    "offset_cm": [
+      3.860302117031883,
+      -5.368163597873668,
+      0.7978014487973804
+    ],
+    "evidence_frames": 52,
+    "ground_proposal": false,
+    "expert_confirmed": false,
+    "offset_measured": false
+  },
+  {
+    "episode": 11,
+    "limb": "left_foot",
+    "limb_index": 2,
+    "hold": "H053",
+    "start_frame": 0,
+    "end_frame": 92,
+    "panel": 0,
+    "rectangle_px": [
+      302.0,
+      913.0,
+      305.0,
+      931.0
+    ],
+    "anchor_px": [
+      305.0,
+      913.0
+    ],
+    "center_px": [
+      302.24074074074076,
+      922.1058201058202
+    ],
+    "offset_cm": [
+      -7.661948539491858,
+      1.373429304720866,
+      5.026752084906568
+    ],
+    "evidence_frames": 93,
+    "ground_proposal": false,
+    "expert_confirmed": false,
+    "offset_measured": false
+  },
+  {
+    "episode": 12,
+    "limb": "left_foot",
+    "limb_index": 2,
+    "hold": "H045",
+    "start_frame": 147,
+    "end_frame": 263,
+    "panel": 0,
+    "rectangle_px": [
+      365.0,
+      785.0,
+      371.0,
+      797.0
+    ],
+    "anchor_px": [
+      371.0,
+      787.0
+    ],
+    "center_px": [
+      367.05415162454875,
+      791.5018050541516
+    ],
+    "offset_cm": [
+      6.680951216596485,
+      3.2590954371814465,
+      5.5320148022941
+    ],
+    "evidence_frames": 117,
+    "ground_proposal": false,
+    "expert_confirmed": false,
+    "offset_measured": false
+  },
+  {
+    "episode": 13,
+    "limb": "left_foot",
+    "limb_index": 2,
+    "hold": "H032",
+    "start_frame": 288,
+    "end_frame": 502,
+    "panel": 0,
+    "rectangle_px": [
+      295.0,
+      611.0,
+      303.0,
+      636.0
+    ],
+    "anchor_px": [
+      296.0,
+      612.0
+    ],
+    "center_px": [
+      309.58304161804745,
+      645.8661999222093
+    ],
+    "offset_cm": [
+      0.5614224191313043,
+      6.6404973383748285,
+      6.438058711003929
+    ],
+    "evidence_frames": 215,
+    "ground_proposal": false,
+    "expert_confirmed": false,
+    "offset_measured": false
+  },
+  {
+    "episode": 14,
+    "limb": "right_foot",
+    "limb_index": 3,
+    "hold": "H050",
+    "start_frame": 30,
+    "end_frame": 191,
+    "panel": 0,
+    "rectangle_px": [
+      389.0,
+      852.0,
+      404.0,
+      860.0
+    ],
+    "anchor_px": [
+      404.0,
+      852.0
+    ],
+    "center_px": [
+      396.1302931596091,
+      855.8892508143323
+    ],
+    "offset_cm": [
+      -7.2619796642239836,
+      2.301043691444788,
+      5.275305610716734
+    ],
+    "evidence_frames": 162,
+    "ground_proposal": false,
+    "expert_confirmed": false,
+    "offset_measured": false
+  },
+  {
+    "episode": 15,
+    "limb": "right_foot",
+    "limb_index": 3,
+    "hold": "H054",
+    "start_frame": 231,
+    "end_frame": 366,
+    "panel": 0,
+    "rectangle_px": [
+      311.0,
+      696.0,
+      311.0,
+      712.0
+    ],
+    "anchor_px": [
+      311.0,
+      696.0
+    ],
+    "center_px": [
+      309.22968197879857,
+      704.73851590106
+    ],
+    "offset_cm": [
+      6.680975449914525,
+      3.259061290573371,
+      5.532005652738041
+    ],
+    "evidence_frames": 136,
+    "ground_proposal": false,
+    "expert_confirmed": false,
+    "offset_measured": false
+  },
+  {
+    "episode": 16,
+    "limb": "right_foot",
+    "limb_index": 3,
+    "hold": "H021",
+    "start_frame": 388,
+    "end_frame": 502,
+    "panel": 0,
+    "rectangle_px": [
+      405.0,
+      530.0,
+      416.0,
+      543.0
+    ],
+    "anchor_px": [
+      406.0,
+      531.0
+    ],
+    "center_px": [
+      396.031746031746,
+      566.331285202253
+    ],
+    "offset_cm": [
+      -8.097214313187362,
+      -1.3698633695937676,
+      4.2916890282217475
+    ],
+    "evidence_frames": 115,
+    "ground_proposal": false,
+    "expert_confirmed": false,
+    "offset_measured": false
+  }
+]
