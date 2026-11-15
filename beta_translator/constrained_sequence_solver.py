@@ -25,13 +25,22 @@ def qp(H,g,C,lo,hi,max_iterations=12000,tolerance=1e-8):
         success=result.info.status_val==1,status=result.info.status)
 
 
-def constraints(lower,upper,rate):
+def constraints(lower,upper,rate,linear=None):
     A=vstack([eye(len(lower),format='csr'),rate],format='csr')
-    return A,np.r_[lower,-np.ones(rate.shape[0])],np.r_[upper,np.ones(rate.shape[0])]
+    lo=np.r_[lower,-np.ones(rate.shape[0])];hi=np.r_[upper,np.ones(rate.shape[0])]
+    if linear is not None:
+        matrix,lbound,ubound=linear
+        lbound=np.asarray(lbound,float);ubound=np.asarray(ubound,float)
+        if matrix.shape[1]!=len(lower) or lbound.shape!=(matrix.shape[0],) or ubound.shape!=lbound.shape:
+            raise ValueError('Linear constraint dimensions do not match variables')
+        if np.isnan(lbound).any() or np.isnan(ubound).any() or np.any(lbound>ubound) or np.isposinf(lbound).any() or np.isneginf(ubound).any():
+            raise ValueError('Invalid linear constraint bounds')
+        A=vstack([A,matrix],format='csr');lo=np.r_[lo,lbound];hi=np.r_[hi,ubound]
+    return A,lo,hi
 
 
-def project_seed(x,lower,upper,rate):
-    A,lo,hi=constraints(lower,upper,rate)
+def project_seed(x,lower,upper,rate,linear=None):
+    A,lo,hi=constraints(lower,upper,rate,linear)
     change,_,info=qp(eye(len(x),format='csr'),np.zeros(len(x)),A,lo-A@x,hi-A@x,max_iterations=40000,tolerance=1e-9)
     candidate=x+change
     violation=max(float(np.max(lo-A@candidate)),float(np.max(A@candidate-hi)))
@@ -44,7 +53,7 @@ def project_seed(x,lower,upper,rate):
                             max_iterations=40000,tolerance=1e-10)
         candidate+=correction
         violation=max(float(np.max(lo-A@candidate)),float(np.max(A@candidate-hi)))
-    if violation>1e-7:raise RuntimeError(f'Initial rate projection failed ({violation:g}); no unconstrained fallback.')
+    if violation>1e-7:raise RuntimeError(f'Hard-constraint projection failed ({violation:g}); no unconstrained fallback.')
     return candidate,info
 
 

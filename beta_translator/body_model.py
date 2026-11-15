@@ -20,8 +20,10 @@ class BodyModel:
 
     user_profile: dict | str | Path | None = None
     advanced_constraints: bool = True
+    hard_foot_friction: bool = True
 
     def __post_init__(self):
+        if type(self.hard_foot_friction) is not bool:raise ValueError('hard_foot_friction must be a boolean')
         from .body_user import load_user,body_lengths
         p=load_user(self.user_profile,self.height_cm,self.ratios)
         object.__setattr__(self,'user_profile',p)

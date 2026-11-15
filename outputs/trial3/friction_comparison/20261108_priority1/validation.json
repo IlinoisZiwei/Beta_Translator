@@ -1,0 +1,30 @@
+{
+  "passed": 33,
+  "failed": 0,
+  "test_modules": {
+    "tests.test_body_friction": 5,
+    "tests.test_constrained_sequence_solver": 4,
+    "tests.test_temporal_control_basis": 2,
+    "tests.test_personalized_body": 12,
+    "tests.test_shared_body": 10
+  },
+  "commands": [
+    "PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -B -m unittest tests.test_body_friction tests.test_constrained_sequence_solver tests.test_temporal_control_basis tests.test_personalized_body -v",
+    "PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -B -m unittest tests.test_shared_body -v"
+  ],
+  "comparison": "comparison.json",
+  "scope": "Unit/integration tests use short fixtures; the two controlled fits use Trial3 frames 296\u2013331 only.",
+  "code_sha256": {
+    "beta_translator/body_pipeline.py": "620c2f16a9e3637cf00a8b00da3a9cd768aad0427ca42a33c7f341391e157a6d",
+    "beta_translator/body_personalized.py": "2458f5591473e7a352e106af8adf58dc3da13ae846bb545d3dfc6a5c1df021e8",
+    "beta_translator/restored_sequence_solver.py": "bdbe708e9224c109d24eccfc30613f67101e46bc190d6c7040c2ff1340ef0f2b",
+    "beta_translator/constrained_sequence_solver.py": "68ebfe67a65f5c8d9354d4c8771c10d421680ad6fffce3fc5afa42ab8746c9be",
+    "beta_translator/body_optimizer.py": "845485e42a6829453b36f211a7774d70301b539c0186b0278076b38de0d420c8",
+    "beta_translator/body_model.py": "8140982f96a65f1af74c933c44265d420a81b78c3fb209ae244db4faa300254e",
+    "beta_translator/body_constraints.py": "805ab7ba1a5458f82417f4607266a0d7c873678376df683c392bd3ee90cb94a5",
+    "beta_translator/body_friction.py": "0a1f1ad6ba65ef0eb8182235eab8934419c95bafbe98c28647f4a4fe680027f7",
+    "beta_translator/body_support.py": "93894e7a1cd06ef21778043265671b01f2db05b31cf0c73da27ef260285461fe",
+    "tests/test_body_friction.py": "8e6846ba32255fea21767e39f4c0f6ee283a1d0f51a40a05ab08d76af8a58f17",
+    "scripts/compare_trial3_friction.py": "ba790c96e85f6d7a5b8864e4aacbc59587bde4e76dab43e92ad38a22fa669da6"
+  }
+}

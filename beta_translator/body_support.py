@@ -4,6 +4,7 @@ import pandas as pd
 from scipy.optimize import linprog
 from .inverse_kinematics import make_body
 from .body_constraints import DEFAULT_LIMITS as LIMITS
+from .body_friction import friction_coefficients
 
 def force_audit(points,com,active,normals,height=180.,minimum_hands=True):
     """Independent six-equation LP; forces act at surface contacts, not wrists."""
@@ -14,11 +15,8 @@ def force_audit(points,com,active,normals,height=180.,minimum_hands=True):
         a,b,c=p;A[3:,3*i:3*i+3]=[[0,-c,b],[c,0,-a],[-b,a,0]]
     ub=[]
     for i in [2,3]:
-        n=normals[i];t=np.array([1.,0.,0.]);t-=n*(t@n);t/=np.linalg.norm(t)
-        row=np.zeros(18);row[3*i:3*i+3]=-n;ub.append(row)
-        for tangent in [t,np.cross(n,t)]:
-            for sign in [-1,1]:
-                row=np.zeros(18);row[3*i:3*i+3]=sign*tangent-LIMITS.foot_friction/np.sqrt(2)*n;ub.append(row)
+        for coefficients in friction_coefficients(normals[i],LIMITS.foot_friction):
+            row=np.zeros(18);row[3*i:3*i+3]=coefficients;ub.append(row)
     for k in range(6):
         for sign in [-1,1]:
             row=np.zeros(18);row[k]=sign;row[12+k]=-1;ub.append(row)

@@ -1,7 +1,7 @@
 """Jointly fit native poses from any trial with bounded articulated arms and rate penalties.
 
-ROM, force-component, coordinate-rate and acceleration bounds are hard. Support
-terms are soft during fitting and independently gated before declaring feasibility.
+ROM, force-component, coordinate-rate, acceleration and foot-friction bounds are
+hard by default. Other support terms remain soft and independently audited.
 No Cartesian post-filtering, endpoint snapping, or per-clip winner stitching.
 """
 import numpy as np
@@ -13,14 +13,16 @@ from .ik3d import positive
 from .body_support import audit_plan
 from .body_contacts import ContactMetadata
 from .body_constraints import DEFAULT_LIMITS
+from .body_friction import friction_excess,foot_friction_matrix
 from .restored_sequence_solver import solve as constrained_solve
 
 
 class AnatomicalProblem:
-    def __init__(self,data,scene,regions,legacy,initial_q,height_cm=180.,ratios=None,smoothness=1.):
+    def __init__(self,data,scene,regions,legacy,initial_q,height_cm=180.,ratios=None,smoothness=1.,hard_foot_friction=True):
         self.data=data;self.scene=scene;self.regions=regions;self.n=len(data['frames'])
         self.height=height_cm;self.lengths=make_body(height_cm,ratios);self.smoothness=float(smoothness)
         self.limits=DEFAULT_LIMITS
+        self.hard_foot_friction=hard_foot_friction
         self.qdim=initial_q.shape[1];self.statedim=self.qdim+12;self.localdim=self.statedim+8
         if self.n<3 or not np.all(np.diff(data['frames'])==1):raise ValueError('Consecutive native frames required.')
         self.fps=float(data['fps']);self.known=np.asarray(data['known'],bool)
@@ -53,6 +55,12 @@ class AnatomicalProblem:
         qs=coo_matrix((np.ones(self.n*self.qdim),(np.arange(self.n*self.qdim),
             (np.arange(self.n)[:,None]*self.localdim+np.arange(self.qdim)).ravel())),shape=(self.n*self.qdim,self.n*self.localdim)).tocsr()@self.expand
         self.hard_rates=vstack([kron(D,diags(self.fps**order/(self.speed if order==1 else self.accel)),format='csr')@qs for order,D in self.temporal],format='csr')
+        self.friction_matrix=foot_friction_matrix(self.base.normals,self.qdim,self.statedim,len(self.initial),self.limits.foot_friction)
+
+    def friction_constraints(self,transform=None):
+        if not self.hard_foot_friction:return None
+        matrix=self.friction_matrix if transform is None else self.friction_matrix@transform
+        return matrix,np.full(matrix.shape[0],-np.inf),np.zeros(matrix.shape[0])
 
     def pose_bounds(self):
         return arms.bounds_and_rates()
@@ -88,16 +96,34 @@ class AnatomicalProblem:
         force=y[:,self.qdim:self.statedim].reshape(self.n,4,3)
         resultant=force.sum(1)-[0,1,0]
         moment=np.cross(c-com[:,None],force).sum(1)/self.height
-        nf=np.sum(force*self.base.normals,axis=-1);friction=[positive(-nf[:,2:])]
-        for tangent in self.base.tangents:
-            ft=np.sum(force*tangent,axis=-1)
-            for sign in [-1,1]:friction.append(positive(sign*ft[:,2:]-self.limits.foot_friction/np.sqrt(2)*nf[:,2:]))
+        friction=positive(friction_excess(force[:,2:],self.base.normals[:,2:],self.limits.foot_friction))
+        friction=friction.transpose(0,2,1).reshape(self.n,-1)
         if getattr(self,'dynamic_balance',False):
             resultant=np.zeros_like(resultant);moment=np.zeros_like(moment)
-        physics=100*np.c_[resultant,moment,*friction]
+        physics=100*np.c_[resultant,moment,friction]
         unload=(200*force*self.data['unload'][...,None]).reshape(self.n,-1)
         coupling=(10*delta[...,None]*force[:,:,None,:]).reshape(self.n,-1)
         return np.c_[guide,gap,wall,floor,behind,bend,pose,depth,prior,grip,physics,unload,coupling,.1*y[:,self.qdim:self.statedim]]
+
+    def residual(self,flat):
+        """Exact objective vector without derivatives, for line-search trials."""
+        y=(self.expand@flat).reshape(self.n,self.localdim);g=self.geometry(y)
+        res=[self.local(y,g).ravel()]
+        features=np.c_[g['joints'].reshape(self.n,36),g['orientations'].reshape(self.n,-1)]
+        qselect=coo_matrix((np.ones(self.n*self.qdim),(np.arange(self.n*self.qdim),
+            (np.arange(self.n)[:,None]*self.localdim+np.arange(self.qdim)).ravel())),shape=(self.n*self.qdim,self.n*self.localdim)).tocsr()@self.expand
+        for order,D in self.temporal:
+            rate=self.speed if order==1 else self.accel
+            T=kron(D,diags(self.fps**order/rate),format='csr')@qselect
+            a=np.asarray(T@flat);gain=self.smoothness*(1.5 if order==1 else 1.)
+            res.extend([gain*a,150*positive(a-1),150*positive(-a-1)])
+            weights=np.r_[np.full(36,.25 if order==1 else 2.),
+                          np.full(features.shape[1]-36,self.smoothness*(.35 if order==1 else .025)*self.fps**order)]
+            res.append(kron(D,diags(weights),format='csr')@features.ravel())
+            dt=(D@features[:,:36]).reshape(-1,3);norm=np.linalg.norm(dt,axis=1)
+            limit,weight=(6,35) if order==1 else (3,25)
+            res.append(weight*np.maximum(norm-limit,0))
+        return np.concatenate(res)
 
     def evaluate(self,flat):
         y=(self.expand@flat).reshape(self.n,self.localdim);g=self.geometry(y);r=self.local(y,g)
@@ -152,12 +178,16 @@ class AnatomicalProblem:
                 residual,J=self.evaluate(T@z)
                 return residual,J@T
             if progress:progress(f"Joint controls: {len(self.initial)} -> {len(initial)} variables; all {self.n} frames checked")
-            fit=constrained_solve(evaluate,initial,lower,upper,self.hard_rates@T,iterations,progress)
+            fit=constrained_solve(evaluate,initial,lower,upper,self.hard_rates@T,iterations,progress,linear=self.friction_constraints(T),residual=lambda z:self.residual(T@z))
             x=T@fit.pop('x');fit['parameterization']=info
         else:
-            fit=constrained_solve(self.evaluate,self.initial,self.lower,self.upper,self.hard_rates,iterations,progress)
+            fit=constrained_solve(self.evaluate,self.initial,self.lower,self.upper,self.hard_rates,iterations,progress,linear=self.friction_constraints(),residual=self.residual)
             x=fit.pop('x')
         y=(self.expand@x).reshape(self.n,self.localdim);g=self.geometry(y)
+        fit['hard_foot_friction']=self.hard_foot_friction
+        fit['max_foot_friction_violation_bw']=float(np.maximum(self.friction_matrix@x,0).max())
+        if self.hard_foot_friction and fit['max_foot_friction_violation_bw']>1e-7:
+            raise RuntimeError('Export rejected: hard foot-friction constraint violated')
         return dict(**g,parameters=x,values=y[:,:self.statedim],anatomical_q=y[:,:self.qdim],
                     episode_uv=x[-2*self.e:].reshape(self.e,2),offsets=self.base.offset,solver=fit)
 

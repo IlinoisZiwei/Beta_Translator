@@ -3,6 +3,8 @@ import numpy as np
 from scipy.sparse import coo_matrix,vstack
 from .body_articulation import BodyProblem
 from .body_mechanics import segments,mechanics,fatigue_coupling
+from .body_friction import friction_excess
+from .body_constraints import DEFAULT_LIMITS
 
 
 class PersonalizedProblem(BodyProblem):
@@ -42,17 +44,33 @@ class PersonalizedProblem(BodyProblem):
         return np.c_[m['residual'],m['utilization']]
 
     def mechanical_jacobian(self,y):
-        value=self.mechanical_values(y);width=value.shape[1];rows=[];cols=[];values=[]
-        for color in range(min(5,self.n)):
-            times=np.arange(color,self.n,5)
-            affected,inputs=np.where(self.mechanical_pattern[:,times]);source=times[inputs]
-            row=(affected[:,None]*width+np.arange(width)).ravel()
+        value=self.mechanical_values(y);width=value.shape[1];values=[]
+        if not hasattr(self,'_mechanical_sparse_pattern'):
+            rows=[];cols=[];groups=[]
+            for color in range(min(5,self.n)):
+                times=np.arange(color,self.n,5)
+                affected,inputs=np.where(self.mechanical_pattern[:,times]);source=times[inputs]
+                row=(affected[:,None]*width+np.arange(width)).ravel()
+                groups.append((times,affected))
+                for k in range(self.localdim):
+                    rows.append(row);cols.append(np.repeat(source*self.localdim+k,width))
+            self._mechanical_sparse_pattern=(np.concatenate(rows),np.concatenate(cols),groups)
+        rows,cols,groups=self._mechanical_sparse_pattern
+        for times,affected in groups:
             for k in range(self.localdim):
                 cy=y.astype(complex);cy[times,k]+=1e-25j
                 derivative=self.mechanical_values(cy).imag/1e-25
-                rows.extend(row);cols.extend(np.repeat(source*self.localdim+k,width));values.extend(derivative[affected].ravel())
-        J=coo_matrix((values,(rows,cols)),shape=(self.n*width,self.n*self.localdim)).tocsr();J.eliminate_zeros()
+                values.append(derivative[affected].ravel())
+        J=coo_matrix((np.concatenate(values),(rows,cols)),shape=(self.n*width,self.n*self.localdim)).tocsr();J.eliminate_zeros()
         return value,J@self.expand
+
+    def residual(self,flat):
+        base=super().residual(flat)
+        if not self.dynamic_balance:return base
+        y=(self.expand@flat).reshape(self.n,self.localdim)
+        values=self.mechanical_values(y)
+        fatigue=fatigue_coupling(values[:,-12:],self.user_profile['biomechanics'],self.fps,False)
+        return np.r_[base,values[:,:-12].ravel(),fatigue['residual'].ravel()]
 
     def evaluate(self,flat):
         base,J=super().evaluate(flat)
@@ -88,11 +106,10 @@ def audit_personalized(fit,metrics,data,scene,regions,profile):
     # Audit the SAME optimized forces used by inertia/torque/fatigue, not a fresh
     # static LP allocation that could hide a failure of the selected trajectory.
     panels=np.array([e['panel'] for e in regions['episodes']])[np.maximum(regions['mapping'],0)]
-    normals=scene.normals[panels];nf=np.sum(forces*normals,axis=-1)
-    t=np.broadcast_to([1.,0.,0.],normals.shape).copy();t-=normals*np.sum(t*normals,axis=-1,keepdims=True);t/=np.linalg.norm(t,axis=-1,keepdims=True)
-    friction=np.any(nf[:,2:]< -1e-7,axis=1)
-    for tangent in (t,np.cross(normals,t)):
-        friction|=np.any(abs(np.sum(forces*tangent,axis=-1)[:,2:])>.8/np.sqrt(2)*nf[:,2:]+1e-7,axis=1)
+    normals=scene.normals[panels]
+    excess=friction_excess(forces[:,2:],normals[:,2:],DEFAULT_LIMITS.foot_friction)
+    m['max_optimized_friction_violation_bw']=np.maximum(excess,0).max(axis=(1,2))
+    friction=m.max_optimized_friction_violation_bw>1e-7
     m['optimized_friction_failed']=friction
     m['optimized_force_bound_failed']=np.max(abs(forces),axis=(1,2))>1+1e-7
     m['free_force_failed']=np.any((np.linalg.norm(forces,axis=-1)>1e-7)&~data['known'],axis=1)

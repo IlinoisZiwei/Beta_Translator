@@ -64,6 +64,9 @@ All five contribute residuals to the **same trajectory optimization**, have
 per-frame audits, and can reject a candidate. They are soft during fitting; a
 failure is not repaired by post-processing. Existing hard coordinate bounds,
 rate constraints, persistent contact regions and zero free-contact force remain.
+New fits also enforce the unilateral foot-friction pyramid as hard linear
+constraints by default. `BodyModel(hard_foot_friction=False)` retains the soft
+comparison mode; the switch is recorded in run provenance.
 The complete specification still reports unknown mechanisms and calibration.
 
 The dynamic mode replaces the static force/moment objective. Its audit uses the
@@ -92,6 +95,7 @@ diagnostic candidate is still labeled infeasible when appropriate.
 - `body_constraints.py`: shared constraint inventory and enforcement declarations.
 - `body_mechanics.py`: trial-independent collision, rigid-segment equations and fatigue.
 - `body_personalized.py`: optimizer integration, sparse derivatives and audits.
+- `body_friction.py`: shared friction inequalities for fitting, projection and audits.
 - `body_pipeline.py`: common trial entry, immutable result paths and profile snapshots.
 
 Source anatomical chains retain their existing pinned MoBL/Gait2392 provenance.
@@ -133,5 +137,66 @@ friction, capacity and release gates still apply. All active clips exceed the
 assumed moment capacities, retain other failures, and did not converge within
 35 iterations. Trial2 collision failures increased from 1 to 8 frames. These
 results demonstrate the active tradeoffs, not universal motion improvement.
-All selected outputs remain diagnostic. The current checks passed 263 automated
-tests; all 69 notebook code cells executed without errors.
+All selected outputs remain diagnostic. The earlier personalized validation
+recorded 263 passing automated tests and 69 executed notebook code cells. These
+counts describe that saved validation, not every later code change.
+
+
+### Hard foot-friction comparison: Trial3
+
+`scripts/compare_trial3_friction.py` runs only frames **296–331**, with 35
+iterations per arm and the `steady` candidate (smoothness 2.5). Both arms use the
+same 175 cm / 176 cm-span profile, initial poses, observations, contact schedule,
+scene and objective. Only `hard_foot_friction` changes. The existing soft friction
+penalty remains in both arms to keep the objectives matched.
+
+The hard mode enforces nonnegative foot normal force and
+`abs(F_t1), abs(F_t2) <= (0.8 / sqrt(2)) * F_n`. These constraints participate in
+seed projection, quadratic steps, feasibility restoration and line search, with
+an additional export check at a numerical tolerance of `1e-7` body weights.
+The shared definition also supplies the soft penalty and support audits.
+Contact position, release and dynamics are still separate checks; friction
+feasibility alone does not certify the trajectory.
+
+Run a new comparison in a new directory:
+
+```sh
+.venv/bin/python scripts/compare_trial3_friction.py \
+  --output-root outputs/trial3/friction_comparison/<new-comparison-name>
+```
+
+The driver refuses an existing comparison directory. It saves separate soft and
+hard runs, source snapshots, per-frame metrics and solver histories, followed by
+`comparison.csv` and `comparison.json`. It independently recalculates friction
+violations, verifies matched inputs and initialization, and checks the existing
+Trial3 short/full outputs and notebook/index hashes. It does not render, update
+result indexes or run the full sequence.
+
+Recorded comparison: [results and preservation checks](../outputs/trial3/friction_comparison/20261108_priority1/comparison.json)
+and [metric table](../outputs/trial3/friction_comparison/20261108_priority1/comparison.csv).
+
+| Check | Fresh soft control | Hard foot friction |
+| --- | ---: | ---: |
+| Friction failure frames | 36/36 | 0/36 |
+| Left-foot pulling frames | 8/36 | 0/36 |
+| Right-foot pulling frames | 36/36 | 0/36 |
+| Contact failure frames | 25/36 | 35/36 |
+| Dynamic-balance failure frames | 0/36 | 0/36 |
+| Torque-capacity failure frames | 36/36 | 36/36 |
+| Departing-force failures (applicable frame) | 1/1 | 1/1 |
+| Maximum contact gap (cm) | 0.496718 | 0.760825 |
+| Maximum friction violation (body weights) | 0.252391 | 0.000000 |
+| Solver converged | No | No |
+
+The hard constraints removed the invalid foot forces, but contact failures
+increased. Both runs still fail the overall feasibility checks. This is a
+35-iteration comparison, not evidence that either trajectory is optimal or that
+the motion is impossible. The next separate change should address contact
+feasibility; no contact-region, release-timing or objective-weight changes were
+made in this comparison.
+
+Validation for this change: 33 targeted tests passed across friction, constrained
+solvers, temporal controls, personalized mechanics and shared-body checks. The
+comparison independently checked force inequalities and matched inputs. Existing
+Trial3 short/full output hashes and all root notebook/result-index hashes passed
+preservation checks. No notebook was executed and no full sequence was fitted.

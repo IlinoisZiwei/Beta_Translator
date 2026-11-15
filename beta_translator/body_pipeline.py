@@ -63,7 +63,8 @@ def run(model, project, trial, frames, iterations, candidates, output_root, rend
     if len(bounds)!=2 or any(type(x) is not int for x in bounds) or not 0<=bounds[0]<bounds[1]<cfg['frame_count'] or bounds[1]-bounds[0]<2:
         raise ValueError('At least three consecutive native frames required')
     settings=dict(trial_config=cfg,height_cm=model.height_cm,ratios=model.ratios,frames=bounds,
-                  iterations=iterations,candidates={c:PROFILES[c] for c in candidates},body_model='personalized_mechanics_v3',user_profile=model.user_profile,advanced_constraints=model.advanced_constraints)
+                  iterations=iterations,candidates={c:PROFILES[c] for c in candidates},body_model='personalized_mechanics_v3',user_profile=model.user_profile,advanced_constraints=model.advanced_constraints,
+                  hard_foot_friction=model.hard_foot_friction)
     identity=dict(config=settings,input_sha256=input_hashes(p,cfg))
     digest=hashlib.sha256(json.dumps(identity,sort_keys=True).encode()).hexdigest()[:12]
     root=Path(output_root) if output_root else p/f"outputs/{cfg['trial']}/shared_body"
@@ -106,7 +107,7 @@ def run(model, project, trial, frames, iterations, candidates, output_root, rend
         problem_class=PatchProblem if name=='legacy_control' else PersonalizedProblem
         seed=qlegacy if name=='legacy_control' else q
         extra={} if name=='legacy_control' else dict(user_profile=model.user_profile,advanced=model.advanced_constraints and name not in CONTROLS)
-        problem=problem_class(local,scene,r,old,seed,model.height_cm,ratios=model.ratios,smoothness=PROFILES[name],**extra)
+        problem=problem_class(local,scene,r,old,seed,model.height_cm,ratios=model.ratios,smoothness=PROFILES[name],hard_foot_friction=model.hard_foot_friction,**extra)
         fit=problem.solve(iterations,lambda text:progress(name+': '+text,flush=True))
         m,gaps,forces=audit_body(fit,local,scene,r,model.height_cm,ratios=model.ratios)
         if name!='legacy_control':audit_personalized(fit,m,local,scene,r,model.user_profile)

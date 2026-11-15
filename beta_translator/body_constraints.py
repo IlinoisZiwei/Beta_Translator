@@ -79,7 +79,7 @@ CONSTRAINTS = (
     Constraint('contact_pose_slip','7.2','not_implemented','persistent patch position only','surface-normal compatibility, patch overlap and slip law'),
     Constraint('contact_complementarity','7.3','partial','soft gap-force product only','rigid complementarity or declared compliance'),
     Constraint('free_contact_force','7.3','hard','free/unknown contacts exert zero optimized force'),
-    Constraint('friction_and_support','7.3','soft_and_audit','assumed foot cone and hand force box'),
+    Constraint('friction_and_support','7.3','partial','hard foot cone by default (soft comparison opt-out); force boxes and support audit'),
     Constraint('grip_wrench','7.3','not_implemented','point-contact force model','hold-specific grip wrench capacity'),
     Constraint('release','7.3','soft_and_audit','remaining-support audit plus departing-force check'),
     Constraint('trusted_support','2.3','audit','source/confidence/ground eligibility'),
