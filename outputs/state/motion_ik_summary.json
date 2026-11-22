@@ -118,9 +118,10 @@
     },
     "modules": {
       "motion_ik.py": "b364055818cce40733b0c074a20347bf17c8539ea5dd84ec50eec9b5aa82a2fb",
-      "motion_pipeline.py": "4aed22bbb0909e4e9bff0a20c77d092bcdc2a3980661d4ce654894e4c8362e20",
-      "inverse_kinematics.py": "04596bb6d2ce100cf434741fb286d3ffc69ab53a70ae3ab37e267b64801e060f",
-      "pose_adapter.py": "0fd505b3ebd88ce69070aa9a39aa526d4ba1b8cf50922081abc85ab786e97ea7"
+      "motion_pipeline.py": "68f882285fa6aea607ad61775885925284788f1cd3b247f09f4660b985b3c4d0",
+      "inverse_kinematics.py": "164c34768cb5a55dee18249bd16f1376a58a98670065d12fd2274dc1783b8544",
+      "pose_adapter.py": "db9a6ed603092ad12967bd3c858d35fc3e4c83cbb556ae0aeaa0f5a01b91a454",
+      "plane_ik.py": "140537a1aa49876616d4a566d3e0ebb0858c50bc1f225651f8d0ff99b963aff6"
     }
   },
   "frame_count": 23,
@@ -128,11 +129,11 @@
   "endpoint_interval_seconds": 0.7333333333333333,
   "encoded_duration_seconds": 0.7666666666666667,
   "metrics": {
-    "max_contact_error_cm": 0.00020671025971279725,
-    "rms_contact_error_cm": 4.1692101943398005e-05,
-    "max_support_drift_cm": 0.0002017351583312795,
-    "max_angle_step_deg": 13.246743242575569,
-    "max_hip_step_cm": 1.208175034785019,
+    "max_contact_error_cm": 0.00020663577221203375,
+    "rms_contact_error_cm": 4.172985445599425e-05,
+    "max_support_drift_cm": 0.0002017965102438333,
+    "max_angle_step_deg": 13.246824672826664,
+    "max_hip_step_cm": 1.208188280105315,
     "bend_direction_changes": {
       "left_hand": false,
       "right_hand": false,
@@ -144,8 +145,8 @@
     "optimizer": {
       "success": true,
       "message": "`ftol` termination condition is satisfied.",
-      "nfev": 270,
-      "cost": 1.5014811385089768
+      "nfev": 239,
+      "cost": 1.5014807986305914
     },
     "settings": {
       "contact_scale_cm": 0.05,
@@ -163,10 +164,11 @@
   "swing_path": "Minimum-jerk straight-line soft guide, not an observed hand trajectory.",
   "interpretation": "2D kinematic candidate with checked soft-contact residuals; no force, friction, balance, collision, or success prediction.",
   "output_sha256": {
-    "videos/motion_ik_h264.mp4": "67fbfbab4180fe7bc9ab7068c1cb7b1deb851d9c12e47446c5efa5f3adbbe215",
-    "videos/motion_ik_slow_h264.mp4": "e7c4c442a5f8615a847e51aeb7de0ca140f9a2bb8187554ad6a086a8f9498912",
+    "videos/motion_ik_h264.mp4": "d68bf3f912a80eaebe1c3023a4b39c7e5f37ba958f8982f7666bcffd4f17d42c",
+    "videos/motion_ik_slow_h264.mp4": "2184cfb1aeaf178ab1a39f614f8360d1abeb6d4ef052ec3c922f27397bdd51a9",
     "images/ik_motion_storyboard.png": "a3c9f60d5aeea5b8a8696f514ee05684e3afe3994c5dea1fbe9a9bf8cb23da36",
-    "tables/motion_ik_poses.csv": "cc527fe8781d46a21bf66dfc79dba3ee1661e5a99ff001515cfcd4f7022f951b",
-    "state/motion_ik_trajectory.npz": "f3037add3daa3f9db611231aea2284a9ef95ac373d1025022797314feb70a523"
+    "videos/target_motion_h264.mp4": "8e138769d550d61590cee4306f99d86a1d1367c0325f5f7ea7c1d73a514d9dac",
+    "tables/motion_ik_poses.csv": "e14baa48cb3a2eacfa110cd296083724db5afb0b693002ae9841b3d8a8568f3c",
+    "state/motion_ik_trajectory.npz": "2e7dd25f6ff19ba86d0e1634e2ce01a83b650f69d8b148903e107dc9360d92f6"
   }
 }

@@ -1,0 +1,49 @@
+{
+  "source_sha256": "2dc242259e0f5004d935646a424af7f1fd4ba99d79ff05b3a7b1f2e605949dad",
+  "random_poses": 128,
+  "rotation_matrix_max_absolute_error": 1.5543122344752192e-15,
+  "rotational_chain_pass": true,
+  "previous_hand_orientation_max_difference_deg": 25.412201914171884,
+  "fixed_length_reduction": true,
+  "source_translation_offsets_imported": false,
+  "source_rest_offsets_m": {
+    "shoulder0": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "shoulder1": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "shoulder2": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "elbow": [
+      0.0061,
+      -0.2904,
+      -0.0123
+    ],
+    "radioulnar": [
+      0.0004,
+      -0.011503,
+      0.019999
+    ],
+    "radiocarpal": [
+      0.018,
+      -0.242,
+      0.025
+    ],
+    "wrist_hand": [
+      0.003992,
+      -0.015054,
+      0.002327
+    ]
+  },
+  "source_girdle_imported": false,
+  "opensim_engine_crosscheck": false,
+  "conclusion": "Source rotational subchain checked independently; omitted translations and girdle motion remain a declared reduction."
+}

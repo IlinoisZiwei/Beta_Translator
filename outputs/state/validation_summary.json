@@ -83,11 +83,11 @@
     "px_per_cm": 1.7980508245001927
   },
   "versions": {
-    "python": "3.12.15",
+    "python": "3.12.4",
     "opencv": "5.0.0",
     "mediapipe": "1.1.1"
   },
   "manual_endpoints_included": true,
-  "interpretation": "Geometric drafts and reviewed annotations; no proof of grip or physical feasibility.",
-  "motion_results_included": true
+  "motion_results_included": true,
+  "interpretation": "Geometric drafts and reviewed annotations; no proof of grip or physical feasibility."
 }

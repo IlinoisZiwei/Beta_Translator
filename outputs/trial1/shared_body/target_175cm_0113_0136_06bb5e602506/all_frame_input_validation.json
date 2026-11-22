@@ -1,0 +1,88 @@
+{
+  "native_frames": 417,
+  "known_contact_samples": 1400,
+  "ground_samples": 48,
+  "body_implementation": "beta_translator.body_articulation.BodyProblem",
+  "native_time_axis_complete": true,
+  "source_visibility_preserved": true,
+  "scene": {
+    "kind": "projected_image_plane",
+    "angles_deg": [
+      0.0,
+      0.0
+    ],
+    "normals": [
+      [
+        0.0,
+        0.0,
+        1.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0
+      ]
+    ],
+    "origins_cm": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "meshes_cm": [
+      [
+        [
+          0.0,
+          711.8819905192635,
+          0.0
+        ],
+        [
+          400.4336196670857,
+          711.8819905192635,
+          0.0
+        ],
+        [
+          400.4336196670857,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ]
+    ],
+    "hinges_cm": [],
+    "physical_validation": false,
+    "floor_model": "projected contact evidence only; no metric floor plane",
+    "camera_model": "uniform scale; depth is unobserved",
+    "depth_prior_cm": 25.0
+  }
+}
